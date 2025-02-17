@@ -11,4 +11,13 @@
     <modules>
         <module>CGMES_2.4.15_27JAN2020</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub sogno-platform Apache Maven Packages</name>
+        <!--<url>https://maven.pkg.github.com/sogno-platform/cim4j/</url>-->
+            <url>https://maven.pkg.github.com/tom-hg57/cim4j/</url>
+        </repository>
+    </distributionManagement>
 </project>
