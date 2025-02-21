@@ -8,7 +8,11 @@
     <version>0.1.0</version>
     <packaging>pom</packaging>
 
+    <name>Java classes for CIM / CGMES</name>
+    <url>https://github.com/sogno-platform/cim4j</url>
+
     <modules>
+        <module>./pom.main.xml</module>
         <module>CGMES_2.4.15_27JAN2020</module>
     </modules>
 
