@@ -4,17 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lfenergy.sogno</groupId>
-    <artifactId>cim4j-parent</artifactId>
+    <artifactId>cim4j-main</artifactId>
     <version>0.1.0</version>
-    <packaging>pom</packaging>
 
-    <name>Java classes for CIM / CGMES</name>
+    <name>Java main program for CIM / CGMES</name>
     <url>https://github.com/sogno-platform/cim4j</url>
 
-    <modules>
-        <module>./pom.main.xml</module>
-        <module>CGMES_2.4.15_27JAN2020</module>
-    </modules>
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
@@ -23,12 +24,52 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.lfenergy.sogno</groupId>
+            <artifactId>cim4j-cgmes-2-4-15</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Personal access token with read:packages is needed to use github packages -->
+    <!-- (generated on the developer settings page and added to settings.xml)      -->
+    <repositories>
         <repository>
             <id>github</id>
-            <name>GitHub sogno-platform Apache Maven Packages</name>
-        <!--<url>https://maven.pkg.github.com/sogno-platform/cim4j/</url>-->
             <url>https://maven.pkg.github.com/tom-hg57/cim4j/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
-    </distributionManagement>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
