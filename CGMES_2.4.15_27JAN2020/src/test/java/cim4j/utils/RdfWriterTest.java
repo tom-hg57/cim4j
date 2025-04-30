@@ -518,6 +518,250 @@ class RdfWriterTest {
     }
 
     @Test
+    @Order(250)
+    void testWrite011() {
+        if (CimConstants.CIM_VERSION.equals("cgmes_v3_0_0")) {
+            var rdfReader = new RdfReader();
+            var cimData = rdfReader.read(List.of(getPath("rdf/test011_CGMES3.xml")));
+            assertEquals(5, cimData.size());
+
+            assertTrue(cimData.containsKey("_Location"));
+            assertTrue(cimData.containsKey("_Address"));
+            assertTrue(cimData.containsKey("_Status"));
+            assertTrue(cimData.containsKey("_Street"));
+            assertTrue(cimData.containsKey("_Town"));
+
+            var rdfWriter = new RdfWriter();
+            rdfWriter.addCimData(cimData);
+            rdfWriter.write("target/test.xml");
+
+            var stringWriter = new StringWriter();
+            rdfWriter.write(stringWriter);
+            String result = stringWriter.toString();
+
+            var lines = result.lines().toArray();
+            assertEquals(24, lines.length);
+            assertEquals(XML_HEADER, lines[0]);
+            assertEquals(RDF_HEADER, lines[1]);
+            assertEquals("  <cim:Location rdf:ID=\"_Location\">", lines[2]);
+            assertEquals("    <cim:Location.mainAddress rdf:resource=\"#_Address\"/>", lines[3]);
+            assertEquals("  </cim:Location>", lines[4]);
+            assertEquals("  <cim:StreetAddress rdf:ID=\"_Address\">", lines[5]);
+            assertEquals("    <cim:StreetAddress.status rdf:resource=\"#_Status\"/>", lines[6]);
+            assertEquals("    <cim:StreetAddress.streetDetail rdf:resource=\"#_Street\"/>", lines[7]);
+            assertEquals("    <cim:StreetAddress.townDetail rdf:resource=\"#_Town\"/>", lines[8]);
+            assertEquals("  </cim:StreetAddress>", lines[9]);
+            assertEquals("  <cim:Status rdf:ID=\"_Status\">", lines[10]);
+            assertEquals("    <cim:Status.dateTime>2024-10-13 19:17:22 +0200</cim:Status.dateTime>", lines[11]);
+            assertEquals("    <cim:Status.value>verified</cim:Status.value>", lines[12]);
+            assertEquals("  </cim:Status>", lines[13]);
+            assertEquals("  <cim:StreetDetail rdf:ID=\"_Street\">", lines[14]);
+            assertEquals("    <cim:StreetDetail.name>Ku'damm</cim:StreetDetail.name>", lines[15]);
+            assertEquals("    <cim:StreetDetail.number>33</cim:StreetDetail.number>", lines[16]);
+            assertEquals("    <cim:StreetDetail.withinTownLimits>true</cim:StreetDetail.withinTownLimits>", lines[17]);
+            assertEquals("  </cim:StreetDetail>", lines[18]);
+            assertEquals("  <cim:TownDetail rdf:ID=\"_Town\">", lines[19]);
+            assertEquals("    <cim:TownDetail.country>Germany</cim:TownDetail.country>", lines[20]);
+            assertEquals("    <cim:TownDetail.name>Berlin</cim:TownDetail.name>", lines[21]);
+            assertEquals("  </cim:TownDetail>", lines[22]);
+            assertEquals("</rdf:RDF>", lines[23]);
+        }
+    }
+
+    @Test
+    @Order(260)
+    void testWrite012() {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath("rdf/test012.xml")));
+        assertEquals(1, cimData.size());
+
+        assertTrue(cimData.containsKey("_Season"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(7, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:Season rdf:ID=\"_Season\">", lines[2]);
+        assertEquals("    <cim:Season.endDate>--10-31</cim:Season.endDate>", lines[3]);
+        assertEquals("    <cim:Season.startDate>--10-13</cim:Season.startDate>", lines[4]);
+        assertEquals("  </cim:Season>", lines[5]);
+        assertEquals("</rdf:RDF>", lines[6]);
+    }
+
+    @Test
+    @Order(270)
+    void testWrite013() {
+        testWrite_013_014_015_016("rdf/test013.xml");
+    }
+
+    @Test
+    @Order(280)
+    void testWrite014() {
+        testWrite_013_014_015_016("rdf/test014.xml");
+    }
+
+    @Test
+    @Order(290)
+    void testWrite015() {
+        testWrite_013_014_015_016("rdf/test015.xml");
+    }
+
+    @Test
+    @Order(300)
+    void testWrite016() {
+        testWrite_013_014_015_016("rdf/test016.xml");
+    }
+
+    private void testWrite_013_014_015_016(String test_013_014_015_016) {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath(test_013_014_015_016)));
+        assertEquals(3, cimData.size());
+
+        assertTrue(cimData.containsKey("TopologicalIsland.N"));
+        assertTrue(cimData.containsKey("N0"));
+        assertTrue(cimData.containsKey("N1"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(14, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:TopologicalIsland rdf:ID=\"TopologicalIsland.N\">", lines[2]);
+        assertEquals("    <cim:TopologicalIsland.TopologicalNodes rdf:resource=\"#N0\"/>", lines[3]);
+        assertEquals("    <cim:TopologicalIsland.TopologicalNodes rdf:resource=\"#N1\"/>", lines[4]);
+        assertEquals("    <cim:IdentifiedObject.name>N</cim:IdentifiedObject.name>", lines[5]);
+        assertEquals("  </cim:TopologicalIsland>", lines[6]);
+        assertEquals("  <cim:TopologicalNode rdf:ID=\"N0\">", lines[7]);
+        assertEquals("    <cim:IdentifiedObject.name>N0</cim:IdentifiedObject.name>", lines[8]);
+        assertEquals("  </cim:TopologicalNode>", lines[9]);
+        assertEquals("  <cim:TopologicalNode rdf:ID=\"N1\">", lines[10]);
+        assertEquals("    <cim:IdentifiedObject.name>N1</cim:IdentifiedObject.name>", lines[11]);
+        assertEquals("  </cim:TopologicalNode>", lines[12]);
+        assertEquals("</rdf:RDF>", lines[13]);
+    }
+
+    @Test
+    @Order(310)
+    void testWrite017() {
+        testWrite_017_018_019("rdf/test017.xml");
+    }
+
+    @Test
+    @Order(320)
+    void testWrite018() {
+        testWrite_017_018_019("rdf/test018.xml");
+    }
+
+    @Test
+    @Order(330)
+    void testWrite019() {
+        testWrite_017_018_019("rdf/test019.xml");
+    }
+
+    private void testWrite_017_018_019(String test_017_018_019) {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath(test_017_018_019)));
+        assertEquals(2, cimData.size());
+
+        assertTrue(cimData.containsKey("N0"));
+        assertTrue(cimData.containsKey("SvVoltage.N0"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(10, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:TopologicalNode rdf:ID=\"N0\">", lines[2]);
+        assertEquals("    <cim:IdentifiedObject.name>N0</cim:IdentifiedObject.name>", lines[3]);
+        assertEquals("  </cim:TopologicalNode>", lines[4]);
+        assertEquals("  <cim:SvVoltage rdf:ID=\"SvVoltage.N0\">", lines[5]);
+        assertEquals("    <cim:SvVoltage.TopologicalNode rdf:resource=\"#N0\"/>", lines[6]);
+        assertEquals("    <cim:SvVoltage.v>110.5</cim:SvVoltage.v>", lines[7]);
+        assertEquals("  </cim:SvVoltage>", lines[8]);
+        assertEquals("</rdf:RDF>", lines[9]);
+    }
+
+    @Test
+    @Order(340)
+    void testWrite020() {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath("rdf/test020.xml")));
+        assertEquals(2, cimData.size());
+
+        assertTrue(cimData.containsKey("VoltageLevel.98"));
+        assertTrue(cimData.containsKey("EnergyConsumer.H-5"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(9, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:VoltageLevel rdf:ID=\"VoltageLevel.98\">", lines[2]);
+        assertEquals("    <cim:IdentifiedObject.name>98</cim:IdentifiedObject.name>", lines[3]);
+        assertEquals("  </cim:VoltageLevel>", lines[4]);
+        assertEquals("  <cim:EnergyConsumer rdf:ID=\"EnergyConsumer.H-5\">", lines[5]);
+        assertEquals("    <cim:Equipment.EquipmentContainer rdf:resource=\"#VoltageLevel.98\"/>", lines[6]);
+        assertEquals("  </cim:EnergyConsumer>", lines[7]);
+        assertEquals("</rdf:RDF>", lines[8]);
+    }
+
+    @Test
+    @Order(350)
+    void testWrite021() {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath("rdf/test021.xml")));
+        assertEquals(1, cimData.size());
+
+        assertTrue(cimData.containsKey("VoltageLevel.98"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(6, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:VoltageLevel rdf:ID=\"VoltageLevel.98\">", lines[2]);
+        assertEquals("    <cim:IdentifiedObject.name>98</cim:IdentifiedObject.name>", lines[3]);
+        assertEquals("  </cim:VoltageLevel>", lines[4]);
+        assertEquals("</rdf:RDF>", lines[5]);
+    }
+
+    @Test
     @Order(360)
     void testIsClassMatchingProfile() {
         BaseClass cimObj = new BaseVoltage();
