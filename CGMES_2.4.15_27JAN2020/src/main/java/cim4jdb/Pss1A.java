@@ -1,0 +1,900 @@
+/*
+Generated from the CGMES files via cimgen: https://github.com/sogno-platform/cimgen
+*/
+
+package cim4jdb;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * Single input power system stabilizer. It is a modified version in order to allow representation of various vendors' implementations on PSS type 1A.
+ */
+@Entity
+@SuppressWarnings("unused")
+@Table(name = "Pss1A")
+public class Pss1A extends PowerSystemStabilizerDynamics {
+
+    private static final Logging LOG = Logging.getLogger(Pss1A.class);
+
+    /**
+     * Default constructor.
+     */
+    public Pss1A() {
+        setCimType("Pss1A");
+    }
+
+    /**
+     * Notch filter parameter (A1).
+     */
+    @Column(name = "a1")
+    private Double a1; // PU
+
+    public Double getA1() {
+        return a1;
+    }
+
+    public void setA1(Double _value_) {
+        a1 = _value_;
+    }
+
+    public void setA1(String _value_) {
+        a1 = getDoubleFromString(_value_);
+    }
+
+    public String a1ToString() {
+        return a1 != null ? a1.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A2).
+     */
+    @Column(name = "a2")
+    private Double a2; // PU
+
+    public Double getA2() {
+        return a2;
+    }
+
+    public void setA2(Double _value_) {
+        a2 = _value_;
+    }
+
+    public void setA2(String _value_) {
+        a2 = getDoubleFromString(_value_);
+    }
+
+    public String a2ToString() {
+        return a2 != null ? a2.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A3).
+     */
+    @Column(name = "a3")
+    private Double a3; // PU
+
+    public Double getA3() {
+        return a3;
+    }
+
+    public void setA3(Double _value_) {
+        a3 = _value_;
+    }
+
+    public void setA3(String _value_) {
+        a3 = getDoubleFromString(_value_);
+    }
+
+    public String a3ToString() {
+        return a3 != null ? a3.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A4).
+     */
+    @Column(name = "a4")
+    private Double a4; // PU
+
+    public Double getA4() {
+        return a4;
+    }
+
+    public void setA4(Double _value_) {
+        a4 = _value_;
+    }
+
+    public void setA4(String _value_) {
+        a4 = getDoubleFromString(_value_);
+    }
+
+    public String a4ToString() {
+        return a4 != null ? a4.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A5).
+     */
+    @Column(name = "a5")
+    private Double a5; // PU
+
+    public Double getA5() {
+        return a5;
+    }
+
+    public void setA5(Double _value_) {
+        a5 = _value_;
+    }
+
+    public void setA5(String _value_) {
+        a5 = getDoubleFromString(_value_);
+    }
+
+    public String a5ToString() {
+        return a5 != null ? a5.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A6).
+     */
+    @Column(name = "a6")
+    private Double a6; // PU
+
+    public Double getA6() {
+        return a6;
+    }
+
+    public void setA6(Double _value_) {
+        a6 = _value_;
+    }
+
+    public void setA6(String _value_) {
+        a6 = getDoubleFromString(_value_);
+    }
+
+    public String a6ToString() {
+        return a6 != null ? a6.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A7).
+     */
+    @Column(name = "a7")
+    private Double a7; // PU
+
+    public Double getA7() {
+        return a7;
+    }
+
+    public void setA7(Double _value_) {
+        a7 = _value_;
+    }
+
+    public void setA7(String _value_) {
+        a7 = getDoubleFromString(_value_);
+    }
+
+    public String a7ToString() {
+        return a7 != null ? a7.toString() : null;
+    }
+
+    /**
+     * Notch filter parameter (A8).
+     */
+    @Column(name = "a8")
+    private Double a8; // PU
+
+    public Double getA8() {
+        return a8;
+    }
+
+    public void setA8(Double _value_) {
+        a8 = _value_;
+    }
+
+    public void setA8(String _value_) {
+        a8 = getDoubleFromString(_value_);
+    }
+
+    public String a8ToString() {
+        return a8 != null ? a8.toString() : null;
+    }
+
+    /**
+     * Type of input signal.
+     */
+    @Column(name = "inputSignalType")
+    private String inputSignalType; // InputSignalKind
+
+    public String getInputSignalType() {
+        return inputSignalType;
+    }
+
+    public void setInputSignalType(String _value_) {
+        inputSignalType = _value_;
+    }
+
+    public String inputSignalTypeToString() {
+        return inputSignalType;
+    }
+
+    /**
+     * Selector (Kd).  true = e used false = e not used.
+     */
+    @Column(name = "kd")
+    private Boolean kd; // Boolean
+
+    public Boolean getKd() {
+        return kd;
+    }
+
+    public void setKd(Boolean _value_) {
+        kd = _value_;
+    }
+
+    public void setKd(String _value_) {
+        kd = getBooleanFromString(_value_);
+    }
+
+    public String kdToString() {
+        return kd != null ? kd.toString() : null;
+    }
+
+    /**
+     * Stabilizer gain (Ks).
+     */
+    @Column(name = "ks")
+    private Double ks; // PU
+
+    public Double getKs() {
+        return ks;
+    }
+
+    public void setKs(Double _value_) {
+        ks = _value_;
+    }
+
+    public void setKs(String _value_) {
+        ks = getDoubleFromString(_value_);
+    }
+
+    public String ksToString() {
+        return ks != null ? ks.toString() : null;
+    }
+
+    /**
+     * Lead/lag time constant (T1).
+     */
+    @Column(name = "t1")
+    private Double t1; // Seconds
+
+    public Double getT1() {
+        return t1;
+    }
+
+    public void setT1(Double _value_) {
+        t1 = _value_;
+    }
+
+    public void setT1(String _value_) {
+        t1 = getDoubleFromString(_value_);
+    }
+
+    public String t1ToString() {
+        return t1 != null ? t1.toString() : null;
+    }
+
+    /**
+     * Lead/lag time constant (T2).
+     */
+    @Column(name = "t2")
+    private Double t2; // Seconds
+
+    public Double getT2() {
+        return t2;
+    }
+
+    public void setT2(Double _value_) {
+        t2 = _value_;
+    }
+
+    public void setT2(String _value_) {
+        t2 = getDoubleFromString(_value_);
+    }
+
+    public String t2ToString() {
+        return t2 != null ? t2.toString() : null;
+    }
+
+    /**
+     * Lead/lag time constant (T3).
+     */
+    @Column(name = "t3")
+    private Double t3; // Seconds
+
+    public Double getT3() {
+        return t3;
+    }
+
+    public void setT3(Double _value_) {
+        t3 = _value_;
+    }
+
+    public void setT3(String _value_) {
+        t3 = getDoubleFromString(_value_);
+    }
+
+    public String t3ToString() {
+        return t3 != null ? t3.toString() : null;
+    }
+
+    /**
+     * Lead/lag time constant (T4).
+     */
+    @Column(name = "t4")
+    private Double t4; // Seconds
+
+    public Double getT4() {
+        return t4;
+    }
+
+    public void setT4(Double _value_) {
+        t4 = _value_;
+    }
+
+    public void setT4(String _value_) {
+        t4 = getDoubleFromString(_value_);
+    }
+
+    public String t4ToString() {
+        return t4 != null ? t4.toString() : null;
+    }
+
+    /**
+     * Washout time constant (T5).
+     */
+    @Column(name = "t5")
+    private Double t5; // Seconds
+
+    public Double getT5() {
+        return t5;
+    }
+
+    public void setT5(Double _value_) {
+        t5 = _value_;
+    }
+
+    public void setT5(String _value_) {
+        t5 = getDoubleFromString(_value_);
+    }
+
+    public String t5ToString() {
+        return t5 != null ? t5.toString() : null;
+    }
+
+    /**
+     * Transducer time constant (T6).
+     */
+    @Column(name = "t6")
+    private Double t6; // Seconds
+
+    public Double getT6() {
+        return t6;
+    }
+
+    public void setT6(Double _value_) {
+        t6 = _value_;
+    }
+
+    public void setT6(String _value_) {
+        t6 = getDoubleFromString(_value_);
+    }
+
+    public String t6ToString() {
+        return t6 != null ? t6.toString() : null;
+    }
+
+    /**
+     * Time constant (Tdelay).
+     */
+    @Column(name = "tdelay")
+    private Double tdelay; // Seconds
+
+    public Double getTdelay() {
+        return tdelay;
+    }
+
+    public void setTdelay(Double _value_) {
+        tdelay = _value_;
+    }
+
+    public void setTdelay(String _value_) {
+        tdelay = getDoubleFromString(_value_);
+    }
+
+    public String tdelayToString() {
+        return tdelay != null ? tdelay.toString() : null;
+    }
+
+    /**
+     * Stabilizer input cutoff threshold (Vcl).
+     */
+    @Column(name = "vcl")
+    private Double vcl; // PU
+
+    public Double getVcl() {
+        return vcl;
+    }
+
+    public void setVcl(Double _value_) {
+        vcl = _value_;
+    }
+
+    public void setVcl(String _value_) {
+        vcl = getDoubleFromString(_value_);
+    }
+
+    public String vclToString() {
+        return vcl != null ? vcl.toString() : null;
+    }
+
+    /**
+     * Stabilizer input cutoff threshold (Vcu).
+     */
+    @Column(name = "vcu")
+    private Double vcu; // PU
+
+    public Double getVcu() {
+        return vcu;
+    }
+
+    public void setVcu(Double _value_) {
+        vcu = _value_;
+    }
+
+    public void setVcu(String _value_) {
+        vcu = getDoubleFromString(_value_);
+    }
+
+    public String vcuToString() {
+        return vcu != null ? vcu.toString() : null;
+    }
+
+    /**
+     * Maximum stabilizer output (Vrmax).
+     */
+    @Column(name = "vrmax")
+    private Double vrmax; // PU
+
+    public Double getVrmax() {
+        return vrmax;
+    }
+
+    public void setVrmax(Double _value_) {
+        vrmax = _value_;
+    }
+
+    public void setVrmax(String _value_) {
+        vrmax = getDoubleFromString(_value_);
+    }
+
+    public String vrmaxToString() {
+        return vrmax != null ? vrmax.toString() : null;
+    }
+
+    /**
+     * Minimum stabilizer output (Vrmin).
+     */
+    @Column(name = "vrmin")
+    private Double vrmin; // PU
+
+    public Double getVrmin() {
+        return vrmin;
+    }
+
+    public void setVrmin(Double _value_) {
+        vrmin = _value_;
+    }
+
+    public void setVrmin(String _value_) {
+        vrmin = getDoubleFromString(_value_);
+    }
+
+    public String vrminToString() {
+        return vrmin != null ? vrmin.toString() : null;
+    }
+
+    /**
+     * Nested repository. The implementation is automatically created.
+     */
+    public interface Repository extends CrudRepository<Pss1A, Long> {
+    }
+
+    /**
+     * Get a list of all attribute names of the CIM type.
+     *
+     * The list includes all inherited attributes. The attribute name is only the
+     * last part of the full name (without the class name).
+     *
+     * @return All attributes of the CIM type
+     */
+    @Override
+    public List<String> getAttributeNames() {
+        return ATTR_NAMES_LIST;
+    }
+
+    @Override
+    protected Map<String, AttrDetails> allAttrDetailsMap() {
+        Map<String, AttrDetails> map = new LinkedHashMap<>(CLASS_ATTR_DETAILS_MAP);
+        map.putAll(super.allAttrDetailsMap());
+        return map;
+    }
+
+    /**
+     * Get the full name of an attribute.
+     *
+     * The full name is "<class_name>.<attribute_name>".
+     *
+     * @param attrName The attribute name
+     * @return         The full name
+     */
+    @Override
+    public String getAttributeFullName(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).fullName : null;
+    }
+
+    /**
+     * Get an attribute value as string.
+     *
+     * @param attrName The attribute name
+     * @return         The attribute value
+     */
+    @Override
+    public String getAttribute(String attrName) {
+        return getAttribute("Pss1A", attrName);
+    }
+
+    @Override
+    protected String getAttribute(String className, String attrName) {
+        if (classGetterSetterMap.containsKey(attrName)) {
+            var getterFunction = classGetterSetterMap.get(attrName).getter;
+            return getterFunction.get();
+        }
+        return super.getAttribute(className, attrName);
+    }
+
+    /**
+     * Set an attribute value as object (for class and list attributes).
+     *
+     * @param attrName    The attribute name
+     * @param objectValue The attribute value as object
+     */
+    @Override
+    public void setAttribute(String attrName, BaseClass objectValue) {
+        setAttribute("Pss1A", attrName, objectValue);
+    }
+
+    @Override
+    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
+        if (classGetterSetterMap.containsKey(attrName)) {
+            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
+            setterFunction.accept(objectValue);
+        } else {
+            super.setAttribute(className, attrName, objectValue);
+        }
+    }
+
+    /**
+     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
+     *
+     * @param attrName    The attribute name
+     * @param stringValue The attribute value as string
+     */
+    @Override
+    public void setAttribute(String attrName, String stringValue) {
+        setAttribute("Pss1A", attrName, stringValue);
+    }
+
+    @Override
+    protected void setAttribute(String className, String attrName, String stringValue) {
+        if (classGetterSetterMap.containsKey(attrName)) {
+            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
+            setterFunction.accept(stringValue);
+        } else {
+            super.setAttribute(className, attrName, stringValue);
+        }
+    }
+
+    /**
+     * Check if the attribute is a primitive attribute.
+     *
+     * This includes datatype_attributes.
+     *
+     * @param attrName The attribute name
+     * @return         Is it a primitive attribute?
+     */
+    @Override
+    public boolean isPrimitiveAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isPrimitive;
+    }
+
+    /**
+     * Check if the attribute is an enum attribute.
+     *
+     * @param attrName The attribute name
+     * @return         Is it an enum attribute?
+     */
+    @Override
+    public boolean isEnumAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isEnum;
+    }
+
+    /**
+     * Check if the attribute is used.
+     *
+     * Some attributes are declared as unused in the CGMES definition. In most cases
+     * these are list attributes, i.e. lists of links to other CIM objects. But
+     * there are some exceptions, e.g. the list of ToplogicalNodes in
+     * TopologicalIsland.
+     *
+     * @param attrName The attribute name
+     * @return         Is the attribute used?
+     */
+    @Override
+    public boolean isUsedAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isUsed;
+    }
+
+    /**
+     * Get the namespace URL of an object of this class.
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getClassNamespaceUrl() {
+        return CLASS_NAMESPACE;
+    }
+
+    /**
+     * Get the namespace URL of an attribute (also for inherited attributes).
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getAttributeNamespaceUrl(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).nameSpace : null;
+    }
+
+    /**
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element can be found.
+     *
+     * @return All possible profiles for an object of this class
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfiles() {
+        return POSSIBLE_PROFILES;
+    }
+
+    /**
+     * This is the profile with most of the attributes.
+     * It should be used to write the data to as few as possible files.
+     *
+     * @return The recommended profiles for an object of this class
+     */
+    @Override
+    public CGMESProfile getRecommendedProfile() {
+        return RECOMMENDED_PROFILE;
+    }
+
+    /**
+     * Get the possible profiles of an attribute (also for inherited attributes).
+     *
+     * @return All possible profiles for an attribute
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleAttributeProfiles(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).profiles : null;
+    }
+
+    /**
+     * Get the possible profiles for an object of this class including the possible
+     * profiles of all direct or inherited attributes.
+     *
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element or an attribute of this element can be found.
+     *
+     * @return All possible profiles for an object of this class and its attributes
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfilesIncludingAttributes() {
+        return POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    }
+
+    /**
+     * Private infos.
+     */
+
+    private static final String CLASS_NAMESPACE = "http://iec.ch/TC57/2013/CIM-schema-cim16#";
+
+    private static final List<String> ATTR_NAMES_LIST;
+    private static final Map<String, AttrDetails> ATTR_DETAILS_MAP;
+    private static final Map<String, AttrDetails> CLASS_ATTR_DETAILS_MAP;
+    static {
+        Map<String, AttrDetails> map = new LinkedHashMap<>();
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a1", new AttrDetails("Pss1A.a1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a2", new AttrDetails("Pss1A.a2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a3", new AttrDetails("Pss1A.a3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a4", new AttrDetails("Pss1A.a4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a5", new AttrDetails("Pss1A.a5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a6", new AttrDetails("Pss1A.a6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a7", new AttrDetails("Pss1A.a7", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("a8", new AttrDetails("Pss1A.a8", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("inputSignalType", new AttrDetails("Pss1A.inputSignalType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kd", new AttrDetails("Pss1A.kd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("ks", new AttrDetails("Pss1A.ks", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t1", new AttrDetails("Pss1A.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t2", new AttrDetails("Pss1A.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t3", new AttrDetails("Pss1A.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t4", new AttrDetails("Pss1A.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t5", new AttrDetails("Pss1A.t5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t6", new AttrDetails("Pss1A.t6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("tdelay", new AttrDetails("Pss1A.tdelay", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vcl", new AttrDetails("Pss1A.vcl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vcu", new AttrDetails("Pss1A.vcu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vrmax", new AttrDetails("Pss1A.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vrmin", new AttrDetails("Pss1A.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+        }
+        CLASS_ATTR_DETAILS_MAP = map;
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Pss1A().allAttrDetailsMap());
+        ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
+    }
+
+    @Transient
+    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
+    private final Map<String, GetterSetter> fillGetterSetterMap() {
+        Map<String, GetterSetter> map = new LinkedHashMap<>();
+        map.put("a1", new GetterSetter(this::a1ToString, null, this::setA1));
+        map.put("a2", new GetterSetter(this::a2ToString, null, this::setA2));
+        map.put("a3", new GetterSetter(this::a3ToString, null, this::setA3));
+        map.put("a4", new GetterSetter(this::a4ToString, null, this::setA4));
+        map.put("a5", new GetterSetter(this::a5ToString, null, this::setA5));
+        map.put("a6", new GetterSetter(this::a6ToString, null, this::setA6));
+        map.put("a7", new GetterSetter(this::a7ToString, null, this::setA7));
+        map.put("a8", new GetterSetter(this::a8ToString, null, this::setA8));
+        map.put("inputSignalType", new GetterSetter(this::inputSignalTypeToString, null, this::setInputSignalType));
+        map.put("kd", new GetterSetter(this::kdToString, null, this::setKd));
+        map.put("ks", new GetterSetter(this::ksToString, null, this::setKs));
+        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
+        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
+        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
+        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
+        map.put("t5", new GetterSetter(this::t5ToString, null, this::setT5));
+        map.put("t6", new GetterSetter(this::t6ToString, null, this::setT6));
+        map.put("tdelay", new GetterSetter(this::tdelayToString, null, this::setTdelay));
+        map.put("vcl", new GetterSetter(this::vclToString, null, this::setVcl));
+        map.put("vcu", new GetterSetter(this::vcuToString, null, this::setVcu));
+        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
+        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
+        return map;
+    }
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.DY);
+        POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
+    }
+
+    private static final CGMESProfile RECOMMENDED_PROFILE = CGMESProfile.DY;
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>(POSSIBLE_PROFILES);
+        for (var attrDetails : ATTR_DETAILS_MAP.values()) {
+            profiles.addAll(attrDetails.profiles);
+        }
+        POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES = Collections.unmodifiableSet(profiles);
+    }
+}
