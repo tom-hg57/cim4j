@@ -52,6 +52,14 @@ public class GenICompensationForGenJ extends IdentifiedObject {
         return SynchronousMachineDynamics != null ? SynchronousMachineDynamics.getRdfid() : null;
     }
 
+    private static void setSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((GenICompensationForGenJ) _this_).setSynchronousMachineDynamics(_object_);
+    }
+
+    private static String SynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((GenICompensationForGenJ) _this_).SynchronousMachineDynamicsToString();
+    }
+
     /**
      * The standard IEEE Type 2 voltage compensator of this compensation.
      */
@@ -75,6 +83,14 @@ public class GenICompensationForGenJ extends IdentifiedObject {
         return VcompIEEEType2 != null ? VcompIEEEType2.getRdfid() : null;
     }
 
+    private static void setVcompIEEEType2(BaseClass _this_, BaseClass _object_) {
+        ((GenICompensationForGenJ) _this_).setVcompIEEEType2(_object_);
+    }
+
+    private static String VcompIEEEType2ToString(BaseClass _this_) {
+        return ((GenICompensationForGenJ) _this_).VcompIEEEType2ToString();
+    }
+
     /**
      */
     private Double rcij; // PU
@@ -95,6 +111,14 @@ public class GenICompensationForGenJ extends IdentifiedObject {
         return rcij != null ? rcij.toString() : null;
     }
 
+    private static void setRcij(BaseClass _this_, String _value_) {
+        ((GenICompensationForGenJ) _this_).setRcij(_value_);
+    }
+
+    private static String rcijToString(BaseClass _this_) {
+        return ((GenICompensationForGenJ) _this_).rcijToString();
+    }
+
     /**
      */
     private Double xcij; // PU
@@ -113,6 +137,14 @@ public class GenICompensationForGenJ extends IdentifiedObject {
 
     public String xcijToString() {
         return xcij != null ? xcij.toString() : null;
+    }
+
+    private static void setXcij(BaseClass _this_, String _value_) {
+        ((GenICompensationForGenJ) _this_).setXcij(_value_);
+    }
+
+    private static String xcijToString(BaseClass _this_) {
+        return ((GenICompensationForGenJ) _this_).xcijToString();
     }
 
     /**
@@ -156,16 +188,12 @@ public class GenICompensationForGenJ extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GenICompensationForGenJ", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GenICompensationForGenJ", attrName));
+        return "";
     }
 
     /**
@@ -176,16 +204,12 @@ public class GenICompensationForGenJ extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GenICompensationForGenJ", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GenICompensationForGenJ", attrName, objectValue));
         }
     }
 
@@ -197,16 +221,12 @@ public class GenICompensationForGenJ extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GenICompensationForGenJ", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GenICompensationForGenJ", attrName, stringValue));
         }
     }
 
@@ -330,36 +350,26 @@ public class GenICompensationForGenJ extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineDynamics", new AttrDetails("GenICompensationForGenJ.SynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SynchronousMachineDynamics", new AttrDetails("GenICompensationForGenJ.SynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GenICompensationForGenJ::SynchronousMachineDynamicsToString, GenICompensationForGenJ::setSynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VcompIEEEType2", new AttrDetails("GenICompensationForGenJ.VcompIEEEType2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("VcompIEEEType2", new AttrDetails("GenICompensationForGenJ.VcompIEEEType2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GenICompensationForGenJ::VcompIEEEType2ToString, GenICompensationForGenJ::setVcompIEEEType2, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rcij", new AttrDetails("GenICompensationForGenJ.rcij", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rcij", new AttrDetails("GenICompensationForGenJ.rcij", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GenICompensationForGenJ::rcijToString, null, GenICompensationForGenJ::setRcij));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xcij", new AttrDetails("GenICompensationForGenJ.xcij", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xcij", new AttrDetails("GenICompensationForGenJ.xcij", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GenICompensationForGenJ::xcijToString, null, GenICompensationForGenJ::setXcij));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GenICompensationForGenJ().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("SynchronousMachineDynamics", new GetterSetter(this::SynchronousMachineDynamicsToString, this::setSynchronousMachineDynamics, null));
-        map.put("VcompIEEEType2", new GetterSetter(this::VcompIEEEType2ToString, this::setVcompIEEEType2, null));
-        map.put("rcij", new GetterSetter(this::rcijToString, null, this::setRcij));
-        map.put("xcij", new GetterSetter(this::xcijToString, null, this::setXcij));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

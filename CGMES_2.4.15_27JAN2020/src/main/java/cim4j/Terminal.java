@@ -52,6 +52,14 @@ public class Terminal extends ACDCTerminal {
         return ConductingEquipment != null ? ConductingEquipment.getRdfid() : null;
     }
 
+    private static void setConductingEquipment(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setConductingEquipment(_object_);
+    }
+
+    private static String ConductingEquipmentToString(BaseClass _this_) {
+        return ((Terminal) _this_).ConductingEquipmentToString();
+    }
+
     /**
      * Terminals interconnected with zero impedance at a this connectivity node.
      */
@@ -73,6 +81,14 @@ public class Terminal extends ACDCTerminal {
 
     public String ConnectivityNodeToString() {
         return ConnectivityNode != null ? ConnectivityNode.getRdfid() : null;
+    }
+
+    private static void setConnectivityNode(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setConnectivityNode(_object_);
+    }
+
+    private static String ConnectivityNodeToString(BaseClass _this_) {
+        return ((Terminal) _this_).ConnectivityNodeToString();
     }
 
     /**
@@ -100,6 +116,14 @@ public class Terminal extends ACDCTerminal {
         return getStringFromSet(ConverterDCSides);
     }
 
+    private static void setConverterDCSides(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setConverterDCSides(_object_);
+    }
+
+    private static String ConverterDCSidesToString(BaseClass _this_) {
+        return ((Terminal) _this_).ConverterDCSidesToString();
+    }
+
     /**
      * Mutual couplings associated with the branch as the first branch.
      *
@@ -123,6 +147,14 @@ public class Terminal extends ACDCTerminal {
 
     public String HasFirstMutualCouplingToString() {
         return getStringFromSet(HasFirstMutualCoupling);
+    }
+
+    private static void setHasFirstMutualCoupling(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setHasFirstMutualCoupling(_object_);
+    }
+
+    private static String HasFirstMutualCouplingToString(BaseClass _this_) {
+        return ((Terminal) _this_).HasFirstMutualCouplingToString();
     }
 
     /**
@@ -150,6 +182,14 @@ public class Terminal extends ACDCTerminal {
         return getStringFromSet(HasSecondMutualCoupling);
     }
 
+    private static void setHasSecondMutualCoupling(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setHasSecondMutualCoupling(_object_);
+    }
+
+    private static String HasSecondMutualCouplingToString(BaseClass _this_) {
+        return ((Terminal) _this_).HasSecondMutualCouplingToString();
+    }
+
     /**
      * The terminal associated with this regulating control.  The terminal is associated instead of a node, since the terminal could connect into either a topological node (bus in bus-branch model) or a connectivity node (detailed switch model).  Sometimes it is useful to model regulation at a terminal of a bus bar object since the bus bar can be present in both a bus-branch model or a model with switch detail.
      *
@@ -173,6 +213,14 @@ public class Terminal extends ACDCTerminal {
 
     public String RegulatingControlToString() {
         return RegulatingControl != null ? RegulatingControl.getRdfid() : null;
+    }
+
+    private static void setRegulatingControl(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setRegulatingControl(_object_);
+    }
+
+    private static String RegulatingControlToString(BaseClass _this_) {
+        return ((Terminal) _this_).RegulatingControlToString();
     }
 
     /**
@@ -200,6 +248,14 @@ public class Terminal extends ACDCTerminal {
         return getStringFromSet(RemoteInputSignal);
     }
 
+    private static void setRemoteInputSignal(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setRemoteInputSignal(_object_);
+    }
+
+    private static String RemoteInputSignalToString(BaseClass _this_) {
+        return ((Terminal) _this_).RemoteInputSignalToString();
+    }
+
     /**
      * The power flow state variable associated with the terminal.
      *
@@ -223,6 +279,14 @@ public class Terminal extends ACDCTerminal {
 
     public String SvPowerFlowToString() {
         return SvPowerFlow != null ? SvPowerFlow.getRdfid() : null;
+    }
+
+    private static void setSvPowerFlow(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setSvPowerFlow(_object_);
+    }
+
+    private static String SvPowerFlowToString(BaseClass _this_) {
+        return ((Terminal) _this_).SvPowerFlowToString();
     }
 
     /**
@@ -250,6 +314,14 @@ public class Terminal extends ACDCTerminal {
         return getStringFromSet(TieFlow);
     }
 
+    private static void setTieFlow(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setTieFlow(_object_);
+    }
+
+    private static String TieFlowToString(BaseClass _this_) {
+        return ((Terminal) _this_).TieFlowToString();
+    }
+
     /**
      * The terminals associated with the topological node.   This can be used as an alternative to the connectivity node path to terminal, thus making it unneccesary to model connectivity nodes in some cases.   Note that if connectivity nodes are in the model, this association would probably not be used as an input specification.
      */
@@ -271,6 +343,14 @@ public class Terminal extends ACDCTerminal {
 
     public String TopologicalNodeToString() {
         return TopologicalNode != null ? TopologicalNode.getRdfid() : null;
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setTopologicalNode(_object_);
+    }
+
+    private static String TopologicalNodeToString(BaseClass _this_) {
+        return ((Terminal) _this_).TopologicalNodeToString();
     }
 
     /**
@@ -298,6 +378,14 @@ public class Terminal extends ACDCTerminal {
         return getStringFromSet(TransformerEnd);
     }
 
+    private static void setTransformerEnd(BaseClass _this_, BaseClass _object_) {
+        ((Terminal) _this_).setTransformerEnd(_object_);
+    }
+
+    private static String TransformerEndToString(BaseClass _this_) {
+        return ((Terminal) _this_).TransformerEndToString();
+    }
+
     /**
      * Represents the normal network phasing condition. If the attribute is missing three phases (ABC or ABCN) shall be assumed.
      */
@@ -313,6 +401,14 @@ public class Terminal extends ACDCTerminal {
 
     public String phasesToString() {
         return phases;
+    }
+
+    private static void setPhases(BaseClass _this_, String _value_) {
+        ((Terminal) _this_).setPhases(_value_);
+    }
+
+    private static String phasesToString(BaseClass _this_) {
+        return ((Terminal) _this_).phasesToString();
     }
 
     /**
@@ -356,16 +452,12 @@ public class Terminal extends ACDCTerminal {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Terminal", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Terminal", attrName));
+        return "";
     }
 
     /**
@@ -376,16 +468,12 @@ public class Terminal extends ACDCTerminal {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Terminal", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Terminal", attrName, objectValue));
         }
     }
 
@@ -397,16 +485,12 @@ public class Terminal extends ACDCTerminal {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Terminal", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Terminal", attrName, stringValue));
         }
     }
 
@@ -532,84 +616,66 @@ public class Terminal extends ACDCTerminal {
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("ConductingEquipment", new AttrDetails("Terminal.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConductingEquipment", new AttrDetails("Terminal.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::ConductingEquipmentToString, Terminal::setConductingEquipment, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ConnectivityNode", new AttrDetails("Terminal.ConnectivityNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConnectivityNode", new AttrDetails("Terminal.ConnectivityNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::ConnectivityNodeToString, Terminal::setConnectivityNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ConverterDCSides", new AttrDetails("Terminal.ConverterDCSides", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConverterDCSides", new AttrDetails("Terminal.ConverterDCSides", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::ConverterDCSidesToString, Terminal::setConverterDCSides, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HasFirstMutualCoupling", new AttrDetails("Terminal.HasFirstMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("HasFirstMutualCoupling", new AttrDetails("Terminal.HasFirstMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::HasFirstMutualCouplingToString, Terminal::setHasFirstMutualCoupling, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HasSecondMutualCoupling", new AttrDetails("Terminal.HasSecondMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("HasSecondMutualCoupling", new AttrDetails("Terminal.HasSecondMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::HasSecondMutualCouplingToString, Terminal::setHasSecondMutualCoupling, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RegulatingControl", new AttrDetails("Terminal.RegulatingControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RegulatingControl", new AttrDetails("Terminal.RegulatingControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::RegulatingControlToString, Terminal::setRegulatingControl, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("RemoteInputSignal", new AttrDetails("Terminal.RemoteInputSignal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RemoteInputSignal", new AttrDetails("Terminal.RemoteInputSignal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::RemoteInputSignalToString, Terminal::setRemoteInputSignal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvPowerFlow", new AttrDetails("Terminal.SvPowerFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SvPowerFlow", new AttrDetails("Terminal.SvPowerFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::SvPowerFlowToString, Terminal::setSvPowerFlow, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TieFlow", new AttrDetails("Terminal.TieFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TieFlow", new AttrDetails("Terminal.TieFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::TieFlowToString, Terminal::setTieFlow, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("Terminal.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("Terminal.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::TopologicalNodeToString, Terminal::setTopologicalNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TransformerEnd", new AttrDetails("Terminal.TransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TransformerEnd", new AttrDetails("Terminal.TransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::TransformerEndToString, Terminal::setTransformerEnd, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("phases", new AttrDetails("Terminal.phases", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("phases", new AttrDetails("Terminal.phases", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Terminal::phasesToString, null, Terminal::setPhases));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Terminal().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConductingEquipment", new GetterSetter(this::ConductingEquipmentToString, this::setConductingEquipment, null));
-        map.put("ConnectivityNode", new GetterSetter(this::ConnectivityNodeToString, this::setConnectivityNode, null));
-        map.put("ConverterDCSides", new GetterSetter(this::ConverterDCSidesToString, this::setConverterDCSides, null));
-        map.put("HasFirstMutualCoupling", new GetterSetter(this::HasFirstMutualCouplingToString, this::setHasFirstMutualCoupling, null));
-        map.put("HasSecondMutualCoupling", new GetterSetter(this::HasSecondMutualCouplingToString, this::setHasSecondMutualCoupling, null));
-        map.put("RegulatingControl", new GetterSetter(this::RegulatingControlToString, this::setRegulatingControl, null));
-        map.put("RemoteInputSignal", new GetterSetter(this::RemoteInputSignalToString, this::setRemoteInputSignal, null));
-        map.put("SvPowerFlow", new GetterSetter(this::SvPowerFlowToString, this::setSvPowerFlow, null));
-        map.put("TieFlow", new GetterSetter(this::TieFlowToString, this::setTieFlow, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("TransformerEnd", new GetterSetter(this::TransformerEndToString, this::setTransformerEnd, null));
-        map.put("phases", new GetterSetter(this::phasesToString, null, this::setPhases));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

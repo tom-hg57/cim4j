@@ -52,6 +52,14 @@ public class Command extends Control {
         return DiscreteValue != null ? DiscreteValue.getRdfid() : null;
     }
 
+    private static void setDiscreteValue(BaseClass _this_, BaseClass _object_) {
+        ((Command) _this_).setDiscreteValue(_object_);
+    }
+
+    private static String DiscreteValueToString(BaseClass _this_) {
+        return ((Command) _this_).DiscreteValueToString();
+    }
+
     /**
      * The ValueAliasSet used for translation of a Control value to a name.
      */
@@ -75,6 +83,14 @@ public class Command extends Control {
         return ValueAliasSet != null ? ValueAliasSet.getRdfid() : null;
     }
 
+    private static void setValueAliasSet(BaseClass _this_, BaseClass _object_) {
+        ((Command) _this_).setValueAliasSet(_object_);
+    }
+
+    private static String ValueAliasSetToString(BaseClass _this_) {
+        return ((Command) _this_).ValueAliasSetToString();
+    }
+
     /**
      * Normal value for Control.value e.g. used for percentage scaling.
      */
@@ -96,6 +112,14 @@ public class Command extends Control {
         return normalValue != null ? normalValue.toString() : null;
     }
 
+    private static void setNormalValue(BaseClass _this_, String _value_) {
+        ((Command) _this_).setNormalValue(_value_);
+    }
+
+    private static String normalValueToString(BaseClass _this_) {
+        return ((Command) _this_).normalValueToString();
+    }
+
     /**
      * The value representing the actuator output.
      */
@@ -115,6 +139,14 @@ public class Command extends Control {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((Command) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((Command) _this_).valueToString();
     }
 
     /**
@@ -158,16 +190,12 @@ public class Command extends Control {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Command", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Command", attrName));
+        return "";
     }
 
     /**
@@ -178,16 +206,12 @@ public class Command extends Control {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Command", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Command", attrName, objectValue));
         }
     }
 
@@ -199,16 +223,12 @@ public class Command extends Control {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Command", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Command", attrName, stringValue));
         }
     }
 
@@ -332,36 +352,26 @@ public class Command extends Control {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("DiscreteValue", new AttrDetails("Command.DiscreteValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiscreteValue", new AttrDetails("Command.DiscreteValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Command::DiscreteValueToString, Command::setDiscreteValue, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ValueAliasSet", new AttrDetails("Command.ValueAliasSet", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ValueAliasSet", new AttrDetails("Command.ValueAliasSet", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Command::ValueAliasSetToString, Command::setValueAliasSet, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("normalValue", new AttrDetails("Command.normalValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("normalValue", new AttrDetails("Command.normalValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Command::normalValueToString, null, Command::setNormalValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value", new AttrDetails("Command.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value", new AttrDetails("Command.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Command::valueToString, null, Command::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Command().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiscreteValue", new GetterSetter(this::DiscreteValueToString, this::setDiscreteValue, null));
-        map.put("ValueAliasSet", new GetterSetter(this::ValueAliasSetToString, this::setValueAliasSet, null));
-        map.put("normalValue", new GetterSetter(this::normalValueToString, null, this::setNormalValue));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

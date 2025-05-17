@@ -54,6 +54,14 @@ public class MeasurementValue extends IdentifiedObject {
         return MeasurementValueQuality != null ? MeasurementValueQuality.getRdfid() : null;
     }
 
+    private static void setMeasurementValueQuality(BaseClass _this_, BaseClass _object_) {
+        ((MeasurementValue) _this_).setMeasurementValueQuality(_object_);
+    }
+
+    private static String MeasurementValueQualityToString(BaseClass _this_) {
+        return ((MeasurementValue) _this_).MeasurementValueQualityToString();
+    }
+
     /**
      * The MeasurementValues updated by the source.
      */
@@ -77,6 +85,14 @@ public class MeasurementValue extends IdentifiedObject {
         return MeasurementValueSource != null ? MeasurementValueSource.getRdfid() : null;
     }
 
+    private static void setMeasurementValueSource(BaseClass _this_, BaseClass _object_) {
+        ((MeasurementValue) _this_).setMeasurementValueSource(_object_);
+    }
+
+    private static String MeasurementValueSourceToString(BaseClass _this_) {
+        return ((MeasurementValue) _this_).MeasurementValueSourceToString();
+    }
+
     /**
      * The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions.
      */
@@ -98,6 +114,14 @@ public class MeasurementValue extends IdentifiedObject {
         return sensorAccuracy != null ? sensorAccuracy.toString() : null;
     }
 
+    private static void setSensorAccuracy(BaseClass _this_, String _value_) {
+        ((MeasurementValue) _this_).setSensorAccuracy(_value_);
+    }
+
+    private static String sensorAccuracyToString(BaseClass _this_) {
+        return ((MeasurementValue) _this_).sensorAccuracyToString();
+    }
+
     /**
      * The time when the value was last updated
      */
@@ -113,6 +137,14 @@ public class MeasurementValue extends IdentifiedObject {
 
     public String timeStampToString() {
         return timeStamp != null ? timeStamp.toString() : null;
+    }
+
+    private static void setTimeStamp(BaseClass _this_, String _value_) {
+        ((MeasurementValue) _this_).setTimeStamp(_value_);
+    }
+
+    private static String timeStampToString(BaseClass _this_) {
+        return ((MeasurementValue) _this_).timeStampToString();
     }
 
     /**
@@ -156,16 +188,12 @@ public class MeasurementValue extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("MeasurementValue", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "MeasurementValue", attrName));
+        return "";
     }
 
     /**
@@ -176,16 +204,12 @@ public class MeasurementValue extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("MeasurementValue", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MeasurementValue", attrName, objectValue));
         }
     }
 
@@ -197,16 +221,12 @@ public class MeasurementValue extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("MeasurementValue", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MeasurementValue", attrName, stringValue));
         }
     }
 
@@ -330,36 +350,26 @@ public class MeasurementValue extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("MeasurementValueQuality", new AttrDetails("MeasurementValue.MeasurementValueQuality", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("MeasurementValueQuality", new AttrDetails("MeasurementValue.MeasurementValueQuality", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, MeasurementValue::MeasurementValueQualityToString, MeasurementValue::setMeasurementValueQuality, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("MeasurementValueSource", new AttrDetails("MeasurementValue.MeasurementValueSource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("MeasurementValueSource", new AttrDetails("MeasurementValue.MeasurementValueSource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, MeasurementValue::MeasurementValueSourceToString, MeasurementValue::setMeasurementValueSource, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("sensorAccuracy", new AttrDetails("MeasurementValue.sensorAccuracy", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("sensorAccuracy", new AttrDetails("MeasurementValue.sensorAccuracy", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MeasurementValue::sensorAccuracyToString, null, MeasurementValue::setSensorAccuracy));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("timeStamp", new AttrDetails("MeasurementValue.timeStamp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("timeStamp", new AttrDetails("MeasurementValue.timeStamp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MeasurementValue::timeStampToString, null, MeasurementValue::setTimeStamp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValue().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("MeasurementValueQuality", new GetterSetter(this::MeasurementValueQualityToString, this::setMeasurementValueQuality, null));
-        map.put("MeasurementValueSource", new GetterSetter(this::MeasurementValueSourceToString, this::setMeasurementValueSource, null));
-        map.put("sensorAccuracy", new GetterSetter(this::sensorAccuracyToString, null, this::setSensorAccuracy));
-        map.put("timeStamp", new GetterSetter(this::timeStampToString, null, this::setTimeStamp));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

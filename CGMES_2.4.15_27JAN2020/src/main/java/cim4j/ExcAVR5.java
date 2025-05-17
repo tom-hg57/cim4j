@@ -50,6 +50,14 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
         return ka != null ? ka.toString() : null;
     }
 
+    private static void setKa(BaseClass _this_, String _value_) {
+        ((ExcAVR5) _this_).setKa(_value_);
+    }
+
+    private static String kaToString(BaseClass _this_) {
+        return ((ExcAVR5) _this_).kaToString();
+    }
+
     /**
      * Effective Output Resistance (Rex). Rex represents the effective output resistance seen by the excitation system.
      */
@@ -71,6 +79,14 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
         return rex != null ? rex.toString() : null;
     }
 
+    private static void setRex(BaseClass _this_, String _value_) {
+        ((ExcAVR5) _this_).setRex(_value_);
+    }
+
+    private static String rexToString(BaseClass _this_) {
+        return ((ExcAVR5) _this_).rexToString();
+    }
+
     /**
      * Time constant (Ta).
      */
@@ -90,6 +106,14 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
 
     public String taToString() {
         return ta != null ? ta.toString() : null;
+    }
+
+    private static void setTa(BaseClass _this_, String _value_) {
+        ((ExcAVR5) _this_).setTa(_value_);
+    }
+
+    private static String taToString(BaseClass _this_) {
+        return ((ExcAVR5) _this_).taToString();
     }
 
     /**
@@ -133,16 +157,12 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcAVR5", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcAVR5", attrName));
+        return "";
     }
 
     /**
@@ -153,16 +173,12 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcAVR5", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcAVR5", attrName, objectValue));
         }
     }
 
@@ -174,16 +190,12 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcAVR5", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcAVR5", attrName, stringValue));
         }
     }
 
@@ -307,30 +319,21 @@ public class ExcAVR5 extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ka", new AttrDetails("ExcAVR5.ka", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ka", new AttrDetails("ExcAVR5.ka", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR5::kaToString, null, ExcAVR5::setKa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rex", new AttrDetails("ExcAVR5.rex", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rex", new AttrDetails("ExcAVR5.rex", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR5::rexToString, null, ExcAVR5::setRex));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta", new AttrDetails("ExcAVR5.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ta", new AttrDetails("ExcAVR5.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR5::taToString, null, ExcAVR5::setTa));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAVR5().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ka", new GetterSetter(this::kaToString, null, this::setKa));
-        map.put("rex", new GetterSetter(this::rexToString, null, this::setRex));
-        map.put("ta", new GetterSetter(this::taToString, null, this::setTa));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

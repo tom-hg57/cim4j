@@ -54,6 +54,14 @@ public class WindGenType3bIEC extends WindGenType3IEC {
         return getStringFromSet(WindDynamicsLookupTable);
     }
 
+    private static void setWindDynamicsLookupTable(BaseClass _this_, BaseClass _object_) {
+        ((WindGenType3bIEC) _this_).setWindDynamicsLookupTable(_object_);
+    }
+
+    private static String WindDynamicsLookupTableToString(BaseClass _this_) {
+        return ((WindGenType3bIEC) _this_).WindDynamicsLookupTableToString();
+    }
+
     /**
      * Crowbar control mode (&lt;i&gt;M&lt;/i&gt;&lt;i&gt;&lt;sub&gt;WTcwp&lt;/sub&gt;&lt;/i&gt;). It is a case-dependent parameter. true = 1 in the IEC model false = 0 in the IEC model.
      */
@@ -73,6 +81,14 @@ public class WindGenType3bIEC extends WindGenType3IEC {
 
     public String mwtcwpToString() {
         return mwtcwp != null ? mwtcwp.toString() : null;
+    }
+
+    private static void setMwtcwp(BaseClass _this_, String _value_) {
+        ((WindGenType3bIEC) _this_).setMwtcwp(_value_);
+    }
+
+    private static String mwtcwpToString(BaseClass _this_) {
+        return ((WindGenType3bIEC) _this_).mwtcwpToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class WindGenType3bIEC extends WindGenType3IEC {
         return tg != null ? tg.toString() : null;
     }
 
+    private static void setTg(BaseClass _this_, String _value_) {
+        ((WindGenType3bIEC) _this_).setTg(_value_);
+    }
+
+    private static String tgToString(BaseClass _this_) {
+        return ((WindGenType3bIEC) _this_).tgToString();
+    }
+
     /**
      * Time constant for crowbar washout filter (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;wo&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0). It is a case-dependent parameter.
      */
@@ -115,6 +139,14 @@ public class WindGenType3bIEC extends WindGenType3IEC {
 
     public String twoToString() {
         return two != null ? two.toString() : null;
+    }
+
+    private static void setTwo(BaseClass _this_, String _value_) {
+        ((WindGenType3bIEC) _this_).setTwo(_value_);
+    }
+
+    private static String twoToString(BaseClass _this_) {
+        return ((WindGenType3bIEC) _this_).twoToString();
     }
 
     /**
@@ -158,16 +190,12 @@ public class WindGenType3bIEC extends WindGenType3IEC {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindGenType3bIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindGenType3bIEC", attrName));
+        return "";
     }
 
     /**
@@ -178,16 +206,12 @@ public class WindGenType3bIEC extends WindGenType3IEC {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindGenType3bIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindGenType3bIEC", attrName, objectValue));
         }
     }
 
@@ -199,16 +223,12 @@ public class WindGenType3bIEC extends WindGenType3IEC {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindGenType3bIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindGenType3bIEC", attrName, stringValue));
         }
     }
 
@@ -332,36 +352,26 @@ public class WindGenType3bIEC extends WindGenType3IEC {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindDynamicsLookupTable", new AttrDetails("WindGenType3bIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindDynamicsLookupTable", new AttrDetails("WindGenType3bIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindGenType3bIEC::WindDynamicsLookupTableToString, WindGenType3bIEC::setWindDynamicsLookupTable, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mwtcwp", new AttrDetails("WindGenType3bIEC.mwtcwp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("mwtcwp", new AttrDetails("WindGenType3bIEC.mwtcwp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindGenType3bIEC::mwtcwpToString, null, WindGenType3bIEC::setMwtcwp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tg", new AttrDetails("WindGenType3bIEC.tg", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tg", new AttrDetails("WindGenType3bIEC.tg", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindGenType3bIEC::tgToString, null, WindGenType3bIEC::setTg));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("two", new AttrDetails("WindGenType3bIEC.two", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("two", new AttrDetails("WindGenType3bIEC.two", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindGenType3bIEC::twoToString, null, WindGenType3bIEC::setTwo));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenType3bIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindDynamicsLookupTable", new GetterSetter(this::WindDynamicsLookupTableToString, this::setWindDynamicsLookupTable, null));
-        map.put("mwtcwp", new GetterSetter(this::mwtcwpToString, null, this::setMwtcwp));
-        map.put("tg", new GetterSetter(this::tgToString, null, this::setTg));
-        map.put("two", new GetterSetter(this::twoToString, null, this::setTwo));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

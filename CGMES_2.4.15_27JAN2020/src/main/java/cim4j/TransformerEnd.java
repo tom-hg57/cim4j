@@ -52,6 +52,14 @@ public class TransformerEnd extends IdentifiedObject {
         return BaseVoltage != null ? BaseVoltage.getRdfid() : null;
     }
 
+    private static void setBaseVoltage(BaseClass _this_, BaseClass _object_) {
+        ((TransformerEnd) _this_).setBaseVoltage(_object_);
+    }
+
+    private static String BaseVoltageToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).BaseVoltageToString();
+    }
+
     /**
      * Transformer end to which this phase tap changer belongs.
      *
@@ -75,6 +83,14 @@ public class TransformerEnd extends IdentifiedObject {
 
     public String PhaseTapChangerToString() {
         return PhaseTapChanger != null ? PhaseTapChanger.getRdfid() : null;
+    }
+
+    private static void setPhaseTapChanger(BaseClass _this_, BaseClass _object_) {
+        ((TransformerEnd) _this_).setPhaseTapChanger(_object_);
+    }
+
+    private static String PhaseTapChangerToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).PhaseTapChangerToString();
     }
 
     /**
@@ -102,6 +118,14 @@ public class TransformerEnd extends IdentifiedObject {
         return RatioTapChanger != null ? RatioTapChanger.getRdfid() : null;
     }
 
+    private static void setRatioTapChanger(BaseClass _this_, BaseClass _object_) {
+        ((TransformerEnd) _this_).setRatioTapChanger(_object_);
+    }
+
+    private static String RatioTapChangerToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).RatioTapChangerToString();
+    }
+
     /**
      * Terminal of the power transformer to which this transformer end belongs.
      */
@@ -125,6 +149,14 @@ public class TransformerEnd extends IdentifiedObject {
         return Terminal != null ? Terminal.getRdfid() : null;
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((TransformerEnd) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).TerminalToString();
+    }
+
     /**
      * Number for this transformer end, corresponding to the end`s order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number.
      */
@@ -144,6 +176,14 @@ public class TransformerEnd extends IdentifiedObject {
 
     public String endNumberToString() {
         return endNumber != null ? endNumber.toString() : null;
+    }
+
+    private static void setEndNumber(BaseClass _this_, String _value_) {
+        ((TransformerEnd) _this_).setEndNumber(_value_);
+    }
+
+    private static String endNumberToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).endNumberToString();
     }
 
     /**
@@ -167,6 +207,14 @@ public class TransformerEnd extends IdentifiedObject {
         return grounded != null ? grounded.toString() : null;
     }
 
+    private static void setGrounded(BaseClass _this_, String _value_) {
+        ((TransformerEnd) _this_).setGrounded(_value_);
+    }
+
+    private static String groundedToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).groundedToString();
+    }
+
     /**
      * (for Yn and Zn connections) Resistance part of neutral impedance where `grounded` is true.
      */
@@ -188,6 +236,14 @@ public class TransformerEnd extends IdentifiedObject {
         return rground != null ? rground.toString() : null;
     }
 
+    private static void setRground(BaseClass _this_, String _value_) {
+        ((TransformerEnd) _this_).setRground(_value_);
+    }
+
+    private static String rgroundToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).rgroundToString();
+    }
+
     /**
      * (for Yn and Zn connections) Reactive part of neutral impedance where `grounded` is true.
      */
@@ -207,6 +263,14 @@ public class TransformerEnd extends IdentifiedObject {
 
     public String xgroundToString() {
         return xground != null ? xground.toString() : null;
+    }
+
+    private static void setXground(BaseClass _this_, String _value_) {
+        ((TransformerEnd) _this_).setXground(_value_);
+    }
+
+    private static String xgroundToString(BaseClass _this_) {
+        return ((TransformerEnd) _this_).xgroundToString();
     }
 
     /**
@@ -250,16 +314,12 @@ public class TransformerEnd extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TransformerEnd", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TransformerEnd", attrName));
+        return "";
     }
 
     /**
@@ -270,16 +330,12 @@ public class TransformerEnd extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TransformerEnd", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TransformerEnd", attrName, objectValue));
         }
     }
 
@@ -291,16 +347,12 @@ public class TransformerEnd extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TransformerEnd", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TransformerEnd", attrName, stringValue));
         }
     }
 
@@ -424,60 +476,46 @@ public class TransformerEnd extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("BaseVoltage", new AttrDetails("TransformerEnd.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("BaseVoltage", new AttrDetails("TransformerEnd.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TransformerEnd::BaseVoltageToString, TransformerEnd::setBaseVoltage, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PhaseTapChanger", new AttrDetails("TransformerEnd.PhaseTapChanger", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PhaseTapChanger", new AttrDetails("TransformerEnd.PhaseTapChanger", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TransformerEnd::PhaseTapChangerToString, TransformerEnd::setPhaseTapChanger, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RatioTapChanger", new AttrDetails("TransformerEnd.RatioTapChanger", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RatioTapChanger", new AttrDetails("TransformerEnd.RatioTapChanger", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TransformerEnd::RatioTapChangerToString, TransformerEnd::setRatioTapChanger, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminal", new AttrDetails("TransformerEnd.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("TransformerEnd.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TransformerEnd::TerminalToString, TransformerEnd::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("endNumber", new AttrDetails("TransformerEnd.endNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("endNumber", new AttrDetails("TransformerEnd.endNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TransformerEnd::endNumberToString, null, TransformerEnd::setEndNumber));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("grounded", new AttrDetails("TransformerEnd.grounded", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("grounded", new AttrDetails("TransformerEnd.grounded", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TransformerEnd::groundedToString, null, TransformerEnd::setGrounded));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("rground", new AttrDetails("TransformerEnd.rground", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rground", new AttrDetails("TransformerEnd.rground", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TransformerEnd::rgroundToString, null, TransformerEnd::setRground));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xground", new AttrDetails("TransformerEnd.xground", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xground", new AttrDetails("TransformerEnd.xground", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TransformerEnd::xgroundToString, null, TransformerEnd::setXground));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TransformerEnd().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("BaseVoltage", new GetterSetter(this::BaseVoltageToString, this::setBaseVoltage, null));
-        map.put("PhaseTapChanger", new GetterSetter(this::PhaseTapChangerToString, this::setPhaseTapChanger, null));
-        map.put("RatioTapChanger", new GetterSetter(this::RatioTapChangerToString, this::setRatioTapChanger, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("endNumber", new GetterSetter(this::endNumberToString, null, this::setEndNumber));
-        map.put("grounded", new GetterSetter(this::groundedToString, null, this::setGrounded));
-        map.put("rground", new GetterSetter(this::rgroundToString, null, this::setRground));
-        map.put("xground", new GetterSetter(this::xgroundToString, null, this::setXground));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

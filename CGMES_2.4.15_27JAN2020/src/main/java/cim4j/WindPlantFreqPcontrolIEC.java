@@ -54,6 +54,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return getStringFromSet(WindDynamicsLookupTable);
     }
 
+    private static void setWindDynamicsLookupTable(BaseClass _this_, BaseClass _object_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setWindDynamicsLookupTable(_object_);
+    }
+
+    private static String WindDynamicsLookupTableToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).WindDynamicsLookupTableToString();
+    }
+
     /**
      * Wind plant model with which this wind plant frequency and active power control is associated.
      *
@@ -79,6 +87,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return WindPlantIEC != null ? WindPlantIEC.getRdfid() : null;
     }
 
+    private static void setWindPlantIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setWindPlantIEC(_object_);
+    }
+
+    private static String WindPlantIECToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).WindPlantIECToString();
+    }
+
     /**
      * Maximum ramp rate of  request from the plant controller to the wind turbines (). It is project dependent parameter.
      */
@@ -98,6 +114,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
 
     public String dprefmaxToString() {
         return dprefmax != null ? dprefmax.toString() : null;
+    }
+
+    private static void setDprefmax(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setDprefmax(_value_);
+    }
+
+    private static String dprefmaxToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).dprefmaxToString();
     }
 
     /**
@@ -121,6 +145,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return dprefmin != null ? dprefmin.toString() : null;
     }
 
+    private static void setDprefmin(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setDprefmin(_value_);
+    }
+
+    private static String dprefminToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).dprefminToString();
+    }
+
     /**
      * Plant P controller integral gain (). It is type dependent parameter.
      */
@@ -140,6 +172,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
 
     public String kiwppToString() {
         return kiwpp != null ? kiwpp.toString() : null;
+    }
+
+    private static void setKiwpp(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setKiwpp(_value_);
+    }
+
+    private static String kiwppToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).kiwppToString();
     }
 
     /**
@@ -163,6 +203,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return kpwpp != null ? kpwpp.toString() : null;
     }
 
+    private static void setKpwpp(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setKpwpp(_value_);
+    }
+
+    private static String kpwppToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).kpwppToString();
+    }
+
     /**
      * Maximum  request from the plant controller to the wind turbines (). It is type dependent parameter.
      */
@@ -182,6 +230,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
 
     public String prefmaxToString() {
         return prefmax != null ? prefmax.toString() : null;
+    }
+
+    private static void setPrefmax(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setPrefmax(_value_);
+    }
+
+    private static String prefmaxToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).prefmaxToString();
     }
 
     /**
@@ -205,6 +261,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return prefmin != null ? prefmin.toString() : null;
     }
 
+    private static void setPrefmin(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setPrefmin(_value_);
+    }
+
+    private static String prefminToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).prefminToString();
+    }
+
     /**
      * Lead time constant in reference value transfer function (). It is type dependent parameter.
      */
@@ -224,6 +288,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
 
     public String tpftToString() {
         return tpft != null ? tpft.toString() : null;
+    }
+
+    private static void setTpft(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setTpft(_value_);
+    }
+
+    private static String tpftToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).tpftToString();
     }
 
     /**
@@ -247,6 +319,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return tpfv != null ? tpfv.toString() : null;
     }
 
+    private static void setTpfv(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setTpfv(_value_);
+    }
+
+    private static String tpfvToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).tpfvToString();
+    }
+
     /**
      * Filter time constant for frequency measurement (). It is type dependent parameter.
      */
@@ -268,6 +348,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         return twpffilt != null ? twpffilt.toString() : null;
     }
 
+    private static void setTwpffilt(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setTwpffilt(_value_);
+    }
+
+    private static String twpffiltToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).twpffiltToString();
+    }
+
     /**
      * Filter time constant for active power measurement (). It is type dependent parameter.
      */
@@ -287,6 +375,14 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
 
     public String twppfiltToString() {
         return twppfilt != null ? twppfilt.toString() : null;
+    }
+
+    private static void setTwppfilt(BaseClass _this_, String _value_) {
+        ((WindPlantFreqPcontrolIEC) _this_).setTwppfilt(_value_);
+    }
+
+    private static String twppfiltToString(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).twppfiltToString();
     }
 
     /**
@@ -330,16 +426,12 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindPlantFreqPcontrolIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindPlantFreqPcontrolIEC", attrName));
+        return "";
     }
 
     /**
@@ -350,16 +442,12 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindPlantFreqPcontrolIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindPlantFreqPcontrolIEC", attrName, objectValue));
         }
     }
 
@@ -371,16 +459,12 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindPlantFreqPcontrolIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindPlantFreqPcontrolIEC", attrName, stringValue));
         }
     }
 
@@ -504,84 +588,66 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindDynamicsLookupTable", new AttrDetails("WindPlantFreqPcontrolIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindDynamicsLookupTable", new AttrDetails("WindPlantFreqPcontrolIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindPlantFreqPcontrolIEC::WindDynamicsLookupTableToString, WindPlantFreqPcontrolIEC::setWindDynamicsLookupTable, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantIEC", new AttrDetails("WindPlantFreqPcontrolIEC.WindPlantIEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindPlantIEC", new AttrDetails("WindPlantFreqPcontrolIEC.WindPlantIEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindPlantFreqPcontrolIEC::WindPlantIECToString, WindPlantFreqPcontrolIEC::setWindPlantIEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dprefmax", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dprefmax", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::dprefmaxToString, null, WindPlantFreqPcontrolIEC::setDprefmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dprefmin", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dprefmin", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::dprefminToString, null, WindPlantFreqPcontrolIEC::setDprefmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kiwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kiwpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kiwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kiwpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::kiwppToString, null, WindPlantFreqPcontrolIEC::setKiwpp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kpwpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kpwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kpwpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::kpwppToString, null, WindPlantFreqPcontrolIEC::setKpwpp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("prefmax", new AttrDetails("WindPlantFreqPcontrolIEC.prefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("prefmax", new AttrDetails("WindPlantFreqPcontrolIEC.prefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::prefmaxToString, null, WindPlantFreqPcontrolIEC::setPrefmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("prefmin", new AttrDetails("WindPlantFreqPcontrolIEC.prefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("prefmin", new AttrDetails("WindPlantFreqPcontrolIEC.prefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::prefminToString, null, WindPlantFreqPcontrolIEC::setPrefmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpft", new AttrDetails("WindPlantFreqPcontrolIEC.tpft", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpft", new AttrDetails("WindPlantFreqPcontrolIEC.tpft", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::tpftToString, null, WindPlantFreqPcontrolIEC::setTpft));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpfv", new AttrDetails("WindPlantFreqPcontrolIEC.tpfv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpfv", new AttrDetails("WindPlantFreqPcontrolIEC.tpfv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::tpfvToString, null, WindPlantFreqPcontrolIEC::setTpfv));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("twpffilt", new AttrDetails("WindPlantFreqPcontrolIEC.twpffilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("twpffilt", new AttrDetails("WindPlantFreqPcontrolIEC.twpffilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::twpffiltToString, null, WindPlantFreqPcontrolIEC::setTwpffilt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("twppfilt", new AttrDetails("WindPlantFreqPcontrolIEC.twppfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("twppfilt", new AttrDetails("WindPlantFreqPcontrolIEC.twppfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::twppfiltToString, null, WindPlantFreqPcontrolIEC::setTwppfilt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantFreqPcontrolIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindDynamicsLookupTable", new GetterSetter(this::WindDynamicsLookupTableToString, this::setWindDynamicsLookupTable, null));
-        map.put("WindPlantIEC", new GetterSetter(this::WindPlantIECToString, this::setWindPlantIEC, null));
-        map.put("dprefmax", new GetterSetter(this::dprefmaxToString, null, this::setDprefmax));
-        map.put("dprefmin", new GetterSetter(this::dprefminToString, null, this::setDprefmin));
-        map.put("kiwpp", new GetterSetter(this::kiwppToString, null, this::setKiwpp));
-        map.put("kpwpp", new GetterSetter(this::kpwppToString, null, this::setKpwpp));
-        map.put("prefmax", new GetterSetter(this::prefmaxToString, null, this::setPrefmax));
-        map.put("prefmin", new GetterSetter(this::prefminToString, null, this::setPrefmin));
-        map.put("tpft", new GetterSetter(this::tpftToString, null, this::setTpft));
-        map.put("tpfv", new GetterSetter(this::tpfvToString, null, this::setTpfv));
-        map.put("twpffilt", new GetterSetter(this::twpffiltToString, null, this::setTwpffilt));
-        map.put("twppfilt", new GetterSetter(this::twppfiltToString, null, this::setTwppfilt));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

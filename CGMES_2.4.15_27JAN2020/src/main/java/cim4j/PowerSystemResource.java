@@ -54,6 +54,14 @@ public class PowerSystemResource extends IdentifiedObject {
         return getStringFromSet(Controls);
     }
 
+    private static void setControls(BaseClass _this_, BaseClass _object_) {
+        ((PowerSystemResource) _this_).setControls(_object_);
+    }
+
+    private static String ControlsToString(BaseClass _this_) {
+        return ((PowerSystemResource) _this_).ControlsToString();
+    }
+
     /**
      * Location of this power system resource.
      *
@@ -79,6 +87,14 @@ public class PowerSystemResource extends IdentifiedObject {
         return Location != null ? Location.getRdfid() : null;
     }
 
+    private static void setLocation(BaseClass _this_, BaseClass _object_) {
+        ((PowerSystemResource) _this_).setLocation(_object_);
+    }
+
+    private static String LocationToString(BaseClass _this_) {
+        return ((PowerSystemResource) _this_).LocationToString();
+    }
+
     /**
      * The power system resource that contains the measurement.
      *
@@ -102,6 +118,14 @@ public class PowerSystemResource extends IdentifiedObject {
 
     public String MeasurementsToString() {
         return getStringFromSet(Measurements);
+    }
+
+    private static void setMeasurements(BaseClass _this_, BaseClass _object_) {
+        ((PowerSystemResource) _this_).setMeasurements(_object_);
+    }
+
+    private static String MeasurementsToString(BaseClass _this_) {
+        return ((PowerSystemResource) _this_).MeasurementsToString();
     }
 
     /**
@@ -145,16 +169,12 @@ public class PowerSystemResource extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PowerSystemResource", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerSystemResource", attrName));
+        return "";
     }
 
     /**
@@ -165,16 +185,12 @@ public class PowerSystemResource extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerSystemResource", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerSystemResource", attrName, objectValue));
         }
     }
 
@@ -186,16 +202,12 @@ public class PowerSystemResource extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerSystemResource", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerSystemResource", attrName, stringValue));
         }
     }
 
@@ -319,30 +331,21 @@ public class PowerSystemResource extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Controls", new AttrDetails("PowerSystemResource.Controls", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Controls", new AttrDetails("PowerSystemResource.Controls", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PowerSystemResource::ControlsToString, PowerSystemResource::setControls, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("Location", new AttrDetails("PowerSystemResource.Location", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Location", new AttrDetails("PowerSystemResource.Location", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PowerSystemResource::LocationToString, PowerSystemResource::setLocation, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Measurements", new AttrDetails("PowerSystemResource.Measurements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Measurements", new AttrDetails("PowerSystemResource.Measurements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PowerSystemResource::MeasurementsToString, PowerSystemResource::setMeasurements, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemResource().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Controls", new GetterSetter(this::ControlsToString, this::setControls, null));
-        map.put("Location", new GetterSetter(this::LocationToString, this::setLocation, null));
-        map.put("Measurements", new GetterSetter(this::MeasurementsToString, this::setMeasurements, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

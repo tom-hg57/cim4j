@@ -50,6 +50,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return bp != null ? bp.toString() : null;
     }
 
+    private static void setBp(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setBp(_value_);
+    }
+
+    private static String bpToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).bpToString();
+    }
+
     /**
      * Compressor gain (K).  Typical Value = 0.
      */
@@ -69,6 +77,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
 
     public String ktmToString() {
         return ktm != null ? ktm.toString() : null;
+    }
+
+    private static void setKtm(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setKtm(_value_);
+    }
+
+    private static String ktmToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).ktmToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return mnef != null ? mnef.toString() : null;
     }
 
+    private static void setMnef(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setMnef(_value_);
+    }
+
+    private static String mnefToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).mnefToString();
+    }
+
     /**
      * Fuel flow maximum positive error value (MX).  Typical Value = 0.05.
      */
@@ -111,6 +135,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
 
     public String mxefToString() {
         return mxef != null ? mxef.toString() : null;
+    }
+
+    private static void setMxef(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setMxef(_value_);
+    }
+
+    private static String mxefToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).mxefToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return rymn != null ? rymn.toString() : null;
     }
 
+    private static void setRymn(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setRymn(_value_);
+    }
+
+    private static String rymnToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).rymnToString();
+    }
+
     /**
      * Maximum valve opening (RYMX).  Typical Value = 1.1.
      */
@@ -153,6 +193,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
 
     public String rymxToString() {
         return rymx != null ? rymx.toString() : null;
+    }
+
+    private static void setRymx(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setRymx(_value_);
+    }
+
+    private static String rymxToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).rymxToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return ta != null ? ta.toString() : null;
     }
 
+    private static void setTa(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setTa(_value_);
+    }
+
+    private static String taToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).taToString();
+    }
+
     /**
      * Maximum gate closing velocity (T).  Typical Value = 0.5.
      */
@@ -195,6 +251,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
 
     public String tcToString() {
         return tc != null ? tc.toString() : null;
+    }
+
+    private static void setTc(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setTc(_value_);
+    }
+
+    private static String tcToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).tcToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return tcm != null ? tcm.toString() : null;
     }
 
+    private static void setTcm(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setTcm(_value_);
+    }
+
+    private static String tcmToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).tcmToString();
+    }
+
     /**
      * Compressor discharge volume time constant (T).  Typical Value = 0.2.
      */
@@ -239,6 +311,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         return tm != null ? tm.toString() : null;
     }
 
+    private static void setTm(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setTm(_value_);
+    }
+
+    private static String tmToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).tmToString();
+    }
+
     /**
      * Time constant of fuel valve positioner (T).  Typical Value = 0.1.
      */
@@ -258,6 +338,14 @@ public class GovGAST4 extends TurbineGovernorDynamics {
 
     public String tvToString() {
         return tv != null ? tv.toString() : null;
+    }
+
+    private static void setTv(BaseClass _this_, String _value_) {
+        ((GovGAST4) _this_).setTv(_value_);
+    }
+
+    private static String tvToString(BaseClass _this_) {
+        return ((GovGAST4) _this_).tvToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class GovGAST4 extends TurbineGovernorDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GovGAST4", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GovGAST4", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class GovGAST4 extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GovGAST4", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovGAST4", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class GovGAST4 extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GovGAST4", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovGAST4", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class GovGAST4 extends TurbineGovernorDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("bp", new AttrDetails("GovGAST4.bp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bp", new AttrDetails("GovGAST4.bp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::bpToString, null, GovGAST4::setBp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ktm", new AttrDetails("GovGAST4.ktm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ktm", new AttrDetails("GovGAST4.ktm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::ktmToString, null, GovGAST4::setKtm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mnef", new AttrDetails("GovGAST4.mnef", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mnef", new AttrDetails("GovGAST4.mnef", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::mnefToString, null, GovGAST4::setMnef));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mxef", new AttrDetails("GovGAST4.mxef", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mxef", new AttrDetails("GovGAST4.mxef", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::mxefToString, null, GovGAST4::setMxef));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rymn", new AttrDetails("GovGAST4.rymn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rymn", new AttrDetails("GovGAST4.rymn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::rymnToString, null, GovGAST4::setRymn));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rymx", new AttrDetails("GovGAST4.rymx", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rymx", new AttrDetails("GovGAST4.rymx", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::rymxToString, null, GovGAST4::setRymx));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta", new AttrDetails("GovGAST4.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ta", new AttrDetails("GovGAST4.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::taToString, null, GovGAST4::setTa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc", new AttrDetails("GovGAST4.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tc", new AttrDetails("GovGAST4.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::tcToString, null, GovGAST4::setTc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tcm", new AttrDetails("GovGAST4.tcm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tcm", new AttrDetails("GovGAST4.tcm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::tcmToString, null, GovGAST4::setTcm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tm", new AttrDetails("GovGAST4.tm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tm", new AttrDetails("GovGAST4.tm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::tmToString, null, GovGAST4::setTm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tv", new AttrDetails("GovGAST4.tv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tv", new AttrDetails("GovGAST4.tv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST4::tvToString, null, GovGAST4::setTv));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGAST4().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("bp", new GetterSetter(this::bpToString, null, this::setBp));
-        map.put("ktm", new GetterSetter(this::ktmToString, null, this::setKtm));
-        map.put("mnef", new GetterSetter(this::mnefToString, null, this::setMnef));
-        map.put("mxef", new GetterSetter(this::mxefToString, null, this::setMxef));
-        map.put("rymn", new GetterSetter(this::rymnToString, null, this::setRymn));
-        map.put("rymx", new GetterSetter(this::rymxToString, null, this::setRymx));
-        map.put("ta", new GetterSetter(this::taToString, null, this::setTa));
-        map.put("tc", new GetterSetter(this::tcToString, null, this::setTc));
-        map.put("tcm", new GetterSetter(this::tcmToString, null, this::setTcm));
-        map.put("tm", new GetterSetter(this::tmToString, null, this::setTm));
-        map.put("tv", new GetterSetter(this::tvToString, null, this::setTv));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

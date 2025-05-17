@@ -52,6 +52,14 @@ public class RemoteInputSignal extends IdentifiedObject {
         return DiscontinuousExcitationControlDynamics != null ? DiscontinuousExcitationControlDynamics.getRdfid() : null;
     }
 
+    private static void setDiscontinuousExcitationControlDynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setDiscontinuousExcitationControlDynamics(_object_);
+    }
+
+    private static String DiscontinuousExcitationControlDynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).DiscontinuousExcitationControlDynamicsToString();
+    }
+
     /**
      * Power Factor or VAr controller Type I model using this remote input signal.
      */
@@ -73,6 +81,14 @@ public class RemoteInputSignal extends IdentifiedObject {
 
     public String PFVArControllerType1DynamicsToString() {
         return PFVArControllerType1Dynamics != null ? PFVArControllerType1Dynamics.getRdfid() : null;
+    }
+
+    private static void setPFVArControllerType1Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setPFVArControllerType1Dynamics(_object_);
+    }
+
+    private static String PFVArControllerType1DynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).PFVArControllerType1DynamicsToString();
     }
 
     /**
@@ -98,6 +114,14 @@ public class RemoteInputSignal extends IdentifiedObject {
         return PowerSystemStabilizerDynamics != null ? PowerSystemStabilizerDynamics.getRdfid() : null;
     }
 
+    private static void setPowerSystemStabilizerDynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setPowerSystemStabilizerDynamics(_object_);
+    }
+
+    private static String PowerSystemStabilizerDynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).PowerSystemStabilizerDynamicsToString();
+    }
+
     /**
      * Remote terminal with which this input signal is associated.
      */
@@ -119,6 +143,14 @@ public class RemoteInputSignal extends IdentifiedObject {
 
     public String TerminalToString() {
         return Terminal != null ? Terminal.getRdfid() : null;
+    }
+
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).TerminalToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class RemoteInputSignal extends IdentifiedObject {
         return UnderexcitationLimiterDynamics != null ? UnderexcitationLimiterDynamics.getRdfid() : null;
     }
 
+    private static void setUnderexcitationLimiterDynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setUnderexcitationLimiterDynamics(_object_);
+    }
+
+    private static String UnderexcitationLimiterDynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).UnderexcitationLimiterDynamicsToString();
+    }
+
     /**
      * Voltage compensator model using this remote input signal.
      */
@@ -165,6 +205,14 @@ public class RemoteInputSignal extends IdentifiedObject {
 
     public String VoltageCompensatorDynamicsToString() {
         return VoltageCompensatorDynamics != null ? VoltageCompensatorDynamics.getRdfid() : null;
+    }
+
+    private static void setVoltageCompensatorDynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setVoltageCompensatorDynamics(_object_);
+    }
+
+    private static String VoltageCompensatorDynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).VoltageCompensatorDynamicsToString();
     }
 
     /**
@@ -192,6 +240,14 @@ public class RemoteInputSignal extends IdentifiedObject {
         return WindPlantDynamics != null ? WindPlantDynamics.getRdfid() : null;
     }
 
+    private static void setWindPlantDynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setWindPlantDynamics(_object_);
+    }
+
+    private static String WindPlantDynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).WindPlantDynamicsToString();
+    }
+
     /**
      * Wind generator Type 1 or Type 2 model using this remote input signal.
      *
@@ -215,6 +271,14 @@ public class RemoteInputSignal extends IdentifiedObject {
 
     public String WindTurbineType1or2DynamicsToString() {
         return WindTurbineType1or2Dynamics != null ? WindTurbineType1or2Dynamics.getRdfid() : null;
+    }
+
+    private static void setWindTurbineType1or2Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setWindTurbineType1or2Dynamics(_object_);
+    }
+
+    private static String WindTurbineType1or2DynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).WindTurbineType1or2DynamicsToString();
     }
 
     /**
@@ -242,6 +306,14 @@ public class RemoteInputSignal extends IdentifiedObject {
         return WindTurbineType3or4Dynamics != null ? WindTurbineType3or4Dynamics.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((RemoteInputSignal) _this_).setWindTurbineType3or4Dynamics(_object_);
+    }
+
+    private static String WindTurbineType3or4DynamicsToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).WindTurbineType3or4DynamicsToString();
+    }
+
     /**
      * Type of input signal.
      */
@@ -257,6 +329,14 @@ public class RemoteInputSignal extends IdentifiedObject {
 
     public String remoteSignalTypeToString() {
         return remoteSignalType;
+    }
+
+    private static void setRemoteSignalType(BaseClass _this_, String _value_) {
+        ((RemoteInputSignal) _this_).setRemoteSignalType(_value_);
+    }
+
+    private static String remoteSignalTypeToString(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).remoteSignalTypeToString();
     }
 
     /**
@@ -300,16 +380,12 @@ public class RemoteInputSignal extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RemoteInputSignal", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RemoteInputSignal", attrName));
+        return "";
     }
 
     /**
@@ -320,16 +396,12 @@ public class RemoteInputSignal extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RemoteInputSignal", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RemoteInputSignal", attrName, objectValue));
         }
     }
 
@@ -341,16 +413,12 @@ public class RemoteInputSignal extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RemoteInputSignal", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RemoteInputSignal", attrName, stringValue));
         }
     }
 
@@ -474,72 +542,56 @@ public class RemoteInputSignal extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("RemoteInputSignal.DiscontinuousExcitationControlDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("RemoteInputSignal.DiscontinuousExcitationControlDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::DiscontinuousExcitationControlDynamicsToString, RemoteInputSignal::setDiscontinuousExcitationControlDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1Dynamics", new AttrDetails("RemoteInputSignal.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PFVArControllerType1Dynamics", new AttrDetails("RemoteInputSignal.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::PFVArControllerType1DynamicsToString, RemoteInputSignal::setPFVArControllerType1Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerSystemStabilizerDynamics", new AttrDetails("RemoteInputSignal.PowerSystemStabilizerDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PowerSystemStabilizerDynamics", new AttrDetails("RemoteInputSignal.PowerSystemStabilizerDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::PowerSystemStabilizerDynamicsToString, RemoteInputSignal::setPowerSystemStabilizerDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("Terminal", new AttrDetails("RemoteInputSignal.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("RemoteInputSignal.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::TerminalToString, RemoteInputSignal::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("UnderexcitationLimiterDynamics", new AttrDetails("RemoteInputSignal.UnderexcitationLimiterDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("UnderexcitationLimiterDynamics", new AttrDetails("RemoteInputSignal.UnderexcitationLimiterDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::UnderexcitationLimiterDynamicsToString, RemoteInputSignal::setUnderexcitationLimiterDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageCompensatorDynamics", new AttrDetails("RemoteInputSignal.VoltageCompensatorDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("VoltageCompensatorDynamics", new AttrDetails("RemoteInputSignal.VoltageCompensatorDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::VoltageCompensatorDynamicsToString, RemoteInputSignal::setVoltageCompensatorDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantDynamics", new AttrDetails("RemoteInputSignal.WindPlantDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindPlantDynamics", new AttrDetails("RemoteInputSignal.WindPlantDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::WindPlantDynamicsToString, RemoteInputSignal::setWindPlantDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType1or2Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType1or2Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType1or2Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType1or2Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::WindTurbineType1or2DynamicsToString, RemoteInputSignal::setWindTurbineType1or2Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType3or4Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RemoteInputSignal::WindTurbineType3or4DynamicsToString, RemoteInputSignal::setWindTurbineType3or4Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("remoteSignalType", new AttrDetails("RemoteInputSignal.remoteSignalType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("remoteSignalType", new AttrDetails("RemoteInputSignal.remoteSignalType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, RemoteInputSignal::remoteSignalTypeToString, null, RemoteInputSignal::setRemoteSignalType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RemoteInputSignal().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiscontinuousExcitationControlDynamics", new GetterSetter(this::DiscontinuousExcitationControlDynamicsToString, this::setDiscontinuousExcitationControlDynamics, null));
-        map.put("PFVArControllerType1Dynamics", new GetterSetter(this::PFVArControllerType1DynamicsToString, this::setPFVArControllerType1Dynamics, null));
-        map.put("PowerSystemStabilizerDynamics", new GetterSetter(this::PowerSystemStabilizerDynamicsToString, this::setPowerSystemStabilizerDynamics, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("UnderexcitationLimiterDynamics", new GetterSetter(this::UnderexcitationLimiterDynamicsToString, this::setUnderexcitationLimiterDynamics, null));
-        map.put("VoltageCompensatorDynamics", new GetterSetter(this::VoltageCompensatorDynamicsToString, this::setVoltageCompensatorDynamics, null));
-        map.put("WindPlantDynamics", new GetterSetter(this::WindPlantDynamicsToString, this::setWindPlantDynamics, null));
-        map.put("WindTurbineType1or2Dynamics", new GetterSetter(this::WindTurbineType1or2DynamicsToString, this::setWindTurbineType1or2Dynamics, null));
-        map.put("WindTurbineType3or4Dynamics", new GetterSetter(this::WindTurbineType3or4DynamicsToString, this::setWindTurbineType3or4Dynamics, null));
-        map.put("remoteSignalType", new GetterSetter(this::remoteSignalTypeToString, null, this::setRemoteSignalType));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

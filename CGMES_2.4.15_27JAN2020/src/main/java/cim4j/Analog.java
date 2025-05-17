@@ -54,6 +54,14 @@ public class Analog extends Measurement {
         return getStringFromSet(AnalogValues);
     }
 
+    private static void setAnalogValues(BaseClass _this_, BaseClass _object_) {
+        ((Analog) _this_).setAnalogValues(_object_);
+    }
+
+    private static String AnalogValuesToString(BaseClass _this_) {
+        return ((Analog) _this_).AnalogValuesToString();
+    }
+
     /**
      * The Measurements using the LimitSet.
      *
@@ -79,6 +87,14 @@ public class Analog extends Measurement {
         return getStringFromSet(LimitSets);
     }
 
+    private static void setLimitSets(BaseClass _this_, BaseClass _object_) {
+        ((Analog) _this_).setLimitSets(_object_);
+    }
+
+    private static String LimitSetsToString(BaseClass _this_) {
+        return ((Analog) _this_).LimitSetsToString();
+    }
+
     /**
      * If true then this measurement is an active power, reactive power or current with the convention that a positive value measured at the Terminal means power is flowing into the related PowerSystemResource.
      */
@@ -98,6 +114,14 @@ public class Analog extends Measurement {
 
     public String positiveFlowInToString() {
         return positiveFlowIn != null ? positiveFlowIn.toString() : null;
+    }
+
+    private static void setPositiveFlowIn(BaseClass _this_, String _value_) {
+        ((Analog) _this_).setPositiveFlowIn(_value_);
+    }
+
+    private static String positiveFlowInToString(BaseClass _this_) {
+        return ((Analog) _this_).positiveFlowInToString();
     }
 
     /**
@@ -141,16 +165,12 @@ public class Analog extends Measurement {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Analog", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Analog", attrName));
+        return "";
     }
 
     /**
@@ -161,16 +181,12 @@ public class Analog extends Measurement {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Analog", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Analog", attrName, objectValue));
         }
     }
 
@@ -182,16 +198,12 @@ public class Analog extends Measurement {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Analog", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Analog", attrName, stringValue));
         }
     }
 
@@ -315,30 +327,21 @@ public class Analog extends Measurement {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("AnalogValues", new AttrDetails("Analog.AnalogValues", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AnalogValues", new AttrDetails("Analog.AnalogValues", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Analog::AnalogValuesToString, Analog::setAnalogValues, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("LimitSets", new AttrDetails("Analog.LimitSets", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("LimitSets", new AttrDetails("Analog.LimitSets", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Analog::LimitSetsToString, Analog::setLimitSets, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("positiveFlowIn", new AttrDetails("Analog.positiveFlowIn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("positiveFlowIn", new AttrDetails("Analog.positiveFlowIn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Analog::positiveFlowInToString, null, Analog::setPositiveFlowIn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Analog().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AnalogValues", new GetterSetter(this::AnalogValuesToString, this::setAnalogValues, null));
-        map.put("LimitSets", new GetterSetter(this::LimitSetsToString, this::setLimitSets, null));
-        map.put("positiveFlowIn", new GetterSetter(this::positiveFlowInToString, null, this::setPositiveFlowIn));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

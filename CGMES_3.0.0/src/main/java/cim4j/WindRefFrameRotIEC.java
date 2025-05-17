@@ -54,6 +54,14 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
         return WindTurbineType3or4IEC != null ? WindTurbineType3or4IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindRefFrameRotIEC) _this_).setWindTurbineType3or4IEC(_object_);
+    }
+
+    private static String WindTurbineType3or4IECToString(BaseClass _this_) {
+        return ((WindRefFrameRotIEC) _this_).WindTurbineType3or4IECToString();
+    }
+
     /**
      * Time constant for PLL first order filter model (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;PLL&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0). It is a type-dependent parameter.
      */
@@ -73,6 +81,14 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
 
     public String tpllToString() {
         return tpll != null ? tpll.toString() : null;
+    }
+
+    private static void setTpll(BaseClass _this_, String _value_) {
+        ((WindRefFrameRotIEC) _this_).setTpll(_value_);
+    }
+
+    private static String tpllToString(BaseClass _this_) {
+        return ((WindRefFrameRotIEC) _this_).tpllToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
         return upll1 != null ? upll1.toString() : null;
     }
 
+    private static void setUpll1(BaseClass _this_, String _value_) {
+        ((WindRefFrameRotIEC) _this_).setUpll1(_value_);
+    }
+
+    private static String upll1ToString(BaseClass _this_) {
+        return ((WindRefFrameRotIEC) _this_).upll1ToString();
+    }
+
     /**
      * Voltage (&lt;i&gt;u&lt;/i&gt;&lt;i&gt;&lt;sub&gt;PLL2&lt;/sub&gt;&lt;/i&gt;) below which the angle of the voltage is frozen if &lt;i&gt;u&lt;/i&gt;&lt;i&gt;&lt;sub&gt;PLL2&lt;/sub&gt;&lt;/i&gt;&lt;sub&gt; &lt;/sub&gt;is smaller or equal to &lt;i&gt;u&lt;/i&gt;&lt;i&gt;&lt;sub&gt;PLL1&lt;/sub&gt;&lt;/i&gt; . It is a type-dependent parameter.
      */
@@ -115,6 +139,14 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
 
     public String upll2ToString() {
         return upll2 != null ? upll2.toString() : null;
+    }
+
+    private static void setUpll2(BaseClass _this_, String _value_) {
+        ((WindRefFrameRotIEC) _this_).setUpll2(_value_);
+    }
+
+    private static String upll2ToString(BaseClass _this_) {
+        return ((WindRefFrameRotIEC) _this_).upll2ToString();
     }
 
     /**
@@ -158,16 +190,12 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindRefFrameRotIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindRefFrameRotIEC", attrName));
+        return "";
     }
 
     /**
@@ -178,16 +206,12 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindRefFrameRotIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindRefFrameRotIEC", attrName, objectValue));
         }
     }
 
@@ -199,16 +223,12 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindRefFrameRotIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindRefFrameRotIEC", attrName, stringValue));
         }
     }
 
@@ -332,36 +352,26 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4IEC", new AttrDetails("WindRefFrameRotIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3or4IEC", new AttrDetails("WindRefFrameRotIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindRefFrameRotIEC::WindTurbineType3or4IECToString, WindRefFrameRotIEC::setWindTurbineType3or4IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpll", new AttrDetails("WindRefFrameRotIEC.tpll", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tpll", new AttrDetails("WindRefFrameRotIEC.tpll", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindRefFrameRotIEC::tpllToString, null, WindRefFrameRotIEC::setTpll));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("upll1", new AttrDetails("WindRefFrameRotIEC.upll1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("upll1", new AttrDetails("WindRefFrameRotIEC.upll1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindRefFrameRotIEC::upll1ToString, null, WindRefFrameRotIEC::setUpll1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("upll2", new AttrDetails("WindRefFrameRotIEC.upll2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("upll2", new AttrDetails("WindRefFrameRotIEC.upll2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindRefFrameRotIEC::upll2ToString, null, WindRefFrameRotIEC::setUpll2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindRefFrameRotIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindTurbineType3or4IEC", new GetterSetter(this::WindTurbineType3or4IECToString, this::setWindTurbineType3or4IEC, null));
-        map.put("tpll", new GetterSetter(this::tpllToString, null, this::setTpll));
-        map.put("upll1", new GetterSetter(this::upll1ToString, null, this::setUpll1));
-        map.put("upll2", new GetterSetter(this::upll2ToString, null, this::setUpll2));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

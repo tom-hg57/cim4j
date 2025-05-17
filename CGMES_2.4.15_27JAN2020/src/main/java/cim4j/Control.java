@@ -52,6 +52,14 @@ public class Control extends IdentifiedObject {
         return PowerSystemResource != null ? PowerSystemResource.getRdfid() : null;
     }
 
+    private static void setPowerSystemResource(BaseClass _this_, BaseClass _object_) {
+        ((Control) _this_).setPowerSystemResource(_object_);
+    }
+
+    private static String PowerSystemResourceToString(BaseClass _this_) {
+        return ((Control) _this_).PowerSystemResourceToString();
+    }
+
     /**
      * Specifies the type of Control, e.g. BreakerOn/Off, GeneratorVoltageSetPoint, TieLineFlow etc. The ControlType.name shall be unique among all specified types and describe the type.
      */
@@ -67,6 +75,14 @@ public class Control extends IdentifiedObject {
 
     public String controlTypeToString() {
         return controlType != null ? controlType.toString() : null;
+    }
+
+    private static void setControlType(BaseClass _this_, String _value_) {
+        ((Control) _this_).setControlType(_value_);
+    }
+
+    private static String controlTypeToString(BaseClass _this_) {
+        return ((Control) _this_).controlTypeToString();
     }
 
     /**
@@ -90,6 +106,14 @@ public class Control extends IdentifiedObject {
         return operationInProgress != null ? operationInProgress.toString() : null;
     }
 
+    private static void setOperationInProgress(BaseClass _this_, String _value_) {
+        ((Control) _this_).setOperationInProgress(_value_);
+    }
+
+    private static String operationInProgressToString(BaseClass _this_) {
+        return ((Control) _this_).operationInProgressToString();
+    }
+
     /**
      * The last time a control output was sent.
      */
@@ -105,6 +129,14 @@ public class Control extends IdentifiedObject {
 
     public String timeStampToString() {
         return timeStamp != null ? timeStamp.toString() : null;
+    }
+
+    private static void setTimeStamp(BaseClass _this_, String _value_) {
+        ((Control) _this_).setTimeStamp(_value_);
+    }
+
+    private static String timeStampToString(BaseClass _this_) {
+        return ((Control) _this_).timeStampToString();
     }
 
     /**
@@ -124,6 +156,14 @@ public class Control extends IdentifiedObject {
         return unitMultiplier;
     }
 
+    private static void setUnitMultiplier(BaseClass _this_, String _value_) {
+        ((Control) _this_).setUnitMultiplier(_value_);
+    }
+
+    private static String unitMultiplierToString(BaseClass _this_) {
+        return ((Control) _this_).unitMultiplierToString();
+    }
+
     /**
      * The unit of measure of the controlled quantity.
      */
@@ -139,6 +179,14 @@ public class Control extends IdentifiedObject {
 
     public String unitSymbolToString() {
         return unitSymbol;
+    }
+
+    private static void setUnitSymbol(BaseClass _this_, String _value_) {
+        ((Control) _this_).setUnitSymbol(_value_);
+    }
+
+    private static String unitSymbolToString(BaseClass _this_) {
+        return ((Control) _this_).unitSymbolToString();
     }
 
     /**
@@ -182,16 +230,12 @@ public class Control extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Control", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Control", attrName));
+        return "";
     }
 
     /**
@@ -202,16 +246,12 @@ public class Control extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Control", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Control", attrName, objectValue));
         }
     }
 
@@ -223,16 +263,12 @@ public class Control extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Control", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Control", attrName, stringValue));
         }
     }
 
@@ -356,48 +392,36 @@ public class Control extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PowerSystemResource", new AttrDetails("Control.PowerSystemResource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PowerSystemResource", new AttrDetails("Control.PowerSystemResource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Control::PowerSystemResourceToString, Control::setPowerSystemResource, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("controlType", new AttrDetails("Control.controlType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("controlType", new AttrDetails("Control.controlType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Control::controlTypeToString, null, Control::setControlType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("operationInProgress", new AttrDetails("Control.operationInProgress", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("operationInProgress", new AttrDetails("Control.operationInProgress", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Control::operationInProgressToString, null, Control::setOperationInProgress));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("timeStamp", new AttrDetails("Control.timeStamp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("timeStamp", new AttrDetails("Control.timeStamp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Control::timeStampToString, null, Control::setTimeStamp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("unitMultiplier", new AttrDetails("Control.unitMultiplier", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("unitMultiplier", new AttrDetails("Control.unitMultiplier", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Control::unitMultiplierToString, null, Control::setUnitMultiplier));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("unitSymbol", new AttrDetails("Control.unitSymbol", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("unitSymbol", new AttrDetails("Control.unitSymbol", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Control::unitSymbolToString, null, Control::setUnitSymbol));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Control().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerSystemResource", new GetterSetter(this::PowerSystemResourceToString, this::setPowerSystemResource, null));
-        map.put("controlType", new GetterSetter(this::controlTypeToString, null, this::setControlType));
-        map.put("operationInProgress", new GetterSetter(this::operationInProgressToString, null, this::setOperationInProgress));
-        map.put("timeStamp", new GetterSetter(this::timeStampToString, null, this::setTimeStamp));
-        map.put("unitMultiplier", new GetterSetter(this::unitMultiplierToString, null, this::setUnitMultiplier));
-        map.put("unitSymbol", new GetterSetter(this::unitSymbolToString, null, this::setUnitSymbol));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

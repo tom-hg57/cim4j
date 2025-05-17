@@ -52,6 +52,14 @@ public class SubLoadArea extends EnergyArea {
         return LoadArea != null ? LoadArea.getRdfid() : null;
     }
 
+    private static void setLoadArea(BaseClass _this_, BaseClass _object_) {
+        ((SubLoadArea) _this_).setLoadArea(_object_);
+    }
+
+    private static String LoadAreaToString(BaseClass _this_) {
+        return ((SubLoadArea) _this_).LoadAreaToString();
+    }
+
     /**
      * The Loadgroups in the SubLoadArea.
      *
@@ -75,6 +83,14 @@ public class SubLoadArea extends EnergyArea {
 
     public String LoadGroupsToString() {
         return getStringFromSet(LoadGroups);
+    }
+
+    private static void setLoadGroups(BaseClass _this_, BaseClass _object_) {
+        ((SubLoadArea) _this_).setLoadGroups(_object_);
+    }
+
+    private static String LoadGroupsToString(BaseClass _this_) {
+        return ((SubLoadArea) _this_).LoadGroupsToString();
     }
 
     /**
@@ -118,16 +134,12 @@ public class SubLoadArea extends EnergyArea {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SubLoadArea", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SubLoadArea", attrName));
+        return "";
     }
 
     /**
@@ -138,16 +150,12 @@ public class SubLoadArea extends EnergyArea {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SubLoadArea", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SubLoadArea", attrName, objectValue));
         }
     }
 
@@ -159,16 +167,12 @@ public class SubLoadArea extends EnergyArea {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SubLoadArea", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SubLoadArea", attrName, stringValue));
         }
     }
 
@@ -292,24 +296,16 @@ public class SubLoadArea extends EnergyArea {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("LoadArea", new AttrDetails("SubLoadArea.LoadArea", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadArea", new AttrDetails("SubLoadArea.LoadArea", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, SubLoadArea::LoadAreaToString, SubLoadArea::setLoadArea, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("LoadGroups", new AttrDetails("SubLoadArea.LoadGroups", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadGroups", new AttrDetails("SubLoadArea.LoadGroups", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SubLoadArea::LoadGroupsToString, SubLoadArea::setLoadGroups, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubLoadArea().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("LoadArea", new GetterSetter(this::LoadAreaToString, this::setLoadArea, null));
-        map.put("LoadGroups", new GetterSetter(this::LoadGroupsToString, this::setLoadGroups, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

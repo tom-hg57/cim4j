@@ -52,6 +52,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
         return NonlinearShuntCompensator != null ? NonlinearShuntCompensator.getRdfid() : null;
     }
 
+    private static void setNonlinearShuntCompensator(BaseClass _this_, BaseClass _object_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setNonlinearShuntCompensator(_object_);
+    }
+
+    private static String NonlinearShuntCompensatorToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).NonlinearShuntCompensatorToString();
+    }
+
     /**
      * Positive sequence shunt (charging) susceptance per section
      */
@@ -71,6 +79,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
 
     public String bToString() {
         return b != null ? b.toString() : null;
+    }
+
+    private static void setB(BaseClass _this_, String _value_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).bToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
         return b0 != null ? b0.toString() : null;
     }
 
+    private static void setB0(BaseClass _this_, String _value_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setB0(_value_);
+    }
+
+    private static String b0ToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).b0ToString();
+    }
+
     /**
      * Positive sequence shunt (charging) conductance per section
      */
@@ -113,6 +137,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
 
     public String gToString() {
         return g != null ? g.toString() : null;
+    }
+
+    private static void setG(BaseClass _this_, String _value_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setG(_value_);
+    }
+
+    private static String gToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).gToString();
     }
 
     /**
@@ -136,6 +168,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
         return g0 != null ? g0.toString() : null;
     }
 
+    private static void setG0(BaseClass _this_, String _value_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setG0(_value_);
+    }
+
+    private static String g0ToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).g0ToString();
+    }
+
     /**
      * The number of the section.
      */
@@ -155,6 +195,14 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
 
     public String sectionNumberToString() {
         return sectionNumber != null ? sectionNumber.toString() : null;
+    }
+
+    private static void setSectionNumber(BaseClass _this_, String _value_) {
+        ((NonlinearShuntCompensatorPoint) _this_).setSectionNumber(_value_);
+    }
+
+    private static String sectionNumberToString(BaseClass _this_) {
+        return ((NonlinearShuntCompensatorPoint) _this_).sectionNumberToString();
     }
 
     /**
@@ -198,16 +246,12 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("NonlinearShuntCompensatorPoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "NonlinearShuntCompensatorPoint", attrName));
+        return "";
     }
 
     /**
@@ -218,16 +262,12 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("NonlinearShuntCompensatorPoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "NonlinearShuntCompensatorPoint", attrName, objectValue));
         }
     }
 
@@ -239,16 +279,12 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("NonlinearShuntCompensatorPoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "NonlinearShuntCompensatorPoint", attrName, stringValue));
         }
     }
 
@@ -372,48 +408,36 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("NonlinearShuntCompensator", new AttrDetails("NonlinearShuntCompensatorPoint.NonlinearShuntCompensator", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("NonlinearShuntCompensator", new AttrDetails("NonlinearShuntCompensatorPoint.NonlinearShuntCompensator", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, NonlinearShuntCompensatorPoint::NonlinearShuntCompensatorToString, NonlinearShuntCompensatorPoint::setNonlinearShuntCompensator, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b", new AttrDetails("NonlinearShuntCompensatorPoint.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b", new AttrDetails("NonlinearShuntCompensatorPoint.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::bToString, null, NonlinearShuntCompensatorPoint::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b0", new AttrDetails("NonlinearShuntCompensatorPoint.b0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b0", new AttrDetails("NonlinearShuntCompensatorPoint.b0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::b0ToString, null, NonlinearShuntCompensatorPoint::setB0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g", new AttrDetails("NonlinearShuntCompensatorPoint.g", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("g", new AttrDetails("NonlinearShuntCompensatorPoint.g", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::gToString, null, NonlinearShuntCompensatorPoint::setG));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g0", new AttrDetails("NonlinearShuntCompensatorPoint.g0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("g0", new AttrDetails("NonlinearShuntCompensatorPoint.g0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::g0ToString, null, NonlinearShuntCompensatorPoint::setG0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("sectionNumber", new AttrDetails("NonlinearShuntCompensatorPoint.sectionNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("sectionNumber", new AttrDetails("NonlinearShuntCompensatorPoint.sectionNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::sectionNumberToString, null, NonlinearShuntCompensatorPoint::setSectionNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonlinearShuntCompensatorPoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("NonlinearShuntCompensator", new GetterSetter(this::NonlinearShuntCompensatorToString, this::setNonlinearShuntCompensator, null));
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("b0", new GetterSetter(this::b0ToString, null, this::setB0));
-        map.put("g", new GetterSetter(this::gToString, null, this::setG));
-        map.put("g0", new GetterSetter(this::g0ToString, null, this::setG0));
-        map.put("sectionNumber", new GetterSetter(this::sectionNumberToString, null, this::setSectionNumber));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

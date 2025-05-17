@@ -50,6 +50,14 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
         return stepPhaseShiftIncrement != null ? stepPhaseShiftIncrement.toString() : null;
     }
 
+    private static void setStepPhaseShiftIncrement(BaseClass _this_, String _value_) {
+        ((PhaseTapChangerLinear) _this_).setStepPhaseShiftIncrement(_value_);
+    }
+
+    private static String stepPhaseShiftIncrementToString(BaseClass _this_) {
+        return ((PhaseTapChangerLinear) _this_).stepPhaseShiftIncrementToString();
+    }
+
     /**
      * The reactance depend on the tap position according to a `u` shaped curve. The maximum reactance (xMax) appear at the low and high tap positions.
      */
@@ -71,6 +79,14 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
         return xMax != null ? xMax.toString() : null;
     }
 
+    private static void setXMax(BaseClass _this_, String _value_) {
+        ((PhaseTapChangerLinear) _this_).setXMax(_value_);
+    }
+
+    private static String xMaxToString(BaseClass _this_) {
+        return ((PhaseTapChangerLinear) _this_).xMaxToString();
+    }
+
     /**
      * The reactance depend on the tap position according to a `u` shaped curve. The minimum reactance (xMin) appear at the mid tap position.
      */
@@ -90,6 +106,14 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
 
     public String xMinToString() {
         return xMin != null ? xMin.toString() : null;
+    }
+
+    private static void setXMin(BaseClass _this_, String _value_) {
+        ((PhaseTapChangerLinear) _this_).setXMin(_value_);
+    }
+
+    private static String xMinToString(BaseClass _this_) {
+        return ((PhaseTapChangerLinear) _this_).xMinToString();
     }
 
     /**
@@ -133,16 +157,12 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PhaseTapChangerLinear", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PhaseTapChangerLinear", attrName));
+        return "";
     }
 
     /**
@@ -153,16 +173,12 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PhaseTapChangerLinear", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PhaseTapChangerLinear", attrName, objectValue));
         }
     }
 
@@ -174,16 +190,12 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PhaseTapChangerLinear", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PhaseTapChangerLinear", attrName, stringValue));
         }
     }
 
@@ -307,30 +319,21 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("stepPhaseShiftIncrement", new AttrDetails("PhaseTapChangerLinear.stepPhaseShiftIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("stepPhaseShiftIncrement", new AttrDetails("PhaseTapChangerLinear.stepPhaseShiftIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PhaseTapChangerLinear::stepPhaseShiftIncrementToString, null, PhaseTapChangerLinear::setStepPhaseShiftIncrement));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xMax", new AttrDetails("PhaseTapChangerLinear.xMax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xMax", new AttrDetails("PhaseTapChangerLinear.xMax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PhaseTapChangerLinear::xMaxToString, null, PhaseTapChangerLinear::setXMax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xMin", new AttrDetails("PhaseTapChangerLinear.xMin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xMin", new AttrDetails("PhaseTapChangerLinear.xMin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PhaseTapChangerLinear::xMinToString, null, PhaseTapChangerLinear::setXMin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerLinear().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("stepPhaseShiftIncrement", new GetterSetter(this::stepPhaseShiftIncrementToString, null, this::setStepPhaseShiftIncrement));
-        map.put("xMax", new GetterSetter(this::xMaxToString, null, this::setXMax));
-        map.put("xMin", new GetterSetter(this::xMinToString, null, this::setXMin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

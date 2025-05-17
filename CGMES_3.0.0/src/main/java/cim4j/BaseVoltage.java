@@ -54,6 +54,14 @@ public class BaseVoltage extends IdentifiedObject {
         return getStringFromSet(ConductingEquipment);
     }
 
+    private static void setConductingEquipment(BaseClass _this_, BaseClass _object_) {
+        ((BaseVoltage) _this_).setConductingEquipment(_object_);
+    }
+
+    private static String ConductingEquipmentToString(BaseClass _this_) {
+        return ((BaseVoltage) _this_).ConductingEquipmentToString();
+    }
+
     /**
      * The topological nodes at the base voltage.
      *
@@ -77,6 +85,14 @@ public class BaseVoltage extends IdentifiedObject {
 
     public String TopologicalNodeToString() {
         return getStringFromSet(TopologicalNode);
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, BaseClass _object_) {
+        ((BaseVoltage) _this_).setTopologicalNode(_object_);
+    }
+
+    private static String TopologicalNodeToString(BaseClass _this_) {
+        return ((BaseVoltage) _this_).TopologicalNodeToString();
     }
 
     /**
@@ -104,6 +120,14 @@ public class BaseVoltage extends IdentifiedObject {
         return getStringFromSet(TransformerEnds);
     }
 
+    private static void setTransformerEnds(BaseClass _this_, BaseClass _object_) {
+        ((BaseVoltage) _this_).setTransformerEnds(_object_);
+    }
+
+    private static String TransformerEndsToString(BaseClass _this_) {
+        return ((BaseVoltage) _this_).TransformerEndsToString();
+    }
+
     /**
      * The voltage levels having this base voltage.
      *
@@ -129,6 +153,14 @@ public class BaseVoltage extends IdentifiedObject {
         return getStringFromSet(VoltageLevel);
     }
 
+    private static void setVoltageLevel(BaseClass _this_, BaseClass _object_) {
+        ((BaseVoltage) _this_).setVoltageLevel(_object_);
+    }
+
+    private static String VoltageLevelToString(BaseClass _this_) {
+        return ((BaseVoltage) _this_).VoltageLevelToString();
+    }
+
     /**
      * The power system resource`s base voltage.  Shall be a positive value and not zero.
      */
@@ -148,6 +180,14 @@ public class BaseVoltage extends IdentifiedObject {
 
     public String nominalVoltageToString() {
         return nominalVoltage != null ? nominalVoltage.toString() : null;
+    }
+
+    private static void setNominalVoltage(BaseClass _this_, String _value_) {
+        ((BaseVoltage) _this_).setNominalVoltage(_value_);
+    }
+
+    private static String nominalVoltageToString(BaseClass _this_) {
+        return ((BaseVoltage) _this_).nominalVoltageToString();
     }
 
     /**
@@ -191,16 +231,12 @@ public class BaseVoltage extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BaseVoltage", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BaseVoltage", attrName));
+        return "";
     }
 
     /**
@@ -211,16 +247,12 @@ public class BaseVoltage extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BaseVoltage", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BaseVoltage", attrName, objectValue));
         }
     }
 
@@ -232,16 +264,12 @@ public class BaseVoltage extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BaseVoltage", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BaseVoltage", attrName, stringValue));
         }
     }
 
@@ -365,44 +393,33 @@ public class BaseVoltage extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ConductingEquipment", new AttrDetails("BaseVoltage.ConductingEquipment", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ConductingEquipment", new AttrDetails("BaseVoltage.ConductingEquipment", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, BaseVoltage::ConductingEquipmentToString, BaseVoltage::setConductingEquipment, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("BaseVoltage.TopologicalNode", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("BaseVoltage.TopologicalNode", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, BaseVoltage::TopologicalNodeToString, BaseVoltage::setTopologicalNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TransformerEnds", new AttrDetails("BaseVoltage.TransformerEnds", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
-        }
-        {
-            Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ);
-            profiles.add(CGMESProfile.EQBD);
-            map.put("VoltageLevel", new AttrDetails("BaseVoltage.VoltageLevel", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TransformerEnds", new AttrDetails("BaseVoltage.TransformerEnds", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, BaseVoltage::TransformerEndsToString, BaseVoltage::setTransformerEnds, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("nominalVoltage", new AttrDetails("BaseVoltage.nominalVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("VoltageLevel", new AttrDetails("BaseVoltage.VoltageLevel", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, BaseVoltage::VoltageLevelToString, BaseVoltage::setVoltageLevel, null));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQBD);
+            map.put("nominalVoltage", new AttrDetails("BaseVoltage.nominalVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BaseVoltage::nominalVoltageToString, null, BaseVoltage::setNominalVoltage));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BaseVoltage().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConductingEquipment", new GetterSetter(this::ConductingEquipmentToString, this::setConductingEquipment, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("TransformerEnds", new GetterSetter(this::TransformerEndsToString, this::setTransformerEnds, null));
-        map.put("VoltageLevel", new GetterSetter(this::VoltageLevelToString, this::setVoltageLevel, null));
-        map.put("nominalVoltage", new GetterSetter(this::nominalVoltageToString, null, this::setNominalVoltage));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

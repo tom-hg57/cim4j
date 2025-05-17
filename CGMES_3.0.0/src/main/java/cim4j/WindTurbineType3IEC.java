@@ -52,6 +52,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
         return WindAeroOneDimIEC != null ? WindAeroOneDimIEC.getRdfid() : null;
     }
 
+    private static void setWindAeroOneDimIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindAeroOneDimIEC(_object_);
+    }
+
+    private static String WindAeroOneDimIECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindAeroOneDimIECToString();
+    }
+
     /**
      * Wind aerodynamic model associated with this wind turbine type 3 model.
      */
@@ -73,6 +81,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
 
     public String WindAeroTwoDimIECToString() {
         return WindAeroTwoDimIEC != null ? WindAeroTwoDimIEC.getRdfid() : null;
+    }
+
+    private static void setWindAeroTwoDimIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindAeroTwoDimIEC(_object_);
+    }
+
+    private static String WindAeroTwoDimIECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindAeroTwoDimIECToString();
     }
 
     /**
@@ -98,6 +114,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
         return WindContPType3IEC != null ? WindContPType3IEC.getRdfid() : null;
     }
 
+    private static void setWindContPType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindContPType3IEC(_object_);
+    }
+
+    private static String WindContPType3IECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindContPType3IECToString();
+    }
+
     /**
      * Wind control pitch angle model associated with this wind turbine type 3.
      */
@@ -119,6 +143,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
 
     public String WindContPitchAngleIECToString() {
         return WindContPitchAngleIEC != null ? WindContPitchAngleIEC.getRdfid() : null;
+    }
+
+    private static void setWindContPitchAngleIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindContPitchAngleIEC(_object_);
+    }
+
+    private static String WindContPitchAngleIECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindContPitchAngleIECToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
         return WindGenType3IEC != null ? WindGenType3IEC.getRdfid() : null;
     }
 
+    private static void setWindGenType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindGenType3IEC(_object_);
+    }
+
+    private static String WindGenType3IECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindGenType3IECToString();
+    }
+
     /**
      * Wind mechanical model associated with this wind turbine type 3 model.
      */
@@ -165,6 +205,14 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
 
     public String WindMechIECToString() {
         return WindMechIEC != null ? WindMechIEC.getRdfid() : null;
+    }
+
+    private static void setWindMechIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3IEC) _this_).setWindMechIEC(_object_);
+    }
+
+    private static String WindMechIECToString(BaseClass _this_) {
+        return ((WindTurbineType3IEC) _this_).WindMechIECToString();
     }
 
     /**
@@ -208,16 +256,12 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindTurbineType3IEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindTurbineType3IEC", attrName));
+        return "";
     }
 
     /**
@@ -228,16 +272,12 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindTurbineType3IEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3IEC", attrName, objectValue));
         }
     }
 
@@ -249,16 +289,12 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindTurbineType3IEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3IEC", attrName, stringValue));
         }
     }
 
@@ -382,48 +418,36 @@ public class WindTurbineType3IEC extends WindTurbineType3or4IEC {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindAeroOneDimIEC", new AttrDetails("WindTurbineType3IEC.WindAeroOneDimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindAeroOneDimIEC", new AttrDetails("WindTurbineType3IEC.WindAeroOneDimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindAeroOneDimIECToString, WindTurbineType3IEC::setWindAeroOneDimIEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindAeroTwoDimIEC", new AttrDetails("WindTurbineType3IEC.WindAeroTwoDimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindAeroTwoDimIEC", new AttrDetails("WindTurbineType3IEC.WindAeroTwoDimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindAeroTwoDimIECToString, WindTurbineType3IEC::setWindAeroTwoDimIEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContPType3IEC", new AttrDetails("WindTurbineType3IEC.WindContPType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContPType3IEC", new AttrDetails("WindTurbineType3IEC.WindContPType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindContPType3IECToString, WindTurbineType3IEC::setWindContPType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContPitchAngleIEC", new AttrDetails("WindTurbineType3IEC.WindContPitchAngleIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContPitchAngleIEC", new AttrDetails("WindTurbineType3IEC.WindContPitchAngleIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindContPitchAngleIECToString, WindTurbineType3IEC::setWindContPitchAngleIEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindGenType3IEC", new AttrDetails("WindTurbineType3IEC.WindGenType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindGenType3IEC", new AttrDetails("WindTurbineType3IEC.WindGenType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindGenType3IECToString, WindTurbineType3IEC::setWindGenType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindMechIEC", new AttrDetails("WindTurbineType3IEC.WindMechIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindMechIEC", new AttrDetails("WindTurbineType3IEC.WindMechIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3IEC::WindMechIECToString, WindTurbineType3IEC::setWindMechIEC, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3IEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindAeroOneDimIEC", new GetterSetter(this::WindAeroOneDimIECToString, this::setWindAeroOneDimIEC, null));
-        map.put("WindAeroTwoDimIEC", new GetterSetter(this::WindAeroTwoDimIECToString, this::setWindAeroTwoDimIEC, null));
-        map.put("WindContPType3IEC", new GetterSetter(this::WindContPType3IECToString, this::setWindContPType3IEC, null));
-        map.put("WindContPitchAngleIEC", new GetterSetter(this::WindContPitchAngleIECToString, this::setWindContPitchAngleIEC, null));
-        map.put("WindGenType3IEC", new GetterSetter(this::WindGenType3IECToString, this::setWindGenType3IEC, null));
-        map.put("WindMechIEC", new GetterSetter(this::WindMechIECToString, this::setWindMechIEC, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

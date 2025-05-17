@@ -54,6 +54,14 @@ public class CoordinateSystem extends IdentifiedObject {
         return getStringFromSet(Locations);
     }
 
+    private static void setLocations(BaseClass _this_, BaseClass _object_) {
+        ((CoordinateSystem) _this_).setLocations(_object_);
+    }
+
+    private static String LocationsToString(BaseClass _this_) {
+        return ((CoordinateSystem) _this_).LocationsToString();
+    }
+
     /**
      * A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define `Location.PositionPoints`. An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4236. A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties.
      */
@@ -69,6 +77,14 @@ public class CoordinateSystem extends IdentifiedObject {
 
     public String crsUrnToString() {
         return crsUrn != null ? crsUrn.toString() : null;
+    }
+
+    private static void setCrsUrn(BaseClass _this_, String _value_) {
+        ((CoordinateSystem) _this_).setCrsUrn(_value_);
+    }
+
+    private static String crsUrnToString(BaseClass _this_) {
+        return ((CoordinateSystem) _this_).crsUrnToString();
     }
 
     /**
@@ -112,16 +128,12 @@ public class CoordinateSystem extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("CoordinateSystem", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "CoordinateSystem", attrName));
+        return "";
     }
 
     /**
@@ -132,16 +144,12 @@ public class CoordinateSystem extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("CoordinateSystem", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CoordinateSystem", attrName, objectValue));
         }
     }
 
@@ -153,16 +161,12 @@ public class CoordinateSystem extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("CoordinateSystem", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CoordinateSystem", attrName, stringValue));
         }
     }
 
@@ -286,24 +290,16 @@ public class CoordinateSystem extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("Locations", new AttrDetails("CoordinateSystem.Locations", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Locations", new AttrDetails("CoordinateSystem.Locations", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, CoordinateSystem::LocationsToString, CoordinateSystem::setLocations, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("crsUrn", new AttrDetails("CoordinateSystem.crsUrn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("crsUrn", new AttrDetails("CoordinateSystem.crsUrn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CoordinateSystem::crsUrnToString, null, CoordinateSystem::setCrsUrn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CoordinateSystem().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Locations", new GetterSetter(this::LocationsToString, this::setLocations, null));
-        map.put("crsUrn", new GetterSetter(this::crsUrnToString, null, this::setCrsUrn));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

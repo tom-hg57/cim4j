@@ -50,6 +50,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return negativeR12 != null ? negativeR12.toString() : null;
     }
 
+    private static void setNegativeR12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setNegativeR12(_value_);
+    }
+
+    private static String negativeR12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).negativeR12ToString();
+    }
+
     /**
      * Negative sequence series resistance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -69,6 +77,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String negativeR21ToString() {
         return negativeR21 != null ? negativeR21.toString() : null;
+    }
+
+    private static void setNegativeR21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setNegativeR21(_value_);
+    }
+
+    private static String negativeR21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).negativeR21ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return negativeX12 != null ? negativeX12.toString() : null;
     }
 
+    private static void setNegativeX12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setNegativeX12(_value_);
+    }
+
+    private static String negativeX12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).negativeX12ToString();
+    }
+
     /**
      * Negative sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. Usage: EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -111,6 +135,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String negativeX21ToString() {
         return negativeX21 != null ? negativeX21.toString() : null;
+    }
+
+    private static void setNegativeX21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setNegativeX21(_value_);
+    }
+
+    private static String negativeX21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).negativeX21ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return positiveR12 != null ? positiveR12.toString() : null;
     }
 
+    private static void setPositiveR12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setPositiveR12(_value_);
+    }
+
+    private static String positiveR12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).positiveR12ToString();
+    }
+
     /**
      * Positive sequence series resistance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -153,6 +193,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String positiveR21ToString() {
         return positiveR21 != null ? positiveR21.toString() : null;
+    }
+
+    private static void setPositiveR21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setPositiveR21(_value_);
+    }
+
+    private static String positiveR21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).positiveR21ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return positiveX12 != null ? positiveX12.toString() : null;
     }
 
+    private static void setPositiveX12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setPositiveX12(_value_);
+    }
+
+    private static String positiveX12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).positiveX12ToString();
+    }
+
     /**
      * Positive sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. Usage : EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -195,6 +251,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String positiveX21ToString() {
         return positiveX21 != null ? positiveX21.toString() : null;
+    }
+
+    private static void setPositiveX21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setPositiveX21(_value_);
+    }
+
+    private static String positiveX21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).positiveX21ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return r != null ? r.toString() : null;
     }
 
+    private static void setR(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).rToString();
+    }
+
     /**
      * Resistance from terminal sequence 2 to terminal sequence 1 .Used for steady state power flow. This attribute is optional and represent unbalanced network such as off-nominal phase shifter. If only EquivalentBranch.r is given, then EquivalentBranch.r21 is assumed equal to EquivalentBranch.r. Usage rule : EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -237,6 +309,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String r21ToString() {
         return r21 != null ? r21.toString() : null;
+    }
+
+    private static void setR21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setR21(_value_);
+    }
+
+    private static String r21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).r21ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return x != null ? x.toString() : null;
     }
 
+    private static void setX(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).xToString();
+    }
+
     /**
      * Reactance from terminal sequence 2 to terminal sequence 1. Used for steady state power flow. This attribute is optional and represents an unbalanced network such as off-nominal phase shifter. If only EquivalentBranch.x is given, then EquivalentBranch.x21 is assumed equal to EquivalentBranch.x. Usage rule: EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -279,6 +367,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String x21ToString() {
         return x21 != null ? x21.toString() : null;
+    }
+
+    private static void setX21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setX21(_value_);
+    }
+
+    private static String x21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).x21ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return zeroR12 != null ? zeroR12.toString() : null;
     }
 
+    private static void setZeroR12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setZeroR12(_value_);
+    }
+
+    private static String zeroR12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).zeroR12ToString();
+    }
+
     /**
      * Zero sequence series resistance from terminal sequence  2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. Usage : EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -321,6 +425,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String zeroR21ToString() {
         return zeroR21 != null ? zeroR21.toString() : null;
+    }
+
+    private static void setZeroR21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setZeroR21(_value_);
+    }
+
+    private static String zeroR21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).zeroR21ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class EquivalentBranch extends EquivalentEquipment {
         return zeroX12 != null ? zeroX12.toString() : null;
     }
 
+    private static void setZeroX12(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setZeroX12(_value_);
+    }
+
+    private static String zeroX12ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).zeroX12ToString();
+    }
+
     /**
      * Zero sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909. Usage : EquivalentBranch is a result of network reduction prior to the data exchange.
      */
@@ -363,6 +483,14 @@ public class EquivalentBranch extends EquivalentEquipment {
 
     public String zeroX21ToString() {
         return zeroX21 != null ? zeroX21.toString() : null;
+    }
+
+    private static void setZeroX21(BaseClass _this_, String _value_) {
+        ((EquivalentBranch) _this_).setZeroX21(_value_);
+    }
+
+    private static String zeroX21ToString(BaseClass _this_) {
+        return ((EquivalentBranch) _this_).zeroX21ToString();
     }
 
     /**
@@ -406,16 +534,12 @@ public class EquivalentBranch extends EquivalentEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EquivalentBranch", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EquivalentBranch", attrName));
+        return "";
     }
 
     /**
@@ -426,16 +550,12 @@ public class EquivalentBranch extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EquivalentBranch", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentBranch", attrName, objectValue));
         }
     }
 
@@ -447,16 +567,12 @@ public class EquivalentBranch extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EquivalentBranch", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentBranch", attrName, stringValue));
         }
     }
 
@@ -580,108 +696,86 @@ public class EquivalentBranch extends EquivalentEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("negativeR12", new AttrDetails("EquivalentBranch.negativeR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("negativeR12", new AttrDetails("EquivalentBranch.negativeR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::negativeR12ToString, null, EquivalentBranch::setNegativeR12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("negativeR21", new AttrDetails("EquivalentBranch.negativeR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("negativeR21", new AttrDetails("EquivalentBranch.negativeR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::negativeR21ToString, null, EquivalentBranch::setNegativeR21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("negativeX12", new AttrDetails("EquivalentBranch.negativeX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("negativeX12", new AttrDetails("EquivalentBranch.negativeX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::negativeX12ToString, null, EquivalentBranch::setNegativeX12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("negativeX21", new AttrDetails("EquivalentBranch.negativeX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("negativeX21", new AttrDetails("EquivalentBranch.negativeX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::negativeX21ToString, null, EquivalentBranch::setNegativeX21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("positiveR12", new AttrDetails("EquivalentBranch.positiveR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("positiveR12", new AttrDetails("EquivalentBranch.positiveR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::positiveR12ToString, null, EquivalentBranch::setPositiveR12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("positiveR21", new AttrDetails("EquivalentBranch.positiveR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("positiveR21", new AttrDetails("EquivalentBranch.positiveR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::positiveR21ToString, null, EquivalentBranch::setPositiveR21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("positiveX12", new AttrDetails("EquivalentBranch.positiveX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("positiveX12", new AttrDetails("EquivalentBranch.positiveX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::positiveX12ToString, null, EquivalentBranch::setPositiveX12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("positiveX21", new AttrDetails("EquivalentBranch.positiveX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("positiveX21", new AttrDetails("EquivalentBranch.positiveX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::positiveX21ToString, null, EquivalentBranch::setPositiveX21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("EquivalentBranch.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r", new AttrDetails("EquivalentBranch.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::rToString, null, EquivalentBranch::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r21", new AttrDetails("EquivalentBranch.r21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r21", new AttrDetails("EquivalentBranch.r21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::r21ToString, null, EquivalentBranch::setR21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("EquivalentBranch.x", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x", new AttrDetails("EquivalentBranch.x", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::xToString, null, EquivalentBranch::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x21", new AttrDetails("EquivalentBranch.x21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x21", new AttrDetails("EquivalentBranch.x21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::x21ToString, null, EquivalentBranch::setX21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("zeroR12", new AttrDetails("EquivalentBranch.zeroR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("zeroR12", new AttrDetails("EquivalentBranch.zeroR12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::zeroR12ToString, null, EquivalentBranch::setZeroR12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("zeroR21", new AttrDetails("EquivalentBranch.zeroR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("zeroR21", new AttrDetails("EquivalentBranch.zeroR21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::zeroR21ToString, null, EquivalentBranch::setZeroR21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("zeroX12", new AttrDetails("EquivalentBranch.zeroX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("zeroX12", new AttrDetails("EquivalentBranch.zeroX12", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::zeroX12ToString, null, EquivalentBranch::setZeroX12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("zeroX21", new AttrDetails("EquivalentBranch.zeroX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("zeroX21", new AttrDetails("EquivalentBranch.zeroX21", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentBranch::zeroX21ToString, null, EquivalentBranch::setZeroX21));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentBranch().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("negativeR12", new GetterSetter(this::negativeR12ToString, null, this::setNegativeR12));
-        map.put("negativeR21", new GetterSetter(this::negativeR21ToString, null, this::setNegativeR21));
-        map.put("negativeX12", new GetterSetter(this::negativeX12ToString, null, this::setNegativeX12));
-        map.put("negativeX21", new GetterSetter(this::negativeX21ToString, null, this::setNegativeX21));
-        map.put("positiveR12", new GetterSetter(this::positiveR12ToString, null, this::setPositiveR12));
-        map.put("positiveR21", new GetterSetter(this::positiveR21ToString, null, this::setPositiveR21));
-        map.put("positiveX12", new GetterSetter(this::positiveX12ToString, null, this::setPositiveX12));
-        map.put("positiveX21", new GetterSetter(this::positiveX21ToString, null, this::setPositiveX21));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r21", new GetterSetter(this::r21ToString, null, this::setR21));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x21", new GetterSetter(this::x21ToString, null, this::setX21));
-        map.put("zeroR12", new GetterSetter(this::zeroR12ToString, null, this::setZeroR12));
-        map.put("zeroR21", new GetterSetter(this::zeroR21ToString, null, this::setZeroR21));
-        map.put("zeroX12", new GetterSetter(this::zeroX12ToString, null, this::setZeroX12));
-        map.put("zeroX21", new GetterSetter(this::zeroX21ToString, null, this::setZeroX21));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

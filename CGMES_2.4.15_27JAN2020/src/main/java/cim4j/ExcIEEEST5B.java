@@ -50,6 +50,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return kc != null ? kc.toString() : null;
     }
 
+    private static void setKc(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setKc(_value_);
+    }
+
+    private static String kcToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).kcToString();
+    }
+
     /**
      * Regulator gain (K).  Typical Value = 200.
      */
@@ -69,6 +77,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String krToString() {
         return kr != null ? kr.toString() : null;
+    }
+
+    private static void setKr(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setKr(_value_);
+    }
+
+    private static String krToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).krToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return t1 != null ? t1.toString() : null;
     }
 
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).t1ToString();
+    }
+
     /**
      * Regulator lag time constant (T).  Typical Value = 6.
      */
@@ -111,6 +135,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String tb1ToString() {
         return tb1 != null ? tb1.toString() : null;
+    }
+
+    private static void setTb1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTb1(_value_);
+    }
+
+    private static String tb1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tb1ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return tb2 != null ? tb2.toString() : null;
     }
 
+    private static void setTb2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTb2(_value_);
+    }
+
+    private static String tb2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tb2ToString();
+    }
+
     /**
      * Regulator lead time constant (T).  Typical Value = 0.8.
      */
@@ -153,6 +193,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String tc1ToString() {
         return tc1 != null ? tc1.toString() : null;
+    }
+
+    private static void setTc1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTc1(_value_);
+    }
+
+    private static String tc1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tc1ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return tc2 != null ? tc2.toString() : null;
     }
 
+    private static void setTc2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTc2(_value_);
+    }
+
+    private static String tc2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tc2ToString();
+    }
+
     /**
      * OEL lag time constant (T).  Typical Value = 2.
      */
@@ -195,6 +251,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String tob1ToString() {
         return tob1 != null ? tob1.toString() : null;
+    }
+
+    private static void setTob1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTob1(_value_);
+    }
+
+    private static String tob1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tob1ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return tob2 != null ? tob2.toString() : null;
     }
 
+    private static void setTob2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTob2(_value_);
+    }
+
+    private static String tob2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tob2ToString();
+    }
+
     /**
      * OEL lead time constant (T).  Typical Value = 0.1.
      */
@@ -237,6 +309,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String toc1ToString() {
         return toc1 != null ? toc1.toString() : null;
+    }
+
+    private static void setToc1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setToc1(_value_);
+    }
+
+    private static String toc1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).toc1ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return toc2 != null ? toc2.toString() : null;
     }
 
+    private static void setToc2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setToc2(_value_);
+    }
+
+    private static String toc2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).toc2ToString();
+    }
+
     /**
      * UEL lag time constant (T).  Typical Value = 10.
      */
@@ -279,6 +367,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String tub1ToString() {
         return tub1 != null ? tub1.toString() : null;
+    }
+
+    private static void setTub1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTub1(_value_);
+    }
+
+    private static String tub1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tub1ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return tub2 != null ? tub2.toString() : null;
     }
 
+    private static void setTub2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTub2(_value_);
+    }
+
+    private static String tub2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tub2ToString();
+    }
+
     /**
      * UEL lead time constant (T).  Typical Value = 2.
      */
@@ -321,6 +425,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String tuc1ToString() {
         return tuc1 != null ? tuc1.toString() : null;
+    }
+
+    private static void setTuc1(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTuc1(_value_);
+    }
+
+    private static String tuc1ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tuc1ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return tuc2 != null ? tuc2.toString() : null;
     }
 
+    private static void setTuc2(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setTuc2(_value_);
+    }
+
+    private static String tuc2ToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).tuc2ToString();
+    }
+
     /**
      * Maximum voltage regulator output (V).  Typical Value = 5.
      */
@@ -365,6 +485,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         return vrmax != null ? vrmax.toString() : null;
     }
 
+    private static void setVrmax(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setVrmax(_value_);
+    }
+
+    private static String vrmaxToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).vrmaxToString();
+    }
+
     /**
      * Minimum voltage regulator output (V).  Typical Value = -4.
      */
@@ -384,6 +512,14 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
 
     public String vrminToString() {
         return vrmin != null ? vrmin.toString() : null;
+    }
+
+    private static void setVrmin(BaseClass _this_, String _value_) {
+        ((ExcIEEEST5B) _this_).setVrmin(_value_);
+    }
+
+    private static String vrminToString(BaseClass _this_) {
+        return ((ExcIEEEST5B) _this_).vrminToString();
     }
 
     /**
@@ -427,16 +563,12 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcIEEEST5B", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcIEEEST5B", attrName));
+        return "";
     }
 
     /**
@@ -447,16 +579,12 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcIEEEST5B", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcIEEEST5B", attrName, objectValue));
         }
     }
 
@@ -468,16 +596,12 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcIEEEST5B", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcIEEEST5B", attrName, stringValue));
         }
     }
 
@@ -601,114 +725,91 @@ public class ExcIEEEST5B extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kc", new AttrDetails("ExcIEEEST5B.kc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kc", new AttrDetails("ExcIEEEST5B.kc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::kcToString, null, ExcIEEEST5B::setKc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kr", new AttrDetails("ExcIEEEST5B.kr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kr", new AttrDetails("ExcIEEEST5B.kr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::krToString, null, ExcIEEEST5B::setKr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("ExcIEEEST5B.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t1", new AttrDetails("ExcIEEEST5B.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::t1ToString, null, ExcIEEEST5B::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb1", new AttrDetails("ExcIEEEST5B.tb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tb1", new AttrDetails("ExcIEEEST5B.tb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tb1ToString, null, ExcIEEEST5B::setTb1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb2", new AttrDetails("ExcIEEEST5B.tb2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tb2", new AttrDetails("ExcIEEEST5B.tb2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tb2ToString, null, ExcIEEEST5B::setTb2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc1", new AttrDetails("ExcIEEEST5B.tc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tc1", new AttrDetails("ExcIEEEST5B.tc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tc1ToString, null, ExcIEEEST5B::setTc1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc2", new AttrDetails("ExcIEEEST5B.tc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tc2", new AttrDetails("ExcIEEEST5B.tc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tc2ToString, null, ExcIEEEST5B::setTc2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tob1", new AttrDetails("ExcIEEEST5B.tob1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tob1", new AttrDetails("ExcIEEEST5B.tob1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tob1ToString, null, ExcIEEEST5B::setTob1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tob2", new AttrDetails("ExcIEEEST5B.tob2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tob2", new AttrDetails("ExcIEEEST5B.tob2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tob2ToString, null, ExcIEEEST5B::setTob2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("toc1", new AttrDetails("ExcIEEEST5B.toc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("toc1", new AttrDetails("ExcIEEEST5B.toc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::toc1ToString, null, ExcIEEEST5B::setToc1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("toc2", new AttrDetails("ExcIEEEST5B.toc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("toc2", new AttrDetails("ExcIEEEST5B.toc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::toc2ToString, null, ExcIEEEST5B::setToc2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tub1", new AttrDetails("ExcIEEEST5B.tub1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tub1", new AttrDetails("ExcIEEEST5B.tub1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tub1ToString, null, ExcIEEEST5B::setTub1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tub2", new AttrDetails("ExcIEEEST5B.tub2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tub2", new AttrDetails("ExcIEEEST5B.tub2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tub2ToString, null, ExcIEEEST5B::setTub2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tuc1", new AttrDetails("ExcIEEEST5B.tuc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tuc1", new AttrDetails("ExcIEEEST5B.tuc1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tuc1ToString, null, ExcIEEEST5B::setTuc1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tuc2", new AttrDetails("ExcIEEEST5B.tuc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tuc2", new AttrDetails("ExcIEEEST5B.tuc2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::tuc2ToString, null, ExcIEEEST5B::setTuc2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcIEEEST5B.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcIEEEST5B.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::vrmaxToString, null, ExcIEEEST5B::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcIEEEST5B.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcIEEEST5B.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEST5B::vrminToString, null, ExcIEEEST5B::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcIEEEST5B().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("kc", new GetterSetter(this::kcToString, null, this::setKc));
-        map.put("kr", new GetterSetter(this::krToString, null, this::setKr));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("tb1", new GetterSetter(this::tb1ToString, null, this::setTb1));
-        map.put("tb2", new GetterSetter(this::tb2ToString, null, this::setTb2));
-        map.put("tc1", new GetterSetter(this::tc1ToString, null, this::setTc1));
-        map.put("tc2", new GetterSetter(this::tc2ToString, null, this::setTc2));
-        map.put("tob1", new GetterSetter(this::tob1ToString, null, this::setTob1));
-        map.put("tob2", new GetterSetter(this::tob2ToString, null, this::setTob2));
-        map.put("toc1", new GetterSetter(this::toc1ToString, null, this::setToc1));
-        map.put("toc2", new GetterSetter(this::toc2ToString, null, this::setToc2));
-        map.put("tub1", new GetterSetter(this::tub1ToString, null, this::setTub1));
-        map.put("tub2", new GetterSetter(this::tub2ToString, null, this::setTub2));
-        map.put("tuc1", new GetterSetter(this::tuc1ToString, null, this::setTuc1));
-        map.put("tuc2", new GetterSetter(this::tuc2ToString, null, this::setTuc2));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -52,6 +52,14 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
         return DayType != null ? DayType.getRdfid() : null;
     }
 
+    private static void setDayType(BaseClass _this_, BaseClass _object_) {
+        ((SeasonDayTypeSchedule) _this_).setDayType(_object_);
+    }
+
+    private static String DayTypeToString(BaseClass _this_) {
+        return ((SeasonDayTypeSchedule) _this_).DayTypeToString();
+    }
+
     /**
      * Schedules that use this Season.
      */
@@ -73,6 +81,14 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
 
     public String SeasonToString() {
         return Season != null ? Season.getRdfid() : null;
+    }
+
+    private static void setSeason(BaseClass _this_, BaseClass _object_) {
+        ((SeasonDayTypeSchedule) _this_).setSeason(_object_);
+    }
+
+    private static String SeasonToString(BaseClass _this_) {
+        return ((SeasonDayTypeSchedule) _this_).SeasonToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SeasonDayTypeSchedule", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SeasonDayTypeSchedule", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SeasonDayTypeSchedule", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SeasonDayTypeSchedule", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SeasonDayTypeSchedule", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SeasonDayTypeSchedule", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("DayType", new AttrDetails("SeasonDayTypeSchedule.DayType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DayType", new AttrDetails("SeasonDayTypeSchedule.DayType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SeasonDayTypeSchedule::DayTypeToString, SeasonDayTypeSchedule::setDayType, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Season", new AttrDetails("SeasonDayTypeSchedule.Season", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Season", new AttrDetails("SeasonDayTypeSchedule.Season", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SeasonDayTypeSchedule::SeasonToString, SeasonDayTypeSchedule::setSeason, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeasonDayTypeSchedule().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DayType", new GetterSetter(this::DayTypeToString, this::setDayType, null));
-        map.put("Season", new GetterSetter(this::SeasonToString, this::setSeason, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

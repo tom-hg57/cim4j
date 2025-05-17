@@ -50,6 +50,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return r1d != null ? r1d.toString() : null;
     }
 
+    private static void setR1d(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setR1d(_value_);
+    }
+
+    private static String r1dToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).r1dToString();
+    }
+
     /**
      * Quadrature-axis damper 1 winding resistance.
      */
@@ -69,6 +77,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
 
     public String r1qToString() {
         return r1q != null ? r1q.toString() : null;
+    }
+
+    private static void setR1q(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setR1q(_value_);
+    }
+
+    private static String r1qToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).r1qToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return r2q != null ? r2q.toString() : null;
     }
 
+    private static void setR2q(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setR2q(_value_);
+    }
+
+    private static String r2qToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).r2qToString();
+    }
+
     /**
      * Field winding resistance.
      */
@@ -111,6 +135,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
 
     public String rfdToString() {
         return rfd != null ? rfd.toString() : null;
+    }
+
+    private static void setRfd(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setRfd(_value_);
+    }
+
+    private static String rfdToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).rfdToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return x1d != null ? x1d.toString() : null;
     }
 
+    private static void setX1d(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setX1d(_value_);
+    }
+
+    private static String x1dToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).x1dToString();
+    }
+
     /**
      * Quadrature-axis damper 1 winding leakage reactance.
      */
@@ -153,6 +193,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
 
     public String x1qToString() {
         return x1q != null ? x1q.toString() : null;
+    }
+
+    private static void setX1q(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setX1q(_value_);
+    }
+
+    private static String x1qToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).x1qToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return x2q != null ? x2q.toString() : null;
     }
 
+    private static void setX2q(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setX2q(_value_);
+    }
+
+    private static String x2qToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).x2qToString();
+    }
+
     /**
      * Direct-axis mutual reactance.
      */
@@ -195,6 +251,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
 
     public String xadToString() {
         return xad != null ? xad.toString() : null;
+    }
+
+    private static void setXad(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setXad(_value_);
+    }
+
+    private static String xadToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).xadToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return xaq != null ? xaq.toString() : null;
     }
 
+    private static void setXaq(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setXaq(_value_);
+    }
+
+    private static String xaqToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).xaqToString();
+    }
+
     /**
      * Differential mutual (`Canay`) reactance.
      */
@@ -239,6 +311,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         return xf1d != null ? xf1d.toString() : null;
     }
 
+    private static void setXf1d(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setXf1d(_value_);
+    }
+
+    private static String xf1dToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).xf1dToString();
+    }
+
     /**
      * Field winding leakage reactance.
      */
@@ -258,6 +338,14 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
 
     public String xfdToString() {
         return xfd != null ? xfd.toString() : null;
+    }
+
+    private static void setXfd(BaseClass _this_, String _value_) {
+        ((SynchronousMachineEquivalentCircuit) _this_).setXfd(_value_);
+    }
+
+    private static String xfdToString(BaseClass _this_) {
+        return ((SynchronousMachineEquivalentCircuit) _this_).xfdToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SynchronousMachineEquivalentCircuit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SynchronousMachineEquivalentCircuit", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SynchronousMachineEquivalentCircuit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineEquivalentCircuit", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SynchronousMachineEquivalentCircuit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineEquivalentCircuit", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("r1d", new AttrDetails("SynchronousMachineEquivalentCircuit.r1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r1d", new AttrDetails("SynchronousMachineEquivalentCircuit.r1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::r1dToString, null, SynchronousMachineEquivalentCircuit::setR1d));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("r1q", new AttrDetails("SynchronousMachineEquivalentCircuit.r1q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r1q", new AttrDetails("SynchronousMachineEquivalentCircuit.r1q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::r1qToString, null, SynchronousMachineEquivalentCircuit::setR1q));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("r2q", new AttrDetails("SynchronousMachineEquivalentCircuit.r2q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r2q", new AttrDetails("SynchronousMachineEquivalentCircuit.r2q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::r2qToString, null, SynchronousMachineEquivalentCircuit::setR2q));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rfd", new AttrDetails("SynchronousMachineEquivalentCircuit.rfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("rfd", new AttrDetails("SynchronousMachineEquivalentCircuit.rfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::rfdToString, null, SynchronousMachineEquivalentCircuit::setRfd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("x1d", new AttrDetails("SynchronousMachineEquivalentCircuit.x1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x1d", new AttrDetails("SynchronousMachineEquivalentCircuit.x1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::x1dToString, null, SynchronousMachineEquivalentCircuit::setX1d));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("x1q", new AttrDetails("SynchronousMachineEquivalentCircuit.x1q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x1q", new AttrDetails("SynchronousMachineEquivalentCircuit.x1q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::x1qToString, null, SynchronousMachineEquivalentCircuit::setX1q));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("x2q", new AttrDetails("SynchronousMachineEquivalentCircuit.x2q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x2q", new AttrDetails("SynchronousMachineEquivalentCircuit.x2q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::x2qToString, null, SynchronousMachineEquivalentCircuit::setX2q));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xad", new AttrDetails("SynchronousMachineEquivalentCircuit.xad", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xad", new AttrDetails("SynchronousMachineEquivalentCircuit.xad", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::xadToString, null, SynchronousMachineEquivalentCircuit::setXad));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xaq", new AttrDetails("SynchronousMachineEquivalentCircuit.xaq", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xaq", new AttrDetails("SynchronousMachineEquivalentCircuit.xaq", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::xaqToString, null, SynchronousMachineEquivalentCircuit::setXaq));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xf1d", new AttrDetails("SynchronousMachineEquivalentCircuit.xf1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xf1d", new AttrDetails("SynchronousMachineEquivalentCircuit.xf1d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::xf1dToString, null, SynchronousMachineEquivalentCircuit::setXf1d));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xfd", new AttrDetails("SynchronousMachineEquivalentCircuit.xfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xfd", new AttrDetails("SynchronousMachineEquivalentCircuit.xfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineEquivalentCircuit::xfdToString, null, SynchronousMachineEquivalentCircuit::setXfd));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineEquivalentCircuit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("r1d", new GetterSetter(this::r1dToString, null, this::setR1d));
-        map.put("r1q", new GetterSetter(this::r1qToString, null, this::setR1q));
-        map.put("r2q", new GetterSetter(this::r2qToString, null, this::setR2q));
-        map.put("rfd", new GetterSetter(this::rfdToString, null, this::setRfd));
-        map.put("x1d", new GetterSetter(this::x1dToString, null, this::setX1d));
-        map.put("x1q", new GetterSetter(this::x1qToString, null, this::setX1q));
-        map.put("x2q", new GetterSetter(this::x2qToString, null, this::setX2q));
-        map.put("xad", new GetterSetter(this::xadToString, null, this::setXad));
-        map.put("xaq", new GetterSetter(this::xaqToString, null, this::setXaq));
-        map.put("xf1d", new GetterSetter(this::xf1dToString, null, this::setXf1d));
-        map.put("xfd", new GetterSetter(this::xfdToString, null, this::setXfd));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

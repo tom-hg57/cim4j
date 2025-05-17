@@ -54,6 +54,14 @@ public class SolarPowerPlant extends PowerSystemResource {
         return getStringFromSet(SolarGeneratingUnits);
     }
 
+    private static void setSolarGeneratingUnits(BaseClass _this_, BaseClass _object_) {
+        ((SolarPowerPlant) _this_).setSolarGeneratingUnits(_object_);
+    }
+
+    private static String SolarGeneratingUnitsToString(BaseClass _this_) {
+        return ((SolarPowerPlant) _this_).SolarGeneratingUnitsToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -95,16 +103,12 @@ public class SolarPowerPlant extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SolarPowerPlant", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SolarPowerPlant", attrName));
+        return "";
     }
 
     /**
@@ -115,16 +119,12 @@ public class SolarPowerPlant extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SolarPowerPlant", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SolarPowerPlant", attrName, objectValue));
         }
     }
 
@@ -136,16 +136,12 @@ public class SolarPowerPlant extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SolarPowerPlant", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SolarPowerPlant", attrName, stringValue));
         }
     }
 
@@ -269,18 +265,11 @@ public class SolarPowerPlant extends PowerSystemResource {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("SolarGeneratingUnits", new AttrDetails("SolarPowerPlant.SolarGeneratingUnits", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false));
+            map.put("SolarGeneratingUnits", new AttrDetails("SolarPowerPlant.SolarGeneratingUnits", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, SolarPowerPlant::SolarGeneratingUnitsToString, SolarPowerPlant::setSolarGeneratingUnits, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SolarPowerPlant().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("SolarGeneratingUnits", new GetterSetter(this::SolarGeneratingUnitsToString, this::setSolarGeneratingUnits, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

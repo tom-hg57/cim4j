@@ -52,6 +52,14 @@ public class ConductingEquipment extends Equipment {
         return BaseVoltage != null ? BaseVoltage.getRdfid() : null;
     }
 
+    private static void setBaseVoltage(BaseClass _this_, BaseClass _object_) {
+        ((ConductingEquipment) _this_).setBaseVoltage(_object_);
+    }
+
+    private static String BaseVoltageToString(BaseClass _this_) {
+        return ((ConductingEquipment) _this_).BaseVoltageToString();
+    }
+
     /**
      * The status state variable associated with this conducting equipment.
      *
@@ -77,6 +85,14 @@ public class ConductingEquipment extends Equipment {
         return SvStatus != null ? SvStatus.getRdfid() : null;
     }
 
+    private static void setSvStatus(BaseClass _this_, BaseClass _object_) {
+        ((ConductingEquipment) _this_).setSvStatus(_object_);
+    }
+
+    private static String SvStatusToString(BaseClass _this_) {
+        return ((ConductingEquipment) _this_).SvStatusToString();
+    }
+
     /**
      * Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes.
      *
@@ -100,6 +116,14 @@ public class ConductingEquipment extends Equipment {
 
     public String TerminalsToString() {
         return getStringFromSet(Terminals);
+    }
+
+    private static void setTerminals(BaseClass _this_, BaseClass _object_) {
+        ((ConductingEquipment) _this_).setTerminals(_object_);
+    }
+
+    private static String TerminalsToString(BaseClass _this_) {
+        return ((ConductingEquipment) _this_).TerminalsToString();
     }
 
     /**
@@ -143,16 +167,12 @@ public class ConductingEquipment extends Equipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ConductingEquipment", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ConductingEquipment", attrName));
+        return "";
     }
 
     /**
@@ -163,16 +183,12 @@ public class ConductingEquipment extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ConductingEquipment", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConductingEquipment", attrName, objectValue));
         }
     }
 
@@ -184,16 +200,12 @@ public class ConductingEquipment extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ConductingEquipment", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConductingEquipment", attrName, stringValue));
         }
     }
 
@@ -317,32 +329,23 @@ public class ConductingEquipment extends Equipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("BaseVoltage", new AttrDetails("ConductingEquipment.BaseVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("BaseVoltage", new AttrDetails("ConductingEquipment.BaseVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConductingEquipment::BaseVoltageToString, ConductingEquipment::setBaseVoltage, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvStatus", new AttrDetails("ConductingEquipment.SvStatus", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SvStatus", new AttrDetails("ConductingEquipment.SvStatus", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConductingEquipment::SvStatusToString, ConductingEquipment::setSvStatus, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("Terminals", new AttrDetails("ConductingEquipment.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminals", new AttrDetails("ConductingEquipment.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConductingEquipment::TerminalsToString, ConductingEquipment::setTerminals, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConductingEquipment().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("BaseVoltage", new GetterSetter(this::BaseVoltageToString, this::setBaseVoltage, null));
-        map.put("SvStatus", new GetterSetter(this::SvStatusToString, this::setSvStatus, null));
-        map.put("Terminals", new GetterSetter(this::TerminalsToString, this::setTerminals, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

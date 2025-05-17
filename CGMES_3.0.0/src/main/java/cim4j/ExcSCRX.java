@@ -50,6 +50,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
         return cswitch != null ? cswitch.toString() : null;
     }
 
+    private static void setCswitch(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setCswitch(_value_);
+    }
+
+    private static String cswitchToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).cswitchToString();
+    }
+
     /**
      * Maximum field voltage output (&lt;i&gt;Emax&lt;/i&gt;) (&amp;gt; ExcSCRX.emin).  Typical value = 5.
      */
@@ -69,6 +77,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
 
     public String emaxToString() {
         return emax != null ? emax.toString() : null;
+    }
+
+    private static void setEmax(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setEmax(_value_);
+    }
+
+    private static String emaxToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).emaxToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
         return emin != null ? emin.toString() : null;
     }
 
+    private static void setEmin(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setEmin(_value_);
+    }
+
+    private static String eminToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).eminToString();
+    }
+
     /**
      * Gain (&lt;i&gt;K&lt;/i&gt;) (&amp;gt; 0).  Typical value = 200.
      */
@@ -111,6 +135,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
 
     public String kToString() {
         return k != null ? k.toString() : null;
+    }
+
+    private static void setK(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setK(_value_);
+    }
+
+    private static String kToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).kToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
         return rcrfd != null ? rcrfd.toString() : null;
     }
 
+    private static void setRcrfd(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setRcrfd(_value_);
+    }
+
+    private static String rcrfdToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).rcrfdToString();
+    }
+
     /**
      * Gain reduction ratio of lag-lead element ([&lt;i&gt;Ta&lt;/i&gt; / &lt;i&gt;Tb&lt;/i&gt;]). The parameter &lt;i&gt;Ta&lt;/i&gt; is not defined explicitly.  Typical value = 0.1.
      */
@@ -153,6 +193,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
 
     public String tatbToString() {
         return tatb != null ? tatb.toString() : null;
+    }
+
+    private static void setTatb(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setTatb(_value_);
+    }
+
+    private static String tatbToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).tatbToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
         return tb != null ? tb.toString() : null;
     }
 
+    private static void setTb(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setTb(_value_);
+    }
+
+    private static String tbToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).tbToString();
+    }
+
     /**
      * Time constant of gain block (&lt;i&gt;Te&lt;/i&gt;) (&amp;gt; 0).  Typical value = 0,02.
      */
@@ -195,6 +251,14 @@ public class ExcSCRX extends ExcitationSystemDynamics {
 
     public String teToString() {
         return te != null ? te.toString() : null;
+    }
+
+    private static void setTe(BaseClass _this_, String _value_) {
+        ((ExcSCRX) _this_).setTe(_value_);
+    }
+
+    private static String teToString(BaseClass _this_) {
+        return ((ExcSCRX) _this_).teToString();
     }
 
     /**
@@ -238,16 +302,12 @@ public class ExcSCRX extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcSCRX", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcSCRX", attrName));
+        return "";
     }
 
     /**
@@ -258,16 +318,12 @@ public class ExcSCRX extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcSCRX", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcSCRX", attrName, objectValue));
         }
     }
 
@@ -279,16 +335,12 @@ public class ExcSCRX extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcSCRX", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcSCRX", attrName, stringValue));
         }
     }
 
@@ -412,60 +464,46 @@ public class ExcSCRX extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("cswitch", new AttrDetails("ExcSCRX.cswitch", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("cswitch", new AttrDetails("ExcSCRX.cswitch", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::cswitchToString, null, ExcSCRX::setCswitch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("emax", new AttrDetails("ExcSCRX.emax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("emax", new AttrDetails("ExcSCRX.emax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::emaxToString, null, ExcSCRX::setEmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("emin", new AttrDetails("ExcSCRX.emin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("emin", new AttrDetails("ExcSCRX.emin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::eminToString, null, ExcSCRX::setEmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k", new AttrDetails("ExcSCRX.k", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k", new AttrDetails("ExcSCRX.k", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::kToString, null, ExcSCRX::setK));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rcrfd", new AttrDetails("ExcSCRX.rcrfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("rcrfd", new AttrDetails("ExcSCRX.rcrfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::rcrfdToString, null, ExcSCRX::setRcrfd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tatb", new AttrDetails("ExcSCRX.tatb", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tatb", new AttrDetails("ExcSCRX.tatb", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::tatbToString, null, ExcSCRX::setTatb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb", new AttrDetails("ExcSCRX.tb", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tb", new AttrDetails("ExcSCRX.tb", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::tbToString, null, ExcSCRX::setTb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcSCRX.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcSCRX.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSCRX::teToString, null, ExcSCRX::setTe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSCRX().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("cswitch", new GetterSetter(this::cswitchToString, null, this::setCswitch));
-        map.put("emax", new GetterSetter(this::emaxToString, null, this::setEmax));
-        map.put("emin", new GetterSetter(this::eminToString, null, this::setEmin));
-        map.put("k", new GetterSetter(this::kToString, null, this::setK));
-        map.put("rcrfd", new GetterSetter(this::rcrfdToString, null, this::setRcrfd));
-        map.put("tatb", new GetterSetter(this::tatbToString, null, this::setTatb));
-        map.put("tb", new GetterSetter(this::tbToString, null, this::setTb));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

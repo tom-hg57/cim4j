@@ -52,6 +52,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return AsynchronousMachineUserDefined != null ? AsynchronousMachineUserDefined.getRdfid() : null;
     }
 
+    private static void setAsynchronousMachineUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setAsynchronousMachineUserDefined(_object_);
+    }
+
+    private static String AsynchronousMachineUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).AsynchronousMachineUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -73,6 +81,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String DiscontinuousExcitationControlUserDefinedToString() {
         return DiscontinuousExcitationControlUserDefined != null ? DiscontinuousExcitationControlUserDefined.getRdfid() : null;
+    }
+
+    private static void setDiscontinuousExcitationControlUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setDiscontinuousExcitationControlUserDefined(_object_);
+    }
+
+    private static String DiscontinuousExcitationControlUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).DiscontinuousExcitationControlUserDefinedToString();
     }
 
     /**
@@ -98,6 +114,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return ExcitationSystemUserDefined != null ? ExcitationSystemUserDefined.getRdfid() : null;
     }
 
+    private static void setExcitationSystemUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setExcitationSystemUserDefined(_object_);
+    }
+
+    private static String ExcitationSystemUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).ExcitationSystemUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -119,6 +143,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String LoadUserDefinedToString() {
         return LoadUserDefined != null ? LoadUserDefined.getRdfid() : null;
+    }
+
+    private static void setLoadUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setLoadUserDefined(_object_);
+    }
+
+    private static String LoadUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).LoadUserDefinedToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return MechanicalLoadUserDefined != null ? MechanicalLoadUserDefined.getRdfid() : null;
     }
 
+    private static void setMechanicalLoadUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setMechanicalLoadUserDefined(_object_);
+    }
+
+    private static String MechanicalLoadUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).MechanicalLoadUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -165,6 +205,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String OverexcitationLimiterUserDefinedToString() {
         return OverexcitationLimiterUserDefined != null ? OverexcitationLimiterUserDefined.getRdfid() : null;
+    }
+
+    private static void setOverexcitationLimiterUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setOverexcitationLimiterUserDefined(_object_);
+    }
+
+    private static String OverexcitationLimiterUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).OverexcitationLimiterUserDefinedToString();
     }
 
     /**
@@ -190,6 +238,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return PFVArControllerType1UserDefined != null ? PFVArControllerType1UserDefined.getRdfid() : null;
     }
 
+    private static void setPFVArControllerType1UserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setPFVArControllerType1UserDefined(_object_);
+    }
+
+    private static String PFVArControllerType1UserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).PFVArControllerType1UserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -211,6 +267,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String PFVArControllerType2UserDefinedToString() {
         return PFVArControllerType2UserDefined != null ? PFVArControllerType2UserDefined.getRdfid() : null;
+    }
+
+    private static void setPFVArControllerType2UserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setPFVArControllerType2UserDefined(_object_);
+    }
+
+    private static String PFVArControllerType2UserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).PFVArControllerType2UserDefinedToString();
     }
 
     /**
@@ -236,6 +300,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return PowerSystemStabilizerUserDefined != null ? PowerSystemStabilizerUserDefined.getRdfid() : null;
     }
 
+    private static void setPowerSystemStabilizerUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setPowerSystemStabilizerUserDefined(_object_);
+    }
+
+    private static String PowerSystemStabilizerUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).PowerSystemStabilizerUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -257,6 +329,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String SynchronousMachineUserDefinedToString() {
         return SynchronousMachineUserDefined != null ? SynchronousMachineUserDefined.getRdfid() : null;
+    }
+
+    private static void setSynchronousMachineUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setSynchronousMachineUserDefined(_object_);
+    }
+
+    private static String SynchronousMachineUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).SynchronousMachineUserDefinedToString();
     }
 
     /**
@@ -282,6 +362,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return TurbineGovernorUserDefined != null ? TurbineGovernorUserDefined.getRdfid() : null;
     }
 
+    private static void setTurbineGovernorUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setTurbineGovernorUserDefined(_object_);
+    }
+
+    private static String TurbineGovernorUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).TurbineGovernorUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -303,6 +391,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String TurbineLoadControllerUserDefinedToString() {
         return TurbineLoadControllerUserDefined != null ? TurbineLoadControllerUserDefined.getRdfid() : null;
+    }
+
+    private static void setTurbineLoadControllerUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setTurbineLoadControllerUserDefined(_object_);
+    }
+
+    private static String TurbineLoadControllerUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).TurbineLoadControllerUserDefinedToString();
     }
 
     /**
@@ -328,6 +424,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return UnderexcitationLimiterUserDefined != null ? UnderexcitationLimiterUserDefined.getRdfid() : null;
     }
 
+    private static void setUnderexcitationLimiterUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setUnderexcitationLimiterUserDefined(_object_);
+    }
+
+    private static String UnderexcitationLimiterUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).UnderexcitationLimiterUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -349,6 +453,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String VoltageAdjusterUserDefinedToString() {
         return VoltageAdjusterUserDefined != null ? VoltageAdjusterUserDefined.getRdfid() : null;
+    }
+
+    private static void setVoltageAdjusterUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setVoltageAdjusterUserDefined(_object_);
+    }
+
+    private static String VoltageAdjusterUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).VoltageAdjusterUserDefinedToString();
     }
 
     /**
@@ -374,6 +486,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return VoltageCompensatorUserDefined != null ? VoltageCompensatorUserDefined.getRdfid() : null;
     }
 
+    private static void setVoltageCompensatorUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setVoltageCompensatorUserDefined(_object_);
+    }
+
+    private static String VoltageCompensatorUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).VoltageCompensatorUserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -395,6 +515,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String WindPlantUserDefinedToString() {
         return WindPlantUserDefined != null ? WindPlantUserDefined.getRdfid() : null;
+    }
+
+    private static void setWindPlantUserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setWindPlantUserDefined(_object_);
+    }
+
+    private static String WindPlantUserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).WindPlantUserDefinedToString();
     }
 
     /**
@@ -420,6 +548,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return WindType1or2UserDefined != null ? WindType1or2UserDefined.getRdfid() : null;
     }
 
+    private static void setWindType1or2UserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setWindType1or2UserDefined(_object_);
+    }
+
+    private static String WindType1or2UserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).WindType1or2UserDefinedToString();
+    }
+
     /**
      * Proprietary user-defined model with which this parameter is associated.
      */
@@ -443,6 +579,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return WindType3or4UserDefined != null ? WindType3or4UserDefined.getRdfid() : null;
     }
 
+    private static void setWindType3or4UserDefined(BaseClass _this_, BaseClass _object_) {
+        ((ProprietaryParameterDynamics) _this_).setWindType3or4UserDefined(_object_);
+    }
+
+    private static String WindType3or4UserDefinedToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).WindType3or4UserDefinedToString();
+    }
+
     /**
      * Used for boolean parameter value. If this attribute is populated, integerParameterValue and floatParameterValue will not be.
      */
@@ -462,6 +606,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String booleanParameterValueToString() {
         return booleanParameterValue != null ? booleanParameterValue.toString() : null;
+    }
+
+    private static void setBooleanParameterValue(BaseClass _this_, String _value_) {
+        ((ProprietaryParameterDynamics) _this_).setBooleanParameterValue(_value_);
+    }
+
+    private static String booleanParameterValueToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).booleanParameterValueToString();
     }
 
     /**
@@ -485,6 +637,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return floatParameterValue != null ? floatParameterValue.toString() : null;
     }
 
+    private static void setFloatParameterValue(BaseClass _this_, String _value_) {
+        ((ProprietaryParameterDynamics) _this_).setFloatParameterValue(_value_);
+    }
+
+    private static String floatParameterValueToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).floatParameterValueToString();
+    }
+
     /**
      * Used for integer parameter value.  If this attribute is populated, booleanParameterValue and floatParameterValue will not be.
      */
@@ -506,6 +666,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return integerParameterValue != null ? integerParameterValue.toString() : null;
     }
 
+    private static void setIntegerParameterValue(BaseClass _this_, String _value_) {
+        ((ProprietaryParameterDynamics) _this_).setIntegerParameterValue(_value_);
+    }
+
+    private static String integerParameterValueToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).integerParameterValueToString();
+    }
+
     /**
      * Sequence number of the parameter among the set of parameters associated with the related proprietary user-defined model.
      */
@@ -525,6 +693,14 @@ public class ProprietaryParameterDynamics extends BaseClass {
 
     public String parameterNumberToString() {
         return parameterNumber != null ? parameterNumber.toString() : null;
+    }
+
+    private static void setParameterNumber(BaseClass _this_, String _value_) {
+        ((ProprietaryParameterDynamics) _this_).setParameterNumber(_value_);
+    }
+
+    private static String parameterNumberToString(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).parameterNumberToString();
     }
 
     /**
@@ -568,16 +744,12 @@ public class ProprietaryParameterDynamics extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ProprietaryParameterDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ProprietaryParameterDynamics", attrName));
+        return "";
     }
 
     /**
@@ -588,16 +760,12 @@ public class ProprietaryParameterDynamics extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ProprietaryParameterDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ProprietaryParameterDynamics", attrName, objectValue));
         }
     }
 
@@ -609,16 +777,12 @@ public class ProprietaryParameterDynamics extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ProprietaryParameterDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ProprietaryParameterDynamics", attrName, stringValue));
         }
     }
 
@@ -742,144 +906,116 @@ public class ProprietaryParameterDynamics extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("AsynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.AsynchronousMachineUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AsynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.AsynchronousMachineUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::AsynchronousMachineUserDefinedToString, ProprietaryParameterDynamics::setAsynchronousMachineUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("DiscontinuousExcitationControlUserDefined", new AttrDetails("ProprietaryParameterDynamics.DiscontinuousExcitationControlUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiscontinuousExcitationControlUserDefined", new AttrDetails("ProprietaryParameterDynamics.DiscontinuousExcitationControlUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::DiscontinuousExcitationControlUserDefinedToString, ProprietaryParameterDynamics::setDiscontinuousExcitationControlUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ExcitationSystemUserDefined", new AttrDetails("ProprietaryParameterDynamics.ExcitationSystemUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ExcitationSystemUserDefined", new AttrDetails("ProprietaryParameterDynamics.ExcitationSystemUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::ExcitationSystemUserDefinedToString, ProprietaryParameterDynamics::setExcitationSystemUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.LoadUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("LoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.LoadUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::LoadUserDefinedToString, ProprietaryParameterDynamics::setLoadUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("MechanicalLoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.MechanicalLoadUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("MechanicalLoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.MechanicalLoadUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::MechanicalLoadUserDefinedToString, ProprietaryParameterDynamics::setMechanicalLoadUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("OverexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.OverexcitationLimiterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("OverexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.OverexcitationLimiterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::OverexcitationLimiterUserDefinedToString, ProprietaryParameterDynamics::setOverexcitationLimiterUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType1UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PFVArControllerType1UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType1UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::PFVArControllerType1UserDefinedToString, ProprietaryParameterDynamics::setPFVArControllerType1UserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType2UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType2UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PFVArControllerType2UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType2UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::PFVArControllerType2UserDefinedToString, ProprietaryParameterDynamics::setPFVArControllerType2UserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerSystemStabilizerUserDefined", new AttrDetails("ProprietaryParameterDynamics.PowerSystemStabilizerUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PowerSystemStabilizerUserDefined", new AttrDetails("ProprietaryParameterDynamics.PowerSystemStabilizerUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::PowerSystemStabilizerUserDefinedToString, ProprietaryParameterDynamics::setPowerSystemStabilizerUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.SynchronousMachineUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.SynchronousMachineUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::SynchronousMachineUserDefinedToString, ProprietaryParameterDynamics::setSynchronousMachineUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineGovernorUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineGovernorUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TurbineGovernorUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineGovernorUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::TurbineGovernorUserDefinedToString, ProprietaryParameterDynamics::setTurbineGovernorUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineLoadControllerUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineLoadControllerUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TurbineLoadControllerUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineLoadControllerUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::TurbineLoadControllerUserDefinedToString, ProprietaryParameterDynamics::setTurbineLoadControllerUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("UnderexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.UnderexcitationLimiterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("UnderexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.UnderexcitationLimiterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::UnderexcitationLimiterUserDefinedToString, ProprietaryParameterDynamics::setUnderexcitationLimiterUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageAdjusterUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageAdjusterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("VoltageAdjusterUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageAdjusterUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::VoltageAdjusterUserDefinedToString, ProprietaryParameterDynamics::setVoltageAdjusterUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageCompensatorUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageCompensatorUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("VoltageCompensatorUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageCompensatorUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::VoltageCompensatorUserDefinedToString, ProprietaryParameterDynamics::setVoltageCompensatorUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantUserDefined", new AttrDetails("ProprietaryParameterDynamics.WindPlantUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindPlantUserDefined", new AttrDetails("ProprietaryParameterDynamics.WindPlantUserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::WindPlantUserDefinedToString, ProprietaryParameterDynamics::setWindPlantUserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindType1or2UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType1or2UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindType1or2UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType1or2UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::WindType1or2UserDefinedToString, ProprietaryParameterDynamics::setWindType1or2UserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindType3or4UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType3or4UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindType3or4UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType3or4UserDefined", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ProprietaryParameterDynamics::WindType3or4UserDefinedToString, ProprietaryParameterDynamics::setWindType3or4UserDefined, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("booleanParameterValue", new AttrDetails("ProprietaryParameterDynamics.booleanParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("booleanParameterValue", new AttrDetails("ProprietaryParameterDynamics.booleanParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ProprietaryParameterDynamics::booleanParameterValueToString, null, ProprietaryParameterDynamics::setBooleanParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("floatParameterValue", new AttrDetails("ProprietaryParameterDynamics.floatParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("floatParameterValue", new AttrDetails("ProprietaryParameterDynamics.floatParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ProprietaryParameterDynamics::floatParameterValueToString, null, ProprietaryParameterDynamics::setFloatParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("integerParameterValue", new AttrDetails("ProprietaryParameterDynamics.integerParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("integerParameterValue", new AttrDetails("ProprietaryParameterDynamics.integerParameterValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ProprietaryParameterDynamics::integerParameterValueToString, null, ProprietaryParameterDynamics::setIntegerParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("parameterNumber", new AttrDetails("ProprietaryParameterDynamics.parameterNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("parameterNumber", new AttrDetails("ProprietaryParameterDynamics.parameterNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ProprietaryParameterDynamics::parameterNumberToString, null, ProprietaryParameterDynamics::setParameterNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProprietaryParameterDynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AsynchronousMachineUserDefined", new GetterSetter(this::AsynchronousMachineUserDefinedToString, this::setAsynchronousMachineUserDefined, null));
-        map.put("DiscontinuousExcitationControlUserDefined", new GetterSetter(this::DiscontinuousExcitationControlUserDefinedToString, this::setDiscontinuousExcitationControlUserDefined, null));
-        map.put("ExcitationSystemUserDefined", new GetterSetter(this::ExcitationSystemUserDefinedToString, this::setExcitationSystemUserDefined, null));
-        map.put("LoadUserDefined", new GetterSetter(this::LoadUserDefinedToString, this::setLoadUserDefined, null));
-        map.put("MechanicalLoadUserDefined", new GetterSetter(this::MechanicalLoadUserDefinedToString, this::setMechanicalLoadUserDefined, null));
-        map.put("OverexcitationLimiterUserDefined", new GetterSetter(this::OverexcitationLimiterUserDefinedToString, this::setOverexcitationLimiterUserDefined, null));
-        map.put("PFVArControllerType1UserDefined", new GetterSetter(this::PFVArControllerType1UserDefinedToString, this::setPFVArControllerType1UserDefined, null));
-        map.put("PFVArControllerType2UserDefined", new GetterSetter(this::PFVArControllerType2UserDefinedToString, this::setPFVArControllerType2UserDefined, null));
-        map.put("PowerSystemStabilizerUserDefined", new GetterSetter(this::PowerSystemStabilizerUserDefinedToString, this::setPowerSystemStabilizerUserDefined, null));
-        map.put("SynchronousMachineUserDefined", new GetterSetter(this::SynchronousMachineUserDefinedToString, this::setSynchronousMachineUserDefined, null));
-        map.put("TurbineGovernorUserDefined", new GetterSetter(this::TurbineGovernorUserDefinedToString, this::setTurbineGovernorUserDefined, null));
-        map.put("TurbineLoadControllerUserDefined", new GetterSetter(this::TurbineLoadControllerUserDefinedToString, this::setTurbineLoadControllerUserDefined, null));
-        map.put("UnderexcitationLimiterUserDefined", new GetterSetter(this::UnderexcitationLimiterUserDefinedToString, this::setUnderexcitationLimiterUserDefined, null));
-        map.put("VoltageAdjusterUserDefined", new GetterSetter(this::VoltageAdjusterUserDefinedToString, this::setVoltageAdjusterUserDefined, null));
-        map.put("VoltageCompensatorUserDefined", new GetterSetter(this::VoltageCompensatorUserDefinedToString, this::setVoltageCompensatorUserDefined, null));
-        map.put("WindPlantUserDefined", new GetterSetter(this::WindPlantUserDefinedToString, this::setWindPlantUserDefined, null));
-        map.put("WindType1or2UserDefined", new GetterSetter(this::WindType1or2UserDefinedToString, this::setWindType1or2UserDefined, null));
-        map.put("WindType3or4UserDefined", new GetterSetter(this::WindType3or4UserDefinedToString, this::setWindType3or4UserDefined, null));
-        map.put("booleanParameterValue", new GetterSetter(this::booleanParameterValueToString, null, this::setBooleanParameterValue));
-        map.put("floatParameterValue", new GetterSetter(this::floatParameterValueToString, null, this::setFloatParameterValue));
-        map.put("integerParameterValue", new GetterSetter(this::integerParameterValueToString, null, this::setIntegerParameterValue));
-        map.put("parameterNumber", new GetterSetter(this::parameterNumberToString, null, this::setParameterNumber));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

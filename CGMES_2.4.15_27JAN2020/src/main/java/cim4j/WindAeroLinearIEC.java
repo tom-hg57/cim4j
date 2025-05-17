@@ -54,6 +54,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
         return WindGenTurbineType3IEC != null ? WindGenTurbineType3IEC.getRdfid() : null;
     }
 
+    private static void setWindGenTurbineType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindAeroLinearIEC) _this_).setWindGenTurbineType3IEC(_object_);
+    }
+
+    private static String WindGenTurbineType3IECToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).WindGenTurbineType3IECToString();
+    }
+
     /**
      * Partial derivative of aerodynamic power with respect to changes in WTR speed (). It is case dependent parameter.
      */
@@ -73,6 +81,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
 
     public String dpomegaToString() {
         return dpomega != null ? dpomega.toString() : null;
+    }
+
+    private static void setDpomega(BaseClass _this_, String _value_) {
+        ((WindAeroLinearIEC) _this_).setDpomega(_value_);
+    }
+
+    private static String dpomegaToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).dpomegaToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
         return dptheta != null ? dptheta.toString() : null;
     }
 
+    private static void setDptheta(BaseClass _this_, String _value_) {
+        ((WindAeroLinearIEC) _this_).setDptheta(_value_);
+    }
+
+    private static String dpthetaToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).dpthetaToString();
+    }
+
     /**
      * Rotor speed if the wind turbine is not derated (). It is case dependent parameter.
      */
@@ -115,6 +139,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
 
     public String omegazeroToString() {
         return omegazero != null ? omegazero.toString() : null;
+    }
+
+    private static void setOmegazero(BaseClass _this_, String _value_) {
+        ((WindAeroLinearIEC) _this_).setOmegazero(_value_);
+    }
+
+    private static String omegazeroToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).omegazeroToString();
     }
 
     /**
@@ -138,6 +170,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
         return pavail != null ? pavail.toString() : null;
     }
 
+    private static void setPavail(BaseClass _this_, String _value_) {
+        ((WindAeroLinearIEC) _this_).setPavail(_value_);
+    }
+
+    private static String pavailToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).pavailToString();
+    }
+
     /**
      * Pitch angle if the wind turbine is not derated (). It is case dependent parameter.
      */
@@ -157,6 +197,14 @@ public class WindAeroLinearIEC extends IdentifiedObject {
 
     public String thetazeroToString() {
         return thetazero != null ? thetazero.toString() : null;
+    }
+
+    private static void setThetazero(BaseClass _this_, String _value_) {
+        ((WindAeroLinearIEC) _this_).setThetazero(_value_);
+    }
+
+    private static String thetazeroToString(BaseClass _this_) {
+        return ((WindAeroLinearIEC) _this_).thetazeroToString();
     }
 
     /**
@@ -200,16 +248,12 @@ public class WindAeroLinearIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindAeroLinearIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindAeroLinearIEC", attrName));
+        return "";
     }
 
     /**
@@ -220,16 +264,12 @@ public class WindAeroLinearIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindAeroLinearIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindAeroLinearIEC", attrName, objectValue));
         }
     }
 
@@ -241,16 +281,12 @@ public class WindAeroLinearIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindAeroLinearIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindAeroLinearIEC", attrName, stringValue));
         }
     }
 
@@ -374,48 +410,36 @@ public class WindAeroLinearIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindGenTurbineType3IEC", new AttrDetails("WindAeroLinearIEC.WindGenTurbineType3IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindGenTurbineType3IEC", new AttrDetails("WindAeroLinearIEC.WindGenTurbineType3IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindAeroLinearIEC::WindGenTurbineType3IECToString, WindAeroLinearIEC::setWindGenTurbineType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dpomega", new AttrDetails("WindAeroLinearIEC.dpomega", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dpomega", new AttrDetails("WindAeroLinearIEC.dpomega", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::dpomegaToString, null, WindAeroLinearIEC::setDpomega));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dptheta", new AttrDetails("WindAeroLinearIEC.dptheta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dptheta", new AttrDetails("WindAeroLinearIEC.dptheta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::dpthetaToString, null, WindAeroLinearIEC::setDptheta));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("omegazero", new AttrDetails("WindAeroLinearIEC.omegazero", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("omegazero", new AttrDetails("WindAeroLinearIEC.omegazero", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::omegazeroToString, null, WindAeroLinearIEC::setOmegazero));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pavail", new AttrDetails("WindAeroLinearIEC.pavail", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pavail", new AttrDetails("WindAeroLinearIEC.pavail", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::pavailToString, null, WindAeroLinearIEC::setPavail));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("thetazero", new AttrDetails("WindAeroLinearIEC.thetazero", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("thetazero", new AttrDetails("WindAeroLinearIEC.thetazero", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::thetazeroToString, null, WindAeroLinearIEC::setThetazero));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroLinearIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindGenTurbineType3IEC", new GetterSetter(this::WindGenTurbineType3IECToString, this::setWindGenTurbineType3IEC, null));
-        map.put("dpomega", new GetterSetter(this::dpomegaToString, null, this::setDpomega));
-        map.put("dptheta", new GetterSetter(this::dpthetaToString, null, this::setDptheta));
-        map.put("omegazero", new GetterSetter(this::omegazeroToString, null, this::setOmegazero));
-        map.put("pavail", new GetterSetter(this::pavailToString, null, this::setPavail));
-        map.put("thetazero", new GetterSetter(this::thetazeroToString, null, this::setThetazero));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -46,6 +46,14 @@ public class StreetAddress extends BaseClass {
         return language != null ? language.toString() : null;
     }
 
+    private static void setLanguage(BaseClass _this_, String _value_) {
+        ((StreetAddress) _this_).setLanguage(_value_);
+    }
+
+    private static String languageToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).languageToString();
+    }
+
     /**
      * Post office box.
      */
@@ -63,6 +71,14 @@ public class StreetAddress extends BaseClass {
         return poBox != null ? poBox.toString() : null;
     }
 
+    private static void setPoBox(BaseClass _this_, String _value_) {
+        ((StreetAddress) _this_).setPoBox(_value_);
+    }
+
+    private static String poBoxToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).poBoxToString();
+    }
+
     /**
      * Postal code for the address.
      */
@@ -78,6 +94,14 @@ public class StreetAddress extends BaseClass {
 
     public String postalCodeToString() {
         return postalCode != null ? postalCode.toString() : null;
+    }
+
+    private static void setPostalCode(BaseClass _this_, String _value_) {
+        ((StreetAddress) _this_).setPostalCode(_value_);
+    }
+
+    private static String postalCodeToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).postalCodeToString();
     }
 
     /**
@@ -102,6 +126,14 @@ public class StreetAddress extends BaseClass {
         return status != null ? status.getRdfid() : null;
     }
 
+    private static void setStatus(BaseClass _this_, BaseClass _object_) {
+        ((StreetAddress) _this_).setStatus(_object_);
+    }
+
+    private static String statusToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).statusToString();
+    }
+
     /**
      * Street detail.
      */
@@ -124,6 +156,14 @@ public class StreetAddress extends BaseClass {
         return streetDetail != null ? streetDetail.getRdfid() : null;
     }
 
+    private static void setStreetDetail(BaseClass _this_, BaseClass _object_) {
+        ((StreetAddress) _this_).setStreetDetail(_object_);
+    }
+
+    private static String streetDetailToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).streetDetailToString();
+    }
+
     /**
      * Town detail.
      */
@@ -144,6 +184,14 @@ public class StreetAddress extends BaseClass {
 
     public String townDetailToString() {
         return townDetail != null ? townDetail.getRdfid() : null;
+    }
+
+    private static void setTownDetail(BaseClass _this_, BaseClass _object_) {
+        ((StreetAddress) _this_).setTownDetail(_object_);
+    }
+
+    private static String townDetailToString(BaseClass _this_) {
+        return ((StreetAddress) _this_).townDetailToString();
     }
 
     /**
@@ -187,16 +235,12 @@ public class StreetAddress extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("StreetAddress", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "StreetAddress", attrName));
+        return "";
     }
 
     /**
@@ -207,16 +251,12 @@ public class StreetAddress extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("StreetAddress", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StreetAddress", attrName, objectValue));
         }
     }
 
@@ -228,16 +268,12 @@ public class StreetAddress extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("StreetAddress", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StreetAddress", attrName, stringValue));
         }
     }
 
@@ -361,48 +397,36 @@ public class StreetAddress extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("language", new AttrDetails("StreetAddress.language", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("language", new AttrDetails("StreetAddress.language", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::languageToString, null, StreetAddress::setLanguage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("poBox", new AttrDetails("StreetAddress.poBox", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("poBox", new AttrDetails("StreetAddress.poBox", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::poBoxToString, null, StreetAddress::setPoBox));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("postalCode", new AttrDetails("StreetAddress.postalCode", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("postalCode", new AttrDetails("StreetAddress.postalCode", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::postalCodeToString, null, StreetAddress::setPostalCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("status", new AttrDetails("StreetAddress.status", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("status", new AttrDetails("StreetAddress.status", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::statusToString, StreetAddress::setStatus, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("streetDetail", new AttrDetails("StreetAddress.streetDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("streetDetail", new AttrDetails("StreetAddress.streetDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::streetDetailToString, StreetAddress::setStreetDetail, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("townDetail", new AttrDetails("StreetAddress.townDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("townDetail", new AttrDetails("StreetAddress.townDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::townDetailToString, StreetAddress::setTownDetail, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetAddress().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("language", new GetterSetter(this::languageToString, null, this::setLanguage));
-        map.put("poBox", new GetterSetter(this::poBoxToString, null, this::setPoBox));
-        map.put("postalCode", new GetterSetter(this::postalCodeToString, null, this::setPostalCode));
-        map.put("status", new GetterSetter(this::statusToString, this::setStatus, null));
-        map.put("streetDetail", new GetterSetter(this::streetDetailToString, this::setStreetDetail, null));
-        map.put("townDetail", new GetterSetter(this::townDetailToString, this::setTownDetail, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

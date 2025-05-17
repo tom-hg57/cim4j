@@ -52,6 +52,14 @@ public class CurveData extends BaseClass {
         return Curve != null ? Curve.getRdfid() : null;
     }
 
+    private static void setCurve(BaseClass _this_, BaseClass _object_) {
+        ((CurveData) _this_).setCurve(_object_);
+    }
+
+    private static String CurveToString(BaseClass _this_) {
+        return ((CurveData) _this_).CurveToString();
+    }
+
     /**
      * The data value of the X-axis variable,  depending on the X-axis units.
      */
@@ -71,6 +79,14 @@ public class CurveData extends BaseClass {
 
     public String xvalueToString() {
         return xvalue != null ? xvalue.toString() : null;
+    }
+
+    private static void setXvalue(BaseClass _this_, String _value_) {
+        ((CurveData) _this_).setXvalue(_value_);
+    }
+
+    private static String xvalueToString(BaseClass _this_) {
+        return ((CurveData) _this_).xvalueToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class CurveData extends BaseClass {
         return y1value != null ? y1value.toString() : null;
     }
 
+    private static void setY1value(BaseClass _this_, String _value_) {
+        ((CurveData) _this_).setY1value(_value_);
+    }
+
+    private static String y1valueToString(BaseClass _this_) {
+        return ((CurveData) _this_).y1valueToString();
+    }
+
     /**
      * The data value of the second Y-axis variable (if present), depending on the Y-axis units.
      */
@@ -113,6 +137,14 @@ public class CurveData extends BaseClass {
 
     public String y2valueToString() {
         return y2value != null ? y2value.toString() : null;
+    }
+
+    private static void setY2value(BaseClass _this_, String _value_) {
+        ((CurveData) _this_).setY2value(_value_);
+    }
+
+    private static String y2valueToString(BaseClass _this_) {
+        return ((CurveData) _this_).y2valueToString();
     }
 
     /**
@@ -156,16 +188,12 @@ public class CurveData extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("CurveData", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "CurveData", attrName));
+        return "";
     }
 
     /**
@@ -176,16 +204,12 @@ public class CurveData extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("CurveData", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CurveData", attrName, objectValue));
         }
     }
 
@@ -197,16 +221,12 @@ public class CurveData extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("CurveData", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CurveData", attrName, stringValue));
         }
     }
 
@@ -330,36 +350,26 @@ public class CurveData extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Curve", new AttrDetails("CurveData.Curve", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Curve", new AttrDetails("CurveData.Curve", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CurveData::CurveToString, CurveData::setCurve, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xvalue", new AttrDetails("CurveData.xvalue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xvalue", new AttrDetails("CurveData.xvalue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CurveData::xvalueToString, null, CurveData::setXvalue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("y1value", new AttrDetails("CurveData.y1value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("y1value", new AttrDetails("CurveData.y1value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CurveData::y1valueToString, null, CurveData::setY1value));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("y2value", new AttrDetails("CurveData.y2value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("y2value", new AttrDetails("CurveData.y2value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CurveData::y2valueToString, null, CurveData::setY2value));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurveData().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Curve", new GetterSetter(this::CurveToString, this::setCurve, null));
-        map.put("xvalue", new GetterSetter(this::xvalueToString, null, this::setXvalue));
-        map.put("y1value", new GetterSetter(this::y1valueToString, null, this::setY1value));
-        map.put("y2value", new GetterSetter(this::y2valueToString, null, this::setY2value));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

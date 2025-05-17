@@ -50,6 +50,14 @@ public class CsConverter extends ACDCConverter {
         return alpha != null ? alpha.toString() : null;
     }
 
+    private static void setAlpha(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setAlpha(_value_);
+    }
+
+    private static String alphaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).alphaToString();
+    }
+
     /**
      * Extinction angle. CSC state variable, result from power flow.
      */
@@ -69,6 +77,14 @@ public class CsConverter extends ACDCConverter {
 
     public String gammaToString() {
         return gamma != null ? gamma.toString() : null;
+    }
+
+    private static void setGamma(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setGamma(_value_);
+    }
+
+    private static String gammaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).gammaToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class CsConverter extends ACDCConverter {
         return maxAlpha != null ? maxAlpha.toString() : null;
     }
 
+    private static void setMaxAlpha(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMaxAlpha(_value_);
+    }
+
+    private static String maxAlphaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).maxAlphaToString();
+    }
+
     /**
      * Maximum extinction angle. CSC configuration data used in power flow.
      */
@@ -111,6 +135,14 @@ public class CsConverter extends ACDCConverter {
 
     public String maxGammaToString() {
         return maxGamma != null ? maxGamma.toString() : null;
+    }
+
+    private static void setMaxGamma(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMaxGamma(_value_);
+    }
+
+    private static String maxGammaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).maxGammaToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class CsConverter extends ACDCConverter {
         return maxIdc != null ? maxIdc.toString() : null;
     }
 
+    private static void setMaxIdc(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMaxIdc(_value_);
+    }
+
+    private static String maxIdcToString(BaseClass _this_) {
+        return ((CsConverter) _this_).maxIdcToString();
+    }
+
     /**
      * Minimum firing angle. CSC configuration data used in power flow.
      */
@@ -153,6 +193,14 @@ public class CsConverter extends ACDCConverter {
 
     public String minAlphaToString() {
         return minAlpha != null ? minAlpha.toString() : null;
+    }
+
+    private static void setMinAlpha(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMinAlpha(_value_);
+    }
+
+    private static String minAlphaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).minAlphaToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class CsConverter extends ACDCConverter {
         return minGamma != null ? minGamma.toString() : null;
     }
 
+    private static void setMinGamma(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMinGamma(_value_);
+    }
+
+    private static String minGammaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).minGammaToString();
+    }
+
     /**
      * The minimum direct current (Id) on the DC side at which the converter should operate. CSC configuration data used in power flow.
      */
@@ -197,6 +253,14 @@ public class CsConverter extends ACDCConverter {
         return minIdc != null ? minIdc.toString() : null;
     }
 
+    private static void setMinIdc(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setMinIdc(_value_);
+    }
+
+    private static String minIdcToString(BaseClass _this_) {
+        return ((CsConverter) _this_).minIdcToString();
+    }
+
     /**
      * Indicates whether the DC pole is operating as an inverter or as a rectifier. CSC control variable used in power flow.
      */
@@ -214,6 +278,14 @@ public class CsConverter extends ACDCConverter {
         return operatingMode;
     }
 
+    private static void setOperatingMode(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setOperatingMode(_value_);
+    }
+
+    private static String operatingModeToString(BaseClass _this_) {
+        return ((CsConverter) _this_).operatingModeToString();
+    }
+
     /**
      */
     private String pPccControl; // CsPpccControlKind
@@ -228,6 +300,14 @@ public class CsConverter extends ACDCConverter {
 
     public String pPccControlToString() {
         return pPccControl;
+    }
+
+    private static void setPPccControl(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setPPccControl(_value_);
+    }
+
+    private static String pPccControlToString(BaseClass _this_) {
+        return ((CsConverter) _this_).pPccControlToString();
     }
 
     /**
@@ -251,6 +331,14 @@ public class CsConverter extends ACDCConverter {
         return ratedIdc != null ? ratedIdc.toString() : null;
     }
 
+    private static void setRatedIdc(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setRatedIdc(_value_);
+    }
+
+    private static String ratedIdcToString(BaseClass _this_) {
+        return ((CsConverter) _this_).ratedIdcToString();
+    }
+
     /**
      * Target firing angle. CSC control variable used in power flow.
      */
@@ -270,6 +358,14 @@ public class CsConverter extends ACDCConverter {
 
     public String targetAlphaToString() {
         return targetAlpha != null ? targetAlpha.toString() : null;
+    }
+
+    private static void setTargetAlpha(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setTargetAlpha(_value_);
+    }
+
+    private static String targetAlphaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).targetAlphaToString();
     }
 
     /**
@@ -293,6 +389,14 @@ public class CsConverter extends ACDCConverter {
         return targetGamma != null ? targetGamma.toString() : null;
     }
 
+    private static void setTargetGamma(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setTargetGamma(_value_);
+    }
+
+    private static String targetGammaToString(BaseClass _this_) {
+        return ((CsConverter) _this_).targetGammaToString();
+    }
+
     /**
      * DC current target value. CSC control variable used in power flow.
      */
@@ -312,6 +416,14 @@ public class CsConverter extends ACDCConverter {
 
     public String targetIdcToString() {
         return targetIdc != null ? targetIdc.toString() : null;
+    }
+
+    private static void setTargetIdc(BaseClass _this_, String _value_) {
+        ((CsConverter) _this_).setTargetIdc(_value_);
+    }
+
+    private static String targetIdcToString(BaseClass _this_) {
+        return ((CsConverter) _this_).targetIdcToString();
     }
 
     /**
@@ -355,16 +467,12 @@ public class CsConverter extends ACDCConverter {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("CsConverter", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "CsConverter", attrName));
+        return "";
     }
 
     /**
@@ -375,16 +483,12 @@ public class CsConverter extends ACDCConverter {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("CsConverter", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CsConverter", attrName, objectValue));
         }
     }
 
@@ -396,16 +500,12 @@ public class CsConverter extends ACDCConverter {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("CsConverter", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CsConverter", attrName, stringValue));
         }
     }
 
@@ -529,96 +629,76 @@ public class CsConverter extends ACDCConverter {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("alpha", new AttrDetails("CsConverter.alpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("alpha", new AttrDetails("CsConverter.alpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::alphaToString, null, CsConverter::setAlpha));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("gamma", new AttrDetails("CsConverter.gamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gamma", new AttrDetails("CsConverter.gamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::gammaToString, null, CsConverter::setGamma));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxAlpha", new AttrDetails("CsConverter.maxAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxAlpha", new AttrDetails("CsConverter.maxAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::maxAlphaToString, null, CsConverter::setMaxAlpha));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxGamma", new AttrDetails("CsConverter.maxGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxGamma", new AttrDetails("CsConverter.maxGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::maxGammaToString, null, CsConverter::setMaxGamma));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxIdc", new AttrDetails("CsConverter.maxIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxIdc", new AttrDetails("CsConverter.maxIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::maxIdcToString, null, CsConverter::setMaxIdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minAlpha", new AttrDetails("CsConverter.minAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minAlpha", new AttrDetails("CsConverter.minAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::minAlphaToString, null, CsConverter::setMinAlpha));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minGamma", new AttrDetails("CsConverter.minGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minGamma", new AttrDetails("CsConverter.minGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::minGammaToString, null, CsConverter::setMinGamma));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minIdc", new AttrDetails("CsConverter.minIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minIdc", new AttrDetails("CsConverter.minIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::minIdcToString, null, CsConverter::setMinIdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("operatingMode", new AttrDetails("CsConverter.operatingMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("operatingMode", new AttrDetails("CsConverter.operatingMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, CsConverter::operatingModeToString, null, CsConverter::setOperatingMode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("pPccControl", new AttrDetails("CsConverter.pPccControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("pPccControl", new AttrDetails("CsConverter.pPccControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, CsConverter::pPccControlToString, null, CsConverter::setPPccControl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedIdc", new AttrDetails("CsConverter.ratedIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedIdc", new AttrDetails("CsConverter.ratedIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::ratedIdcToString, null, CsConverter::setRatedIdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetAlpha", new AttrDetails("CsConverter.targetAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("targetAlpha", new AttrDetails("CsConverter.targetAlpha", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::targetAlphaToString, null, CsConverter::setTargetAlpha));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetGamma", new AttrDetails("CsConverter.targetGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("targetGamma", new AttrDetails("CsConverter.targetGamma", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::targetGammaToString, null, CsConverter::setTargetGamma));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetIdc", new AttrDetails("CsConverter.targetIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("targetIdc", new AttrDetails("CsConverter.targetIdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CsConverter::targetIdcToString, null, CsConverter::setTargetIdc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CsConverter().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("alpha", new GetterSetter(this::alphaToString, null, this::setAlpha));
-        map.put("gamma", new GetterSetter(this::gammaToString, null, this::setGamma));
-        map.put("maxAlpha", new GetterSetter(this::maxAlphaToString, null, this::setMaxAlpha));
-        map.put("maxGamma", new GetterSetter(this::maxGammaToString, null, this::setMaxGamma));
-        map.put("maxIdc", new GetterSetter(this::maxIdcToString, null, this::setMaxIdc));
-        map.put("minAlpha", new GetterSetter(this::minAlphaToString, null, this::setMinAlpha));
-        map.put("minGamma", new GetterSetter(this::minGammaToString, null, this::setMinGamma));
-        map.put("minIdc", new GetterSetter(this::minIdcToString, null, this::setMinIdc));
-        map.put("operatingMode", new GetterSetter(this::operatingModeToString, null, this::setOperatingMode));
-        map.put("pPccControl", new GetterSetter(this::pPccControlToString, null, this::setPPccControl));
-        map.put("ratedIdc", new GetterSetter(this::ratedIdcToString, null, this::setRatedIdc));
-        map.put("targetAlpha", new GetterSetter(this::targetAlphaToString, null, this::setTargetAlpha));
-        map.put("targetGamma", new GetterSetter(this::targetGammaToString, null, this::setTargetGamma));
-        map.put("targetIdc", new GetterSetter(this::targetIdcToString, null, this::setTargetIdc));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

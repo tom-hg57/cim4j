@@ -52,6 +52,14 @@ public class AnalogControl extends Control {
         return AnalogValue != null ? AnalogValue.getRdfid() : null;
     }
 
+    private static void setAnalogValue(BaseClass _this_, BaseClass _object_) {
+        ((AnalogControl) _this_).setAnalogValue(_object_);
+    }
+
+    private static String AnalogValueToString(BaseClass _this_) {
+        return ((AnalogControl) _this_).AnalogValueToString();
+    }
+
     /**
      * Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
      */
@@ -73,6 +81,14 @@ public class AnalogControl extends Control {
         return maxValue != null ? maxValue.toString() : null;
     }
 
+    private static void setMaxValue(BaseClass _this_, String _value_) {
+        ((AnalogControl) _this_).setMaxValue(_value_);
+    }
+
+    private static String maxValueToString(BaseClass _this_) {
+        return ((AnalogControl) _this_).maxValueToString();
+    }
+
     /**
      * Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.
      */
@@ -92,6 +108,14 @@ public class AnalogControl extends Control {
 
     public String minValueToString() {
         return minValue != null ? minValue.toString() : null;
+    }
+
+    private static void setMinValue(BaseClass _this_, String _value_) {
+        ((AnalogControl) _this_).setMinValue(_value_);
+    }
+
+    private static String minValueToString(BaseClass _this_) {
+        return ((AnalogControl) _this_).minValueToString();
     }
 
     /**
@@ -135,16 +159,12 @@ public class AnalogControl extends Control {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AnalogControl", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AnalogControl", attrName));
+        return "";
     }
 
     /**
@@ -155,16 +175,12 @@ public class AnalogControl extends Control {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AnalogControl", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AnalogControl", attrName, objectValue));
         }
     }
 
@@ -176,16 +192,12 @@ public class AnalogControl extends Control {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AnalogControl", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AnalogControl", attrName, stringValue));
         }
     }
 
@@ -309,30 +321,21 @@ public class AnalogControl extends Control {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("AnalogValue", new AttrDetails("AnalogControl.AnalogValue", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("AnalogValue", new AttrDetails("AnalogControl.AnalogValue", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AnalogControl::AnalogValueToString, AnalogControl::setAnalogValue, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("maxValue", new AttrDetails("AnalogControl.maxValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxValue", new AttrDetails("AnalogControl.maxValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AnalogControl::maxValueToString, null, AnalogControl::setMaxValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("minValue", new AttrDetails("AnalogControl.minValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minValue", new AttrDetails("AnalogControl.minValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AnalogControl::minValueToString, null, AnalogControl::setMinValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogControl().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AnalogValue", new GetterSetter(this::AnalogValueToString, this::setAnalogValue, null));
-        map.put("maxValue", new GetterSetter(this::maxValueToString, null, this::setMaxValue));
-        map.put("minValue", new GetterSetter(this::minValueToString, null, this::setMinValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

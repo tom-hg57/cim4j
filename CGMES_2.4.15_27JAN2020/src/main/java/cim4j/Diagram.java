@@ -54,6 +54,14 @@ public class Diagram extends IdentifiedObject {
         return getStringFromSet(DiagramElements);
     }
 
+    private static void setDiagramElements(BaseClass _this_, BaseClass _object_) {
+        ((Diagram) _this_).setDiagramElements(_object_);
+    }
+
+    private static String DiagramElementsToString(BaseClass _this_) {
+        return ((Diagram) _this_).DiagramElementsToString();
+    }
+
     /**
      * A Diagram may have a DiagramStyle.
      */
@@ -77,6 +85,14 @@ public class Diagram extends IdentifiedObject {
         return DiagramStyle != null ? DiagramStyle.getRdfid() : null;
     }
 
+    private static void setDiagramStyle(BaseClass _this_, BaseClass _object_) {
+        ((Diagram) _this_).setDiagramStyle(_object_);
+    }
+
+    private static String DiagramStyleToString(BaseClass _this_) {
+        return ((Diagram) _this_).DiagramStyleToString();
+    }
+
     /**
      * Coordinate system orientation of the diagram.
      */
@@ -92,6 +108,14 @@ public class Diagram extends IdentifiedObject {
 
     public String orientationToString() {
         return orientation;
+    }
+
+    private static void setOrientation(BaseClass _this_, String _value_) {
+        ((Diagram) _this_).setOrientation(_value_);
+    }
+
+    private static String orientationToString(BaseClass _this_) {
+        return ((Diagram) _this_).orientationToString();
     }
 
     /**
@@ -115,6 +139,14 @@ public class Diagram extends IdentifiedObject {
         return x1InitialView != null ? x1InitialView.toString() : null;
     }
 
+    private static void setX1InitialView(BaseClass _this_, String _value_) {
+        ((Diagram) _this_).setX1InitialView(_value_);
+    }
+
+    private static String x1InitialViewToString(BaseClass _this_) {
+        return ((Diagram) _this_).x1InitialViewToString();
+    }
+
     /**
      * X coordinate of the second corner of the initial view.
      */
@@ -134,6 +166,14 @@ public class Diagram extends IdentifiedObject {
 
     public String x2InitialViewToString() {
         return x2InitialView != null ? x2InitialView.toString() : null;
+    }
+
+    private static void setX2InitialView(BaseClass _this_, String _value_) {
+        ((Diagram) _this_).setX2InitialView(_value_);
+    }
+
+    private static String x2InitialViewToString(BaseClass _this_) {
+        return ((Diagram) _this_).x2InitialViewToString();
     }
 
     /**
@@ -157,6 +197,14 @@ public class Diagram extends IdentifiedObject {
         return y1InitialView != null ? y1InitialView.toString() : null;
     }
 
+    private static void setY1InitialView(BaseClass _this_, String _value_) {
+        ((Diagram) _this_).setY1InitialView(_value_);
+    }
+
+    private static String y1InitialViewToString(BaseClass _this_) {
+        return ((Diagram) _this_).y1InitialViewToString();
+    }
+
     /**
      * Y coordinate of the second corner of the initial view.
      */
@@ -176,6 +224,14 @@ public class Diagram extends IdentifiedObject {
 
     public String y2InitialViewToString() {
         return y2InitialView != null ? y2InitialView.toString() : null;
+    }
+
+    private static void setY2InitialView(BaseClass _this_, String _value_) {
+        ((Diagram) _this_).setY2InitialView(_value_);
+    }
+
+    private static String y2InitialViewToString(BaseClass _this_) {
+        return ((Diagram) _this_).y2InitialViewToString();
     }
 
     /**
@@ -219,16 +275,12 @@ public class Diagram extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Diagram", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Diagram", attrName));
+        return "";
     }
 
     /**
@@ -239,16 +291,12 @@ public class Diagram extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Diagram", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Diagram", attrName, objectValue));
         }
     }
 
@@ -260,16 +308,12 @@ public class Diagram extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Diagram", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Diagram", attrName, stringValue));
         }
     }
 
@@ -393,54 +437,41 @@ public class Diagram extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramElements", new AttrDetails("Diagram.DiagramElements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiagramElements", new AttrDetails("Diagram.DiagramElements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Diagram::DiagramElementsToString, Diagram::setDiagramElements, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramStyle", new AttrDetails("Diagram.DiagramStyle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiagramStyle", new AttrDetails("Diagram.DiagramStyle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Diagram::DiagramStyleToString, Diagram::setDiagramStyle, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("orientation", new AttrDetails("Diagram.orientation", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("orientation", new AttrDetails("Diagram.orientation", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Diagram::orientationToString, null, Diagram::setOrientation));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("x1InitialView", new AttrDetails("Diagram.x1InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x1InitialView", new AttrDetails("Diagram.x1InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Diagram::x1InitialViewToString, null, Diagram::setX1InitialView));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("x2InitialView", new AttrDetails("Diagram.x2InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x2InitialView", new AttrDetails("Diagram.x2InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Diagram::x2InitialViewToString, null, Diagram::setX2InitialView));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("y1InitialView", new AttrDetails("Diagram.y1InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("y1InitialView", new AttrDetails("Diagram.y1InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Diagram::y1InitialViewToString, null, Diagram::setY1InitialView));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("y2InitialView", new AttrDetails("Diagram.y2InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("y2InitialView", new AttrDetails("Diagram.y2InitialView", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Diagram::y2InitialViewToString, null, Diagram::setY2InitialView));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Diagram().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiagramElements", new GetterSetter(this::DiagramElementsToString, this::setDiagramElements, null));
-        map.put("DiagramStyle", new GetterSetter(this::DiagramStyleToString, this::setDiagramStyle, null));
-        map.put("orientation", new GetterSetter(this::orientationToString, null, this::setOrientation));
-        map.put("x1InitialView", new GetterSetter(this::x1InitialViewToString, null, this::setX1InitialView));
-        map.put("x2InitialView", new GetterSetter(this::x2InitialViewToString, null, this::setX2InitialView));
-        map.put("y1InitialView", new GetterSetter(this::y1InitialViewToString, null, this::setY1InitialView));
-        map.put("y2InitialView", new GetterSetter(this::y2InitialViewToString, null, this::setY2InitialView));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

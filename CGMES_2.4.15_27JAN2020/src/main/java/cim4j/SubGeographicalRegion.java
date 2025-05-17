@@ -53,6 +53,14 @@ public class SubGeographicalRegion extends IdentifiedObject {
         return getStringFromSet(DCLines);
     }
 
+    private static void setDCLines(BaseClass _this_, BaseClass _object_) {
+        ((SubGeographicalRegion) _this_).setDCLines(_object_);
+    }
+
+    private static String DCLinesToString(BaseClass _this_) {
+        return ((SubGeographicalRegion) _this_).DCLinesToString();
+    }
+
     /**
      * The sub-geographical region of the line.
      *
@@ -78,6 +86,14 @@ public class SubGeographicalRegion extends IdentifiedObject {
         return getStringFromSet(Lines);
     }
 
+    private static void setLines(BaseClass _this_, BaseClass _object_) {
+        ((SubGeographicalRegion) _this_).setLines(_object_);
+    }
+
+    private static String LinesToString(BaseClass _this_) {
+        return ((SubGeographicalRegion) _this_).LinesToString();
+    }
+
     /**
      * The geographical region to which this sub-geographical region is within.
      */
@@ -99,6 +115,14 @@ public class SubGeographicalRegion extends IdentifiedObject {
 
     public String RegionToString() {
         return Region != null ? Region.getRdfid() : null;
+    }
+
+    private static void setRegion(BaseClass _this_, BaseClass _object_) {
+        ((SubGeographicalRegion) _this_).setRegion(_object_);
+    }
+
+    private static String RegionToString(BaseClass _this_) {
+        return ((SubGeographicalRegion) _this_).RegionToString();
     }
 
     /**
@@ -124,6 +148,14 @@ public class SubGeographicalRegion extends IdentifiedObject {
 
     public String SubstationsToString() {
         return getStringFromSet(Substations);
+    }
+
+    private static void setSubstations(BaseClass _this_, BaseClass _object_) {
+        ((SubGeographicalRegion) _this_).setSubstations(_object_);
+    }
+
+    private static String SubstationsToString(BaseClass _this_) {
+        return ((SubGeographicalRegion) _this_).SubstationsToString();
     }
 
     /**
@@ -167,16 +199,12 @@ public class SubGeographicalRegion extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SubGeographicalRegion", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SubGeographicalRegion", attrName));
+        return "";
     }
 
     /**
@@ -187,16 +215,12 @@ public class SubGeographicalRegion extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SubGeographicalRegion", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SubGeographicalRegion", attrName, objectValue));
         }
     }
 
@@ -208,16 +232,12 @@ public class SubGeographicalRegion extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SubGeographicalRegion", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SubGeographicalRegion", attrName, stringValue));
         }
     }
 
@@ -341,38 +361,28 @@ public class SubGeographicalRegion extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("DCLines", new AttrDetails("SubGeographicalRegion.DCLines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DCLines", new AttrDetails("SubGeographicalRegion.DCLines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::DCLinesToString, SubGeographicalRegion::setDCLines, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("Lines", new AttrDetails("SubGeographicalRegion.Lines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Lines", new AttrDetails("SubGeographicalRegion.Lines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::LinesToString, SubGeographicalRegion::setLines, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("Region", new AttrDetails("SubGeographicalRegion.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Region", new AttrDetails("SubGeographicalRegion.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::RegionToString, SubGeographicalRegion::setRegion, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Substations", new AttrDetails("SubGeographicalRegion.Substations", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Substations", new AttrDetails("SubGeographicalRegion.Substations", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::SubstationsToString, SubGeographicalRegion::setSubstations, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubGeographicalRegion().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DCLines", new GetterSetter(this::DCLinesToString, this::setDCLines, null));
-        map.put("Lines", new GetterSetter(this::LinesToString, this::setLines, null));
-        map.put("Region", new GetterSetter(this::RegionToString, this::setRegion, null));
-        map.put("Substations", new GetterSetter(this::SubstationsToString, this::setSubstations, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

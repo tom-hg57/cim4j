@@ -54,6 +54,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return AsynchronousMachineDynamics != null ? AsynchronousMachineDynamics.getRdfid() : null;
     }
 
+    private static void setAsynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((AsynchronousMachine) _this_).setAsynchronousMachineDynamics(_object_);
+    }
+
+    private static String AsynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).AsynchronousMachineDynamicsToString();
+    }
+
     /**
      * Indicates the type of Asynchronous Machine (motor or generator).
      */
@@ -69,6 +77,14 @@ public class AsynchronousMachine extends RotatingMachine {
 
     public String asynchronousMachineTypeToString() {
         return asynchronousMachineType;
+    }
+
+    private static void setAsynchronousMachineType(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setAsynchronousMachineType(_value_);
+    }
+
+    private static String asynchronousMachineTypeToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).asynchronousMachineTypeToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return converterFedDrive != null ? converterFedDrive.toString() : null;
     }
 
+    private static void setConverterFedDrive(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setConverterFedDrive(_value_);
+    }
+
+    private static String converterFedDriveToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).converterFedDriveToString();
+    }
+
     /**
      * Efficiency of the asynchronous machine at nominal operation in percent. Indicator for converter drive motors. Used for short circuit data exchange according to IEC 60909
      */
@@ -111,6 +135,14 @@ public class AsynchronousMachine extends RotatingMachine {
 
     public String efficiencyToString() {
         return efficiency != null ? efficiency.toString() : null;
+    }
+
+    private static void setEfficiency(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setEfficiency(_value_);
+    }
+
+    private static String efficiencyToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).efficiencyToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return iaIrRatio != null ? iaIrRatio.toString() : null;
     }
 
+    private static void setIaIrRatio(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setIaIrRatio(_value_);
+    }
+
+    private static String iaIrRatioToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).iaIrRatioToString();
+    }
+
     /**
      * Nameplate data indicates if the machine is 50 or 60 Hz.
      */
@@ -153,6 +193,14 @@ public class AsynchronousMachine extends RotatingMachine {
 
     public String nominalFrequencyToString() {
         return nominalFrequency != null ? nominalFrequency.toString() : null;
+    }
+
+    private static void setNominalFrequency(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setNominalFrequency(_value_);
+    }
+
+    private static String nominalFrequencyToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).nominalFrequencyToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return nominalSpeed != null ? nominalSpeed.toString() : null;
     }
 
+    private static void setNominalSpeed(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setNominalSpeed(_value_);
+    }
+
+    private static String nominalSpeedToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).nominalSpeedToString();
+    }
+
     /**
      * Number of pole pairs of stator. Used for short circuit data exchange according to IEC 60909
      */
@@ -195,6 +251,14 @@ public class AsynchronousMachine extends RotatingMachine {
 
     public String polePairNumberToString() {
         return polePairNumber != null ? polePairNumber.toString() : null;
+    }
+
+    private static void setPolePairNumber(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setPolePairNumber(_value_);
+    }
+
+    private static String polePairNumberToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).polePairNumberToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return ratedMechanicalPower != null ? ratedMechanicalPower.toString() : null;
     }
 
+    private static void setRatedMechanicalPower(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setRatedMechanicalPower(_value_);
+    }
+
+    private static String ratedMechanicalPowerToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).ratedMechanicalPowerToString();
+    }
+
     /**
      * Indicates for converter drive motors if the power can be reversible. Used for short circuit data exchange according to IEC 60909
      */
@@ -239,6 +311,14 @@ public class AsynchronousMachine extends RotatingMachine {
         return reversible != null ? reversible.toString() : null;
     }
 
+    private static void setReversible(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setReversible(_value_);
+    }
+
+    private static String reversibleToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).reversibleToString();
+    }
+
     /**
      * Locked rotor ratio (R/X). Used for short circuit data exchange according to IEC 60909
      */
@@ -258,6 +338,14 @@ public class AsynchronousMachine extends RotatingMachine {
 
     public String rxLockedRotorRatioToString() {
         return rxLockedRotorRatio != null ? rxLockedRotorRatio.toString() : null;
+    }
+
+    private static void setRxLockedRotorRatio(BaseClass _this_, String _value_) {
+        ((AsynchronousMachine) _this_).setRxLockedRotorRatio(_value_);
+    }
+
+    private static String rxLockedRotorRatioToString(BaseClass _this_) {
+        return ((AsynchronousMachine) _this_).rxLockedRotorRatioToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class AsynchronousMachine extends RotatingMachine {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AsynchronousMachine", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AsynchronousMachine", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class AsynchronousMachine extends RotatingMachine {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AsynchronousMachine", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachine", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class AsynchronousMachine extends RotatingMachine {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AsynchronousMachine", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachine", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class AsynchronousMachine extends RotatingMachine {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("AsynchronousMachineDynamics", new AttrDetails("AsynchronousMachine.AsynchronousMachineDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AsynchronousMachineDynamics", new AttrDetails("AsynchronousMachine.AsynchronousMachineDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AsynchronousMachine::AsynchronousMachineDynamicsToString, AsynchronousMachine::setAsynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("asynchronousMachineType", new AttrDetails("AsynchronousMachine.asynchronousMachineType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("asynchronousMachineType", new AttrDetails("AsynchronousMachine.asynchronousMachineType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, AsynchronousMachine::asynchronousMachineTypeToString, null, AsynchronousMachine::setAsynchronousMachineType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("converterFedDrive", new AttrDetails("AsynchronousMachine.converterFedDrive", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("converterFedDrive", new AttrDetails("AsynchronousMachine.converterFedDrive", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::converterFedDriveToString, null, AsynchronousMachine::setConverterFedDrive));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("efficiency", new AttrDetails("AsynchronousMachine.efficiency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efficiency", new AttrDetails("AsynchronousMachine.efficiency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::efficiencyToString, null, AsynchronousMachine::setEfficiency));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("iaIrRatio", new AttrDetails("AsynchronousMachine.iaIrRatio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iaIrRatio", new AttrDetails("AsynchronousMachine.iaIrRatio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::iaIrRatioToString, null, AsynchronousMachine::setIaIrRatio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("nominalFrequency", new AttrDetails("AsynchronousMachine.nominalFrequency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("nominalFrequency", new AttrDetails("AsynchronousMachine.nominalFrequency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::nominalFrequencyToString, null, AsynchronousMachine::setNominalFrequency));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("nominalSpeed", new AttrDetails("AsynchronousMachine.nominalSpeed", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("nominalSpeed", new AttrDetails("AsynchronousMachine.nominalSpeed", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::nominalSpeedToString, null, AsynchronousMachine::setNominalSpeed));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("polePairNumber", new AttrDetails("AsynchronousMachine.polePairNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("polePairNumber", new AttrDetails("AsynchronousMachine.polePairNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::polePairNumberToString, null, AsynchronousMachine::setPolePairNumber));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedMechanicalPower", new AttrDetails("AsynchronousMachine.ratedMechanicalPower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedMechanicalPower", new AttrDetails("AsynchronousMachine.ratedMechanicalPower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::ratedMechanicalPowerToString, null, AsynchronousMachine::setRatedMechanicalPower));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("reversible", new AttrDetails("AsynchronousMachine.reversible", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("reversible", new AttrDetails("AsynchronousMachine.reversible", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::reversibleToString, null, AsynchronousMachine::setReversible));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("rxLockedRotorRatio", new AttrDetails("AsynchronousMachine.rxLockedRotorRatio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rxLockedRotorRatio", new AttrDetails("AsynchronousMachine.rxLockedRotorRatio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachine::rxLockedRotorRatioToString, null, AsynchronousMachine::setRxLockedRotorRatio));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachine().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AsynchronousMachineDynamics", new GetterSetter(this::AsynchronousMachineDynamicsToString, this::setAsynchronousMachineDynamics, null));
-        map.put("asynchronousMachineType", new GetterSetter(this::asynchronousMachineTypeToString, null, this::setAsynchronousMachineType));
-        map.put("converterFedDrive", new GetterSetter(this::converterFedDriveToString, null, this::setConverterFedDrive));
-        map.put("efficiency", new GetterSetter(this::efficiencyToString, null, this::setEfficiency));
-        map.put("iaIrRatio", new GetterSetter(this::iaIrRatioToString, null, this::setIaIrRatio));
-        map.put("nominalFrequency", new GetterSetter(this::nominalFrequencyToString, null, this::setNominalFrequency));
-        map.put("nominalSpeed", new GetterSetter(this::nominalSpeedToString, null, this::setNominalSpeed));
-        map.put("polePairNumber", new GetterSetter(this::polePairNumberToString, null, this::setPolePairNumber));
-        map.put("ratedMechanicalPower", new GetterSetter(this::ratedMechanicalPowerToString, null, this::setRatedMechanicalPower));
-        map.put("reversible", new GetterSetter(this::reversibleToString, null, this::setReversible));
-        map.put("rxLockedRotorRatio", new GetterSetter(this::rxLockedRotorRatioToString, null, this::setRxLockedRotorRatio));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

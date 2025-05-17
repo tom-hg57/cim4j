@@ -54,6 +54,14 @@ public class RegulatingControl extends PowerSystemResource {
         return getStringFromSet(RegulatingCondEq);
     }
 
+    private static void setRegulatingCondEq(BaseClass _this_, BaseClass _object_) {
+        ((RegulatingControl) _this_).setRegulatingCondEq(_object_);
+    }
+
+    private static String RegulatingCondEqToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).RegulatingCondEqToString();
+    }
+
     /**
      * Schedule for this regulating control.
      *
@@ -79,6 +87,14 @@ public class RegulatingControl extends PowerSystemResource {
         return getStringFromSet(RegulationSchedule);
     }
 
+    private static void setRegulationSchedule(BaseClass _this_, BaseClass _object_) {
+        ((RegulatingControl) _this_).setRegulationSchedule(_object_);
+    }
+
+    private static String RegulationScheduleToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).RegulationScheduleToString();
+    }
+
     /**
      * The terminal associated with this regulating control.  The terminal is associated instead of a node, since the terminal could connect into either a topological node or a connectivity node.  Sometimes it is useful to model regulation at a terminal of a bus bar object.
      */
@@ -102,6 +118,14 @@ public class RegulatingControl extends PowerSystemResource {
         return Terminal != null ? Terminal.getRdfid() : null;
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((RegulatingControl) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).TerminalToString();
+    }
+
     /**
      * The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators.
      */
@@ -121,6 +145,14 @@ public class RegulatingControl extends PowerSystemResource {
 
     public String discreteToString() {
         return discrete != null ? discrete.toString() : null;
+    }
+
+    private static void setDiscrete(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setDiscrete(_value_);
+    }
+
+    private static String discreteToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).discreteToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class RegulatingControl extends PowerSystemResource {
         return enabled != null ? enabled.toString() : null;
     }
 
+    private static void setEnabled(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setEnabled(_value_);
+    }
+
+    private static String enabledToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).enabledToString();
+    }
+
     /**
      * Maximum allowed target value (RegulatingControl.targetValue).
      */
@@ -163,6 +203,14 @@ public class RegulatingControl extends PowerSystemResource {
 
     public String maxAllowedTargetValueToString() {
         return maxAllowedTargetValue != null ? maxAllowedTargetValue.toString() : null;
+    }
+
+    private static void setMaxAllowedTargetValue(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setMaxAllowedTargetValue(_value_);
+    }
+
+    private static String maxAllowedTargetValueToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).maxAllowedTargetValueToString();
     }
 
     /**
@@ -186,6 +234,14 @@ public class RegulatingControl extends PowerSystemResource {
         return minAllowedTargetValue != null ? minAllowedTargetValue.toString() : null;
     }
 
+    private static void setMinAllowedTargetValue(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setMinAllowedTargetValue(_value_);
+    }
+
+    private static String minAllowedTargetValueToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).minAllowedTargetValueToString();
+    }
+
     /**
      * The regulating control mode presently available.  This specification allows for determining the kind of regulation without need for obtaining the units from a schedule.
      */
@@ -201,6 +257,14 @@ public class RegulatingControl extends PowerSystemResource {
 
     public String modeToString() {
         return mode;
+    }
+
+    private static void setMode(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setMode(_value_);
+    }
+
+    private static String modeToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).modeToString();
     }
 
     /**
@@ -224,6 +288,14 @@ public class RegulatingControl extends PowerSystemResource {
         return targetDeadband != null ? targetDeadband.toString() : null;
     }
 
+    private static void setTargetDeadband(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setTargetDeadband(_value_);
+    }
+
+    private static String targetDeadbandToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).targetDeadbandToString();
+    }
+
     /**
      * The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute.
      */
@@ -245,6 +317,14 @@ public class RegulatingControl extends PowerSystemResource {
         return targetValue != null ? targetValue.toString() : null;
     }
 
+    private static void setTargetValue(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setTargetValue(_value_);
+    }
+
+    private static String targetValueToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).targetValueToString();
+    }
+
     /**
      * Specify the multiplier for used for the targetValue.
      */
@@ -260,6 +340,14 @@ public class RegulatingControl extends PowerSystemResource {
 
     public String targetValueUnitMultiplierToString() {
         return targetValueUnitMultiplier;
+    }
+
+    private static void setTargetValueUnitMultiplier(BaseClass _this_, String _value_) {
+        ((RegulatingControl) _this_).setTargetValueUnitMultiplier(_value_);
+    }
+
+    private static String targetValueUnitMultiplierToString(BaseClass _this_) {
+        return ((RegulatingControl) _this_).targetValueUnitMultiplierToString();
     }
 
     /**
@@ -303,16 +391,12 @@ public class RegulatingControl extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RegulatingControl", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RegulatingControl", attrName));
+        return "";
     }
 
     /**
@@ -323,16 +407,12 @@ public class RegulatingControl extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RegulatingControl", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegulatingControl", attrName, objectValue));
         }
     }
 
@@ -344,16 +424,12 @@ public class RegulatingControl extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RegulatingControl", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegulatingControl", attrName, stringValue));
         }
     }
 
@@ -477,78 +553,61 @@ public class RegulatingControl extends PowerSystemResource {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RegulatingCondEq", new AttrDetails("RegulatingControl.RegulatingCondEq", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("RegulatingCondEq", new AttrDetails("RegulatingControl.RegulatingCondEq", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RegulatingControl::RegulatingCondEqToString, RegulatingControl::setRegulatingCondEq, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RegulationSchedule", new AttrDetails("RegulatingControl.RegulationSchedule", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("RegulationSchedule", new AttrDetails("RegulatingControl.RegulationSchedule", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RegulatingControl::RegulationScheduleToString, RegulatingControl::setRegulationSchedule, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminal", new AttrDetails("RegulatingControl.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("RegulatingControl.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RegulatingControl::TerminalToString, RegulatingControl::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("discrete", new AttrDetails("RegulatingControl.discrete", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("discrete", new AttrDetails("RegulatingControl.discrete", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::discreteToString, null, RegulatingControl::setDiscrete));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("enabled", new AttrDetails("RegulatingControl.enabled", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("enabled", new AttrDetails("RegulatingControl.enabled", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::enabledToString, null, RegulatingControl::setEnabled));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("maxAllowedTargetValue", new AttrDetails("RegulatingControl.maxAllowedTargetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxAllowedTargetValue", new AttrDetails("RegulatingControl.maxAllowedTargetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::maxAllowedTargetValueToString, null, RegulatingControl::setMaxAllowedTargetValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("minAllowedTargetValue", new AttrDetails("RegulatingControl.minAllowedTargetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minAllowedTargetValue", new AttrDetails("RegulatingControl.minAllowedTargetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::minAllowedTargetValueToString, null, RegulatingControl::setMinAllowedTargetValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("mode", new AttrDetails("RegulatingControl.mode", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("mode", new AttrDetails("RegulatingControl.mode", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, RegulatingControl::modeToString, null, RegulatingControl::setMode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetDeadband", new AttrDetails("RegulatingControl.targetDeadband", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetDeadband", new AttrDetails("RegulatingControl.targetDeadband", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::targetDeadbandToString, null, RegulatingControl::setTargetDeadband));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetValue", new AttrDetails("RegulatingControl.targetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetValue", new AttrDetails("RegulatingControl.targetValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegulatingControl::targetValueToString, null, RegulatingControl::setTargetValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetValueUnitMultiplier", new AttrDetails("RegulatingControl.targetValueUnitMultiplier", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("targetValueUnitMultiplier", new AttrDetails("RegulatingControl.targetValueUnitMultiplier", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, RegulatingControl::targetValueUnitMultiplierToString, null, RegulatingControl::setTargetValueUnitMultiplier));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingControl().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("RegulatingCondEq", new GetterSetter(this::RegulatingCondEqToString, this::setRegulatingCondEq, null));
-        map.put("RegulationSchedule", new GetterSetter(this::RegulationScheduleToString, this::setRegulationSchedule, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("discrete", new GetterSetter(this::discreteToString, null, this::setDiscrete));
-        map.put("enabled", new GetterSetter(this::enabledToString, null, this::setEnabled));
-        map.put("maxAllowedTargetValue", new GetterSetter(this::maxAllowedTargetValueToString, null, this::setMaxAllowedTargetValue));
-        map.put("minAllowedTargetValue", new GetterSetter(this::minAllowedTargetValueToString, null, this::setMinAllowedTargetValue));
-        map.put("mode", new GetterSetter(this::modeToString, null, this::setMode));
-        map.put("targetDeadband", new GetterSetter(this::targetDeadbandToString, null, this::setTargetDeadband));
-        map.put("targetValue", new GetterSetter(this::targetValueToString, null, this::setTargetValue));
-        map.put("targetValueUnitMultiplier", new GetterSetter(this::targetValueUnitMultiplierToString, null, this::setTargetValueUnitMultiplier));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

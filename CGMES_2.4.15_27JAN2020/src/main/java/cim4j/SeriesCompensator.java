@@ -50,6 +50,14 @@ public class SeriesCompensator extends ConductingEquipment {
         return r != null ? r.toString() : null;
     }
 
+    private static void setR(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).rToString();
+    }
+
     /**
      * Zero sequence resistance.
      */
@@ -69,6 +77,14 @@ public class SeriesCompensator extends ConductingEquipment {
 
     public String r0ToString() {
         return r0 != null ? r0.toString() : null;
+    }
+
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).r0ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class SeriesCompensator extends ConductingEquipment {
         return varistorPresent != null ? varistorPresent.toString() : null;
     }
 
+    private static void setVaristorPresent(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setVaristorPresent(_value_);
+    }
+
+    private static String varistorPresentToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).varistorPresentToString();
+    }
+
     /**
      * The maximum current the varistor is designed to handle at specified duration.
      */
@@ -111,6 +135,14 @@ public class SeriesCompensator extends ConductingEquipment {
 
     public String varistorRatedCurrentToString() {
         return varistorRatedCurrent != null ? varistorRatedCurrent.toString() : null;
+    }
+
+    private static void setVaristorRatedCurrent(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setVaristorRatedCurrent(_value_);
+    }
+
+    private static String varistorRatedCurrentToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).varistorRatedCurrentToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class SeriesCompensator extends ConductingEquipment {
         return varistorVoltageThreshold != null ? varistorVoltageThreshold.toString() : null;
     }
 
+    private static void setVaristorVoltageThreshold(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setVaristorVoltageThreshold(_value_);
+    }
+
+    private static String varistorVoltageThresholdToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).varistorVoltageThresholdToString();
+    }
+
     /**
      * Positive sequence reactance.
      */
@@ -155,6 +195,14 @@ public class SeriesCompensator extends ConductingEquipment {
         return x != null ? x.toString() : null;
     }
 
+    private static void setX(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).xToString();
+    }
+
     /**
      * Zero sequence reactance.
      */
@@ -174,6 +222,14 @@ public class SeriesCompensator extends ConductingEquipment {
 
     public String x0ToString() {
         return x0 != null ? x0.toString() : null;
+    }
+
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((SeriesCompensator) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((SeriesCompensator) _this_).x0ToString();
     }
 
     /**
@@ -217,16 +273,12 @@ public class SeriesCompensator extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SeriesCompensator", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SeriesCompensator", attrName));
+        return "";
     }
 
     /**
@@ -237,16 +289,12 @@ public class SeriesCompensator extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SeriesCompensator", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SeriesCompensator", attrName, objectValue));
         }
     }
 
@@ -258,16 +306,12 @@ public class SeriesCompensator extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SeriesCompensator", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SeriesCompensator", attrName, stringValue));
         }
     }
 
@@ -391,54 +435,41 @@ public class SeriesCompensator extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("SeriesCompensator.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("SeriesCompensator.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::rToString, null, SeriesCompensator::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("SeriesCompensator.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("SeriesCompensator.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::r0ToString, null, SeriesCompensator::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("varistorPresent", new AttrDetails("SeriesCompensator.varistorPresent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("varistorPresent", new AttrDetails("SeriesCompensator.varistorPresent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::varistorPresentToString, null, SeriesCompensator::setVaristorPresent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("varistorRatedCurrent", new AttrDetails("SeriesCompensator.varistorRatedCurrent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("varistorRatedCurrent", new AttrDetails("SeriesCompensator.varistorRatedCurrent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::varistorRatedCurrentToString, null, SeriesCompensator::setVaristorRatedCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("varistorVoltageThreshold", new AttrDetails("SeriesCompensator.varistorVoltageThreshold", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("varistorVoltageThreshold", new AttrDetails("SeriesCompensator.varistorVoltageThreshold", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::varistorVoltageThresholdToString, null, SeriesCompensator::setVaristorVoltageThreshold));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("SeriesCompensator.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x", new AttrDetails("SeriesCompensator.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::xToString, null, SeriesCompensator::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("SeriesCompensator.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("SeriesCompensator.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SeriesCompensator::x0ToString, null, SeriesCompensator::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeriesCompensator().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("varistorPresent", new GetterSetter(this::varistorPresentToString, null, this::setVaristorPresent));
-        map.put("varistorRatedCurrent", new GetterSetter(this::varistorRatedCurrentToString, null, this::setVaristorRatedCurrent));
-        map.put("varistorVoltageThreshold", new GetterSetter(this::varistorVoltageThresholdToString, null, this::setVaristorVoltageThreshold));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

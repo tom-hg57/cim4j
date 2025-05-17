@@ -54,6 +54,14 @@ public class ShuntCompensator extends RegulatingCondEq {
         return SvShuntCompensatorSections != null ? SvShuntCompensatorSections.getRdfid() : null;
     }
 
+    private static void setSvShuntCompensatorSections(BaseClass _this_, BaseClass _object_) {
+        ((ShuntCompensator) _this_).setSvShuntCompensatorSections(_object_);
+    }
+
+    private static String SvShuntCompensatorSectionsToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).SvShuntCompensatorSectionsToString();
+    }
+
     /**
      * An automatic voltage regulation delay (AVRDelay) which is the time delay from a change in voltage to when the capacitor is allowed to change state. This filters out temporary changes in voltage.
      */
@@ -73,6 +81,14 @@ public class ShuntCompensator extends RegulatingCondEq {
 
     public String aVRDelayToString() {
         return aVRDelay != null ? aVRDelay.toString() : null;
+    }
+
+    private static void setAVRDelay(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setAVRDelay(_value_);
+    }
+
+    private static String aVRDelayToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).aVRDelayToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class ShuntCompensator extends RegulatingCondEq {
         return grounded != null ? grounded.toString() : null;
     }
 
+    private static void setGrounded(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setGrounded(_value_);
+    }
+
+    private static String groundedToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).groundedToString();
+    }
+
     /**
      * The maximum number of sections that may be switched in.
      */
@@ -115,6 +139,14 @@ public class ShuntCompensator extends RegulatingCondEq {
 
     public String maximumSectionsToString() {
         return maximumSections != null ? maximumSections.toString() : null;
+    }
+
+    private static void setMaximumSections(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setMaximumSections(_value_);
+    }
+
+    private static String maximumSectionsToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).maximumSectionsToString();
     }
 
     /**
@@ -138,6 +170,14 @@ public class ShuntCompensator extends RegulatingCondEq {
         return nomU != null ? nomU.toString() : null;
     }
 
+    private static void setNomU(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setNomU(_value_);
+    }
+
+    private static String nomUToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).nomUToString();
+    }
+
     /**
      * The normal number of sections switched in. The value shall be between zero and ShuntCompensator.maximumSections.
      */
@@ -157,6 +197,14 @@ public class ShuntCompensator extends RegulatingCondEq {
 
     public String normalSectionsToString() {
         return normalSections != null ? normalSections.toString() : null;
+    }
+
+    private static void setNormalSections(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setNormalSections(_value_);
+    }
+
+    private static String normalSectionsToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).normalSectionsToString();
     }
 
     /**
@@ -180,6 +228,14 @@ public class ShuntCompensator extends RegulatingCondEq {
         return sections != null ? sections.toString() : null;
     }
 
+    private static void setSections(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setSections(_value_);
+    }
+
+    private static String sectionsToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).sectionsToString();
+    }
+
     /**
      * Voltage sensitivity required for the device to regulate the bus voltage, in voltage/reactive power.
      */
@@ -199,6 +255,14 @@ public class ShuntCompensator extends RegulatingCondEq {
 
     public String voltageSensitivityToString() {
         return voltageSensitivity != null ? voltageSensitivity.toString() : null;
+    }
+
+    private static void setVoltageSensitivity(BaseClass _this_, String _value_) {
+        ((ShuntCompensator) _this_).setVoltageSensitivity(_value_);
+    }
+
+    private static String voltageSensitivityToString(BaseClass _this_) {
+        return ((ShuntCompensator) _this_).voltageSensitivityToString();
     }
 
     /**
@@ -242,16 +306,12 @@ public class ShuntCompensator extends RegulatingCondEq {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ShuntCompensator", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ShuntCompensator", attrName));
+        return "";
     }
 
     /**
@@ -262,16 +322,12 @@ public class ShuntCompensator extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ShuntCompensator", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ShuntCompensator", attrName, objectValue));
         }
     }
 
@@ -283,16 +339,12 @@ public class ShuntCompensator extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ShuntCompensator", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ShuntCompensator", attrName, stringValue));
         }
     }
 
@@ -416,60 +468,46 @@ public class ShuntCompensator extends RegulatingCondEq {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvShuntCompensatorSections", new AttrDetails("ShuntCompensator.SvShuntCompensatorSections", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SvShuntCompensatorSections", new AttrDetails("ShuntCompensator.SvShuntCompensatorSections", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ShuntCompensator::SvShuntCompensatorSectionsToString, ShuntCompensator::setSvShuntCompensatorSections, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("aVRDelay", new AttrDetails("ShuntCompensator.aVRDelay", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("aVRDelay", new AttrDetails("ShuntCompensator.aVRDelay", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::aVRDelayToString, null, ShuntCompensator::setAVRDelay));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("grounded", new AttrDetails("ShuntCompensator.grounded", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("grounded", new AttrDetails("ShuntCompensator.grounded", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::groundedToString, null, ShuntCompensator::setGrounded));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maximumSections", new AttrDetails("ShuntCompensator.maximumSections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maximumSections", new AttrDetails("ShuntCompensator.maximumSections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::maximumSectionsToString, null, ShuntCompensator::setMaximumSections));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("nomU", new AttrDetails("ShuntCompensator.nomU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("nomU", new AttrDetails("ShuntCompensator.nomU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::nomUToString, null, ShuntCompensator::setNomU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("normalSections", new AttrDetails("ShuntCompensator.normalSections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("normalSections", new AttrDetails("ShuntCompensator.normalSections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::normalSectionsToString, null, ShuntCompensator::setNormalSections));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("sections", new AttrDetails("ShuntCompensator.sections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("sections", new AttrDetails("ShuntCompensator.sections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::sectionsToString, null, ShuntCompensator::setSections));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("voltageSensitivity", new AttrDetails("ShuntCompensator.voltageSensitivity", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("voltageSensitivity", new AttrDetails("ShuntCompensator.voltageSensitivity", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ShuntCompensator::voltageSensitivityToString, null, ShuntCompensator::setVoltageSensitivity));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ShuntCompensator().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("SvShuntCompensatorSections", new GetterSetter(this::SvShuntCompensatorSectionsToString, this::setSvShuntCompensatorSections, null));
-        map.put("aVRDelay", new GetterSetter(this::aVRDelayToString, null, this::setAVRDelay));
-        map.put("grounded", new GetterSetter(this::groundedToString, null, this::setGrounded));
-        map.put("maximumSections", new GetterSetter(this::maximumSectionsToString, null, this::setMaximumSections));
-        map.put("nomU", new GetterSetter(this::nomUToString, null, this::setNomU));
-        map.put("normalSections", new GetterSetter(this::normalSectionsToString, null, this::setNormalSections));
-        map.put("sections", new GetterSetter(this::sectionsToString, null, this::setSections));
-        map.put("voltageSensitivity", new GetterSetter(this::voltageSensitivityToString, null, this::setVoltageSensitivity));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

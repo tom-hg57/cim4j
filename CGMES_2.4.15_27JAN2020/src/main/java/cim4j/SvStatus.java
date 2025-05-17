@@ -52,6 +52,14 @@ public class SvStatus extends BaseClass {
         return ConductingEquipment != null ? ConductingEquipment.getRdfid() : null;
     }
 
+    private static void setConductingEquipment(BaseClass _this_, BaseClass _object_) {
+        ((SvStatus) _this_).setConductingEquipment(_object_);
+    }
+
+    private static String ConductingEquipmentToString(BaseClass _this_) {
+        return ((SvStatus) _this_).ConductingEquipmentToString();
+    }
+
     /**
      * The in service status as a result of topology processing.
      */
@@ -71,6 +79,14 @@ public class SvStatus extends BaseClass {
 
     public String inServiceToString() {
         return inService != null ? inService.toString() : null;
+    }
+
+    private static void setInService(BaseClass _this_, String _value_) {
+        ((SvStatus) _this_).setInService(_value_);
+    }
+
+    private static String inServiceToString(BaseClass _this_) {
+        return ((SvStatus) _this_).inServiceToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class SvStatus extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvStatus", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvStatus", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class SvStatus extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvStatus", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvStatus", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class SvStatus extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvStatus", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvStatus", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class SvStatus extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("ConductingEquipment", new AttrDetails("SvStatus.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConductingEquipment", new AttrDetails("SvStatus.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SvStatus::ConductingEquipmentToString, SvStatus::setConductingEquipment, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("inService", new AttrDetails("SvStatus.inService", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("inService", new AttrDetails("SvStatus.inService", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvStatus::inServiceToString, null, SvStatus::setInService));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvStatus().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConductingEquipment", new GetterSetter(this::ConductingEquipmentToString, this::setConductingEquipment, null));
-        map.put("inService", new GetterSetter(this::inServiceToString, null, this::setInService));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

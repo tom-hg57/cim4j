@@ -54,6 +54,14 @@ public class WindMechIEC extends IdentifiedObject {
         return WindGenTurbineType3IEC != null ? WindGenTurbineType3IEC.getRdfid() : null;
     }
 
+    private static void setWindGenTurbineType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindMechIEC) _this_).setWindGenTurbineType3IEC(_object_);
+    }
+
+    private static String WindGenTurbineType3IECToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).WindGenTurbineType3IECToString();
+    }
+
     /**
      * Wind generator type 1 or 2 model with which this wind mechanical model is associated.
      *
@@ -77,6 +85,14 @@ public class WindMechIEC extends IdentifiedObject {
 
     public String WindTurbineType1or2IECToString() {
         return WindTurbineType1or2IEC != null ? WindTurbineType1or2IEC.getRdfid() : null;
+    }
+
+    private static void setWindTurbineType1or2IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindMechIEC) _this_).setWindTurbineType1or2IEC(_object_);
+    }
+
+    private static String WindTurbineType1or2IECToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).WindTurbineType1or2IECToString();
     }
 
     /**
@@ -104,6 +120,14 @@ public class WindMechIEC extends IdentifiedObject {
         return WindTurbineType4bIEC != null ? WindTurbineType4bIEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType4bIEC(BaseClass _this_, BaseClass _object_) {
+        ((WindMechIEC) _this_).setWindTurbineType4bIEC(_object_);
+    }
+
+    private static String WindTurbineType4bIECToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).WindTurbineType4bIECToString();
+    }
+
     /**
      * Drive train damping (. It is type dependent parameter.
      */
@@ -123,6 +147,14 @@ public class WindMechIEC extends IdentifiedObject {
 
     public String cdrtToString() {
         return cdrt != null ? cdrt.toString() : null;
+    }
+
+    private static void setCdrt(BaseClass _this_, String _value_) {
+        ((WindMechIEC) _this_).setCdrt(_value_);
+    }
+
+    private static String cdrtToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).cdrtToString();
     }
 
     /**
@@ -146,6 +178,14 @@ public class WindMechIEC extends IdentifiedObject {
         return hgen != null ? hgen.toString() : null;
     }
 
+    private static void setHgen(BaseClass _this_, String _value_) {
+        ((WindMechIEC) _this_).setHgen(_value_);
+    }
+
+    private static String hgenToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).hgenToString();
+    }
+
     /**
      * Inertia constant of wind turbine rotor (). It is type dependent parameter.
      */
@@ -167,6 +207,14 @@ public class WindMechIEC extends IdentifiedObject {
         return hwtr != null ? hwtr.toString() : null;
     }
 
+    private static void setHwtr(BaseClass _this_, String _value_) {
+        ((WindMechIEC) _this_).setHwtr(_value_);
+    }
+
+    private static String hwtrToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).hwtrToString();
+    }
+
     /**
      * Drive train stiffness (). It is type dependent parameter.
      */
@@ -186,6 +234,14 @@ public class WindMechIEC extends IdentifiedObject {
 
     public String kdrtToString() {
         return kdrt != null ? kdrt.toString() : null;
+    }
+
+    private static void setKdrt(BaseClass _this_, String _value_) {
+        ((WindMechIEC) _this_).setKdrt(_value_);
+    }
+
+    private static String kdrtToString(BaseClass _this_) {
+        return ((WindMechIEC) _this_).kdrtToString();
     }
 
     /**
@@ -229,16 +285,12 @@ public class WindMechIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindMechIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindMechIEC", attrName));
+        return "";
     }
 
     /**
@@ -249,16 +301,12 @@ public class WindMechIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindMechIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindMechIEC", attrName, objectValue));
         }
     }
 
@@ -270,16 +318,12 @@ public class WindMechIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindMechIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindMechIEC", attrName, stringValue));
         }
     }
 
@@ -403,54 +447,41 @@ public class WindMechIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindGenTurbineType3IEC", new AttrDetails("WindMechIEC.WindGenTurbineType3IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindGenTurbineType3IEC", new AttrDetails("WindMechIEC.WindGenTurbineType3IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindMechIEC::WindGenTurbineType3IECToString, WindMechIEC::setWindGenTurbineType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType1or2IEC", new AttrDetails("WindMechIEC.WindTurbineType1or2IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType1or2IEC", new AttrDetails("WindMechIEC.WindTurbineType1or2IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindMechIEC::WindTurbineType1or2IECToString, WindMechIEC::setWindTurbineType1or2IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType4bIEC", new AttrDetails("WindMechIEC.WindTurbineType4bIEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType4bIEC", new AttrDetails("WindMechIEC.WindTurbineType4bIEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindMechIEC::WindTurbineType4bIECToString, WindMechIEC::setWindTurbineType4bIEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("cdrt", new AttrDetails("WindMechIEC.cdrt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("cdrt", new AttrDetails("WindMechIEC.cdrt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindMechIEC::cdrtToString, null, WindMechIEC::setCdrt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("hgen", new AttrDetails("WindMechIEC.hgen", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("hgen", new AttrDetails("WindMechIEC.hgen", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindMechIEC::hgenToString, null, WindMechIEC::setHgen));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("hwtr", new AttrDetails("WindMechIEC.hwtr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("hwtr", new AttrDetails("WindMechIEC.hwtr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindMechIEC::hwtrToString, null, WindMechIEC::setHwtr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kdrt", new AttrDetails("WindMechIEC.kdrt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kdrt", new AttrDetails("WindMechIEC.kdrt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindMechIEC::kdrtToString, null, WindMechIEC::setKdrt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindMechIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindGenTurbineType3IEC", new GetterSetter(this::WindGenTurbineType3IECToString, this::setWindGenTurbineType3IEC, null));
-        map.put("WindTurbineType1or2IEC", new GetterSetter(this::WindTurbineType1or2IECToString, this::setWindTurbineType1or2IEC, null));
-        map.put("WindTurbineType4bIEC", new GetterSetter(this::WindTurbineType4bIECToString, this::setWindTurbineType4bIEC, null));
-        map.put("cdrt", new GetterSetter(this::cdrtToString, null, this::setCdrt));
-        map.put("hgen", new GetterSetter(this::hgenToString, null, this::setHgen));
-        map.put("hwtr", new GetterSetter(this::hwtrToString, null, this::setHwtr));
-        map.put("kdrt", new GetterSetter(this::kdrtToString, null, this::setKdrt));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

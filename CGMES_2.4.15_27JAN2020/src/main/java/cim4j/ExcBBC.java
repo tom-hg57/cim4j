@@ -50,6 +50,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return efdmax != null ? efdmax.toString() : null;
     }
 
+    private static void setEfdmax(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setEfdmax(_value_);
+    }
+
+    private static String efdmaxToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).efdmaxToString();
+    }
+
     /**
      * Minimum open circuit exciter voltage (Efdmin).  Typical Value = -5.
      */
@@ -69,6 +77,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
 
     public String efdminToString() {
         return efdmin != null ? efdmin.toString() : null;
+    }
+
+    private static void setEfdmin(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setEfdmin(_value_);
+    }
+
+    private static String efdminToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).efdminToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return k != null ? k.toString() : null;
     }
 
+    private static void setK(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setK(_value_);
+    }
+
+    private static String kToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).kToString();
+    }
+
     /**
      * Supplementary signal routing selector (switch). true = Vs connected to 3rd summing point false =  Vs connected to 1st summing point (see diagram). Typical Value = true.
      */
@@ -111,6 +135,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
 
     public String switchToString() {
         return switch_ != null ? switch_.toString() : null;
+    }
+
+    private static void setSwitch(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setSwitch(_value_);
+    }
+
+    private static String switchToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).switchToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return t1 != null ? t1.toString() : null;
     }
 
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).t1ToString();
+    }
+
     /**
      * Controller time constant (T2).  Typical Value = 1.
      */
@@ -153,6 +193,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
 
     public String t2ToString() {
         return t2 != null ? t2.toString() : null;
+    }
+
+    private static void setT2(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setT2(_value_);
+    }
+
+    private static String t2ToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).t2ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return t3 != null ? t3.toString() : null;
     }
 
+    private static void setT3(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setT3(_value_);
+    }
+
+    private static String t3ToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).t3ToString();
+    }
+
     /**
      * Lead/lag time constant (T4).  Typical Value = 0.01.
      */
@@ -195,6 +251,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
 
     public String t4ToString() {
         return t4 != null ? t4.toString() : null;
+    }
+
+    private static void setT4(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setT4(_value_);
+    }
+
+    private static String t4ToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).t4ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return vrmax != null ? vrmax.toString() : null;
     }
 
+    private static void setVrmax(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setVrmax(_value_);
+    }
+
+    private static String vrmaxToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).vrmaxToString();
+    }
+
     /**
      * Minimum control element output (Vrmin).  Typical Value = -5.
      */
@@ -239,6 +311,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
         return vrmin != null ? vrmin.toString() : null;
     }
 
+    private static void setVrmin(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setVrmin(_value_);
+    }
+
+    private static String vrminToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).vrminToString();
+    }
+
     /**
      * Effective excitation transformer reactance (Xe).  Typical Value = 0.05.
      */
@@ -258,6 +338,14 @@ public class ExcBBC extends ExcitationSystemDynamics {
 
     public String xeToString() {
         return xe != null ? xe.toString() : null;
+    }
+
+    private static void setXe(BaseClass _this_, String _value_) {
+        ((ExcBBC) _this_).setXe(_value_);
+    }
+
+    private static String xeToString(BaseClass _this_) {
+        return ((ExcBBC) _this_).xeToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class ExcBBC extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcBBC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcBBC", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class ExcBBC extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcBBC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcBBC", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class ExcBBC extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcBBC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcBBC", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class ExcBBC extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmax", new AttrDetails("ExcBBC.efdmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efdmax", new AttrDetails("ExcBBC.efdmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::efdmaxToString, null, ExcBBC::setEfdmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmin", new AttrDetails("ExcBBC.efdmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efdmin", new AttrDetails("ExcBBC.efdmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::efdminToString, null, ExcBBC::setEfdmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k", new AttrDetails("ExcBBC.k", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k", new AttrDetails("ExcBBC.k", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::kToString, null, ExcBBC::setK));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("switch", new AttrDetails("ExcBBC.switch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("switch", new AttrDetails("ExcBBC.switch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::switchToString, null, ExcBBC::setSwitch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("ExcBBC.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t1", new AttrDetails("ExcBBC.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::t1ToString, null, ExcBBC::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("ExcBBC.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t2", new AttrDetails("ExcBBC.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::t2ToString, null, ExcBBC::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("ExcBBC.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t3", new AttrDetails("ExcBBC.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::t3ToString, null, ExcBBC::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("ExcBBC.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t4", new AttrDetails("ExcBBC.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::t4ToString, null, ExcBBC::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcBBC.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcBBC.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::vrmaxToString, null, ExcBBC::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcBBC.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcBBC.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::vrminToString, null, ExcBBC::setVrmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xe", new AttrDetails("ExcBBC.xe", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xe", new AttrDetails("ExcBBC.xe", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcBBC::xeToString, null, ExcBBC::setXe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcBBC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("efdmax", new GetterSetter(this::efdmaxToString, null, this::setEfdmax));
-        map.put("efdmin", new GetterSetter(this::efdminToString, null, this::setEfdmin));
-        map.put("k", new GetterSetter(this::kToString, null, this::setK));
-        map.put("switch", new GetterSetter(this::switchToString, null, this::setSwitch));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        map.put("xe", new GetterSetter(this::xeToString, null, this::setXe));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

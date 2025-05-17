@@ -52,6 +52,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return ReactiveCapabilityCurve != null ? ReactiveCapabilityCurve.getRdfid() : null;
     }
 
+    private static void setReactiveCapabilityCurve(BaseClass _this_, BaseClass _object_) {
+        ((EquivalentInjection) _this_).setReactiveCapabilityCurve(_object_);
+    }
+
+    private static String ReactiveCapabilityCurveToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).ReactiveCapabilityCurveToString();
+    }
+
     /**
      * Maximum active power of the injection.
      */
@@ -71,6 +79,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String maxPToString() {
         return maxP != null ? maxP.toString() : null;
+    }
+
+    private static void setMaxP(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setMaxP(_value_);
+    }
+
+    private static String maxPToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).maxPToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return maxQ != null ? maxQ.toString() : null;
     }
 
+    private static void setMaxQ(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setMaxQ(_value_);
+    }
+
+    private static String maxQToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).maxQToString();
+    }
+
     /**
      * Minimum active power of the injection.
      */
@@ -113,6 +137,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String minPToString() {
         return minP != null ? minP.toString() : null;
+    }
+
+    private static void setMinP(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setMinP(_value_);
+    }
+
+    private static String minPToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).minPToString();
     }
 
     /**
@@ -136,6 +168,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return minQ != null ? minQ.toString() : null;
     }
 
+    private static void setMinQ(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setMinQ(_value_);
+    }
+
+    private static String minQToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).minQToString();
+    }
+
     /**
      * Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions.
      */
@@ -155,6 +195,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String pToString() {
         return p != null ? p.toString() : null;
+    }
+
+    private static void setP(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).pToString();
     }
 
     /**
@@ -178,6 +226,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return q != null ? q.toString() : null;
     }
 
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).qToString();
+    }
+
     /**
      * Positive sequence resistance. Used to represent Extended-Ward (IEC 60909). Usage : Extended-Ward is a result of network reduction prior to the data exchange.
      */
@@ -197,6 +253,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).rToString();
     }
 
     /**
@@ -220,6 +284,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return r0 != null ? r0.toString() : null;
     }
 
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).r0ToString();
+    }
+
     /**
      * Negative sequence resistance. Used to represent Extended-Ward (IEC 60909). Usage : Extended-Ward is a result of network reduction prior to the data exchange.
      */
@@ -239,6 +311,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String r2ToString() {
         return r2 != null ? r2.toString() : null;
+    }
+
+    private static void setR2(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setR2(_value_);
+    }
+
+    private static String r2ToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).r2ToString();
     }
 
     /**
@@ -262,6 +342,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return regulationCapability != null ? regulationCapability.toString() : null;
     }
 
+    private static void setRegulationCapability(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setRegulationCapability(_value_);
+    }
+
+    private static String regulationCapabilityToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).regulationCapabilityToString();
+    }
+
     /**
      * Specifies the default regulation status of the EquivalentInjection.  True is regulating.  False is not regulating.
      */
@@ -281,6 +369,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String regulationStatusToString() {
         return regulationStatus != null ? regulationStatus.toString() : null;
+    }
+
+    private static void setRegulationStatus(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setRegulationStatus(_value_);
+    }
+
+    private static String regulationStatusToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).regulationStatusToString();
     }
 
     /**
@@ -304,6 +400,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return regulationTarget != null ? regulationTarget.toString() : null;
     }
 
+    private static void setRegulationTarget(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setRegulationTarget(_value_);
+    }
+
+    private static String regulationTargetToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).regulationTargetToString();
+    }
+
     /**
      * Positive sequence reactance. Used to represent Extended-Ward (IEC 60909). Usage : Extended-Ward is a result of network reduction prior to the data exchange.
      */
@@ -323,6 +427,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String xToString() {
         return x != null ? x.toString() : null;
+    }
+
+    private static void setX(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).xToString();
     }
 
     /**
@@ -346,6 +458,14 @@ public class EquivalentInjection extends EquivalentEquipment {
         return x0 != null ? x0.toString() : null;
     }
 
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).x0ToString();
+    }
+
     /**
      * Negative sequence reactance. Used to represent Extended-Ward (IEC 60909). Usage : Extended-Ward is a result of network reduction prior to the data exchange.
      */
@@ -365,6 +485,14 @@ public class EquivalentInjection extends EquivalentEquipment {
 
     public String x2ToString() {
         return x2 != null ? x2.toString() : null;
+    }
+
+    private static void setX2(BaseClass _this_, String _value_) {
+        ((EquivalentInjection) _this_).setX2(_value_);
+    }
+
+    private static String x2ToString(BaseClass _this_) {
+        return ((EquivalentInjection) _this_).x2ToString();
     }
 
     /**
@@ -408,16 +536,12 @@ public class EquivalentInjection extends EquivalentEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EquivalentInjection", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EquivalentInjection", attrName));
+        return "";
     }
 
     /**
@@ -428,16 +552,12 @@ public class EquivalentInjection extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EquivalentInjection", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentInjection", attrName, objectValue));
         }
     }
 
@@ -449,16 +569,12 @@ public class EquivalentInjection extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EquivalentInjection", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentInjection", attrName, stringValue));
         }
     }
 
@@ -582,108 +698,86 @@ public class EquivalentInjection extends EquivalentEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ReactiveCapabilityCurve", new AttrDetails("EquivalentInjection.ReactiveCapabilityCurve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ReactiveCapabilityCurve", new AttrDetails("EquivalentInjection.ReactiveCapabilityCurve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, EquivalentInjection::ReactiveCapabilityCurveToString, EquivalentInjection::setReactiveCapabilityCurve, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxP", new AttrDetails("EquivalentInjection.maxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxP", new AttrDetails("EquivalentInjection.maxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::maxPToString, null, EquivalentInjection::setMaxP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxQ", new AttrDetails("EquivalentInjection.maxQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxQ", new AttrDetails("EquivalentInjection.maxQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::maxQToString, null, EquivalentInjection::setMaxQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minP", new AttrDetails("EquivalentInjection.minP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minP", new AttrDetails("EquivalentInjection.minP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::minPToString, null, EquivalentInjection::setMinP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minQ", new AttrDetails("EquivalentInjection.minQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minQ", new AttrDetails("EquivalentInjection.minQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::minQToString, null, EquivalentInjection::setMinQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("EquivalentInjection.p", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("p", new AttrDetails("EquivalentInjection.p", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::pToString, null, EquivalentInjection::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("EquivalentInjection.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("q", new AttrDetails("EquivalentInjection.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::qToString, null, EquivalentInjection::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("EquivalentInjection.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("EquivalentInjection.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::rToString, null, EquivalentInjection::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("EquivalentInjection.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("EquivalentInjection.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::r0ToString, null, EquivalentInjection::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r2", new AttrDetails("EquivalentInjection.r2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r2", new AttrDetails("EquivalentInjection.r2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::r2ToString, null, EquivalentInjection::setR2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("regulationCapability", new AttrDetails("EquivalentInjection.regulationCapability", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("regulationCapability", new AttrDetails("EquivalentInjection.regulationCapability", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::regulationCapabilityToString, null, EquivalentInjection::setRegulationCapability));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("regulationStatus", new AttrDetails("EquivalentInjection.regulationStatus", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("regulationStatus", new AttrDetails("EquivalentInjection.regulationStatus", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::regulationStatusToString, null, EquivalentInjection::setRegulationStatus));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("regulationTarget", new AttrDetails("EquivalentInjection.regulationTarget", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("regulationTarget", new AttrDetails("EquivalentInjection.regulationTarget", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::regulationTargetToString, null, EquivalentInjection::setRegulationTarget));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("EquivalentInjection.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x", new AttrDetails("EquivalentInjection.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::xToString, null, EquivalentInjection::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("EquivalentInjection.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("EquivalentInjection.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::x0ToString, null, EquivalentInjection::setX0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x2", new AttrDetails("EquivalentInjection.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x2", new AttrDetails("EquivalentInjection.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::x2ToString, null, EquivalentInjection::setX2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentInjection().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ReactiveCapabilityCurve", new GetterSetter(this::ReactiveCapabilityCurveToString, this::setReactiveCapabilityCurve, null));
-        map.put("maxP", new GetterSetter(this::maxPToString, null, this::setMaxP));
-        map.put("maxQ", new GetterSetter(this::maxQToString, null, this::setMaxQ));
-        map.put("minP", new GetterSetter(this::minPToString, null, this::setMinP));
-        map.put("minQ", new GetterSetter(this::minQToString, null, this::setMinQ));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("r2", new GetterSetter(this::r2ToString, null, this::setR2));
-        map.put("regulationCapability", new GetterSetter(this::regulationCapabilityToString, null, this::setRegulationCapability));
-        map.put("regulationStatus", new GetterSetter(this::regulationStatusToString, null, this::setRegulationStatus));
-        map.put("regulationTarget", new GetterSetter(this::regulationTargetToString, null, this::setRegulationTarget));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        map.put("x2", new GetterSetter(this::x2ToString, null, this::setX2));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

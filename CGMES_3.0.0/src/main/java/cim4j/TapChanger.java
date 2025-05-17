@@ -54,6 +54,14 @@ public class TapChanger extends PowerSystemResource {
         return SvTapStep != null ? SvTapStep.getRdfid() : null;
     }
 
+    private static void setSvTapStep(BaseClass _this_, BaseClass _object_) {
+        ((TapChanger) _this_).setSvTapStep(_object_);
+    }
+
+    private static String SvTapStepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).SvTapStepToString();
+    }
+
     /**
      * The regulating control scheme in which this tap changer participates.
      */
@@ -75,6 +83,14 @@ public class TapChanger extends PowerSystemResource {
 
     public String TapChangerControlToString() {
         return TapChangerControl != null ? TapChangerControl.getRdfid() : null;
+    }
+
+    private static void setTapChangerControl(BaseClass _this_, BaseClass _object_) {
+        ((TapChanger) _this_).setTapChangerControl(_object_);
+    }
+
+    private static String TapChangerControlToString(BaseClass _this_) {
+        return ((TapChanger) _this_).TapChangerControlToString();
     }
 
     /**
@@ -102,6 +118,14 @@ public class TapChanger extends PowerSystemResource {
         return getStringFromSet(TapSchedules);
     }
 
+    private static void setTapSchedules(BaseClass _this_, BaseClass _object_) {
+        ((TapChanger) _this_).setTapSchedules(_object_);
+    }
+
+    private static String TapSchedulesToString(BaseClass _this_) {
+        return ((TapChanger) _this_).TapSchedulesToString();
+    }
+
     /**
      * Specifies the regulation status of the equipment.  True is regulating, false is not regulating.
      */
@@ -121,6 +145,14 @@ public class TapChanger extends PowerSystemResource {
 
     public String controlEnabledToString() {
         return controlEnabled != null ? controlEnabled.toString() : null;
+    }
+
+    private static void setControlEnabled(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setControlEnabled(_value_);
+    }
+
+    private static String controlEnabledToString(BaseClass _this_) {
+        return ((TapChanger) _this_).controlEnabledToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class TapChanger extends PowerSystemResource {
         return highStep != null ? highStep.toString() : null;
     }
 
+    private static void setHighStep(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setHighStep(_value_);
+    }
+
+    private static String highStepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).highStepToString();
+    }
+
     /**
      * Lowest possible tap step position, retard from neutral.
      */
@@ -163,6 +203,14 @@ public class TapChanger extends PowerSystemResource {
 
     public String lowStepToString() {
         return lowStep != null ? lowStep.toString() : null;
+    }
+
+    private static void setLowStep(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setLowStep(_value_);
+    }
+
+    private static String lowStepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).lowStepToString();
     }
 
     /**
@@ -186,6 +234,14 @@ public class TapChanger extends PowerSystemResource {
         return ltcFlag != null ? ltcFlag.toString() : null;
     }
 
+    private static void setLtcFlag(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setLtcFlag(_value_);
+    }
+
+    private static String ltcFlagToString(BaseClass _this_) {
+        return ((TapChanger) _this_).ltcFlagToString();
+    }
+
     /**
      * The neutral tap step position for this winding. The attribute shall be equal to or greater than lowStep and equal or less than highStep. It is the step position where the voltage is neutralU when the other terminals of the transformer are at the ratedU.  If there are other tap changers on the transformer those taps are kept constant at their neutralStep.
      */
@@ -205,6 +261,14 @@ public class TapChanger extends PowerSystemResource {
 
     public String neutralStepToString() {
         return neutralStep != null ? neutralStep.toString() : null;
+    }
+
+    private static void setNeutralStep(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setNeutralStep(_value_);
+    }
+
+    private static String neutralStepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).neutralStepToString();
     }
 
     /**
@@ -228,6 +292,14 @@ public class TapChanger extends PowerSystemResource {
         return neutralU != null ? neutralU.toString() : null;
     }
 
+    private static void setNeutralU(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setNeutralU(_value_);
+    }
+
+    private static String neutralUToString(BaseClass _this_) {
+        return ((TapChanger) _this_).neutralUToString();
+    }
+
     /**
      * The tap step position used in `normal` network operation for this winding. For a `Fixed` tap changer indicates the current physical tap setting. The attribute shall be equal to or greater than lowStep and equal to or less than highStep.
      */
@@ -249,6 +321,14 @@ public class TapChanger extends PowerSystemResource {
         return normalStep != null ? normalStep.toString() : null;
     }
 
+    private static void setNormalStep(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setNormalStep(_value_);
+    }
+
+    private static String normalStepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).normalStepToString();
+    }
+
     /**
      * Tap changer position. Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input. The attribute shall be equal to or greater than lowStep and equal to or less than highStep.
      */
@@ -268,6 +348,14 @@ public class TapChanger extends PowerSystemResource {
 
     public String stepToString() {
         return step != null ? step.toString() : null;
+    }
+
+    private static void setStep(BaseClass _this_, String _value_) {
+        ((TapChanger) _this_).setStep(_value_);
+    }
+
+    private static String stepToString(BaseClass _this_) {
+        return ((TapChanger) _this_).stepToString();
     }
 
     /**
@@ -311,16 +399,12 @@ public class TapChanger extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TapChanger", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TapChanger", attrName));
+        return "";
     }
 
     /**
@@ -331,16 +415,12 @@ public class TapChanger extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TapChanger", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TapChanger", attrName, objectValue));
         }
     }
 
@@ -352,16 +432,12 @@ public class TapChanger extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TapChanger", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TapChanger", attrName, stringValue));
         }
     }
 
@@ -485,78 +561,61 @@ public class TapChanger extends PowerSystemResource {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvTapStep", new AttrDetails("TapChanger.SvTapStep", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SvTapStep", new AttrDetails("TapChanger.SvTapStep", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, TapChanger::SvTapStepToString, TapChanger::setSvTapStep, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TapChangerControl", new AttrDetails("TapChanger.TapChangerControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TapChangerControl", new AttrDetails("TapChanger.TapChangerControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, TapChanger::TapChangerControlToString, TapChanger::setTapChangerControl, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TapSchedules", new AttrDetails("TapChanger.TapSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TapSchedules", new AttrDetails("TapChanger.TapSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, TapChanger::TapSchedulesToString, TapChanger::setTapSchedules, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("controlEnabled", new AttrDetails("TapChanger.controlEnabled", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("controlEnabled", new AttrDetails("TapChanger.controlEnabled", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::controlEnabledToString, null, TapChanger::setControlEnabled));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("highStep", new AttrDetails("TapChanger.highStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("highStep", new AttrDetails("TapChanger.highStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::highStepToString, null, TapChanger::setHighStep));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("lowStep", new AttrDetails("TapChanger.lowStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("lowStep", new AttrDetails("TapChanger.lowStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::lowStepToString, null, TapChanger::setLowStep));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ltcFlag", new AttrDetails("TapChanger.ltcFlag", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ltcFlag", new AttrDetails("TapChanger.ltcFlag", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::ltcFlagToString, null, TapChanger::setLtcFlag));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("neutralStep", new AttrDetails("TapChanger.neutralStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("neutralStep", new AttrDetails("TapChanger.neutralStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::neutralStepToString, null, TapChanger::setNeutralStep));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("neutralU", new AttrDetails("TapChanger.neutralU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("neutralU", new AttrDetails("TapChanger.neutralU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::neutralUToString, null, TapChanger::setNeutralU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("normalStep", new AttrDetails("TapChanger.normalStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("normalStep", new AttrDetails("TapChanger.normalStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::normalStepToString, null, TapChanger::setNormalStep));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("step", new AttrDetails("TapChanger.step", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("step", new AttrDetails("TapChanger.step", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TapChanger::stepToString, null, TapChanger::setStep));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChanger().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("SvTapStep", new GetterSetter(this::SvTapStepToString, this::setSvTapStep, null));
-        map.put("TapChangerControl", new GetterSetter(this::TapChangerControlToString, this::setTapChangerControl, null));
-        map.put("TapSchedules", new GetterSetter(this::TapSchedulesToString, this::setTapSchedules, null));
-        map.put("controlEnabled", new GetterSetter(this::controlEnabledToString, null, this::setControlEnabled));
-        map.put("highStep", new GetterSetter(this::highStepToString, null, this::setHighStep));
-        map.put("lowStep", new GetterSetter(this::lowStepToString, null, this::setLowStep));
-        map.put("ltcFlag", new GetterSetter(this::ltcFlagToString, null, this::setLtcFlag));
-        map.put("neutralStep", new GetterSetter(this::neutralStepToString, null, this::setNeutralStep));
-        map.put("neutralU", new GetterSetter(this::neutralUToString, null, this::setNeutralU));
-        map.put("normalStep", new GetterSetter(this::normalStepToString, null, this::setNormalStep));
-        map.put("step", new GetterSetter(this::stepToString, null, this::setStep));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

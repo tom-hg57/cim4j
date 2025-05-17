@@ -54,6 +54,14 @@ public class TopologicalNode extends IdentifiedObject {
         return AngleRefTopologicalIsland != null ? AngleRefTopologicalIsland.getRdfid() : null;
     }
 
+    private static void setAngleRefTopologicalIsland(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setAngleRefTopologicalIsland(_object_);
+    }
+
+    private static String AngleRefTopologicalIslandToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).AngleRefTopologicalIslandToString();
+    }
+
     /**
      * The base voltage of the topologocial node.
      */
@@ -77,6 +85,14 @@ public class TopologicalNode extends IdentifiedObject {
         return BaseVoltage != null ? BaseVoltage.getRdfid() : null;
     }
 
+    private static void setBaseVoltage(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setBaseVoltage(_object_);
+    }
+
+    private static String BaseVoltageToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).BaseVoltageToString();
+    }
+
     /**
      * The connectivity node container to which the toplogical node belongs.
      */
@@ -98,6 +114,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String ConnectivityNodeContainerToString() {
         return ConnectivityNodeContainer != null ? ConnectivityNodeContainer.getRdfid() : null;
+    }
+
+    private static void setConnectivityNodeContainer(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setConnectivityNodeContainer(_object_);
+    }
+
+    private static String ConnectivityNodeContainerToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).ConnectivityNodeContainerToString();
     }
 
     /**
@@ -125,6 +149,14 @@ public class TopologicalNode extends IdentifiedObject {
         return getStringFromSet(ConnectivityNodes);
     }
 
+    private static void setConnectivityNodes(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setConnectivityNodes(_object_);
+    }
+
+    private static String ConnectivityNodesToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).ConnectivityNodesToString();
+    }
+
     /**
      * The topological nodes that belong to the reporting group.
      */
@@ -146,6 +178,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String ReportingGroupToString() {
         return ReportingGroup != null ? ReportingGroup.getRdfid() : null;
+    }
+
+    private static void setReportingGroup(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setReportingGroup(_object_);
+    }
+
+    private static String ReportingGroupToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).ReportingGroupToString();
     }
 
     /**
@@ -173,6 +213,14 @@ public class TopologicalNode extends IdentifiedObject {
         return SvInjection != null ? SvInjection.getRdfid() : null;
     }
 
+    private static void setSvInjection(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setSvInjection(_object_);
+    }
+
+    private static String SvInjectionToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).SvInjectionToString();
+    }
+
     /**
      * The topological node associated with the voltage state.
      *
@@ -196,6 +244,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String SvVoltageToString() {
         return SvVoltage != null ? SvVoltage.getRdfid() : null;
+    }
+
+    private static void setSvVoltage(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setSvVoltage(_object_);
+    }
+
+    private static String SvVoltageToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).SvVoltageToString();
     }
 
     /**
@@ -223,6 +279,14 @@ public class TopologicalNode extends IdentifiedObject {
         return getStringFromSet(Terminal);
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).TerminalToString();
+    }
+
     /**
      * A topological node belongs to a topological island.
      *
@@ -248,6 +312,14 @@ public class TopologicalNode extends IdentifiedObject {
         return TopologicalIsland != null ? TopologicalIsland.getRdfid() : null;
     }
 
+    private static void setTopologicalIsland(BaseClass _this_, BaseClass _object_) {
+        ((TopologicalNode) _this_).setTopologicalIsland(_object_);
+    }
+
+    private static String TopologicalIslandToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).TopologicalIslandToString();
+    }
+
     /**
      * Identifies if a node is a BoundaryPoint. If boundaryPoint=true the ConnectivityNode or the TopologicalNode represents a BoundaryPoint.
      */
@@ -269,6 +341,14 @@ public class TopologicalNode extends IdentifiedObject {
         return boundaryPoint != null ? boundaryPoint.toString() : null;
     }
 
+    private static void setBoundaryPoint(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setBoundaryPoint(_value_);
+    }
+
+    private static String boundaryPointToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).boundaryPointToString();
+    }
+
     /**
      * The attribute is used for an exchange of the ISO code of the region to which the `From` side of the Boundary point belongs to or it is connected to. The ISO code is two characters country code as defined by ISO 3166 (). The length of the string is 2 characters maximum. The attribute is a required for the Boundary Model Authority Set where this attribute is used only for the TopologicalNode in the Boundary Topology profile and ConnectivityNode in the Boundary Equipment profile.
      */
@@ -284,6 +364,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String fromEndIsoCodeToString() {
         return fromEndIsoCode != null ? fromEndIsoCode.toString() : null;
+    }
+
+    private static void setFromEndIsoCode(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setFromEndIsoCode(_value_);
+    }
+
+    private static String fromEndIsoCodeToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).fromEndIsoCodeToString();
     }
 
     /**
@@ -303,6 +391,14 @@ public class TopologicalNode extends IdentifiedObject {
         return fromEndName != null ? fromEndName.toString() : null;
     }
 
+    private static void setFromEndName(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setFromEndName(_value_);
+    }
+
+    private static String fromEndNameToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).fromEndNameToString();
+    }
+
     /**
      * The attribute is used for an exchange of the name of the TSO to which the `From` side of the Boundary point belongs to or it is connected to. The length of the string is 32 characters maximum. The attribute is required for the Boundary Model Authority Set where it is used only for the TopologicalNode in the Boundary Topology profile and ConnectivityNode in the Boundary Equipment profile.
      */
@@ -318,6 +414,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String fromEndNameTsoToString() {
         return fromEndNameTso != null ? fromEndNameTso.toString() : null;
+    }
+
+    private static void setFromEndNameTso(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setFromEndNameTso(_value_);
+    }
+
+    private static String fromEndNameTsoToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).fromEndNameTsoToString();
     }
 
     /**
@@ -337,6 +441,14 @@ public class TopologicalNode extends IdentifiedObject {
         return toEndIsoCode != null ? toEndIsoCode.toString() : null;
     }
 
+    private static void setToEndIsoCode(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setToEndIsoCode(_value_);
+    }
+
+    private static String toEndIsoCodeToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).toEndIsoCodeToString();
+    }
+
     /**
      * The attribute is used for an exchange of a human readable name with length of the string 32 characters maximum. The attribute covers two cases:  The attribute is required for the Boundary Model Authority Set where it is used only for the TopologicalNode in the Boundary Topology profile and ConnectivityNode in the Boundary Equipment profile.
      */
@@ -354,6 +466,14 @@ public class TopologicalNode extends IdentifiedObject {
         return toEndName != null ? toEndName.toString() : null;
     }
 
+    private static void setToEndName(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setToEndName(_value_);
+    }
+
+    private static String toEndNameToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).toEndNameToString();
+    }
+
     /**
      * The attribute is used for an exchange of the name of the TSO to which the `To` side of the Boundary point belongs to or it is connected to. The length of the string is 32 characters maximum. The attribute is required for the Boundary Model Authority Set where it is used only for the TopologicalNode in the Boundary Topology profile and ConnectivityNode in the Boundary Equipment profile.
      */
@@ -369,6 +489,14 @@ public class TopologicalNode extends IdentifiedObject {
 
     public String toEndNameTsoToString() {
         return toEndNameTso != null ? toEndNameTso.toString() : null;
+    }
+
+    private static void setToEndNameTso(BaseClass _this_, String _value_) {
+        ((TopologicalNode) _this_).setToEndNameTso(_value_);
+    }
+
+    private static String toEndNameTsoToString(BaseClass _this_) {
+        return ((TopologicalNode) _this_).toEndNameTsoToString();
     }
 
     /**
@@ -412,16 +540,12 @@ public class TopologicalNode extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TopologicalNode", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TopologicalNode", attrName));
+        return "";
     }
 
     /**
@@ -432,16 +556,12 @@ public class TopologicalNode extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TopologicalNode", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TopologicalNode", attrName, objectValue));
         }
     }
 
@@ -453,16 +573,12 @@ public class TopologicalNode extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TopologicalNode", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TopologicalNode", attrName, stringValue));
         }
     }
 
@@ -586,111 +702,89 @@ public class TopologicalNode extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("AngleRefTopologicalIsland", new AttrDetails("TopologicalNode.AngleRefTopologicalIsland", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AngleRefTopologicalIsland", new AttrDetails("TopologicalNode.AngleRefTopologicalIsland", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::AngleRefTopologicalIslandToString, TopologicalNode::setAngleRefTopologicalIsland, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
-            map.put("BaseVoltage", new AttrDetails("TopologicalNode.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("BaseVoltage", new AttrDetails("TopologicalNode.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::BaseVoltageToString, TopologicalNode::setBaseVoltage, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
-            map.put("ConnectivityNodeContainer", new AttrDetails("TopologicalNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConnectivityNodeContainer", new AttrDetails("TopologicalNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::ConnectivityNodeContainerToString, TopologicalNode::setConnectivityNodeContainer, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
-            map.put("ConnectivityNodes", new AttrDetails("TopologicalNode.ConnectivityNodes", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConnectivityNodes", new AttrDetails("TopologicalNode.ConnectivityNodes", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::ConnectivityNodesToString, TopologicalNode::setConnectivityNodes, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("ReportingGroup", new AttrDetails("TopologicalNode.ReportingGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ReportingGroup", new AttrDetails("TopologicalNode.ReportingGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::ReportingGroupToString, TopologicalNode::setReportingGroup, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvInjection", new AttrDetails("TopologicalNode.SvInjection", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SvInjection", new AttrDetails("TopologicalNode.SvInjection", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::SvInjectionToString, TopologicalNode::setSvInjection, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvVoltage", new AttrDetails("TopologicalNode.SvVoltage", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SvVoltage", new AttrDetails("TopologicalNode.SvVoltage", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::SvVoltageToString, TopologicalNode::setSvVoltage, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("Terminal", new AttrDetails("TopologicalNode.Terminal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("TopologicalNode.Terminal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::TerminalToString, TopologicalNode::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("TopologicalIsland", new AttrDetails("TopologicalNode.TopologicalIsland", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalIsland", new AttrDetails("TopologicalNode.TopologicalIsland", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::TopologicalIslandToString, TopologicalNode::setTopologicalIsland, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("boundaryPoint", new AttrDetails("TopologicalNode.boundaryPoint", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("boundaryPoint", new AttrDetails("TopologicalNode.boundaryPoint", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::boundaryPointToString, null, TopologicalNode::setBoundaryPoint));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("fromEndIsoCode", new AttrDetails("TopologicalNode.fromEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndIsoCode", new AttrDetails("TopologicalNode.fromEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::fromEndIsoCodeToString, null, TopologicalNode::setFromEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("fromEndName", new AttrDetails("TopologicalNode.fromEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndName", new AttrDetails("TopologicalNode.fromEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::fromEndNameToString, null, TopologicalNode::setFromEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("fromEndNameTso", new AttrDetails("TopologicalNode.fromEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndNameTso", new AttrDetails("TopologicalNode.fromEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::fromEndNameTsoToString, null, TopologicalNode::setFromEndNameTso));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("toEndIsoCode", new AttrDetails("TopologicalNode.toEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndIsoCode", new AttrDetails("TopologicalNode.toEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::toEndIsoCodeToString, null, TopologicalNode::setToEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("toEndName", new AttrDetails("TopologicalNode.toEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndName", new AttrDetails("TopologicalNode.toEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::toEndNameToString, null, TopologicalNode::setToEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("toEndNameTso", new AttrDetails("TopologicalNode.toEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndNameTso", new AttrDetails("TopologicalNode.toEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologicalNode::toEndNameTsoToString, null, TopologicalNode::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologicalNode().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AngleRefTopologicalIsland", new GetterSetter(this::AngleRefTopologicalIslandToString, this::setAngleRefTopologicalIsland, null));
-        map.put("BaseVoltage", new GetterSetter(this::BaseVoltageToString, this::setBaseVoltage, null));
-        map.put("ConnectivityNodeContainer", new GetterSetter(this::ConnectivityNodeContainerToString, this::setConnectivityNodeContainer, null));
-        map.put("ConnectivityNodes", new GetterSetter(this::ConnectivityNodesToString, this::setConnectivityNodes, null));
-        map.put("ReportingGroup", new GetterSetter(this::ReportingGroupToString, this::setReportingGroup, null));
-        map.put("SvInjection", new GetterSetter(this::SvInjectionToString, this::setSvInjection, null));
-        map.put("SvVoltage", new GetterSetter(this::SvVoltageToString, this::setSvVoltage, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("TopologicalIsland", new GetterSetter(this::TopologicalIslandToString, this::setTopologicalIsland, null));
-        map.put("boundaryPoint", new GetterSetter(this::boundaryPointToString, null, this::setBoundaryPoint));
-        map.put("fromEndIsoCode", new GetterSetter(this::fromEndIsoCodeToString, null, this::setFromEndIsoCode));
-        map.put("fromEndName", new GetterSetter(this::fromEndNameToString, null, this::setFromEndName));
-        map.put("fromEndNameTso", new GetterSetter(this::fromEndNameTsoToString, null, this::setFromEndNameTso));
-        map.put("toEndIsoCode", new GetterSetter(this::toEndIsoCodeToString, null, this::setToEndIsoCode));
-        map.put("toEndName", new GetterSetter(this::toEndNameToString, null, this::setToEndName));
-        map.put("toEndNameTso", new GetterSetter(this::toEndNameTsoToString, null, this::setToEndNameTso));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

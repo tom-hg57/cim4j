@@ -50,6 +50,14 @@ public class EquivalentShunt extends EquivalentEquipment {
         return b != null ? b.toString() : null;
     }
 
+    private static void setB(BaseClass _this_, String _value_) {
+        ((EquivalentShunt) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((EquivalentShunt) _this_).bToString();
+    }
+
     /**
      * Positive sequence shunt conductance.
      */
@@ -69,6 +77,14 @@ public class EquivalentShunt extends EquivalentEquipment {
 
     public String gToString() {
         return g != null ? g.toString() : null;
+    }
+
+    private static void setG(BaseClass _this_, String _value_) {
+        ((EquivalentShunt) _this_).setG(_value_);
+    }
+
+    private static String gToString(BaseClass _this_) {
+        return ((EquivalentShunt) _this_).gToString();
     }
 
     /**
@@ -112,16 +128,12 @@ public class EquivalentShunt extends EquivalentEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EquivalentShunt", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EquivalentShunt", attrName));
+        return "";
     }
 
     /**
@@ -132,16 +144,12 @@ public class EquivalentShunt extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EquivalentShunt", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentShunt", attrName, objectValue));
         }
     }
 
@@ -153,16 +161,12 @@ public class EquivalentShunt extends EquivalentEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EquivalentShunt", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquivalentShunt", attrName, stringValue));
         }
     }
 
@@ -286,24 +290,16 @@ public class EquivalentShunt extends EquivalentEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b", new AttrDetails("EquivalentShunt.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("b", new AttrDetails("EquivalentShunt.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentShunt::bToString, null, EquivalentShunt::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g", new AttrDetails("EquivalentShunt.g", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("g", new AttrDetails("EquivalentShunt.g", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EquivalentShunt::gToString, null, EquivalentShunt::setG));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentShunt().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("g", new GetterSetter(this::gToString, null, this::setG));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

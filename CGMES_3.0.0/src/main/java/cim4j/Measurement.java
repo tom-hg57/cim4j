@@ -52,6 +52,14 @@ public class Measurement extends IdentifiedObject {
         return PowerSystemResource != null ? PowerSystemResource.getRdfid() : null;
     }
 
+    private static void setPowerSystemResource(BaseClass _this_, BaseClass _object_) {
+        ((Measurement) _this_).setPowerSystemResource(_object_);
+    }
+
+    private static String PowerSystemResourceToString(BaseClass _this_) {
+        return ((Measurement) _this_).PowerSystemResourceToString();
+    }
+
     /**
      * One or more measurements may be associated with a terminal in the network.
      */
@@ -75,6 +83,14 @@ public class Measurement extends IdentifiedObject {
         return Terminal != null ? Terminal.getRdfid() : null;
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((Measurement) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((Measurement) _this_).TerminalToString();
+    }
+
     /**
      * Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc. When the measurementType is set to `Specialization`, the type of Measurement is defined in more detail by the specialized class which inherits from Measurement.
      */
@@ -90,6 +106,14 @@ public class Measurement extends IdentifiedObject {
 
     public String measurementTypeToString() {
         return measurementType != null ? measurementType.toString() : null;
+    }
+
+    private static void setMeasurementType(BaseClass _this_, String _value_) {
+        ((Measurement) _this_).setMeasurementType(_value_);
+    }
+
+    private static String measurementTypeToString(BaseClass _this_) {
+        return ((Measurement) _this_).measurementTypeToString();
     }
 
     /**
@@ -109,6 +133,14 @@ public class Measurement extends IdentifiedObject {
         return phases;
     }
 
+    private static void setPhases(BaseClass _this_, String _value_) {
+        ((Measurement) _this_).setPhases(_value_);
+    }
+
+    private static String phasesToString(BaseClass _this_) {
+        return ((Measurement) _this_).phasesToString();
+    }
+
     /**
      * The unit multiplier of the measured quantity.
      */
@@ -126,6 +158,14 @@ public class Measurement extends IdentifiedObject {
         return unitMultiplier;
     }
 
+    private static void setUnitMultiplier(BaseClass _this_, String _value_) {
+        ((Measurement) _this_).setUnitMultiplier(_value_);
+    }
+
+    private static String unitMultiplierToString(BaseClass _this_) {
+        return ((Measurement) _this_).unitMultiplierToString();
+    }
+
     /**
      * The unit of measure of the measured quantity.
      */
@@ -141,6 +181,14 @@ public class Measurement extends IdentifiedObject {
 
     public String unitSymbolToString() {
         return unitSymbol;
+    }
+
+    private static void setUnitSymbol(BaseClass _this_, String _value_) {
+        ((Measurement) _this_).setUnitSymbol(_value_);
+    }
+
+    private static String unitSymbolToString(BaseClass _this_) {
+        return ((Measurement) _this_).unitSymbolToString();
     }
 
     /**
@@ -184,16 +232,12 @@ public class Measurement extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Measurement", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Measurement", attrName));
+        return "";
     }
 
     /**
@@ -204,16 +248,12 @@ public class Measurement extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Measurement", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Measurement", attrName, objectValue));
         }
     }
 
@@ -225,16 +265,12 @@ public class Measurement extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Measurement", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Measurement", attrName, stringValue));
         }
     }
 
@@ -358,48 +394,36 @@ public class Measurement extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("PowerSystemResource", new AttrDetails("Measurement.PowerSystemResource", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerSystemResource", new AttrDetails("Measurement.PowerSystemResource", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, Measurement::PowerSystemResourceToString, Measurement::setPowerSystemResource, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("Terminal", new AttrDetails("Measurement.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("Measurement.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, Measurement::TerminalToString, Measurement::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("measurementType", new AttrDetails("Measurement.measurementType", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("measurementType", new AttrDetails("Measurement.measurementType", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Measurement::measurementTypeToString, null, Measurement::setMeasurementType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("phases", new AttrDetails("Measurement.phases", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("phases", new AttrDetails("Measurement.phases", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Measurement::phasesToString, null, Measurement::setPhases));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("unitMultiplier", new AttrDetails("Measurement.unitMultiplier", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("unitMultiplier", new AttrDetails("Measurement.unitMultiplier", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Measurement::unitMultiplierToString, null, Measurement::setUnitMultiplier));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("unitSymbol", new AttrDetails("Measurement.unitSymbol", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("unitSymbol", new AttrDetails("Measurement.unitSymbol", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Measurement::unitSymbolToString, null, Measurement::setUnitSymbol));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Measurement().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerSystemResource", new GetterSetter(this::PowerSystemResourceToString, this::setPowerSystemResource, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("measurementType", new GetterSetter(this::measurementTypeToString, null, this::setMeasurementType));
-        map.put("phases", new GetterSetter(this::phasesToString, null, this::setPhases));
-        map.put("unitMultiplier", new GetterSetter(this::unitMultiplierToString, null, this::setUnitMultiplier));
-        map.put("unitSymbol", new GetterSetter(this::unitSymbolToString, null, this::setUnitSymbol));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

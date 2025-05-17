@@ -52,6 +52,14 @@ public class SvPowerFlow extends BaseClass {
         return Terminal != null ? Terminal.getRdfid() : null;
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((SvPowerFlow) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((SvPowerFlow) _this_).TerminalToString();
+    }
+
     /**
      * The active power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.
      */
@@ -73,6 +81,14 @@ public class SvPowerFlow extends BaseClass {
         return p != null ? p.toString() : null;
     }
 
+    private static void setP(BaseClass _this_, String _value_) {
+        ((SvPowerFlow) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((SvPowerFlow) _this_).pToString();
+    }
+
     /**
      * The reactive power flow. Load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.
      */
@@ -92,6 +108,14 @@ public class SvPowerFlow extends BaseClass {
 
     public String qToString() {
         return q != null ? q.toString() : null;
+    }
+
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((SvPowerFlow) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((SvPowerFlow) _this_).qToString();
     }
 
     /**
@@ -135,16 +159,12 @@ public class SvPowerFlow extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvPowerFlow", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvPowerFlow", attrName));
+        return "";
     }
 
     /**
@@ -155,16 +175,12 @@ public class SvPowerFlow extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvPowerFlow", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvPowerFlow", attrName, objectValue));
         }
     }
 
@@ -176,16 +192,12 @@ public class SvPowerFlow extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvPowerFlow", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvPowerFlow", attrName, stringValue));
         }
     }
 
@@ -309,30 +321,21 @@ public class SvPowerFlow extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("Terminal", new AttrDetails("SvPowerFlow.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("SvPowerFlow.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, SvPowerFlow::TerminalToString, SvPowerFlow::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("p", new AttrDetails("SvPowerFlow.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("p", new AttrDetails("SvPowerFlow.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvPowerFlow::pToString, null, SvPowerFlow::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("q", new AttrDetails("SvPowerFlow.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("q", new AttrDetails("SvPowerFlow.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvPowerFlow::qToString, null, SvPowerFlow::setQ));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvPowerFlow().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

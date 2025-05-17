@@ -54,6 +54,14 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
         return getStringFromSet(TimePoints);
     }
 
+    private static void setTimePoints(BaseClass _this_, BaseClass _object_) {
+        ((RegularIntervalSchedule) _this_).setTimePoints(_object_);
+    }
+
+    private static String TimePointsToString(BaseClass _this_) {
+        return ((RegularIntervalSchedule) _this_).TimePointsToString();
+    }
+
     /**
      * The time for the last time point.  The value can be a time of day, not a specific date.
      */
@@ -69,6 +77,14 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
 
     public String endTimeToString() {
         return endTime != null ? endTime.toString() : null;
+    }
+
+    private static void setEndTime(BaseClass _this_, String _value_) {
+        ((RegularIntervalSchedule) _this_).setEndTime(_value_);
+    }
+
+    private static String endTimeToString(BaseClass _this_) {
+        return ((RegularIntervalSchedule) _this_).endTimeToString();
     }
 
     /**
@@ -90,6 +106,14 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
 
     public String timeStepToString() {
         return timeStep != null ? timeStep.toString() : null;
+    }
+
+    private static void setTimeStep(BaseClass _this_, String _value_) {
+        ((RegularIntervalSchedule) _this_).setTimeStep(_value_);
+    }
+
+    private static String timeStepToString(BaseClass _this_) {
+        return ((RegularIntervalSchedule) _this_).timeStepToString();
     }
 
     /**
@@ -133,16 +157,12 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RegularIntervalSchedule", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RegularIntervalSchedule", attrName));
+        return "";
     }
 
     /**
@@ -153,16 +173,12 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RegularIntervalSchedule", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegularIntervalSchedule", attrName, objectValue));
         }
     }
 
@@ -174,16 +190,12 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RegularIntervalSchedule", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegularIntervalSchedule", attrName, stringValue));
         }
     }
 
@@ -307,30 +319,21 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TimePoints", new AttrDetails("RegularIntervalSchedule.TimePoints", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TimePoints", new AttrDetails("RegularIntervalSchedule.TimePoints", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RegularIntervalSchedule::TimePointsToString, RegularIntervalSchedule::setTimePoints, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("endTime", new AttrDetails("RegularIntervalSchedule.endTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("endTime", new AttrDetails("RegularIntervalSchedule.endTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegularIntervalSchedule::endTimeToString, null, RegularIntervalSchedule::setEndTime));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("timeStep", new AttrDetails("RegularIntervalSchedule.timeStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("timeStep", new AttrDetails("RegularIntervalSchedule.timeStep", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RegularIntervalSchedule::timeStepToString, null, RegularIntervalSchedule::setTimeStep));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularIntervalSchedule().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("TimePoints", new GetterSetter(this::TimePointsToString, this::setTimePoints, null));
-        map.put("endTime", new GetterSetter(this::endTimeToString, null, this::setEndTime));
-        map.put("timeStep", new GetterSetter(this::timeStepToString, null, this::setTimeStep));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -52,6 +52,14 @@ public class LoadStatic extends IdentifiedObject {
         return LoadAggregate != null ? LoadAggregate.getRdfid() : null;
     }
 
+    private static void setLoadAggregate(BaseClass _this_, BaseClass _object_) {
+        ((LoadStatic) _this_).setLoadAggregate(_object_);
+    }
+
+    private static String LoadAggregateToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).LoadAggregateToString();
+    }
+
     /**
      * First term voltage exponent for active power (&lt;i&gt;Ep1&lt;/i&gt;).  Used only when .staticLoadModelType = exponential.
      */
@@ -71,6 +79,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String ep1ToString() {
         return ep1 != null ? ep1.toString() : null;
+    }
+
+    private static void setEp1(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEp1(_value_);
+    }
+
+    private static String ep1ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).ep1ToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class LoadStatic extends IdentifiedObject {
         return ep2 != null ? ep2.toString() : null;
     }
 
+    private static void setEp2(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEp2(_value_);
+    }
+
+    private static String ep2ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).ep2ToString();
+    }
+
     /**
      * Third term voltage exponent for active power (&lt;i&gt;Ep3&lt;/i&gt;).  Used only when .staticLoadModelType = exponential.
      */
@@ -113,6 +137,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String ep3ToString() {
         return ep3 != null ? ep3.toString() : null;
+    }
+
+    private static void setEp3(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEp3(_value_);
+    }
+
+    private static String ep3ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).ep3ToString();
     }
 
     /**
@@ -136,6 +168,14 @@ public class LoadStatic extends IdentifiedObject {
         return eq1 != null ? eq1.toString() : null;
     }
 
+    private static void setEq1(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEq1(_value_);
+    }
+
+    private static String eq1ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).eq1ToString();
+    }
+
     /**
      * Second term voltage exponent for reactive power (&lt;i&gt;Eq2&lt;/i&gt;).  Used only when .staticLoadModelType = exponential.
      */
@@ -155,6 +195,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String eq2ToString() {
         return eq2 != null ? eq2.toString() : null;
+    }
+
+    private static void setEq2(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEq2(_value_);
+    }
+
+    private static String eq2ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).eq2ToString();
     }
 
     /**
@@ -178,6 +226,14 @@ public class LoadStatic extends IdentifiedObject {
         return eq3 != null ? eq3.toString() : null;
     }
 
+    private static void setEq3(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setEq3(_value_);
+    }
+
+    private static String eq3ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).eq3ToString();
+    }
+
     /**
      * First term voltage coefficient for active power (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;p1&lt;/sub&gt;&lt;/i&gt;).  Not used when .staticLoadModelType = constantZ.
      */
@@ -197,6 +253,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String kp1ToString() {
         return kp1 != null ? kp1.toString() : null;
+    }
+
+    private static void setKp1(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKp1(_value_);
+    }
+
+    private static String kp1ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kp1ToString();
     }
 
     /**
@@ -220,6 +284,14 @@ public class LoadStatic extends IdentifiedObject {
         return kp2 != null ? kp2.toString() : null;
     }
 
+    private static void setKp2(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKp2(_value_);
+    }
+
+    private static String kp2ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kp2ToString();
+    }
+
     /**
      * Third term voltage coefficient for active power (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;p3&lt;/sub&gt;&lt;/i&gt;).  Not used when .staticLoadModelType = constantZ.
      */
@@ -239,6 +311,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String kp3ToString() {
         return kp3 != null ? kp3.toString() : null;
+    }
+
+    private static void setKp3(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKp3(_value_);
+    }
+
+    private static String kp3ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kp3ToString();
     }
 
     /**
@@ -262,6 +342,14 @@ public class LoadStatic extends IdentifiedObject {
         return kp4 != null ? kp4.toString() : null;
     }
 
+    private static void setKp4(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKp4(_value_);
+    }
+
+    private static String kp4ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kp4ToString();
+    }
+
     /**
      * Frequency deviation coefficient for active power (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;pf&lt;/sub&gt;&lt;/i&gt;).  Not used when .staticLoadModelType = constantZ.
      */
@@ -281,6 +369,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String kpfToString() {
         return kpf != null ? kpf.toString() : null;
+    }
+
+    private static void setKpf(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKpf(_value_);
+    }
+
+    private static String kpfToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kpfToString();
     }
 
     /**
@@ -304,6 +400,14 @@ public class LoadStatic extends IdentifiedObject {
         return kq1 != null ? kq1.toString() : null;
     }
 
+    private static void setKq1(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKq1(_value_);
+    }
+
+    private static String kq1ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kq1ToString();
+    }
+
     /**
      * Second term voltage coefficient for reactive power (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;q2&lt;/sub&gt;&lt;/i&gt;).  Not used when .staticLoadModelType = constantZ.
      */
@@ -323,6 +427,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String kq2ToString() {
         return kq2 != null ? kq2.toString() : null;
+    }
+
+    private static void setKq2(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKq2(_value_);
+    }
+
+    private static String kq2ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kq2ToString();
     }
 
     /**
@@ -346,6 +458,14 @@ public class LoadStatic extends IdentifiedObject {
         return kq3 != null ? kq3.toString() : null;
     }
 
+    private static void setKq3(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKq3(_value_);
+    }
+
+    private static String kq3ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kq3ToString();
+    }
+
     /**
      * Frequency coefficient for reactive power (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;q4&lt;/sub&gt;&lt;/i&gt;)  (not = 0 when .staticLoadModelType = zIP2).  Used only when .staticLoadModelType - zIP2.
      */
@@ -365,6 +485,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String kq4ToString() {
         return kq4 != null ? kq4.toString() : null;
+    }
+
+    private static void setKq4(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKq4(_value_);
+    }
+
+    private static String kq4ToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kq4ToString();
     }
 
     /**
@@ -388,6 +516,14 @@ public class LoadStatic extends IdentifiedObject {
         return kqf != null ? kqf.toString() : null;
     }
 
+    private static void setKqf(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setKqf(_value_);
+    }
+
+    private static String kqfToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).kqfToString();
+    }
+
     /**
      * Type of static load model.  Typical value = constantZ.
      */
@@ -403,6 +539,14 @@ public class LoadStatic extends IdentifiedObject {
 
     public String staticLoadModelTypeToString() {
         return staticLoadModelType;
+    }
+
+    private static void setStaticLoadModelType(BaseClass _this_, String _value_) {
+        ((LoadStatic) _this_).setStaticLoadModelType(_value_);
+    }
+
+    private static String staticLoadModelTypeToString(BaseClass _this_) {
+        return ((LoadStatic) _this_).staticLoadModelTypeToString();
     }
 
     /**
@@ -446,16 +590,12 @@ public class LoadStatic extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("LoadStatic", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "LoadStatic", attrName));
+        return "";
     }
 
     /**
@@ -466,16 +606,12 @@ public class LoadStatic extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("LoadStatic", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadStatic", attrName, objectValue));
         }
     }
 
@@ -487,16 +623,12 @@ public class LoadStatic extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("LoadStatic", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadStatic", attrName, stringValue));
         }
     }
 
@@ -620,120 +752,96 @@ public class LoadStatic extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LoadAggregate", new AttrDetails("LoadStatic.LoadAggregate", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadAggregate", new AttrDetails("LoadStatic.LoadAggregate", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, LoadStatic::LoadAggregateToString, LoadStatic::setLoadAggregate, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ep1", new AttrDetails("LoadStatic.ep1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ep1", new AttrDetails("LoadStatic.ep1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::ep1ToString, null, LoadStatic::setEp1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ep2", new AttrDetails("LoadStatic.ep2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ep2", new AttrDetails("LoadStatic.ep2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::ep2ToString, null, LoadStatic::setEp2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ep3", new AttrDetails("LoadStatic.ep3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ep3", new AttrDetails("LoadStatic.ep3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::ep3ToString, null, LoadStatic::setEp3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eq1", new AttrDetails("LoadStatic.eq1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eq1", new AttrDetails("LoadStatic.eq1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::eq1ToString, null, LoadStatic::setEq1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eq2", new AttrDetails("LoadStatic.eq2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eq2", new AttrDetails("LoadStatic.eq2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::eq2ToString, null, LoadStatic::setEq2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eq3", new AttrDetails("LoadStatic.eq3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eq3", new AttrDetails("LoadStatic.eq3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::eq3ToString, null, LoadStatic::setEq3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp1", new AttrDetails("LoadStatic.kp1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp1", new AttrDetails("LoadStatic.kp1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kp1ToString, null, LoadStatic::setKp1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp2", new AttrDetails("LoadStatic.kp2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp2", new AttrDetails("LoadStatic.kp2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kp2ToString, null, LoadStatic::setKp2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp3", new AttrDetails("LoadStatic.kp3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp3", new AttrDetails("LoadStatic.kp3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kp3ToString, null, LoadStatic::setKp3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp4", new AttrDetails("LoadStatic.kp4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp4", new AttrDetails("LoadStatic.kp4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kp4ToString, null, LoadStatic::setKp4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpf", new AttrDetails("LoadStatic.kpf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kpf", new AttrDetails("LoadStatic.kpf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kpfToString, null, LoadStatic::setKpf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kq1", new AttrDetails("LoadStatic.kq1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kq1", new AttrDetails("LoadStatic.kq1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kq1ToString, null, LoadStatic::setKq1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kq2", new AttrDetails("LoadStatic.kq2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kq2", new AttrDetails("LoadStatic.kq2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kq2ToString, null, LoadStatic::setKq2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kq3", new AttrDetails("LoadStatic.kq3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kq3", new AttrDetails("LoadStatic.kq3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kq3ToString, null, LoadStatic::setKq3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kq4", new AttrDetails("LoadStatic.kq4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kq4", new AttrDetails("LoadStatic.kq4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kq4ToString, null, LoadStatic::setKq4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kqf", new AttrDetails("LoadStatic.kqf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kqf", new AttrDetails("LoadStatic.kqf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadStatic::kqfToString, null, LoadStatic::setKqf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("staticLoadModelType", new AttrDetails("LoadStatic.staticLoadModelType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("staticLoadModelType", new AttrDetails("LoadStatic.staticLoadModelType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, LoadStatic::staticLoadModelTypeToString, null, LoadStatic::setStaticLoadModelType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadStatic().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("LoadAggregate", new GetterSetter(this::LoadAggregateToString, this::setLoadAggregate, null));
-        map.put("ep1", new GetterSetter(this::ep1ToString, null, this::setEp1));
-        map.put("ep2", new GetterSetter(this::ep2ToString, null, this::setEp2));
-        map.put("ep3", new GetterSetter(this::ep3ToString, null, this::setEp3));
-        map.put("eq1", new GetterSetter(this::eq1ToString, null, this::setEq1));
-        map.put("eq2", new GetterSetter(this::eq2ToString, null, this::setEq2));
-        map.put("eq3", new GetterSetter(this::eq3ToString, null, this::setEq3));
-        map.put("kp1", new GetterSetter(this::kp1ToString, null, this::setKp1));
-        map.put("kp2", new GetterSetter(this::kp2ToString, null, this::setKp2));
-        map.put("kp3", new GetterSetter(this::kp3ToString, null, this::setKp3));
-        map.put("kp4", new GetterSetter(this::kp4ToString, null, this::setKp4));
-        map.put("kpf", new GetterSetter(this::kpfToString, null, this::setKpf));
-        map.put("kq1", new GetterSetter(this::kq1ToString, null, this::setKq1));
-        map.put("kq2", new GetterSetter(this::kq2ToString, null, this::setKq2));
-        map.put("kq3", new GetterSetter(this::kq3ToString, null, this::setKq3));
-        map.put("kq4", new GetterSetter(this::kq4ToString, null, this::setKq4));
-        map.put("kqf", new GetterSetter(this::kqfToString, null, this::setKqf));
-        map.put("staticLoadModelType", new GetterSetter(this::staticLoadModelTypeToString, null, this::setStaticLoadModelType));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -50,6 +50,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return k1 != null ? k1.toString() : null;
     }
 
+    private static void setK1(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setK1(_value_);
+    }
+
+    private static String k1ToString(BaseClass _this_) {
+        return ((PssSK) _this_).k1ToString();
+    }
+
     /**
      * Gain fe (K2).  Typical Value = -0.15.
      */
@@ -69,6 +77,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
 
     public String k2ToString() {
         return k2 != null ? k2.toString() : null;
+    }
+
+    private static void setK2(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setK2(_value_);
+    }
+
+    private static String k2ToString(BaseClass _this_) {
+        return ((PssSK) _this_).k2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return k3 != null ? k3.toString() : null;
     }
 
+    private static void setK3(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setK3(_value_);
+    }
+
+    private static String k3ToString(BaseClass _this_) {
+        return ((PssSK) _this_).k3ToString();
+    }
+
     /**
      * Denominator time constant (T1).  Typical Value = 0.3.
      */
@@ -111,6 +135,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
 
     public String t1ToString() {
         return t1 != null ? t1.toString() : null;
+    }
+
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t1ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return t2 != null ? t2.toString() : null;
     }
 
+    private static void setT2(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT2(_value_);
+    }
+
+    private static String t2ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t2ToString();
+    }
+
     /**
      * Denominator time constant (T3).  Typical Value = 0.22.
      */
@@ -153,6 +193,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
 
     public String t3ToString() {
         return t3 != null ? t3.toString() : null;
+    }
+
+    private static void setT3(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT3(_value_);
+    }
+
+    private static String t3ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t3ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return t4 != null ? t4.toString() : null;
     }
 
+    private static void setT4(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT4(_value_);
+    }
+
+    private static String t4ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t4ToString();
+    }
+
     /**
      * Denominator time constant (T5).  Typical Value = 0.02.
      */
@@ -195,6 +251,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
 
     public String t5ToString() {
         return t5 != null ? t5.toString() : null;
+    }
+
+    private static void setT5(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT5(_value_);
+    }
+
+    private static String t5ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t5ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return t6 != null ? t6.toString() : null;
     }
 
+    private static void setT6(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setT6(_value_);
+    }
+
+    private static String t6ToString(BaseClass _this_) {
+        return ((PssSK) _this_).t6ToString();
+    }
+
     /**
      * Stabilizer output max limit (Vsmax).  Typical Value = 0.4.
      */
@@ -239,6 +311,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         return vsmax != null ? vsmax.toString() : null;
     }
 
+    private static void setVsmax(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setVsmax(_value_);
+    }
+
+    private static String vsmaxToString(BaseClass _this_) {
+        return ((PssSK) _this_).vsmaxToString();
+    }
+
     /**
      * Stabilizer output min limit (Vsmin).  Typical Value = -0.4.
      */
@@ -258,6 +338,14 @@ public class PssSK extends PowerSystemStabilizerDynamics {
 
     public String vsminToString() {
         return vsmin != null ? vsmin.toString() : null;
+    }
+
+    private static void setVsmin(BaseClass _this_, String _value_) {
+        ((PssSK) _this_).setVsmin(_value_);
+    }
+
+    private static String vsminToString(BaseClass _this_) {
+        return ((PssSK) _this_).vsminToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class PssSK extends PowerSystemStabilizerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PssSK", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PssSK", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class PssSK extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PssSK", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssSK", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class PssSK extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PssSK", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssSK", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class PssSK extends PowerSystemStabilizerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k1", new AttrDetails("PssSK.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k1", new AttrDetails("PssSK.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::k1ToString, null, PssSK::setK1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k2", new AttrDetails("PssSK.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k2", new AttrDetails("PssSK.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::k2ToString, null, PssSK::setK2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k3", new AttrDetails("PssSK.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k3", new AttrDetails("PssSK.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::k3ToString, null, PssSK::setK3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("PssSK.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t1", new AttrDetails("PssSK.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t1ToString, null, PssSK::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("PssSK.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t2", new AttrDetails("PssSK.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t2ToString, null, PssSK::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("PssSK.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t3", new AttrDetails("PssSK.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t3ToString, null, PssSK::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("PssSK.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t4", new AttrDetails("PssSK.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t4ToString, null, PssSK::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t5", new AttrDetails("PssSK.t5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t5", new AttrDetails("PssSK.t5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t5ToString, null, PssSK::setT5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t6", new AttrDetails("PssSK.t6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t6", new AttrDetails("PssSK.t6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::t6ToString, null, PssSK::setT6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vsmax", new AttrDetails("PssSK.vsmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vsmax", new AttrDetails("PssSK.vsmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::vsmaxToString, null, PssSK::setVsmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vsmin", new AttrDetails("PssSK.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vsmin", new AttrDetails("PssSK.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::vsminToString, null, PssSK::setVsmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSK().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("k1", new GetterSetter(this::k1ToString, null, this::setK1));
-        map.put("k2", new GetterSetter(this::k2ToString, null, this::setK2));
-        map.put("k3", new GetterSetter(this::k3ToString, null, this::setK3));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("t5", new GetterSetter(this::t5ToString, null, this::setT5));
-        map.put("t6", new GetterSetter(this::t6ToString, null, this::setT6));
-        map.put("vsmax", new GetterSetter(this::vsmaxToString, null, this::setVsmax));
-        map.put("vsmin", new GetterSetter(this::vsminToString, null, this::setVsmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -52,6 +52,14 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
         return CAESPlant != null ? CAESPlant.getRdfid() : null;
     }
 
+    private static void setCAESPlant(BaseClass _this_, BaseClass _object_) {
+        ((ThermalGeneratingUnit) _this_).setCAESPlant(_object_);
+    }
+
+    private static String CAESPlantToString(BaseClass _this_) {
+        return ((ThermalGeneratingUnit) _this_).CAESPlantToString();
+    }
+
     /**
      * A thermal generating unit may be a member of a cogeneration plant.
      */
@@ -73,6 +81,14 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
 
     public String CogenerationPlantToString() {
         return CogenerationPlant != null ? CogenerationPlant.getRdfid() : null;
+    }
+
+    private static void setCogenerationPlant(BaseClass _this_, BaseClass _object_) {
+        ((ThermalGeneratingUnit) _this_).setCogenerationPlant(_object_);
+    }
+
+    private static String CogenerationPlantToString(BaseClass _this_) {
+        return ((ThermalGeneratingUnit) _this_).CogenerationPlantToString();
     }
 
     /**
@@ -98,6 +114,14 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
         return CombinedCyclePlant != null ? CombinedCyclePlant.getRdfid() : null;
     }
 
+    private static void setCombinedCyclePlant(BaseClass _this_, BaseClass _object_) {
+        ((ThermalGeneratingUnit) _this_).setCombinedCyclePlant(_object_);
+    }
+
+    private static String CombinedCyclePlantToString(BaseClass _this_) {
+        return ((ThermalGeneratingUnit) _this_).CombinedCyclePlantToString();
+    }
+
     /**
      * A thermal generating unit may have one or more fossil fuels.
      *
@@ -121,6 +145,14 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
 
     public String FossilFuelsToString() {
         return getStringFromSet(FossilFuels);
+    }
+
+    private static void setFossilFuels(BaseClass _this_, BaseClass _object_) {
+        ((ThermalGeneratingUnit) _this_).setFossilFuels(_object_);
+    }
+
+    private static String FossilFuelsToString(BaseClass _this_) {
+        return ((ThermalGeneratingUnit) _this_).FossilFuelsToString();
     }
 
     /**
@@ -164,16 +196,12 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ThermalGeneratingUnit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ThermalGeneratingUnit", attrName));
+        return "";
     }
 
     /**
@@ -184,16 +212,12 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ThermalGeneratingUnit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ThermalGeneratingUnit", attrName, objectValue));
         }
     }
 
@@ -205,16 +229,12 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ThermalGeneratingUnit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ThermalGeneratingUnit", attrName, stringValue));
         }
     }
 
@@ -338,36 +358,26 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("CAESPlant", new AttrDetails("ThermalGeneratingUnit.CAESPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CAESPlant", new AttrDetails("ThermalGeneratingUnit.CAESPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ThermalGeneratingUnit::CAESPlantToString, ThermalGeneratingUnit::setCAESPlant, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("CogenerationPlant", new AttrDetails("ThermalGeneratingUnit.CogenerationPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CogenerationPlant", new AttrDetails("ThermalGeneratingUnit.CogenerationPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ThermalGeneratingUnit::CogenerationPlantToString, ThermalGeneratingUnit::setCogenerationPlant, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("CombinedCyclePlant", new AttrDetails("ThermalGeneratingUnit.CombinedCyclePlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CombinedCyclePlant", new AttrDetails("ThermalGeneratingUnit.CombinedCyclePlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ThermalGeneratingUnit::CombinedCyclePlantToString, ThermalGeneratingUnit::setCombinedCyclePlant, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("FossilFuels", new AttrDetails("ThermalGeneratingUnit.FossilFuels", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("FossilFuels", new AttrDetails("ThermalGeneratingUnit.FossilFuels", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ThermalGeneratingUnit::FossilFuelsToString, ThermalGeneratingUnit::setFossilFuels, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ThermalGeneratingUnit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("CAESPlant", new GetterSetter(this::CAESPlantToString, this::setCAESPlant, null));
-        map.put("CogenerationPlant", new GetterSetter(this::CogenerationPlantToString, this::setCogenerationPlant, null));
-        map.put("CombinedCyclePlant", new GetterSetter(this::CombinedCyclePlantToString, this::setCombinedCyclePlant, null));
-        map.put("FossilFuels", new GetterSetter(this::FossilFuelsToString, this::setFossilFuels, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

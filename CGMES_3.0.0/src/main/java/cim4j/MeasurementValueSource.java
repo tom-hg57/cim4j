@@ -54,6 +54,14 @@ public class MeasurementValueSource extends IdentifiedObject {
         return getStringFromSet(MeasurementValues);
     }
 
+    private static void setMeasurementValues(BaseClass _this_, BaseClass _object_) {
+        ((MeasurementValueSource) _this_).setMeasurementValues(_object_);
+    }
+
+    private static String MeasurementValuesToString(BaseClass _this_) {
+        return ((MeasurementValueSource) _this_).MeasurementValuesToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -95,16 +103,12 @@ public class MeasurementValueSource extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("MeasurementValueSource", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "MeasurementValueSource", attrName));
+        return "";
     }
 
     /**
@@ -115,16 +119,12 @@ public class MeasurementValueSource extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("MeasurementValueSource", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MeasurementValueSource", attrName, objectValue));
         }
     }
 
@@ -136,16 +136,12 @@ public class MeasurementValueSource extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("MeasurementValueSource", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MeasurementValueSource", attrName, stringValue));
         }
     }
 
@@ -269,18 +265,11 @@ public class MeasurementValueSource extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("MeasurementValues", new AttrDetails("MeasurementValueSource.MeasurementValues", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("MeasurementValues", new AttrDetails("MeasurementValueSource.MeasurementValues", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, MeasurementValueSource::MeasurementValuesToString, MeasurementValueSource::setMeasurementValues, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValueSource().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("MeasurementValues", new GetterSetter(this::MeasurementValuesToString, this::setMeasurementValues, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

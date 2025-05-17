@@ -52,6 +52,14 @@ public class AnalogValue extends MeasurementValue {
         return Analog != null ? Analog.getRdfid() : null;
     }
 
+    private static void setAnalog(BaseClass _this_, BaseClass _object_) {
+        ((AnalogValue) _this_).setAnalog(_object_);
+    }
+
+    private static String AnalogToString(BaseClass _this_) {
+        return ((AnalogValue) _this_).AnalogToString();
+    }
+
     /**
      * The MeasurementValue that is controlled.
      *
@@ -77,6 +85,14 @@ public class AnalogValue extends MeasurementValue {
         return AnalogControl != null ? AnalogControl.getRdfid() : null;
     }
 
+    private static void setAnalogControl(BaseClass _this_, BaseClass _object_) {
+        ((AnalogValue) _this_).setAnalogControl(_object_);
+    }
+
+    private static String AnalogControlToString(BaseClass _this_) {
+        return ((AnalogValue) _this_).AnalogControlToString();
+    }
+
     /**
      * The value to supervise.
      */
@@ -96,6 +112,14 @@ public class AnalogValue extends MeasurementValue {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((AnalogValue) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((AnalogValue) _this_).valueToString();
     }
 
     /**
@@ -139,16 +163,12 @@ public class AnalogValue extends MeasurementValue {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AnalogValue", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AnalogValue", attrName));
+        return "";
     }
 
     /**
@@ -159,16 +179,12 @@ public class AnalogValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AnalogValue", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AnalogValue", attrName, objectValue));
         }
     }
 
@@ -180,16 +196,12 @@ public class AnalogValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AnalogValue", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AnalogValue", attrName, stringValue));
         }
     }
 
@@ -313,30 +325,21 @@ public class AnalogValue extends MeasurementValue {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Analog", new AttrDetails("AnalogValue.Analog", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Analog", new AttrDetails("AnalogValue.Analog", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AnalogValue::AnalogToString, AnalogValue::setAnalog, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("AnalogControl", new AttrDetails("AnalogValue.AnalogControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AnalogControl", new AttrDetails("AnalogValue.AnalogControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AnalogValue::AnalogControlToString, AnalogValue::setAnalogControl, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value", new AttrDetails("AnalogValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value", new AttrDetails("AnalogValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AnalogValue::valueToString, null, AnalogValue::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogValue().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Analog", new GetterSetter(this::AnalogToString, this::setAnalog, null));
-        map.put("AnalogControl", new GetterSetter(this::AnalogControlToString, this::setAnalogControl, null));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

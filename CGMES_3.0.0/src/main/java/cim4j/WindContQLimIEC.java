@@ -54,6 +54,14 @@ public class WindContQLimIEC extends IdentifiedObject {
         return WindTurbineType3or4IEC != null ? WindTurbineType3or4IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindContQLimIEC) _this_).setWindTurbineType3or4IEC(_object_);
+    }
+
+    private static String WindTurbineType3or4IECToString(BaseClass _this_) {
+        return ((WindContQLimIEC) _this_).WindTurbineType3or4IECToString();
+    }
+
     /**
      * Maximum reactive power (&lt;i&gt;q&lt;/i&gt;&lt;i&gt;&lt;sub&gt;max&lt;/sub&gt;&lt;/i&gt;) (&amp;gt; WindContQLimIEC.qmin). It is a type-dependent parameter.
      */
@@ -75,6 +83,14 @@ public class WindContQLimIEC extends IdentifiedObject {
         return qmax != null ? qmax.toString() : null;
     }
 
+    private static void setQmax(BaseClass _this_, String _value_) {
+        ((WindContQLimIEC) _this_).setQmax(_value_);
+    }
+
+    private static String qmaxToString(BaseClass _this_) {
+        return ((WindContQLimIEC) _this_).qmaxToString();
+    }
+
     /**
      * Minimum reactive power (&lt;i&gt;q&lt;/i&gt;&lt;i&gt;&lt;sub&gt;min&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; WindContQLimIEC.qmax). It is a type-dependent parameter.
      */
@@ -94,6 +110,14 @@ public class WindContQLimIEC extends IdentifiedObject {
 
     public String qminToString() {
         return qmin != null ? qmin.toString() : null;
+    }
+
+    private static void setQmin(BaseClass _this_, String _value_) {
+        ((WindContQLimIEC) _this_).setQmin(_value_);
+    }
+
+    private static String qminToString(BaseClass _this_) {
+        return ((WindContQLimIEC) _this_).qminToString();
     }
 
     /**
@@ -137,16 +161,12 @@ public class WindContQLimIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindContQLimIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindContQLimIEC", attrName));
+        return "";
     }
 
     /**
@@ -157,16 +177,12 @@ public class WindContQLimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindContQLimIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContQLimIEC", attrName, objectValue));
         }
     }
 
@@ -178,16 +194,12 @@ public class WindContQLimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindContQLimIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContQLimIEC", attrName, stringValue));
         }
     }
 
@@ -311,30 +323,21 @@ public class WindContQLimIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContQLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContQLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindContQLimIEC::WindTurbineType3or4IECToString, WindContQLimIEC::setWindTurbineType3or4IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qmax", new AttrDetails("WindContQLimIEC.qmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("qmax", new AttrDetails("WindContQLimIEC.qmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContQLimIEC::qmaxToString, null, WindContQLimIEC::setQmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qmin", new AttrDetails("WindContQLimIEC.qmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("qmin", new AttrDetails("WindContQLimIEC.qmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContQLimIEC::qminToString, null, WindContQLimIEC::setQmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQLimIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindTurbineType3or4IEC", new GetterSetter(this::WindTurbineType3or4IECToString, this::setWindTurbineType3or4IEC, null));
-        map.put("qmax", new GetterSetter(this::qmaxToString, null, this::setQmax));
-        map.put("qmin", new GetterSetter(this::qminToString, null, this::setQmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

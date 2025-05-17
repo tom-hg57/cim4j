@@ -54,6 +54,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
         return CrossCompoundTurbineGovernorDyanmics != null ? CrossCompoundTurbineGovernorDyanmics.getRdfid() : null;
     }
 
+    private static void setCrossCompoundTurbineGovernorDyanmics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setCrossCompoundTurbineGovernorDyanmics(_object_);
+    }
+
+    private static String CrossCompoundTurbineGovernorDyanmicsToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).CrossCompoundTurbineGovernorDyanmicsToString();
+    }
+
     /**
      * The cross-compound turbine governor with which this low-pressure synchronous machine is associated.
      *
@@ -77,6 +85,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
 
     public String CrossCompoundTurbineGovernorDynamicsToString() {
         return CrossCompoundTurbineGovernorDynamics != null ? CrossCompoundTurbineGovernorDynamics.getRdfid() : null;
+    }
+
+    private static void setCrossCompoundTurbineGovernorDynamics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setCrossCompoundTurbineGovernorDynamics(_object_);
+    }
+
+    private static String CrossCompoundTurbineGovernorDynamicsToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).CrossCompoundTurbineGovernorDynamicsToString();
     }
 
     /**
@@ -104,6 +120,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
         return ExcitationSystemDynamics != null ? ExcitationSystemDynamics.getRdfid() : null;
     }
 
+    private static void setExcitationSystemDynamics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setExcitationSystemDynamics(_object_);
+    }
+
+    private static String ExcitationSystemDynamicsToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).ExcitationSystemDynamicsToString();
+    }
+
     /**
      * Compensation of voltage compensator`s generator for current flow out of this  generator.
      *
@@ -127,6 +151,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
 
     public String GenICompensationForGenJToString() {
         return getStringFromSet(GenICompensationForGenJ);
+    }
+
+    private static void setGenICompensationForGenJ(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setGenICompensationForGenJ(_object_);
+    }
+
+    private static String GenICompensationForGenJToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).GenICompensationForGenJToString();
     }
 
     /**
@@ -154,6 +186,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
         return MechanicalLoadDynamics != null ? MechanicalLoadDynamics.getRdfid() : null;
     }
 
+    private static void setMechanicalLoadDynamics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setMechanicalLoadDynamics(_object_);
+    }
+
+    private static String MechanicalLoadDynamicsToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).MechanicalLoadDynamicsToString();
+    }
+
     /**
      * Synchronous machine to which synchronous machine dynamics model applies.
      */
@@ -175,6 +215,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
 
     public String SynchronousMachineToString() {
         return SynchronousMachine != null ? SynchronousMachine.getRdfid() : null;
+    }
+
+    private static void setSynchronousMachine(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setSynchronousMachine(_object_);
+    }
+
+    private static String SynchronousMachineToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).SynchronousMachineToString();
     }
 
     /**
@@ -200,6 +248,14 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
 
     public String TurbineGovernorDynamicsToString() {
         return getStringFromSet(TurbineGovernorDynamics);
+    }
+
+    private static void setTurbineGovernorDynamics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachineDynamics) _this_).setTurbineGovernorDynamics(_object_);
+    }
+
+    private static String TurbineGovernorDynamicsToString(BaseClass _this_) {
+        return ((SynchronousMachineDynamics) _this_).TurbineGovernorDynamicsToString();
     }
 
     /**
@@ -243,16 +299,12 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SynchronousMachineDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SynchronousMachineDynamics", attrName));
+        return "";
     }
 
     /**
@@ -263,16 +315,12 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SynchronousMachineDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineDynamics", attrName, objectValue));
         }
     }
 
@@ -284,16 +332,12 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SynchronousMachineDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineDynamics", attrName, stringValue));
         }
     }
 
@@ -417,54 +461,41 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("CrossCompoundTurbineGovernorDyanmics", new AttrDetails("SynchronousMachineDynamics.CrossCompoundTurbineGovernorDyanmics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CrossCompoundTurbineGovernorDyanmics", new AttrDetails("SynchronousMachineDynamics.CrossCompoundTurbineGovernorDyanmics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::CrossCompoundTurbineGovernorDyanmicsToString, SynchronousMachineDynamics::setCrossCompoundTurbineGovernorDyanmics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("CrossCompoundTurbineGovernorDynamics", new AttrDetails("SynchronousMachineDynamics.CrossCompoundTurbineGovernorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CrossCompoundTurbineGovernorDynamics", new AttrDetails("SynchronousMachineDynamics.CrossCompoundTurbineGovernorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::CrossCompoundTurbineGovernorDynamicsToString, SynchronousMachineDynamics::setCrossCompoundTurbineGovernorDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ExcitationSystemDynamics", new AttrDetails("SynchronousMachineDynamics.ExcitationSystemDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ExcitationSystemDynamics", new AttrDetails("SynchronousMachineDynamics.ExcitationSystemDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::ExcitationSystemDynamicsToString, SynchronousMachineDynamics::setExcitationSystemDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("GenICompensationForGenJ", new AttrDetails("SynchronousMachineDynamics.GenICompensationForGenJ", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("GenICompensationForGenJ", new AttrDetails("SynchronousMachineDynamics.GenICompensationForGenJ", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::GenICompensationForGenJToString, SynchronousMachineDynamics::setGenICompensationForGenJ, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("MechanicalLoadDynamics", new AttrDetails("SynchronousMachineDynamics.MechanicalLoadDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("MechanicalLoadDynamics", new AttrDetails("SynchronousMachineDynamics.MechanicalLoadDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::MechanicalLoadDynamicsToString, SynchronousMachineDynamics::setMechanicalLoadDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachine", new AttrDetails("SynchronousMachineDynamics.SynchronousMachine", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SynchronousMachine", new AttrDetails("SynchronousMachineDynamics.SynchronousMachine", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::SynchronousMachineToString, SynchronousMachineDynamics::setSynchronousMachine, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineGovernorDynamics", new AttrDetails("SynchronousMachineDynamics.TurbineGovernorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TurbineGovernorDynamics", new AttrDetails("SynchronousMachineDynamics.TurbineGovernorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SynchronousMachineDynamics::TurbineGovernorDynamicsToString, SynchronousMachineDynamics::setTurbineGovernorDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineDynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("CrossCompoundTurbineGovernorDyanmics", new GetterSetter(this::CrossCompoundTurbineGovernorDyanmicsToString, this::setCrossCompoundTurbineGovernorDyanmics, null));
-        map.put("CrossCompoundTurbineGovernorDynamics", new GetterSetter(this::CrossCompoundTurbineGovernorDynamicsToString, this::setCrossCompoundTurbineGovernorDynamics, null));
-        map.put("ExcitationSystemDynamics", new GetterSetter(this::ExcitationSystemDynamicsToString, this::setExcitationSystemDynamics, null));
-        map.put("GenICompensationForGenJ", new GetterSetter(this::GenICompensationForGenJToString, this::setGenICompensationForGenJ, null));
-        map.put("MechanicalLoadDynamics", new GetterSetter(this::MechanicalLoadDynamicsToString, this::setMechanicalLoadDynamics, null));
-        map.put("SynchronousMachine", new GetterSetter(this::SynchronousMachineToString, this::setSynchronousMachine, null));
-        map.put("TurbineGovernorDynamics", new GetterSetter(this::TurbineGovernorDynamicsToString, this::setTurbineGovernorDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

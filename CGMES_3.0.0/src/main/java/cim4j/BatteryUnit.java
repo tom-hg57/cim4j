@@ -46,6 +46,14 @@ public class BatteryUnit extends PowerElectronicsUnit {
         return batteryState;
     }
 
+    private static void setBatteryState(BaseClass _this_, String _value_) {
+        ((BatteryUnit) _this_).setBatteryState(_value_);
+    }
+
+    private static String batteryStateToString(BaseClass _this_) {
+        return ((BatteryUnit) _this_).batteryStateToString();
+    }
+
     /**
      * Full energy storage capacity of the battery. The attribute shall be a positive value.
      */
@@ -67,6 +75,14 @@ public class BatteryUnit extends PowerElectronicsUnit {
         return ratedE != null ? ratedE.toString() : null;
     }
 
+    private static void setRatedE(BaseClass _this_, String _value_) {
+        ((BatteryUnit) _this_).setRatedE(_value_);
+    }
+
+    private static String ratedEToString(BaseClass _this_) {
+        return ((BatteryUnit) _this_).ratedEToString();
+    }
+
     /**
      * Amount of energy currently stored. The attribute shall be a positive value or zero and lower than BatteryUnit.ratedE.
      */
@@ -86,6 +102,14 @@ public class BatteryUnit extends PowerElectronicsUnit {
 
     public String storedEToString() {
         return storedE != null ? storedE.toString() : null;
+    }
+
+    private static void setStoredE(BaseClass _this_, String _value_) {
+        ((BatteryUnit) _this_).setStoredE(_value_);
+    }
+
+    private static String storedEToString(BaseClass _this_) {
+        return ((BatteryUnit) _this_).storedEToString();
     }
 
     /**
@@ -129,16 +153,12 @@ public class BatteryUnit extends PowerElectronicsUnit {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BatteryUnit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BatteryUnit", attrName));
+        return "";
     }
 
     /**
@@ -149,16 +169,12 @@ public class BatteryUnit extends PowerElectronicsUnit {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BatteryUnit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BatteryUnit", attrName, objectValue));
         }
     }
 
@@ -170,16 +186,12 @@ public class BatteryUnit extends PowerElectronicsUnit {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BatteryUnit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BatteryUnit", attrName, stringValue));
         }
     }
 
@@ -303,30 +315,21 @@ public class BatteryUnit extends PowerElectronicsUnit {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("batteryState", new AttrDetails("BatteryUnit.batteryState", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("batteryState", new AttrDetails("BatteryUnit.batteryState", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, BatteryUnit::batteryStateToString, null, BatteryUnit::setBatteryState));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedE", new AttrDetails("BatteryUnit.ratedE", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedE", new AttrDetails("BatteryUnit.ratedE", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BatteryUnit::ratedEToString, null, BatteryUnit::setRatedE));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("storedE", new AttrDetails("BatteryUnit.storedE", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("storedE", new AttrDetails("BatteryUnit.storedE", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BatteryUnit::storedEToString, null, BatteryUnit::setStoredE));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BatteryUnit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("batteryState", new GetterSetter(this::batteryStateToString, null, this::setBatteryState));
-        map.put("ratedE", new GetterSetter(this::ratedEToString, null, this::setRatedE));
-        map.put("storedE", new GetterSetter(this::storedEToString, null, this::setStoredE));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

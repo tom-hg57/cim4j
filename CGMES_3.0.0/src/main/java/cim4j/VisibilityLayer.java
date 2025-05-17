@@ -52,6 +52,14 @@ public class VisibilityLayer extends IdentifiedObject {
         return getStringFromSet(VisibleObjects);
     }
 
+    private static void setVisibleObjects(BaseClass _this_, BaseClass _object_) {
+        ((VisibilityLayer) _this_).setVisibleObjects(_object_);
+    }
+
+    private static String VisibleObjectsToString(BaseClass _this_) {
+        return ((VisibilityLayer) _this_).VisibleObjectsToString();
+    }
+
     /**
      * The drawing order for this layer.  The higher the number, the later the layer and the objects within it are rendered.
      */
@@ -71,6 +79,14 @@ public class VisibilityLayer extends IdentifiedObject {
 
     public String drawingOrderToString() {
         return drawingOrder != null ? drawingOrder.toString() : null;
+    }
+
+    private static void setDrawingOrder(BaseClass _this_, String _value_) {
+        ((VisibilityLayer) _this_).setDrawingOrder(_value_);
+    }
+
+    private static String drawingOrderToString(BaseClass _this_) {
+        return ((VisibilityLayer) _this_).drawingOrderToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class VisibilityLayer extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("VisibilityLayer", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VisibilityLayer", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class VisibilityLayer extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VisibilityLayer", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VisibilityLayer", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class VisibilityLayer extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VisibilityLayer", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VisibilityLayer", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class VisibilityLayer extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("VisibleObjects", new AttrDetails("VisibilityLayer.VisibleObjects", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VisibleObjects", new AttrDetails("VisibilityLayer.VisibleObjects", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, VisibilityLayer::VisibleObjectsToString, VisibilityLayer::setVisibleObjects, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("drawingOrder", new AttrDetails("VisibilityLayer.drawingOrder", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("drawingOrder", new AttrDetails("VisibilityLayer.drawingOrder", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VisibilityLayer::drawingOrderToString, null, VisibilityLayer::setDrawingOrder));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VisibilityLayer().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("VisibleObjects", new GetterSetter(this::VisibleObjectsToString, this::setVisibleObjects, null));
-        map.put("drawingOrder", new GetterSetter(this::drawingOrderToString, null, this::setDrawingOrder));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

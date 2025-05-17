@@ -50,6 +50,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
         return adjslew != null ? adjslew.toString() : null;
     }
 
+    private static void setAdjslew(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setAdjslew(_value_);
+    }
+
+    private static String adjslewToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).adjslewToString();
+    }
+
     /**
      * Time that adjuster pulses are off ().  Typical Value = 0.5.
      */
@@ -69,6 +77,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
 
     public String taoffToString() {
         return taoff != null ? taoff.toString() : null;
+    }
+
+    private static void setTaoff(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setTaoff(_value_);
+    }
+
+    private static String taoffToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).taoffToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
         return taon != null ? taon.toString() : null;
     }
 
+    private static void setTaon(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setTaon(_value_);
+    }
+
+    private static String taonToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).taonToString();
+    }
+
     /**
      * Set high to provide a continuous raise or lower ().
      */
@@ -111,6 +135,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
 
     public String vadjfToString() {
         return vadjf != null ? vadjf.toString() : null;
+    }
+
+    private static void setVadjf(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setVadjf(_value_);
+    }
+
+    private static String vadjfToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).vadjfToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
         return vadjmax != null ? vadjmax.toString() : null;
     }
 
+    private static void setVadjmax(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setVadjmax(_value_);
+    }
+
+    private static String vadjmaxToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).vadjmaxToString();
+    }
+
     /**
      * Minimum output of the adjuster ().  Typical Value = 0.9.
      */
@@ -153,6 +193,14 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
 
     public String vadjminToString() {
         return vadjmin != null ? vadjmin.toString() : null;
+    }
+
+    private static void setVadjmin(BaseClass _this_, String _value_) {
+        ((VAdjIEEE) _this_).setVadjmin(_value_);
+    }
+
+    private static String vadjminToString(BaseClass _this_) {
+        return ((VAdjIEEE) _this_).vadjminToString();
     }
 
     /**
@@ -196,16 +244,12 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("VAdjIEEE", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VAdjIEEE", attrName));
+        return "";
     }
 
     /**
@@ -216,16 +260,12 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VAdjIEEE", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VAdjIEEE", attrName, objectValue));
         }
     }
 
@@ -237,16 +277,12 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VAdjIEEE", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VAdjIEEE", attrName, stringValue));
         }
     }
 
@@ -370,48 +406,36 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("adjslew", new AttrDetails("VAdjIEEE.adjslew", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("adjslew", new AttrDetails("VAdjIEEE.adjslew", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::adjslewToString, null, VAdjIEEE::setAdjslew));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("taoff", new AttrDetails("VAdjIEEE.taoff", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("taoff", new AttrDetails("VAdjIEEE.taoff", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::taoffToString, null, VAdjIEEE::setTaoff));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("taon", new AttrDetails("VAdjIEEE.taon", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("taon", new AttrDetails("VAdjIEEE.taon", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::taonToString, null, VAdjIEEE::setTaon));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vadjf", new AttrDetails("VAdjIEEE.vadjf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vadjf", new AttrDetails("VAdjIEEE.vadjf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::vadjfToString, null, VAdjIEEE::setVadjf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vadjmax", new AttrDetails("VAdjIEEE.vadjmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vadjmax", new AttrDetails("VAdjIEEE.vadjmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::vadjmaxToString, null, VAdjIEEE::setVadjmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vadjmin", new AttrDetails("VAdjIEEE.vadjmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vadjmin", new AttrDetails("VAdjIEEE.vadjmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VAdjIEEE::vadjminToString, null, VAdjIEEE::setVadjmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VAdjIEEE().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("adjslew", new GetterSetter(this::adjslewToString, null, this::setAdjslew));
-        map.put("taoff", new GetterSetter(this::taoffToString, null, this::setTaoff));
-        map.put("taon", new GetterSetter(this::taonToString, null, this::setTaon));
-        map.put("vadjf", new GetterSetter(this::vadjfToString, null, this::setVadjf));
-        map.put("vadjmax", new GetterSetter(this::vadjmaxToString, null, this::setVadjmax));
-        map.put("vadjmin", new GetterSetter(this::vadjminToString, null, this::setVadjmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

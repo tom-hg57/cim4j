@@ -52,6 +52,14 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
         return AsynchronousMachineDynamics != null ? AsynchronousMachineDynamics.getRdfid() : null;
     }
 
+    private static void setAsynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((TurbineGovernorDynamics) _this_).setAsynchronousMachineDynamics(_object_);
+    }
+
+    private static String AsynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((TurbineGovernorDynamics) _this_).AsynchronousMachineDynamicsToString();
+    }
+
     /**
      * Turbine-governor model associated with this synchronous machine model.
      */
@@ -73,6 +81,14 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
 
     public String SynchronousMachineDynamicsToString() {
         return getStringFromSet(SynchronousMachineDynamics);
+    }
+
+    private static void setSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((TurbineGovernorDynamics) _this_).setSynchronousMachineDynamics(_object_);
+    }
+
+    private static String SynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((TurbineGovernorDynamics) _this_).SynchronousMachineDynamicsToString();
     }
 
     /**
@@ -98,6 +114,14 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
 
     public String TurbineLoadControllerDynamicsToString() {
         return TurbineLoadControllerDynamics != null ? TurbineLoadControllerDynamics.getRdfid() : null;
+    }
+
+    private static void setTurbineLoadControllerDynamics(BaseClass _this_, BaseClass _object_) {
+        ((TurbineGovernorDynamics) _this_).setTurbineLoadControllerDynamics(_object_);
+    }
+
+    private static String TurbineLoadControllerDynamicsToString(BaseClass _this_) {
+        return ((TurbineGovernorDynamics) _this_).TurbineLoadControllerDynamicsToString();
     }
 
     /**
@@ -141,16 +165,12 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TurbineGovernorDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TurbineGovernorDynamics", attrName));
+        return "";
     }
 
     /**
@@ -161,16 +181,12 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TurbineGovernorDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TurbineGovernorDynamics", attrName, objectValue));
         }
     }
 
@@ -182,16 +198,12 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TurbineGovernorDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TurbineGovernorDynamics", attrName, stringValue));
         }
     }
 
@@ -315,30 +327,21 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("AsynchronousMachineDynamics", new AttrDetails("TurbineGovernorDynamics.AsynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("AsynchronousMachineDynamics", new AttrDetails("TurbineGovernorDynamics.AsynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TurbineGovernorDynamics::AsynchronousMachineDynamicsToString, TurbineGovernorDynamics::setAsynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineDynamics", new AttrDetails("TurbineGovernorDynamics.SynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SynchronousMachineDynamics", new AttrDetails("TurbineGovernorDynamics.SynchronousMachineDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TurbineGovernorDynamics::SynchronousMachineDynamicsToString, TurbineGovernorDynamics::setSynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineLoadControllerDynamics", new AttrDetails("TurbineGovernorDynamics.TurbineLoadControllerDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TurbineLoadControllerDynamics", new AttrDetails("TurbineGovernorDynamics.TurbineLoadControllerDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TurbineGovernorDynamics::TurbineLoadControllerDynamicsToString, TurbineGovernorDynamics::setTurbineLoadControllerDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineGovernorDynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AsynchronousMachineDynamics", new GetterSetter(this::AsynchronousMachineDynamicsToString, this::setAsynchronousMachineDynamics, null));
-        map.put("SynchronousMachineDynamics", new GetterSetter(this::SynchronousMachineDynamicsToString, this::setSynchronousMachineDynamics, null));
-        map.put("TurbineLoadControllerDynamics", new GetterSetter(this::TurbineLoadControllerDynamicsToString, this::setTurbineLoadControllerDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

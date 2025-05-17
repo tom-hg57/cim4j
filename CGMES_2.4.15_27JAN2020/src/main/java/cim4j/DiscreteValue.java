@@ -54,6 +54,14 @@ public class DiscreteValue extends MeasurementValue {
         return Command != null ? Command.getRdfid() : null;
     }
 
+    private static void setCommand(BaseClass _this_, BaseClass _object_) {
+        ((DiscreteValue) _this_).setCommand(_object_);
+    }
+
+    private static String CommandToString(BaseClass _this_) {
+        return ((DiscreteValue) _this_).CommandToString();
+    }
+
     /**
      * The values connected to this measurement.
      */
@@ -77,6 +85,14 @@ public class DiscreteValue extends MeasurementValue {
         return Discrete != null ? Discrete.getRdfid() : null;
     }
 
+    private static void setDiscrete(BaseClass _this_, BaseClass _object_) {
+        ((DiscreteValue) _this_).setDiscrete(_object_);
+    }
+
+    private static String DiscreteToString(BaseClass _this_) {
+        return ((DiscreteValue) _this_).DiscreteToString();
+    }
+
     /**
      * The value to supervise.
      */
@@ -96,6 +112,14 @@ public class DiscreteValue extends MeasurementValue {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((DiscreteValue) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((DiscreteValue) _this_).valueToString();
     }
 
     /**
@@ -139,16 +163,12 @@ public class DiscreteValue extends MeasurementValue {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiscreteValue", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiscreteValue", attrName));
+        return "";
     }
 
     /**
@@ -159,16 +179,12 @@ public class DiscreteValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiscreteValue", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscreteValue", attrName, objectValue));
         }
     }
 
@@ -180,16 +196,12 @@ public class DiscreteValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiscreteValue", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscreteValue", attrName, stringValue));
         }
     }
 
@@ -313,30 +325,21 @@ public class DiscreteValue extends MeasurementValue {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Command", new AttrDetails("DiscreteValue.Command", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Command", new AttrDetails("DiscreteValue.Command", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiscreteValue::CommandToString, DiscreteValue::setCommand, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Discrete", new AttrDetails("DiscreteValue.Discrete", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Discrete", new AttrDetails("DiscreteValue.Discrete", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiscreteValue::DiscreteToString, DiscreteValue::setDiscrete, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value", new AttrDetails("DiscreteValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value", new AttrDetails("DiscreteValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscreteValue::valueToString, null, DiscreteValue::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscreteValue().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Command", new GetterSetter(this::CommandToString, this::setCommand, null));
-        map.put("Discrete", new GetterSetter(this::DiscreteToString, this::setDiscrete, null));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

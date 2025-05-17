@@ -54,6 +54,14 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
         return getStringFromSet(ProprietaryParameterDynamics);
     }
 
+    private static void setProprietaryParameterDynamics(BaseClass _this_, BaseClass _object_) {
+        ((PowerSystemStabilizerUserDefined) _this_).setProprietaryParameterDynamics(_object_);
+    }
+
+    private static String ProprietaryParameterDynamicsToString(BaseClass _this_) {
+        return ((PowerSystemStabilizerUserDefined) _this_).ProprietaryParameterDynamicsToString();
+    }
+
     /**
      * Behaviour is based on proprietary model as opposed to detailed model. true = user-defined model is proprietary with behaviour mutually understood by sending and receiving applications and parameters passed as general attributes false = user-defined model is explicitly defined in terms of control blocks and their input and output signals.
      */
@@ -73,6 +81,14 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
 
     public String proprietaryToString() {
         return proprietary != null ? proprietary.toString() : null;
+    }
+
+    private static void setProprietary(BaseClass _this_, String _value_) {
+        ((PowerSystemStabilizerUserDefined) _this_).setProprietary(_value_);
+    }
+
+    private static String proprietaryToString(BaseClass _this_) {
+        return ((PowerSystemStabilizerUserDefined) _this_).proprietaryToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PowerSystemStabilizerUserDefined", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerSystemStabilizerUserDefined", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerSystemStabilizerUserDefined", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerSystemStabilizerUserDefined", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerSystemStabilizerUserDefined", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerSystemStabilizerUserDefined", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class PowerSystemStabilizerUserDefined extends PowerSystemStabilizerDynam
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ProprietaryParameterDynamics", new AttrDetails("PowerSystemStabilizerUserDefined.ProprietaryParameterDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ProprietaryParameterDynamics", new AttrDetails("PowerSystemStabilizerUserDefined.ProprietaryParameterDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PowerSystemStabilizerUserDefined::ProprietaryParameterDynamicsToString, PowerSystemStabilizerUserDefined::setProprietaryParameterDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("proprietary", new AttrDetails("PowerSystemStabilizerUserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("proprietary", new AttrDetails("PowerSystemStabilizerUserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerSystemStabilizerUserDefined::proprietaryToString, null, PowerSystemStabilizerUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemStabilizerUserDefined().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ProprietaryParameterDynamics", new GetterSetter(this::ProprietaryParameterDynamicsToString, this::setProprietaryParameterDynamics, null));
-        map.put("proprietary", new GetterSetter(this::proprietaryToString, null, this::setProprietary));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -52,6 +52,14 @@ public class MutualCoupling extends IdentifiedObject {
         return First_Terminal != null ? First_Terminal.getRdfid() : null;
     }
 
+    private static void setFirst_Terminal(BaseClass _this_, BaseClass _object_) {
+        ((MutualCoupling) _this_).setFirst_Terminal(_object_);
+    }
+
+    private static String First_TerminalToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).First_TerminalToString();
+    }
+
     /**
      * The starting terminal for the calculation of distances along the second branch of the mutual coupling.
      */
@@ -75,6 +83,14 @@ public class MutualCoupling extends IdentifiedObject {
         return Second_Terminal != null ? Second_Terminal.getRdfid() : null;
     }
 
+    private static void setSecond_Terminal(BaseClass _this_, BaseClass _object_) {
+        ((MutualCoupling) _this_).setSecond_Terminal(_object_);
+    }
+
+    private static String Second_TerminalToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).Second_TerminalToString();
+    }
+
     /**
      * Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section.
      */
@@ -94,6 +110,14 @@ public class MutualCoupling extends IdentifiedObject {
 
     public String b0chToString() {
         return b0ch != null ? b0ch.toString() : null;
+    }
+
+    private static void setB0ch(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setB0ch(_value_);
+    }
+
+    private static String b0chToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).b0chToString();
     }
 
     /**
@@ -117,6 +141,14 @@ public class MutualCoupling extends IdentifiedObject {
         return distance11 != null ? distance11.toString() : null;
     }
 
+    private static void setDistance11(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setDistance11(_value_);
+    }
+
+    private static String distance11ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).distance11ToString();
+    }
+
     /**
      * Distance to the end of the coupled region from the first line`s terminal with sequence number equal to 1.
      */
@@ -136,6 +168,14 @@ public class MutualCoupling extends IdentifiedObject {
 
     public String distance12ToString() {
         return distance12 != null ? distance12.toString() : null;
+    }
+
+    private static void setDistance12(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setDistance12(_value_);
+    }
+
+    private static String distance12ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).distance12ToString();
     }
 
     /**
@@ -159,6 +199,14 @@ public class MutualCoupling extends IdentifiedObject {
         return distance21 != null ? distance21.toString() : null;
     }
 
+    private static void setDistance21(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setDistance21(_value_);
+    }
+
+    private static String distance21ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).distance21ToString();
+    }
+
     /**
      * Distance to the end of coupled region from the second line`s terminal with sequence number equal to 1.
      */
@@ -178,6 +226,14 @@ public class MutualCoupling extends IdentifiedObject {
 
     public String distance22ToString() {
         return distance22 != null ? distance22.toString() : null;
+    }
+
+    private static void setDistance22(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setDistance22(_value_);
+    }
+
+    private static String distance22ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).distance22ToString();
     }
 
     /**
@@ -201,6 +257,14 @@ public class MutualCoupling extends IdentifiedObject {
         return g0ch != null ? g0ch.toString() : null;
     }
 
+    private static void setG0ch(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setG0ch(_value_);
+    }
+
+    private static String g0chToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).g0chToString();
+    }
+
     /**
      * Zero sequence branch-to-branch mutual impedance coupling, resistance.
      */
@@ -222,6 +286,14 @@ public class MutualCoupling extends IdentifiedObject {
         return r0 != null ? r0.toString() : null;
     }
 
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).r0ToString();
+    }
+
     /**
      * Zero sequence branch-to-branch mutual impedance coupling, reactance.
      */
@@ -241,6 +313,14 @@ public class MutualCoupling extends IdentifiedObject {
 
     public String x0ToString() {
         return x0 != null ? x0.toString() : null;
+    }
+
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((MutualCoupling) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((MutualCoupling) _this_).x0ToString();
     }
 
     /**
@@ -284,16 +364,12 @@ public class MutualCoupling extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("MutualCoupling", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "MutualCoupling", attrName));
+        return "";
     }
 
     /**
@@ -304,16 +380,12 @@ public class MutualCoupling extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("MutualCoupling", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MutualCoupling", attrName, objectValue));
         }
     }
 
@@ -325,16 +397,12 @@ public class MutualCoupling extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("MutualCoupling", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MutualCoupling", attrName, stringValue));
         }
     }
 
@@ -458,72 +526,56 @@ public class MutualCoupling extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("First_Terminal", new AttrDetails("MutualCoupling.First_Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("First_Terminal", new AttrDetails("MutualCoupling.First_Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, MutualCoupling::First_TerminalToString, MutualCoupling::setFirst_Terminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Second_Terminal", new AttrDetails("MutualCoupling.Second_Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Second_Terminal", new AttrDetails("MutualCoupling.Second_Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, MutualCoupling::Second_TerminalToString, MutualCoupling::setSecond_Terminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b0ch", new AttrDetails("MutualCoupling.b0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b0ch", new AttrDetails("MutualCoupling.b0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::b0chToString, null, MutualCoupling::setB0ch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("distance11", new AttrDetails("MutualCoupling.distance11", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("distance11", new AttrDetails("MutualCoupling.distance11", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::distance11ToString, null, MutualCoupling::setDistance11));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("distance12", new AttrDetails("MutualCoupling.distance12", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("distance12", new AttrDetails("MutualCoupling.distance12", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::distance12ToString, null, MutualCoupling::setDistance12));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("distance21", new AttrDetails("MutualCoupling.distance21", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("distance21", new AttrDetails("MutualCoupling.distance21", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::distance21ToString, null, MutualCoupling::setDistance21));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("distance22", new AttrDetails("MutualCoupling.distance22", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("distance22", new AttrDetails("MutualCoupling.distance22", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::distance22ToString, null, MutualCoupling::setDistance22));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g0ch", new AttrDetails("MutualCoupling.g0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("g0ch", new AttrDetails("MutualCoupling.g0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::g0chToString, null, MutualCoupling::setG0ch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("MutualCoupling.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("MutualCoupling.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::r0ToString, null, MutualCoupling::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("MutualCoupling.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("MutualCoupling.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::x0ToString, null, MutualCoupling::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MutualCoupling().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("First_Terminal", new GetterSetter(this::First_TerminalToString, this::setFirst_Terminal, null));
-        map.put("Second_Terminal", new GetterSetter(this::Second_TerminalToString, this::setSecond_Terminal, null));
-        map.put("b0ch", new GetterSetter(this::b0chToString, null, this::setB0ch));
-        map.put("distance11", new GetterSetter(this::distance11ToString, null, this::setDistance11));
-        map.put("distance12", new GetterSetter(this::distance12ToString, null, this::setDistance12));
-        map.put("distance21", new GetterSetter(this::distance21ToString, null, this::setDistance21));
-        map.put("distance22", new GetterSetter(this::distance22ToString, null, this::setDistance22));
-        map.put("g0ch", new GetterSetter(this::g0chToString, null, this::setG0ch));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

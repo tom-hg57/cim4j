@@ -52,6 +52,14 @@ public class AccumulatorLimit extends Limit {
         return LimitSet != null ? LimitSet.getRdfid() : null;
     }
 
+    private static void setLimitSet(BaseClass _this_, BaseClass _object_) {
+        ((AccumulatorLimit) _this_).setLimitSet(_object_);
+    }
+
+    private static String LimitSetToString(BaseClass _this_) {
+        return ((AccumulatorLimit) _this_).LimitSetToString();
+    }
+
     /**
      * The value to supervise against. The value is positive.
      */
@@ -71,6 +79,14 @@ public class AccumulatorLimit extends Limit {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((AccumulatorLimit) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((AccumulatorLimit) _this_).valueToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class AccumulatorLimit extends Limit {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AccumulatorLimit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AccumulatorLimit", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class AccumulatorLimit extends Limit {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AccumulatorLimit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AccumulatorLimit", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class AccumulatorLimit extends Limit {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AccumulatorLimit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AccumulatorLimit", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class AccumulatorLimit extends Limit {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("LimitSet", new AttrDetails("AccumulatorLimit.LimitSet", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LimitSet", new AttrDetails("AccumulatorLimit.LimitSet", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AccumulatorLimit::LimitSetToString, AccumulatorLimit::setLimitSet, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("value", new AttrDetails("AccumulatorLimit.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("value", new AttrDetails("AccumulatorLimit.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AccumulatorLimit::valueToString, null, AccumulatorLimit::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorLimit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("LimitSet", new GetterSetter(this::LimitSetToString, this::setLimitSet, null));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

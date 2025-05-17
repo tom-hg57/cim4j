@@ -51,6 +51,14 @@ public class PerLengthDCLineParameter extends BaseClass {
         return getStringFromSet(DCLineSegments);
     }
 
+    private static void setDCLineSegments(BaseClass _this_, BaseClass _object_) {
+        ((PerLengthDCLineParameter) _this_).setDCLineSegments(_object_);
+    }
+
+    private static String DCLineSegmentsToString(BaseClass _this_) {
+        return ((PerLengthDCLineParameter) _this_).DCLineSegmentsToString();
+    }
+
     /**
      * Capacitance per unit of length of the DC line segment; significant for cables only.
      */
@@ -70,6 +78,14 @@ public class PerLengthDCLineParameter extends BaseClass {
 
     public String capacitanceToString() {
         return capacitance != null ? capacitance.toString() : null;
+    }
+
+    private static void setCapacitance(BaseClass _this_, String _value_) {
+        ((PerLengthDCLineParameter) _this_).setCapacitance(_value_);
+    }
+
+    private static String capacitanceToString(BaseClass _this_) {
+        return ((PerLengthDCLineParameter) _this_).capacitanceToString();
     }
 
     /**
@@ -93,6 +109,14 @@ public class PerLengthDCLineParameter extends BaseClass {
         return inductance != null ? inductance.toString() : null;
     }
 
+    private static void setInductance(BaseClass _this_, String _value_) {
+        ((PerLengthDCLineParameter) _this_).setInductance(_value_);
+    }
+
+    private static String inductanceToString(BaseClass _this_) {
+        return ((PerLengthDCLineParameter) _this_).inductanceToString();
+    }
+
     /**
      * Resistance per length of the DC line segment.
      */
@@ -112,6 +136,14 @@ public class PerLengthDCLineParameter extends BaseClass {
 
     public String resistanceToString() {
         return resistance != null ? resistance.toString() : null;
+    }
+
+    private static void setResistance(BaseClass _this_, String _value_) {
+        ((PerLengthDCLineParameter) _this_).setResistance(_value_);
+    }
+
+    private static String resistanceToString(BaseClass _this_) {
+        return ((PerLengthDCLineParameter) _this_).resistanceToString();
     }
 
     /**
@@ -155,16 +187,12 @@ public class PerLengthDCLineParameter extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PerLengthDCLineParameter", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PerLengthDCLineParameter", attrName));
+        return "";
     }
 
     /**
@@ -175,16 +203,12 @@ public class PerLengthDCLineParameter extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PerLengthDCLineParameter", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PerLengthDCLineParameter", attrName, objectValue));
         }
     }
 
@@ -196,16 +220,12 @@ public class PerLengthDCLineParameter extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PerLengthDCLineParameter", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PerLengthDCLineParameter", attrName, stringValue));
         }
     }
 
@@ -329,36 +349,26 @@ public class PerLengthDCLineParameter extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("DCLineSegments", new AttrDetails("PerLengthDCLineParameter.DCLineSegments", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DCLineSegments", new AttrDetails("PerLengthDCLineParameter.DCLineSegments", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PerLengthDCLineParameter::DCLineSegmentsToString, PerLengthDCLineParameter::setDCLineSegments, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("capacitance", new AttrDetails("PerLengthDCLineParameter.capacitance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("capacitance", new AttrDetails("PerLengthDCLineParameter.capacitance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PerLengthDCLineParameter::capacitanceToString, null, PerLengthDCLineParameter::setCapacitance));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("inductance", new AttrDetails("PerLengthDCLineParameter.inductance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("inductance", new AttrDetails("PerLengthDCLineParameter.inductance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PerLengthDCLineParameter::inductanceToString, null, PerLengthDCLineParameter::setInductance));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("resistance", new AttrDetails("PerLengthDCLineParameter.resistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("resistance", new AttrDetails("PerLengthDCLineParameter.resistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PerLengthDCLineParameter::resistanceToString, null, PerLengthDCLineParameter::setResistance));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PerLengthDCLineParameter().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DCLineSegments", new GetterSetter(this::DCLineSegmentsToString, this::setDCLineSegments, null));
-        map.put("capacitance", new GetterSetter(this::capacitanceToString, null, this::setCapacitance));
-        map.put("inductance", new GetterSetter(this::inductanceToString, null, this::setInductance));
-        map.put("resistance", new GetterSetter(this::resistanceToString, null, this::setResistance));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

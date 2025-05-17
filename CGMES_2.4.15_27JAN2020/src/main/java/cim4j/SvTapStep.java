@@ -52,6 +52,14 @@ public class SvTapStep extends BaseClass {
         return TapChanger != null ? TapChanger.getRdfid() : null;
     }
 
+    private static void setTapChanger(BaseClass _this_, BaseClass _object_) {
+        ((SvTapStep) _this_).setTapChanger(_object_);
+    }
+
+    private static String TapChangerToString(BaseClass _this_) {
+        return ((SvTapStep) _this_).TapChangerToString();
+    }
+
     /**
      * The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions.
      */
@@ -71,6 +79,14 @@ public class SvTapStep extends BaseClass {
 
     public String positionToString() {
         return position != null ? position.toString() : null;
+    }
+
+    private static void setPosition(BaseClass _this_, String _value_) {
+        ((SvTapStep) _this_).setPosition(_value_);
+    }
+
+    private static String positionToString(BaseClass _this_) {
+        return ((SvTapStep) _this_).positionToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class SvTapStep extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvTapStep", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvTapStep", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class SvTapStep extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvTapStep", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvTapStep", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class SvTapStep extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvTapStep", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvTapStep", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class SvTapStep extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("TapChanger", new AttrDetails("SvTapStep.TapChanger", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TapChanger", new AttrDetails("SvTapStep.TapChanger", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SvTapStep::TapChangerToString, SvTapStep::setTapChanger, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("position", new AttrDetails("SvTapStep.position", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("position", new AttrDetails("SvTapStep.position", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvTapStep::positionToString, null, SvTapStep::setPosition));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvTapStep().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("TapChanger", new GetterSetter(this::TapChangerToString, this::setTapChanger, null));
-        map.put("position", new GetterSetter(this::positionToString, null, this::setPosition));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

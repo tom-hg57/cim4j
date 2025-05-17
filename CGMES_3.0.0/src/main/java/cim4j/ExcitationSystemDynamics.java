@@ -54,6 +54,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
         return DiscontinuousExcitationControlDynamics != null ? DiscontinuousExcitationControlDynamics.getRdfid() : null;
     }
 
+    private static void setDiscontinuousExcitationControlDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setDiscontinuousExcitationControlDynamics(_object_);
+    }
+
+    private static String DiscontinuousExcitationControlDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).DiscontinuousExcitationControlDynamicsToString();
+    }
+
     /**
      * Overexcitation limiter model associated with this excitation system model.
      *
@@ -77,6 +85,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
 
     public String OverexcitationLimiterDynamicsToString() {
         return OverexcitationLimiterDynamics != null ? OverexcitationLimiterDynamics.getRdfid() : null;
+    }
+
+    private static void setOverexcitationLimiterDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setOverexcitationLimiterDynamics(_object_);
+    }
+
+    private static String OverexcitationLimiterDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).OverexcitationLimiterDynamicsToString();
     }
 
     /**
@@ -104,6 +120,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
         return PFVArControllerType1Dynamics != null ? PFVArControllerType1Dynamics.getRdfid() : null;
     }
 
+    private static void setPFVArControllerType1Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setPFVArControllerType1Dynamics(_object_);
+    }
+
+    private static String PFVArControllerType1DynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).PFVArControllerType1DynamicsToString();
+    }
+
     /**
      * Power factor or VAr controller type 2 model associated with this excitation system model.
      *
@@ -127,6 +151,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
 
     public String PFVArControllerType2DynamicsToString() {
         return PFVArControllerType2Dynamics != null ? PFVArControllerType2Dynamics.getRdfid() : null;
+    }
+
+    private static void setPFVArControllerType2Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setPFVArControllerType2Dynamics(_object_);
+    }
+
+    private static String PFVArControllerType2DynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).PFVArControllerType2DynamicsToString();
     }
 
     /**
@@ -154,6 +186,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
         return PowerSystemStabilizerDynamics != null ? PowerSystemStabilizerDynamics.getRdfid() : null;
     }
 
+    private static void setPowerSystemStabilizerDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setPowerSystemStabilizerDynamics(_object_);
+    }
+
+    private static String PowerSystemStabilizerDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).PowerSystemStabilizerDynamicsToString();
+    }
+
     /**
      * Synchronous machine model with which this excitation system model is associated.
      */
@@ -175,6 +215,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
 
     public String SynchronousMachineDynamicsToString() {
         return SynchronousMachineDynamics != null ? SynchronousMachineDynamics.getRdfid() : null;
+    }
+
+    private static void setSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setSynchronousMachineDynamics(_object_);
+    }
+
+    private static String SynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).SynchronousMachineDynamicsToString();
     }
 
     /**
@@ -202,6 +250,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
         return UnderexcitationLimiterDynamics != null ? UnderexcitationLimiterDynamics.getRdfid() : null;
     }
 
+    private static void setUnderexcitationLimiterDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setUnderexcitationLimiterDynamics(_object_);
+    }
+
+    private static String UnderexcitationLimiterDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).UnderexcitationLimiterDynamicsToString();
+    }
+
     /**
      * Voltage compensator model associated with this excitation system model.
      *
@@ -225,6 +281,14 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
 
     public String VoltageCompensatorDynamicsToString() {
         return VoltageCompensatorDynamics != null ? VoltageCompensatorDynamics.getRdfid() : null;
+    }
+
+    private static void setVoltageCompensatorDynamics(BaseClass _this_, BaseClass _object_) {
+        ((ExcitationSystemDynamics) _this_).setVoltageCompensatorDynamics(_object_);
+    }
+
+    private static String VoltageCompensatorDynamicsToString(BaseClass _this_) {
+        return ((ExcitationSystemDynamics) _this_).VoltageCompensatorDynamicsToString();
     }
 
     /**
@@ -268,16 +332,12 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcitationSystemDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcitationSystemDynamics", attrName));
+        return "";
     }
 
     /**
@@ -288,16 +348,12 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcitationSystemDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcitationSystemDynamics", attrName, objectValue));
         }
     }
 
@@ -309,16 +365,12 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcitationSystemDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcitationSystemDynamics", attrName, stringValue));
         }
     }
 
@@ -442,60 +494,46 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("ExcitationSystemDynamics.DiscontinuousExcitationControlDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("ExcitationSystemDynamics.DiscontinuousExcitationControlDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::DiscontinuousExcitationControlDynamicsToString, ExcitationSystemDynamics::setDiscontinuousExcitationControlDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("OverexcitationLimiterDynamics", new AttrDetails("ExcitationSystemDynamics.OverexcitationLimiterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("OverexcitationLimiterDynamics", new AttrDetails("ExcitationSystemDynamics.OverexcitationLimiterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::OverexcitationLimiterDynamicsToString, ExcitationSystemDynamics::setOverexcitationLimiterDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1Dynamics", new AttrDetails("ExcitationSystemDynamics.PFVArControllerType1Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType1Dynamics", new AttrDetails("ExcitationSystemDynamics.PFVArControllerType1Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::PFVArControllerType1DynamicsToString, ExcitationSystemDynamics::setPFVArControllerType1Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType2Dynamics", new AttrDetails("ExcitationSystemDynamics.PFVArControllerType2Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType2Dynamics", new AttrDetails("ExcitationSystemDynamics.PFVArControllerType2Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::PFVArControllerType2DynamicsToString, ExcitationSystemDynamics::setPFVArControllerType2Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerSystemStabilizerDynamics", new AttrDetails("ExcitationSystemDynamics.PowerSystemStabilizerDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerSystemStabilizerDynamics", new AttrDetails("ExcitationSystemDynamics.PowerSystemStabilizerDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::PowerSystemStabilizerDynamicsToString, ExcitationSystemDynamics::setPowerSystemStabilizerDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineDynamics", new AttrDetails("ExcitationSystemDynamics.SynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SynchronousMachineDynamics", new AttrDetails("ExcitationSystemDynamics.SynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::SynchronousMachineDynamicsToString, ExcitationSystemDynamics::setSynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("UnderexcitationLimiterDynamics", new AttrDetails("ExcitationSystemDynamics.UnderexcitationLimiterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("UnderexcitationLimiterDynamics", new AttrDetails("ExcitationSystemDynamics.UnderexcitationLimiterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::UnderexcitationLimiterDynamicsToString, ExcitationSystemDynamics::setUnderexcitationLimiterDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageCompensatorDynamics", new AttrDetails("ExcitationSystemDynamics.VoltageCompensatorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VoltageCompensatorDynamics", new AttrDetails("ExcitationSystemDynamics.VoltageCompensatorDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ExcitationSystemDynamics::VoltageCompensatorDynamicsToString, ExcitationSystemDynamics::setVoltageCompensatorDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcitationSystemDynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiscontinuousExcitationControlDynamics", new GetterSetter(this::DiscontinuousExcitationControlDynamicsToString, this::setDiscontinuousExcitationControlDynamics, null));
-        map.put("OverexcitationLimiterDynamics", new GetterSetter(this::OverexcitationLimiterDynamicsToString, this::setOverexcitationLimiterDynamics, null));
-        map.put("PFVArControllerType1Dynamics", new GetterSetter(this::PFVArControllerType1DynamicsToString, this::setPFVArControllerType1Dynamics, null));
-        map.put("PFVArControllerType2Dynamics", new GetterSetter(this::PFVArControllerType2DynamicsToString, this::setPFVArControllerType2Dynamics, null));
-        map.put("PowerSystemStabilizerDynamics", new GetterSetter(this::PowerSystemStabilizerDynamicsToString, this::setPowerSystemStabilizerDynamics, null));
-        map.put("SynchronousMachineDynamics", new GetterSetter(this::SynchronousMachineDynamicsToString, this::setSynchronousMachineDynamics, null));
-        map.put("UnderexcitationLimiterDynamics", new GetterSetter(this::UnderexcitationLimiterDynamicsToString, this::setUnderexcitationLimiterDynamics, null));
-        map.put("VoltageCompensatorDynamics", new GetterSetter(this::VoltageCompensatorDynamicsToString, this::setVoltageCompensatorDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

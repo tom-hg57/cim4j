@@ -50,6 +50,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         return kdpm != null ? kdpm.toString() : null;
     }
 
+    private static void setKdpm(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setKdpm(_value_);
+    }
+
+    private static String kdpmToString(BaseClass _this_) {
+        return ((PssRQB) _this_).kdpmToString();
+    }
+
     /**
      * Speed input gain (&lt;i&gt;Ki2&lt;/i&gt;). Typical value = 3,43.
      */
@@ -69,6 +77,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
 
     public String ki2ToString() {
         return ki2 != null ? ki2.toString() : null;
+    }
+
+    private static void setKi2(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setKi2(_value_);
+    }
+
+    private static String ki2ToString(BaseClass _this_) {
+        return ((PssRQB) _this_).ki2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         return ki3 != null ? ki3.toString() : null;
     }
 
+    private static void setKi3(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setKi3(_value_);
+    }
+
+    private static String ki3ToString(BaseClass _this_) {
+        return ((PssRQB) _this_).ki3ToString();
+    }
+
     /**
      * Mechanical power input gain (&lt;i&gt;Ki4&lt;/i&gt;). Typical value = 11,86.
      */
@@ -111,6 +135,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
 
     public String ki4ToString() {
         return ki4 != null ? ki4.toString() : null;
+    }
+
+    private static void setKi4(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setKi4(_value_);
+    }
+
+    private static String ki4ToString(BaseClass _this_) {
+        return ((PssRQB) _this_).ki4ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         return sibv != null ? sibv.toString() : null;
     }
 
+    private static void setSibv(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setSibv(_value_);
+    }
+
+    private static String sibvToString(BaseClass _this_) {
+        return ((PssRQB) _this_).sibvToString();
+    }
+
     /**
      * Lead lag time constant (&lt;i&gt;T4F&lt;/i&gt;) (&amp;gt;= 0). Typical value = 0,045.
      */
@@ -153,6 +193,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
 
     public String t4fToString() {
         return t4f != null ? t4f.toString() : null;
+    }
+
+    private static void setT4f(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setT4f(_value_);
+    }
+
+    private static String t4fToString(BaseClass _this_) {
+        return ((PssRQB) _this_).t4fToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         return t4m != null ? t4m.toString() : null;
     }
 
+    private static void setT4m(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setT4m(_value_);
+    }
+
+    private static String t4mToString(BaseClass _this_) {
+        return ((PssRQB) _this_).t4mToString();
+    }
+
     /**
      * Speed time constant (&lt;i&gt;T4MOM&lt;/i&gt;) (&amp;gt;= 0). Typical value = 1,27.
      */
@@ -195,6 +251,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
 
     public String t4momToString() {
         return t4mom != null ? t4mom.toString() : null;
+    }
+
+    private static void setT4mom(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setT4mom(_value_);
+    }
+
+    private static String t4momToString(BaseClass _this_) {
+        return ((PssRQB) _this_).t4momToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         return tomd != null ? tomd.toString() : null;
     }
 
+    private static void setTomd(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setTomd(_value_);
+    }
+
+    private static String tomdToString(BaseClass _this_) {
+        return ((PssRQB) _this_).tomdToString();
+    }
+
     /**
      * Speed time constant (&lt;i&gt;TOMSL&lt;/i&gt;) (&amp;gt;= 0). Typical value = 0,04.
      */
@@ -237,6 +309,14 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
 
     public String tomslToString() {
         return tomsl != null ? tomsl.toString() : null;
+    }
+
+    private static void setTomsl(BaseClass _this_, String _value_) {
+        ((PssRQB) _this_).setTomsl(_value_);
+    }
+
+    private static String tomslToString(BaseClass _this_) {
+        return ((PssRQB) _this_).tomslToString();
     }
 
     /**
@@ -280,16 +360,12 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PssRQB", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PssRQB", attrName));
+        return "";
     }
 
     /**
@@ -300,16 +376,12 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PssRQB", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssRQB", attrName, objectValue));
         }
     }
 
@@ -321,16 +393,12 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PssRQB", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssRQB", attrName, stringValue));
         }
     }
 
@@ -454,72 +522,56 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kdpm", new AttrDetails("PssRQB.kdpm", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kdpm", new AttrDetails("PssRQB.kdpm", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::kdpmToString, null, PssRQB::setKdpm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki2", new AttrDetails("PssRQB.ki2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki2", new AttrDetails("PssRQB.ki2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::ki2ToString, null, PssRQB::setKi2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki3", new AttrDetails("PssRQB.ki3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki3", new AttrDetails("PssRQB.ki3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::ki3ToString, null, PssRQB::setKi3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki4", new AttrDetails("PssRQB.ki4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki4", new AttrDetails("PssRQB.ki4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::ki4ToString, null, PssRQB::setKi4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("sibv", new AttrDetails("PssRQB.sibv", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("sibv", new AttrDetails("PssRQB.sibv", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::sibvToString, null, PssRQB::setSibv));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4f", new AttrDetails("PssRQB.t4f", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t4f", new AttrDetails("PssRQB.t4f", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::t4fToString, null, PssRQB::setT4f));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4m", new AttrDetails("PssRQB.t4m", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t4m", new AttrDetails("PssRQB.t4m", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::t4mToString, null, PssRQB::setT4m));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4mom", new AttrDetails("PssRQB.t4mom", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t4mom", new AttrDetails("PssRQB.t4mom", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::t4momToString, null, PssRQB::setT4mom));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tomd", new AttrDetails("PssRQB.tomd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tomd", new AttrDetails("PssRQB.tomd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::tomdToString, null, PssRQB::setTomd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tomsl", new AttrDetails("PssRQB.tomsl", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tomsl", new AttrDetails("PssRQB.tomsl", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::tomslToString, null, PssRQB::setTomsl));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssRQB().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("kdpm", new GetterSetter(this::kdpmToString, null, this::setKdpm));
-        map.put("ki2", new GetterSetter(this::ki2ToString, null, this::setKi2));
-        map.put("ki3", new GetterSetter(this::ki3ToString, null, this::setKi3));
-        map.put("ki4", new GetterSetter(this::ki4ToString, null, this::setKi4));
-        map.put("sibv", new GetterSetter(this::sibvToString, null, this::setSibv));
-        map.put("t4f", new GetterSetter(this::t4fToString, null, this::setT4f));
-        map.put("t4m", new GetterSetter(this::t4mToString, null, this::setT4m));
-        map.put("t4mom", new GetterSetter(this::t4momToString, null, this::setT4mom));
-        map.put("tomd", new GetterSetter(this::tomdToString, null, this::setTomd));
-        map.put("tomsl", new GetterSetter(this::tomslToString, null, this::setTomsl));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

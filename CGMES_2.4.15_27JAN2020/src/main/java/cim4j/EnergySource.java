@@ -52,6 +52,14 @@ public class EnergySource extends ConductingEquipment {
         return EnergySchedulingType != null ? EnergySchedulingType.getRdfid() : null;
     }
 
+    private static void setEnergySchedulingType(BaseClass _this_, BaseClass _object_) {
+        ((EnergySource) _this_).setEnergySchedulingType(_object_);
+    }
+
+    private static String EnergySchedulingTypeToString(BaseClass _this_) {
+        return ((EnergySource) _this_).EnergySchedulingTypeToString();
+    }
+
     /**
      * Wind generator Type 3 or 4 dynamics model associated with this energy source.
      *
@@ -77,6 +85,14 @@ public class EnergySource extends ConductingEquipment {
         return WindTurbineType3or4Dynamics != null ? WindTurbineType3or4Dynamics.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((EnergySource) _this_).setWindTurbineType3or4Dynamics(_object_);
+    }
+
+    private static String WindTurbineType3or4DynamicsToString(BaseClass _this_) {
+        return ((EnergySource) _this_).WindTurbineType3or4DynamicsToString();
+    }
+
     /**
      * High voltage source active injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions.
      */
@@ -96,6 +112,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String activePowerToString() {
         return activePower != null ? activePower.toString() : null;
+    }
+
+    private static void setActivePower(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setActivePower(_value_);
+    }
+
+    private static String activePowerToString(BaseClass _this_) {
+        return ((EnergySource) _this_).activePowerToString();
     }
 
     /**
@@ -119,6 +143,14 @@ public class EnergySource extends ConductingEquipment {
         return nominalVoltage != null ? nominalVoltage.toString() : null;
     }
 
+    private static void setNominalVoltage(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setNominalVoltage(_value_);
+    }
+
+    private static String nominalVoltageToString(BaseClass _this_) {
+        return ((EnergySource) _this_).nominalVoltageToString();
+    }
+
     /**
      * Positive sequence Thevenin resistance.
      */
@@ -138,6 +170,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((EnergySource) _this_).rToString();
     }
 
     /**
@@ -161,6 +201,14 @@ public class EnergySource extends ConductingEquipment {
         return r0 != null ? r0.toString() : null;
     }
 
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((EnergySource) _this_).r0ToString();
+    }
+
     /**
      * High voltage source reactive injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions.
      */
@@ -180,6 +228,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String reactivePowerToString() {
         return reactivePower != null ? reactivePower.toString() : null;
+    }
+
+    private static void setReactivePower(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setReactivePower(_value_);
+    }
+
+    private static String reactivePowerToString(BaseClass _this_) {
+        return ((EnergySource) _this_).reactivePowerToString();
     }
 
     /**
@@ -203,6 +259,14 @@ public class EnergySource extends ConductingEquipment {
         return rn != null ? rn.toString() : null;
     }
 
+    private static void setRn(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setRn(_value_);
+    }
+
+    private static String rnToString(BaseClass _this_) {
+        return ((EnergySource) _this_).rnToString();
+    }
+
     /**
      * Phase angle of a-phase open circuit.
      */
@@ -222,6 +286,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String voltageAngleToString() {
         return voltageAngle != null ? voltageAngle.toString() : null;
+    }
+
+    private static void setVoltageAngle(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setVoltageAngle(_value_);
+    }
+
+    private static String voltageAngleToString(BaseClass _this_) {
+        return ((EnergySource) _this_).voltageAngleToString();
     }
 
     /**
@@ -245,6 +317,14 @@ public class EnergySource extends ConductingEquipment {
         return voltageMagnitude != null ? voltageMagnitude.toString() : null;
     }
 
+    private static void setVoltageMagnitude(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setVoltageMagnitude(_value_);
+    }
+
+    private static String voltageMagnitudeToString(BaseClass _this_) {
+        return ((EnergySource) _this_).voltageMagnitudeToString();
+    }
+
     /**
      * Positive sequence Thevenin reactance.
      */
@@ -264,6 +344,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String xToString() {
         return x != null ? x.toString() : null;
+    }
+
+    private static void setX(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((EnergySource) _this_).xToString();
     }
 
     /**
@@ -287,6 +375,14 @@ public class EnergySource extends ConductingEquipment {
         return x0 != null ? x0.toString() : null;
     }
 
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((EnergySource) _this_).x0ToString();
+    }
+
     /**
      * Negative sequence Thevenin reactance.
      */
@@ -306,6 +402,14 @@ public class EnergySource extends ConductingEquipment {
 
     public String xnToString() {
         return xn != null ? xn.toString() : null;
+    }
+
+    private static void setXn(BaseClass _this_, String _value_) {
+        ((EnergySource) _this_).setXn(_value_);
+    }
+
+    private static String xnToString(BaseClass _this_) {
+        return ((EnergySource) _this_).xnToString();
     }
 
     /**
@@ -349,16 +453,12 @@ public class EnergySource extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EnergySource", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EnergySource", attrName));
+        return "";
     }
 
     /**
@@ -369,16 +469,12 @@ public class EnergySource extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EnergySource", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EnergySource", attrName, objectValue));
         }
     }
 
@@ -390,16 +486,12 @@ public class EnergySource extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EnergySource", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EnergySource", attrName, stringValue));
         }
     }
 
@@ -524,90 +616,71 @@ public class EnergySource extends ConductingEquipment {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("EnergySchedulingType", new AttrDetails("EnergySource.EnergySchedulingType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, false));
+            map.put("EnergySchedulingType", new AttrDetails("EnergySource.EnergySchedulingType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, false, EnergySource::EnergySchedulingTypeToString, EnergySource::setEnergySchedulingType, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4Dynamics", new AttrDetails("EnergySource.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType3or4Dynamics", new AttrDetails("EnergySource.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, EnergySource::WindTurbineType3or4DynamicsToString, EnergySource::setWindTurbineType3or4Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("activePower", new AttrDetails("EnergySource.activePower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("activePower", new AttrDetails("EnergySource.activePower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::activePowerToString, null, EnergySource::setActivePower));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("nominalVoltage", new AttrDetails("EnergySource.nominalVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("nominalVoltage", new AttrDetails("EnergySource.nominalVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::nominalVoltageToString, null, EnergySource::setNominalVoltage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("EnergySource.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("EnergySource.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::rToString, null, EnergySource::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("EnergySource.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("EnergySource.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::r0ToString, null, EnergySource::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("reactivePower", new AttrDetails("EnergySource.reactivePower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("reactivePower", new AttrDetails("EnergySource.reactivePower", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::reactivePowerToString, null, EnergySource::setReactivePower));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("rn", new AttrDetails("EnergySource.rn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rn", new AttrDetails("EnergySource.rn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::rnToString, null, EnergySource::setRn));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("voltageAngle", new AttrDetails("EnergySource.voltageAngle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("voltageAngle", new AttrDetails("EnergySource.voltageAngle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::voltageAngleToString, null, EnergySource::setVoltageAngle));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("voltageMagnitude", new AttrDetails("EnergySource.voltageMagnitude", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("voltageMagnitude", new AttrDetails("EnergySource.voltageMagnitude", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::voltageMagnitudeToString, null, EnergySource::setVoltageMagnitude));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("EnergySource.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x", new AttrDetails("EnergySource.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::xToString, null, EnergySource::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("EnergySource.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("EnergySource.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::x0ToString, null, EnergySource::setX0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xn", new AttrDetails("EnergySource.xn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xn", new AttrDetails("EnergySource.xn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EnergySource::xnToString, null, EnergySource::setXn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergySource().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("EnergySchedulingType", new GetterSetter(this::EnergySchedulingTypeToString, this::setEnergySchedulingType, null));
-        map.put("WindTurbineType3or4Dynamics", new GetterSetter(this::WindTurbineType3or4DynamicsToString, this::setWindTurbineType3or4Dynamics, null));
-        map.put("activePower", new GetterSetter(this::activePowerToString, null, this::setActivePower));
-        map.put("nominalVoltage", new GetterSetter(this::nominalVoltageToString, null, this::setNominalVoltage));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("reactivePower", new GetterSetter(this::reactivePowerToString, null, this::setReactivePower));
-        map.put("rn", new GetterSetter(this::rnToString, null, this::setRn));
-        map.put("voltageAngle", new GetterSetter(this::voltageAngleToString, null, this::setVoltageAngle));
-        map.put("voltageMagnitude", new GetterSetter(this::voltageMagnitudeToString, null, this::setVoltageMagnitude));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        map.put("xn", new GetterSetter(this::xnToString, null, this::setXn));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

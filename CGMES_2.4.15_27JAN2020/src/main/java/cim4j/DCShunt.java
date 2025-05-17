@@ -50,6 +50,14 @@ public class DCShunt extends DCConductingEquipment {
         return capacitance != null ? capacitance.toString() : null;
     }
 
+    private static void setCapacitance(BaseClass _this_, String _value_) {
+        ((DCShunt) _this_).setCapacitance(_value_);
+    }
+
+    private static String capacitanceToString(BaseClass _this_) {
+        return ((DCShunt) _this_).capacitanceToString();
+    }
+
     /**
      * Rated DC device voltage. Converter configuration data used in power flow.
      */
@@ -71,6 +79,14 @@ public class DCShunt extends DCConductingEquipment {
         return ratedUdc != null ? ratedUdc.toString() : null;
     }
 
+    private static void setRatedUdc(BaseClass _this_, String _value_) {
+        ((DCShunt) _this_).setRatedUdc(_value_);
+    }
+
+    private static String ratedUdcToString(BaseClass _this_) {
+        return ((DCShunt) _this_).ratedUdcToString();
+    }
+
     /**
      * Resistance of the DC device.
      */
@@ -90,6 +106,14 @@ public class DCShunt extends DCConductingEquipment {
 
     public String resistanceToString() {
         return resistance != null ? resistance.toString() : null;
+    }
+
+    private static void setResistance(BaseClass _this_, String _value_) {
+        ((DCShunt) _this_).setResistance(_value_);
+    }
+
+    private static String resistanceToString(BaseClass _this_) {
+        return ((DCShunt) _this_).resistanceToString();
     }
 
     /**
@@ -133,16 +157,12 @@ public class DCShunt extends DCConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DCShunt", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DCShunt", attrName));
+        return "";
     }
 
     /**
@@ -153,16 +173,12 @@ public class DCShunt extends DCConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DCShunt", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DCShunt", attrName, objectValue));
         }
     }
 
@@ -174,16 +190,12 @@ public class DCShunt extends DCConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DCShunt", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DCShunt", attrName, stringValue));
         }
     }
 
@@ -307,30 +319,21 @@ public class DCShunt extends DCConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("capacitance", new AttrDetails("DCShunt.capacitance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("capacitance", new AttrDetails("DCShunt.capacitance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DCShunt::capacitanceToString, null, DCShunt::setCapacitance));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedUdc", new AttrDetails("DCShunt.ratedUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedUdc", new AttrDetails("DCShunt.ratedUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DCShunt::ratedUdcToString, null, DCShunt::setRatedUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("resistance", new AttrDetails("DCShunt.resistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("resistance", new AttrDetails("DCShunt.resistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DCShunt::resistanceToString, null, DCShunt::setResistance));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCShunt().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("capacitance", new GetterSetter(this::capacitanceToString, null, this::setCapacitance));
-        map.put("ratedUdc", new GetterSetter(this::ratedUdcToString, null, this::setRatedUdc));
-        map.put("resistance", new GetterSetter(this::resistanceToString, null, this::setResistance));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

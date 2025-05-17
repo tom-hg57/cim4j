@@ -54,6 +54,14 @@ public class PowerTransformer extends ConductingEquipment {
         return getStringFromSet(PowerTransformerEnd);
     }
 
+    private static void setPowerTransformerEnd(BaseClass _this_, BaseClass _object_) {
+        ((PowerTransformer) _this_).setPowerTransformerEnd(_object_);
+    }
+
+    private static String PowerTransformerEndToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).PowerTransformerEndToString();
+    }
+
     /**
      * The highest operating current (Ib in the IEC 60909-0) before short circuit (depends on network configuration and relevant reliability philosophy). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0.
      */
@@ -73,6 +81,14 @@ public class PowerTransformer extends ConductingEquipment {
 
     public String beforeShCircuitHighestOperatingCurrentToString() {
         return beforeShCircuitHighestOperatingCurrent != null ? beforeShCircuitHighestOperatingCurrent.toString() : null;
+    }
+
+    private static void setBeforeShCircuitHighestOperatingCurrent(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingCurrent(_value_);
+    }
+
+    private static String beforeShCircuitHighestOperatingCurrentToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).beforeShCircuitHighestOperatingCurrentToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class PowerTransformer extends ConductingEquipment {
         return beforeShCircuitHighestOperatingVoltage != null ? beforeShCircuitHighestOperatingVoltage.toString() : null;
     }
 
+    private static void setBeforeShCircuitHighestOperatingVoltage(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingVoltage(_value_);
+    }
+
+    private static String beforeShCircuitHighestOperatingVoltageToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).beforeShCircuitHighestOperatingVoltageToString();
+    }
+
     /**
      * The angle of power factor before short circuit (phib in the IEC 60909-0). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is the worst case power factor. Used to define operating conditions.
      */
@@ -115,6 +139,14 @@ public class PowerTransformer extends ConductingEquipment {
 
     public String beforeShortCircuitAnglePfToString() {
         return beforeShortCircuitAnglePf != null ? beforeShortCircuitAnglePf.toString() : null;
+    }
+
+    private static void setBeforeShortCircuitAnglePf(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setBeforeShortCircuitAnglePf(_value_);
+    }
+
+    private static String beforeShortCircuitAnglePfToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).beforeShortCircuitAnglePfToString();
     }
 
     /**
@@ -138,6 +170,14 @@ public class PowerTransformer extends ConductingEquipment {
         return highSideMinOperatingU != null ? highSideMinOperatingU.toString() : null;
     }
 
+    private static void setHighSideMinOperatingU(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setHighSideMinOperatingU(_value_);
+    }
+
+    private static String highSideMinOperatingUToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).highSideMinOperatingUToString();
+    }
+
     /**
      * Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909
      */
@@ -159,6 +199,14 @@ public class PowerTransformer extends ConductingEquipment {
         return isPartOfGeneratorUnit != null ? isPartOfGeneratorUnit.toString() : null;
     }
 
+    private static void setIsPartOfGeneratorUnit(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setIsPartOfGeneratorUnit(_value_);
+    }
+
+    private static String isPartOfGeneratorUnitToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).isPartOfGeneratorUnitToString();
+    }
+
     /**
      * It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909.
      */
@@ -178,6 +226,14 @@ public class PowerTransformer extends ConductingEquipment {
 
     public String operationalValuesConsideredToString() {
         return operationalValuesConsidered != null ? operationalValuesConsidered.toString() : null;
+    }
+
+    private static void setOperationalValuesConsidered(BaseClass _this_, String _value_) {
+        ((PowerTransformer) _this_).setOperationalValuesConsidered(_value_);
+    }
+
+    private static String operationalValuesConsideredToString(BaseClass _this_) {
+        return ((PowerTransformer) _this_).operationalValuesConsideredToString();
     }
 
     /**
@@ -221,16 +277,12 @@ public class PowerTransformer extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PowerTransformer", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerTransformer", attrName));
+        return "";
     }
 
     /**
@@ -241,16 +293,12 @@ public class PowerTransformer extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerTransformer", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerTransformer", attrName, objectValue));
         }
     }
 
@@ -262,16 +310,12 @@ public class PowerTransformer extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerTransformer", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerTransformer", attrName, stringValue));
         }
     }
 
@@ -395,54 +439,41 @@ public class PowerTransformer extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PowerTransformerEnd", new AttrDetails("PowerTransformer.PowerTransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PowerTransformerEnd", new AttrDetails("PowerTransformer.PowerTransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PowerTransformer::PowerTransformerEndToString, PowerTransformer::setPowerTransformerEnd, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("beforeShCircuitHighestOperatingCurrent", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingCurrent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("beforeShCircuitHighestOperatingCurrent", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingCurrent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::beforeShCircuitHighestOperatingCurrentToString, null, PowerTransformer::setBeforeShCircuitHighestOperatingCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("beforeShCircuitHighestOperatingVoltage", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("beforeShCircuitHighestOperatingVoltage", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::beforeShCircuitHighestOperatingVoltageToString, null, PowerTransformer::setBeforeShCircuitHighestOperatingVoltage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("beforeShortCircuitAnglePf", new AttrDetails("PowerTransformer.beforeShortCircuitAnglePf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("beforeShortCircuitAnglePf", new AttrDetails("PowerTransformer.beforeShortCircuitAnglePf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::beforeShortCircuitAnglePfToString, null, PowerTransformer::setBeforeShortCircuitAnglePf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("highSideMinOperatingU", new AttrDetails("PowerTransformer.highSideMinOperatingU", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("highSideMinOperatingU", new AttrDetails("PowerTransformer.highSideMinOperatingU", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::highSideMinOperatingUToString, null, PowerTransformer::setHighSideMinOperatingU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("isPartOfGeneratorUnit", new AttrDetails("PowerTransformer.isPartOfGeneratorUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("isPartOfGeneratorUnit", new AttrDetails("PowerTransformer.isPartOfGeneratorUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::isPartOfGeneratorUnitToString, null, PowerTransformer::setIsPartOfGeneratorUnit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("operationalValuesConsidered", new AttrDetails("PowerTransformer.operationalValuesConsidered", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("operationalValuesConsidered", new AttrDetails("PowerTransformer.operationalValuesConsidered", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::operationalValuesConsideredToString, null, PowerTransformer::setOperationalValuesConsidered));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformer().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerTransformerEnd", new GetterSetter(this::PowerTransformerEndToString, this::setPowerTransformerEnd, null));
-        map.put("beforeShCircuitHighestOperatingCurrent", new GetterSetter(this::beforeShCircuitHighestOperatingCurrentToString, null, this::setBeforeShCircuitHighestOperatingCurrent));
-        map.put("beforeShCircuitHighestOperatingVoltage", new GetterSetter(this::beforeShCircuitHighestOperatingVoltageToString, null, this::setBeforeShCircuitHighestOperatingVoltage));
-        map.put("beforeShortCircuitAnglePf", new GetterSetter(this::beforeShortCircuitAnglePfToString, null, this::setBeforeShortCircuitAnglePf));
-        map.put("highSideMinOperatingU", new GetterSetter(this::highSideMinOperatingUToString, null, this::setHighSideMinOperatingU));
-        map.put("isPartOfGeneratorUnit", new GetterSetter(this::isPartOfGeneratorUnitToString, null, this::setIsPartOfGeneratorUnit));
-        map.put("operationalValuesConsidered", new GetterSetter(this::operationalValuesConsideredToString, null, this::setOperationalValuesConsidered));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

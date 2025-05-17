@@ -50,6 +50,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return efd1 != null ? efd1.toString() : null;
     }
 
+    private static void setEfd1(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setEfd1(_value_);
+    }
+
+    private static String efd1ToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).efd1ToString();
+    }
+
     /**
      * Exciter voltage at which exciter saturation is defined (E).  Typical Value = 2.33.
      */
@@ -69,6 +77,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String efd2ToString() {
         return efd2 != null ? efd2.toString() : null;
+    }
+
+    private static void setEfd2(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setEfd2(_value_);
+    }
+
+    private static String efd2ToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).efd2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return ka != null ? ka.toString() : null;
     }
 
+    private static void setKa(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKa(_value_);
+    }
+
+    private static String kaToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).kaToString();
+    }
+
     /**
      * Regulator derivative gain (K).  Typical Value = 20.
      */
@@ -111,6 +135,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String kdToString() {
         return kd != null ? kd.toString() : null;
+    }
+
+    private static void setKd(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKd(_value_);
+    }
+
+    private static String kdToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).kdToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return ke != null ? ke.toString() : null;
     }
 
+    private static void setKe(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKe(_value_);
+    }
+
+    private static String keToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).keToString();
+    }
+
     /**
      * Excitation control system stabilizer gain (K).  Typical Value = 0.
      */
@@ -153,6 +193,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String kfToString() {
         return kf != null ? kf.toString() : null;
+    }
+
+    private static void setKf(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKf(_value_);
+    }
+
+    private static String kfToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).kfToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return ki != null ? ki.toString() : null;
     }
 
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).kiToString();
+    }
+
     /**
      * Regulator proportional gain (K).  Typical Value = 20.
      */
@@ -195,6 +251,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String kpToString() {
         return kp != null ? kp.toString() : null;
+    }
+
+    private static void setKp(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setKp(_value_);
+    }
+
+    private static String kpToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).kpToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return oelin != null ? oelin.toString() : null;
     }
 
+    private static void setOelin(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setOelin(_value_);
+    }
+
+    private static String oelinToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).oelinToString();
+    }
+
     /**
      * Exciter saturation function value at the corresponding exciter voltage, E (S[E]).  Typical Value = 0.08.
      */
@@ -237,6 +309,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String seefd1ToString() {
         return seefd1 != null ? seefd1.toString() : null;
+    }
+
+    private static void setSeefd1(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setSeefd1(_value_);
+    }
+
+    private static String seefd1ToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).seefd1ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return seefd2 != null ? seefd2.toString() : null;
     }
 
+    private static void setSeefd2(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setSeefd2(_value_);
+    }
+
+    private static String seefd2ToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).seefd2ToString();
+    }
+
     /**
      * Voltage regulator time constant (T).  Typical Value = 0.2.
      */
@@ -279,6 +367,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String taToString() {
         return ta != null ? ta.toString() : null;
+    }
+
+    private static void setTa(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setTa(_value_);
+    }
+
+    private static String taToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).taToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return td != null ? td.toString() : null;
     }
 
+    private static void setTd(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setTd(_value_);
+    }
+
+    private static String tdToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).tdToString();
+    }
+
     /**
      * Exciter time constant, integration rate associated with exciter control (T).  Typical Value = 0.8.
      */
@@ -321,6 +425,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String teToString() {
         return te != null ? te.toString() : null;
+    }
+
+    private static void setTe(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setTe(_value_);
+    }
+
+    private static String teToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).teToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return tf != null ? tf.toString() : null;
     }
 
+    private static void setTf(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setTf(_value_);
+    }
+
+    private static String tfToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).tfToString();
+    }
+
     /**
      * UEL input (UELin). true = HV gate false = add to error signal. Typical Value = true.
      */
@@ -363,6 +483,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String uelinToString() {
         return uelin != null ? uelin.toString() : null;
+    }
+
+    private static void setUelin(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setUelin(_value_);
+    }
+
+    private static String uelinToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).uelinToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return vemin != null ? vemin.toString() : null;
     }
 
+    private static void setVemin(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setVemin(_value_);
+    }
+
+    private static String veminToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).veminToString();
+    }
+
     /**
      * Maximum voltage regulator output (V).  Typical Value = 2.7.
      */
@@ -407,6 +543,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         return vrmax != null ? vrmax.toString() : null;
     }
 
+    private static void setVrmax(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setVrmax(_value_);
+    }
+
+    private static String vrmaxToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).vrmaxToString();
+    }
+
     /**
      * Minimum voltage regulator output (V).  Typical Value = -0.9.
      */
@@ -426,6 +570,14 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
 
     public String vrminToString() {
         return vrmin != null ? vrmin.toString() : null;
+    }
+
+    private static void setVrmin(BaseClass _this_, String _value_) {
+        ((ExcIEEEDC4B) _this_).setVrmin(_value_);
+    }
+
+    private static String vrminToString(BaseClass _this_) {
+        return ((ExcIEEEDC4B) _this_).vrminToString();
     }
 
     /**
@@ -469,16 +621,12 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcIEEEDC4B", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcIEEEDC4B", attrName));
+        return "";
     }
 
     /**
@@ -489,16 +637,12 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcIEEEDC4B", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcIEEEDC4B", attrName, objectValue));
         }
     }
 
@@ -510,16 +654,12 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcIEEEDC4B", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcIEEEDC4B", attrName, stringValue));
         }
     }
 
@@ -643,126 +783,101 @@ public class ExcIEEEDC4B extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efd1", new AttrDetails("ExcIEEEDC4B.efd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efd1", new AttrDetails("ExcIEEEDC4B.efd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::efd1ToString, null, ExcIEEEDC4B::setEfd1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efd2", new AttrDetails("ExcIEEEDC4B.efd2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efd2", new AttrDetails("ExcIEEEDC4B.efd2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::efd2ToString, null, ExcIEEEDC4B::setEfd2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ka", new AttrDetails("ExcIEEEDC4B.ka", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ka", new AttrDetails("ExcIEEEDC4B.ka", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::kaToString, null, ExcIEEEDC4B::setKa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kd", new AttrDetails("ExcIEEEDC4B.kd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kd", new AttrDetails("ExcIEEEDC4B.kd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::kdToString, null, ExcIEEEDC4B::setKd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ke", new AttrDetails("ExcIEEEDC4B.ke", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ke", new AttrDetails("ExcIEEEDC4B.ke", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::keToString, null, ExcIEEEDC4B::setKe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf", new AttrDetails("ExcIEEEDC4B.kf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kf", new AttrDetails("ExcIEEEDC4B.kf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::kfToString, null, ExcIEEEDC4B::setKf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("ExcIEEEDC4B.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ki", new AttrDetails("ExcIEEEDC4B.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::kiToString, null, ExcIEEEDC4B::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("ExcIEEEDC4B.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kp", new AttrDetails("ExcIEEEDC4B.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::kpToString, null, ExcIEEEDC4B::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("oelin", new AttrDetails("ExcIEEEDC4B.oelin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("oelin", new AttrDetails("ExcIEEEDC4B.oelin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::oelinToString, null, ExcIEEEDC4B::setOelin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("seefd1", new AttrDetails("ExcIEEEDC4B.seefd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("seefd1", new AttrDetails("ExcIEEEDC4B.seefd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::seefd1ToString, null, ExcIEEEDC4B::setSeefd1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("seefd2", new AttrDetails("ExcIEEEDC4B.seefd2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("seefd2", new AttrDetails("ExcIEEEDC4B.seefd2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::seefd2ToString, null, ExcIEEEDC4B::setSeefd2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta", new AttrDetails("ExcIEEEDC4B.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ta", new AttrDetails("ExcIEEEDC4B.ta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::taToString, null, ExcIEEEDC4B::setTa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td", new AttrDetails("ExcIEEEDC4B.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td", new AttrDetails("ExcIEEEDC4B.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::tdToString, null, ExcIEEEDC4B::setTd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcIEEEDC4B.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcIEEEDC4B.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::teToString, null, ExcIEEEDC4B::setTe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf", new AttrDetails("ExcIEEEDC4B.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tf", new AttrDetails("ExcIEEEDC4B.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::tfToString, null, ExcIEEEDC4B::setTf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("uelin", new AttrDetails("ExcIEEEDC4B.uelin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("uelin", new AttrDetails("ExcIEEEDC4B.uelin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::uelinToString, null, ExcIEEEDC4B::setUelin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vemin", new AttrDetails("ExcIEEEDC4B.vemin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vemin", new AttrDetails("ExcIEEEDC4B.vemin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::veminToString, null, ExcIEEEDC4B::setVemin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcIEEEDC4B.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcIEEEDC4B.vrmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::vrmaxToString, null, ExcIEEEDC4B::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcIEEEDC4B.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcIEEEDC4B.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcIEEEDC4B::vrminToString, null, ExcIEEEDC4B::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcIEEEDC4B().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("efd1", new GetterSetter(this::efd1ToString, null, this::setEfd1));
-        map.put("efd2", new GetterSetter(this::efd2ToString, null, this::setEfd2));
-        map.put("ka", new GetterSetter(this::kaToString, null, this::setKa));
-        map.put("kd", new GetterSetter(this::kdToString, null, this::setKd));
-        map.put("ke", new GetterSetter(this::keToString, null, this::setKe));
-        map.put("kf", new GetterSetter(this::kfToString, null, this::setKf));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("oelin", new GetterSetter(this::oelinToString, null, this::setOelin));
-        map.put("seefd1", new GetterSetter(this::seefd1ToString, null, this::setSeefd1));
-        map.put("seefd2", new GetterSetter(this::seefd2ToString, null, this::setSeefd2));
-        map.put("ta", new GetterSetter(this::taToString, null, this::setTa));
-        map.put("td", new GetterSetter(this::tdToString, null, this::setTd));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        map.put("tf", new GetterSetter(this::tfToString, null, this::setTf));
-        map.put("uelin", new GetterSetter(this::uelinToString, null, this::setUelin));
-        map.put("vemin", new GetterSetter(this::veminToString, null, this::setVemin));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

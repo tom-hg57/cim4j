@@ -52,6 +52,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return PowerTransformer != null ? PowerTransformer.getRdfid() : null;
     }
 
+    private static void setPowerTransformer(BaseClass _this_, BaseClass _object_) {
+        ((PowerTransformerEnd) _this_).setPowerTransformer(_object_);
+    }
+
+    private static String PowerTransformerToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).PowerTransformerToString();
+    }
+
     /**
      * Magnetizing branch susceptance (B mag).  The value can be positive or negative.
      */
@@ -71,6 +79,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String bToString() {
         return b != null ? b.toString() : null;
+    }
+
+    private static void setB(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).bToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return b0 != null ? b0.toString() : null;
     }
 
+    private static void setB0(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setB0(_value_);
+    }
+
+    private static String b0ToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).b0ToString();
+    }
+
     /**
      * Kind of connection.
      */
@@ -109,6 +133,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String connectionKindToString() {
         return connectionKind;
+    }
+
+    private static void setConnectionKind(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setConnectionKind(_value_);
+    }
+
+    private static String connectionKindToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).connectionKindToString();
     }
 
     /**
@@ -132,6 +164,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return g != null ? g.toString() : null;
     }
 
+    private static void setG(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setG(_value_);
+    }
+
+    private static String gToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).gToString();
+    }
+
     /**
      * Zero sequence magnetizing branch conductance (star-model).
      */
@@ -151,6 +191,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String g0ToString() {
         return g0 != null ? g0.toString() : null;
+    }
+
+    private static void setG0(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setG0(_value_);
+    }
+
+    private static String g0ToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).g0ToString();
     }
 
     /**
@@ -174,6 +222,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return phaseAngleClock != null ? phaseAngleClock.toString() : null;
     }
 
+    private static void setPhaseAngleClock(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setPhaseAngleClock(_value_);
+    }
+
+    private static String phaseAngleClockToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).phaseAngleClockToString();
+    }
+
     /**
      * Resistance (star-model) of the transformer end. The attribute shall be equal to or greater than zero for non-equivalent transformers.
      */
@@ -193,6 +249,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).rToString();
     }
 
     /**
@@ -216,6 +280,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return r0 != null ? r0.toString() : null;
     }
 
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).r0ToString();
+    }
+
     /**
      * Normal apparent power rating. The attribute shall be a positive value. For a two-winding transformer the values for the high and low voltage sides shall be identical.
      */
@@ -235,6 +307,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String ratedSToString() {
         return ratedS != null ? ratedS.toString() : null;
+    }
+
+    private static void setRatedS(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setRatedS(_value_);
+    }
+
+    private static String ratedSToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).ratedSToString();
     }
 
     /**
@@ -258,6 +338,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return ratedU != null ? ratedU.toString() : null;
     }
 
+    private static void setRatedU(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setRatedU(_value_);
+    }
+
+    private static String ratedUToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).ratedUToString();
+    }
+
     /**
      * Positive sequence series reactance (star-model) of the transformer end.
      */
@@ -279,6 +367,14 @@ public class PowerTransformerEnd extends TransformerEnd {
         return x != null ? x.toString() : null;
     }
 
+    private static void setX(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).xToString();
+    }
+
     /**
      * Zero sequence series reactance of the transformer end.
      */
@@ -298,6 +394,14 @@ public class PowerTransformerEnd extends TransformerEnd {
 
     public String x0ToString() {
         return x0 != null ? x0.toString() : null;
+    }
+
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((PowerTransformerEnd) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((PowerTransformerEnd) _this_).x0ToString();
     }
 
     /**
@@ -341,16 +445,12 @@ public class PowerTransformerEnd extends TransformerEnd {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PowerTransformerEnd", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerTransformerEnd", attrName));
+        return "";
     }
 
     /**
@@ -361,16 +461,12 @@ public class PowerTransformerEnd extends TransformerEnd {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerTransformerEnd", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerTransformerEnd", attrName, objectValue));
         }
     }
 
@@ -382,16 +478,12 @@ public class PowerTransformerEnd extends TransformerEnd {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerTransformerEnd", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerTransformerEnd", attrName, stringValue));
         }
     }
 
@@ -515,90 +607,71 @@ public class PowerTransformerEnd extends TransformerEnd {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PowerTransformer", new AttrDetails("PowerTransformerEnd.PowerTransformer", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerTransformer", new AttrDetails("PowerTransformerEnd.PowerTransformer", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerTransformerEnd::PowerTransformerToString, PowerTransformerEnd::setPowerTransformer, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b", new AttrDetails("PowerTransformerEnd.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("b", new AttrDetails("PowerTransformerEnd.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::bToString, null, PowerTransformerEnd::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("b0", new AttrDetails("PowerTransformerEnd.b0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("b0", new AttrDetails("PowerTransformerEnd.b0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::b0ToString, null, PowerTransformerEnd::setB0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("connectionKind", new AttrDetails("PowerTransformerEnd.connectionKind", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("connectionKind", new AttrDetails("PowerTransformerEnd.connectionKind", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, PowerTransformerEnd::connectionKindToString, null, PowerTransformerEnd::setConnectionKind));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g", new AttrDetails("PowerTransformerEnd.g", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("g", new AttrDetails("PowerTransformerEnd.g", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::gToString, null, PowerTransformerEnd::setG));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("g0", new AttrDetails("PowerTransformerEnd.g0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("g0", new AttrDetails("PowerTransformerEnd.g0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::g0ToString, null, PowerTransformerEnd::setG0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("phaseAngleClock", new AttrDetails("PowerTransformerEnd.phaseAngleClock", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("phaseAngleClock", new AttrDetails("PowerTransformerEnd.phaseAngleClock", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::phaseAngleClockToString, null, PowerTransformerEnd::setPhaseAngleClock));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("PowerTransformerEnd.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r", new AttrDetails("PowerTransformerEnd.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::rToString, null, PowerTransformerEnd::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("r0", new AttrDetails("PowerTransformerEnd.r0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r0", new AttrDetails("PowerTransformerEnd.r0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::r0ToString, null, PowerTransformerEnd::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedS", new AttrDetails("PowerTransformerEnd.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedS", new AttrDetails("PowerTransformerEnd.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::ratedSToString, null, PowerTransformerEnd::setRatedS));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedU", new AttrDetails("PowerTransformerEnd.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedU", new AttrDetails("PowerTransformerEnd.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::ratedUToString, null, PowerTransformerEnd::setRatedU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("PowerTransformerEnd.x", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x", new AttrDetails("PowerTransformerEnd.x", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::xToString, null, PowerTransformerEnd::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("x0", new AttrDetails("PowerTransformerEnd.x0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("x0", new AttrDetails("PowerTransformerEnd.x0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformerEnd::x0ToString, null, PowerTransformerEnd::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformerEnd().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerTransformer", new GetterSetter(this::PowerTransformerToString, this::setPowerTransformer, null));
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("b0", new GetterSetter(this::b0ToString, null, this::setB0));
-        map.put("connectionKind", new GetterSetter(this::connectionKindToString, null, this::setConnectionKind));
-        map.put("g", new GetterSetter(this::gToString, null, this::setG));
-        map.put("g0", new GetterSetter(this::g0ToString, null, this::setG0));
-        map.put("phaseAngleClock", new GetterSetter(this::phaseAngleClockToString, null, this::setPhaseAngleClock));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("ratedS", new GetterSetter(this::ratedSToString, null, this::setRatedS));
-        map.put("ratedU", new GetterSetter(this::ratedUToString, null, this::setRatedU));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

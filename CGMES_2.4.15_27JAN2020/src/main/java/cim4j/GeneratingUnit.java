@@ -54,6 +54,14 @@ public class GeneratingUnit extends Equipment {
         return getStringFromSet(ControlAreaGeneratingUnit);
     }
 
+    private static void setControlAreaGeneratingUnit(BaseClass _this_, BaseClass _object_) {
+        ((GeneratingUnit) _this_).setControlAreaGeneratingUnit(_object_);
+    }
+
+    private static String ControlAreaGeneratingUnitToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).ControlAreaGeneratingUnitToString();
+    }
+
     /**
      * A generating unit may have a gross active power to net active power curve, describing the losses and auxiliary power requirements of the unit.
      *
@@ -77,6 +85,14 @@ public class GeneratingUnit extends Equipment {
 
     public String GrossToNetActivePowerCurvesToString() {
         return getStringFromSet(GrossToNetActivePowerCurves);
+    }
+
+    private static void setGrossToNetActivePowerCurves(BaseClass _this_, BaseClass _object_) {
+        ((GeneratingUnit) _this_).setGrossToNetActivePowerCurves(_object_);
+    }
+
+    private static String GrossToNetActivePowerCurvesToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).GrossToNetActivePowerCurvesToString();
     }
 
     /**
@@ -104,6 +120,14 @@ public class GeneratingUnit extends Equipment {
         return getStringFromSet(RotatingMachine);
     }
 
+    private static void setRotatingMachine(BaseClass _this_, BaseClass _object_) {
+        ((GeneratingUnit) _this_).setRotatingMachine(_object_);
+    }
+
+    private static String RotatingMachineToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).RotatingMachineToString();
+    }
+
     /**
      * The source of controls for a generating unit.
      */
@@ -119,6 +143,14 @@ public class GeneratingUnit extends Equipment {
 
     public String genControlSourceToString() {
         return genControlSource;
+    }
+
+    private static void setGenControlSource(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setGenControlSource(_value_);
+    }
+
+    private static String genControlSourceToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).genControlSourceToString();
     }
 
     /**
@@ -142,6 +174,14 @@ public class GeneratingUnit extends Equipment {
         return governorSCD != null ? governorSCD.toString() : null;
     }
 
+    private static void setGovernorSCD(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setGovernorSCD(_value_);
+    }
+
+    private static String governorSCDToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).governorSCDToString();
+    }
+
     /**
      * Default initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration.
      */
@@ -161,6 +201,14 @@ public class GeneratingUnit extends Equipment {
 
     public String initialPToString() {
         return initialP != null ? initialP.toString() : null;
+    }
+
+    private static void setInitialP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setInitialP(_value_);
+    }
+
+    private static String initialPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).initialPToString();
     }
 
     /**
@@ -184,6 +232,14 @@ public class GeneratingUnit extends Equipment {
         return longPF != null ? longPF.toString() : null;
     }
 
+    private static void setLongPF(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setLongPF(_value_);
+    }
+
+    private static String longPFToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).longPFToString();
+    }
+
     /**
      * This is the maximum operating active power limit the dispatcher can enter for this unit.
      */
@@ -203,6 +259,14 @@ public class GeneratingUnit extends Equipment {
 
     public String maxOperatingPToString() {
         return maxOperatingP != null ? maxOperatingP.toString() : null;
+    }
+
+    private static void setMaxOperatingP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setMaxOperatingP(_value_);
+    }
+
+    private static String maxOperatingPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).maxOperatingPToString();
     }
 
     /**
@@ -226,6 +290,14 @@ public class GeneratingUnit extends Equipment {
         return maximumAllowableSpinningReserve != null ? maximumAllowableSpinningReserve.toString() : null;
     }
 
+    private static void setMaximumAllowableSpinningReserve(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setMaximumAllowableSpinningReserve(_value_);
+    }
+
+    private static String maximumAllowableSpinningReserveToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).maximumAllowableSpinningReserveToString();
+    }
+
     /**
      * This is the minimum operating active power limit the dispatcher can enter for this unit.
      */
@@ -245,6 +317,14 @@ public class GeneratingUnit extends Equipment {
 
     public String minOperatingPToString() {
         return minOperatingP != null ? minOperatingP.toString() : null;
+    }
+
+    private static void setMinOperatingP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setMinOperatingP(_value_);
+    }
+
+    private static String minOperatingPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).minOperatingPToString();
     }
 
     /**
@@ -268,6 +348,14 @@ public class GeneratingUnit extends Equipment {
         return nominalP != null ? nominalP.toString() : null;
     }
 
+    private static void setNominalP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setNominalP(_value_);
+    }
+
+    private static String nominalPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).nominalPToString();
+    }
+
     /**
      * Generating unit economic participation factor.
      */
@@ -287,6 +375,14 @@ public class GeneratingUnit extends Equipment {
 
     public String normalPFToString() {
         return normalPF != null ? normalPF.toString() : null;
+    }
+
+    private static void setNormalPF(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setNormalPF(_value_);
+    }
+
+    private static String normalPFToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).normalPFToString();
     }
 
     /**
@@ -310,6 +406,14 @@ public class GeneratingUnit extends Equipment {
         return ratedGrossMaxP != null ? ratedGrossMaxP.toString() : null;
     }
 
+    private static void setRatedGrossMaxP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setRatedGrossMaxP(_value_);
+    }
+
+    private static String ratedGrossMaxPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).ratedGrossMaxPToString();
+    }
+
     /**
      * The gross rated minimum generation level which the unit can safely operate at while delivering power to the transmission grid.
      */
@@ -329,6 +433,14 @@ public class GeneratingUnit extends Equipment {
 
     public String ratedGrossMinPToString() {
         return ratedGrossMinP != null ? ratedGrossMinP.toString() : null;
+    }
+
+    private static void setRatedGrossMinP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setRatedGrossMinP(_value_);
+    }
+
+    private static String ratedGrossMinPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).ratedGrossMinPToString();
     }
 
     /**
@@ -352,6 +464,14 @@ public class GeneratingUnit extends Equipment {
         return ratedNetMaxP != null ? ratedNetMaxP.toString() : null;
     }
 
+    private static void setRatedNetMaxP(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setRatedNetMaxP(_value_);
+    }
+
+    private static String ratedNetMaxPToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).ratedNetMaxPToString();
+    }
+
     /**
      * Generating unit short term economic participation factor.
      */
@@ -371,6 +491,14 @@ public class GeneratingUnit extends Equipment {
 
     public String shortPFToString() {
         return shortPF != null ? shortPF.toString() : null;
+    }
+
+    private static void setShortPF(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setShortPF(_value_);
+    }
+
+    private static String shortPFToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).shortPFToString();
     }
 
     /**
@@ -394,6 +522,14 @@ public class GeneratingUnit extends Equipment {
         return startupCost != null ? startupCost.toString() : null;
     }
 
+    private static void setStartupCost(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setStartupCost(_value_);
+    }
+
+    private static String startupCostToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).startupCostToString();
+    }
+
     /**
      * The efficiency of the unit in converting the fuel into electrical energy.
      */
@@ -415,6 +551,14 @@ public class GeneratingUnit extends Equipment {
         return totalEfficiency != null ? totalEfficiency.toString() : null;
     }
 
+    private static void setTotalEfficiency(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setTotalEfficiency(_value_);
+    }
+
+    private static String totalEfficiencyToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).totalEfficiencyToString();
+    }
+
     /**
      * The variable cost component of production per unit of ActivePower.
      */
@@ -434,6 +578,14 @@ public class GeneratingUnit extends Equipment {
 
     public String variableCostToString() {
         return variableCost != null ? variableCost.toString() : null;
+    }
+
+    private static void setVariableCost(BaseClass _this_, String _value_) {
+        ((GeneratingUnit) _this_).setVariableCost(_value_);
+    }
+
+    private static String variableCostToString(BaseClass _this_) {
+        return ((GeneratingUnit) _this_).variableCostToString();
     }
 
     /**
@@ -477,16 +629,12 @@ public class GeneratingUnit extends Equipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GeneratingUnit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GeneratingUnit", attrName));
+        return "";
     }
 
     /**
@@ -497,16 +645,12 @@ public class GeneratingUnit extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GeneratingUnit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GeneratingUnit", attrName, objectValue));
         }
     }
 
@@ -518,16 +662,12 @@ public class GeneratingUnit extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GeneratingUnit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GeneratingUnit", attrName, stringValue));
         }
     }
 
@@ -651,126 +791,101 @@ public class GeneratingUnit extends Equipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ControlAreaGeneratingUnit", new AttrDetails("GeneratingUnit.ControlAreaGeneratingUnit", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ControlAreaGeneratingUnit", new AttrDetails("GeneratingUnit.ControlAreaGeneratingUnit", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GeneratingUnit::ControlAreaGeneratingUnitToString, GeneratingUnit::setControlAreaGeneratingUnit, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("GrossToNetActivePowerCurves", new AttrDetails("GeneratingUnit.GrossToNetActivePowerCurves", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("GrossToNetActivePowerCurves", new AttrDetails("GeneratingUnit.GrossToNetActivePowerCurves", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GeneratingUnit::GrossToNetActivePowerCurvesToString, GeneratingUnit::setGrossToNetActivePowerCurves, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RotatingMachine", new AttrDetails("GeneratingUnit.RotatingMachine", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RotatingMachine", new AttrDetails("GeneratingUnit.RotatingMachine", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GeneratingUnit::RotatingMachineToString, GeneratingUnit::setRotatingMachine, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("genControlSource", new AttrDetails("GeneratingUnit.genControlSource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("genControlSource", new AttrDetails("GeneratingUnit.genControlSource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, GeneratingUnit::genControlSourceToString, null, GeneratingUnit::setGenControlSource));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("governorSCD", new AttrDetails("GeneratingUnit.governorSCD", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("governorSCD", new AttrDetails("GeneratingUnit.governorSCD", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::governorSCDToString, null, GeneratingUnit::setGovernorSCD));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("initialP", new AttrDetails("GeneratingUnit.initialP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("initialP", new AttrDetails("GeneratingUnit.initialP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::initialPToString, null, GeneratingUnit::setInitialP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("longPF", new AttrDetails("GeneratingUnit.longPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("longPF", new AttrDetails("GeneratingUnit.longPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::longPFToString, null, GeneratingUnit::setLongPF));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxOperatingP", new AttrDetails("GeneratingUnit.maxOperatingP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxOperatingP", new AttrDetails("GeneratingUnit.maxOperatingP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::maxOperatingPToString, null, GeneratingUnit::setMaxOperatingP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maximumAllowableSpinningReserve", new AttrDetails("GeneratingUnit.maximumAllowableSpinningReserve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maximumAllowableSpinningReserve", new AttrDetails("GeneratingUnit.maximumAllowableSpinningReserve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::maximumAllowableSpinningReserveToString, null, GeneratingUnit::setMaximumAllowableSpinningReserve));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minOperatingP", new AttrDetails("GeneratingUnit.minOperatingP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minOperatingP", new AttrDetails("GeneratingUnit.minOperatingP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::minOperatingPToString, null, GeneratingUnit::setMinOperatingP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("nominalP", new AttrDetails("GeneratingUnit.nominalP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("nominalP", new AttrDetails("GeneratingUnit.nominalP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::nominalPToString, null, GeneratingUnit::setNominalP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("normalPF", new AttrDetails("GeneratingUnit.normalPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("normalPF", new AttrDetails("GeneratingUnit.normalPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::normalPFToString, null, GeneratingUnit::setNormalPF));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedGrossMaxP", new AttrDetails("GeneratingUnit.ratedGrossMaxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedGrossMaxP", new AttrDetails("GeneratingUnit.ratedGrossMaxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::ratedGrossMaxPToString, null, GeneratingUnit::setRatedGrossMaxP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedGrossMinP", new AttrDetails("GeneratingUnit.ratedGrossMinP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedGrossMinP", new AttrDetails("GeneratingUnit.ratedGrossMinP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::ratedGrossMinPToString, null, GeneratingUnit::setRatedGrossMinP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedNetMaxP", new AttrDetails("GeneratingUnit.ratedNetMaxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedNetMaxP", new AttrDetails("GeneratingUnit.ratedNetMaxP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::ratedNetMaxPToString, null, GeneratingUnit::setRatedNetMaxP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("shortPF", new AttrDetails("GeneratingUnit.shortPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("shortPF", new AttrDetails("GeneratingUnit.shortPF", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::shortPFToString, null, GeneratingUnit::setShortPF));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("startupCost", new AttrDetails("GeneratingUnit.startupCost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("startupCost", new AttrDetails("GeneratingUnit.startupCost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::startupCostToString, null, GeneratingUnit::setStartupCost));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("totalEfficiency", new AttrDetails("GeneratingUnit.totalEfficiency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("totalEfficiency", new AttrDetails("GeneratingUnit.totalEfficiency", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::totalEfficiencyToString, null, GeneratingUnit::setTotalEfficiency));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("variableCost", new AttrDetails("GeneratingUnit.variableCost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("variableCost", new AttrDetails("GeneratingUnit.variableCost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::variableCostToString, null, GeneratingUnit::setVariableCost));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GeneratingUnit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ControlAreaGeneratingUnit", new GetterSetter(this::ControlAreaGeneratingUnitToString, this::setControlAreaGeneratingUnit, null));
-        map.put("GrossToNetActivePowerCurves", new GetterSetter(this::GrossToNetActivePowerCurvesToString, this::setGrossToNetActivePowerCurves, null));
-        map.put("RotatingMachine", new GetterSetter(this::RotatingMachineToString, this::setRotatingMachine, null));
-        map.put("genControlSource", new GetterSetter(this::genControlSourceToString, null, this::setGenControlSource));
-        map.put("governorSCD", new GetterSetter(this::governorSCDToString, null, this::setGovernorSCD));
-        map.put("initialP", new GetterSetter(this::initialPToString, null, this::setInitialP));
-        map.put("longPF", new GetterSetter(this::longPFToString, null, this::setLongPF));
-        map.put("maxOperatingP", new GetterSetter(this::maxOperatingPToString, null, this::setMaxOperatingP));
-        map.put("maximumAllowableSpinningReserve", new GetterSetter(this::maximumAllowableSpinningReserveToString, null, this::setMaximumAllowableSpinningReserve));
-        map.put("minOperatingP", new GetterSetter(this::minOperatingPToString, null, this::setMinOperatingP));
-        map.put("nominalP", new GetterSetter(this::nominalPToString, null, this::setNominalP));
-        map.put("normalPF", new GetterSetter(this::normalPFToString, null, this::setNormalPF));
-        map.put("ratedGrossMaxP", new GetterSetter(this::ratedGrossMaxPToString, null, this::setRatedGrossMaxP));
-        map.put("ratedGrossMinP", new GetterSetter(this::ratedGrossMinPToString, null, this::setRatedGrossMinP));
-        map.put("ratedNetMaxP", new GetterSetter(this::ratedNetMaxPToString, null, this::setRatedNetMaxP));
-        map.put("shortPF", new GetterSetter(this::shortPFToString, null, this::setShortPF));
-        map.put("startupCost", new GetterSetter(this::startupCostToString, null, this::setStartupCost));
-        map.put("totalEfficiency", new GetterSetter(this::totalEfficiencyToString, null, this::setTotalEfficiency));
-        map.put("variableCost", new GetterSetter(this::variableCostToString, null, this::setVariableCost));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

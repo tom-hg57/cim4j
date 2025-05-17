@@ -50,6 +50,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return efdbas != null ? efdbas.toString() : null;
     }
 
+    private static void setEfdbas(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setEfdbas(_value_);
+    }
+
+    private static String efdbasToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).efdbasToString();
+    }
+
     /**
      * Limiter (Iefmax).  Typical Value = 1.
      */
@@ -69,6 +77,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String iefmaxToString() {
         return iefmax != null ? iefmax.toString() : null;
+    }
+
+    private static void setIefmax(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setIefmax(_value_);
+    }
+
+    private static String iefmaxToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).iefmaxToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return iefmax2 != null ? iefmax2.toString() : null;
     }
 
+    private static void setIefmax2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setIefmax2(_value_);
+    }
+
+    private static String iefmax2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).iefmax2ToString();
+    }
+
     /**
      * Limiter (Iefmin).  Typical Value = 1.
      */
@@ -111,6 +135,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String iefminToString() {
         return iefmin != null ? iefmin.toString() : null;
+    }
+
+    private static void setIefmin(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setIefmin(_value_);
+    }
+
+    private static String iefminToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).iefminToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return k1 != null ? k1.toString() : null;
     }
 
+    private static void setK1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setK1(_value_);
+    }
+
+    private static String k1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).k1ToString();
+    }
+
     /**
      * Voltage regulator input limit (K1ec).  Typical Value = 2.
      */
@@ -153,6 +193,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String k1ecToString() {
         return k1ec != null ? k1ec.toString() : null;
+    }
+
+    private static void setK1ec(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setK1ec(_value_);
+    }
+
+    private static String k1ecToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).k1ecToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return k2 != null ? k2.toString() : null;
     }
 
+    private static void setK2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setK2(_value_);
+    }
+
+    private static String k2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).k2ToString();
+    }
+
     /**
      * Gain (K3).  Typical Value = 0.1.
      */
@@ -195,6 +251,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String k3ToString() {
         return k3 != null ? k3.toString() : null;
+    }
+
+    private static void setK3(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setK3(_value_);
+    }
+
+    private static String k3ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).k3ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return k4 != null ? k4.toString() : null;
     }
 
+    private static void setK4(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setK4(_value_);
+    }
+
+    private static String k4ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).k4ToString();
+    }
+
     /**
      * Voltage controller derivative gain (Kd1).  Typical Value = 34.5.
      */
@@ -237,6 +309,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String kd1ToString() {
         return kd1 != null ? kd1.toString() : null;
+    }
+
+    private static void setKd1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setKd1(_value_);
+    }
+
+    private static String kd1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).kd1ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return ke2 != null ? ke2.toString() : null;
     }
 
+    private static void setKe2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setKe2(_value_);
+    }
+
+    private static String ke2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ke2ToString();
+    }
+
     /**
      * Gain (Ketb).  Typical Value = 0.06.
      */
@@ -279,6 +367,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String ketbToString() {
         return ketb != null ? ketb.toString() : null;
+    }
+
+    private static void setKetb(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setKetb(_value_);
+    }
+
+    private static String ketbToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ketbToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return pid1max != null ? pid1max.toString() : null;
     }
 
+    private static void setPid1max(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setPid1max(_value_);
+    }
+
+    private static String pid1maxToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).pid1maxToString();
+    }
+
     /**
      * Exciter saturation function value at the corresponding exciter voltage, Ve1, back of commutating reactance (Se[Ve1]).  Typical Value = 0.
      */
@@ -321,6 +425,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String seve1ToString() {
         return seve1 != null ? seve1.toString() : null;
+    }
+
+    private static void setSeve1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setSeve1(_value_);
+    }
+
+    private static String seve1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).seve1ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return seve2 != null ? seve2.toString() : null;
     }
 
+    private static void setSeve2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setSeve2(_value_);
+    }
+
+    private static String seve2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).seve2ToString();
+    }
+
     /**
      * Voltage controller derivative washout time constant (Tb1).  Typical Value = 12.45.
      */
@@ -363,6 +483,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String tb1ToString() {
         return tb1 != null ? tb1.toString() : null;
+    }
+
+    private static void setTb1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTb1(_value_);
+    }
+
+    private static String tb1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).tb1ToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return te != null ? te.toString() : null;
     }
 
+    private static void setTe(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTe(_value_);
+    }
+
+    private static String teToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).teToString();
+    }
+
     /**
      * Time Constant (Te2).  Typical Value = 1.
      */
@@ -405,6 +541,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String te2ToString() {
         return te2 != null ? te2.toString() : null;
+    }
+
+    private static void setTe2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTe2(_value_);
+    }
+
+    private static String te2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).te2ToString();
     }
 
     /**
@@ -428,6 +572,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return ti1 != null ? ti1.toString() : null;
     }
 
+    private static void setTi1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTi1(_value_);
+    }
+
+    private static String ti1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ti1ToString();
+    }
+
     /**
      * Time constant (Ti3).  Typical Value = 3.
      */
@@ -447,6 +599,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String ti3ToString() {
         return ti3 != null ? ti3.toString() : null;
+    }
+
+    private static void setTi3(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTi3(_value_);
+    }
+
+    private static String ti3ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ti3ToString();
     }
 
     /**
@@ -470,6 +630,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return ti4 != null ? ti4.toString() : null;
     }
 
+    private static void setTi4(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTi4(_value_);
+    }
+
+    private static String ti4ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ti4ToString();
+    }
+
     /**
      * Time constant (Tr4).  Typical Value = 1.
      */
@@ -489,6 +657,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String tr4ToString() {
         return tr4 != null ? tr4.toString() : null;
+    }
+
+    private static void setTr4(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setTr4(_value_);
+    }
+
+    private static String tr4ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).tr4ToString();
     }
 
     /**
@@ -512,6 +688,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return upmax != null ? upmax.toString() : null;
     }
 
+    private static void setUpmax(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setUpmax(_value_);
+    }
+
+    private static String upmaxToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).upmaxToString();
+    }
+
     /**
      * Limiter (Upmin).  Typical Value = 0.
      */
@@ -531,6 +715,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String upminToString() {
         return upmin != null ? upmin.toString() : null;
+    }
+
+    private static void setUpmin(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setUpmin(_value_);
+    }
+
+    private static String upminToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).upminToString();
     }
 
     /**
@@ -554,6 +746,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return ve1 != null ? ve1.toString() : null;
     }
 
+    private static void setVe1(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setVe1(_value_);
+    }
+
+    private static String ve1ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ve1ToString();
+    }
+
     /**
      * Exciter alternator output voltages back of commutating reactance at which saturation is defined (Ve2).  Typical Value = 0.
      */
@@ -575,6 +775,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         return ve2 != null ? ve2.toString() : null;
     }
 
+    private static void setVe2(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setVe2(_value_);
+    }
+
+    private static String ve2ToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).ve2ToString();
+    }
+
     /**
      * Excitation transformer effective reactance (Xp).  Typical Value = 1.
      */
@@ -594,6 +802,14 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
 
     public String xpToString() {
         return xp != null ? xp.toString() : null;
+    }
+
+    private static void setXp(BaseClass _this_, String _value_) {
+        ((ExcELIN2) _this_).setXp(_value_);
+    }
+
+    private static String xpToString(BaseClass _this_) {
+        return ((ExcELIN2) _this_).xpToString();
     }
 
     /**
@@ -637,16 +853,12 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcELIN2", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcELIN2", attrName));
+        return "";
     }
 
     /**
@@ -657,16 +869,12 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcELIN2", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcELIN2", attrName, objectValue));
         }
     }
 
@@ -678,16 +886,12 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcELIN2", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcELIN2", attrName, stringValue));
         }
     }
 
@@ -811,174 +1015,141 @@ public class ExcELIN2 extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdbas", new AttrDetails("ExcELIN2.efdbas", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("efdbas", new AttrDetails("ExcELIN2.efdbas", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::efdbasToString, null, ExcELIN2::setEfdbas));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iefmax", new AttrDetails("ExcELIN2.iefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iefmax", new AttrDetails("ExcELIN2.iefmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::iefmaxToString, null, ExcELIN2::setIefmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iefmax2", new AttrDetails("ExcELIN2.iefmax2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iefmax2", new AttrDetails("ExcELIN2.iefmax2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::iefmax2ToString, null, ExcELIN2::setIefmax2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iefmin", new AttrDetails("ExcELIN2.iefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iefmin", new AttrDetails("ExcELIN2.iefmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::iefminToString, null, ExcELIN2::setIefmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k1", new AttrDetails("ExcELIN2.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k1", new AttrDetails("ExcELIN2.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::k1ToString, null, ExcELIN2::setK1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k1ec", new AttrDetails("ExcELIN2.k1ec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k1ec", new AttrDetails("ExcELIN2.k1ec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::k1ecToString, null, ExcELIN2::setK1ec));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k2", new AttrDetails("ExcELIN2.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k2", new AttrDetails("ExcELIN2.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::k2ToString, null, ExcELIN2::setK2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k3", new AttrDetails("ExcELIN2.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k3", new AttrDetails("ExcELIN2.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::k3ToString, null, ExcELIN2::setK3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k4", new AttrDetails("ExcELIN2.k4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k4", new AttrDetails("ExcELIN2.k4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::k4ToString, null, ExcELIN2::setK4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kd1", new AttrDetails("ExcELIN2.kd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kd1", new AttrDetails("ExcELIN2.kd1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::kd1ToString, null, ExcELIN2::setKd1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ke2", new AttrDetails("ExcELIN2.ke2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ke2", new AttrDetails("ExcELIN2.ke2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ke2ToString, null, ExcELIN2::setKe2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ketb", new AttrDetails("ExcELIN2.ketb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ketb", new AttrDetails("ExcELIN2.ketb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ketbToString, null, ExcELIN2::setKetb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pid1max", new AttrDetails("ExcELIN2.pid1max", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pid1max", new AttrDetails("ExcELIN2.pid1max", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::pid1maxToString, null, ExcELIN2::setPid1max));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("seve1", new AttrDetails("ExcELIN2.seve1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("seve1", new AttrDetails("ExcELIN2.seve1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::seve1ToString, null, ExcELIN2::setSeve1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("seve2", new AttrDetails("ExcELIN2.seve2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("seve2", new AttrDetails("ExcELIN2.seve2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::seve2ToString, null, ExcELIN2::setSeve2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb1", new AttrDetails("ExcELIN2.tb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tb1", new AttrDetails("ExcELIN2.tb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::tb1ToString, null, ExcELIN2::setTb1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcELIN2.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcELIN2.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::teToString, null, ExcELIN2::setTe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te2", new AttrDetails("ExcELIN2.te2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("te2", new AttrDetails("ExcELIN2.te2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::te2ToString, null, ExcELIN2::setTe2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ti1", new AttrDetails("ExcELIN2.ti1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ti1", new AttrDetails("ExcELIN2.ti1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ti1ToString, null, ExcELIN2::setTi1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ti3", new AttrDetails("ExcELIN2.ti3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ti3", new AttrDetails("ExcELIN2.ti3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ti3ToString, null, ExcELIN2::setTi3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ti4", new AttrDetails("ExcELIN2.ti4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ti4", new AttrDetails("ExcELIN2.ti4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ti4ToString, null, ExcELIN2::setTi4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tr4", new AttrDetails("ExcELIN2.tr4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tr4", new AttrDetails("ExcELIN2.tr4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::tr4ToString, null, ExcELIN2::setTr4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("upmax", new AttrDetails("ExcELIN2.upmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("upmax", new AttrDetails("ExcELIN2.upmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::upmaxToString, null, ExcELIN2::setUpmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("upmin", new AttrDetails("ExcELIN2.upmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("upmin", new AttrDetails("ExcELIN2.upmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::upminToString, null, ExcELIN2::setUpmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ve1", new AttrDetails("ExcELIN2.ve1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ve1", new AttrDetails("ExcELIN2.ve1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ve1ToString, null, ExcELIN2::setVe1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ve2", new AttrDetails("ExcELIN2.ve2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ve2", new AttrDetails("ExcELIN2.ve2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::ve2ToString, null, ExcELIN2::setVe2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xp", new AttrDetails("ExcELIN2.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xp", new AttrDetails("ExcELIN2.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcELIN2::xpToString, null, ExcELIN2::setXp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcELIN2().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("efdbas", new GetterSetter(this::efdbasToString, null, this::setEfdbas));
-        map.put("iefmax", new GetterSetter(this::iefmaxToString, null, this::setIefmax));
-        map.put("iefmax2", new GetterSetter(this::iefmax2ToString, null, this::setIefmax2));
-        map.put("iefmin", new GetterSetter(this::iefminToString, null, this::setIefmin));
-        map.put("k1", new GetterSetter(this::k1ToString, null, this::setK1));
-        map.put("k1ec", new GetterSetter(this::k1ecToString, null, this::setK1ec));
-        map.put("k2", new GetterSetter(this::k2ToString, null, this::setK2));
-        map.put("k3", new GetterSetter(this::k3ToString, null, this::setK3));
-        map.put("k4", new GetterSetter(this::k4ToString, null, this::setK4));
-        map.put("kd1", new GetterSetter(this::kd1ToString, null, this::setKd1));
-        map.put("ke2", new GetterSetter(this::ke2ToString, null, this::setKe2));
-        map.put("ketb", new GetterSetter(this::ketbToString, null, this::setKetb));
-        map.put("pid1max", new GetterSetter(this::pid1maxToString, null, this::setPid1max));
-        map.put("seve1", new GetterSetter(this::seve1ToString, null, this::setSeve1));
-        map.put("seve2", new GetterSetter(this::seve2ToString, null, this::setSeve2));
-        map.put("tb1", new GetterSetter(this::tb1ToString, null, this::setTb1));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        map.put("te2", new GetterSetter(this::te2ToString, null, this::setTe2));
-        map.put("ti1", new GetterSetter(this::ti1ToString, null, this::setTi1));
-        map.put("ti3", new GetterSetter(this::ti3ToString, null, this::setTi3));
-        map.put("ti4", new GetterSetter(this::ti4ToString, null, this::setTi4));
-        map.put("tr4", new GetterSetter(this::tr4ToString, null, this::setTr4));
-        map.put("upmax", new GetterSetter(this::upmaxToString, null, this::setUpmax));
-        map.put("upmin", new GetterSetter(this::upminToString, null, this::setUpmin));
-        map.put("ve1", new GetterSetter(this::ve1ToString, null, this::setVe1));
-        map.put("ve2", new GetterSetter(this::ve2ToString, null, this::setVe2));
-        map.put("xp", new GetterSetter(this::xpToString, null, this::setXp));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

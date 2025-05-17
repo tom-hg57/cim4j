@@ -52,6 +52,14 @@ public class RegulatingCondEq extends ConductingEquipment {
         return RegulatingControl != null ? RegulatingControl.getRdfid() : null;
     }
 
+    private static void setRegulatingControl(BaseClass _this_, BaseClass _object_) {
+        ((RegulatingCondEq) _this_).setRegulatingControl(_object_);
+    }
+
+    private static String RegulatingControlToString(BaseClass _this_) {
+        return ((RegulatingCondEq) _this_).RegulatingControlToString();
+    }
+
     /**
      * Specifies the regulation status of the equipment.  True is regulating, false is not regulating.
      */
@@ -71,6 +79,14 @@ public class RegulatingCondEq extends ConductingEquipment {
 
     public String controlEnabledToString() {
         return controlEnabled != null ? controlEnabled.toString() : null;
+    }
+
+    private static void setControlEnabled(BaseClass _this_, String _value_) {
+        ((RegulatingCondEq) _this_).setControlEnabled(_value_);
+    }
+
+    private static String controlEnabledToString(BaseClass _this_) {
+        return ((RegulatingCondEq) _this_).controlEnabledToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class RegulatingCondEq extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RegulatingCondEq", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RegulatingCondEq", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class RegulatingCondEq extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RegulatingCondEq", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegulatingCondEq", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class RegulatingCondEq extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RegulatingCondEq", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegulatingCondEq", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class RegulatingCondEq extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RegulatingControl", new AttrDetails("RegulatingCondEq.RegulatingControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RegulatingControl", new AttrDetails("RegulatingCondEq.RegulatingControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RegulatingCondEq::RegulatingControlToString, RegulatingCondEq::setRegulatingControl, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("controlEnabled", new AttrDetails("RegulatingCondEq.controlEnabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("controlEnabled", new AttrDetails("RegulatingCondEq.controlEnabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegulatingCondEq::controlEnabledToString, null, RegulatingCondEq::setControlEnabled));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingCondEq().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("RegulatingControl", new GetterSetter(this::RegulatingControlToString, this::setRegulatingControl, null));
-        map.put("controlEnabled", new GetterSetter(this::controlEnabledToString, null, this::setControlEnabled));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

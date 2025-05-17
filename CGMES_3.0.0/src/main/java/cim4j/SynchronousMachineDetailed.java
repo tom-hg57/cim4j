@@ -50,6 +50,14 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
         return efdBaseRatio != null ? efdBaseRatio.toString() : null;
     }
 
+    private static void setEfdBaseRatio(BaseClass _this_, String _value_) {
+        ((SynchronousMachineDetailed) _this_).setEfdBaseRatio(_value_);
+    }
+
+    private static String efdBaseRatioToString(BaseClass _this_) {
+        return ((SynchronousMachineDetailed) _this_).efdBaseRatioToString();
+    }
+
     /**
      * Excitation base system mode. It should be equal to the value of &lt;i&gt;WLMDV&lt;/i&gt; given by the user. &lt;i&gt;WLMDV&lt;/i&gt; is the PU ratio between the field voltage and the excitation current: &lt;i&gt;Efd&lt;/i&gt; = &lt;i&gt;WLMDV&lt;/i&gt; x &lt;i&gt;Ifd&lt;/i&gt;. Typical value = ifag.
      */
@@ -65,6 +73,14 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
 
     public String ifdBaseTypeToString() {
         return ifdBaseType;
+    }
+
+    private static void setIfdBaseType(BaseClass _this_, String _value_) {
+        ((SynchronousMachineDetailed) _this_).setIfdBaseType(_value_);
+    }
+
+    private static String ifdBaseTypeToString(BaseClass _this_) {
+        return ((SynchronousMachineDetailed) _this_).ifdBaseTypeToString();
     }
 
     /**
@@ -88,6 +104,14 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
         return saturationFactor120QAxis != null ? saturationFactor120QAxis.toString() : null;
     }
 
+    private static void setSaturationFactor120QAxis(BaseClass _this_, String _value_) {
+        ((SynchronousMachineDetailed) _this_).setSaturationFactor120QAxis(_value_);
+    }
+
+    private static String saturationFactor120QAxisToString(BaseClass _this_) {
+        return ((SynchronousMachineDetailed) _this_).saturationFactor120QAxisToString();
+    }
+
     /**
      * Quadrature-axis saturation factor at rated terminal voltage (&lt;i&gt;S1q&lt;/i&gt;) (&amp;gt;= 0). Typical value = 0,02.
      */
@@ -107,6 +131,14 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
 
     public String saturationFactorQAxisToString() {
         return saturationFactorQAxis != null ? saturationFactorQAxis.toString() : null;
+    }
+
+    private static void setSaturationFactorQAxis(BaseClass _this_, String _value_) {
+        ((SynchronousMachineDetailed) _this_).setSaturationFactorQAxis(_value_);
+    }
+
+    private static String saturationFactorQAxisToString(BaseClass _this_) {
+        return ((SynchronousMachineDetailed) _this_).saturationFactorQAxisToString();
     }
 
     /**
@@ -150,16 +182,12 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SynchronousMachineDetailed", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SynchronousMachineDetailed", attrName));
+        return "";
     }
 
     /**
@@ -170,16 +198,12 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SynchronousMachineDetailed", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineDetailed", attrName, objectValue));
         }
     }
 
@@ -191,16 +215,12 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SynchronousMachineDetailed", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineDetailed", attrName, stringValue));
         }
     }
 
@@ -324,36 +344,26 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdBaseRatio", new AttrDetails("SynchronousMachineDetailed.efdBaseRatio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("efdBaseRatio", new AttrDetails("SynchronousMachineDetailed.efdBaseRatio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineDetailed::efdBaseRatioToString, null, SynchronousMachineDetailed::setEfdBaseRatio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ifdBaseType", new AttrDetails("SynchronousMachineDetailed.ifdBaseType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("ifdBaseType", new AttrDetails("SynchronousMachineDetailed.ifdBaseType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, SynchronousMachineDetailed::ifdBaseTypeToString, null, SynchronousMachineDetailed::setIfdBaseType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("saturationFactor120QAxis", new AttrDetails("SynchronousMachineDetailed.saturationFactor120QAxis", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("saturationFactor120QAxis", new AttrDetails("SynchronousMachineDetailed.saturationFactor120QAxis", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineDetailed::saturationFactor120QAxisToString, null, SynchronousMachineDetailed::setSaturationFactor120QAxis));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("saturationFactorQAxis", new AttrDetails("SynchronousMachineDetailed.saturationFactorQAxis", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("saturationFactorQAxis", new AttrDetails("SynchronousMachineDetailed.saturationFactorQAxis", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineDetailed::saturationFactorQAxisToString, null, SynchronousMachineDetailed::setSaturationFactorQAxis));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineDetailed().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("efdBaseRatio", new GetterSetter(this::efdBaseRatioToString, null, this::setEfdBaseRatio));
-        map.put("ifdBaseType", new GetterSetter(this::ifdBaseTypeToString, null, this::setIfdBaseType));
-        map.put("saturationFactor120QAxis", new GetterSetter(this::saturationFactor120QAxisToString, null, this::setSaturationFactor120QAxis));
-        map.put("saturationFactorQAxis", new GetterSetter(this::saturationFactorQAxisToString, null, this::setSaturationFactorQAxis));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

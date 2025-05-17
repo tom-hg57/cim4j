@@ -54,6 +54,14 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
         return WindTurbineType3IEC != null ? WindTurbineType3IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindAeroOneDimIEC) _this_).setWindTurbineType3IEC(_object_);
+    }
+
+    private static String WindTurbineType3IECToString(BaseClass _this_) {
+        return ((WindAeroOneDimIEC) _this_).WindTurbineType3IECToString();
+    }
+
     /**
      * Aerodynamic gain (&lt;i&gt;k&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -75,6 +83,14 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
         return ka != null ? ka.toString() : null;
     }
 
+    private static void setKa(BaseClass _this_, String _value_) {
+        ((WindAeroOneDimIEC) _this_).setKa(_value_);
+    }
+
+    private static String kaToString(BaseClass _this_) {
+        return ((WindAeroOneDimIEC) _this_).kaToString();
+    }
+
     /**
      * Initial pitch angle (&lt;i&gt;theta&lt;/i&gt;&lt;i&gt;&lt;sub&gt;omega0&lt;/sub&gt;&lt;/i&gt;). It is a case-dependent parameter.
      */
@@ -94,6 +110,14 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
 
     public String thetaomegaToString() {
         return thetaomega != null ? thetaomega.toString() : null;
+    }
+
+    private static void setThetaomega(BaseClass _this_, String _value_) {
+        ((WindAeroOneDimIEC) _this_).setThetaomega(_value_);
+    }
+
+    private static String thetaomegaToString(BaseClass _this_) {
+        return ((WindAeroOneDimIEC) _this_).thetaomegaToString();
     }
 
     /**
@@ -137,16 +161,12 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindAeroOneDimIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindAeroOneDimIEC", attrName));
+        return "";
     }
 
     /**
@@ -157,16 +177,12 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindAeroOneDimIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindAeroOneDimIEC", attrName, objectValue));
         }
     }
 
@@ -178,16 +194,12 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindAeroOneDimIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindAeroOneDimIEC", attrName, stringValue));
         }
     }
 
@@ -311,30 +323,21 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3IEC", new AttrDetails("WindAeroOneDimIEC.WindTurbineType3IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3IEC", new AttrDetails("WindAeroOneDimIEC.WindTurbineType3IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindAeroOneDimIEC::WindTurbineType3IECToString, WindAeroOneDimIEC::setWindTurbineType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ka", new AttrDetails("WindAeroOneDimIEC.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ka", new AttrDetails("WindAeroOneDimIEC.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindAeroOneDimIEC::kaToString, null, WindAeroOneDimIEC::setKa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("thetaomega", new AttrDetails("WindAeroOneDimIEC.thetaomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("thetaomega", new AttrDetails("WindAeroOneDimIEC.thetaomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindAeroOneDimIEC::thetaomegaToString, null, WindAeroOneDimIEC::setThetaomega));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroOneDimIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindTurbineType3IEC", new GetterSetter(this::WindTurbineType3IECToString, this::setWindTurbineType3IEC, null));
-        map.put("ka", new GetterSetter(this::kaToString, null, this::setKa));
-        map.put("thetaomega", new GetterSetter(this::thetaomegaToString, null, this::setThetaomega));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

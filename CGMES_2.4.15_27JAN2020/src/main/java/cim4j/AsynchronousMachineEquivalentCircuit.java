@@ -50,6 +50,14 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
         return rr1 != null ? rr1.toString() : null;
     }
 
+    private static void setRr1(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineEquivalentCircuit) _this_).setRr1(_value_);
+    }
+
+    private static String rr1ToString(BaseClass _this_) {
+        return ((AsynchronousMachineEquivalentCircuit) _this_).rr1ToString();
+    }
+
     /**
      * Damper 2 winding resistance.
      */
@@ -69,6 +77,14 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
 
     public String rr2ToString() {
         return rr2 != null ? rr2.toString() : null;
+    }
+
+    private static void setRr2(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineEquivalentCircuit) _this_).setRr2(_value_);
+    }
+
+    private static String rr2ToString(BaseClass _this_) {
+        return ((AsynchronousMachineEquivalentCircuit) _this_).rr2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
         return xlr1 != null ? xlr1.toString() : null;
     }
 
+    private static void setXlr1(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineEquivalentCircuit) _this_).setXlr1(_value_);
+    }
+
+    private static String xlr1ToString(BaseClass _this_) {
+        return ((AsynchronousMachineEquivalentCircuit) _this_).xlr1ToString();
+    }
+
     /**
      * Damper 2 winding leakage reactance.
      */
@@ -113,6 +137,14 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
         return xlr2 != null ? xlr2.toString() : null;
     }
 
+    private static void setXlr2(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineEquivalentCircuit) _this_).setXlr2(_value_);
+    }
+
+    private static String xlr2ToString(BaseClass _this_) {
+        return ((AsynchronousMachineEquivalentCircuit) _this_).xlr2ToString();
+    }
+
     /**
      * Magnetizing reactance.
      */
@@ -132,6 +164,14 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
 
     public String xmToString() {
         return xm != null ? xm.toString() : null;
+    }
+
+    private static void setXm(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineEquivalentCircuit) _this_).setXm(_value_);
+    }
+
+    private static String xmToString(BaseClass _this_) {
+        return ((AsynchronousMachineEquivalentCircuit) _this_).xmToString();
     }
 
     /**
@@ -175,16 +215,12 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AsynchronousMachineEquivalentCircuit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AsynchronousMachineEquivalentCircuit", attrName));
+        return "";
     }
 
     /**
@@ -195,16 +231,12 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AsynchronousMachineEquivalentCircuit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachineEquivalentCircuit", attrName, objectValue));
         }
     }
 
@@ -216,16 +248,12 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AsynchronousMachineEquivalentCircuit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachineEquivalentCircuit", attrName, stringValue));
         }
     }
 
@@ -349,42 +377,31 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rr1", new AttrDetails("AsynchronousMachineEquivalentCircuit.rr1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rr1", new AttrDetails("AsynchronousMachineEquivalentCircuit.rr1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineEquivalentCircuit::rr1ToString, null, AsynchronousMachineEquivalentCircuit::setRr1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rr2", new AttrDetails("AsynchronousMachineEquivalentCircuit.rr2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rr2", new AttrDetails("AsynchronousMachineEquivalentCircuit.rr2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineEquivalentCircuit::rr2ToString, null, AsynchronousMachineEquivalentCircuit::setRr2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xlr1", new AttrDetails("AsynchronousMachineEquivalentCircuit.xlr1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xlr1", new AttrDetails("AsynchronousMachineEquivalentCircuit.xlr1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineEquivalentCircuit::xlr1ToString, null, AsynchronousMachineEquivalentCircuit::setXlr1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xlr2", new AttrDetails("AsynchronousMachineEquivalentCircuit.xlr2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xlr2", new AttrDetails("AsynchronousMachineEquivalentCircuit.xlr2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineEquivalentCircuit::xlr2ToString, null, AsynchronousMachineEquivalentCircuit::setXlr2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xm", new AttrDetails("AsynchronousMachineEquivalentCircuit.xm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xm", new AttrDetails("AsynchronousMachineEquivalentCircuit.xm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineEquivalentCircuit::xmToString, null, AsynchronousMachineEquivalentCircuit::setXm));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineEquivalentCircuit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("rr1", new GetterSetter(this::rr1ToString, null, this::setRr1));
-        map.put("rr2", new GetterSetter(this::rr2ToString, null, this::setRr2));
-        map.put("xlr1", new GetterSetter(this::xlr1ToString, null, this::setXlr1));
-        map.put("xlr2", new GetterSetter(this::xlr2ToString, null, this::setXlr2));
-        map.put("xm", new GetterSetter(this::xmToString, null, this::setXm));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

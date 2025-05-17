@@ -52,6 +52,14 @@ public class BusNameMarker extends IdentifiedObject {
         return ReportingGroup != null ? ReportingGroup.getRdfid() : null;
     }
 
+    private static void setReportingGroup(BaseClass _this_, BaseClass _object_) {
+        ((BusNameMarker) _this_).setReportingGroup(_object_);
+    }
+
+    private static String ReportingGroupToString(BaseClass _this_) {
+        return ((BusNameMarker) _this_).ReportingGroupToString();
+    }
+
     /**
      * The terminals associated with this bus name marker.
      *
@@ -77,6 +85,14 @@ public class BusNameMarker extends IdentifiedObject {
         return getStringFromSet(Terminal);
     }
 
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((BusNameMarker) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((BusNameMarker) _this_).TerminalToString();
+    }
+
     /**
      * Priority of bus name marker for use as topology bus name.  Use 0 for don t care.  Use 1 for highest priority.  Use 2 as priority is less than 1 and so on.
      */
@@ -96,6 +112,14 @@ public class BusNameMarker extends IdentifiedObject {
 
     public String priorityToString() {
         return priority != null ? priority.toString() : null;
+    }
+
+    private static void setPriority(BaseClass _this_, String _value_) {
+        ((BusNameMarker) _this_).setPriority(_value_);
+    }
+
+    private static String priorityToString(BaseClass _this_) {
+        return ((BusNameMarker) _this_).priorityToString();
     }
 
     /**
@@ -139,16 +163,12 @@ public class BusNameMarker extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BusNameMarker", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BusNameMarker", attrName));
+        return "";
     }
 
     /**
@@ -159,16 +179,12 @@ public class BusNameMarker extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BusNameMarker", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BusNameMarker", attrName, objectValue));
         }
     }
 
@@ -180,16 +196,12 @@ public class BusNameMarker extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BusNameMarker", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BusNameMarker", attrName, stringValue));
         }
     }
 
@@ -313,30 +325,21 @@ public class BusNameMarker extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ReportingGroup", new AttrDetails("BusNameMarker.ReportingGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ReportingGroup", new AttrDetails("BusNameMarker.ReportingGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, BusNameMarker::ReportingGroupToString, BusNameMarker::setReportingGroup, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminal", new AttrDetails("BusNameMarker.Terminal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("BusNameMarker.Terminal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, BusNameMarker::TerminalToString, BusNameMarker::setTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("priority", new AttrDetails("BusNameMarker.priority", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("priority", new AttrDetails("BusNameMarker.priority", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, BusNameMarker::priorityToString, null, BusNameMarker::setPriority));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusNameMarker().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ReportingGroup", new GetterSetter(this::ReportingGroupToString, this::setReportingGroup, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("priority", new GetterSetter(this::priorityToString, null, this::setPriority));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

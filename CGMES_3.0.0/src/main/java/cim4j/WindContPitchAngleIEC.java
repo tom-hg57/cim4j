@@ -54,6 +54,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return WindTurbineType3IEC != null ? WindTurbineType3IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindContPitchAngleIEC) _this_).setWindTurbineType3IEC(_object_);
+    }
+
+    private static String WindTurbineType3IECToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).WindTurbineType3IECToString();
+    }
+
     /**
      * Maximum pitch positive ramp rate (&lt;i&gt;dtheta&lt;/i&gt;&lt;i&gt;&lt;sub&gt;max&lt;/sub&gt;&lt;/i&gt;) (&amp;gt; WindContPitchAngleIEC.dthetamin). It is a type-dependent parameter. Unit = degrees / s.
      */
@@ -73,6 +81,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
 
     public String dthetamaxToString() {
         return dthetamax != null ? dthetamax.toString() : null;
+    }
+
+    private static void setDthetamax(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setDthetamax(_value_);
+    }
+
+    private static String dthetamaxToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).dthetamaxToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return dthetamin != null ? dthetamin.toString() : null;
     }
 
+    private static void setDthetamin(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setDthetamin(_value_);
+    }
+
+    private static String dthetaminToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).dthetaminToString();
+    }
+
     /**
      * Power PI controller integration gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;Ic&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -115,6 +139,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
 
     public String kicToString() {
         return kic != null ? kic.toString() : null;
+    }
+
+    private static void setKic(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setKic(_value_);
+    }
+
+    private static String kicToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).kicToString();
     }
 
     /**
@@ -138,6 +170,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return kiomega != null ? kiomega.toString() : null;
     }
 
+    private static void setKiomega(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setKiomega(_value_);
+    }
+
+    private static String kiomegaToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).kiomegaToString();
+    }
+
     /**
      * Power PI controller proportional gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;Pc&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -157,6 +197,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
 
     public String kpcToString() {
         return kpc != null ? kpc.toString() : null;
+    }
+
+    private static void setKpc(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setKpc(_value_);
+    }
+
+    private static String kpcToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).kpcToString();
     }
 
     /**
@@ -180,6 +228,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return kpomega != null ? kpomega.toString() : null;
     }
 
+    private static void setKpomega(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setKpomega(_value_);
+    }
+
+    private static String kpomegaToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).kpomegaToString();
+    }
+
     /**
      * Pitch cross coupling gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;PX&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -199,6 +255,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
 
     public String kpxToString() {
         return kpx != null ? kpx.toString() : null;
+    }
+
+    private static void setKpx(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setKpx(_value_);
+    }
+
+    private static String kpxToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).kpxToString();
     }
 
     /**
@@ -222,6 +286,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return thetamax != null ? thetamax.toString() : null;
     }
 
+    private static void setThetamax(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setThetamax(_value_);
+    }
+
+    private static String thetamaxToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).thetamaxToString();
+    }
+
     /**
      * Minimum pitch angle (&lt;i&gt;theta&lt;/i&gt;&lt;i&gt;&lt;sub&gt;min&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; WindContPitchAngleIEC.thetamax). It is a type-dependent parameter.
      */
@@ -243,6 +315,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         return thetamin != null ? thetamin.toString() : null;
     }
 
+    private static void setThetamin(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setThetamin(_value_);
+    }
+
+    private static String thetaminToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).thetaminToString();
+    }
+
     /**
      * Pitch time constant (&lt;i&gt;ttheta&lt;/i&gt;) (&amp;gt;= 0). It is a type-dependent parameter.
      */
@@ -262,6 +342,14 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
 
     public String tthetaToString() {
         return ttheta != null ? ttheta.toString() : null;
+    }
+
+    private static void setTtheta(BaseClass _this_, String _value_) {
+        ((WindContPitchAngleIEC) _this_).setTtheta(_value_);
+    }
+
+    private static String tthetaToString(BaseClass _this_) {
+        return ((WindContPitchAngleIEC) _this_).tthetaToString();
     }
 
     /**
@@ -305,16 +393,12 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindContPitchAngleIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindContPitchAngleIEC", attrName));
+        return "";
     }
 
     /**
@@ -325,16 +409,12 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindContPitchAngleIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContPitchAngleIEC", attrName, objectValue));
         }
     }
 
@@ -346,16 +426,12 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindContPitchAngleIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContPitchAngleIEC", attrName, stringValue));
         }
     }
 
@@ -479,78 +555,61 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3IEC", new AttrDetails("WindContPitchAngleIEC.WindTurbineType3IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3IEC", new AttrDetails("WindContPitchAngleIEC.WindTurbineType3IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindContPitchAngleIEC::WindTurbineType3IECToString, WindContPitchAngleIEC::setWindTurbineType3IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dthetamax", new AttrDetails("WindContPitchAngleIEC.dthetamax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("dthetamax", new AttrDetails("WindContPitchAngleIEC.dthetamax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::dthetamaxToString, null, WindContPitchAngleIEC::setDthetamax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dthetamin", new AttrDetails("WindContPitchAngleIEC.dthetamin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("dthetamin", new AttrDetails("WindContPitchAngleIEC.dthetamin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::dthetaminToString, null, WindContPitchAngleIEC::setDthetamin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kic", new AttrDetails("WindContPitchAngleIEC.kic", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kic", new AttrDetails("WindContPitchAngleIEC.kic", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::kicToString, null, WindContPitchAngleIEC::setKic));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kiomega", new AttrDetails("WindContPitchAngleIEC.kiomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kiomega", new AttrDetails("WindContPitchAngleIEC.kiomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::kiomegaToString, null, WindContPitchAngleIEC::setKiomega));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpc", new AttrDetails("WindContPitchAngleIEC.kpc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kpc", new AttrDetails("WindContPitchAngleIEC.kpc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::kpcToString, null, WindContPitchAngleIEC::setKpc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpomega", new AttrDetails("WindContPitchAngleIEC.kpomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kpomega", new AttrDetails("WindContPitchAngleIEC.kpomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::kpomegaToString, null, WindContPitchAngleIEC::setKpomega));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpx", new AttrDetails("WindContPitchAngleIEC.kpx", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kpx", new AttrDetails("WindContPitchAngleIEC.kpx", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::kpxToString, null, WindContPitchAngleIEC::setKpx));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("thetamax", new AttrDetails("WindContPitchAngleIEC.thetamax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("thetamax", new AttrDetails("WindContPitchAngleIEC.thetamax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::thetamaxToString, null, WindContPitchAngleIEC::setThetamax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("thetamin", new AttrDetails("WindContPitchAngleIEC.thetamin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("thetamin", new AttrDetails("WindContPitchAngleIEC.thetamin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::thetaminToString, null, WindContPitchAngleIEC::setThetamin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ttheta", new AttrDetails("WindContPitchAngleIEC.ttheta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ttheta", new AttrDetails("WindContPitchAngleIEC.ttheta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContPitchAngleIEC::tthetaToString, null, WindContPitchAngleIEC::setTtheta));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContPitchAngleIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindTurbineType3IEC", new GetterSetter(this::WindTurbineType3IECToString, this::setWindTurbineType3IEC, null));
-        map.put("dthetamax", new GetterSetter(this::dthetamaxToString, null, this::setDthetamax));
-        map.put("dthetamin", new GetterSetter(this::dthetaminToString, null, this::setDthetamin));
-        map.put("kic", new GetterSetter(this::kicToString, null, this::setKic));
-        map.put("kiomega", new GetterSetter(this::kiomegaToString, null, this::setKiomega));
-        map.put("kpc", new GetterSetter(this::kpcToString, null, this::setKpc));
-        map.put("kpomega", new GetterSetter(this::kpomegaToString, null, this::setKpomega));
-        map.put("kpx", new GetterSetter(this::kpxToString, null, this::setKpx));
-        map.put("thetamax", new GetterSetter(this::thetamaxToString, null, this::setThetamax));
-        map.put("thetamin", new GetterSetter(this::thetaminToString, null, this::setThetamin));
-        map.put("ttheta", new GetterSetter(this::tthetaToString, null, this::setTtheta));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

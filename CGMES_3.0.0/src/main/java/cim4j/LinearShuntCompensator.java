@@ -50,6 +50,14 @@ public class LinearShuntCompensator extends ShuntCompensator {
         return b0PerSection != null ? b0PerSection.toString() : null;
     }
 
+    private static void setB0PerSection(BaseClass _this_, String _value_) {
+        ((LinearShuntCompensator) _this_).setB0PerSection(_value_);
+    }
+
+    private static String b0PerSectionToString(BaseClass _this_) {
+        return ((LinearShuntCompensator) _this_).b0PerSectionToString();
+    }
+
     /**
      * Positive sequence shunt (charging) susceptance per section.
      */
@@ -69,6 +77,14 @@ public class LinearShuntCompensator extends ShuntCompensator {
 
     public String bPerSectionToString() {
         return bPerSection != null ? bPerSection.toString() : null;
+    }
+
+    private static void setBPerSection(BaseClass _this_, String _value_) {
+        ((LinearShuntCompensator) _this_).setBPerSection(_value_);
+    }
+
+    private static String bPerSectionToString(BaseClass _this_) {
+        return ((LinearShuntCompensator) _this_).bPerSectionToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class LinearShuntCompensator extends ShuntCompensator {
         return g0PerSection != null ? g0PerSection.toString() : null;
     }
 
+    private static void setG0PerSection(BaseClass _this_, String _value_) {
+        ((LinearShuntCompensator) _this_).setG0PerSection(_value_);
+    }
+
+    private static String g0PerSectionToString(BaseClass _this_) {
+        return ((LinearShuntCompensator) _this_).g0PerSectionToString();
+    }
+
     /**
      * Positive sequence shunt (charging) conductance per section.
      */
@@ -111,6 +135,14 @@ public class LinearShuntCompensator extends ShuntCompensator {
 
     public String gPerSectionToString() {
         return gPerSection != null ? gPerSection.toString() : null;
+    }
+
+    private static void setGPerSection(BaseClass _this_, String _value_) {
+        ((LinearShuntCompensator) _this_).setGPerSection(_value_);
+    }
+
+    private static String gPerSectionToString(BaseClass _this_) {
+        return ((LinearShuntCompensator) _this_).gPerSectionToString();
     }
 
     /**
@@ -154,16 +186,12 @@ public class LinearShuntCompensator extends ShuntCompensator {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("LinearShuntCompensator", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "LinearShuntCompensator", attrName));
+        return "";
     }
 
     /**
@@ -174,16 +202,12 @@ public class LinearShuntCompensator extends ShuntCompensator {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("LinearShuntCompensator", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LinearShuntCompensator", attrName, objectValue));
         }
     }
 
@@ -195,16 +219,12 @@ public class LinearShuntCompensator extends ShuntCompensator {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("LinearShuntCompensator", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LinearShuntCompensator", attrName, stringValue));
         }
     }
 
@@ -328,36 +348,26 @@ public class LinearShuntCompensator extends ShuntCompensator {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("b0PerSection", new AttrDetails("LinearShuntCompensator.b0PerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("b0PerSection", new AttrDetails("LinearShuntCompensator.b0PerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LinearShuntCompensator::b0PerSectionToString, null, LinearShuntCompensator::setB0PerSection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("bPerSection", new AttrDetails("LinearShuntCompensator.bPerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("bPerSection", new AttrDetails("LinearShuntCompensator.bPerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LinearShuntCompensator::bPerSectionToString, null, LinearShuntCompensator::setBPerSection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("g0PerSection", new AttrDetails("LinearShuntCompensator.g0PerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("g0PerSection", new AttrDetails("LinearShuntCompensator.g0PerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LinearShuntCompensator::g0PerSectionToString, null, LinearShuntCompensator::setG0PerSection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("gPerSection", new AttrDetails("LinearShuntCompensator.gPerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("gPerSection", new AttrDetails("LinearShuntCompensator.gPerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LinearShuntCompensator::gPerSectionToString, null, LinearShuntCompensator::setGPerSection));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LinearShuntCompensator().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("b0PerSection", new GetterSetter(this::b0PerSectionToString, null, this::setB0PerSection));
-        map.put("bPerSection", new GetterSetter(this::bPerSectionToString, null, this::setBPerSection));
-        map.put("g0PerSection", new GetterSetter(this::g0PerSectionToString, null, this::setG0PerSection));
-        map.put("gPerSection", new GetterSetter(this::gPerSectionToString, null, this::setGPerSection));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

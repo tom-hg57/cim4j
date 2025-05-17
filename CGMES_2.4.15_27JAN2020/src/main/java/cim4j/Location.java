@@ -52,6 +52,14 @@ public class Location extends IdentifiedObject {
         return CoordinateSystem != null ? CoordinateSystem.getRdfid() : null;
     }
 
+    private static void setCoordinateSystem(BaseClass _this_, BaseClass _object_) {
+        ((Location) _this_).setCoordinateSystem(_object_);
+    }
+
+    private static String CoordinateSystemToString(BaseClass _this_) {
+        return ((Location) _this_).CoordinateSystemToString();
+    }
+
     /**
      * Sequence of position points describing this location, expressed in coordinate system `Location.CoordinateSystem`.
      *
@@ -77,6 +85,14 @@ public class Location extends IdentifiedObject {
         return getStringFromSet(PositionPoints);
     }
 
+    private static void setPositionPoints(BaseClass _this_, BaseClass _object_) {
+        ((Location) _this_).setPositionPoints(_object_);
+    }
+
+    private static String PositionPointsToString(BaseClass _this_) {
+        return ((Location) _this_).PositionPointsToString();
+    }
+
     /**
      * All power system resources at this location.
      */
@@ -98,6 +114,14 @@ public class Location extends IdentifiedObject {
 
     public String PowerSystemResourcesToString() {
         return PowerSystemResources != null ? PowerSystemResources.getRdfid() : null;
+    }
+
+    private static void setPowerSystemResources(BaseClass _this_, BaseClass _object_) {
+        ((Location) _this_).setPowerSystemResources(_object_);
+    }
+
+    private static String PowerSystemResourcesToString(BaseClass _this_) {
+        return ((Location) _this_).PowerSystemResourcesToString();
     }
 
     /**
@@ -141,16 +165,12 @@ public class Location extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Location", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Location", attrName));
+        return "";
     }
 
     /**
@@ -161,16 +181,12 @@ public class Location extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Location", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Location", attrName, objectValue));
         }
     }
 
@@ -182,16 +198,12 @@ public class Location extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Location", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Location", attrName, stringValue));
         }
     }
 
@@ -315,30 +327,21 @@ public class Location extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("CoordinateSystem", new AttrDetails("Location.CoordinateSystem", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("CoordinateSystem", new AttrDetails("Location.CoordinateSystem", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Location::CoordinateSystemToString, Location::setCoordinateSystem, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("PositionPoints", new AttrDetails("Location.PositionPoints", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PositionPoints", new AttrDetails("Location.PositionPoints", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Location::PositionPointsToString, Location::setPositionPoints, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("PowerSystemResources", new AttrDetails("Location.PowerSystemResources", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PowerSystemResources", new AttrDetails("Location.PowerSystemResources", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Location::PowerSystemResourcesToString, Location::setPowerSystemResources, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Location().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("CoordinateSystem", new GetterSetter(this::CoordinateSystemToString, this::setCoordinateSystem, null));
-        map.put("PositionPoints", new GetterSetter(this::PositionPointsToString, this::setPositionPoints, null));
-        map.put("PowerSystemResources", new GetterSetter(this::PowerSystemResourcesToString, this::setPowerSystemResources, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

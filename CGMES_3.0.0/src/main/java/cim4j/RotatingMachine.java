@@ -52,6 +52,14 @@ public class RotatingMachine extends RegulatingCondEq {
         return GeneratingUnit != null ? GeneratingUnit.getRdfid() : null;
     }
 
+    private static void setGeneratingUnit(BaseClass _this_, BaseClass _object_) {
+        ((RotatingMachine) _this_).setGeneratingUnit(_object_);
+    }
+
+    private static String GeneratingUnitToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).GeneratingUnitToString();
+    }
+
     /**
      * The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.
      *
@@ -77,6 +85,14 @@ public class RotatingMachine extends RegulatingCondEq {
         return HydroPump != null ? HydroPump.getRdfid() : null;
     }
 
+    private static void setHydroPump(BaseClass _this_, BaseClass _object_) {
+        ((RotatingMachine) _this_).setHydroPump(_object_);
+    }
+
+    private static String HydroPumpToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).HydroPumpToString();
+    }
+
     /**
      * Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution.
      */
@@ -96,6 +112,14 @@ public class RotatingMachine extends RegulatingCondEq {
 
     public String pToString() {
         return p != null ? p.toString() : null;
+    }
+
+    private static void setP(BaseClass _this_, String _value_) {
+        ((RotatingMachine) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).pToString();
     }
 
     /**
@@ -119,6 +143,14 @@ public class RotatingMachine extends RegulatingCondEq {
         return q != null ? q.toString() : null;
     }
 
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((RotatingMachine) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).qToString();
+    }
+
     /**
      * Power factor (nameplate data). It is primarily used for short circuit data exchange according to IEC 60909. The attribute cannot be a negative value.
      */
@@ -138,6 +170,14 @@ public class RotatingMachine extends RegulatingCondEq {
 
     public String ratedPowerFactorToString() {
         return ratedPowerFactor != null ? ratedPowerFactor.toString() : null;
+    }
+
+    private static void setRatedPowerFactor(BaseClass _this_, String _value_) {
+        ((RotatingMachine) _this_).setRatedPowerFactor(_value_);
+    }
+
+    private static String ratedPowerFactorToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).ratedPowerFactorToString();
     }
 
     /**
@@ -161,6 +201,14 @@ public class RotatingMachine extends RegulatingCondEq {
         return ratedS != null ? ratedS.toString() : null;
     }
 
+    private static void setRatedS(BaseClass _this_, String _value_) {
+        ((RotatingMachine) _this_).setRatedS(_value_);
+    }
+
+    private static String ratedSToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).ratedSToString();
+    }
+
     /**
      * Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909. The attribute shall be a positive value.
      */
@@ -180,6 +228,14 @@ public class RotatingMachine extends RegulatingCondEq {
 
     public String ratedUToString() {
         return ratedU != null ? ratedU.toString() : null;
+    }
+
+    private static void setRatedU(BaseClass _this_, String _value_) {
+        ((RotatingMachine) _this_).setRatedU(_value_);
+    }
+
+    private static String ratedUToString(BaseClass _this_) {
+        return ((RotatingMachine) _this_).ratedUToString();
     }
 
     /**
@@ -223,16 +279,12 @@ public class RotatingMachine extends RegulatingCondEq {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RotatingMachine", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RotatingMachine", attrName));
+        return "";
     }
 
     /**
@@ -243,16 +295,12 @@ public class RotatingMachine extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RotatingMachine", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RotatingMachine", attrName, objectValue));
         }
     }
 
@@ -264,16 +312,12 @@ public class RotatingMachine extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RotatingMachine", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RotatingMachine", attrName, stringValue));
         }
     }
 
@@ -397,54 +441,41 @@ public class RotatingMachine extends RegulatingCondEq {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("GeneratingUnit", new AttrDetails("RotatingMachine.GeneratingUnit", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("GeneratingUnit", new AttrDetails("RotatingMachine.GeneratingUnit", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RotatingMachine::GeneratingUnitToString, RotatingMachine::setGeneratingUnit, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HydroPump", new AttrDetails("RotatingMachine.HydroPump", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("HydroPump", new AttrDetails("RotatingMachine.HydroPump", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RotatingMachine::HydroPumpToString, RotatingMachine::setHydroPump, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("RotatingMachine.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("p", new AttrDetails("RotatingMachine.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::pToString, null, RotatingMachine::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("RotatingMachine.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("q", new AttrDetails("RotatingMachine.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::qToString, null, RotatingMachine::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedPowerFactor", new AttrDetails("RotatingMachine.ratedPowerFactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedPowerFactor", new AttrDetails("RotatingMachine.ratedPowerFactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::ratedPowerFactorToString, null, RotatingMachine::setRatedPowerFactor));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedS", new AttrDetails("RotatingMachine.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedS", new AttrDetails("RotatingMachine.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::ratedSToString, null, RotatingMachine::setRatedS));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedU", new AttrDetails("RotatingMachine.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedU", new AttrDetails("RotatingMachine.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::ratedUToString, null, RotatingMachine::setRatedU));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RotatingMachine().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("GeneratingUnit", new GetterSetter(this::GeneratingUnitToString, this::setGeneratingUnit, null));
-        map.put("HydroPump", new GetterSetter(this::HydroPumpToString, this::setHydroPump, null));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("ratedPowerFactor", new GetterSetter(this::ratedPowerFactorToString, null, this::setRatedPowerFactor));
-        map.put("ratedS", new GetterSetter(this::ratedSToString, null, this::setRatedS));
-        map.put("ratedU", new GetterSetter(this::ratedUToString, null, this::setRatedU));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

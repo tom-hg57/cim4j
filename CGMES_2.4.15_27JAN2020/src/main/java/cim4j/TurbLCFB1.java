@@ -50,6 +50,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return db != null ? db.toString() : null;
     }
 
+    private static void setDb(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setDb(_value_);
+    }
+
+    private static String dbToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).dbToString();
+    }
+
     /**
      * Maximum control error (Emax) (note 4).  Typical Value = 0.02.
      */
@@ -69,6 +77,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String emaxToString() {
         return emax != null ? emax.toString() : null;
+    }
+
+    private static void setEmax(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setEmax(_value_);
+    }
+
+    private static String emaxToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).emaxToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return fb != null ? fb.toString() : null;
     }
 
+    private static void setFb(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setFb(_value_);
+    }
+
+    private static String fbToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).fbToString();
+    }
+
     /**
      * Frequency bias flag (Fbf). true = enable frequency bias false = disable frequency bias. Typical Value = false.
      */
@@ -111,6 +135,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String fbfToString() {
         return fbf != null ? fbf.toString() : null;
+    }
+
+    private static void setFbf(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setFbf(_value_);
+    }
+
+    private static String fbfToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).fbfToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return irmax != null ? irmax.toString() : null;
     }
 
+    private static void setIrmax(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setIrmax(_value_);
+    }
+
+    private static String irmaxToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).irmaxToString();
+    }
+
     /**
      * Integral gain (Ki).  Typical Value = 0.
      */
@@ -153,6 +193,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String kiToString() {
         return ki != null ? ki.toString() : null;
+    }
+
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).kiToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return kp != null ? kp.toString() : null;
     }
 
+    private static void setKp(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setKp(_value_);
+    }
+
+    private static String kpToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).kpToString();
+    }
+
     /**
      * Base for power values (MWbase) (&gt;0).  Unit = MW.
      */
@@ -195,6 +251,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String mwbaseToString() {
         return mwbase != null ? mwbase.toString() : null;
+    }
+
+    private static void setMwbase(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setMwbase(_value_);
+    }
+
+    private static String mwbaseToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).mwbaseToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return pbf != null ? pbf.toString() : null;
     }
 
+    private static void setPbf(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setPbf(_value_);
+    }
+
+    private static String pbfToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).pbfToString();
+    }
+
     /**
      * Power controller setpoint (Pmwset) (note 1).  Unit = MW. Typical Value = 0.
      */
@@ -237,6 +309,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String pmwsetToString() {
         return pmwset != null ? pmwset.toString() : null;
+    }
+
+    private static void setPmwset(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setPmwset(_value_);
+    }
+
+    private static String pmwsetToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).pmwsetToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         return speedReferenceGovernor != null ? speedReferenceGovernor.toString() : null;
     }
 
+    private static void setSpeedReferenceGovernor(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setSpeedReferenceGovernor(_value_);
+    }
+
+    private static String speedReferenceGovernorToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).speedReferenceGovernorToString();
+    }
+
     /**
      * Power transducer time constant (Tpelec).  Typical Value = 0.
      */
@@ -279,6 +367,14 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
 
     public String tpelecToString() {
         return tpelec != null ? tpelec.toString() : null;
+    }
+
+    private static void setTpelec(BaseClass _this_, String _value_) {
+        ((TurbLCFB1) _this_).setTpelec(_value_);
+    }
+
+    private static String tpelecToString(BaseClass _this_) {
+        return ((TurbLCFB1) _this_).tpelecToString();
     }
 
     /**
@@ -322,16 +418,12 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TurbLCFB1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TurbLCFB1", attrName));
+        return "";
     }
 
     /**
@@ -342,16 +434,12 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TurbLCFB1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TurbLCFB1", attrName, objectValue));
         }
     }
 
@@ -363,16 +451,12 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TurbLCFB1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TurbLCFB1", attrName, stringValue));
         }
     }
 
@@ -496,84 +580,66 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("db", new AttrDetails("TurbLCFB1.db", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("db", new AttrDetails("TurbLCFB1.db", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::dbToString, null, TurbLCFB1::setDb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("emax", new AttrDetails("TurbLCFB1.emax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("emax", new AttrDetails("TurbLCFB1.emax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::emaxToString, null, TurbLCFB1::setEmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("fb", new AttrDetails("TurbLCFB1.fb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("fb", new AttrDetails("TurbLCFB1.fb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::fbToString, null, TurbLCFB1::setFb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("fbf", new AttrDetails("TurbLCFB1.fbf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("fbf", new AttrDetails("TurbLCFB1.fbf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::fbfToString, null, TurbLCFB1::setFbf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("irmax", new AttrDetails("TurbLCFB1.irmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("irmax", new AttrDetails("TurbLCFB1.irmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::irmaxToString, null, TurbLCFB1::setIrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("TurbLCFB1.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ki", new AttrDetails("TurbLCFB1.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::kiToString, null, TurbLCFB1::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("TurbLCFB1.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kp", new AttrDetails("TurbLCFB1.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::kpToString, null, TurbLCFB1::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mwbase", new AttrDetails("TurbLCFB1.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mwbase", new AttrDetails("TurbLCFB1.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::mwbaseToString, null, TurbLCFB1::setMwbase));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pbf", new AttrDetails("TurbLCFB1.pbf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pbf", new AttrDetails("TurbLCFB1.pbf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::pbfToString, null, TurbLCFB1::setPbf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pmwset", new AttrDetails("TurbLCFB1.pmwset", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pmwset", new AttrDetails("TurbLCFB1.pmwset", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::pmwsetToString, null, TurbLCFB1::setPmwset));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("speedReferenceGovernor", new AttrDetails("TurbLCFB1.speedReferenceGovernor", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("speedReferenceGovernor", new AttrDetails("TurbLCFB1.speedReferenceGovernor", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::speedReferenceGovernorToString, null, TurbLCFB1::setSpeedReferenceGovernor));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpelec", new AttrDetails("TurbLCFB1.tpelec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpelec", new AttrDetails("TurbLCFB1.tpelec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbLCFB1::tpelecToString, null, TurbLCFB1::setTpelec));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbLCFB1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("db", new GetterSetter(this::dbToString, null, this::setDb));
-        map.put("emax", new GetterSetter(this::emaxToString, null, this::setEmax));
-        map.put("fb", new GetterSetter(this::fbToString, null, this::setFb));
-        map.put("fbf", new GetterSetter(this::fbfToString, null, this::setFbf));
-        map.put("irmax", new GetterSetter(this::irmaxToString, null, this::setIrmax));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("mwbase", new GetterSetter(this::mwbaseToString, null, this::setMwbase));
-        map.put("pbf", new GetterSetter(this::pbfToString, null, this::setPbf));
-        map.put("pmwset", new GetterSetter(this::pmwsetToString, null, this::setPmwset));
-        map.put("speedReferenceGovernor", new GetterSetter(this::speedReferenceGovernorToString, null, this::setSpeedReferenceGovernor));
-        map.put("tpelec", new GetterSetter(this::tpelecToString, null, this::setTpelec));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

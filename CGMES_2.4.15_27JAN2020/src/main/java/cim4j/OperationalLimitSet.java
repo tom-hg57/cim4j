@@ -52,6 +52,14 @@ public class OperationalLimitSet extends IdentifiedObject {
         return Equipment != null ? Equipment.getRdfid() : null;
     }
 
+    private static void setEquipment(BaseClass _this_, BaseClass _object_) {
+        ((OperationalLimitSet) _this_).setEquipment(_object_);
+    }
+
+    private static String EquipmentToString(BaseClass _this_) {
+        return ((OperationalLimitSet) _this_).EquipmentToString();
+    }
+
     /**
      * The limit set to which the limit values belong.
      *
@@ -77,6 +85,14 @@ public class OperationalLimitSet extends IdentifiedObject {
         return getStringFromSet(OperationalLimitValue);
     }
 
+    private static void setOperationalLimitValue(BaseClass _this_, BaseClass _object_) {
+        ((OperationalLimitSet) _this_).setOperationalLimitValue(_object_);
+    }
+
+    private static String OperationalLimitValueToString(BaseClass _this_) {
+        return ((OperationalLimitSet) _this_).OperationalLimitValueToString();
+    }
+
     /**
      */
     private ACDCTerminal Terminal; // ManyToOne
@@ -97,6 +113,14 @@ public class OperationalLimitSet extends IdentifiedObject {
 
     public String TerminalToString() {
         return Terminal != null ? Terminal.getRdfid() : null;
+    }
+
+    private static void setTerminal(BaseClass _this_, BaseClass _object_) {
+        ((OperationalLimitSet) _this_).setTerminal(_object_);
+    }
+
+    private static String TerminalToString(BaseClass _this_) {
+        return ((OperationalLimitSet) _this_).TerminalToString();
     }
 
     /**
@@ -140,16 +164,12 @@ public class OperationalLimitSet extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("OperationalLimitSet", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "OperationalLimitSet", attrName));
+        return "";
     }
 
     /**
@@ -160,16 +180,12 @@ public class OperationalLimitSet extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("OperationalLimitSet", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OperationalLimitSet", attrName, objectValue));
         }
     }
 
@@ -181,16 +197,12 @@ public class OperationalLimitSet extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("OperationalLimitSet", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OperationalLimitSet", attrName, stringValue));
         }
     }
 
@@ -314,30 +326,21 @@ public class OperationalLimitSet extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Equipment", new AttrDetails("OperationalLimitSet.Equipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Equipment", new AttrDetails("OperationalLimitSet.Equipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OperationalLimitSet::EquipmentToString, OperationalLimitSet::setEquipment, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("OperationalLimitValue", new AttrDetails("OperationalLimitSet.OperationalLimitValue", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("OperationalLimitValue", new AttrDetails("OperationalLimitSet.OperationalLimitValue", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OperationalLimitSet::OperationalLimitValueToString, OperationalLimitSet::setOperationalLimitValue, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminal", new AttrDetails("OperationalLimitSet.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("OperationalLimitSet.Terminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OperationalLimitSet::TerminalToString, OperationalLimitSet::setTerminal, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitSet().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Equipment", new GetterSetter(this::EquipmentToString, this::setEquipment, null));
-        map.put("OperationalLimitValue", new GetterSetter(this::OperationalLimitValueToString, this::setOperationalLimitValue, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

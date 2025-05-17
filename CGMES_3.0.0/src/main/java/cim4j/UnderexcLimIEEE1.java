@@ -50,6 +50,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return kuc != null ? kuc.toString() : null;
     }
 
+    private static void setKuc(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setKuc(_value_);
+    }
+
+    private static String kucToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).kucToString();
+    }
+
     /**
      * UEL excitation system stabilizer gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;UF&lt;/sub&gt;&lt;/i&gt;).  Typical value = 3,3.
      */
@@ -69,6 +77,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String kufToString() {
         return kuf != null ? kuf.toString() : null;
+    }
+
+    private static void setKuf(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setKuf(_value_);
+    }
+
+    private static String kufToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).kufToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return kui != null ? kui.toString() : null;
     }
 
+    private static void setKui(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setKui(_value_);
+    }
+
+    private static String kuiToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).kuiToString();
+    }
+
     /**
      * UEL proportional gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;UL&lt;/sub&gt;&lt;/i&gt;).  Typical value = 100.
      */
@@ -111,6 +135,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String kulToString() {
         return kul != null ? kul.toString() : null;
+    }
+
+    private static void setKul(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setKul(_value_);
+    }
+
+    private static String kulToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).kulToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return kur != null ? kur.toString() : null;
     }
 
+    private static void setKur(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setKur(_value_);
+    }
+
+    private static String kurToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).kurToString();
+    }
+
     /**
      * UEL lead time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;U1&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
      */
@@ -153,6 +193,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String tu1ToString() {
         return tu1 != null ? tu1.toString() : null;
+    }
+
+    private static void setTu1(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setTu1(_value_);
+    }
+
+    private static String tu1ToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).tu1ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return tu2 != null ? tu2.toString() : null;
     }
 
+    private static void setTu2(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setTu2(_value_);
+    }
+
+    private static String tu2ToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).tu2ToString();
+    }
+
     /**
      * UEL lead time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;U3&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
      */
@@ -195,6 +251,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String tu3ToString() {
         return tu3 != null ? tu3.toString() : null;
+    }
+
+    private static void setTu3(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setTu3(_value_);
+    }
+
+    private static String tu3ToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).tu3ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return tu4 != null ? tu4.toString() : null;
     }
 
+    private static void setTu4(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setTu4(_value_);
+    }
+
+    private static String tu4ToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).tu4ToString();
+    }
+
     /**
      * UEL maximum limit for operating point phasor magnitude (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;UCMAX&lt;/sub&gt;&lt;/i&gt;).  Typical value = 5,8.
      */
@@ -237,6 +309,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String vucmaxToString() {
         return vucmax != null ? vucmax.toString() : null;
+    }
+
+    private static void setVucmax(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVucmax(_value_);
+    }
+
+    private static String vucmaxToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vucmaxToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return vuimax != null ? vuimax.toString() : null;
     }
 
+    private static void setVuimax(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVuimax(_value_);
+    }
+
+    private static String vuimaxToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vuimaxToString();
+    }
+
     /**
      * UEL integrator output minimum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;UIMIN&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; UnderexcLimIEEE1.vuimax).
      */
@@ -279,6 +367,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String vuiminToString() {
         return vuimin != null ? vuimin.toString() : null;
+    }
+
+    private static void setVuimin(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVuimin(_value_);
+    }
+
+    private static String vuiminToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vuiminToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return vulmax != null ? vulmax.toString() : null;
     }
 
+    private static void setVulmax(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVulmax(_value_);
+    }
+
+    private static String vulmaxToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vulmaxToString();
+    }
+
     /**
      * UEL output minimum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;ULMIN&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; UnderexcLimIEEE1.vulmax).  Typical value = -18.
      */
@@ -323,6 +427,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         return vulmin != null ? vulmin.toString() : null;
     }
 
+    private static void setVulmin(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVulmin(_value_);
+    }
+
+    private static String vulminToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vulminToString();
+    }
+
     /**
      * UEL maximum limit for radius phasor magnitude (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;URMAX&lt;/sub&gt;&lt;/i&gt;).  Typical value = 5,8.
      */
@@ -342,6 +454,14 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
 
     public String vurmaxToString() {
         return vurmax != null ? vurmax.toString() : null;
+    }
+
+    private static void setVurmax(BaseClass _this_, String _value_) {
+        ((UnderexcLimIEEE1) _this_).setVurmax(_value_);
+    }
+
+    private static String vurmaxToString(BaseClass _this_) {
+        return ((UnderexcLimIEEE1) _this_).vurmaxToString();
     }
 
     /**
@@ -385,16 +505,12 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("UnderexcLimIEEE1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "UnderexcLimIEEE1", attrName));
+        return "";
     }
 
     /**
@@ -405,16 +521,12 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("UnderexcLimIEEE1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLimIEEE1", attrName, objectValue));
         }
     }
 
@@ -426,16 +538,12 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("UnderexcLimIEEE1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLimIEEE1", attrName, stringValue));
         }
     }
 
@@ -559,102 +667,81 @@ public class UnderexcLimIEEE1 extends UnderexcitationLimiterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kuc", new AttrDetails("UnderexcLimIEEE1.kuc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kuc", new AttrDetails("UnderexcLimIEEE1.kuc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::kucToString, null, UnderexcLimIEEE1::setKuc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kuf", new AttrDetails("UnderexcLimIEEE1.kuf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kuf", new AttrDetails("UnderexcLimIEEE1.kuf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::kufToString, null, UnderexcLimIEEE1::setKuf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kui", new AttrDetails("UnderexcLimIEEE1.kui", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kui", new AttrDetails("UnderexcLimIEEE1.kui", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::kuiToString, null, UnderexcLimIEEE1::setKui));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kul", new AttrDetails("UnderexcLimIEEE1.kul", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kul", new AttrDetails("UnderexcLimIEEE1.kul", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::kulToString, null, UnderexcLimIEEE1::setKul));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kur", new AttrDetails("UnderexcLimIEEE1.kur", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kur", new AttrDetails("UnderexcLimIEEE1.kur", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::kurToString, null, UnderexcLimIEEE1::setKur));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tu1", new AttrDetails("UnderexcLimIEEE1.tu1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tu1", new AttrDetails("UnderexcLimIEEE1.tu1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::tu1ToString, null, UnderexcLimIEEE1::setTu1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tu2", new AttrDetails("UnderexcLimIEEE1.tu2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tu2", new AttrDetails("UnderexcLimIEEE1.tu2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::tu2ToString, null, UnderexcLimIEEE1::setTu2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tu3", new AttrDetails("UnderexcLimIEEE1.tu3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tu3", new AttrDetails("UnderexcLimIEEE1.tu3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::tu3ToString, null, UnderexcLimIEEE1::setTu3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tu4", new AttrDetails("UnderexcLimIEEE1.tu4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tu4", new AttrDetails("UnderexcLimIEEE1.tu4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::tu4ToString, null, UnderexcLimIEEE1::setTu4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vucmax", new AttrDetails("UnderexcLimIEEE1.vucmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vucmax", new AttrDetails("UnderexcLimIEEE1.vucmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vucmaxToString, null, UnderexcLimIEEE1::setVucmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vuimax", new AttrDetails("UnderexcLimIEEE1.vuimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vuimax", new AttrDetails("UnderexcLimIEEE1.vuimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vuimaxToString, null, UnderexcLimIEEE1::setVuimax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vuimin", new AttrDetails("UnderexcLimIEEE1.vuimin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vuimin", new AttrDetails("UnderexcLimIEEE1.vuimin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vuiminToString, null, UnderexcLimIEEE1::setVuimin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vulmax", new AttrDetails("UnderexcLimIEEE1.vulmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vulmax", new AttrDetails("UnderexcLimIEEE1.vulmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vulmaxToString, null, UnderexcLimIEEE1::setVulmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vulmin", new AttrDetails("UnderexcLimIEEE1.vulmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vulmin", new AttrDetails("UnderexcLimIEEE1.vulmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vulminToString, null, UnderexcLimIEEE1::setVulmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vurmax", new AttrDetails("UnderexcLimIEEE1.vurmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vurmax", new AttrDetails("UnderexcLimIEEE1.vurmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimIEEE1::vurmaxToString, null, UnderexcLimIEEE1::setVurmax));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcLimIEEE1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("kuc", new GetterSetter(this::kucToString, null, this::setKuc));
-        map.put("kuf", new GetterSetter(this::kufToString, null, this::setKuf));
-        map.put("kui", new GetterSetter(this::kuiToString, null, this::setKui));
-        map.put("kul", new GetterSetter(this::kulToString, null, this::setKul));
-        map.put("kur", new GetterSetter(this::kurToString, null, this::setKur));
-        map.put("tu1", new GetterSetter(this::tu1ToString, null, this::setTu1));
-        map.put("tu2", new GetterSetter(this::tu2ToString, null, this::setTu2));
-        map.put("tu3", new GetterSetter(this::tu3ToString, null, this::setTu3));
-        map.put("tu4", new GetterSetter(this::tu4ToString, null, this::setTu4));
-        map.put("vucmax", new GetterSetter(this::vucmaxToString, null, this::setVucmax));
-        map.put("vuimax", new GetterSetter(this::vuimaxToString, null, this::setVuimax));
-        map.put("vuimin", new GetterSetter(this::vuiminToString, null, this::setVuimin));
-        map.put("vulmax", new GetterSetter(this::vulmaxToString, null, this::setVulmax));
-        map.put("vulmin", new GetterSetter(this::vulminToString, null, this::setVulmin));
-        map.put("vurmax", new GetterSetter(this::vurmaxToString, null, this::setVurmax));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

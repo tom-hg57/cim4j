@@ -46,6 +46,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return baseUML != null ? baseUML.toString() : null;
     }
 
+    private static void setBaseUML(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setBaseUML(_value_);
+    }
+
+    private static String baseUMLToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).baseUMLToString();
+    }
+
     /**
      * Profile URI used in the Model Exchange header and defined in IEC standards.  It uniquely identifies the Profile and its version. It is given for information only and to identify the closest IEC profile to which this CGMES profile is based on.
      */
@@ -61,6 +69,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
 
     public String baseURIToString() {
         return baseURI != null ? baseURI.toString() : null;
+    }
+
+    private static void setBaseURI(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setBaseURI(_value_);
+    }
+
+    private static String baseURIToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).baseURIToString();
     }
 
     /**
@@ -80,6 +96,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return date != null ? date.toString() : null;
     }
 
+    private static void setDate(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setDate(_value_);
+    }
+
+    private static String dateToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).dateToString();
+    }
+
     /**
      * Difference model URI defined by IEC 61970-552.
      */
@@ -95,6 +119,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
 
     public String differenceModelURIToString() {
         return differenceModelURI != null ? differenceModelURI.toString() : null;
+    }
+
+    private static void setDifferenceModelURI(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setDifferenceModelURI(_value_);
+    }
+
+    private static String differenceModelURIToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).differenceModelURIToString();
     }
 
     /**
@@ -114,6 +146,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return entsoeUML != null ? entsoeUML.toString() : null;
     }
 
+    private static void setEntsoeUML(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setEntsoeUML(_value_);
+    }
+
+    private static String entsoeUMLToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).entsoeUMLToString();
+    }
+
     /**
      * Profile URI defined by ENTSO-E and used in the Model Exchange header.  It uniquely identifies the Profile and its version. The last two elements in the URI (http://entsoe.eu/CIM/EquipmentBoundary/yy/zzz) indicate major and minor versions where:  - yy - indicates a major version; - zzz - indicates a minor version.
      */
@@ -129,6 +169,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
 
     public String entsoeURIcoreToString() {
         return entsoeURIcore != null ? entsoeURIcore.toString() : null;
+    }
+
+    private static void setEntsoeURIcore(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setEntsoeURIcore(_value_);
+    }
+
+    private static String entsoeURIcoreToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).entsoeURIcoreToString();
     }
 
     /**
@@ -148,6 +196,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return entsoeURIoperation != null ? entsoeURIoperation.toString() : null;
     }
 
+    private static void setEntsoeURIoperation(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setEntsoeURIoperation(_value_);
+    }
+
+    private static String entsoeURIoperationToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).entsoeURIoperationToString();
+    }
+
     /**
      * Model Description URI defined by IEC 61970-552.
      */
@@ -163,6 +219,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
 
     public String modelDescriptionURIToString() {
         return modelDescriptionURI != null ? modelDescriptionURI.toString() : null;
+    }
+
+    private static void setModelDescriptionURI(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setModelDescriptionURI(_value_);
+    }
+
+    private static String modelDescriptionURIToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).modelDescriptionURIToString();
     }
 
     /**
@@ -182,6 +246,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return namespaceRDF != null ? namespaceRDF.toString() : null;
     }
 
+    private static void setNamespaceRDF(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setNamespaceRDF(_value_);
+    }
+
+    private static String namespaceRDFToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).namespaceRDFToString();
+    }
+
     /**
      * CIM UML namespace.
      */
@@ -199,6 +271,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
         return namespaceUML != null ? namespaceUML.toString() : null;
     }
 
+    private static void setNamespaceUML(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setNamespaceUML(_value_);
+    }
+
+    private static String namespaceUMLToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).namespaceUMLToString();
+    }
+
     /**
      * The short name of the profile used in profile documentation.
      */
@@ -214,6 +294,14 @@ public class EquipmentBoundaryVersion extends BaseClass {
 
     public String shortNameToString() {
         return shortName != null ? shortName.toString() : null;
+    }
+
+    private static void setShortName(BaseClass _this_, String _value_) {
+        ((EquipmentBoundaryVersion) _this_).setShortName(_value_);
+    }
+
+    private static String shortNameToString(BaseClass _this_) {
+        return ((EquipmentBoundaryVersion) _this_).shortNameToString();
     }
 
     /**
@@ -257,16 +345,12 @@ public class EquipmentBoundaryVersion extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EquipmentBoundaryVersion", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EquipmentBoundaryVersion", attrName));
+        return "";
     }
 
     /**
@@ -277,16 +361,12 @@ public class EquipmentBoundaryVersion extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EquipmentBoundaryVersion", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquipmentBoundaryVersion", attrName, objectValue));
         }
     }
 
@@ -298,16 +378,12 @@ public class EquipmentBoundaryVersion extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EquipmentBoundaryVersion", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EquipmentBoundaryVersion", attrName, stringValue));
         }
     }
 
@@ -431,78 +507,61 @@ public class EquipmentBoundaryVersion extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("baseUML", new AttrDetails("EquipmentBoundaryVersion.baseUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("baseUML", new AttrDetails("EquipmentBoundaryVersion.baseUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::baseUMLToString, null, EquipmentBoundaryVersion::setBaseUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("baseURI", new AttrDetails("EquipmentBoundaryVersion.baseURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("baseURI", new AttrDetails("EquipmentBoundaryVersion.baseURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::baseURIToString, null, EquipmentBoundaryVersion::setBaseURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("date", new AttrDetails("EquipmentBoundaryVersion.date", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("date", new AttrDetails("EquipmentBoundaryVersion.date", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::dateToString, null, EquipmentBoundaryVersion::setDate));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("differenceModelURI", new AttrDetails("EquipmentBoundaryVersion.differenceModelURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("differenceModelURI", new AttrDetails("EquipmentBoundaryVersion.differenceModelURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::differenceModelURIToString, null, EquipmentBoundaryVersion::setDifferenceModelURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("entsoeUML", new AttrDetails("EquipmentBoundaryVersion.entsoeUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("entsoeUML", new AttrDetails("EquipmentBoundaryVersion.entsoeUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::entsoeUMLToString, null, EquipmentBoundaryVersion::setEntsoeUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("entsoeURIcore", new AttrDetails("EquipmentBoundaryVersion.entsoeURIcore", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("entsoeURIcore", new AttrDetails("EquipmentBoundaryVersion.entsoeURIcore", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::entsoeURIcoreToString, null, EquipmentBoundaryVersion::setEntsoeURIcore));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("entsoeURIoperation", new AttrDetails("EquipmentBoundaryVersion.entsoeURIoperation", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("entsoeURIoperation", new AttrDetails("EquipmentBoundaryVersion.entsoeURIoperation", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::entsoeURIoperationToString, null, EquipmentBoundaryVersion::setEntsoeURIoperation));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("modelDescriptionURI", new AttrDetails("EquipmentBoundaryVersion.modelDescriptionURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("modelDescriptionURI", new AttrDetails("EquipmentBoundaryVersion.modelDescriptionURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::modelDescriptionURIToString, null, EquipmentBoundaryVersion::setModelDescriptionURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("namespaceRDF", new AttrDetails("EquipmentBoundaryVersion.namespaceRDF", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("namespaceRDF", new AttrDetails("EquipmentBoundaryVersion.namespaceRDF", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::namespaceRDFToString, null, EquipmentBoundaryVersion::setNamespaceRDF));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("namespaceUML", new AttrDetails("EquipmentBoundaryVersion.namespaceUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("namespaceUML", new AttrDetails("EquipmentBoundaryVersion.namespaceUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::namespaceUMLToString, null, EquipmentBoundaryVersion::setNamespaceUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("shortName", new AttrDetails("EquipmentBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("shortName", new AttrDetails("EquipmentBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::shortNameToString, null, EquipmentBoundaryVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentBoundaryVersion().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("baseUML", new GetterSetter(this::baseUMLToString, null, this::setBaseUML));
-        map.put("baseURI", new GetterSetter(this::baseURIToString, null, this::setBaseURI));
-        map.put("date", new GetterSetter(this::dateToString, null, this::setDate));
-        map.put("differenceModelURI", new GetterSetter(this::differenceModelURIToString, null, this::setDifferenceModelURI));
-        map.put("entsoeUML", new GetterSetter(this::entsoeUMLToString, null, this::setEntsoeUML));
-        map.put("entsoeURIcore", new GetterSetter(this::entsoeURIcoreToString, null, this::setEntsoeURIcore));
-        map.put("entsoeURIoperation", new GetterSetter(this::entsoeURIoperationToString, null, this::setEntsoeURIoperation));
-        map.put("modelDescriptionURI", new GetterSetter(this::modelDescriptionURIToString, null, this::setModelDescriptionURI));
-        map.put("namespaceRDF", new GetterSetter(this::namespaceRDFToString, null, this::setNamespaceRDF));
-        map.put("namespaceUML", new GetterSetter(this::namespaceUMLToString, null, this::setNamespaceUML));
-        map.put("shortName", new GetterSetter(this::shortNameToString, null, this::setShortName));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

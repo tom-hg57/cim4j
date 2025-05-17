@@ -52,6 +52,14 @@ public class VsConverter extends ACDCConverter {
         return CapabilityCurve != null ? CapabilityCurve.getRdfid() : null;
     }
 
+    private static void setCapabilityCurve(BaseClass _this_, BaseClass _object_) {
+        ((VsConverter) _this_).setCapabilityCurve(_object_);
+    }
+
+    private static String CapabilityCurveToString(BaseClass _this_) {
+        return ((VsConverter) _this_).CapabilityCurveToString();
+    }
+
     /**
      * Voltage source converter dynamics model used to describe dynamic behaviour of this converter.
      *
@@ -77,6 +85,14 @@ public class VsConverter extends ACDCConverter {
         return VSCDynamics != null ? VSCDynamics.getRdfid() : null;
     }
 
+    private static void setVSCDynamics(BaseClass _this_, BaseClass _object_) {
+        ((VsConverter) _this_).setVSCDynamics(_object_);
+    }
+
+    private static String VSCDynamicsToString(BaseClass _this_) {
+        return ((VsConverter) _this_).VSCDynamicsToString();
+    }
+
     /**
      * Angle between VsConverter.uv and ACDCConverter.uc. It is converter`s state variable used in power flow. The attribute shall be a positive value or zero.
      */
@@ -96,6 +112,14 @@ public class VsConverter extends ACDCConverter {
 
     public String deltaToString() {
         return delta != null ? delta.toString() : null;
+    }
+
+    private static void setDelta(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setDelta(_value_);
+    }
+
+    private static String deltaToString(BaseClass _this_) {
+        return ((VsConverter) _this_).deltaToString();
     }
 
     /**
@@ -119,6 +143,14 @@ public class VsConverter extends ACDCConverter {
         return droop != null ? droop.toString() : null;
     }
 
+    private static void setDroop(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setDroop(_value_);
+    }
+
+    private static String droopToString(BaseClass _this_) {
+        return ((VsConverter) _this_).droopToString();
+    }
+
     /**
      * Compensation constant. Used to compensate for voltage drop when controlling voltage at a distant bus. The attribute shall be a positive value.
      */
@@ -138,6 +170,14 @@ public class VsConverter extends ACDCConverter {
 
     public String droopCompensationToString() {
         return droopCompensation != null ? droopCompensation.toString() : null;
+    }
+
+    private static void setDroopCompensation(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setDroopCompensation(_value_);
+    }
+
+    private static String droopCompensationToString(BaseClass _this_) {
+        return ((VsConverter) _this_).droopCompensationToString();
     }
 
     /**
@@ -161,6 +201,14 @@ public class VsConverter extends ACDCConverter {
         return maxModulationIndex != null ? maxModulationIndex.toString() : null;
     }
 
+    private static void setMaxModulationIndex(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setMaxModulationIndex(_value_);
+    }
+
+    private static String maxModulationIndexToString(BaseClass _this_) {
+        return ((VsConverter) _this_).maxModulationIndexToString();
+    }
+
     /**
      * Kind of control of real power and/or DC voltage.
      */
@@ -178,6 +226,14 @@ public class VsConverter extends ACDCConverter {
         return pPccControl;
     }
 
+    private static void setPPccControl(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setPPccControl(_value_);
+    }
+
+    private static String pPccControlToString(BaseClass _this_) {
+        return ((VsConverter) _this_).pPccControlToString();
+    }
+
     /**
      * Kind of reactive power control.
      */
@@ -193,6 +249,14 @@ public class VsConverter extends ACDCConverter {
 
     public String qPccControlToString() {
         return qPccControl;
+    }
+
+    private static void setQPccControl(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setQPccControl(_value_);
+    }
+
+    private static String qPccControlToString(BaseClass _this_) {
+        return ((VsConverter) _this_).qPccControlToString();
     }
 
     /**
@@ -216,6 +280,14 @@ public class VsConverter extends ACDCConverter {
         return qShare != null ? qShare.toString() : null;
     }
 
+    private static void setQShare(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setQShare(_value_);
+    }
+
+    private static String qShareToString(BaseClass _this_) {
+        return ((VsConverter) _this_).qShareToString();
+    }
+
     /**
      * Magnitude of pulse-modulation factor. The attribute shall be a positive value.
      */
@@ -235,6 +307,14 @@ public class VsConverter extends ACDCConverter {
 
     public String targetPWMfactorToString() {
         return targetPWMfactor != null ? targetPWMfactor.toString() : null;
+    }
+
+    private static void setTargetPWMfactor(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setTargetPWMfactor(_value_);
+    }
+
+    private static String targetPWMfactorToString(BaseClass _this_) {
+        return ((VsConverter) _this_).targetPWMfactorToString();
     }
 
     /**
@@ -258,6 +338,14 @@ public class VsConverter extends ACDCConverter {
         return targetPhasePcc != null ? targetPhasePcc.toString() : null;
     }
 
+    private static void setTargetPhasePcc(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setTargetPhasePcc(_value_);
+    }
+
+    private static String targetPhasePccToString(BaseClass _this_) {
+        return ((VsConverter) _this_).targetPhasePccToString();
+    }
+
     /**
      * Power factor target at the AC side, at point of common coupling. The attribute shall be a positive value.
      */
@@ -277,6 +365,14 @@ public class VsConverter extends ACDCConverter {
 
     public String targetPowerFactorPccToString() {
         return targetPowerFactorPcc != null ? targetPowerFactorPcc.toString() : null;
+    }
+
+    private static void setTargetPowerFactorPcc(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setTargetPowerFactorPcc(_value_);
+    }
+
+    private static String targetPowerFactorPccToString(BaseClass _this_) {
+        return ((VsConverter) _this_).targetPowerFactorPccToString();
     }
 
     /**
@@ -300,6 +396,14 @@ public class VsConverter extends ACDCConverter {
         return targetQpcc != null ? targetQpcc.toString() : null;
     }
 
+    private static void setTargetQpcc(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setTargetQpcc(_value_);
+    }
+
+    private static String targetQpccToString(BaseClass _this_) {
+        return ((VsConverter) _this_).targetQpccToString();
+    }
+
     /**
      * Voltage target in AC grid, at point of common coupling. The attribute shall be a positive value.
      */
@@ -321,6 +425,14 @@ public class VsConverter extends ACDCConverter {
         return targetUpcc != null ? targetUpcc.toString() : null;
     }
 
+    private static void setTargetUpcc(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setTargetUpcc(_value_);
+    }
+
+    private static String targetUpccToString(BaseClass _this_) {
+        return ((VsConverter) _this_).targetUpccToString();
+    }
+
     /**
      * Line-to-line voltage on the valve side of the converter transformer. It is converter`s state variable, result from power flow. The attribute shall be a positive value.
      */
@@ -340,6 +452,14 @@ public class VsConverter extends ACDCConverter {
 
     public String uvToString() {
         return uv != null ? uv.toString() : null;
+    }
+
+    private static void setUv(BaseClass _this_, String _value_) {
+        ((VsConverter) _this_).setUv(_value_);
+    }
+
+    private static String uvToString(BaseClass _this_) {
+        return ((VsConverter) _this_).uvToString();
     }
 
     /**
@@ -383,16 +503,12 @@ public class VsConverter extends ACDCConverter {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("VsConverter", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VsConverter", attrName));
+        return "";
     }
 
     /**
@@ -403,16 +519,12 @@ public class VsConverter extends ACDCConverter {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VsConverter", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VsConverter", attrName, objectValue));
         }
     }
 
@@ -424,16 +536,12 @@ public class VsConverter extends ACDCConverter {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VsConverter", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VsConverter", attrName, stringValue));
         }
     }
 
@@ -557,102 +665,81 @@ public class VsConverter extends ACDCConverter {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("CapabilityCurve", new AttrDetails("VsConverter.CapabilityCurve", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CapabilityCurve", new AttrDetails("VsConverter.CapabilityCurve", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, VsConverter::CapabilityCurveToString, VsConverter::setCapabilityCurve, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VSCDynamics", new AttrDetails("VsConverter.VSCDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VSCDynamics", new AttrDetails("VsConverter.VSCDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, VsConverter::VSCDynamicsToString, VsConverter::setVSCDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("delta", new AttrDetails("VsConverter.delta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("delta", new AttrDetails("VsConverter.delta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::deltaToString, null, VsConverter::setDelta));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("droop", new AttrDetails("VsConverter.droop", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("droop", new AttrDetails("VsConverter.droop", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::droopToString, null, VsConverter::setDroop));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("droopCompensation", new AttrDetails("VsConverter.droopCompensation", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("droopCompensation", new AttrDetails("VsConverter.droopCompensation", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::droopCompensationToString, null, VsConverter::setDroopCompensation));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxModulationIndex", new AttrDetails("VsConverter.maxModulationIndex", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxModulationIndex", new AttrDetails("VsConverter.maxModulationIndex", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::maxModulationIndexToString, null, VsConverter::setMaxModulationIndex));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("pPccControl", new AttrDetails("VsConverter.pPccControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("pPccControl", new AttrDetails("VsConverter.pPccControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, VsConverter::pPccControlToString, null, VsConverter::setPPccControl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("qPccControl", new AttrDetails("VsConverter.qPccControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("qPccControl", new AttrDetails("VsConverter.qPccControl", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, VsConverter::qPccControlToString, null, VsConverter::setQPccControl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("qShare", new AttrDetails("VsConverter.qShare", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("qShare", new AttrDetails("VsConverter.qShare", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::qShareToString, null, VsConverter::setQShare));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetPWMfactor", new AttrDetails("VsConverter.targetPWMfactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetPWMfactor", new AttrDetails("VsConverter.targetPWMfactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::targetPWMfactorToString, null, VsConverter::setTargetPWMfactor));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetPhasePcc", new AttrDetails("VsConverter.targetPhasePcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetPhasePcc", new AttrDetails("VsConverter.targetPhasePcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::targetPhasePccToString, null, VsConverter::setTargetPhasePcc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetPowerFactorPcc", new AttrDetails("VsConverter.targetPowerFactorPcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetPowerFactorPcc", new AttrDetails("VsConverter.targetPowerFactorPcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::targetPowerFactorPccToString, null, VsConverter::setTargetPowerFactorPcc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetQpcc", new AttrDetails("VsConverter.targetQpcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetQpcc", new AttrDetails("VsConverter.targetQpcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::targetQpccToString, null, VsConverter::setTargetQpcc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetUpcc", new AttrDetails("VsConverter.targetUpcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("targetUpcc", new AttrDetails("VsConverter.targetUpcc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::targetUpccToString, null, VsConverter::setTargetUpcc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("uv", new AttrDetails("VsConverter.uv", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("uv", new AttrDetails("VsConverter.uv", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VsConverter::uvToString, null, VsConverter::setUv));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VsConverter().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("CapabilityCurve", new GetterSetter(this::CapabilityCurveToString, this::setCapabilityCurve, null));
-        map.put("VSCDynamics", new GetterSetter(this::VSCDynamicsToString, this::setVSCDynamics, null));
-        map.put("delta", new GetterSetter(this::deltaToString, null, this::setDelta));
-        map.put("droop", new GetterSetter(this::droopToString, null, this::setDroop));
-        map.put("droopCompensation", new GetterSetter(this::droopCompensationToString, null, this::setDroopCompensation));
-        map.put("maxModulationIndex", new GetterSetter(this::maxModulationIndexToString, null, this::setMaxModulationIndex));
-        map.put("pPccControl", new GetterSetter(this::pPccControlToString, null, this::setPPccControl));
-        map.put("qPccControl", new GetterSetter(this::qPccControlToString, null, this::setQPccControl));
-        map.put("qShare", new GetterSetter(this::qShareToString, null, this::setQShare));
-        map.put("targetPWMfactor", new GetterSetter(this::targetPWMfactorToString, null, this::setTargetPWMfactor));
-        map.put("targetPhasePcc", new GetterSetter(this::targetPhasePccToString, null, this::setTargetPhasePcc));
-        map.put("targetPowerFactorPcc", new GetterSetter(this::targetPowerFactorPccToString, null, this::setTargetPowerFactorPcc));
-        map.put("targetQpcc", new GetterSetter(this::targetQpccToString, null, this::setTargetQpcc));
-        map.put("targetUpcc", new GetterSetter(this::targetUpccToString, null, this::setTargetUpcc));
-        map.put("uv", new GetterSetter(this::uvToString, null, this::setUv));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

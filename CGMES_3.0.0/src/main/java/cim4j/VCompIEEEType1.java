@@ -50,6 +50,14 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
         return rc != null ? rc.toString() : null;
     }
 
+    private static void setRc(BaseClass _this_, String _value_) {
+        ((VCompIEEEType1) _this_).setRc(_value_);
+    }
+
+    private static String rcToString(BaseClass _this_) {
+        return ((VCompIEEEType1) _this_).rcToString();
+    }
+
     /**
      * &lt;font color=`#0f0f0f`&gt;Time constant which is used for the combined voltage sensing and compensation signal (&lt;i&gt;Tr&lt;/i&gt;) (&amp;gt;= 0).&lt;/font&gt;
      */
@@ -71,6 +79,14 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
         return tr != null ? tr.toString() : null;
     }
 
+    private static void setTr(BaseClass _this_, String _value_) {
+        ((VCompIEEEType1) _this_).setTr(_value_);
+    }
+
+    private static String trToString(BaseClass _this_) {
+        return ((VCompIEEEType1) _this_).trToString();
+    }
+
     /**
      * &lt;font color=`#0f0f0f`&gt;Reactive component of compensation of a generator (&lt;i&gt;Xc&lt;/i&gt;) (&amp;gt;= 0).&lt;/font&gt;
      */
@@ -90,6 +106,14 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
 
     public String xcToString() {
         return xc != null ? xc.toString() : null;
+    }
+
+    private static void setXc(BaseClass _this_, String _value_) {
+        ((VCompIEEEType1) _this_).setXc(_value_);
+    }
+
+    private static String xcToString(BaseClass _this_) {
+        return ((VCompIEEEType1) _this_).xcToString();
     }
 
     /**
@@ -133,16 +157,12 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("VCompIEEEType1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VCompIEEEType1", attrName));
+        return "";
     }
 
     /**
@@ -153,16 +173,12 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VCompIEEEType1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VCompIEEEType1", attrName, objectValue));
         }
     }
 
@@ -174,16 +190,12 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VCompIEEEType1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VCompIEEEType1", attrName, stringValue));
         }
     }
 
@@ -307,30 +319,21 @@ public class VCompIEEEType1 extends VoltageCompensatorDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rc", new AttrDetails("VCompIEEEType1.rc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("rc", new AttrDetails("VCompIEEEType1.rc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VCompIEEEType1::rcToString, null, VCompIEEEType1::setRc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tr", new AttrDetails("VCompIEEEType1.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tr", new AttrDetails("VCompIEEEType1.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VCompIEEEType1::trToString, null, VCompIEEEType1::setTr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xc", new AttrDetails("VCompIEEEType1.xc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xc", new AttrDetails("VCompIEEEType1.xc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VCompIEEEType1::xcToString, null, VCompIEEEType1::setXc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VCompIEEEType1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("rc", new GetterSetter(this::rcToString, null, this::setRc));
-        map.put("tr", new GetterSetter(this::trToString, null, this::setTr));
-        map.put("xc", new GetterSetter(this::xcToString, null, this::setXc));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

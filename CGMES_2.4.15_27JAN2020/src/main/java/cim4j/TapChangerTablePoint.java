@@ -47,6 +47,14 @@ public class TapChangerTablePoint extends BaseClass {
         return b != null ? b.toString() : null;
     }
 
+    private static void setB(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).bToString();
+    }
+
     /**
      * The magnetizing branch conductance deviation in percent of nominal value. The actual conductance is calculated as follows: calculated magnetizing conductance = g(nominal) * (1 + g(from this class)/100).   The g(nominal) is defined as the static magnetizing conductance on the associated power transformer end or ends.  This model assumes the star impedance (pi model) form.
      */
@@ -66,6 +74,14 @@ public class TapChangerTablePoint extends BaseClass {
 
     public String gToString() {
         return g != null ? g.toString() : null;
+    }
+
+    private static void setG(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setG(_value_);
+    }
+
+    private static String gToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).gToString();
     }
 
     /**
@@ -89,6 +105,14 @@ public class TapChangerTablePoint extends BaseClass {
         return r != null ? r.toString() : null;
     }
 
+    private static void setR(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).rToString();
+    }
+
     /**
      * The voltage ratio in per unit. Hence this is a value close to one.
      */
@@ -108,6 +132,14 @@ public class TapChangerTablePoint extends BaseClass {
 
     public String ratioToString() {
         return ratio != null ? ratio.toString() : null;
+    }
+
+    private static void setRatio(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setRatio(_value_);
+    }
+
+    private static String ratioToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).ratioToString();
     }
 
     /**
@@ -131,6 +163,14 @@ public class TapChangerTablePoint extends BaseClass {
         return step != null ? step.toString() : null;
     }
 
+    private static void setStep(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setStep(_value_);
+    }
+
+    private static String stepToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).stepToString();
+    }
+
     /**
      * The series reactance deviation in percent of nominal value. The actual reactance is calculated as follows: calculated reactance = x(nominal) * (1 + x(from this class)/100).   The x(nominal) is defined as the static series reactance on the associated power transformer end or ends.  This model assumes the star impedance (pi model) form.
      */
@@ -150,6 +190,14 @@ public class TapChangerTablePoint extends BaseClass {
 
     public String xToString() {
         return x != null ? x.toString() : null;
+    }
+
+    private static void setX(BaseClass _this_, String _value_) {
+        ((TapChangerTablePoint) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((TapChangerTablePoint) _this_).xToString();
     }
 
     /**
@@ -193,16 +241,12 @@ public class TapChangerTablePoint extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TapChangerTablePoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TapChangerTablePoint", attrName));
+        return "";
     }
 
     /**
@@ -213,16 +257,12 @@ public class TapChangerTablePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TapChangerTablePoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TapChangerTablePoint", attrName, objectValue));
         }
     }
 
@@ -234,16 +274,12 @@ public class TapChangerTablePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TapChangerTablePoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TapChangerTablePoint", attrName, stringValue));
         }
     }
 
@@ -367,48 +403,36 @@ public class TapChangerTablePoint extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b", new AttrDetails("TapChangerTablePoint.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b", new AttrDetails("TapChangerTablePoint.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::bToString, null, TapChangerTablePoint::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g", new AttrDetails("TapChangerTablePoint.g", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("g", new AttrDetails("TapChangerTablePoint.g", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::gToString, null, TapChangerTablePoint::setG));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("TapChangerTablePoint.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("TapChangerTablePoint.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::rToString, null, TapChangerTablePoint::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratio", new AttrDetails("TapChangerTablePoint.ratio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratio", new AttrDetails("TapChangerTablePoint.ratio", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::ratioToString, null, TapChangerTablePoint::setRatio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("step", new AttrDetails("TapChangerTablePoint.step", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("step", new AttrDetails("TapChangerTablePoint.step", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::stepToString, null, TapChangerTablePoint::setStep));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("TapChangerTablePoint.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x", new AttrDetails("TapChangerTablePoint.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::xToString, null, TapChangerTablePoint::setX));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChangerTablePoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("g", new GetterSetter(this::gToString, null, this::setG));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("ratio", new GetterSetter(this::ratioToString, null, this::setRatio));
-        map.put("step", new GetterSetter(this::stepToString, null, this::setStep));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

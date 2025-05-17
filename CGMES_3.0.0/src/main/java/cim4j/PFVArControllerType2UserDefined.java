@@ -54,6 +54,14 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
         return getStringFromSet(ProprietaryParameterDynamics);
     }
 
+    private static void setProprietaryParameterDynamics(BaseClass _this_, BaseClass _object_) {
+        ((PFVArControllerType2UserDefined) _this_).setProprietaryParameterDynamics(_object_);
+    }
+
+    private static String ProprietaryParameterDynamicsToString(BaseClass _this_) {
+        return ((PFVArControllerType2UserDefined) _this_).ProprietaryParameterDynamicsToString();
+    }
+
     /**
      * Behaviour is based on a proprietary model as opposed to a detailed model. true = user-defined model is proprietary with behaviour mutually understood by sending and receiving applications and parameters passed as general attributes false = user-defined model is explicitly defined in terms of control blocks and their input and output signals.
      */
@@ -73,6 +81,14 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
 
     public String proprietaryToString() {
         return proprietary != null ? proprietary.toString() : null;
+    }
+
+    private static void setProprietary(BaseClass _this_, String _value_) {
+        ((PFVArControllerType2UserDefined) _this_).setProprietary(_value_);
+    }
+
+    private static String proprietaryToString(BaseClass _this_) {
+        return ((PFVArControllerType2UserDefined) _this_).proprietaryToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PFVArControllerType2UserDefined", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PFVArControllerType2UserDefined", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PFVArControllerType2UserDefined", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PFVArControllerType2UserDefined", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PFVArControllerType2UserDefined", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PFVArControllerType2UserDefined", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ProprietaryParameterDynamics", new AttrDetails("PFVArControllerType2UserDefined.ProprietaryParameterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ProprietaryParameterDynamics", new AttrDetails("PFVArControllerType2UserDefined.ProprietaryParameterDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PFVArControllerType2UserDefined::ProprietaryParameterDynamicsToString, PFVArControllerType2UserDefined::setProprietaryParameterDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("proprietary", new AttrDetails("PFVArControllerType2UserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("proprietary", new AttrDetails("PFVArControllerType2UserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArControllerType2UserDefined::proprietaryToString, null, PFVArControllerType2UserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType2UserDefined().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ProprietaryParameterDynamics", new GetterSetter(this::ProprietaryParameterDynamicsToString, this::setProprietaryParameterDynamics, null));
-        map.put("proprietary", new GetterSetter(this::proprietaryToString, null, this::setProprietary));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

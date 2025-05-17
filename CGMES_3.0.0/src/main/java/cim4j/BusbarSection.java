@@ -50,6 +50,14 @@ public class BusbarSection extends Connector {
         return ipMax != null ? ipMax.toString() : null;
     }
 
+    private static void setIpMax(BaseClass _this_, String _value_) {
+        ((BusbarSection) _this_).setIpMax(_value_);
+    }
+
+    private static String ipMaxToString(BaseClass _this_) {
+        return ((BusbarSection) _this_).ipMaxToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -91,16 +99,12 @@ public class BusbarSection extends Connector {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BusbarSection", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BusbarSection", attrName));
+        return "";
     }
 
     /**
@@ -111,16 +115,12 @@ public class BusbarSection extends Connector {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BusbarSection", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BusbarSection", attrName, objectValue));
         }
     }
 
@@ -132,16 +132,12 @@ public class BusbarSection extends Connector {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BusbarSection", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BusbarSection", attrName, stringValue));
         }
     }
 
@@ -265,18 +261,11 @@ public class BusbarSection extends Connector {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("ipMax", new AttrDetails("BusbarSection.ipMax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ipMax", new AttrDetails("BusbarSection.ipMax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BusbarSection::ipMaxToString, null, BusbarSection::setIpMax));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusbarSection().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ipMax", new GetterSetter(this::ipMaxToString, null, this::setIpMax));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

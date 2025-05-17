@@ -54,6 +54,14 @@ public class OperationalLimitType extends IdentifiedObject {
         return getStringFromSet(OperationalLimit);
     }
 
+    private static void setOperationalLimit(BaseClass _this_, BaseClass _object_) {
+        ((OperationalLimitType) _this_).setOperationalLimit(_object_);
+    }
+
+    private static String OperationalLimitToString(BaseClass _this_) {
+        return ((OperationalLimitType) _this_).OperationalLimitToString();
+    }
+
     /**
      * The nominal acceptable duration of the limit.  Limits are commonly expressed in terms of the a time limit for which the limit is normally acceptable.   The actual acceptable duration of a specific limit may depend on other local factors such as temperature or wind speed.
      */
@@ -75,6 +83,14 @@ public class OperationalLimitType extends IdentifiedObject {
         return acceptableDuration != null ? acceptableDuration.toString() : null;
     }
 
+    private static void setAcceptableDuration(BaseClass _this_, String _value_) {
+        ((OperationalLimitType) _this_).setAcceptableDuration(_value_);
+    }
+
+    private static String acceptableDurationToString(BaseClass _this_) {
+        return ((OperationalLimitType) _this_).acceptableDurationToString();
+    }
+
     /**
      * The direction of the limit.
      */
@@ -92,6 +108,14 @@ public class OperationalLimitType extends IdentifiedObject {
         return direction;
     }
 
+    private static void setDirection(BaseClass _this_, String _value_) {
+        ((OperationalLimitType) _this_).setDirection(_value_);
+    }
+
+    private static String directionToString(BaseClass _this_) {
+        return ((OperationalLimitType) _this_).directionToString();
+    }
+
     /**
      * Types of limits defined in the ENTSO-E Operational Handbook Policy 3.
      */
@@ -107,6 +131,14 @@ public class OperationalLimitType extends IdentifiedObject {
 
     public String limitTypeToString() {
         return limitType;
+    }
+
+    private static void setLimitType(BaseClass _this_, String _value_) {
+        ((OperationalLimitType) _this_).setLimitType(_value_);
+    }
+
+    private static String limitTypeToString(BaseClass _this_) {
+        return ((OperationalLimitType) _this_).limitTypeToString();
     }
 
     /**
@@ -150,16 +182,12 @@ public class OperationalLimitType extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("OperationalLimitType", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "OperationalLimitType", attrName));
+        return "";
     }
 
     /**
@@ -170,16 +198,12 @@ public class OperationalLimitType extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("OperationalLimitType", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OperationalLimitType", attrName, objectValue));
         }
     }
 
@@ -191,16 +215,12 @@ public class OperationalLimitType extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("OperationalLimitType", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OperationalLimitType", attrName, stringValue));
         }
     }
 
@@ -324,36 +344,26 @@ public class OperationalLimitType extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("OperationalLimit", new AttrDetails("OperationalLimitType.OperationalLimit", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("OperationalLimit", new AttrDetails("OperationalLimitType.OperationalLimit", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OperationalLimitType::OperationalLimitToString, OperationalLimitType::setOperationalLimit, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("acceptableDuration", new AttrDetails("OperationalLimitType.acceptableDuration", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("acceptableDuration", new AttrDetails("OperationalLimitType.acceptableDuration", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, OperationalLimitType::acceptableDurationToString, null, OperationalLimitType::setAcceptableDuration));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("direction", new AttrDetails("OperationalLimitType.direction", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("direction", new AttrDetails("OperationalLimitType.direction", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, OperationalLimitType::directionToString, null, OperationalLimitType::setDirection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("limitType", new AttrDetails("OperationalLimitType.limitType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, true));
+            map.put("limitType", new AttrDetails("OperationalLimitType.limitType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, true, OperationalLimitType::limitTypeToString, null, OperationalLimitType::setLimitType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitType().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("OperationalLimit", new GetterSetter(this::OperationalLimitToString, this::setOperationalLimit, null));
-        map.put("acceptableDuration", new GetterSetter(this::acceptableDurationToString, null, this::setAcceptableDuration));
-        map.put("direction", new GetterSetter(this::directionToString, null, this::setDirection));
-        map.put("limitType", new GetterSetter(this::limitTypeToString, null, this::setLimitType));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

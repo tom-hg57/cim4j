@@ -52,6 +52,14 @@ public class DiagramObject extends IdentifiedObject {
         return Diagram != null ? Diagram.getRdfid() : null;
     }
 
+    private static void setDiagram(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObject) _this_).setDiagram(_object_);
+    }
+
+    private static String DiagramToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).DiagramToString();
+    }
+
     /**
      * A diagram object can have 0 or more points to reflect its layout position, routing (for polylines) or boundary (for polygons).
      *
@@ -77,6 +85,14 @@ public class DiagramObject extends IdentifiedObject {
         return getStringFromSet(DiagramObjectPoints);
     }
 
+    private static void setDiagramObjectPoints(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObject) _this_).setDiagramObjectPoints(_object_);
+    }
+
+    private static String DiagramObjectPointsToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).DiagramObjectPointsToString();
+    }
+
     /**
      * A diagram object has a style associated that provides a reference for the style used in the originating system.
      */
@@ -100,6 +116,14 @@ public class DiagramObject extends IdentifiedObject {
         return DiagramObjectStyle != null ? DiagramObjectStyle.getRdfid() : null;
     }
 
+    private static void setDiagramObjectStyle(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObject) _this_).setDiagramObjectStyle(_object_);
+    }
+
+    private static String DiagramObjectStyleToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).DiagramObjectStyleToString();
+    }
+
     /**
      * The domain object to which this diagram object is associated.
      */
@@ -121,6 +145,14 @@ public class DiagramObject extends IdentifiedObject {
 
     public String IdentifiedObjectToString() {
         return IdentifiedObject != null ? IdentifiedObject.getRdfid() : null;
+    }
+
+    private static void setIdentifiedObject(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObject) _this_).setIdentifiedObject(_object_);
+    }
+
+    private static String IdentifiedObjectToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).IdentifiedObjectToString();
     }
 
     /**
@@ -148,6 +180,14 @@ public class DiagramObject extends IdentifiedObject {
         return getStringFromSet(VisibilityLayers);
     }
 
+    private static void setVisibilityLayers(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObject) _this_).setVisibilityLayers(_object_);
+    }
+
+    private static String VisibilityLayersToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).VisibilityLayersToString();
+    }
+
     /**
      * The drawing order of this element. The higher the number, the later the element is drawn in sequence. This is used to ensure that elements that overlap are rendered in the correct order.
      */
@@ -167,6 +207,14 @@ public class DiagramObject extends IdentifiedObject {
 
     public String drawingOrderToString() {
         return drawingOrder != null ? drawingOrder.toString() : null;
+    }
+
+    private static void setDrawingOrder(BaseClass _this_, String _value_) {
+        ((DiagramObject) _this_).setDrawingOrder(_value_);
+    }
+
+    private static String drawingOrderToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).drawingOrderToString();
     }
 
     /**
@@ -190,6 +238,14 @@ public class DiagramObject extends IdentifiedObject {
         return isPolygon != null ? isPolygon.toString() : null;
     }
 
+    private static void setIsPolygon(BaseClass _this_, String _value_) {
+        ((DiagramObject) _this_).setIsPolygon(_value_);
+    }
+
+    private static String isPolygonToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).isPolygonToString();
+    }
+
     /**
      * The offset in the X direction. This is used for defining the offset from centre for rendering an icon (the default is that a single point specifies the centre of the icon).  The offset is in per-unit with 0 indicating there is no offset from the horizontal centre of the icon.  -0.5 indicates it is offset by 50% to the left and 0.5 indicates an offset of 50% to the right.
      */
@@ -209,6 +265,14 @@ public class DiagramObject extends IdentifiedObject {
 
     public String offsetXToString() {
         return offsetX != null ? offsetX.toString() : null;
+    }
+
+    private static void setOffsetX(BaseClass _this_, String _value_) {
+        ((DiagramObject) _this_).setOffsetX(_value_);
+    }
+
+    private static String offsetXToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).offsetXToString();
     }
 
     /**
@@ -232,6 +296,14 @@ public class DiagramObject extends IdentifiedObject {
         return offsetY != null ? offsetY.toString() : null;
     }
 
+    private static void setOffsetY(BaseClass _this_, String _value_) {
+        ((DiagramObject) _this_).setOffsetY(_value_);
+    }
+
+    private static String offsetYToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).offsetYToString();
+    }
+
     /**
      * Sets the angle of rotation of the diagram object.  Zero degrees is pointing to the top of the diagram.  Rotation is clockwise.  DiagramObject.rotation=0 has the following meaning: The connection point of an element which has one terminal is pointing to the top side of the diagram. The connection point `From side` of an element which has more than one terminal is pointing to the top side of the diagram. DiagramObject.rotation=90 has the following meaning: The connection point of an element which has one terminal is pointing to the right hand side of the diagram. The connection point `From side` of an element which has more than one terminal is pointing to the right hand side of the diagram.
      */
@@ -251,6 +323,14 @@ public class DiagramObject extends IdentifiedObject {
 
     public String rotationToString() {
         return rotation != null ? rotation.toString() : null;
+    }
+
+    private static void setRotation(BaseClass _this_, String _value_) {
+        ((DiagramObject) _this_).setRotation(_value_);
+    }
+
+    private static String rotationToString(BaseClass _this_) {
+        return ((DiagramObject) _this_).rotationToString();
     }
 
     /**
@@ -294,16 +374,12 @@ public class DiagramObject extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiagramObject", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiagramObject", attrName));
+        return "";
     }
 
     /**
@@ -314,16 +390,12 @@ public class DiagramObject extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiagramObject", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObject", attrName, objectValue));
         }
     }
 
@@ -335,16 +407,12 @@ public class DiagramObject extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiagramObject", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObject", attrName, stringValue));
         }
     }
 
@@ -468,72 +536,56 @@ public class DiagramObject extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("Diagram", new AttrDetails("DiagramObject.Diagram", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Diagram", new AttrDetails("DiagramObject.Diagram", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiagramObject::DiagramToString, DiagramObject::setDiagram, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObjectPoints", new AttrDetails("DiagramObject.DiagramObjectPoints", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiagramObjectPoints", new AttrDetails("DiagramObject.DiagramObjectPoints", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiagramObject::DiagramObjectPointsToString, DiagramObject::setDiagramObjectPoints, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObjectStyle", new AttrDetails("DiagramObject.DiagramObjectStyle", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiagramObjectStyle", new AttrDetails("DiagramObject.DiagramObjectStyle", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiagramObject::DiagramObjectStyleToString, DiagramObject::setDiagramObjectStyle, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("IdentifiedObject", new AttrDetails("DiagramObject.IdentifiedObject", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("IdentifiedObject", new AttrDetails("DiagramObject.IdentifiedObject", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiagramObject::IdentifiedObjectToString, DiagramObject::setIdentifiedObject, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("VisibilityLayers", new AttrDetails("DiagramObject.VisibilityLayers", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VisibilityLayers", new AttrDetails("DiagramObject.VisibilityLayers", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiagramObject::VisibilityLayersToString, DiagramObject::setVisibilityLayers, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("drawingOrder", new AttrDetails("DiagramObject.drawingOrder", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("drawingOrder", new AttrDetails("DiagramObject.drawingOrder", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::drawingOrderToString, null, DiagramObject::setDrawingOrder));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("isPolygon", new AttrDetails("DiagramObject.isPolygon", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("isPolygon", new AttrDetails("DiagramObject.isPolygon", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::isPolygonToString, null, DiagramObject::setIsPolygon));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("offsetX", new AttrDetails("DiagramObject.offsetX", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("offsetX", new AttrDetails("DiagramObject.offsetX", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::offsetXToString, null, DiagramObject::setOffsetX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("offsetY", new AttrDetails("DiagramObject.offsetY", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("offsetY", new AttrDetails("DiagramObject.offsetY", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::offsetYToString, null, DiagramObject::setOffsetY));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("rotation", new AttrDetails("DiagramObject.rotation", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("rotation", new AttrDetails("DiagramObject.rotation", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::rotationToString, null, DiagramObject::setRotation));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObject().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Diagram", new GetterSetter(this::DiagramToString, this::setDiagram, null));
-        map.put("DiagramObjectPoints", new GetterSetter(this::DiagramObjectPointsToString, this::setDiagramObjectPoints, null));
-        map.put("DiagramObjectStyle", new GetterSetter(this::DiagramObjectStyleToString, this::setDiagramObjectStyle, null));
-        map.put("IdentifiedObject", new GetterSetter(this::IdentifiedObjectToString, this::setIdentifiedObject, null));
-        map.put("VisibilityLayers", new GetterSetter(this::VisibilityLayersToString, this::setVisibilityLayers, null));
-        map.put("drawingOrder", new GetterSetter(this::drawingOrderToString, null, this::setDrawingOrder));
-        map.put("isPolygon", new GetterSetter(this::isPolygonToString, null, this::setIsPolygon));
-        map.put("offsetX", new GetterSetter(this::offsetXToString, null, this::setOffsetX));
-        map.put("offsetY", new GetterSetter(this::offsetYToString, null, this::setOffsetY));
-        map.put("rotation", new GetterSetter(this::rotationToString, null, this::setRotation));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

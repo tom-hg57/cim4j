@@ -50,6 +50,14 @@ public class DCGround extends DCConductingEquipment {
         return inductance != null ? inductance.toString() : null;
     }
 
+    private static void setInductance(BaseClass _this_, String _value_) {
+        ((DCGround) _this_).setInductance(_value_);
+    }
+
+    private static String inductanceToString(BaseClass _this_) {
+        return ((DCGround) _this_).inductanceToString();
+    }
+
     /**
      * Resistance to ground.
      */
@@ -69,6 +77,14 @@ public class DCGround extends DCConductingEquipment {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((DCGround) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((DCGround) _this_).rToString();
     }
 
     /**
@@ -112,16 +128,12 @@ public class DCGround extends DCConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DCGround", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DCGround", attrName));
+        return "";
     }
 
     /**
@@ -132,16 +144,12 @@ public class DCGround extends DCConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DCGround", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DCGround", attrName, objectValue));
         }
     }
 
@@ -153,16 +161,12 @@ public class DCGround extends DCConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DCGround", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DCGround", attrName, stringValue));
         }
     }
 
@@ -286,24 +290,16 @@ public class DCGround extends DCConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("inductance", new AttrDetails("DCGround.inductance", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("inductance", new AttrDetails("DCGround.inductance", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DCGround::inductanceToString, null, DCGround::setInductance));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("DCGround.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r", new AttrDetails("DCGround.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DCGround::rToString, null, DCGround::setR));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCGround().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("inductance", new GetterSetter(this::inductanceToString, null, this::setInductance));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

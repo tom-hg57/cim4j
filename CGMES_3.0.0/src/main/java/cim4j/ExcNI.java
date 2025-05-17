@@ -50,6 +50,14 @@ public class ExcNI extends ExcitationSystemDynamics {
         return busFedSelector != null ? busFedSelector.toString() : null;
     }
 
+    private static void setBusFedSelector(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setBusFedSelector(_value_);
+    }
+
+    private static String busFedSelectorToString(BaseClass _this_) {
+        return ((ExcNI) _this_).busFedSelectorToString();
+    }
+
     /**
      * Voltage regulator gain (&lt;i&gt;Ka&lt;/i&gt;) (&amp;gt; 0).  Typical value = 210.
      */
@@ -69,6 +77,14 @@ public class ExcNI extends ExcitationSystemDynamics {
 
     public String kaToString() {
         return ka != null ? ka.toString() : null;
+    }
+
+    private static void setKa(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setKa(_value_);
+    }
+
+    private static String kaToString(BaseClass _this_) {
+        return ((ExcNI) _this_).kaToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcNI extends ExcitationSystemDynamics {
         return kf != null ? kf.toString() : null;
     }
 
+    private static void setKf(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setKf(_value_);
+    }
+
+    private static String kfToString(BaseClass _this_) {
+        return ((ExcNI) _this_).kfToString();
+    }
+
     /**
      * &lt;i&gt;rc&lt;/i&gt; / &lt;i&gt;rfd&lt;/i&gt; (&lt;i&gt;R&lt;/i&gt;) (&amp;gt;= 0).  0 means exciter has negative current capability &amp;gt; 0 means exciter does not have negative current capability.   Typical value = 5.
      */
@@ -111,6 +135,14 @@ public class ExcNI extends ExcitationSystemDynamics {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((ExcNI) _this_).rToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcNI extends ExcitationSystemDynamics {
         return ta != null ? ta.toString() : null;
     }
 
+    private static void setTa(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setTa(_value_);
+    }
+
+    private static String taToString(BaseClass _this_) {
+        return ((ExcNI) _this_).taToString();
+    }
+
     /**
      * Excitation control system stabilizer time constant (&lt;i&gt;Tf1&lt;/i&gt;) (&amp;gt; 0). Typical value = 1,0.
      */
@@ -153,6 +193,14 @@ public class ExcNI extends ExcitationSystemDynamics {
 
     public String tf1ToString() {
         return tf1 != null ? tf1.toString() : null;
+    }
+
+    private static void setTf1(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setTf1(_value_);
+    }
+
+    private static String tf1ToString(BaseClass _this_) {
+        return ((ExcNI) _this_).tf1ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcNI extends ExcitationSystemDynamics {
         return tf2 != null ? tf2.toString() : null;
     }
 
+    private static void setTf2(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setTf2(_value_);
+    }
+
+    private static String tf2ToString(BaseClass _this_) {
+        return ((ExcNI) _this_).tf2ToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;Tr&lt;/i&gt;) (&amp;gt;= 0). Typical value = 0,02.
      */
@@ -195,6 +251,14 @@ public class ExcNI extends ExcitationSystemDynamics {
 
     public String trToString() {
         return tr != null ? tr.toString() : null;
+    }
+
+    private static void setTr(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setTr(_value_);
+    }
+
+    private static String trToString(BaseClass _this_) {
+        return ((ExcNI) _this_).trToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcNI extends ExcitationSystemDynamics {
         return vrmax != null ? vrmax.toString() : null;
     }
 
+    private static void setVrmax(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setVrmax(_value_);
+    }
+
+    private static String vrmaxToString(BaseClass _this_) {
+        return ((ExcNI) _this_).vrmaxToString();
+    }
+
     /**
      * Minimum voltage regulator ouput (&lt;i&gt;Vrmin&lt;/i&gt;) (&amp;lt; ExcNI.vrmax). Typical value = -2,0.
      */
@@ -237,6 +309,14 @@ public class ExcNI extends ExcitationSystemDynamics {
 
     public String vrminToString() {
         return vrmin != null ? vrmin.toString() : null;
+    }
+
+    private static void setVrmin(BaseClass _this_, String _value_) {
+        ((ExcNI) _this_).setVrmin(_value_);
+    }
+
+    private static String vrminToString(BaseClass _this_) {
+        return ((ExcNI) _this_).vrminToString();
     }
 
     /**
@@ -280,16 +360,12 @@ public class ExcNI extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcNI", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcNI", attrName));
+        return "";
     }
 
     /**
@@ -300,16 +376,12 @@ public class ExcNI extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcNI", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcNI", attrName, objectValue));
         }
     }
 
@@ -321,16 +393,12 @@ public class ExcNI extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcNI", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcNI", attrName, stringValue));
         }
     }
 
@@ -454,72 +522,56 @@ public class ExcNI extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("busFedSelector", new AttrDetails("ExcNI.busFedSelector", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("busFedSelector", new AttrDetails("ExcNI.busFedSelector", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::busFedSelectorToString, null, ExcNI::setBusFedSelector));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ka", new AttrDetails("ExcNI.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ka", new AttrDetails("ExcNI.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::kaToString, null, ExcNI::setKa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf", new AttrDetails("ExcNI.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kf", new AttrDetails("ExcNI.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::kfToString, null, ExcNI::setKf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("r", new AttrDetails("ExcNI.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("r", new AttrDetails("ExcNI.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::rToString, null, ExcNI::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta", new AttrDetails("ExcNI.ta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta", new AttrDetails("ExcNI.ta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::taToString, null, ExcNI::setTa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf1", new AttrDetails("ExcNI.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf1", new AttrDetails("ExcNI.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::tf1ToString, null, ExcNI::setTf1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf2", new AttrDetails("ExcNI.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf2", new AttrDetails("ExcNI.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::tf2ToString, null, ExcNI::setTf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tr", new AttrDetails("ExcNI.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tr", new AttrDetails("ExcNI.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::trToString, null, ExcNI::setTr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcNI.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcNI.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::vrmaxToString, null, ExcNI::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcNI.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcNI.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::vrminToString, null, ExcNI::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcNI().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("busFedSelector", new GetterSetter(this::busFedSelectorToString, null, this::setBusFedSelector));
-        map.put("ka", new GetterSetter(this::kaToString, null, this::setKa));
-        map.put("kf", new GetterSetter(this::kfToString, null, this::setKf));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("ta", new GetterSetter(this::taToString, null, this::setTa));
-        map.put("tf1", new GetterSetter(this::tf1ToString, null, this::setTf1));
-        map.put("tf2", new GetterSetter(this::tf2ToString, null, this::setTf2));
-        map.put("tr", new GetterSetter(this::trToString, null, this::setTr));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

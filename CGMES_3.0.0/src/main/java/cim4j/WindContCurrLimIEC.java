@@ -54,6 +54,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return getStringFromSet(WindDynamicsLookupTable);
     }
 
+    private static void setWindDynamicsLookupTable(BaseClass _this_, BaseClass _object_) {
+        ((WindContCurrLimIEC) _this_).setWindDynamicsLookupTable(_object_);
+    }
+
+    private static String WindDynamicsLookupTableToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).WindDynamicsLookupTableToString();
+    }
+
     /**
      * Wind turbine type 3 or type 4 model with which this wind control current limitation model is associated.
      *
@@ -79,6 +87,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return WindTurbineType3or4IEC != null ? WindTurbineType3or4IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindContCurrLimIEC) _this_).setWindTurbineType3or4IEC(_object_);
+    }
+
+    private static String WindTurbineType3or4IECToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).WindTurbineType3or4IECToString();
+    }
+
     /**
      * Maximum continuous current at the wind turbine terminals (&lt;i&gt;i&lt;/i&gt;&lt;i&gt;&lt;sub&gt;max&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -98,6 +114,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
 
     public String imaxToString() {
         return imax != null ? imax.toString() : null;
+    }
+
+    private static void setImax(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setImax(_value_);
+    }
+
+    private static String imaxToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).imaxToString();
     }
 
     /**
@@ -121,6 +145,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return imaxdip != null ? imaxdip.toString() : null;
     }
 
+    private static void setImaxdip(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setImaxdip(_value_);
+    }
+
+    private static String imaxdipToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).imaxdipToString();
+    }
+
     /**
      * Partial derivative of reactive current limit (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;pqu&lt;/sub&gt;&lt;/i&gt;) versus voltage. It is a type-dependent parameter.
      */
@@ -140,6 +172,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
 
     public String kpquToString() {
         return kpqu != null ? kpqu.toString() : null;
+    }
+
+    private static void setKpqu(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setKpqu(_value_);
+    }
+
+    private static String kpquToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).kpquToString();
     }
 
     /**
@@ -163,6 +203,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return mdfslim != null ? mdfslim.toString() : null;
     }
 
+    private static void setMdfslim(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setMdfslim(_value_);
+    }
+
+    private static String mdfslimToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).mdfslimToString();
+    }
+
     /**
      * Prioritisation of Q control during UVRT (&lt;i&gt;M&lt;/i&gt;&lt;i&gt;&lt;sub&gt;qpri&lt;/sub&gt;&lt;/i&gt;). It is a project-dependent parameter. true = reactive power priority (1 in the IEC model) false = active power priority (0 in the IEC model).
      */
@@ -182,6 +230,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
 
     public String mqpriToString() {
         return mqpri != null ? mqpri.toString() : null;
+    }
+
+    private static void setMqpri(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setMqpri(_value_);
+    }
+
+    private static String mqpriToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).mqpriToString();
     }
 
     /**
@@ -205,6 +261,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return tufiltcl != null ? tufiltcl.toString() : null;
     }
 
+    private static void setTufiltcl(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setTufiltcl(_value_);
+    }
+
+    private static String tufiltclToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).tufiltclToString();
+    }
+
     /**
      * Wind turbine voltage in the operation point where zero reactive current can be delivered (&lt;i&gt;u&lt;/i&gt;&lt;i&gt;&lt;sub&gt;pqumax&lt;/sub&gt;&lt;/i&gt;). It is a type-dependent parameter.
      */
@@ -224,6 +288,14 @@ public class WindContCurrLimIEC extends IdentifiedObject {
 
     public String upqumaxToString() {
         return upqumax != null ? upqumax.toString() : null;
+    }
+
+    private static void setUpqumax(BaseClass _this_, String _value_) {
+        ((WindContCurrLimIEC) _this_).setUpqumax(_value_);
+    }
+
+    private static String upqumaxToString(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).upqumaxToString();
     }
 
     /**
@@ -267,16 +339,12 @@ public class WindContCurrLimIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindContCurrLimIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindContCurrLimIEC", attrName));
+        return "";
     }
 
     /**
@@ -287,16 +355,12 @@ public class WindContCurrLimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindContCurrLimIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContCurrLimIEC", attrName, objectValue));
         }
     }
 
@@ -308,16 +372,12 @@ public class WindContCurrLimIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindContCurrLimIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContCurrLimIEC", attrName, stringValue));
         }
     }
 
@@ -441,66 +501,51 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindDynamicsLookupTable", new AttrDetails("WindContCurrLimIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindDynamicsLookupTable", new AttrDetails("WindContCurrLimIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindContCurrLimIEC::WindDynamicsLookupTableToString, WindContCurrLimIEC::setWindDynamicsLookupTable, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContCurrLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContCurrLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindContCurrLimIEC::WindTurbineType3or4IECToString, WindContCurrLimIEC::setWindTurbineType3or4IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imax", new AttrDetails("WindContCurrLimIEC.imax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("imax", new AttrDetails("WindContCurrLimIEC.imax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::imaxToString, null, WindContCurrLimIEC::setImax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imaxdip", new AttrDetails("WindContCurrLimIEC.imaxdip", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("imaxdip", new AttrDetails("WindContCurrLimIEC.imaxdip", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::imaxdipToString, null, WindContCurrLimIEC::setImaxdip));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpqu", new AttrDetails("WindContCurrLimIEC.kpqu", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kpqu", new AttrDetails("WindContCurrLimIEC.kpqu", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::kpquToString, null, WindContCurrLimIEC::setKpqu));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mdfslim", new AttrDetails("WindContCurrLimIEC.mdfslim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("mdfslim", new AttrDetails("WindContCurrLimIEC.mdfslim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::mdfslimToString, null, WindContCurrLimIEC::setMdfslim));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mqpri", new AttrDetails("WindContCurrLimIEC.mqpri", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("mqpri", new AttrDetails("WindContCurrLimIEC.mqpri", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::mqpriToString, null, WindContCurrLimIEC::setMqpri));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tufiltcl", new AttrDetails("WindContCurrLimIEC.tufiltcl", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tufiltcl", new AttrDetails("WindContCurrLimIEC.tufiltcl", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::tufiltclToString, null, WindContCurrLimIEC::setTufiltcl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("upqumax", new AttrDetails("WindContCurrLimIEC.upqumax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("upqumax", new AttrDetails("WindContCurrLimIEC.upqumax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::upqumaxToString, null, WindContCurrLimIEC::setUpqumax));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContCurrLimIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindDynamicsLookupTable", new GetterSetter(this::WindDynamicsLookupTableToString, this::setWindDynamicsLookupTable, null));
-        map.put("WindTurbineType3or4IEC", new GetterSetter(this::WindTurbineType3or4IECToString, this::setWindTurbineType3or4IEC, null));
-        map.put("imax", new GetterSetter(this::imaxToString, null, this::setImax));
-        map.put("imaxdip", new GetterSetter(this::imaxdipToString, null, this::setImaxdip));
-        map.put("kpqu", new GetterSetter(this::kpquToString, null, this::setKpqu));
-        map.put("mdfslim", new GetterSetter(this::mdfslimToString, null, this::setMdfslim));
-        map.put("mqpri", new GetterSetter(this::mqpriToString, null, this::setMqpri));
-        map.put("tufiltcl", new GetterSetter(this::tufiltclToString, null, this::setTufiltcl));
-        map.put("upqumax", new GetterSetter(this::upqumaxToString, null, this::setUpqumax));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -52,6 +52,14 @@ public class BoundaryPoint extends PowerSystemResource {
         return ConnectivityNode != null ? ConnectivityNode.getRdfid() : null;
     }
 
+    private static void setConnectivityNode(BaseClass _this_, BaseClass _object_) {
+        ((BoundaryPoint) _this_).setConnectivityNode(_object_);
+    }
+
+    private static String ConnectivityNodeToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).ConnectivityNodeToString();
+    }
+
     /**
      * The ISO code of the region which the `From` side of the Boundary point belongs to or it is connected to. The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum.
      */
@@ -67,6 +75,14 @@ public class BoundaryPoint extends PowerSystemResource {
 
     public String fromEndIsoCodeToString() {
         return fromEndIsoCode != null ? fromEndIsoCode.toString() : null;
+    }
+
+    private static void setFromEndIsoCode(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setFromEndIsoCode(_value_);
+    }
+
+    private static String fromEndIsoCodeToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).fromEndIsoCodeToString();
     }
 
     /**
@@ -86,6 +102,14 @@ public class BoundaryPoint extends PowerSystemResource {
         return fromEndName != null ? fromEndName.toString() : null;
     }
 
+    private static void setFromEndName(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setFromEndName(_value_);
+    }
+
+    private static String fromEndNameToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).fromEndNameToString();
+    }
+
     /**
      * Identifies the name of the transmission system operator, distribution system operator or other entity at which the `From` side of the interconnection is connected to. The length of the string is 64 characters maximum.
      */
@@ -101,6 +125,14 @@ public class BoundaryPoint extends PowerSystemResource {
 
     public String fromEndNameTsoToString() {
         return fromEndNameTso != null ? fromEndNameTso.toString() : null;
+    }
+
+    private static void setFromEndNameTso(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setFromEndNameTso(_value_);
+    }
+
+    private static String fromEndNameTsoToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).fromEndNameTsoToString();
     }
 
     /**
@@ -124,6 +156,14 @@ public class BoundaryPoint extends PowerSystemResource {
         return isDirectCurrent != null ? isDirectCurrent.toString() : null;
     }
 
+    private static void setIsDirectCurrent(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setIsDirectCurrent(_value_);
+    }
+
+    private static String isDirectCurrentToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).isDirectCurrentToString();
+    }
+
     /**
      * If true, this boundary point is on the interconnection that is excluded from control area interchange calculation and consequently has no related tie flows. Otherwise, the interconnection is included in control area interchange and a TieFlow is required at all sides of the boundary point (default).
      */
@@ -145,6 +185,14 @@ public class BoundaryPoint extends PowerSystemResource {
         return isExcludedFromAreaInterchange != null ? isExcludedFromAreaInterchange.toString() : null;
     }
 
+    private static void setIsExcludedFromAreaInterchange(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setIsExcludedFromAreaInterchange(_value_);
+    }
+
+    private static String isExcludedFromAreaInterchangeToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).isExcludedFromAreaInterchangeToString();
+    }
+
     /**
      * The ISO code of the region which the `To` side of the Boundary point belongs to or is connected to. The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum.
      */
@@ -160,6 +208,14 @@ public class BoundaryPoint extends PowerSystemResource {
 
     public String toEndIsoCodeToString() {
         return toEndIsoCode != null ? toEndIsoCode.toString() : null;
+    }
+
+    private static void setToEndIsoCode(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setToEndIsoCode(_value_);
+    }
+
+    private static String toEndIsoCodeToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).toEndIsoCodeToString();
     }
 
     /**
@@ -179,6 +235,14 @@ public class BoundaryPoint extends PowerSystemResource {
         return toEndName != null ? toEndName.toString() : null;
     }
 
+    private static void setToEndName(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setToEndName(_value_);
+    }
+
+    private static String toEndNameToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).toEndNameToString();
+    }
+
     /**
      * Identifies the name of the transmission system operator, distribution system operator or other entity at which the `To` side of the interconnection is connected to. The length of the string is 64 characters maximum.
      */
@@ -194,6 +258,14 @@ public class BoundaryPoint extends PowerSystemResource {
 
     public String toEndNameTsoToString() {
         return toEndNameTso != null ? toEndNameTso.toString() : null;
+    }
+
+    private static void setToEndNameTso(BaseClass _this_, String _value_) {
+        ((BoundaryPoint) _this_).setToEndNameTso(_value_);
+    }
+
+    private static String toEndNameTsoToString(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).toEndNameTsoToString();
     }
 
     /**
@@ -237,16 +309,12 @@ public class BoundaryPoint extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BoundaryPoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BoundaryPoint", attrName));
+        return "";
     }
 
     /**
@@ -257,16 +325,12 @@ public class BoundaryPoint extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BoundaryPoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BoundaryPoint", attrName, objectValue));
         }
     }
 
@@ -278,16 +342,12 @@ public class BoundaryPoint extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BoundaryPoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BoundaryPoint", attrName, stringValue));
         }
     }
 
@@ -412,74 +472,59 @@ public class BoundaryPoint extends PowerSystemResource {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("ConnectivityNode", new AttrDetails("BoundaryPoint.ConnectivityNode", true, "http://iec.ch/TC57/CIM100-European#", profiles, false, false));
+            map.put("ConnectivityNode", new AttrDetails("BoundaryPoint.ConnectivityNode", true, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, BoundaryPoint::ConnectivityNodeToString, BoundaryPoint::setConnectivityNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndIsoCode", new AttrDetails("BoundaryPoint.fromEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndIsoCode", new AttrDetails("BoundaryPoint.fromEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::fromEndIsoCodeToString, null, BoundaryPoint::setFromEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndName", new AttrDetails("BoundaryPoint.fromEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndName", new AttrDetails("BoundaryPoint.fromEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::fromEndNameToString, null, BoundaryPoint::setFromEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndNameTso", new AttrDetails("BoundaryPoint.fromEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndNameTso", new AttrDetails("BoundaryPoint.fromEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::fromEndNameTsoToString, null, BoundaryPoint::setFromEndNameTso));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("isDirectCurrent", new AttrDetails("BoundaryPoint.isDirectCurrent", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("isDirectCurrent", new AttrDetails("BoundaryPoint.isDirectCurrent", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::isDirectCurrentToString, null, BoundaryPoint::setIsDirectCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("isExcludedFromAreaInterchange", new AttrDetails("BoundaryPoint.isExcludedFromAreaInterchange", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("isExcludedFromAreaInterchange", new AttrDetails("BoundaryPoint.isExcludedFromAreaInterchange", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::isExcludedFromAreaInterchangeToString, null, BoundaryPoint::setIsExcludedFromAreaInterchange));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndIsoCode", new AttrDetails("BoundaryPoint.toEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndIsoCode", new AttrDetails("BoundaryPoint.toEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::toEndIsoCodeToString, null, BoundaryPoint::setToEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndName", new AttrDetails("BoundaryPoint.toEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndName", new AttrDetails("BoundaryPoint.toEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::toEndNameToString, null, BoundaryPoint::setToEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndNameTso", new AttrDetails("BoundaryPoint.toEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndNameTso", new AttrDetails("BoundaryPoint.toEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::toEndNameTsoToString, null, BoundaryPoint::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BoundaryPoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConnectivityNode", new GetterSetter(this::ConnectivityNodeToString, this::setConnectivityNode, null));
-        map.put("fromEndIsoCode", new GetterSetter(this::fromEndIsoCodeToString, null, this::setFromEndIsoCode));
-        map.put("fromEndName", new GetterSetter(this::fromEndNameToString, null, this::setFromEndName));
-        map.put("fromEndNameTso", new GetterSetter(this::fromEndNameTsoToString, null, this::setFromEndNameTso));
-        map.put("isDirectCurrent", new GetterSetter(this::isDirectCurrentToString, null, this::setIsDirectCurrent));
-        map.put("isExcludedFromAreaInterchange", new GetterSetter(this::isExcludedFromAreaInterchangeToString, null, this::setIsExcludedFromAreaInterchange));
-        map.put("toEndIsoCode", new GetterSetter(this::toEndIsoCodeToString, null, this::setToEndIsoCode));
-        map.put("toEndName", new GetterSetter(this::toEndNameToString, null, this::setToEndName));
-        map.put("toEndNameTso", new GetterSetter(this::toEndNameTsoToString, null, this::setToEndNameTso));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

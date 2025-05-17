@@ -50,6 +50,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return ae != null ? ae.toString() : null;
     }
 
+    private static void setAe(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setAe(_value_);
+    }
+
+    private static String aeToString(BaseClass _this_) {
+        return ((ExcHU) _this_).aeToString();
+    }
+
     /**
      * Minor loop PI tag gain factor (&lt;i&gt;Ai&lt;/i&gt;).  Typical value = 22.
      */
@@ -69,6 +77,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String aiToString() {
         return ai != null ? ai.toString() : null;
+    }
+
+    private static void setAi(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setAi(_value_);
+    }
+
+    private static String aiToString(BaseClass _this_) {
+        return ((ExcHU) _this_).aiToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return atr != null ? atr.toString() : null;
     }
 
+    private static void setAtr(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setAtr(_value_);
+    }
+
+    private static String atrToString(BaseClass _this_) {
+        return ((ExcHU) _this_).atrToString();
+    }
+
     /**
      * Field voltage control signal upper limit on AVR base (&lt;i&gt;Emax&lt;/i&gt;) (&amp;gt; ExcHU.emin).  Typical value = 0,996.
      */
@@ -111,6 +135,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String emaxToString() {
         return emax != null ? emax.toString() : null;
+    }
+
+    private static void setEmax(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setEmax(_value_);
+    }
+
+    private static String emaxToString(BaseClass _this_) {
+        return ((ExcHU) _this_).emaxToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return emin != null ? emin.toString() : null;
     }
 
+    private static void setEmin(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setEmin(_value_);
+    }
+
+    private static String eminToString(BaseClass _this_) {
+        return ((ExcHU) _this_).eminToString();
+    }
+
     /**
      * Major loop PI tag output signal upper limit (&lt;i&gt;Imax&lt;/i&gt;) (&amp;gt; ExcHU.imin).  Typical value = 2,19.
      */
@@ -153,6 +193,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String imaxToString() {
         return imax != null ? imax.toString() : null;
+    }
+
+    private static void setImax(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setImax(_value_);
+    }
+
+    private static String imaxToString(BaseClass _this_) {
+        return ((ExcHU) _this_).imaxToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return imin != null ? imin.toString() : null;
     }
 
+    private static void setImin(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setImin(_value_);
+    }
+
+    private static String iminToString(BaseClass _this_) {
+        return ((ExcHU) _this_).iminToString();
+    }
+
     /**
      * Voltage base conversion constant (&lt;i&gt;Ke&lt;/i&gt;).  Typical value = 4,666.
      */
@@ -195,6 +251,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String keToString() {
         return ke != null ? ke.toString() : null;
+    }
+
+    private static void setKe(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setKe(_value_);
+    }
+
+    private static String keToString(BaseClass _this_) {
+        return ((ExcHU) _this_).keToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return ki != null ? ki.toString() : null;
     }
 
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((ExcHU) _this_).kiToString();
+    }
+
     /**
      * Major loop PI tag integration time constant (&lt;i&gt;Te&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0,154.
      */
@@ -237,6 +309,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String teToString() {
         return te != null ? te.toString() : null;
+    }
+
+    private static void setTe(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setTe(_value_);
+    }
+
+    private static String teToString(BaseClass _this_) {
+        return ((ExcHU) _this_).teToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class ExcHU extends ExcitationSystemDynamics {
         return ti != null ? ti.toString() : null;
     }
 
+    private static void setTi(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setTi(_value_);
+    }
+
+    private static String tiToString(BaseClass _this_) {
+        return ((ExcHU) _this_).tiToString();
+    }
+
     /**
      * Filter time constant (&lt;i&gt;Tr&lt;/i&gt;) (&amp;gt;= 0). If a voltage compensator is used in conjunction with this excitation system model, &lt;i&gt;Tr &lt;/i&gt;should be set to 0.  Typical value = 0,01.
      */
@@ -279,6 +367,14 @@ public class ExcHU extends ExcitationSystemDynamics {
 
     public String trToString() {
         return tr != null ? tr.toString() : null;
+    }
+
+    private static void setTr(BaseClass _this_, String _value_) {
+        ((ExcHU) _this_).setTr(_value_);
+    }
+
+    private static String trToString(BaseClass _this_) {
+        return ((ExcHU) _this_).trToString();
     }
 
     /**
@@ -322,16 +418,12 @@ public class ExcHU extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcHU", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcHU", attrName));
+        return "";
     }
 
     /**
@@ -342,16 +434,12 @@ public class ExcHU extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcHU", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcHU", attrName, objectValue));
         }
     }
 
@@ -363,16 +451,12 @@ public class ExcHU extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcHU", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcHU", attrName, stringValue));
         }
     }
 
@@ -496,84 +580,66 @@ public class ExcHU extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ae", new AttrDetails("ExcHU.ae", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ae", new AttrDetails("ExcHU.ae", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::aeToString, null, ExcHU::setAe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ai", new AttrDetails("ExcHU.ai", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ai", new AttrDetails("ExcHU.ai", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::aiToString, null, ExcHU::setAi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("atr", new AttrDetails("ExcHU.atr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("atr", new AttrDetails("ExcHU.atr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::atrToString, null, ExcHU::setAtr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("emax", new AttrDetails("ExcHU.emax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("emax", new AttrDetails("ExcHU.emax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::emaxToString, null, ExcHU::setEmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("emin", new AttrDetails("ExcHU.emin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("emin", new AttrDetails("ExcHU.emin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::eminToString, null, ExcHU::setEmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imax", new AttrDetails("ExcHU.imax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("imax", new AttrDetails("ExcHU.imax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::imaxToString, null, ExcHU::setImax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imin", new AttrDetails("ExcHU.imin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("imin", new AttrDetails("ExcHU.imin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::iminToString, null, ExcHU::setImin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ke", new AttrDetails("ExcHU.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ke", new AttrDetails("ExcHU.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::keToString, null, ExcHU::setKe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("ExcHU.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki", new AttrDetails("ExcHU.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::kiToString, null, ExcHU::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcHU.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcHU.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::teToString, null, ExcHU::setTe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ti", new AttrDetails("ExcHU.ti", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ti", new AttrDetails("ExcHU.ti", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::tiToString, null, ExcHU::setTi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tr", new AttrDetails("ExcHU.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tr", new AttrDetails("ExcHU.tr", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcHU::trToString, null, ExcHU::setTr));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcHU().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ae", new GetterSetter(this::aeToString, null, this::setAe));
-        map.put("ai", new GetterSetter(this::aiToString, null, this::setAi));
-        map.put("atr", new GetterSetter(this::atrToString, null, this::setAtr));
-        map.put("emax", new GetterSetter(this::emaxToString, null, this::setEmax));
-        map.put("emin", new GetterSetter(this::eminToString, null, this::setEmin));
-        map.put("imax", new GetterSetter(this::imaxToString, null, this::setImax));
-        map.put("imin", new GetterSetter(this::iminToString, null, this::setImin));
-        map.put("ke", new GetterSetter(this::keToString, null, this::setKe));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        map.put("ti", new GetterSetter(this::tiToString, null, this::setTi));
-        map.put("tr", new GetterSetter(this::trToString, null, this::setTr));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

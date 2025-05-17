@@ -50,6 +50,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return ks != null ? ks.toString() : null;
     }
 
+    private static void setKs(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setKs(_value_);
+    }
+
+    private static String ksToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).ksToString();
+    }
+
     /**
      * Type of synchronous machine model used in Dynamic simulation applications.
      */
@@ -67,6 +75,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return modelType;
     }
 
+    private static void setModelType(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setModelType(_value_);
+    }
+
+    private static String modelTypeToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).modelTypeToString();
+    }
+
     /**
      * Type of rotor on physical machine.
      */
@@ -82,6 +98,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String rotorTypeToString() {
         return rotorType;
+    }
+
+    private static void setRotorType(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setRotorType(_value_);
+    }
+
+    private static String rotorTypeToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).rotorTypeToString();
     }
 
     /**
@@ -105,6 +129,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return tc != null ? tc.toString() : null;
     }
 
+    private static void setTc(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setTc(_value_);
+    }
+
+    private static String tcToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).tcToString();
+    }
+
     /**
      * Direct-axis transient rotor time constant (T`do) (&gt; T``do).  Typical Value = 5.
      */
@@ -124,6 +156,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String tpdoToString() {
         return tpdo != null ? tpdo.toString() : null;
+    }
+
+    private static void setTpdo(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setTpdo(_value_);
+    }
+
+    private static String tpdoToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).tpdoToString();
     }
 
     /**
@@ -147,6 +187,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return tppdo != null ? tppdo.toString() : null;
     }
 
+    private static void setTppdo(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setTppdo(_value_);
+    }
+
+    private static String tppdoToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).tppdoToString();
+    }
+
     /**
      * Quadrature-axis subtransient rotor time constant (T``qo) (&gt; 0). Typical Value = 0.03.
      */
@@ -166,6 +214,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String tppqoToString() {
         return tppqo != null ? tppqo.toString() : null;
+    }
+
+    private static void setTppqo(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setTppqo(_value_);
+    }
+
+    private static String tppqoToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).tppqoToString();
     }
 
     /**
@@ -189,6 +245,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return tpqo != null ? tpqo.toString() : null;
     }
 
+    private static void setTpqo(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setTpqo(_value_);
+    }
+
+    private static String tpqoToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).tpqoToString();
+    }
+
     /**
      * Direct-axis subtransient reactance (unsaturated) (X``d) (&gt; Xl).  Typical Value = 0.2.
      */
@@ -208,6 +272,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String xDirectSubtransToString() {
         return xDirectSubtrans != null ? xDirectSubtrans.toString() : null;
+    }
+
+    private static void setXDirectSubtrans(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXDirectSubtrans(_value_);
+    }
+
+    private static String xDirectSubtransToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xDirectSubtransToString();
     }
 
     /**
@@ -231,6 +303,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return xDirectSync != null ? xDirectSync.toString() : null;
     }
 
+    private static void setXDirectSync(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXDirectSync(_value_);
+    }
+
+    private static String xDirectSyncToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xDirectSyncToString();
+    }
+
     /**
      * Direct-axis transient reactance (unsaturated) (X`d) (&gt; =X``d).  Typical Value = 0.5.
      */
@@ -250,6 +330,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String xDirectTransToString() {
         return xDirectTrans != null ? xDirectTrans.toString() : null;
+    }
+
+    private static void setXDirectTrans(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXDirectTrans(_value_);
+    }
+
+    private static String xDirectTransToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xDirectTransToString();
     }
 
     /**
@@ -273,6 +361,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return xQuadSubtrans != null ? xQuadSubtrans.toString() : null;
     }
 
+    private static void setXQuadSubtrans(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXQuadSubtrans(_value_);
+    }
+
+    private static String xQuadSubtransToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xQuadSubtransToString();
+    }
+
     /**
      * Quadrature-axis synchronous reactance (Xq) (&gt; =X`q). The ratio of the component of reactive armature voltage, due to the quadrature-axis component of armature current, to this component of current, under steady state conditions and at rated frequency.  Typical Value = 1.6.
      */
@@ -294,6 +390,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         return xQuadSync != null ? xQuadSync.toString() : null;
     }
 
+    private static void setXQuadSync(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXQuadSync(_value_);
+    }
+
+    private static String xQuadSyncToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xQuadSyncToString();
+    }
+
     /**
      * Quadrature-axis transient reactance (X`q) (&gt; =X``q).  Typical Value = 0.3.
      */
@@ -313,6 +417,14 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
 
     public String xQuadTransToString() {
         return xQuadTrans != null ? xQuadTrans.toString() : null;
+    }
+
+    private static void setXQuadTrans(BaseClass _this_, String _value_) {
+        ((SynchronousMachineTimeConstantReactance) _this_).setXQuadTrans(_value_);
+    }
+
+    private static String xQuadTransToString(BaseClass _this_) {
+        return ((SynchronousMachineTimeConstantReactance) _this_).xQuadTransToString();
     }
 
     /**
@@ -356,16 +468,12 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SynchronousMachineTimeConstantReactance", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SynchronousMachineTimeConstantReactance", attrName));
+        return "";
     }
 
     /**
@@ -376,16 +484,12 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SynchronousMachineTimeConstantReactance", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineTimeConstantReactance", attrName, objectValue));
         }
     }
 
@@ -397,16 +501,12 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SynchronousMachineTimeConstantReactance", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachineTimeConstantReactance", attrName, stringValue));
         }
     }
 
@@ -530,96 +630,76 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ks", new AttrDetails("SynchronousMachineTimeConstantReactance.ks", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ks", new AttrDetails("SynchronousMachineTimeConstantReactance.ks", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::ksToString, null, SynchronousMachineTimeConstantReactance::setKs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("modelType", new AttrDetails("SynchronousMachineTimeConstantReactance.modelType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("modelType", new AttrDetails("SynchronousMachineTimeConstantReactance.modelType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, SynchronousMachineTimeConstantReactance::modelTypeToString, null, SynchronousMachineTimeConstantReactance::setModelType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rotorType", new AttrDetails("SynchronousMachineTimeConstantReactance.rotorType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("rotorType", new AttrDetails("SynchronousMachineTimeConstantReactance.rotorType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, SynchronousMachineTimeConstantReactance::rotorTypeToString, null, SynchronousMachineTimeConstantReactance::setRotorType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc", new AttrDetails("SynchronousMachineTimeConstantReactance.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tc", new AttrDetails("SynchronousMachineTimeConstantReactance.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::tcToString, null, SynchronousMachineTimeConstantReactance::setTc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpdo", new AttrDetails("SynchronousMachineTimeConstantReactance.tpdo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpdo", new AttrDetails("SynchronousMachineTimeConstantReactance.tpdo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::tpdoToString, null, SynchronousMachineTimeConstantReactance::setTpdo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tppdo", new AttrDetails("SynchronousMachineTimeConstantReactance.tppdo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tppdo", new AttrDetails("SynchronousMachineTimeConstantReactance.tppdo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::tppdoToString, null, SynchronousMachineTimeConstantReactance::setTppdo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tppqo", new AttrDetails("SynchronousMachineTimeConstantReactance.tppqo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tppqo", new AttrDetails("SynchronousMachineTimeConstantReactance.tppqo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::tppqoToString, null, SynchronousMachineTimeConstantReactance::setTppqo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpqo", new AttrDetails("SynchronousMachineTimeConstantReactance.tpqo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpqo", new AttrDetails("SynchronousMachineTimeConstantReactance.tpqo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::tpqoToString, null, SynchronousMachineTimeConstantReactance::setTpqo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xDirectSubtrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectSubtrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xDirectSubtrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectSubtrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xDirectSubtransToString, null, SynchronousMachineTimeConstantReactance::setXDirectSubtrans));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xDirectSync", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectSync", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xDirectSync", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectSync", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xDirectSyncToString, null, SynchronousMachineTimeConstantReactance::setXDirectSync));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xDirectTrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectTrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xDirectTrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xDirectTrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xDirectTransToString, null, SynchronousMachineTimeConstantReactance::setXDirectTrans));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xQuadSubtrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadSubtrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xQuadSubtrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadSubtrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xQuadSubtransToString, null, SynchronousMachineTimeConstantReactance::setXQuadSubtrans));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xQuadSync", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadSync", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xQuadSync", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadSync", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xQuadSyncToString, null, SynchronousMachineTimeConstantReactance::setXQuadSync));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xQuadTrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadTrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xQuadTrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadTrans", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineTimeConstantReactance::xQuadTransToString, null, SynchronousMachineTimeConstantReactance::setXQuadTrans));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineTimeConstantReactance().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ks", new GetterSetter(this::ksToString, null, this::setKs));
-        map.put("modelType", new GetterSetter(this::modelTypeToString, null, this::setModelType));
-        map.put("rotorType", new GetterSetter(this::rotorTypeToString, null, this::setRotorType));
-        map.put("tc", new GetterSetter(this::tcToString, null, this::setTc));
-        map.put("tpdo", new GetterSetter(this::tpdoToString, null, this::setTpdo));
-        map.put("tppdo", new GetterSetter(this::tppdoToString, null, this::setTppdo));
-        map.put("tppqo", new GetterSetter(this::tppqoToString, null, this::setTppqo));
-        map.put("tpqo", new GetterSetter(this::tpqoToString, null, this::setTpqo));
-        map.put("xDirectSubtrans", new GetterSetter(this::xDirectSubtransToString, null, this::setXDirectSubtrans));
-        map.put("xDirectSync", new GetterSetter(this::xDirectSyncToString, null, this::setXDirectSync));
-        map.put("xDirectTrans", new GetterSetter(this::xDirectTransToString, null, this::setXDirectTrans));
-        map.put("xQuadSubtrans", new GetterSetter(this::xQuadSubtransToString, null, this::setXQuadSubtrans));
-        map.put("xQuadSync", new GetterSetter(this::xQuadSyncToString, null, this::setXQuadSync));
-        map.put("xQuadTrans", new GetterSetter(this::xQuadTransToString, null, this::setXQuadTrans));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

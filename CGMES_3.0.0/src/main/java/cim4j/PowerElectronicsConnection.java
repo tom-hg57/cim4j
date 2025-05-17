@@ -52,6 +52,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         return PowerElectronicsUnit != null ? PowerElectronicsUnit.getRdfid() : null;
     }
 
+    private static void setPowerElectronicsUnit(BaseClass _this_, BaseClass _object_) {
+        ((PowerElectronicsConnection) _this_).setPowerElectronicsUnit(_object_);
+    }
+
+    private static String PowerElectronicsUnitToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).PowerElectronicsUnitToString();
+    }
+
     /**
      * The wind turbine type 3 or type 4 dynamics model associated with this power electronics connection.
      *
@@ -77,6 +85,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         return WindTurbineType3or4Dynamics != null ? WindTurbineType3or4Dynamics.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4Dynamics(BaseClass _this_, BaseClass _object_) {
+        ((PowerElectronicsConnection) _this_).setWindTurbineType3or4Dynamics(_object_);
+    }
+
+    private static String WindTurbineType3or4DynamicsToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).WindTurbineType3or4DynamicsToString();
+    }
+
     /**
      * Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.
      */
@@ -96,6 +112,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
 
     public String maxQToString() {
         return maxQ != null ? maxQ.toString() : null;
+    }
+
+    private static void setMaxQ(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setMaxQ(_value_);
+    }
+
+    private static String maxQToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).maxQToString();
     }
 
     /**
@@ -119,6 +143,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         return minQ != null ? minQ.toString() : null;
     }
 
+    private static void setMinQ(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setMinQ(_value_);
+    }
+
+    private static String minQToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).minQToString();
+    }
+
     /**
      * Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution.
      */
@@ -138,6 +170,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
 
     public String pToString() {
         return p != null ? p.toString() : null;
+    }
+
+    private static void setP(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).pToString();
     }
 
     /**
@@ -161,6 +201,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         return q != null ? q.toString() : null;
     }
 
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).qToString();
+    }
+
     /**
      * Nameplate apparent power rating for the unit. The attribute shall have a positive value.
      */
@@ -182,6 +230,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         return ratedS != null ? ratedS.toString() : null;
     }
 
+    private static void setRatedS(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setRatedS(_value_);
+    }
+
+    private static String ratedSToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).ratedSToString();
+    }
+
     /**
      * Rated voltage (nameplate data, Ur in IEC 60909-0). It is primarily used for short circuit data exchange according to IEC 60909. The attribute shall be a positive value.
      */
@@ -201,6 +257,14 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
 
     public String ratedUToString() {
         return ratedU != null ? ratedU.toString() : null;
+    }
+
+    private static void setRatedU(BaseClass _this_, String _value_) {
+        ((PowerElectronicsConnection) _this_).setRatedU(_value_);
+    }
+
+    private static String ratedUToString(BaseClass _this_) {
+        return ((PowerElectronicsConnection) _this_).ratedUToString();
     }
 
     /**
@@ -244,16 +308,12 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PowerElectronicsConnection", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerElectronicsConnection", attrName));
+        return "";
     }
 
     /**
@@ -264,16 +324,12 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerElectronicsConnection", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerElectronicsConnection", attrName, objectValue));
         }
     }
 
@@ -285,16 +341,12 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerElectronicsConnection", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerElectronicsConnection", attrName, stringValue));
         }
     }
 
@@ -418,60 +470,46 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PowerElectronicsUnit", new AttrDetails("PowerElectronicsConnection.PowerElectronicsUnit", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerElectronicsUnit", new AttrDetails("PowerElectronicsConnection.PowerElectronicsUnit", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerElectronicsConnection::PowerElectronicsUnitToString, PowerElectronicsConnection::setPowerElectronicsUnit, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4Dynamics", new AttrDetails("PowerElectronicsConnection.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3or4Dynamics", new AttrDetails("PowerElectronicsConnection.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerElectronicsConnection::WindTurbineType3or4DynamicsToString, PowerElectronicsConnection::setWindTurbineType3or4Dynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxQ", new AttrDetails("PowerElectronicsConnection.maxQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxQ", new AttrDetails("PowerElectronicsConnection.maxQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::maxQToString, null, PowerElectronicsConnection::setMaxQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minQ", new AttrDetails("PowerElectronicsConnection.minQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minQ", new AttrDetails("PowerElectronicsConnection.minQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::minQToString, null, PowerElectronicsConnection::setMinQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("PowerElectronicsConnection.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("p", new AttrDetails("PowerElectronicsConnection.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::pToString, null, PowerElectronicsConnection::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("PowerElectronicsConnection.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("q", new AttrDetails("PowerElectronicsConnection.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::qToString, null, PowerElectronicsConnection::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedS", new AttrDetails("PowerElectronicsConnection.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedS", new AttrDetails("PowerElectronicsConnection.ratedS", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::ratedSToString, null, PowerElectronicsConnection::setRatedS));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedU", new AttrDetails("PowerElectronicsConnection.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedU", new AttrDetails("PowerElectronicsConnection.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::ratedUToString, null, PowerElectronicsConnection::setRatedU));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsConnection().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerElectronicsUnit", new GetterSetter(this::PowerElectronicsUnitToString, this::setPowerElectronicsUnit, null));
-        map.put("WindTurbineType3or4Dynamics", new GetterSetter(this::WindTurbineType3or4DynamicsToString, this::setWindTurbineType3or4Dynamics, null));
-        map.put("maxQ", new GetterSetter(this::maxQToString, null, this::setMaxQ));
-        map.put("minQ", new GetterSetter(this::minQToString, null, this::setMinQ));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("ratedS", new GetterSetter(this::ratedSToString, null, this::setRatedS));
-        map.put("ratedU", new GetterSetter(this::ratedUToString, null, this::setRatedU));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

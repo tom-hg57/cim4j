@@ -54,6 +54,14 @@ public class ControlArea extends PowerSystemResource {
         return getStringFromSet(ControlAreaGeneratingUnit);
     }
 
+    private static void setControlAreaGeneratingUnit(BaseClass _this_, BaseClass _object_) {
+        ((ControlArea) _this_).setControlAreaGeneratingUnit(_object_);
+    }
+
+    private static String ControlAreaGeneratingUnitToString(BaseClass _this_) {
+        return ((ControlArea) _this_).ControlAreaGeneratingUnitToString();
+    }
+
     /**
      * The energy area that is forecast from this control area specification.
      */
@@ -75,6 +83,14 @@ public class ControlArea extends PowerSystemResource {
 
     public String EnergyAreaToString() {
         return EnergyArea != null ? EnergyArea.getRdfid() : null;
+    }
+
+    private static void setEnergyArea(BaseClass _this_, BaseClass _object_) {
+        ((ControlArea) _this_).setEnergyArea(_object_);
+    }
+
+    private static String EnergyAreaToString(BaseClass _this_) {
+        return ((ControlArea) _this_).EnergyAreaToString();
     }
 
     /**
@@ -102,6 +118,14 @@ public class ControlArea extends PowerSystemResource {
         return getStringFromSet(TieFlow);
     }
 
+    private static void setTieFlow(BaseClass _this_, BaseClass _object_) {
+        ((ControlArea) _this_).setTieFlow(_object_);
+    }
+
+    private static String TieFlowToString(BaseClass _this_) {
+        return ((ControlArea) _this_).TieFlowToString();
+    }
+
     /**
      * The specified positive net interchange into the control area, i.e. positive sign means flow into the area.
      */
@@ -121,6 +145,14 @@ public class ControlArea extends PowerSystemResource {
 
     public String netInterchangeToString() {
         return netInterchange != null ? netInterchange.toString() : null;
+    }
+
+    private static void setNetInterchange(BaseClass _this_, String _value_) {
+        ((ControlArea) _this_).setNetInterchange(_value_);
+    }
+
+    private static String netInterchangeToString(BaseClass _this_) {
+        return ((ControlArea) _this_).netInterchangeToString();
     }
 
     /**
@@ -144,6 +176,14 @@ public class ControlArea extends PowerSystemResource {
         return pTolerance != null ? pTolerance.toString() : null;
     }
 
+    private static void setPTolerance(BaseClass _this_, String _value_) {
+        ((ControlArea) _this_).setPTolerance(_value_);
+    }
+
+    private static String pToleranceToString(BaseClass _this_) {
+        return ((ControlArea) _this_).pToleranceToString();
+    }
+
     /**
      * The primary type of control area definition used to determine if this is used for automatic generation control, for planning interchange control, or other purposes.   A control area specified with primary type of automatic generation control could still be forecast and used as an interchange area in power flow analysis.
      */
@@ -159,6 +199,14 @@ public class ControlArea extends PowerSystemResource {
 
     public String typeToString() {
         return type;
+    }
+
+    private static void setType(BaseClass _this_, String _value_) {
+        ((ControlArea) _this_).setType(_value_);
+    }
+
+    private static String typeToString(BaseClass _this_) {
+        return ((ControlArea) _this_).typeToString();
     }
 
     /**
@@ -202,16 +250,12 @@ public class ControlArea extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ControlArea", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ControlArea", attrName));
+        return "";
     }
 
     /**
@@ -222,16 +266,12 @@ public class ControlArea extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ControlArea", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ControlArea", attrName, objectValue));
         }
     }
 
@@ -243,16 +283,12 @@ public class ControlArea extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ControlArea", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ControlArea", attrName, stringValue));
         }
     }
 
@@ -376,48 +412,36 @@ public class ControlArea extends PowerSystemResource {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ControlAreaGeneratingUnit", new AttrDetails("ControlArea.ControlAreaGeneratingUnit", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ControlAreaGeneratingUnit", new AttrDetails("ControlArea.ControlAreaGeneratingUnit", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ControlArea::ControlAreaGeneratingUnitToString, ControlArea::setControlAreaGeneratingUnit, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("EnergyArea", new AttrDetails("ControlArea.EnergyArea", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("EnergyArea", new AttrDetails("ControlArea.EnergyArea", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ControlArea::EnergyAreaToString, ControlArea::setEnergyArea, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TieFlow", new AttrDetails("ControlArea.TieFlow", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TieFlow", new AttrDetails("ControlArea.TieFlow", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ControlArea::TieFlowToString, ControlArea::setTieFlow, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("netInterchange", new AttrDetails("ControlArea.netInterchange", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("netInterchange", new AttrDetails("ControlArea.netInterchange", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ControlArea::netInterchangeToString, null, ControlArea::setNetInterchange));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("pTolerance", new AttrDetails("ControlArea.pTolerance", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pTolerance", new AttrDetails("ControlArea.pTolerance", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ControlArea::pToleranceToString, null, ControlArea::setPTolerance));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("type", new AttrDetails("ControlArea.type", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("type", new AttrDetails("ControlArea.type", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, ControlArea::typeToString, null, ControlArea::setType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ControlArea().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ControlAreaGeneratingUnit", new GetterSetter(this::ControlAreaGeneratingUnitToString, this::setControlAreaGeneratingUnit, null));
-        map.put("EnergyArea", new GetterSetter(this::EnergyAreaToString, this::setEnergyArea, null));
-        map.put("TieFlow", new GetterSetter(this::TieFlowToString, this::setTieFlow, null));
-        map.put("netInterchange", new GetterSetter(this::netInterchangeToString, null, this::setNetInterchange));
-        map.put("pTolerance", new GetterSetter(this::pToleranceToString, null, this::setPTolerance));
-        map.put("type", new GetterSetter(this::typeToString, null, this::setType));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

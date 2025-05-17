@@ -50,6 +50,14 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
         return j != null ? j.toString() : null;
     }
 
+    private static void setJ(BaseClass _this_, String _value_) {
+        ((PFVArType2Common1) _this_).setJ(_value_);
+    }
+
+    private static String jToString(BaseClass _this_) {
+        return ((PFVArType2Common1) _this_).jToString();
+    }
+
     /**
      * Reset gain (&lt;i&gt;Ki&lt;/i&gt;).
      */
@@ -69,6 +77,14 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
 
     public String kiToString() {
         return ki != null ? ki.toString() : null;
+    }
+
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((PFVArType2Common1) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((PFVArType2Common1) _this_).kiToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
         return kp != null ? kp.toString() : null;
     }
 
+    private static void setKp(BaseClass _this_, String _value_) {
+        ((PFVArType2Common1) _this_).setKp(_value_);
+    }
+
+    private static String kpToString(BaseClass _this_) {
+        return ((PFVArType2Common1) _this_).kpToString();
+    }
+
     /**
      * Output limit (&lt;i&gt;max&lt;/i&gt;).
      */
@@ -113,6 +137,14 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
         return max != null ? max.toString() : null;
     }
 
+    private static void setMax(BaseClass _this_, String _value_) {
+        ((PFVArType2Common1) _this_).setMax(_value_);
+    }
+
+    private static String maxToString(BaseClass _this_) {
+        return ((PFVArType2Common1) _this_).maxToString();
+    }
+
     /**
      * Reference value of reactive power or power factor (&lt;i&gt;Ref&lt;/i&gt;). The reference value is initialised by this model. This initialisation can override the value exchanged by this attribute to represent a plant operator`s change of the reference setting.
      */
@@ -132,6 +164,14 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
 
     public String refToString() {
         return ref != null ? ref.toString() : null;
+    }
+
+    private static void setRef(BaseClass _this_, String _value_) {
+        ((PFVArType2Common1) _this_).setRef(_value_);
+    }
+
+    private static String refToString(BaseClass _this_) {
+        return ((PFVArType2Common1) _this_).refToString();
     }
 
     /**
@@ -175,16 +215,12 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PFVArType2Common1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PFVArType2Common1", attrName));
+        return "";
     }
 
     /**
@@ -195,16 +231,12 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PFVArType2Common1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PFVArType2Common1", attrName, objectValue));
         }
     }
 
@@ -216,16 +248,12 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PFVArType2Common1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PFVArType2Common1", attrName, stringValue));
         }
     }
 
@@ -349,42 +377,31 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("j", new AttrDetails("PFVArType2Common1.j", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("j", new AttrDetails("PFVArType2Common1.j", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2Common1::jToString, null, PFVArType2Common1::setJ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("PFVArType2Common1.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki", new AttrDetails("PFVArType2Common1.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2Common1::kiToString, null, PFVArType2Common1::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("PFVArType2Common1.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp", new AttrDetails("PFVArType2Common1.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2Common1::kpToString, null, PFVArType2Common1::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("max", new AttrDetails("PFVArType2Common1.max", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("max", new AttrDetails("PFVArType2Common1.max", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2Common1::maxToString, null, PFVArType2Common1::setMax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ref", new AttrDetails("PFVArType2Common1.ref", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ref", new AttrDetails("PFVArType2Common1.ref", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2Common1::refToString, null, PFVArType2Common1::setRef));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType2Common1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("j", new GetterSetter(this::jToString, null, this::setJ));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("max", new GetterSetter(this::maxToString, null, this::setMax));
-        map.put("ref", new GetterSetter(this::refToString, null, this::setRef));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

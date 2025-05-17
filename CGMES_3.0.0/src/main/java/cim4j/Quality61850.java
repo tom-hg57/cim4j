@@ -50,6 +50,14 @@ public class Quality61850 extends BaseClass {
         return badReference != null ? badReference.toString() : null;
     }
 
+    private static void setBadReference(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setBadReference(_value_);
+    }
+
+    private static String badReferenceToString(BaseClass _this_) {
+        return ((Quality61850) _this_).badReferenceToString();
+    }
+
     /**
      * Value has been replaced by State Estimator. estimatorReplaced is not an IEC61850 quality bit but has been put in this class for convenience.
      */
@@ -69,6 +77,14 @@ public class Quality61850 extends BaseClass {
 
     public String estimatorReplacedToString() {
         return estimatorReplaced != null ? estimatorReplaced.toString() : null;
+    }
+
+    private static void setEstimatorReplaced(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setEstimatorReplaced(_value_);
+    }
+
+    private static String estimatorReplacedToString(BaseClass _this_) {
+        return ((Quality61850) _this_).estimatorReplacedToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class Quality61850 extends BaseClass {
         return failure != null ? failure.toString() : null;
     }
 
+    private static void setFailure(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setFailure(_value_);
+    }
+
+    private static String failureToString(BaseClass _this_) {
+        return ((Quality61850) _this_).failureToString();
+    }
+
     /**
      * Measurement value is old and possibly invalid, as it has not been successfully updated during a specified time interval.
      */
@@ -111,6 +135,14 @@ public class Quality61850 extends BaseClass {
 
     public String oldDataToString() {
         return oldData != null ? oldData.toString() : null;
+    }
+
+    private static void setOldData(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setOldData(_value_);
+    }
+
+    private static String oldDataToString(BaseClass _this_) {
+        return ((Quality61850) _this_).oldDataToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class Quality61850 extends BaseClass {
         return operatorBlocked != null ? operatorBlocked.toString() : null;
     }
 
+    private static void setOperatorBlocked(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setOperatorBlocked(_value_);
+    }
+
+    private static String operatorBlockedToString(BaseClass _this_) {
+        return ((Quality61850) _this_).operatorBlockedToString();
+    }
+
     /**
      * To prevent some overload of the communication it is sensible to detect and suppress oscillating (fast changing) binary inputs. If a signal changes in a defined time twice in the same direction (from 0 to 1 or from 1 to 0) then oscillation is detected and the detail quality identifier `oscillatory` is set. If it is detected a configured numbers of transient changes could be passed by. In this time the validity status `questionable` is set. If after this defined numbers of changes the signal is still in the oscillating state the value shall be set either to the opposite state of the previous stable value or to a defined default value. In this case the validity status `questionable` is reset and `invalid` is set as long as the signal is oscillating. If it is configured such that no transient changes should be passed by then the validity status `invalid` is set immediately in addition to the detail quality identifier `oscillatory` (used for status information only).
      */
@@ -153,6 +193,14 @@ public class Quality61850 extends BaseClass {
 
     public String oscillatoryToString() {
         return oscillatory != null ? oscillatory.toString() : null;
+    }
+
+    private static void setOscillatory(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setOscillatory(_value_);
+    }
+
+    private static String oscillatoryToString(BaseClass _this_) {
+        return ((Quality61850) _this_).oscillatoryToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class Quality61850 extends BaseClass {
         return outOfRange != null ? outOfRange.toString() : null;
     }
 
+    private static void setOutOfRange(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setOutOfRange(_value_);
+    }
+
+    private static String outOfRangeToString(BaseClass _this_) {
+        return ((Quality61850) _this_).outOfRangeToString();
+    }
+
     /**
      * Measurement value is beyond the capability of being  represented properly. For example, a counter value overflows from maximum count back to a value of zero.
      */
@@ -197,6 +253,14 @@ public class Quality61850 extends BaseClass {
         return overFlow != null ? overFlow.toString() : null;
     }
 
+    private static void setOverFlow(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setOverFlow(_value_);
+    }
+
+    private static String overFlowToString(BaseClass _this_) {
+        return ((Quality61850) _this_).overFlowToString();
+    }
+
     /**
      * Source gives information related to the origin of a value. The value may be acquired from the process, defaulted or substituted.
      */
@@ -212,6 +276,14 @@ public class Quality61850 extends BaseClass {
 
     public String sourceToString() {
         return source;
+    }
+
+    private static void setSource(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setSource(_value_);
+    }
+
+    private static String sourceToString(BaseClass _this_) {
+        return ((Quality61850) _this_).sourceToString();
     }
 
     /**
@@ -235,6 +307,14 @@ public class Quality61850 extends BaseClass {
         return suspect != null ? suspect.toString() : null;
     }
 
+    private static void setSuspect(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setSuspect(_value_);
+    }
+
+    private static String suspectToString(BaseClass _this_) {
+        return ((Quality61850) _this_).suspectToString();
+    }
+
     /**
      * Measurement value is transmitted for test purposes.
      */
@@ -256,6 +336,14 @@ public class Quality61850 extends BaseClass {
         return test != null ? test.toString() : null;
     }
 
+    private static void setTest(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setTest(_value_);
+    }
+
+    private static String testToString(BaseClass _this_) {
+        return ((Quality61850) _this_).testToString();
+    }
+
     /**
      * Validity of the measurement value.
      */
@@ -271,6 +359,14 @@ public class Quality61850 extends BaseClass {
 
     public String validityToString() {
         return validity;
+    }
+
+    private static void setValidity(BaseClass _this_, String _value_) {
+        ((Quality61850) _this_).setValidity(_value_);
+    }
+
+    private static String validityToString(BaseClass _this_) {
+        return ((Quality61850) _this_).validityToString();
     }
 
     /**
@@ -314,16 +410,12 @@ public class Quality61850 extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Quality61850", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Quality61850", attrName));
+        return "";
     }
 
     /**
@@ -334,16 +426,12 @@ public class Quality61850 extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Quality61850", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Quality61850", attrName, objectValue));
         }
     }
 
@@ -355,16 +443,12 @@ public class Quality61850 extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Quality61850", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Quality61850", attrName, stringValue));
         }
     }
 
@@ -488,84 +572,66 @@ public class Quality61850 extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("badReference", new AttrDetails("Quality61850.badReference", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("badReference", new AttrDetails("Quality61850.badReference", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::badReferenceToString, null, Quality61850::setBadReference));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("estimatorReplaced", new AttrDetails("Quality61850.estimatorReplaced", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("estimatorReplaced", new AttrDetails("Quality61850.estimatorReplaced", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::estimatorReplacedToString, null, Quality61850::setEstimatorReplaced));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("failure", new AttrDetails("Quality61850.failure", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("failure", new AttrDetails("Quality61850.failure", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::failureToString, null, Quality61850::setFailure));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("oldData", new AttrDetails("Quality61850.oldData", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("oldData", new AttrDetails("Quality61850.oldData", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::oldDataToString, null, Quality61850::setOldData));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("operatorBlocked", new AttrDetails("Quality61850.operatorBlocked", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("operatorBlocked", new AttrDetails("Quality61850.operatorBlocked", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::operatorBlockedToString, null, Quality61850::setOperatorBlocked));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("oscillatory", new AttrDetails("Quality61850.oscillatory", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("oscillatory", new AttrDetails("Quality61850.oscillatory", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::oscillatoryToString, null, Quality61850::setOscillatory));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("outOfRange", new AttrDetails("Quality61850.outOfRange", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("outOfRange", new AttrDetails("Quality61850.outOfRange", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::outOfRangeToString, null, Quality61850::setOutOfRange));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("overFlow", new AttrDetails("Quality61850.overFlow", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("overFlow", new AttrDetails("Quality61850.overFlow", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::overFlowToString, null, Quality61850::setOverFlow));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("source", new AttrDetails("Quality61850.source", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("source", new AttrDetails("Quality61850.source", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Quality61850::sourceToString, null, Quality61850::setSource));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("suspect", new AttrDetails("Quality61850.suspect", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("suspect", new AttrDetails("Quality61850.suspect", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::suspectToString, null, Quality61850::setSuspect));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("test", new AttrDetails("Quality61850.test", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("test", new AttrDetails("Quality61850.test", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Quality61850::testToString, null, Quality61850::setTest));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("validity", new AttrDetails("Quality61850.validity", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("validity", new AttrDetails("Quality61850.validity", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Quality61850::validityToString, null, Quality61850::setValidity));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Quality61850().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("badReference", new GetterSetter(this::badReferenceToString, null, this::setBadReference));
-        map.put("estimatorReplaced", new GetterSetter(this::estimatorReplacedToString, null, this::setEstimatorReplaced));
-        map.put("failure", new GetterSetter(this::failureToString, null, this::setFailure));
-        map.put("oldData", new GetterSetter(this::oldDataToString, null, this::setOldData));
-        map.put("operatorBlocked", new GetterSetter(this::operatorBlockedToString, null, this::setOperatorBlocked));
-        map.put("oscillatory", new GetterSetter(this::oscillatoryToString, null, this::setOscillatory));
-        map.put("outOfRange", new GetterSetter(this::outOfRangeToString, null, this::setOutOfRange));
-        map.put("overFlow", new GetterSetter(this::overFlowToString, null, this::setOverFlow));
-        map.put("source", new GetterSetter(this::sourceToString, null, this::setSource));
-        map.put("suspect", new GetterSetter(this::suspectToString, null, this::setSuspect));
-        map.put("test", new GetterSetter(this::testToString, null, this::setTest));
-        map.put("validity", new GetterSetter(this::validityToString, null, this::setValidity));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

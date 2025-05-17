@@ -54,6 +54,14 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
         return getStringFromSet(ConnectivityNodes);
     }
 
+    private static void setConnectivityNodes(BaseClass _this_, BaseClass _object_) {
+        ((ConnectivityNodeContainer) _this_).setConnectivityNodes(_object_);
+    }
+
+    private static String ConnectivityNodesToString(BaseClass _this_) {
+        return ((ConnectivityNodeContainer) _this_).ConnectivityNodesToString();
+    }
+
     /**
      * The topological nodes which belong to this connectivity node container.
      *
@@ -77,6 +85,14 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
 
     public String TopologicalNodeToString() {
         return getStringFromSet(TopologicalNode);
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, BaseClass _object_) {
+        ((ConnectivityNodeContainer) _this_).setTopologicalNode(_object_);
+    }
+
+    private static String TopologicalNodeToString(BaseClass _this_) {
+        return ((ConnectivityNodeContainer) _this_).TopologicalNodeToString();
     }
 
     /**
@@ -120,16 +136,12 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ConnectivityNodeContainer", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ConnectivityNodeContainer", attrName));
+        return "";
     }
 
     /**
@@ -140,16 +152,12 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ConnectivityNodeContainer", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConnectivityNodeContainer", attrName, objectValue));
         }
     }
 
@@ -161,16 +169,12 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ConnectivityNodeContainer", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConnectivityNodeContainer", attrName, stringValue));
         }
     }
 
@@ -295,24 +299,16 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("ConnectivityNodes", new AttrDetails("ConnectivityNodeContainer.ConnectivityNodes", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ConnectivityNodes", new AttrDetails("ConnectivityNodeContainer.ConnectivityNodes", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConnectivityNodeContainer::ConnectivityNodesToString, ConnectivityNodeContainer::setConnectivityNodes, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("ConnectivityNodeContainer.TopologicalNode", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("ConnectivityNodeContainer.TopologicalNode", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConnectivityNodeContainer::TopologicalNodeToString, ConnectivityNodeContainer::setTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNodeContainer().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConnectivityNodes", new GetterSetter(this::ConnectivityNodesToString, this::setConnectivityNodes, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

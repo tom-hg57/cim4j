@@ -52,6 +52,14 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
         return Switch != null ? Switch.getRdfid() : null;
     }
 
+    private static void setSwitch(BaseClass _this_, BaseClass _object_) {
+        ((SwitchSchedule) _this_).setSwitch(_object_);
+    }
+
+    private static String SwitchToString(BaseClass _this_) {
+        return ((SwitchSchedule) _this_).SwitchToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -93,16 +101,12 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SwitchSchedule", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SwitchSchedule", attrName));
+        return "";
     }
 
     /**
@@ -113,16 +117,12 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SwitchSchedule", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SwitchSchedule", attrName, objectValue));
         }
     }
 
@@ -134,16 +134,12 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SwitchSchedule", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SwitchSchedule", attrName, stringValue));
         }
     }
 
@@ -267,18 +263,11 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Switch", new AttrDetails("SwitchSchedule.Switch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Switch", new AttrDetails("SwitchSchedule.Switch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SwitchSchedule::SwitchToString, SwitchSchedule::setSwitch, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SwitchSchedule().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Switch", new GetterSetter(this::SwitchToString, this::setSwitch, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

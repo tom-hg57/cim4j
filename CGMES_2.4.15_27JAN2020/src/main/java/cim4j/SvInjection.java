@@ -52,6 +52,14 @@ public class SvInjection extends BaseClass {
         return TopologicalNode != null ? TopologicalNode.getRdfid() : null;
     }
 
+    private static void setTopologicalNode(BaseClass _this_, BaseClass _object_) {
+        ((SvInjection) _this_).setTopologicalNode(_object_);
+    }
+
+    private static String TopologicalNodeToString(BaseClass _this_) {
+        return ((SvInjection) _this_).TopologicalNodeToString();
+    }
+
     /**
      * The active power injected into the bus in addition to injections from equipment terminals.  Positive sign means injection into the TopologicalNode (bus).
      */
@@ -73,6 +81,14 @@ public class SvInjection extends BaseClass {
         return pInjection != null ? pInjection.toString() : null;
     }
 
+    private static void setPInjection(BaseClass _this_, String _value_) {
+        ((SvInjection) _this_).setPInjection(_value_);
+    }
+
+    private static String pInjectionToString(BaseClass _this_) {
+        return ((SvInjection) _this_).pInjectionToString();
+    }
+
     /**
      * The reactive power injected into the bus in addition to injections from equipment terminals. Positive sign means injection into the TopologicalNode (bus).
      */
@@ -92,6 +108,14 @@ public class SvInjection extends BaseClass {
 
     public String qInjectionToString() {
         return qInjection != null ? qInjection.toString() : null;
+    }
+
+    private static void setQInjection(BaseClass _this_, String _value_) {
+        ((SvInjection) _this_).setQInjection(_value_);
+    }
+
+    private static String qInjectionToString(BaseClass _this_) {
+        return ((SvInjection) _this_).qInjectionToString();
     }
 
     /**
@@ -135,16 +159,12 @@ public class SvInjection extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvInjection", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvInjection", attrName));
+        return "";
     }
 
     /**
@@ -155,16 +175,12 @@ public class SvInjection extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvInjection", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvInjection", attrName, objectValue));
         }
     }
 
@@ -176,16 +192,12 @@ public class SvInjection extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvInjection", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvInjection", attrName, stringValue));
         }
     }
 
@@ -309,30 +321,21 @@ public class SvInjection extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("TopologicalNode", new AttrDetails("SvInjection.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("SvInjection.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SvInjection::TopologicalNodeToString, SvInjection::setTopologicalNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("pInjection", new AttrDetails("SvInjection.pInjection", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pInjection", new AttrDetails("SvInjection.pInjection", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvInjection::pInjectionToString, null, SvInjection::setPInjection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("qInjection", new AttrDetails("SvInjection.qInjection", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qInjection", new AttrDetails("SvInjection.qInjection", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvInjection::qInjectionToString, null, SvInjection::setQInjection));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvInjection().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("pInjection", new GetterSetter(this::pInjectionToString, null, this::setPInjection));
-        map.put("qInjection", new GetterSetter(this::qInjectionToString, null, this::setQInjection));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

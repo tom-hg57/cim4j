@@ -50,6 +50,14 @@ public class LoadComposite extends LoadDynamics {
         return epfd != null ? epfd.toString() : null;
     }
 
+    private static void setEpfd(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEpfd(_value_);
+    }
+
+    private static String epfdToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).epfdToString();
+    }
+
     /**
      * Active load-frequency dependence index (static) (&lt;i&gt;Epfs&lt;/i&gt;).  Typical value = 1,5.
      */
@@ -69,6 +77,14 @@ public class LoadComposite extends LoadDynamics {
 
     public String epfsToString() {
         return epfs != null ? epfs.toString() : null;
+    }
+
+    private static void setEpfs(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEpfs(_value_);
+    }
+
+    private static String epfsToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).epfsToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class LoadComposite extends LoadDynamics {
         return epvd != null ? epvd.toString() : null;
     }
 
+    private static void setEpvd(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEpvd(_value_);
+    }
+
+    private static String epvdToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).epvdToString();
+    }
+
     /**
      * Active load-voltage dependence index (static) (&lt;i&gt;Epvs&lt;/i&gt;).  Typical value = 0,7.
      */
@@ -111,6 +135,14 @@ public class LoadComposite extends LoadDynamics {
 
     public String epvsToString() {
         return epvs != null ? epvs.toString() : null;
+    }
+
+    private static void setEpvs(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEpvs(_value_);
+    }
+
+    private static String epvsToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).epvsToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class LoadComposite extends LoadDynamics {
         return eqfd != null ? eqfd.toString() : null;
     }
 
+    private static void setEqfd(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEqfd(_value_);
+    }
+
+    private static String eqfdToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).eqfdToString();
+    }
+
     /**
      * Reactive load-frequency dependence index (static) (&lt;i&gt;Eqfs&lt;/i&gt;).  Typical value = 0.
      */
@@ -153,6 +193,14 @@ public class LoadComposite extends LoadDynamics {
 
     public String eqfsToString() {
         return eqfs != null ? eqfs.toString() : null;
+    }
+
+    private static void setEqfs(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEqfs(_value_);
+    }
+
+    private static String eqfsToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).eqfsToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class LoadComposite extends LoadDynamics {
         return eqvd != null ? eqvd.toString() : null;
     }
 
+    private static void setEqvd(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEqvd(_value_);
+    }
+
+    private static String eqvdToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).eqvdToString();
+    }
+
     /**
      * Reactive load-voltage dependence index (static) (&lt;i&gt;Eqvs&lt;/i&gt;).  Typical value = 2.
      */
@@ -195,6 +251,14 @@ public class LoadComposite extends LoadDynamics {
 
     public String eqvsToString() {
         return eqvs != null ? eqvs.toString() : null;
+    }
+
+    private static void setEqvs(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setEqvs(_value_);
+    }
+
+    private static String eqvsToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).eqvsToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class LoadComposite extends LoadDynamics {
         return h != null ? h.toString() : null;
     }
 
+    private static void setH(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setH(_value_);
+    }
+
+    private static String hToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).hToString();
+    }
+
     /**
      * Loading factor (&lt;i&gt;L&lt;/i&gt;&lt;i&gt;&lt;sub&gt;fac&lt;/sub&gt;&lt;/i&gt;). The ratio of initial &lt;i&gt;P&lt;/i&gt; to motor MVA base.  Typical value = 0,8.
      */
@@ -239,6 +311,14 @@ public class LoadComposite extends LoadDynamics {
         return lfac != null ? lfac.toString() : null;
     }
 
+    private static void setLfac(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setLfac(_value_);
+    }
+
+    private static String lfacToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).lfacToString();
+    }
+
     /**
      * Fraction of constant-power load to be represented by this motor model (&lt;i&gt;P&lt;/i&gt;&lt;i&gt;&lt;sub&gt;FRAC&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0,0 and &amp;lt;= 1,0).  Typical value = 0,5.
      */
@@ -258,6 +338,14 @@ public class LoadComposite extends LoadDynamics {
 
     public String pfracToString() {
         return pfrac != null ? pfrac.toString() : null;
+    }
+
+    private static void setPfrac(BaseClass _this_, String _value_) {
+        ((LoadComposite) _this_).setPfrac(_value_);
+    }
+
+    private static String pfracToString(BaseClass _this_) {
+        return ((LoadComposite) _this_).pfracToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class LoadComposite extends LoadDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("LoadComposite", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "LoadComposite", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class LoadComposite extends LoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("LoadComposite", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadComposite", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class LoadComposite extends LoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("LoadComposite", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadComposite", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class LoadComposite extends LoadDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("epfd", new AttrDetails("LoadComposite.epfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("epfd", new AttrDetails("LoadComposite.epfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::epfdToString, null, LoadComposite::setEpfd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("epfs", new AttrDetails("LoadComposite.epfs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("epfs", new AttrDetails("LoadComposite.epfs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::epfsToString, null, LoadComposite::setEpfs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("epvd", new AttrDetails("LoadComposite.epvd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("epvd", new AttrDetails("LoadComposite.epvd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::epvdToString, null, LoadComposite::setEpvd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("epvs", new AttrDetails("LoadComposite.epvs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("epvs", new AttrDetails("LoadComposite.epvs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::epvsToString, null, LoadComposite::setEpvs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eqfd", new AttrDetails("LoadComposite.eqfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eqfd", new AttrDetails("LoadComposite.eqfd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::eqfdToString, null, LoadComposite::setEqfd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eqfs", new AttrDetails("LoadComposite.eqfs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eqfs", new AttrDetails("LoadComposite.eqfs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::eqfsToString, null, LoadComposite::setEqfs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eqvd", new AttrDetails("LoadComposite.eqvd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eqvd", new AttrDetails("LoadComposite.eqvd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::eqvdToString, null, LoadComposite::setEqvd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eqvs", new AttrDetails("LoadComposite.eqvs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("eqvs", new AttrDetails("LoadComposite.eqvs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::eqvsToString, null, LoadComposite::setEqvs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("h", new AttrDetails("LoadComposite.h", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("h", new AttrDetails("LoadComposite.h", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::hToString, null, LoadComposite::setH));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lfac", new AttrDetails("LoadComposite.lfac", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("lfac", new AttrDetails("LoadComposite.lfac", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::lfacToString, null, LoadComposite::setLfac));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pfrac", new AttrDetails("LoadComposite.pfrac", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pfrac", new AttrDetails("LoadComposite.pfrac", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LoadComposite::pfracToString, null, LoadComposite::setPfrac));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadComposite().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("epfd", new GetterSetter(this::epfdToString, null, this::setEpfd));
-        map.put("epfs", new GetterSetter(this::epfsToString, null, this::setEpfs));
-        map.put("epvd", new GetterSetter(this::epvdToString, null, this::setEpvd));
-        map.put("epvs", new GetterSetter(this::epvsToString, null, this::setEpvs));
-        map.put("eqfd", new GetterSetter(this::eqfdToString, null, this::setEqfd));
-        map.put("eqfs", new GetterSetter(this::eqfsToString, null, this::setEqfs));
-        map.put("eqvd", new GetterSetter(this::eqvdToString, null, this::setEqvd));
-        map.put("eqvs", new GetterSetter(this::eqvsToString, null, this::setEqvs));
-        map.put("h", new GetterSetter(this::hToString, null, this::setH));
-        map.put("lfac", new GetterSetter(this::lfacToString, null, this::setLfac));
-        map.put("pfrac", new GetterSetter(this::pfracToString, null, this::setPfrac));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

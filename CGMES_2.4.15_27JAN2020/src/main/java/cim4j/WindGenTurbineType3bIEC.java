@@ -50,6 +50,14 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
         return fducw != null ? fducw.toString() : null;
     }
 
+    private static void setFducw(BaseClass _this_, String _value_) {
+        ((WindGenTurbineType3bIEC) _this_).setFducw(_value_);
+    }
+
+    private static String fducwToString(BaseClass _this_) {
+        return ((WindGenTurbineType3bIEC) _this_).fducwToString();
+    }
+
     /**
      * Crowbar control mode ().   The parameter is case dependent parameter.
      */
@@ -69,6 +77,14 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
 
     public String mwtcwpToString() {
         return mwtcwp != null ? mwtcwp.toString() : null;
+    }
+
+    private static void setMwtcwp(BaseClass _this_, String _value_) {
+        ((WindGenTurbineType3bIEC) _this_).setMwtcwp(_value_);
+    }
+
+    private static String mwtcwpToString(BaseClass _this_) {
+        return ((WindGenTurbineType3bIEC) _this_).mwtcwpToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
         return tg != null ? tg.toString() : null;
     }
 
+    private static void setTg(BaseClass _this_, String _value_) {
+        ((WindGenTurbineType3bIEC) _this_).setTg(_value_);
+    }
+
+    private static String tgToString(BaseClass _this_) {
+        return ((WindGenTurbineType3bIEC) _this_).tgToString();
+    }
+
     /**
      * Time constant for crowbar washout filter (). It is case dependent parameter.
      */
@@ -113,6 +137,14 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
         return two != null ? two.toString() : null;
     }
 
+    private static void setTwo(BaseClass _this_, String _value_) {
+        ((WindGenTurbineType3bIEC) _this_).setTwo(_value_);
+    }
+
+    private static String twoToString(BaseClass _this_) {
+        return ((WindGenTurbineType3bIEC) _this_).twoToString();
+    }
+
     /**
      * Electromagnetic transient reactance (x). It is type dependent parameter.
      */
@@ -132,6 +164,14 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
 
     public String xsToString() {
         return xs != null ? xs.toString() : null;
+    }
+
+    private static void setXs(BaseClass _this_, String _value_) {
+        ((WindGenTurbineType3bIEC) _this_).setXs(_value_);
+    }
+
+    private static String xsToString(BaseClass _this_) {
+        return ((WindGenTurbineType3bIEC) _this_).xsToString();
     }
 
     /**
@@ -175,16 +215,12 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindGenTurbineType3bIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindGenTurbineType3bIEC", attrName));
+        return "";
     }
 
     /**
@@ -195,16 +231,12 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindGenTurbineType3bIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindGenTurbineType3bIEC", attrName, objectValue));
         }
     }
 
@@ -216,16 +248,12 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindGenTurbineType3bIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindGenTurbineType3bIEC", attrName, stringValue));
         }
     }
 
@@ -349,42 +377,31 @@ public class WindGenTurbineType3bIEC extends WindGenTurbineType3IEC {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("fducw", new AttrDetails("WindGenTurbineType3bIEC.fducw", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("fducw", new AttrDetails("WindGenTurbineType3bIEC.fducw", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindGenTurbineType3bIEC::fducwToString, null, WindGenTurbineType3bIEC::setFducw));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mwtcwp", new AttrDetails("WindGenTurbineType3bIEC.mwtcwp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mwtcwp", new AttrDetails("WindGenTurbineType3bIEC.mwtcwp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindGenTurbineType3bIEC::mwtcwpToString, null, WindGenTurbineType3bIEC::setMwtcwp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tg", new AttrDetails("WindGenTurbineType3bIEC.tg", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tg", new AttrDetails("WindGenTurbineType3bIEC.tg", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindGenTurbineType3bIEC::tgToString, null, WindGenTurbineType3bIEC::setTg));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("two", new AttrDetails("WindGenTurbineType3bIEC.two", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("two", new AttrDetails("WindGenTurbineType3bIEC.two", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindGenTurbineType3bIEC::twoToString, null, WindGenTurbineType3bIEC::setTwo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xs", new AttrDetails("WindGenTurbineType3bIEC.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xs", new AttrDetails("WindGenTurbineType3bIEC.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindGenTurbineType3bIEC::xsToString, null, WindGenTurbineType3bIEC::setXs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenTurbineType3bIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("fducw", new GetterSetter(this::fducwToString, null, this::setFducw));
-        map.put("mwtcwp", new GetterSetter(this::mwtcwpToString, null, this::setMwtcwp));
-        map.put("tg", new GetterSetter(this::tgToString, null, this::setTg));
-        map.put("two", new GetterSetter(this::twoToString, null, this::setTwo));
-        map.put("xs", new GetterSetter(this::xsToString, null, this::setXs));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

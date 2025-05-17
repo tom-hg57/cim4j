@@ -52,6 +52,14 @@ public class RatioTapChanger extends TapChanger {
         return RatioTapChangerTable != null ? RatioTapChangerTable.getRdfid() : null;
     }
 
+    private static void setRatioTapChangerTable(BaseClass _this_, BaseClass _object_) {
+        ((RatioTapChanger) _this_).setRatioTapChangerTable(_object_);
+    }
+
+    private static String RatioTapChangerTableToString(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).RatioTapChangerTableToString();
+    }
+
     /**
      * Ratio tap changer associated with this transformer end.
      */
@@ -75,6 +83,14 @@ public class RatioTapChanger extends TapChanger {
         return TransformerEnd != null ? TransformerEnd.getRdfid() : null;
     }
 
+    private static void setTransformerEnd(BaseClass _this_, BaseClass _object_) {
+        ((RatioTapChanger) _this_).setTransformerEnd(_object_);
+    }
+
+    private static String TransformerEndToString(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).TransformerEndToString();
+    }
+
     /**
      * Tap step increment, in per cent of nominal voltage, per step position.
      */
@@ -96,6 +112,14 @@ public class RatioTapChanger extends TapChanger {
         return stepVoltageIncrement != null ? stepVoltageIncrement.toString() : null;
     }
 
+    private static void setStepVoltageIncrement(BaseClass _this_, String _value_) {
+        ((RatioTapChanger) _this_).setStepVoltageIncrement(_value_);
+    }
+
+    private static String stepVoltageIncrementToString(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).stepVoltageIncrementToString();
+    }
+
     /**
      * Specifies the regulation control mode (voltage or reactive) of the RatioTapChanger.
      */
@@ -111,6 +135,14 @@ public class RatioTapChanger extends TapChanger {
 
     public String tculControlModeToString() {
         return tculControlMode;
+    }
+
+    private static void setTculControlMode(BaseClass _this_, String _value_) {
+        ((RatioTapChanger) _this_).setTculControlMode(_value_);
+    }
+
+    private static String tculControlModeToString(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).tculControlModeToString();
     }
 
     /**
@@ -154,16 +186,12 @@ public class RatioTapChanger extends TapChanger {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RatioTapChanger", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RatioTapChanger", attrName));
+        return "";
     }
 
     /**
@@ -174,16 +202,12 @@ public class RatioTapChanger extends TapChanger {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RatioTapChanger", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RatioTapChanger", attrName, objectValue));
         }
     }
 
@@ -195,16 +219,12 @@ public class RatioTapChanger extends TapChanger {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RatioTapChanger", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RatioTapChanger", attrName, stringValue));
         }
     }
 
@@ -328,36 +348,26 @@ public class RatioTapChanger extends TapChanger {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RatioTapChangerTable", new AttrDetails("RatioTapChanger.RatioTapChangerTable", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RatioTapChangerTable", new AttrDetails("RatioTapChanger.RatioTapChangerTable", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RatioTapChanger::RatioTapChangerTableToString, RatioTapChanger::setRatioTapChangerTable, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TransformerEnd", new AttrDetails("RatioTapChanger.TransformerEnd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TransformerEnd", new AttrDetails("RatioTapChanger.TransformerEnd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RatioTapChanger::TransformerEndToString, RatioTapChanger::setTransformerEnd, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("stepVoltageIncrement", new AttrDetails("RatioTapChanger.stepVoltageIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("stepVoltageIncrement", new AttrDetails("RatioTapChanger.stepVoltageIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RatioTapChanger::stepVoltageIncrementToString, null, RatioTapChanger::setStepVoltageIncrement));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("tculControlMode", new AttrDetails("RatioTapChanger.tculControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("tculControlMode", new AttrDetails("RatioTapChanger.tculControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, RatioTapChanger::tculControlModeToString, null, RatioTapChanger::setTculControlMode));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChanger().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("RatioTapChangerTable", new GetterSetter(this::RatioTapChangerTableToString, this::setRatioTapChangerTable, null));
-        map.put("TransformerEnd", new GetterSetter(this::TransformerEndToString, this::setTransformerEnd, null));
-        map.put("stepVoltageIncrement", new GetterSetter(this::stepVoltageIncrementToString, null, this::setStepVoltageIncrement));
-        map.put("tculControlMode", new GetterSetter(this::tculControlModeToString, null, this::setTculControlMode));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

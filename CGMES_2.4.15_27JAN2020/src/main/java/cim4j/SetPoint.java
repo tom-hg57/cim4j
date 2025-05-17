@@ -50,6 +50,14 @@ public class SetPoint extends AnalogControl {
         return normalValue != null ? normalValue.toString() : null;
     }
 
+    private static void setNormalValue(BaseClass _this_, String _value_) {
+        ((SetPoint) _this_).setNormalValue(_value_);
+    }
+
+    private static String normalValueToString(BaseClass _this_) {
+        return ((SetPoint) _this_).normalValueToString();
+    }
+
     /**
      * The value representing the actuator output.
      */
@@ -69,6 +77,14 @@ public class SetPoint extends AnalogControl {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((SetPoint) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((SetPoint) _this_).valueToString();
     }
 
     /**
@@ -112,16 +128,12 @@ public class SetPoint extends AnalogControl {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SetPoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SetPoint", attrName));
+        return "";
     }
 
     /**
@@ -132,16 +144,12 @@ public class SetPoint extends AnalogControl {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SetPoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SetPoint", attrName, objectValue));
         }
     }
 
@@ -153,16 +161,12 @@ public class SetPoint extends AnalogControl {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SetPoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SetPoint", attrName, stringValue));
         }
     }
 
@@ -286,24 +290,16 @@ public class SetPoint extends AnalogControl {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("normalValue", new AttrDetails("SetPoint.normalValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("normalValue", new AttrDetails("SetPoint.normalValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SetPoint::normalValueToString, null, SetPoint::setNormalValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value", new AttrDetails("SetPoint.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value", new AttrDetails("SetPoint.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SetPoint::valueToString, null, SetPoint::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SetPoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("normalValue", new GetterSetter(this::normalValueToString, null, this::setNormalValue));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

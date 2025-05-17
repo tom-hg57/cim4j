@@ -52,6 +52,14 @@ public class EnergyConsumer extends EnergyConnection {
         return LoadDynamics != null ? LoadDynamics.getRdfid() : null;
     }
 
+    private static void setLoadDynamics(BaseClass _this_, BaseClass _object_) {
+        ((EnergyConsumer) _this_).setLoadDynamics(_object_);
+    }
+
+    private static String LoadDynamicsToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).LoadDynamicsToString();
+    }
+
     /**
      * The load response characteristic of this load.  If missing, this load is assumed to be constant power.
      */
@@ -75,6 +83,14 @@ public class EnergyConsumer extends EnergyConnection {
         return LoadResponse != null ? LoadResponse.getRdfid() : null;
     }
 
+    private static void setLoadResponse(BaseClass _this_, BaseClass _object_) {
+        ((EnergyConsumer) _this_).setLoadResponse(_object_);
+    }
+
+    private static String LoadResponseToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).LoadResponseToString();
+    }
+
     /**
      * Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node. For voltage dependent loads the value is at rated voltage. Starting value for a steady state solution.
      */
@@ -94,6 +110,14 @@ public class EnergyConsumer extends EnergyConnection {
 
     public String pToString() {
         return p != null ? p.toString() : null;
+    }
+
+    private static void setP(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).pToString();
     }
 
     /**
@@ -117,6 +141,14 @@ public class EnergyConsumer extends EnergyConnection {
         return pfixed != null ? pfixed.toString() : null;
     }
 
+    private static void setPfixed(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setPfixed(_value_);
+    }
+
+    private static String pfixedToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).pfixedToString();
+    }
+
     /**
      * Fixed active power as a percentage of load group fixed active power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node.
      */
@@ -136,6 +168,14 @@ public class EnergyConsumer extends EnergyConnection {
 
     public String pfixedPctToString() {
         return pfixedPct != null ? pfixedPct.toString() : null;
+    }
+
+    private static void setPfixedPct(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setPfixedPct(_value_);
+    }
+
+    private static String pfixedPctToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).pfixedPctToString();
     }
 
     /**
@@ -159,6 +199,14 @@ public class EnergyConsumer extends EnergyConnection {
         return q != null ? q.toString() : null;
     }
 
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).qToString();
+    }
+
     /**
      * Reactive power of the load that is a fixed quantity and does not vary as load group value varies. Load sign convention is used, i.e. positive sign means flow out from a node.
      */
@@ -180,6 +228,14 @@ public class EnergyConsumer extends EnergyConnection {
         return qfixed != null ? qfixed.toString() : null;
     }
 
+    private static void setQfixed(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setQfixed(_value_);
+    }
+
+    private static String qfixedToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).qfixedToString();
+    }
+
     /**
      * Fixed reactive power as a percentage of load group fixed reactive power. Used to represent the time-varying components.  Load sign convention is used, i.e. positive sign means flow out from a node.
      */
@@ -199,6 +255,14 @@ public class EnergyConsumer extends EnergyConnection {
 
     public String qfixedPctToString() {
         return qfixedPct != null ? qfixedPct.toString() : null;
+    }
+
+    private static void setQfixedPct(BaseClass _this_, String _value_) {
+        ((EnergyConsumer) _this_).setQfixedPct(_value_);
+    }
+
+    private static String qfixedPctToString(BaseClass _this_) {
+        return ((EnergyConsumer) _this_).qfixedPctToString();
     }
 
     /**
@@ -242,16 +306,12 @@ public class EnergyConsumer extends EnergyConnection {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("EnergyConsumer", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "EnergyConsumer", attrName));
+        return "";
     }
 
     /**
@@ -262,16 +322,12 @@ public class EnergyConsumer extends EnergyConnection {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("EnergyConsumer", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EnergyConsumer", attrName, objectValue));
         }
     }
 
@@ -283,16 +339,12 @@ public class EnergyConsumer extends EnergyConnection {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("EnergyConsumer", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "EnergyConsumer", attrName, stringValue));
         }
     }
 
@@ -416,60 +468,46 @@ public class EnergyConsumer extends EnergyConnection {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LoadDynamics", new AttrDetails("EnergyConsumer.LoadDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadDynamics", new AttrDetails("EnergyConsumer.LoadDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, EnergyConsumer::LoadDynamicsToString, EnergyConsumer::setLoadDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("LoadResponse", new AttrDetails("EnergyConsumer.LoadResponse", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadResponse", new AttrDetails("EnergyConsumer.LoadResponse", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, EnergyConsumer::LoadResponseToString, EnergyConsumer::setLoadResponse, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("EnergyConsumer.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("p", new AttrDetails("EnergyConsumer.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::pToString, null, EnergyConsumer::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("pfixed", new AttrDetails("EnergyConsumer.pfixed", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pfixed", new AttrDetails("EnergyConsumer.pfixed", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::pfixedToString, null, EnergyConsumer::setPfixed));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("pfixedPct", new AttrDetails("EnergyConsumer.pfixedPct", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pfixedPct", new AttrDetails("EnergyConsumer.pfixedPct", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::pfixedPctToString, null, EnergyConsumer::setPfixedPct));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("EnergyConsumer.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("q", new AttrDetails("EnergyConsumer.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::qToString, null, EnergyConsumer::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("qfixed", new AttrDetails("EnergyConsumer.qfixed", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("qfixed", new AttrDetails("EnergyConsumer.qfixed", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::qfixedToString, null, EnergyConsumer::setQfixed));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("qfixedPct", new AttrDetails("EnergyConsumer.qfixedPct", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("qfixedPct", new AttrDetails("EnergyConsumer.qfixedPct", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::qfixedPctToString, null, EnergyConsumer::setQfixedPct));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyConsumer().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("LoadDynamics", new GetterSetter(this::LoadDynamicsToString, this::setLoadDynamics, null));
-        map.put("LoadResponse", new GetterSetter(this::LoadResponseToString, this::setLoadResponse, null));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("pfixed", new GetterSetter(this::pfixedToString, null, this::setPfixed));
-        map.put("pfixedPct", new GetterSetter(this::pfixedPctToString, null, this::setPfixedPct));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("qfixed", new GetterSetter(this::qfixedToString, null, this::setQfixed));
-        map.put("qfixedPct", new GetterSetter(this::qfixedPctToString, null, this::setQfixedPct));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

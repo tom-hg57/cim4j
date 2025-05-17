@@ -46,6 +46,14 @@ public class TopologyBoundaryVersion extends BaseClass {
         return baseUML != null ? baseUML.toString() : null;
     }
 
+    private static void setBaseUML(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setBaseUML(_value_);
+    }
+
+    private static String baseUMLToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).baseUMLToString();
+    }
+
     /**
      * Profile URI used in the Model Exchange header and defined in IEC standards.  It uniquely identifies the Profile and its version. It is given for information only and to identify the closest IEC profile to which this CGMES profile is based on.
      */
@@ -61,6 +69,14 @@ public class TopologyBoundaryVersion extends BaseClass {
 
     public String baseURIToString() {
         return baseURI != null ? baseURI.toString() : null;
+    }
+
+    private static void setBaseURI(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setBaseURI(_value_);
+    }
+
+    private static String baseURIToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).baseURIToString();
     }
 
     /**
@@ -80,6 +96,14 @@ public class TopologyBoundaryVersion extends BaseClass {
         return date != null ? date.toString() : null;
     }
 
+    private static void setDate(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setDate(_value_);
+    }
+
+    private static String dateToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).dateToString();
+    }
+
     /**
      * Difference model URI defined by IEC 61970-552.
      */
@@ -95,6 +119,14 @@ public class TopologyBoundaryVersion extends BaseClass {
 
     public String differenceModelURIToString() {
         return differenceModelURI != null ? differenceModelURI.toString() : null;
+    }
+
+    private static void setDifferenceModelURI(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setDifferenceModelURI(_value_);
+    }
+
+    private static String differenceModelURIToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).differenceModelURIToString();
     }
 
     /**
@@ -114,6 +146,14 @@ public class TopologyBoundaryVersion extends BaseClass {
         return entsoeUML != null ? entsoeUML.toString() : null;
     }
 
+    private static void setEntsoeUML(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setEntsoeUML(_value_);
+    }
+
+    private static String entsoeUMLToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).entsoeUMLToString();
+    }
+
     /**
      * Profile URI defined by ENTSO-E and used in the Model Exchange header.  It uniquely identifies the Profile and its version. The last two elements in the URI (http://entsoe.eu/CIM/TopologyBoundary/yy/zzz) indicate major and minor versions where:  - yy - indicates a major version; - zzz - indicates a minor version.
      */
@@ -129,6 +169,14 @@ public class TopologyBoundaryVersion extends BaseClass {
 
     public String entsoeURIToString() {
         return entsoeURI != null ? entsoeURI.toString() : null;
+    }
+
+    private static void setEntsoeURI(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setEntsoeURI(_value_);
+    }
+
+    private static String entsoeURIToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).entsoeURIToString();
     }
 
     /**
@@ -148,6 +196,14 @@ public class TopologyBoundaryVersion extends BaseClass {
         return modelDescriptionURI != null ? modelDescriptionURI.toString() : null;
     }
 
+    private static void setModelDescriptionURI(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setModelDescriptionURI(_value_);
+    }
+
+    private static String modelDescriptionURIToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).modelDescriptionURIToString();
+    }
+
     /**
      * RDF namespace.
      */
@@ -163,6 +219,14 @@ public class TopologyBoundaryVersion extends BaseClass {
 
     public String namespaceRDFToString() {
         return namespaceRDF != null ? namespaceRDF.toString() : null;
+    }
+
+    private static void setNamespaceRDF(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setNamespaceRDF(_value_);
+    }
+
+    private static String namespaceRDFToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).namespaceRDFToString();
     }
 
     /**
@@ -182,6 +246,14 @@ public class TopologyBoundaryVersion extends BaseClass {
         return namespaceUML != null ? namespaceUML.toString() : null;
     }
 
+    private static void setNamespaceUML(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setNamespaceUML(_value_);
+    }
+
+    private static String namespaceUMLToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).namespaceUMLToString();
+    }
+
     /**
      * The short name of the profile used in profile documentation.
      */
@@ -197,6 +269,14 @@ public class TopologyBoundaryVersion extends BaseClass {
 
     public String shortNameToString() {
         return shortName != null ? shortName.toString() : null;
+    }
+
+    private static void setShortName(BaseClass _this_, String _value_) {
+        ((TopologyBoundaryVersion) _this_).setShortName(_value_);
+    }
+
+    private static String shortNameToString(BaseClass _this_) {
+        return ((TopologyBoundaryVersion) _this_).shortNameToString();
     }
 
     /**
@@ -240,16 +320,12 @@ public class TopologyBoundaryVersion extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TopologyBoundaryVersion", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TopologyBoundaryVersion", attrName));
+        return "";
     }
 
     /**
@@ -260,16 +336,12 @@ public class TopologyBoundaryVersion extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TopologyBoundaryVersion", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TopologyBoundaryVersion", attrName, objectValue));
         }
     }
 
@@ -281,16 +353,12 @@ public class TopologyBoundaryVersion extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TopologyBoundaryVersion", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TopologyBoundaryVersion", attrName, stringValue));
         }
     }
 
@@ -414,72 +482,56 @@ public class TopologyBoundaryVersion extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("baseUML", new AttrDetails("TopologyBoundaryVersion.baseUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("baseUML", new AttrDetails("TopologyBoundaryVersion.baseUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::baseUMLToString, null, TopologyBoundaryVersion::setBaseUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("baseURI", new AttrDetails("TopologyBoundaryVersion.baseURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("baseURI", new AttrDetails("TopologyBoundaryVersion.baseURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::baseURIToString, null, TopologyBoundaryVersion::setBaseURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("date", new AttrDetails("TopologyBoundaryVersion.date", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("date", new AttrDetails("TopologyBoundaryVersion.date", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::dateToString, null, TopologyBoundaryVersion::setDate));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("differenceModelURI", new AttrDetails("TopologyBoundaryVersion.differenceModelURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("differenceModelURI", new AttrDetails("TopologyBoundaryVersion.differenceModelURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::differenceModelURIToString, null, TopologyBoundaryVersion::setDifferenceModelURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("entsoeUML", new AttrDetails("TopologyBoundaryVersion.entsoeUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("entsoeUML", new AttrDetails("TopologyBoundaryVersion.entsoeUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::entsoeUMLToString, null, TopologyBoundaryVersion::setEntsoeUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("entsoeURI", new AttrDetails("TopologyBoundaryVersion.entsoeURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("entsoeURI", new AttrDetails("TopologyBoundaryVersion.entsoeURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::entsoeURIToString, null, TopologyBoundaryVersion::setEntsoeURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("modelDescriptionURI", new AttrDetails("TopologyBoundaryVersion.modelDescriptionURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("modelDescriptionURI", new AttrDetails("TopologyBoundaryVersion.modelDescriptionURI", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::modelDescriptionURIToString, null, TopologyBoundaryVersion::setModelDescriptionURI));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("namespaceRDF", new AttrDetails("TopologyBoundaryVersion.namespaceRDF", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("namespaceRDF", new AttrDetails("TopologyBoundaryVersion.namespaceRDF", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::namespaceRDFToString, null, TopologyBoundaryVersion::setNamespaceRDF));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("namespaceUML", new AttrDetails("TopologyBoundaryVersion.namespaceUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("namespaceUML", new AttrDetails("TopologyBoundaryVersion.namespaceUML", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::namespaceUMLToString, null, TopologyBoundaryVersion::setNamespaceUML));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
-            map.put("shortName", new AttrDetails("TopologyBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("shortName", new AttrDetails("TopologyBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::shortNameToString, null, TopologyBoundaryVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologyBoundaryVersion().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("baseUML", new GetterSetter(this::baseUMLToString, null, this::setBaseUML));
-        map.put("baseURI", new GetterSetter(this::baseURIToString, null, this::setBaseURI));
-        map.put("date", new GetterSetter(this::dateToString, null, this::setDate));
-        map.put("differenceModelURI", new GetterSetter(this::differenceModelURIToString, null, this::setDifferenceModelURI));
-        map.put("entsoeUML", new GetterSetter(this::entsoeUMLToString, null, this::setEntsoeUML));
-        map.put("entsoeURI", new GetterSetter(this::entsoeURIToString, null, this::setEntsoeURI));
-        map.put("modelDescriptionURI", new GetterSetter(this::modelDescriptionURIToString, null, this::setModelDescriptionURI));
-        map.put("namespaceRDF", new GetterSetter(this::namespaceRDFToString, null, this::setNamespaceRDF));
-        map.put("namespaceUML", new GetterSetter(this::namespaceUMLToString, null, this::setNamespaceUML));
-        map.put("shortName", new GetterSetter(this::shortNameToString, null, this::setShortName));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

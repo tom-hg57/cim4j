@@ -50,6 +50,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return at != null ? at.toString() : null;
     }
 
+    private static void setAt(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setAt(_value_);
+    }
+
+    private static String atToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).atToString();
+    }
+
     /**
      * Intentional dead-band width (db1).  Unit = Hz.  Typical Value = 0.
      */
@@ -69,6 +77,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String db1ToString() {
         return db1 != null ? db1.toString() : null;
+    }
+
+    private static void setDb1(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setDb1(_value_);
+    }
+
+    private static String db1ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).db1ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return db2 != null ? db2.toString() : null;
     }
 
+    private static void setDb2(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setDb2(_value_);
+    }
+
+    private static String db2ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).db2ToString();
+    }
+
     /**
      * Turbine damping factor (Dturb).  Typical Value = 0.2.
      */
@@ -111,6 +135,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String dturbToString() {
         return dturb != null ? dturb.toString() : null;
+    }
+
+    private static void setDturb(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setDturb(_value_);
+    }
+
+    private static String dturbToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).dturbToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return eps != null ? eps.toString() : null;
     }
 
+    private static void setEps(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setEps(_value_);
+    }
+
+    private static String epsToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).epsToString();
+    }
+
     /**
      * Governor control flag (Cflag). true = PID control is active false = double derivative control is active. Typical Value = true.
      */
@@ -153,6 +193,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String governorControlToString() {
         return governorControl != null ? governorControl.toString() : null;
+    }
+
+    private static void setGovernorControl(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGovernorControl(_value_);
+    }
+
+    private static String governorControlToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).governorControlToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return gv1 != null ? gv1.toString() : null;
     }
 
+    private static void setGv1(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv1(_value_);
+    }
+
+    private static String gv1ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv1ToString();
+    }
+
     /**
      * Nonlinear gain point 2, PU gv (Gv2).  Typical Value = 0.
      */
@@ -195,6 +251,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String gv2ToString() {
         return gv2 != null ? gv2.toString() : null;
+    }
+
+    private static void setGv2(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv2(_value_);
+    }
+
+    private static String gv2ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv2ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return gv3 != null ? gv3.toString() : null;
     }
 
+    private static void setGv3(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv3(_value_);
+    }
+
+    private static String gv3ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv3ToString();
+    }
+
     /**
      * Nonlinear gain point 4, PU gv (Gv4).  Typical Value = 0.
      */
@@ -237,6 +309,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String gv4ToString() {
         return gv4 != null ? gv4.toString() : null;
+    }
+
+    private static void setGv4(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv4(_value_);
+    }
+
+    private static String gv4ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv4ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return gv5 != null ? gv5.toString() : null;
     }
 
+    private static void setGv5(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv5(_value_);
+    }
+
+    private static String gv5ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv5ToString();
+    }
+
     /**
      * Nonlinear gain point 6, PU gv (Gv6).  Typical Value = 0.
      */
@@ -279,6 +367,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String gv6ToString() {
         return gv6 != null ? gv6.toString() : null;
+    }
+
+    private static void setGv6(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setGv6(_value_);
+    }
+
+    private static String gv6ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).gv6ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return h0 != null ? h0.toString() : null;
     }
 
+    private static void setH0(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setH0(_value_);
+    }
+
+    private static String h0ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).h0ToString();
+    }
+
     /**
      * Derivative gain (K1).  Typical Value = 0.01.
      */
@@ -321,6 +425,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String k1ToString() {
         return k1 != null ? k1.toString() : null;
+    }
+
+    private static void setK1(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setK1(_value_);
+    }
+
+    private static String k1ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).k1ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return k2 != null ? k2.toString() : null;
     }
 
+    private static void setK2(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setK2(_value_);
+    }
+
+    private static String k2ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).k2ToString();
+    }
+
     /**
      * Gate servo gain (Kg).  Typical Value = 2.
      */
@@ -363,6 +483,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String kgToString() {
         return kg != null ? kg.toString() : null;
+    }
+
+    private static void setKg(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setKg(_value_);
+    }
+
+    private static String kgToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).kgToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return ki != null ? ki.toString() : null;
     }
 
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).kiToString();
+    }
+
     /**
      * Base for power values (MWbase) (&gt; 0).  Unit = MW.
      */
@@ -405,6 +541,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String mwbaseToString() {
         return mwbase != null ? mwbase.toString() : null;
+    }
+
+    private static void setMwbase(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setMwbase(_value_);
+    }
+
+    private static String mwbaseToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).mwbaseToString();
     }
 
     /**
@@ -428,6 +572,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return pgv1 != null ? pgv1.toString() : null;
     }
 
+    private static void setPgv1(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv1(_value_);
+    }
+
+    private static String pgv1ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv1ToString();
+    }
+
     /**
      * Nonlinear gain point 2, PU power (Pgv2).  Typical Value = 0.
      */
@@ -447,6 +599,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String pgv2ToString() {
         return pgv2 != null ? pgv2.toString() : null;
+    }
+
+    private static void setPgv2(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv2(_value_);
+    }
+
+    private static String pgv2ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv2ToString();
     }
 
     /**
@@ -470,6 +630,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return pgv3 != null ? pgv3.toString() : null;
     }
 
+    private static void setPgv3(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv3(_value_);
+    }
+
+    private static String pgv3ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv3ToString();
+    }
+
     /**
      * Nonlinear gain point 4, PU power (Pgv4).  Typical Value = 0.
      */
@@ -489,6 +657,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String pgv4ToString() {
         return pgv4 != null ? pgv4.toString() : null;
+    }
+
+    private static void setPgv4(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv4(_value_);
+    }
+
+    private static String pgv4ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv4ToString();
     }
 
     /**
@@ -512,6 +688,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return pgv5 != null ? pgv5.toString() : null;
     }
 
+    private static void setPgv5(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv5(_value_);
+    }
+
+    private static String pgv5ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv5ToString();
+    }
+
     /**
      * Nonlinear gain point 6, PU power (Pgv6).  Typical Value = 0.
      */
@@ -531,6 +715,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String pgv6ToString() {
         return pgv6 != null ? pgv6.toString() : null;
+    }
+
+    private static void setPgv6(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPgv6(_value_);
+    }
+
+    private static String pgv6ToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pgv6ToString();
     }
 
     /**
@@ -554,6 +746,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return pmax != null ? pmax.toString() : null;
     }
 
+    private static void setPmax(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPmax(_value_);
+    }
+
+    private static String pmaxToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pmaxToString();
+    }
+
     /**
      * Minimum gate opening, PU of MWbase (Pmin).  Typical Value = 0.
      */
@@ -573,6 +773,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String pminToString() {
         return pmin != null ? pmin.toString() : null;
+    }
+
+    private static void setPmin(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setPmin(_value_);
+    }
+
+    private static String pminToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).pminToString();
     }
 
     /**
@@ -596,6 +804,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return qnl != null ? qnl.toString() : null;
     }
 
+    private static void setQnl(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setQnl(_value_);
+    }
+
+    private static String qnlToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).qnlToString();
+    }
+
     /**
      * Steady-state droop, PU, for electrical power feedback (Relec).  Typical Value = 0.05.
      */
@@ -615,6 +831,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String relecToString() {
         return relec != null ? relec.toString() : null;
+    }
+
+    private static void setRelec(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setRelec(_value_);
+    }
+
+    private static String relecToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).relecToString();
     }
 
     /**
@@ -638,6 +862,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return rgate != null ? rgate.toString() : null;
     }
 
+    private static void setRgate(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setRgate(_value_);
+    }
+
+    private static String rgateToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).rgateToString();
+    }
+
     /**
      * Input filter time constant (Td).  Typical Value = 0.05.
      */
@@ -657,6 +889,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String tdToString() {
         return td != null ? td.toString() : null;
+    }
+
+    private static void setTd(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setTd(_value_);
+    }
+
+    private static String tdToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).tdToString();
     }
 
     /**
@@ -680,6 +920,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return tf != null ? tf.toString() : null;
     }
 
+    private static void setTf(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setTf(_value_);
+    }
+
+    private static String tfToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).tfToString();
+    }
+
     /**
      * Gate servo time constant (Tp).  Typical Value = 0.05.
      */
@@ -699,6 +947,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String tpToString() {
         return tp != null ? tp.toString() : null;
+    }
+
+    private static void setTp(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setTp(_value_);
+    }
+
+    private static String tpToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).tpToString();
     }
 
     /**
@@ -722,6 +978,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return tt != null ? tt.toString() : null;
     }
 
+    private static void setTt(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setTt(_value_);
+    }
+
+    private static String ttToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).ttToString();
+    }
+
     /**
      * Water inertia time constant (Tw).  Typical Value = 1.
      */
@@ -741,6 +1005,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String twToString() {
         return tw != null ? tw.toString() : null;
+    }
+
+    private static void setTw(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setTw(_value_);
+    }
+
+    private static String twToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).twToString();
     }
 
     /**
@@ -764,6 +1036,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         return velcl != null ? velcl.toString() : null;
     }
 
+    private static void setVelcl(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setVelcl(_value_);
+    }
+
+    private static String velclToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).velclToString();
+    }
+
     /**
      * Maximum gate opening velocity (Velop).  Unit = PU/sec. Typical Value = 0.2.
      */
@@ -783,6 +1063,14 @@ public class GovHydro3 extends TurbineGovernorDynamics {
 
     public String velopToString() {
         return velop != null ? velop.toString() : null;
+    }
+
+    private static void setVelop(BaseClass _this_, String _value_) {
+        ((GovHydro3) _this_).setVelop(_value_);
+    }
+
+    private static String velopToString(BaseClass _this_) {
+        return ((GovHydro3) _this_).velopToString();
     }
 
     /**
@@ -826,16 +1114,12 @@ public class GovHydro3 extends TurbineGovernorDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GovHydro3", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GovHydro3", attrName));
+        return "";
     }
 
     /**
@@ -846,16 +1130,12 @@ public class GovHydro3 extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GovHydro3", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovHydro3", attrName, objectValue));
         }
     }
 
@@ -867,16 +1147,12 @@ public class GovHydro3 extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GovHydro3", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovHydro3", attrName, stringValue));
         }
     }
 
@@ -1000,228 +1276,186 @@ public class GovHydro3 extends TurbineGovernorDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("at", new AttrDetails("GovHydro3.at", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("at", new AttrDetails("GovHydro3.at", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::atToString, null, GovHydro3::setAt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("db1", new AttrDetails("GovHydro3.db1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("db1", new AttrDetails("GovHydro3.db1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::db1ToString, null, GovHydro3::setDb1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("db2", new AttrDetails("GovHydro3.db2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("db2", new AttrDetails("GovHydro3.db2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::db2ToString, null, GovHydro3::setDb2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dturb", new AttrDetails("GovHydro3.dturb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dturb", new AttrDetails("GovHydro3.dturb", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::dturbToString, null, GovHydro3::setDturb));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("eps", new AttrDetails("GovHydro3.eps", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("eps", new AttrDetails("GovHydro3.eps", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::epsToString, null, GovHydro3::setEps));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("governorControl", new AttrDetails("GovHydro3.governorControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("governorControl", new AttrDetails("GovHydro3.governorControl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::governorControlToString, null, GovHydro3::setGovernorControl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv1", new AttrDetails("GovHydro3.gv1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv1", new AttrDetails("GovHydro3.gv1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv1ToString, null, GovHydro3::setGv1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv2", new AttrDetails("GovHydro3.gv2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv2", new AttrDetails("GovHydro3.gv2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv2ToString, null, GovHydro3::setGv2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv3", new AttrDetails("GovHydro3.gv3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv3", new AttrDetails("GovHydro3.gv3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv3ToString, null, GovHydro3::setGv3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv4", new AttrDetails("GovHydro3.gv4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv4", new AttrDetails("GovHydro3.gv4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv4ToString, null, GovHydro3::setGv4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv5", new AttrDetails("GovHydro3.gv5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv5", new AttrDetails("GovHydro3.gv5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv5ToString, null, GovHydro3::setGv5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("gv6", new AttrDetails("GovHydro3.gv6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gv6", new AttrDetails("GovHydro3.gv6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::gv6ToString, null, GovHydro3::setGv6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("h0", new AttrDetails("GovHydro3.h0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("h0", new AttrDetails("GovHydro3.h0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::h0ToString, null, GovHydro3::setH0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k1", new AttrDetails("GovHydro3.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k1", new AttrDetails("GovHydro3.k1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::k1ToString, null, GovHydro3::setK1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k2", new AttrDetails("GovHydro3.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k2", new AttrDetails("GovHydro3.k2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::k2ToString, null, GovHydro3::setK2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kg", new AttrDetails("GovHydro3.kg", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kg", new AttrDetails("GovHydro3.kg", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::kgToString, null, GovHydro3::setKg));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("GovHydro3.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ki", new AttrDetails("GovHydro3.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::kiToString, null, GovHydro3::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mwbase", new AttrDetails("GovHydro3.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mwbase", new AttrDetails("GovHydro3.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::mwbaseToString, null, GovHydro3::setMwbase));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv1", new AttrDetails("GovHydro3.pgv1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv1", new AttrDetails("GovHydro3.pgv1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv1ToString, null, GovHydro3::setPgv1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv2", new AttrDetails("GovHydro3.pgv2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv2", new AttrDetails("GovHydro3.pgv2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv2ToString, null, GovHydro3::setPgv2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv3", new AttrDetails("GovHydro3.pgv3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv3", new AttrDetails("GovHydro3.pgv3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv3ToString, null, GovHydro3::setPgv3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv4", new AttrDetails("GovHydro3.pgv4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv4", new AttrDetails("GovHydro3.pgv4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv4ToString, null, GovHydro3::setPgv4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv5", new AttrDetails("GovHydro3.pgv5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv5", new AttrDetails("GovHydro3.pgv5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv5ToString, null, GovHydro3::setPgv5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pgv6", new AttrDetails("GovHydro3.pgv6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pgv6", new AttrDetails("GovHydro3.pgv6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pgv6ToString, null, GovHydro3::setPgv6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pmax", new AttrDetails("GovHydro3.pmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pmax", new AttrDetails("GovHydro3.pmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pmaxToString, null, GovHydro3::setPmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pmin", new AttrDetails("GovHydro3.pmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pmin", new AttrDetails("GovHydro3.pmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::pminToString, null, GovHydro3::setPmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qnl", new AttrDetails("GovHydro3.qnl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qnl", new AttrDetails("GovHydro3.qnl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::qnlToString, null, GovHydro3::setQnl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("relec", new AttrDetails("GovHydro3.relec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("relec", new AttrDetails("GovHydro3.relec", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::relecToString, null, GovHydro3::setRelec));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rgate", new AttrDetails("GovHydro3.rgate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rgate", new AttrDetails("GovHydro3.rgate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::rgateToString, null, GovHydro3::setRgate));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td", new AttrDetails("GovHydro3.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td", new AttrDetails("GovHydro3.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::tdToString, null, GovHydro3::setTd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf", new AttrDetails("GovHydro3.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tf", new AttrDetails("GovHydro3.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::tfToString, null, GovHydro3::setTf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tp", new AttrDetails("GovHydro3.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tp", new AttrDetails("GovHydro3.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::tpToString, null, GovHydro3::setTp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tt", new AttrDetails("GovHydro3.tt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tt", new AttrDetails("GovHydro3.tt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::ttToString, null, GovHydro3::setTt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tw", new AttrDetails("GovHydro3.tw", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tw", new AttrDetails("GovHydro3.tw", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::twToString, null, GovHydro3::setTw));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("velcl", new AttrDetails("GovHydro3.velcl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("velcl", new AttrDetails("GovHydro3.velcl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::velclToString, null, GovHydro3::setVelcl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("velop", new AttrDetails("GovHydro3.velop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("velop", new AttrDetails("GovHydro3.velop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydro3::velopToString, null, GovHydro3::setVelop));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydro3().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("at", new GetterSetter(this::atToString, null, this::setAt));
-        map.put("db1", new GetterSetter(this::db1ToString, null, this::setDb1));
-        map.put("db2", new GetterSetter(this::db2ToString, null, this::setDb2));
-        map.put("dturb", new GetterSetter(this::dturbToString, null, this::setDturb));
-        map.put("eps", new GetterSetter(this::epsToString, null, this::setEps));
-        map.put("governorControl", new GetterSetter(this::governorControlToString, null, this::setGovernorControl));
-        map.put("gv1", new GetterSetter(this::gv1ToString, null, this::setGv1));
-        map.put("gv2", new GetterSetter(this::gv2ToString, null, this::setGv2));
-        map.put("gv3", new GetterSetter(this::gv3ToString, null, this::setGv3));
-        map.put("gv4", new GetterSetter(this::gv4ToString, null, this::setGv4));
-        map.put("gv5", new GetterSetter(this::gv5ToString, null, this::setGv5));
-        map.put("gv6", new GetterSetter(this::gv6ToString, null, this::setGv6));
-        map.put("h0", new GetterSetter(this::h0ToString, null, this::setH0));
-        map.put("k1", new GetterSetter(this::k1ToString, null, this::setK1));
-        map.put("k2", new GetterSetter(this::k2ToString, null, this::setK2));
-        map.put("kg", new GetterSetter(this::kgToString, null, this::setKg));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("mwbase", new GetterSetter(this::mwbaseToString, null, this::setMwbase));
-        map.put("pgv1", new GetterSetter(this::pgv1ToString, null, this::setPgv1));
-        map.put("pgv2", new GetterSetter(this::pgv2ToString, null, this::setPgv2));
-        map.put("pgv3", new GetterSetter(this::pgv3ToString, null, this::setPgv3));
-        map.put("pgv4", new GetterSetter(this::pgv4ToString, null, this::setPgv4));
-        map.put("pgv5", new GetterSetter(this::pgv5ToString, null, this::setPgv5));
-        map.put("pgv6", new GetterSetter(this::pgv6ToString, null, this::setPgv6));
-        map.put("pmax", new GetterSetter(this::pmaxToString, null, this::setPmax));
-        map.put("pmin", new GetterSetter(this::pminToString, null, this::setPmin));
-        map.put("qnl", new GetterSetter(this::qnlToString, null, this::setQnl));
-        map.put("relec", new GetterSetter(this::relecToString, null, this::setRelec));
-        map.put("rgate", new GetterSetter(this::rgateToString, null, this::setRgate));
-        map.put("td", new GetterSetter(this::tdToString, null, this::setTd));
-        map.put("tf", new GetterSetter(this::tfToString, null, this::setTf));
-        map.put("tp", new GetterSetter(this::tpToString, null, this::setTp));
-        map.put("tt", new GetterSetter(this::ttToString, null, this::setTt));
-        map.put("tw", new GetterSetter(this::twToString, null, this::setTw));
-        map.put("velcl", new GetterSetter(this::velclToString, null, this::setVelcl));
-        map.put("velop", new GetterSetter(this::velopToString, null, this::setVelop));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

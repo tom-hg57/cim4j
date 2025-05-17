@@ -46,6 +46,14 @@ public class Status extends BaseClass {
         return dateTime != null ? dateTime.toString() : null;
     }
 
+    private static void setDateTime(BaseClass _this_, String _value_) {
+        ((Status) _this_).setDateTime(_value_);
+    }
+
+    private static String dateTimeToString(BaseClass _this_) {
+        return ((Status) _this_).dateTimeToString();
+    }
+
     /**
      * Reason code or explanation for why an object went to the current status `value`.
      */
@@ -61,6 +69,14 @@ public class Status extends BaseClass {
 
     public String reasonToString() {
         return reason != null ? reason.toString() : null;
+    }
+
+    private static void setReason(BaseClass _this_, String _value_) {
+        ((Status) _this_).setReason(_value_);
+    }
+
+    private static String reasonToString(BaseClass _this_) {
+        return ((Status) _this_).reasonToString();
     }
 
     /**
@@ -80,6 +96,14 @@ public class Status extends BaseClass {
         return remark != null ? remark.toString() : null;
     }
 
+    private static void setRemark(BaseClass _this_, String _value_) {
+        ((Status) _this_).setRemark(_value_);
+    }
+
+    private static String remarkToString(BaseClass _this_) {
+        return ((Status) _this_).remarkToString();
+    }
+
     /**
      * Status value at `dateTime`; prior status changes may have been kept in instances of activity records associated with the object to which this status applies.
      */
@@ -95,6 +119,14 @@ public class Status extends BaseClass {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((Status) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((Status) _this_).valueToString();
     }
 
     /**
@@ -138,16 +170,12 @@ public class Status extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Status", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Status", attrName));
+        return "";
     }
 
     /**
@@ -158,16 +186,12 @@ public class Status extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Status", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Status", attrName, objectValue));
         }
     }
 
@@ -179,16 +203,12 @@ public class Status extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Status", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Status", attrName, stringValue));
         }
     }
 
@@ -312,36 +332,26 @@ public class Status extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("dateTime", new AttrDetails("Status.dateTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("dateTime", new AttrDetails("Status.dateTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Status::dateTimeToString, null, Status::setDateTime));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("reason", new AttrDetails("Status.reason", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("reason", new AttrDetails("Status.reason", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Status::reasonToString, null, Status::setReason));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("remark", new AttrDetails("Status.remark", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("remark", new AttrDetails("Status.remark", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Status::remarkToString, null, Status::setRemark));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("value", new AttrDetails("Status.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("value", new AttrDetails("Status.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Status::valueToString, null, Status::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Status().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("dateTime", new GetterSetter(this::dateTimeToString, null, this::setDateTime));
-        map.put("reason", new GetterSetter(this::reasonToString, null, this::setReason));
-        map.put("remark", new GetterSetter(this::remarkToString, null, this::setRemark));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

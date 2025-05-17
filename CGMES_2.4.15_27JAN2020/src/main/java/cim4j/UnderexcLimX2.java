@@ -47,6 +47,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
         return kf2 != null ? kf2.toString() : null;
     }
 
+    private static void setKf2(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setKf2(_value_);
+    }
+
+    private static String kf2ToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).kf2ToString();
+    }
+
     /**
      * Minimum excitation limit gain (Km).
      */
@@ -66,6 +74,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
 
     public String kmToString() {
         return km != null ? km.toString() : null;
+    }
+
+    private static void setKm(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setKm(_value_);
+    }
+
+    private static String kmToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).kmToString();
     }
 
     /**
@@ -89,6 +105,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
         return melmax != null ? melmax.toString() : null;
     }
 
+    private static void setMelmax(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setMelmax(_value_);
+    }
+
+    private static String melmaxToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).melmaxToString();
+    }
+
     /**
      * Excitation center setting (Qo).
      */
@@ -108,6 +132,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
 
     public String qoToString() {
         return qo != null ? qo.toString() : null;
+    }
+
+    private static void setQo(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setQo(_value_);
+    }
+
+    private static String qoToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).qoToString();
     }
 
     /**
@@ -131,6 +163,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
         return r != null ? r.toString() : null;
     }
 
+    private static void setR(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).rToString();
+    }
+
     /**
      * Differential time constant (Tf2) (&gt;0).
      */
@@ -152,6 +192,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
         return tf2 != null ? tf2.toString() : null;
     }
 
+    private static void setTf2(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setTf2(_value_);
+    }
+
+    private static String tf2ToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).tf2ToString();
+    }
+
     /**
      * Minimum excitation limit time constant (Tm).
      */
@@ -171,6 +219,14 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
 
     public String tmToString() {
         return tm != null ? tm.toString() : null;
+    }
+
+    private static void setTm(BaseClass _this_, String _value_) {
+        ((UnderexcLimX2) _this_).setTm(_value_);
+    }
+
+    private static String tmToString(BaseClass _this_) {
+        return ((UnderexcLimX2) _this_).tmToString();
     }
 
     /**
@@ -214,16 +270,12 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("UnderexcLimX2", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "UnderexcLimX2", attrName));
+        return "";
     }
 
     /**
@@ -234,16 +286,12 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("UnderexcLimX2", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLimX2", attrName, objectValue));
         }
     }
 
@@ -255,16 +303,12 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("UnderexcLimX2", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLimX2", attrName, stringValue));
         }
     }
 
@@ -388,54 +432,41 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf2", new AttrDetails("UnderexcLimX2.kf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kf2", new AttrDetails("UnderexcLimX2.kf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::kf2ToString, null, UnderexcLimX2::setKf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("km", new AttrDetails("UnderexcLimX2.km", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("km", new AttrDetails("UnderexcLimX2.km", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::kmToString, null, UnderexcLimX2::setKm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("melmax", new AttrDetails("UnderexcLimX2.melmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("melmax", new AttrDetails("UnderexcLimX2.melmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::melmaxToString, null, UnderexcLimX2::setMelmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qo", new AttrDetails("UnderexcLimX2.qo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qo", new AttrDetails("UnderexcLimX2.qo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::qoToString, null, UnderexcLimX2::setQo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("r", new AttrDetails("UnderexcLimX2.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("UnderexcLimX2.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::rToString, null, UnderexcLimX2::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf2", new AttrDetails("UnderexcLimX2.tf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tf2", new AttrDetails("UnderexcLimX2.tf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::tf2ToString, null, UnderexcLimX2::setTf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tm", new AttrDetails("UnderexcLimX2.tm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tm", new AttrDetails("UnderexcLimX2.tm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLimX2::tmToString, null, UnderexcLimX2::setTm));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcLimX2().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("kf2", new GetterSetter(this::kf2ToString, null, this::setKf2));
-        map.put("km", new GetterSetter(this::kmToString, null, this::setKm));
-        map.put("melmax", new GetterSetter(this::melmaxToString, null, this::setMelmax));
-        map.put("qo", new GetterSetter(this::qoToString, null, this::setQo));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("tf2", new GetterSetter(this::tf2ToString, null, this::setTf2));
-        map.put("tm", new GetterSetter(this::tmToString, null, this::setTm));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

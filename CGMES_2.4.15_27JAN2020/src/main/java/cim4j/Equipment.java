@@ -52,6 +52,14 @@ public class Equipment extends PowerSystemResource {
         return EquipmentContainer != null ? EquipmentContainer.getRdfid() : null;
     }
 
+    private static void setEquipmentContainer(BaseClass _this_, BaseClass _object_) {
+        ((Equipment) _this_).setEquipmentContainer(_object_);
+    }
+
+    private static String EquipmentContainerToString(BaseClass _this_) {
+        return ((Equipment) _this_).EquipmentContainerToString();
+    }
+
     /**
      * The operational limit sets associated with this equipment.
      *
@@ -77,6 +85,14 @@ public class Equipment extends PowerSystemResource {
         return getStringFromSet(OperationalLimitSet);
     }
 
+    private static void setOperationalLimitSet(BaseClass _this_, BaseClass _object_) {
+        ((Equipment) _this_).setOperationalLimitSet(_object_);
+    }
+
+    private static String OperationalLimitSetToString(BaseClass _this_) {
+        return ((Equipment) _this_).OperationalLimitSetToString();
+    }
+
     /**
      * The single instance of equipment represents multiple pieces of equipment that have been modeled together as an aggregate.  Examples would be power transformers or synchronous machines operating in parallel modeled as a single aggregate power transformer or aggregate synchronous machine.  This is not to be used to indicate equipment that is part of a group of interdependent equipment produced by a network production program.
      */
@@ -96,6 +112,14 @@ public class Equipment extends PowerSystemResource {
 
     public String aggregateToString() {
         return aggregate != null ? aggregate.toString() : null;
+    }
+
+    private static void setAggregate(BaseClass _this_, String _value_) {
+        ((Equipment) _this_).setAggregate(_value_);
+    }
+
+    private static String aggregateToString(BaseClass _this_) {
+        return ((Equipment) _this_).aggregateToString();
     }
 
     /**
@@ -139,16 +163,12 @@ public class Equipment extends PowerSystemResource {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Equipment", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Equipment", attrName));
+        return "";
     }
 
     /**
@@ -159,16 +179,12 @@ public class Equipment extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Equipment", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Equipment", attrName, objectValue));
         }
     }
 
@@ -180,16 +196,12 @@ public class Equipment extends PowerSystemResource {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Equipment", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Equipment", attrName, stringValue));
         }
     }
 
@@ -314,30 +326,21 @@ public class Equipment extends PowerSystemResource {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("EquipmentContainer", new AttrDetails("Equipment.EquipmentContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("EquipmentContainer", new AttrDetails("Equipment.EquipmentContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Equipment::EquipmentContainerToString, Equipment::setEquipmentContainer, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("OperationalLimitSet", new AttrDetails("Equipment.OperationalLimitSet", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("OperationalLimitSet", new AttrDetails("Equipment.OperationalLimitSet", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Equipment::OperationalLimitSetToString, Equipment::setOperationalLimitSet, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("aggregate", new AttrDetails("Equipment.aggregate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("aggregate", new AttrDetails("Equipment.aggregate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Equipment::aggregateToString, null, Equipment::setAggregate));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Equipment().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("EquipmentContainer", new GetterSetter(this::EquipmentContainerToString, this::setEquipmentContainer, null));
-        map.put("OperationalLimitSet", new GetterSetter(this::OperationalLimitSetToString, this::setOperationalLimitSet, null));
-        map.put("aggregate", new GetterSetter(this::aggregateToString, null, this::setAggregate));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

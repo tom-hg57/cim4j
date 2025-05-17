@@ -52,6 +52,14 @@ public class SynchronousMachine extends RotatingMachine {
         return InitialReactiveCapabilityCurve != null ? InitialReactiveCapabilityCurve.getRdfid() : null;
     }
 
+    private static void setInitialReactiveCapabilityCurve(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachine) _this_).setInitialReactiveCapabilityCurve(_object_);
+    }
+
+    private static String InitialReactiveCapabilityCurveToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).InitialReactiveCapabilityCurveToString();
+    }
+
     /**
      * Synchronous machine dynamics model used to describe dynamic behavior of this synchronous machine.
      *
@@ -77,6 +85,14 @@ public class SynchronousMachine extends RotatingMachine {
         return SynchronousMachineDynamics != null ? SynchronousMachineDynamics.getRdfid() : null;
     }
 
+    private static void setSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((SynchronousMachine) _this_).setSynchronousMachineDynamics(_object_);
+    }
+
+    private static String SynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).SynchronousMachineDynamicsToString();
+    }
+
     /**
      * Indicates whether or not the generator is earthed. Used for short circuit data exchange according to IEC 60909
      */
@@ -96,6 +112,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String earthingToString() {
         return earthing != null ? earthing.toString() : null;
+    }
+
+    private static void setEarthing(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setEarthing(_value_);
+    }
+
+    private static String earthingToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).earthingToString();
     }
 
     /**
@@ -119,6 +143,14 @@ public class SynchronousMachine extends RotatingMachine {
         return earthingStarPointR != null ? earthingStarPointR.toString() : null;
     }
 
+    private static void setEarthingStarPointR(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setEarthingStarPointR(_value_);
+    }
+
+    private static String earthingStarPointRToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).earthingStarPointRToString();
+    }
+
     /**
      * Generator star point earthing reactance (Xe). Used for short circuit data exchange according to IEC 60909
      */
@@ -138,6 +170,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String earthingStarPointXToString() {
         return earthingStarPointX != null ? earthingStarPointX.toString() : null;
+    }
+
+    private static void setEarthingStarPointX(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setEarthingStarPointX(_value_);
+    }
+
+    private static String earthingStarPointXToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).earthingStarPointXToString();
     }
 
     /**
@@ -161,6 +201,14 @@ public class SynchronousMachine extends RotatingMachine {
         return ikk != null ? ikk.toString() : null;
     }
 
+    private static void setIkk(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setIkk(_value_);
+    }
+
+    private static String ikkToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).ikkToString();
+    }
+
     /**
      * Maximum reactive power limit. This is the maximum (nameplate) limit for the unit.
      */
@@ -180,6 +228,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String maxQToString() {
         return maxQ != null ? maxQ.toString() : null;
+    }
+
+    private static void setMaxQ(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setMaxQ(_value_);
+    }
+
+    private static String maxQToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).maxQToString();
     }
 
     /**
@@ -203,6 +259,14 @@ public class SynchronousMachine extends RotatingMachine {
         return minQ != null ? minQ.toString() : null;
     }
 
+    private static void setMinQ(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setMinQ(_value_);
+    }
+
+    private static String minQToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).minQToString();
+    }
+
     /**
      * Factor to calculate the breaking current (Section 4.5.2.1 in the IEC 60909-0). Used only for single fed short circuit on a generator (Section 4.3.4.2. in the IEC 60909-0).
      */
@@ -224,6 +288,14 @@ public class SynchronousMachine extends RotatingMachine {
         return mu != null ? mu.toString() : null;
     }
 
+    private static void setMu(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setMu(_value_);
+    }
+
+    private static String muToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).muToString();
+    }
+
     /**
      * Current mode of operation.
      */
@@ -239,6 +311,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String operatingModeToString() {
         return operatingMode;
+    }
+
+    private static void setOperatingMode(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setOperatingMode(_value_);
+    }
+
+    private static String operatingModeToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).operatingModeToString();
     }
 
     /**
@@ -262,6 +342,14 @@ public class SynchronousMachine extends RotatingMachine {
         return qPercent != null ? qPercent.toString() : null;
     }
 
+    private static void setQPercent(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setQPercent(_value_);
+    }
+
+    private static String qPercentToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).qPercentToString();
+    }
+
     /**
      * Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909
      */
@@ -281,6 +369,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String rToString() {
         return r != null ? r.toString() : null;
+    }
+
+    private static void setR(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).rToString();
     }
 
     /**
@@ -304,6 +400,14 @@ public class SynchronousMachine extends RotatingMachine {
         return r0 != null ? r0.toString() : null;
     }
 
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).r0ToString();
+    }
+
     /**
      * Negative sequence resistance.
      */
@@ -323,6 +427,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String r2ToString() {
         return r2 != null ? r2.toString() : null;
+    }
+
+    private static void setR2(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setR2(_value_);
+    }
+
+    private static String r2ToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).r2ToString();
     }
 
     /**
@@ -346,6 +458,14 @@ public class SynchronousMachine extends RotatingMachine {
         return referencePriority != null ? referencePriority.toString() : null;
     }
 
+    private static void setReferencePriority(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setReferencePriority(_value_);
+    }
+
+    private static String referencePriorityToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).referencePriorityToString();
+    }
+
     /**
      * Direct-axis subtransient reactance saturated, also known as Xd`sat.
      */
@@ -365,6 +485,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String satDirectSubtransXToString() {
         return satDirectSubtransX != null ? satDirectSubtransX.toString() : null;
+    }
+
+    private static void setSatDirectSubtransX(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setSatDirectSubtransX(_value_);
+    }
+
+    private static String satDirectSubtransXToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).satDirectSubtransXToString();
     }
 
     /**
@@ -388,6 +516,14 @@ public class SynchronousMachine extends RotatingMachine {
         return satDirectSyncX != null ? satDirectSyncX.toString() : null;
     }
 
+    private static void setSatDirectSyncX(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setSatDirectSyncX(_value_);
+    }
+
+    private static String satDirectSyncXToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).satDirectSyncXToString();
+    }
+
     /**
      * Saturated Direct-axis transient reactance. The attribute is primarily used for short circuit calculations according to ANSI.
      */
@@ -409,6 +545,14 @@ public class SynchronousMachine extends RotatingMachine {
         return satDirectTransX != null ? satDirectTransX.toString() : null;
     }
 
+    private static void setSatDirectTransX(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setSatDirectTransX(_value_);
+    }
+
+    private static String satDirectTransXToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).satDirectTransXToString();
+    }
+
     /**
      * Type of rotor, used by short circuit applications, only for single fed short circuit according to IEC 60909.
      */
@@ -426,6 +570,14 @@ public class SynchronousMachine extends RotatingMachine {
         return shortCircuitRotorType;
     }
 
+    private static void setShortCircuitRotorType(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setShortCircuitRotorType(_value_);
+    }
+
+    private static String shortCircuitRotorTypeToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).shortCircuitRotorTypeToString();
+    }
+
     /**
      * Modes that this synchronous machine can operate in.
      */
@@ -441,6 +593,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String typeToString() {
         return type;
+    }
+
+    private static void setType(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setType(_value_);
+    }
+
+    private static String typeToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).typeToString();
     }
 
     /**
@@ -464,6 +624,14 @@ public class SynchronousMachine extends RotatingMachine {
         return voltageRegulationRange != null ? voltageRegulationRange.toString() : null;
     }
 
+    private static void setVoltageRegulationRange(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setVoltageRegulationRange(_value_);
+    }
+
+    private static String voltageRegulationRangeToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).voltageRegulationRangeToString();
+    }
+
     /**
      * Zero sequence reactance of the synchronous machine.
      */
@@ -485,6 +653,14 @@ public class SynchronousMachine extends RotatingMachine {
         return x0 != null ? x0.toString() : null;
     }
 
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).x0ToString();
+    }
+
     /**
      * Negative sequence reactance.
      */
@@ -504,6 +680,14 @@ public class SynchronousMachine extends RotatingMachine {
 
     public String x2ToString() {
         return x2 != null ? x2.toString() : null;
+    }
+
+    private static void setX2(BaseClass _this_, String _value_) {
+        ((SynchronousMachine) _this_).setX2(_value_);
+    }
+
+    private static String x2ToString(BaseClass _this_) {
+        return ((SynchronousMachine) _this_).x2ToString();
     }
 
     /**
@@ -547,16 +731,12 @@ public class SynchronousMachine extends RotatingMachine {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SynchronousMachine", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SynchronousMachine", attrName));
+        return "";
     }
 
     /**
@@ -567,16 +747,12 @@ public class SynchronousMachine extends RotatingMachine {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SynchronousMachine", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachine", attrName, objectValue));
         }
     }
 
@@ -588,16 +764,12 @@ public class SynchronousMachine extends RotatingMachine {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SynchronousMachine", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SynchronousMachine", attrName, stringValue));
         }
     }
 
@@ -721,150 +893,121 @@ public class SynchronousMachine extends RotatingMachine {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("InitialReactiveCapabilityCurve", new AttrDetails("SynchronousMachine.InitialReactiveCapabilityCurve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("InitialReactiveCapabilityCurve", new AttrDetails("SynchronousMachine.InitialReactiveCapabilityCurve", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SynchronousMachine::InitialReactiveCapabilityCurveToString, SynchronousMachine::setInitialReactiveCapabilityCurve, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineDynamics", new AttrDetails("SynchronousMachine.SynchronousMachineDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SynchronousMachineDynamics", new AttrDetails("SynchronousMachine.SynchronousMachineDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SynchronousMachine::SynchronousMachineDynamicsToString, SynchronousMachine::setSynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("earthing", new AttrDetails("SynchronousMachine.earthing", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("earthing", new AttrDetails("SynchronousMachine.earthing", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::earthingToString, null, SynchronousMachine::setEarthing));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("earthingStarPointR", new AttrDetails("SynchronousMachine.earthingStarPointR", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("earthingStarPointR", new AttrDetails("SynchronousMachine.earthingStarPointR", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::earthingStarPointRToString, null, SynchronousMachine::setEarthingStarPointR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("earthingStarPointX", new AttrDetails("SynchronousMachine.earthingStarPointX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("earthingStarPointX", new AttrDetails("SynchronousMachine.earthingStarPointX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::earthingStarPointXToString, null, SynchronousMachine::setEarthingStarPointX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ikk", new AttrDetails("SynchronousMachine.ikk", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ikk", new AttrDetails("SynchronousMachine.ikk", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::ikkToString, null, SynchronousMachine::setIkk));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxQ", new AttrDetails("SynchronousMachine.maxQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxQ", new AttrDetails("SynchronousMachine.maxQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::maxQToString, null, SynchronousMachine::setMaxQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minQ", new AttrDetails("SynchronousMachine.minQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minQ", new AttrDetails("SynchronousMachine.minQ", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::minQToString, null, SynchronousMachine::setMinQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("mu", new AttrDetails("SynchronousMachine.mu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mu", new AttrDetails("SynchronousMachine.mu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::muToString, null, SynchronousMachine::setMu));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("operatingMode", new AttrDetails("SynchronousMachine.operatingMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("operatingMode", new AttrDetails("SynchronousMachine.operatingMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, SynchronousMachine::operatingModeToString, null, SynchronousMachine::setOperatingMode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("qPercent", new AttrDetails("SynchronousMachine.qPercent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qPercent", new AttrDetails("SynchronousMachine.qPercent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::qPercentToString, null, SynchronousMachine::setQPercent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("SynchronousMachine.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("SynchronousMachine.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::rToString, null, SynchronousMachine::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("SynchronousMachine.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("SynchronousMachine.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::r0ToString, null, SynchronousMachine::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r2", new AttrDetails("SynchronousMachine.r2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r2", new AttrDetails("SynchronousMachine.r2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::r2ToString, null, SynchronousMachine::setR2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("referencePriority", new AttrDetails("SynchronousMachine.referencePriority", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("referencePriority", new AttrDetails("SynchronousMachine.referencePriority", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::referencePriorityToString, null, SynchronousMachine::setReferencePriority));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("satDirectSubtransX", new AttrDetails("SynchronousMachine.satDirectSubtransX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("satDirectSubtransX", new AttrDetails("SynchronousMachine.satDirectSubtransX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::satDirectSubtransXToString, null, SynchronousMachine::setSatDirectSubtransX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("satDirectSyncX", new AttrDetails("SynchronousMachine.satDirectSyncX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("satDirectSyncX", new AttrDetails("SynchronousMachine.satDirectSyncX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::satDirectSyncXToString, null, SynchronousMachine::setSatDirectSyncX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("satDirectTransX", new AttrDetails("SynchronousMachine.satDirectTransX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("satDirectTransX", new AttrDetails("SynchronousMachine.satDirectTransX", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::satDirectTransXToString, null, SynchronousMachine::setSatDirectTransX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("shortCircuitRotorType", new AttrDetails("SynchronousMachine.shortCircuitRotorType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("shortCircuitRotorType", new AttrDetails("SynchronousMachine.shortCircuitRotorType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, SynchronousMachine::shortCircuitRotorTypeToString, null, SynchronousMachine::setShortCircuitRotorType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("type", new AttrDetails("SynchronousMachine.type", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("type", new AttrDetails("SynchronousMachine.type", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, SynchronousMachine::typeToString, null, SynchronousMachine::setType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("voltageRegulationRange", new AttrDetails("SynchronousMachine.voltageRegulationRange", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("voltageRegulationRange", new AttrDetails("SynchronousMachine.voltageRegulationRange", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::voltageRegulationRangeToString, null, SynchronousMachine::setVoltageRegulationRange));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("SynchronousMachine.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("SynchronousMachine.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::x0ToString, null, SynchronousMachine::setX0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x2", new AttrDetails("SynchronousMachine.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x2", new AttrDetails("SynchronousMachine.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::x2ToString, null, SynchronousMachine::setX2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachine().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("InitialReactiveCapabilityCurve", new GetterSetter(this::InitialReactiveCapabilityCurveToString, this::setInitialReactiveCapabilityCurve, null));
-        map.put("SynchronousMachineDynamics", new GetterSetter(this::SynchronousMachineDynamicsToString, this::setSynchronousMachineDynamics, null));
-        map.put("earthing", new GetterSetter(this::earthingToString, null, this::setEarthing));
-        map.put("earthingStarPointR", new GetterSetter(this::earthingStarPointRToString, null, this::setEarthingStarPointR));
-        map.put("earthingStarPointX", new GetterSetter(this::earthingStarPointXToString, null, this::setEarthingStarPointX));
-        map.put("ikk", new GetterSetter(this::ikkToString, null, this::setIkk));
-        map.put("maxQ", new GetterSetter(this::maxQToString, null, this::setMaxQ));
-        map.put("minQ", new GetterSetter(this::minQToString, null, this::setMinQ));
-        map.put("mu", new GetterSetter(this::muToString, null, this::setMu));
-        map.put("operatingMode", new GetterSetter(this::operatingModeToString, null, this::setOperatingMode));
-        map.put("qPercent", new GetterSetter(this::qPercentToString, null, this::setQPercent));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("r2", new GetterSetter(this::r2ToString, null, this::setR2));
-        map.put("referencePriority", new GetterSetter(this::referencePriorityToString, null, this::setReferencePriority));
-        map.put("satDirectSubtransX", new GetterSetter(this::satDirectSubtransXToString, null, this::setSatDirectSubtransX));
-        map.put("satDirectSyncX", new GetterSetter(this::satDirectSyncXToString, null, this::setSatDirectSyncX));
-        map.put("satDirectTransX", new GetterSetter(this::satDirectTransXToString, null, this::setSatDirectTransX));
-        map.put("shortCircuitRotorType", new GetterSetter(this::shortCircuitRotorTypeToString, null, this::setShortCircuitRotorType));
-        map.put("type", new GetterSetter(this::typeToString, null, this::setType));
-        map.put("voltageRegulationRange", new GetterSetter(this::voltageRegulationRangeToString, null, this::setVoltageRegulationRange));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        map.put("x2", new GetterSetter(this::x2ToString, null, this::setX2));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

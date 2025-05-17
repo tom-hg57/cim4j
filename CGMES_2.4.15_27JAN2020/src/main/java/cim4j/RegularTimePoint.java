@@ -52,6 +52,14 @@ public class RegularTimePoint extends BaseClass {
         return IntervalSchedule != null ? IntervalSchedule.getRdfid() : null;
     }
 
+    private static void setIntervalSchedule(BaseClass _this_, BaseClass _object_) {
+        ((RegularTimePoint) _this_).setIntervalSchedule(_object_);
+    }
+
+    private static String IntervalScheduleToString(BaseClass _this_) {
+        return ((RegularTimePoint) _this_).IntervalScheduleToString();
+    }
+
     /**
      * The position of the regular time point in the sequence. Note that time points don`t have to be sequential, i.e. time points may be omitted. The actual time for a RegularTimePoint is computed by multiplying the associated regular interval schedule`s time step with the regular time point sequence number and adding the associated schedules start time.
      */
@@ -71,6 +79,14 @@ public class RegularTimePoint extends BaseClass {
 
     public String sequenceNumberToString() {
         return sequenceNumber != null ? sequenceNumber.toString() : null;
+    }
+
+    private static void setSequenceNumber(BaseClass _this_, String _value_) {
+        ((RegularTimePoint) _this_).setSequenceNumber(_value_);
+    }
+
+    private static String sequenceNumberToString(BaseClass _this_) {
+        return ((RegularTimePoint) _this_).sequenceNumberToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class RegularTimePoint extends BaseClass {
         return value1 != null ? value1.toString() : null;
     }
 
+    private static void setValue1(BaseClass _this_, String _value_) {
+        ((RegularTimePoint) _this_).setValue1(_value_);
+    }
+
+    private static String value1ToString(BaseClass _this_) {
+        return ((RegularTimePoint) _this_).value1ToString();
+    }
+
     /**
      * The second value at the time. The meaning of the value is defined by the derived type of the associated schedule.
      */
@@ -113,6 +137,14 @@ public class RegularTimePoint extends BaseClass {
 
     public String value2ToString() {
         return value2 != null ? value2.toString() : null;
+    }
+
+    private static void setValue2(BaseClass _this_, String _value_) {
+        ((RegularTimePoint) _this_).setValue2(_value_);
+    }
+
+    private static String value2ToString(BaseClass _this_) {
+        return ((RegularTimePoint) _this_).value2ToString();
     }
 
     /**
@@ -156,16 +188,12 @@ public class RegularTimePoint extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("RegularTimePoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RegularTimePoint", attrName));
+        return "";
     }
 
     /**
@@ -176,16 +204,12 @@ public class RegularTimePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RegularTimePoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegularTimePoint", attrName, objectValue));
         }
     }
 
@@ -197,16 +221,12 @@ public class RegularTimePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RegularTimePoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RegularTimePoint", attrName, stringValue));
         }
     }
 
@@ -330,36 +350,26 @@ public class RegularTimePoint extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("IntervalSchedule", new AttrDetails("RegularTimePoint.IntervalSchedule", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("IntervalSchedule", new AttrDetails("RegularTimePoint.IntervalSchedule", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RegularTimePoint::IntervalScheduleToString, RegularTimePoint::setIntervalSchedule, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("sequenceNumber", new AttrDetails("RegularTimePoint.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("sequenceNumber", new AttrDetails("RegularTimePoint.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegularTimePoint::sequenceNumberToString, null, RegularTimePoint::setSequenceNumber));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value1", new AttrDetails("RegularTimePoint.value1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value1", new AttrDetails("RegularTimePoint.value1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegularTimePoint::value1ToString, null, RegularTimePoint::setValue1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value2", new AttrDetails("RegularTimePoint.value2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value2", new AttrDetails("RegularTimePoint.value2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegularTimePoint::value2ToString, null, RegularTimePoint::setValue2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularTimePoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("IntervalSchedule", new GetterSetter(this::IntervalScheduleToString, this::setIntervalSchedule, null));
-        map.put("sequenceNumber", new GetterSetter(this::sequenceNumberToString, null, this::setSequenceNumber));
-        map.put("value1", new GetterSetter(this::value1ToString, null, this::setValue1));
-        map.put("value2", new GetterSetter(this::value2ToString, null, this::setValue2));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

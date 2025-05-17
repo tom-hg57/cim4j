@@ -52,6 +52,14 @@ public class ACDCTerminal extends IdentifiedObject {
         return BusNameMarker != null ? BusNameMarker.getRdfid() : null;
     }
 
+    private static void setBusNameMarker(BaseClass _this_, BaseClass _object_) {
+        ((ACDCTerminal) _this_).setBusNameMarker(_object_);
+    }
+
+    private static String BusNameMarkerToString(BaseClass _this_) {
+        return ((ACDCTerminal) _this_).BusNameMarkerToString();
+    }
+
     /**
      * Measurements associated with this terminal defining  where the measurement is placed in the network topology.  It may be used, for instance, to capture the sensor position, such as a voltage transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator.
      *
@@ -75,6 +83,14 @@ public class ACDCTerminal extends IdentifiedObject {
 
     public String MeasurementsToString() {
         return getStringFromSet(Measurements);
+    }
+
+    private static void setMeasurements(BaseClass _this_, BaseClass _object_) {
+        ((ACDCTerminal) _this_).setMeasurements(_object_);
+    }
+
+    private static String MeasurementsToString(BaseClass _this_) {
+        return ((ACDCTerminal) _this_).MeasurementsToString();
     }
 
     /**
@@ -101,6 +117,14 @@ public class ACDCTerminal extends IdentifiedObject {
         return getStringFromSet(OperationalLimitSet);
     }
 
+    private static void setOperationalLimitSet(BaseClass _this_, BaseClass _object_) {
+        ((ACDCTerminal) _this_).setOperationalLimitSet(_object_);
+    }
+
+    private static String OperationalLimitSetToString(BaseClass _this_) {
+        return ((ACDCTerminal) _this_).OperationalLimitSetToString();
+    }
+
     /**
      * The connected status is related to a bus-branch model and the topological node to terminal relation.  True implies the terminal is connected to the related topological node and false implies it is not.  In a bus-branch model, the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the topological node to terminal relation. A valid case is that conducting equipment can be connected in one end and open in the other. In particular for an AC line segment, where the reactive line charging can be significant, this is a relevant case.
      */
@@ -122,6 +146,14 @@ public class ACDCTerminal extends IdentifiedObject {
         return connected != null ? connected.toString() : null;
     }
 
+    private static void setConnected(BaseClass _this_, String _value_) {
+        ((ACDCTerminal) _this_).setConnected(_value_);
+    }
+
+    private static String connectedToString(BaseClass _this_) {
+        return ((ACDCTerminal) _this_).connectedToString();
+    }
+
     /**
      * The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order.   The first terminal is the `starting point` for a two terminal branch.
      */
@@ -141,6 +173,14 @@ public class ACDCTerminal extends IdentifiedObject {
 
     public String sequenceNumberToString() {
         return sequenceNumber != null ? sequenceNumber.toString() : null;
+    }
+
+    private static void setSequenceNumber(BaseClass _this_, String _value_) {
+        ((ACDCTerminal) _this_).setSequenceNumber(_value_);
+    }
+
+    private static String sequenceNumberToString(BaseClass _this_) {
+        return ((ACDCTerminal) _this_).sequenceNumberToString();
     }
 
     /**
@@ -184,16 +224,12 @@ public class ACDCTerminal extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ACDCTerminal", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ACDCTerminal", attrName));
+        return "";
     }
 
     /**
@@ -204,16 +240,12 @@ public class ACDCTerminal extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ACDCTerminal", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACDCTerminal", attrName, objectValue));
         }
     }
 
@@ -225,16 +257,12 @@ public class ACDCTerminal extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ACDCTerminal", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACDCTerminal", attrName, stringValue));
         }
     }
 
@@ -358,42 +386,31 @@ public class ACDCTerminal extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("BusNameMarker", new AttrDetails("ACDCTerminal.BusNameMarker", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("BusNameMarker", new AttrDetails("ACDCTerminal.BusNameMarker", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ACDCTerminal::BusNameMarkerToString, ACDCTerminal::setBusNameMarker, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Measurements", new AttrDetails("ACDCTerminal.Measurements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Measurements", new AttrDetails("ACDCTerminal.Measurements", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ACDCTerminal::MeasurementsToString, ACDCTerminal::setMeasurements, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("OperationalLimitSet", new AttrDetails("ACDCTerminal.OperationalLimitSet", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("OperationalLimitSet", new AttrDetails("ACDCTerminal.OperationalLimitSet", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ACDCTerminal::OperationalLimitSetToString, ACDCTerminal::setOperationalLimitSet, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("connected", new AttrDetails("ACDCTerminal.connected", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("connected", new AttrDetails("ACDCTerminal.connected", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCTerminal::connectedToString, null, ACDCTerminal::setConnected));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("sequenceNumber", new AttrDetails("ACDCTerminal.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("sequenceNumber", new AttrDetails("ACDCTerminal.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCTerminal::sequenceNumberToString, null, ACDCTerminal::setSequenceNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCTerminal().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("BusNameMarker", new GetterSetter(this::BusNameMarkerToString, this::setBusNameMarker, null));
-        map.put("Measurements", new GetterSetter(this::MeasurementsToString, this::setMeasurements, null));
-        map.put("OperationalLimitSet", new GetterSetter(this::OperationalLimitSetToString, this::setOperationalLimitSet, null));
-        map.put("connected", new GetterSetter(this::connectedToString, null, this::setConnected));
-        map.put("sequenceNumber", new GetterSetter(this::sequenceNumberToString, null, this::setSequenceNumber));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

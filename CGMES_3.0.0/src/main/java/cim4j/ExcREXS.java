@@ -50,6 +50,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return e1 != null ? e1.toString() : null;
     }
 
+    private static void setE1(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setE1(_value_);
+    }
+
+    private static String e1ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).e1ToString();
+    }
+
     /**
      * Field voltage value 2 (&lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;).  Typical value = 4.
      */
@@ -71,6 +79,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return e2 != null ? e2.toString() : null;
     }
 
+    private static void setE2(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setE2(_value_);
+    }
+
+    private static String e2ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).e2ToString();
+    }
+
     /**
      * Rate feedback signal flag (&lt;i&gt;fbf&lt;/i&gt;). Typical value = fieldCurrent.
      */
@@ -86,6 +102,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String fbfToString() {
         return fbf;
+    }
+
+    private static void setFbf(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setFbf(_value_);
+    }
+
+    private static String fbfToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).fbfToString();
     }
 
     /**
@@ -109,6 +133,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return flimf != null ? flimf.toString() : null;
     }
 
+    private static void setFlimf(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setFlimf(_value_);
+    }
+
+    private static String flimfToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).flimfToString();
+    }
+
     /**
      * Rectifier regulation factor (&lt;i&gt;Kc&lt;/i&gt;).  Typical value = 0,05.
      */
@@ -128,6 +160,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String kcToString() {
         return kc != null ? kc.toString() : null;
+    }
+
+    private static void setKc(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKc(_value_);
+    }
+
+    private static String kcToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kcToString();
     }
 
     /**
@@ -151,6 +191,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kd != null ? kd.toString() : null;
     }
 
+    private static void setKd(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKd(_value_);
+    }
+
+    private static String kdToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kdToString();
+    }
+
     /**
      * Exciter field proportional constant (&lt;i&gt;Ke&lt;/i&gt;).  Typical value = 1.
      */
@@ -170,6 +218,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String keToString() {
         return ke != null ? ke.toString() : null;
+    }
+
+    private static void setKe(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKe(_value_);
+    }
+
+    private static String keToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).keToString();
     }
 
     /**
@@ -193,6 +249,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kefd != null ? kefd.toString() : null;
     }
 
+    private static void setKefd(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKefd(_value_);
+    }
+
+    private static String kefdToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kefdToString();
+    }
+
     /**
      * Rate feedback gain (&lt;i&gt;Kf&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0,05.
      */
@@ -212,6 +276,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String kfToString() {
         return kf != null ? kf.toString() : null;
+    }
+
+    private static void setKf(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKf(_value_);
+    }
+
+    private static String kfToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kfToString();
     }
 
     /**
@@ -235,6 +307,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kh != null ? kh.toString() : null;
     }
 
+    private static void setKh(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKh(_value_);
+    }
+
+    private static String khToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).khToString();
+    }
+
     /**
      * Field current regulator integral gain (&lt;i&gt;Kii&lt;/i&gt;).  Typical value = 0.
      */
@@ -254,6 +334,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String kiiToString() {
         return kii != null ? kii.toString() : null;
+    }
+
+    private static void setKii(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKii(_value_);
+    }
+
+    private static String kiiToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kiiToString();
     }
 
     /**
@@ -277,6 +365,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kip != null ? kip.toString() : null;
     }
 
+    private static void setKip(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKip(_value_);
+    }
+
+    private static String kipToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kipToString();
+    }
+
     /**
      * Coefficient to allow different usage of the model-speed coefficient (&lt;i&gt;Ks&lt;/i&gt;).  Typical value = 0.
      */
@@ -296,6 +392,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String ksToString() {
         return ks != null ? ks.toString() : null;
+    }
+
+    private static void setKs(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKs(_value_);
+    }
+
+    private static String ksToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).ksToString();
     }
 
     /**
@@ -319,6 +423,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kvi != null ? kvi.toString() : null;
     }
 
+    private static void setKvi(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKvi(_value_);
+    }
+
+    private static String kviToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kviToString();
+    }
+
     /**
      * Voltage regulator proportional gain (&lt;i&gt;Kvp&lt;/i&gt;).  Typical value = 2800.
      */
@@ -338,6 +450,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String kvpToString() {
         return kvp != null ? kvp.toString() : null;
+    }
+
+    private static void setKvp(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKvp(_value_);
+    }
+
+    private static String kvpToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kvpToString();
     }
 
     /**
@@ -361,6 +481,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return kvphz != null ? kvphz.toString() : null;
     }
 
+    private static void setKvphz(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setKvphz(_value_);
+    }
+
+    private static String kvphzToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).kvphzToString();
+    }
+
     /**
      * Pickup speed of V/Hz limiter (&lt;i&gt;Nvphz&lt;/i&gt;).  Typical value = 0.
      */
@@ -380,6 +508,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String nvphzToString() {
         return nvphz != null ? nvphz.toString() : null;
+    }
+
+    private static void setNvphz(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setNvphz(_value_);
+    }
+
+    private static String nvphzToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).nvphzToString();
     }
 
     /**
@@ -403,6 +539,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return se1 != null ? se1.toString() : null;
     }
 
+    private static void setSe1(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setSe1(_value_);
+    }
+
+    private static String se1ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).se1ToString();
+    }
+
     /**
      * Saturation factor at &lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt; (&lt;i&gt;Se&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0,001.
      */
@@ -422,6 +566,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String se2ToString() {
         return se2 != null ? se2.toString() : null;
+    }
+
+    private static void setSe2(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setSe2(_value_);
+    }
+
+    private static String se2ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).se2ToString();
     }
 
     /**
@@ -445,6 +597,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return ta != null ? ta.toString() : null;
     }
 
+    private static void setTa(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTa(_value_);
+    }
+
+    private static String taToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).taToString();
+    }
+
     /**
      * Lag time constant (&lt;i&gt;Tb1&lt;/i&gt;) (&amp;gt;= 0).  If = 0, block is bypassed.  Typical value = 0.
      */
@@ -464,6 +624,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String tb1ToString() {
         return tb1 != null ? tb1.toString() : null;
+    }
+
+    private static void setTb1(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTb1(_value_);
+    }
+
+    private static String tb1ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tb1ToString();
     }
 
     /**
@@ -487,6 +655,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return tb2 != null ? tb2.toString() : null;
     }
 
+    private static void setTb2(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTb2(_value_);
+    }
+
+    private static String tb2ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tb2ToString();
+    }
+
     /**
      * Lead time constant (&lt;i&gt;Tc1&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
      */
@@ -506,6 +682,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String tc1ToString() {
         return tc1 != null ? tc1.toString() : null;
+    }
+
+    private static void setTc1(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTc1(_value_);
+    }
+
+    private static String tc1ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tc1ToString();
     }
 
     /**
@@ -529,6 +713,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return tc2 != null ? tc2.toString() : null;
     }
 
+    private static void setTc2(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTc2(_value_);
+    }
+
+    private static String tc2ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tc2ToString();
+    }
+
     /**
      * Exciter field time constant (&lt;i&gt;Te&lt;/i&gt;) (&amp;gt; 0).  Typical value = 1,2.
      */
@@ -548,6 +740,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String teToString() {
         return te != null ? te.toString() : null;
+    }
+
+    private static void setTe(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTe(_value_);
+    }
+
+    private static String teToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).teToString();
     }
 
     /**
@@ -571,6 +771,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return tf != null ? tf.toString() : null;
     }
 
+    private static void setTf(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTf(_value_);
+    }
+
+    private static String tfToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tfToString();
+    }
+
     /**
      * Feedback lead time constant (&lt;i&gt;Tf1&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
      */
@@ -590,6 +798,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String tf1ToString() {
         return tf1 != null ? tf1.toString() : null;
+    }
+
+    private static void setTf1(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTf1(_value_);
+    }
+
+    private static String tf1ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tf1ToString();
     }
 
     /**
@@ -613,6 +829,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return tf2 != null ? tf2.toString() : null;
     }
 
+    private static void setTf2(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTf2(_value_);
+    }
+
+    private static String tf2ToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tf2ToString();
+    }
+
     /**
      * Field current bridge time constant (&lt;i&gt;Tp&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
      */
@@ -632,6 +856,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String tpToString() {
         return tp != null ? tp.toString() : null;
+    }
+
+    private static void setTp(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setTp(_value_);
+    }
+
+    private static String tpToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).tpToString();
     }
 
     /**
@@ -655,6 +887,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return vcmax != null ? vcmax.toString() : null;
     }
 
+    private static void setVcmax(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVcmax(_value_);
+    }
+
+    private static String vcmaxToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vcmaxToString();
+    }
+
     /**
      * Maximum exciter field current (&lt;i&gt;Vfmax&lt;/i&gt;) (&amp;gt; ExcREXS.vfmin).  Typical value = 47.
      */
@@ -674,6 +914,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String vfmaxToString() {
         return vfmax != null ? vfmax.toString() : null;
+    }
+
+    private static void setVfmax(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVfmax(_value_);
+    }
+
+    private static String vfmaxToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vfmaxToString();
     }
 
     /**
@@ -697,6 +945,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return vfmin != null ? vfmin.toString() : null;
     }
 
+    private static void setVfmin(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVfmin(_value_);
+    }
+
+    private static String vfminToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vfminToString();
+    }
+
     /**
      * Voltage regulator input limit (&lt;i&gt;Vimax&lt;/i&gt;).  Typical value = 0,1.
      */
@@ -716,6 +972,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String vimaxToString() {
         return vimax != null ? vimax.toString() : null;
+    }
+
+    private static void setVimax(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVimax(_value_);
+    }
+
+    private static String vimaxToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vimaxToString();
     }
 
     /**
@@ -739,6 +1003,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return vrmax != null ? vrmax.toString() : null;
     }
 
+    private static void setVrmax(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVrmax(_value_);
+    }
+
+    private static String vrmaxToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vrmaxToString();
+    }
+
     /**
      * Minimum controller output (&lt;i&gt;Vrmin&lt;/i&gt;) (&amp;lt; ExcREXS.vrmax).  Typical value = -20.
      */
@@ -760,6 +1032,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
         return vrmin != null ? vrmin.toString() : null;
     }
 
+    private static void setVrmin(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setVrmin(_value_);
+    }
+
+    private static String vrminToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).vrminToString();
+    }
+
     /**
      * Exciter compounding reactance (&lt;i&gt;Xc&lt;/i&gt;).  Typical value = 0.
      */
@@ -779,6 +1059,14 @@ public class ExcREXS extends ExcitationSystemDynamics {
 
     public String xcToString() {
         return xc != null ? xc.toString() : null;
+    }
+
+    private static void setXc(BaseClass _this_, String _value_) {
+        ((ExcREXS) _this_).setXc(_value_);
+    }
+
+    private static String xcToString(BaseClass _this_) {
+        return ((ExcREXS) _this_).xcToString();
     }
 
     /**
@@ -822,16 +1110,12 @@ public class ExcREXS extends ExcitationSystemDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExcREXS", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcREXS", attrName));
+        return "";
     }
 
     /**
@@ -842,16 +1126,12 @@ public class ExcREXS extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcREXS", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcREXS", attrName, objectValue));
         }
     }
 
@@ -863,16 +1143,12 @@ public class ExcREXS extends ExcitationSystemDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcREXS", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcREXS", attrName, stringValue));
         }
     }
 
@@ -996,228 +1272,186 @@ public class ExcREXS extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("e1", new AttrDetails("ExcREXS.e1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("e1", new AttrDetails("ExcREXS.e1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::e1ToString, null, ExcREXS::setE1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("e2", new AttrDetails("ExcREXS.e2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("e2", new AttrDetails("ExcREXS.e2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::e2ToString, null, ExcREXS::setE2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("fbf", new AttrDetails("ExcREXS.fbf", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("fbf", new AttrDetails("ExcREXS.fbf", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, ExcREXS::fbfToString, null, ExcREXS::setFbf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("flimf", new AttrDetails("ExcREXS.flimf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("flimf", new AttrDetails("ExcREXS.flimf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::flimfToString, null, ExcREXS::setFlimf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kc", new AttrDetails("ExcREXS.kc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kc", new AttrDetails("ExcREXS.kc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kcToString, null, ExcREXS::setKc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kd", new AttrDetails("ExcREXS.kd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kd", new AttrDetails("ExcREXS.kd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kdToString, null, ExcREXS::setKd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ke", new AttrDetails("ExcREXS.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ke", new AttrDetails("ExcREXS.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::keToString, null, ExcREXS::setKe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kefd", new AttrDetails("ExcREXS.kefd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kefd", new AttrDetails("ExcREXS.kefd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kefdToString, null, ExcREXS::setKefd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf", new AttrDetails("ExcREXS.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kf", new AttrDetails("ExcREXS.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kfToString, null, ExcREXS::setKf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kh", new AttrDetails("ExcREXS.kh", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kh", new AttrDetails("ExcREXS.kh", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::khToString, null, ExcREXS::setKh));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kii", new AttrDetails("ExcREXS.kii", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kii", new AttrDetails("ExcREXS.kii", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kiiToString, null, ExcREXS::setKii));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kip", new AttrDetails("ExcREXS.kip", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kip", new AttrDetails("ExcREXS.kip", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kipToString, null, ExcREXS::setKip));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ks", new AttrDetails("ExcREXS.ks", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ks", new AttrDetails("ExcREXS.ks", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::ksToString, null, ExcREXS::setKs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kvi", new AttrDetails("ExcREXS.kvi", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kvi", new AttrDetails("ExcREXS.kvi", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kviToString, null, ExcREXS::setKvi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kvp", new AttrDetails("ExcREXS.kvp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kvp", new AttrDetails("ExcREXS.kvp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kvpToString, null, ExcREXS::setKvp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kvphz", new AttrDetails("ExcREXS.kvphz", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kvphz", new AttrDetails("ExcREXS.kvphz", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::kvphzToString, null, ExcREXS::setKvphz));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("nvphz", new AttrDetails("ExcREXS.nvphz", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("nvphz", new AttrDetails("ExcREXS.nvphz", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::nvphzToString, null, ExcREXS::setNvphz));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("se1", new AttrDetails("ExcREXS.se1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("se1", new AttrDetails("ExcREXS.se1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::se1ToString, null, ExcREXS::setSe1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("se2", new AttrDetails("ExcREXS.se2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("se2", new AttrDetails("ExcREXS.se2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::se2ToString, null, ExcREXS::setSe2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta", new AttrDetails("ExcREXS.ta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta", new AttrDetails("ExcREXS.ta", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::taToString, null, ExcREXS::setTa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb1", new AttrDetails("ExcREXS.tb1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tb1", new AttrDetails("ExcREXS.tb1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tb1ToString, null, ExcREXS::setTb1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tb2", new AttrDetails("ExcREXS.tb2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tb2", new AttrDetails("ExcREXS.tb2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tb2ToString, null, ExcREXS::setTb2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc1", new AttrDetails("ExcREXS.tc1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tc1", new AttrDetails("ExcREXS.tc1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tc1ToString, null, ExcREXS::setTc1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc2", new AttrDetails("ExcREXS.tc2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tc2", new AttrDetails("ExcREXS.tc2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tc2ToString, null, ExcREXS::setTc2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcREXS.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcREXS.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::teToString, null, ExcREXS::setTe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf", new AttrDetails("ExcREXS.tf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf", new AttrDetails("ExcREXS.tf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tfToString, null, ExcREXS::setTf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf1", new AttrDetails("ExcREXS.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf1", new AttrDetails("ExcREXS.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tf1ToString, null, ExcREXS::setTf1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf2", new AttrDetails("ExcREXS.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf2", new AttrDetails("ExcREXS.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tf2ToString, null, ExcREXS::setTf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tp", new AttrDetails("ExcREXS.tp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tp", new AttrDetails("ExcREXS.tp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::tpToString, null, ExcREXS::setTp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vcmax", new AttrDetails("ExcREXS.vcmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vcmax", new AttrDetails("ExcREXS.vcmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vcmaxToString, null, ExcREXS::setVcmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vfmax", new AttrDetails("ExcREXS.vfmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vfmax", new AttrDetails("ExcREXS.vfmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vfmaxToString, null, ExcREXS::setVfmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vfmin", new AttrDetails("ExcREXS.vfmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vfmin", new AttrDetails("ExcREXS.vfmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vfminToString, null, ExcREXS::setVfmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vimax", new AttrDetails("ExcREXS.vimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vimax", new AttrDetails("ExcREXS.vimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vimaxToString, null, ExcREXS::setVimax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcREXS.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcREXS.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vrmaxToString, null, ExcREXS::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcREXS.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcREXS.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::vrminToString, null, ExcREXS::setVrmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xc", new AttrDetails("ExcREXS.xc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xc", new AttrDetails("ExcREXS.xc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcREXS::xcToString, null, ExcREXS::setXc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcREXS().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("e1", new GetterSetter(this::e1ToString, null, this::setE1));
-        map.put("e2", new GetterSetter(this::e2ToString, null, this::setE2));
-        map.put("fbf", new GetterSetter(this::fbfToString, null, this::setFbf));
-        map.put("flimf", new GetterSetter(this::flimfToString, null, this::setFlimf));
-        map.put("kc", new GetterSetter(this::kcToString, null, this::setKc));
-        map.put("kd", new GetterSetter(this::kdToString, null, this::setKd));
-        map.put("ke", new GetterSetter(this::keToString, null, this::setKe));
-        map.put("kefd", new GetterSetter(this::kefdToString, null, this::setKefd));
-        map.put("kf", new GetterSetter(this::kfToString, null, this::setKf));
-        map.put("kh", new GetterSetter(this::khToString, null, this::setKh));
-        map.put("kii", new GetterSetter(this::kiiToString, null, this::setKii));
-        map.put("kip", new GetterSetter(this::kipToString, null, this::setKip));
-        map.put("ks", new GetterSetter(this::ksToString, null, this::setKs));
-        map.put("kvi", new GetterSetter(this::kviToString, null, this::setKvi));
-        map.put("kvp", new GetterSetter(this::kvpToString, null, this::setKvp));
-        map.put("kvphz", new GetterSetter(this::kvphzToString, null, this::setKvphz));
-        map.put("nvphz", new GetterSetter(this::nvphzToString, null, this::setNvphz));
-        map.put("se1", new GetterSetter(this::se1ToString, null, this::setSe1));
-        map.put("se2", new GetterSetter(this::se2ToString, null, this::setSe2));
-        map.put("ta", new GetterSetter(this::taToString, null, this::setTa));
-        map.put("tb1", new GetterSetter(this::tb1ToString, null, this::setTb1));
-        map.put("tb2", new GetterSetter(this::tb2ToString, null, this::setTb2));
-        map.put("tc1", new GetterSetter(this::tc1ToString, null, this::setTc1));
-        map.put("tc2", new GetterSetter(this::tc2ToString, null, this::setTc2));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        map.put("tf", new GetterSetter(this::tfToString, null, this::setTf));
-        map.put("tf1", new GetterSetter(this::tf1ToString, null, this::setTf1));
-        map.put("tf2", new GetterSetter(this::tf2ToString, null, this::setTf2));
-        map.put("tp", new GetterSetter(this::tpToString, null, this::setTp));
-        map.put("vcmax", new GetterSetter(this::vcmaxToString, null, this::setVcmax));
-        map.put("vfmax", new GetterSetter(this::vfmaxToString, null, this::setVfmax));
-        map.put("vfmin", new GetterSetter(this::vfminToString, null, this::setVfmin));
-        map.put("vimax", new GetterSetter(this::vimaxToString, null, this::setVimax));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        map.put("xc", new GetterSetter(this::xcToString, null, this::setXc));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

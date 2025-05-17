@@ -54,6 +54,14 @@ public class NonConformLoadGroup extends LoadGroup {
         return getStringFromSet(EnergyConsumers);
     }
 
+    private static void setEnergyConsumers(BaseClass _this_, BaseClass _object_) {
+        ((NonConformLoadGroup) _this_).setEnergyConsumers(_object_);
+    }
+
+    private static String EnergyConsumersToString(BaseClass _this_) {
+        return ((NonConformLoadGroup) _this_).EnergyConsumersToString();
+    }
+
     /**
      * The NonConformLoadSchedules in the NonConformLoadGroup.
      *
@@ -77,6 +85,14 @@ public class NonConformLoadGroup extends LoadGroup {
 
     public String NonConformLoadSchedulesToString() {
         return getStringFromSet(NonConformLoadSchedules);
+    }
+
+    private static void setNonConformLoadSchedules(BaseClass _this_, BaseClass _object_) {
+        ((NonConformLoadGroup) _this_).setNonConformLoadSchedules(_object_);
+    }
+
+    private static String NonConformLoadSchedulesToString(BaseClass _this_) {
+        return ((NonConformLoadGroup) _this_).NonConformLoadSchedulesToString();
     }
 
     /**
@@ -120,16 +136,12 @@ public class NonConformLoadGroup extends LoadGroup {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("NonConformLoadGroup", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "NonConformLoadGroup", attrName));
+        return "";
     }
 
     /**
@@ -140,16 +152,12 @@ public class NonConformLoadGroup extends LoadGroup {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("NonConformLoadGroup", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "NonConformLoadGroup", attrName, objectValue));
         }
     }
 
@@ -161,16 +169,12 @@ public class NonConformLoadGroup extends LoadGroup {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("NonConformLoadGroup", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "NonConformLoadGroup", attrName, stringValue));
         }
     }
 
@@ -294,24 +298,16 @@ public class NonConformLoadGroup extends LoadGroup {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("EnergyConsumers", new AttrDetails("NonConformLoadGroup.EnergyConsumers", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("EnergyConsumers", new AttrDetails("NonConformLoadGroup.EnergyConsumers", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, NonConformLoadGroup::EnergyConsumersToString, NonConformLoadGroup::setEnergyConsumers, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("NonConformLoadSchedules", new AttrDetails("NonConformLoadGroup.NonConformLoadSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("NonConformLoadSchedules", new AttrDetails("NonConformLoadGroup.NonConformLoadSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, NonConformLoadGroup::NonConformLoadSchedulesToString, NonConformLoadGroup::setNonConformLoadSchedules, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoadGroup().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("EnergyConsumers", new GetterSetter(this::EnergyConsumersToString, this::setEnergyConsumers, null));
-        map.put("NonConformLoadSchedules", new GetterSetter(this::NonConformLoadSchedulesToString, this::setNonConformLoadSchedules, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

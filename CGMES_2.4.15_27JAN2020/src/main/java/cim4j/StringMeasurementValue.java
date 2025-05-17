@@ -52,6 +52,14 @@ public class StringMeasurementValue extends MeasurementValue {
         return StringMeasurement != null ? StringMeasurement.getRdfid() : null;
     }
 
+    private static void setStringMeasurement(BaseClass _this_, BaseClass _object_) {
+        ((StringMeasurementValue) _this_).setStringMeasurement(_object_);
+    }
+
+    private static String StringMeasurementToString(BaseClass _this_) {
+        return ((StringMeasurementValue) _this_).StringMeasurementToString();
+    }
+
     /**
      * The value to supervise.
      */
@@ -67,6 +75,14 @@ public class StringMeasurementValue extends MeasurementValue {
 
     public String valueToString() {
         return value != null ? value.toString() : null;
+    }
+
+    private static void setValue(BaseClass _this_, String _value_) {
+        ((StringMeasurementValue) _this_).setValue(_value_);
+    }
+
+    private static String valueToString(BaseClass _this_) {
+        return ((StringMeasurementValue) _this_).valueToString();
     }
 
     /**
@@ -110,16 +126,12 @@ public class StringMeasurementValue extends MeasurementValue {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("StringMeasurementValue", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "StringMeasurementValue", attrName));
+        return "";
     }
 
     /**
@@ -130,16 +142,12 @@ public class StringMeasurementValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("StringMeasurementValue", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StringMeasurementValue", attrName, objectValue));
         }
     }
 
@@ -151,16 +159,12 @@ public class StringMeasurementValue extends MeasurementValue {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("StringMeasurementValue", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StringMeasurementValue", attrName, stringValue));
         }
     }
 
@@ -284,24 +288,16 @@ public class StringMeasurementValue extends MeasurementValue {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("StringMeasurement", new AttrDetails("StringMeasurementValue.StringMeasurement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("StringMeasurement", new AttrDetails("StringMeasurementValue.StringMeasurement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, StringMeasurementValue::StringMeasurementToString, StringMeasurementValue::setStringMeasurement, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value", new AttrDetails("StringMeasurementValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("value", new AttrDetails("StringMeasurementValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StringMeasurementValue::valueToString, null, StringMeasurementValue::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StringMeasurementValue().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("StringMeasurement", new GetterSetter(this::StringMeasurementToString, this::setStringMeasurement, null));
-        map.put("value", new GetterSetter(this::valueToString, null, this::setValue));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

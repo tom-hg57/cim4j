@@ -46,6 +46,14 @@ public class BasicIntervalSchedule extends IdentifiedObject {
         return startTime != null ? startTime.toString() : null;
     }
 
+    private static void setStartTime(BaseClass _this_, String _value_) {
+        ((BasicIntervalSchedule) _this_).setStartTime(_value_);
+    }
+
+    private static String startTimeToString(BaseClass _this_) {
+        return ((BasicIntervalSchedule) _this_).startTimeToString();
+    }
+
     /**
      * Value1 units of measure.
      */
@@ -63,6 +71,14 @@ public class BasicIntervalSchedule extends IdentifiedObject {
         return value1Unit;
     }
 
+    private static void setValue1Unit(BaseClass _this_, String _value_) {
+        ((BasicIntervalSchedule) _this_).setValue1Unit(_value_);
+    }
+
+    private static String value1UnitToString(BaseClass _this_) {
+        return ((BasicIntervalSchedule) _this_).value1UnitToString();
+    }
+
     /**
      * Value2 units of measure.
      */
@@ -78,6 +94,14 @@ public class BasicIntervalSchedule extends IdentifiedObject {
 
     public String value2UnitToString() {
         return value2Unit;
+    }
+
+    private static void setValue2Unit(BaseClass _this_, String _value_) {
+        ((BasicIntervalSchedule) _this_).setValue2Unit(_value_);
+    }
+
+    private static String value2UnitToString(BaseClass _this_) {
+        return ((BasicIntervalSchedule) _this_).value2UnitToString();
     }
 
     /**
@@ -121,16 +145,12 @@ public class BasicIntervalSchedule extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("BasicIntervalSchedule", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BasicIntervalSchedule", attrName));
+        return "";
     }
 
     /**
@@ -141,16 +161,12 @@ public class BasicIntervalSchedule extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BasicIntervalSchedule", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BasicIntervalSchedule", attrName, objectValue));
         }
     }
 
@@ -162,16 +178,12 @@ public class BasicIntervalSchedule extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BasicIntervalSchedule", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BasicIntervalSchedule", attrName, stringValue));
         }
     }
 
@@ -295,30 +307,21 @@ public class BasicIntervalSchedule extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("startTime", new AttrDetails("BasicIntervalSchedule.startTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("startTime", new AttrDetails("BasicIntervalSchedule.startTime", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BasicIntervalSchedule::startTimeToString, null, BasicIntervalSchedule::setStartTime));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value1Unit", new AttrDetails("BasicIntervalSchedule.value1Unit", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("value1Unit", new AttrDetails("BasicIntervalSchedule.value1Unit", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, BasicIntervalSchedule::value1UnitToString, null, BasicIntervalSchedule::setValue1Unit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("value2Unit", new AttrDetails("BasicIntervalSchedule.value2Unit", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("value2Unit", new AttrDetails("BasicIntervalSchedule.value2Unit", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, BasicIntervalSchedule::value2UnitToString, null, BasicIntervalSchedule::setValue2Unit));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BasicIntervalSchedule().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("startTime", new GetterSetter(this::startTimeToString, null, this::setStartTime));
-        map.put("value1Unit", new GetterSetter(this::value1UnitToString, null, this::setValue1Unit));
-        map.put("value2Unit", new GetterSetter(this::value2UnitToString, null, this::setValue2Unit));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

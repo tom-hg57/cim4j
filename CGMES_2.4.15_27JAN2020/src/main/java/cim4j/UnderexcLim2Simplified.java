@@ -50,6 +50,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
         return kui != null ? kui.toString() : null;
     }
 
+    private static void setKui(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setKui(_value_);
+    }
+
+    private static String kuiToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).kuiToString();
+    }
+
     /**
      * Segment P initial point (P0).  Typical Value = 0.
      */
@@ -69,6 +77,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
 
     public String p0ToString() {
         return p0 != null ? p0.toString() : null;
+    }
+
+    private static void setP0(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setP0(_value_);
+    }
+
+    private static String p0ToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).p0ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
         return p1 != null ? p1.toString() : null;
     }
 
+    private static void setP1(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setP1(_value_);
+    }
+
+    private static String p1ToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).p1ToString();
+    }
+
     /**
      * Segment Q initial point (Q0).  Typical Value = -0.31.
      */
@@ -111,6 +135,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
 
     public String q0ToString() {
         return q0 != null ? q0.toString() : null;
+    }
+
+    private static void setQ0(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setQ0(_value_);
+    }
+
+    private static String q0ToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).q0ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
         return q1 != null ? q1.toString() : null;
     }
 
+    private static void setQ1(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setQ1(_value_);
+    }
+
+    private static String q1ToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).q1ToString();
+    }
+
     /**
      * Maximum error signal (V).  Typical Value = 1.
      */
@@ -155,6 +195,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
         return vuimax != null ? vuimax.toString() : null;
     }
 
+    private static void setVuimax(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setVuimax(_value_);
+    }
+
+    private static String vuimaxToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).vuimaxToString();
+    }
+
     /**
      * Minimum error signal (V).  Typical Value = 0.
      */
@@ -174,6 +222,14 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
 
     public String vuiminToString() {
         return vuimin != null ? vuimin.toString() : null;
+    }
+
+    private static void setVuimin(BaseClass _this_, String _value_) {
+        ((UnderexcLim2Simplified) _this_).setVuimin(_value_);
+    }
+
+    private static String vuiminToString(BaseClass _this_) {
+        return ((UnderexcLim2Simplified) _this_).vuiminToString();
     }
 
     /**
@@ -217,16 +273,12 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("UnderexcLim2Simplified", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "UnderexcLim2Simplified", attrName));
+        return "";
     }
 
     /**
@@ -237,16 +289,12 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("UnderexcLim2Simplified", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLim2Simplified", attrName, objectValue));
         }
     }
 
@@ -258,16 +306,12 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("UnderexcLim2Simplified", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "UnderexcLim2Simplified", attrName, stringValue));
         }
     }
 
@@ -391,54 +435,41 @@ public class UnderexcLim2Simplified extends UnderexcitationLimiterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kui", new AttrDetails("UnderexcLim2Simplified.kui", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kui", new AttrDetails("UnderexcLim2Simplified.kui", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::kuiToString, null, UnderexcLim2Simplified::setKui));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("p0", new AttrDetails("UnderexcLim2Simplified.p0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("p0", new AttrDetails("UnderexcLim2Simplified.p0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::p0ToString, null, UnderexcLim2Simplified::setP0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("p1", new AttrDetails("UnderexcLim2Simplified.p1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("p1", new AttrDetails("UnderexcLim2Simplified.p1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::p1ToString, null, UnderexcLim2Simplified::setP1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("q0", new AttrDetails("UnderexcLim2Simplified.q0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("q0", new AttrDetails("UnderexcLim2Simplified.q0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::q0ToString, null, UnderexcLim2Simplified::setQ0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("q1", new AttrDetails("UnderexcLim2Simplified.q1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("q1", new AttrDetails("UnderexcLim2Simplified.q1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::q1ToString, null, UnderexcLim2Simplified::setQ1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vuimax", new AttrDetails("UnderexcLim2Simplified.vuimax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vuimax", new AttrDetails("UnderexcLim2Simplified.vuimax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::vuimaxToString, null, UnderexcLim2Simplified::setVuimax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vuimin", new AttrDetails("UnderexcLim2Simplified.vuimin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vuimin", new AttrDetails("UnderexcLim2Simplified.vuimin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcLim2Simplified::vuiminToString, null, UnderexcLim2Simplified::setVuimin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcLim2Simplified().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("kui", new GetterSetter(this::kuiToString, null, this::setKui));
-        map.put("p0", new GetterSetter(this::p0ToString, null, this::setP0));
-        map.put("p1", new GetterSetter(this::p1ToString, null, this::setP1));
-        map.put("q0", new GetterSetter(this::q0ToString, null, this::setQ0));
-        map.put("q1", new GetterSetter(this::q1ToString, null, this::setQ1));
-        map.put("vuimax", new GetterSetter(this::vuimaxToString, null, this::setVuimax));
-        map.put("vuimin", new GetterSetter(this::vuiminToString, null, this::setVuimin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

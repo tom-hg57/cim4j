@@ -50,6 +50,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
         return bs != null ? bs.toString() : null;
     }
 
+    private static void setBs(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setBs(_value_);
+    }
+
+    private static String bsToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).bsToString();
+    }
+
     /**
      * Transient voltage index for reactive power (BT).
      */
@@ -71,6 +79,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
         return bt != null ? bt.toString() : null;
     }
 
+    private static void setBt(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setBt(_value_);
+    }
+
+    private static String btToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).btToString();
+    }
+
     /**
      * Type of generic non-linear load model.
      */
@@ -86,6 +102,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
 
     public String genericNonLinearLoadModelTypeToString() {
         return genericNonLinearLoadModelType;
+    }
+
+    private static void setGenericNonLinearLoadModelType(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setGenericNonLinearLoadModelType(_value_);
+    }
+
+    private static String genericNonLinearLoadModelTypeToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).genericNonLinearLoadModelTypeToString();
     }
 
     /**
@@ -109,6 +133,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
         return ls != null ? ls.toString() : null;
     }
 
+    private static void setLs(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setLs(_value_);
+    }
+
+    private static String lsToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).lsToString();
+    }
+
     /**
      * Transient voltage index for active power (LT).
      */
@@ -128,6 +160,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
 
     public String ltToString() {
         return lt != null ? lt.toString() : null;
+    }
+
+    private static void setLt(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setLt(_value_);
+    }
+
+    private static String ltToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).ltToString();
     }
 
     /**
@@ -151,6 +191,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
         return pt != null ? pt.toString() : null;
     }
 
+    private static void setPt(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setPt(_value_);
+    }
+
+    private static String ptToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).ptToString();
+    }
+
     /**
      * Dynamic portion of reactive load (Q).
      */
@@ -170,6 +218,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
 
     public String qtToString() {
         return qt != null ? qt.toString() : null;
+    }
+
+    private static void setQt(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setQt(_value_);
+    }
+
+    private static String qtToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).qtToString();
     }
 
     /**
@@ -193,6 +249,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
         return tp != null ? tp.toString() : null;
     }
 
+    private static void setTp(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setTp(_value_);
+    }
+
+    private static String tpToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).tpToString();
+    }
+
     /**
      * Time constant of lag function of reactive power (T).
      */
@@ -212,6 +276,14 @@ public class LoadGenericNonLinear extends LoadDynamics {
 
     public String tqToString() {
         return tq != null ? tq.toString() : null;
+    }
+
+    private static void setTq(BaseClass _this_, String _value_) {
+        ((LoadGenericNonLinear) _this_).setTq(_value_);
+    }
+
+    private static String tqToString(BaseClass _this_) {
+        return ((LoadGenericNonLinear) _this_).tqToString();
     }
 
     /**
@@ -255,16 +327,12 @@ public class LoadGenericNonLinear extends LoadDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("LoadGenericNonLinear", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "LoadGenericNonLinear", attrName));
+        return "";
     }
 
     /**
@@ -275,16 +343,12 @@ public class LoadGenericNonLinear extends LoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("LoadGenericNonLinear", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadGenericNonLinear", attrName, objectValue));
         }
     }
 
@@ -296,16 +360,12 @@ public class LoadGenericNonLinear extends LoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("LoadGenericNonLinear", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadGenericNonLinear", attrName, stringValue));
         }
     }
 
@@ -429,66 +489,51 @@ public class LoadGenericNonLinear extends LoadDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("bs", new AttrDetails("LoadGenericNonLinear.bs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bs", new AttrDetails("LoadGenericNonLinear.bs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::bsToString, null, LoadGenericNonLinear::setBs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("bt", new AttrDetails("LoadGenericNonLinear.bt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bt", new AttrDetails("LoadGenericNonLinear.bt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::btToString, null, LoadGenericNonLinear::setBt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("genericNonLinearLoadModelType", new AttrDetails("LoadGenericNonLinear.genericNonLinearLoadModelType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("genericNonLinearLoadModelType", new AttrDetails("LoadGenericNonLinear.genericNonLinearLoadModelType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, LoadGenericNonLinear::genericNonLinearLoadModelTypeToString, null, LoadGenericNonLinear::setGenericNonLinearLoadModelType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ls", new AttrDetails("LoadGenericNonLinear.ls", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ls", new AttrDetails("LoadGenericNonLinear.ls", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::lsToString, null, LoadGenericNonLinear::setLs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lt", new AttrDetails("LoadGenericNonLinear.lt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("lt", new AttrDetails("LoadGenericNonLinear.lt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::ltToString, null, LoadGenericNonLinear::setLt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pt", new AttrDetails("LoadGenericNonLinear.pt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pt", new AttrDetails("LoadGenericNonLinear.pt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::ptToString, null, LoadGenericNonLinear::setPt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qt", new AttrDetails("LoadGenericNonLinear.qt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qt", new AttrDetails("LoadGenericNonLinear.qt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::qtToString, null, LoadGenericNonLinear::setQt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tp", new AttrDetails("LoadGenericNonLinear.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tp", new AttrDetails("LoadGenericNonLinear.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::tpToString, null, LoadGenericNonLinear::setTp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tq", new AttrDetails("LoadGenericNonLinear.tq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tq", new AttrDetails("LoadGenericNonLinear.tq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::tqToString, null, LoadGenericNonLinear::setTq));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadGenericNonLinear().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("bs", new GetterSetter(this::bsToString, null, this::setBs));
-        map.put("bt", new GetterSetter(this::btToString, null, this::setBt));
-        map.put("genericNonLinearLoadModelType", new GetterSetter(this::genericNonLinearLoadModelTypeToString, null, this::setGenericNonLinearLoadModelType));
-        map.put("ls", new GetterSetter(this::lsToString, null, this::setLs));
-        map.put("lt", new GetterSetter(this::ltToString, null, this::setLt));
-        map.put("pt", new GetterSetter(this::ptToString, null, this::setPt));
-        map.put("qt", new GetterSetter(this::qtToString, null, this::setQt));
-        map.put("tp", new GetterSetter(this::tpToString, null, this::setTp));
-        map.put("tq", new GetterSetter(this::tqToString, null, this::setTq));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

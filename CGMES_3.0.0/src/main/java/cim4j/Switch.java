@@ -54,6 +54,14 @@ public class Switch extends ConductingEquipment {
         return getStringFromSet(SvSwitch);
     }
 
+    private static void setSvSwitch(BaseClass _this_, BaseClass _object_) {
+        ((Switch) _this_).setSvSwitch(_object_);
+    }
+
+    private static String SvSwitchToString(BaseClass _this_) {
+        return ((Switch) _this_).SvSwitchToString();
+    }
+
     /**
      * A Switch can be associated with SwitchSchedules.
      *
@@ -79,6 +87,14 @@ public class Switch extends ConductingEquipment {
         return getStringFromSet(SwitchSchedules);
     }
 
+    private static void setSwitchSchedules(BaseClass _this_, BaseClass _object_) {
+        ((Switch) _this_).setSwitchSchedules(_object_);
+    }
+
+    private static String SwitchSchedulesToString(BaseClass _this_) {
+        return ((Switch) _this_).SwitchSchedulesToString();
+    }
+
     /**
      * If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows: &lt;ul&gt; 	&lt;li&gt;locked=true and Switch.open=true. The resulting state is open and locked;&lt;/li&gt; 	&lt;li&gt;locked=false and Switch.open=true. The resulting state is open;&lt;/li&gt; 	&lt;li&gt;locked=false and Switch.open=false. The resulting state is closed.&lt;/li&gt; &lt;/ul&gt;
      */
@@ -98,6 +114,14 @@ public class Switch extends ConductingEquipment {
 
     public String lockedToString() {
         return locked != null ? locked.toString() : null;
+    }
+
+    private static void setLocked(BaseClass _this_, String _value_) {
+        ((Switch) _this_).setLocked(_value_);
+    }
+
+    private static String lockedToString(BaseClass _this_) {
+        return ((Switch) _this_).lockedToString();
     }
 
     /**
@@ -121,6 +145,14 @@ public class Switch extends ConductingEquipment {
         return normalOpen != null ? normalOpen.toString() : null;
     }
 
+    private static void setNormalOpen(BaseClass _this_, String _value_) {
+        ((Switch) _this_).setNormalOpen(_value_);
+    }
+
+    private static String normalOpenToString(BaseClass _this_) {
+        return ((Switch) _this_).normalOpenToString();
+    }
+
     /**
      * The attribute tells if the switch is considered open when used as input to topology processing.
      */
@@ -140,6 +172,14 @@ public class Switch extends ConductingEquipment {
 
     public String openToString() {
         return open != null ? open.toString() : null;
+    }
+
+    private static void setOpen(BaseClass _this_, String _value_) {
+        ((Switch) _this_).setOpen(_value_);
+    }
+
+    private static String openToString(BaseClass _this_) {
+        return ((Switch) _this_).openToString();
     }
 
     /**
@@ -163,6 +203,14 @@ public class Switch extends ConductingEquipment {
         return ratedCurrent != null ? ratedCurrent.toString() : null;
     }
 
+    private static void setRatedCurrent(BaseClass _this_, String _value_) {
+        ((Switch) _this_).setRatedCurrent(_value_);
+    }
+
+    private static String ratedCurrentToString(BaseClass _this_) {
+        return ((Switch) _this_).ratedCurrentToString();
+    }
+
     /**
      * Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow.
      */
@@ -182,6 +230,14 @@ public class Switch extends ConductingEquipment {
 
     public String retainedToString() {
         return retained != null ? retained.toString() : null;
+    }
+
+    private static void setRetained(BaseClass _this_, String _value_) {
+        ((Switch) _this_).setRetained(_value_);
+    }
+
+    private static String retainedToString(BaseClass _this_) {
+        return ((Switch) _this_).retainedToString();
     }
 
     /**
@@ -225,16 +281,12 @@ public class Switch extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Switch", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Switch", attrName));
+        return "";
     }
 
     /**
@@ -245,16 +297,12 @@ public class Switch extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Switch", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Switch", attrName, objectValue));
         }
     }
 
@@ -266,16 +314,12 @@ public class Switch extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Switch", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Switch", attrName, stringValue));
         }
     }
 
@@ -399,54 +443,41 @@ public class Switch extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvSwitch", new AttrDetails("Switch.SvSwitch", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SvSwitch", new AttrDetails("Switch.SvSwitch", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Switch::SvSwitchToString, Switch::setSvSwitch, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("SwitchSchedules", new AttrDetails("Switch.SwitchSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SwitchSchedules", new AttrDetails("Switch.SwitchSchedules", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Switch::SwitchSchedulesToString, Switch::setSwitchSchedules, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("locked", new AttrDetails("Switch.locked", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("locked", new AttrDetails("Switch.locked", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Switch::lockedToString, null, Switch::setLocked));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("normalOpen", new AttrDetails("Switch.normalOpen", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("normalOpen", new AttrDetails("Switch.normalOpen", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Switch::normalOpenToString, null, Switch::setNormalOpen));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("open", new AttrDetails("Switch.open", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("open", new AttrDetails("Switch.open", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Switch::openToString, null, Switch::setOpen));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedCurrent", new AttrDetails("Switch.ratedCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ratedCurrent", new AttrDetails("Switch.ratedCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Switch::ratedCurrentToString, null, Switch::setRatedCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("retained", new AttrDetails("Switch.retained", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("retained", new AttrDetails("Switch.retained", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Switch::retainedToString, null, Switch::setRetained));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Switch().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("SvSwitch", new GetterSetter(this::SvSwitchToString, this::setSvSwitch, null));
-        map.put("SwitchSchedules", new GetterSetter(this::SwitchSchedulesToString, this::setSwitchSchedules, null));
-        map.put("locked", new GetterSetter(this::lockedToString, null, this::setLocked));
-        map.put("normalOpen", new GetterSetter(this::normalOpenToString, null, this::setNormalOpen));
-        map.put("open", new GetterSetter(this::openToString, null, this::setOpen));
-        map.put("ratedCurrent", new GetterSetter(this::ratedCurrentToString, null, this::setRatedCurrent));
-        map.put("retained", new GetterSetter(this::retainedToString, null, this::setRetained));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

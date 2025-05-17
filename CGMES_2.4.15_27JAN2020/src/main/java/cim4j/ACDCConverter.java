@@ -53,6 +53,14 @@ public class ACDCConverter extends ConductingEquipment {
         return getStringFromSet(DCTerminals);
     }
 
+    private static void setDCTerminals(BaseClass _this_, BaseClass _object_) {
+        ((ACDCConverter) _this_).setDCTerminals(_object_);
+    }
+
+    private static String DCTerminalsToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).DCTerminalsToString();
+    }
+
     /**
      * All converters` DC sides linked to this point of common coupling terminal.
      */
@@ -76,6 +84,14 @@ public class ACDCConverter extends ConductingEquipment {
         return PccTerminal != null ? PccTerminal.getRdfid() : null;
     }
 
+    private static void setPccTerminal(BaseClass _this_, BaseClass _object_) {
+        ((ACDCConverter) _this_).setPccTerminal(_object_);
+    }
+
+    private static String PccTerminalToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).PccTerminalToString();
+    }
+
     /**
      * Base apparent power of the converter pole.
      */
@@ -95,6 +111,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String baseSToString() {
         return baseS != null ? baseS.toString() : null;
+    }
+
+    private static void setBaseS(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setBaseS(_value_);
+    }
+
+    private static String baseSToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).baseSToString();
     }
 
     /**
@@ -118,6 +142,14 @@ public class ACDCConverter extends ConductingEquipment {
         return idc != null ? idc.toString() : null;
     }
 
+    private static void setIdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setIdc(_value_);
+    }
+
+    private static String idcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).idcToString();
+    }
+
     /**
      * Active power loss in pole at no power transfer. Converter configuration data used in power flow.
      */
@@ -137,6 +169,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String idleLossToString() {
         return idleLoss != null ? idleLoss.toString() : null;
+    }
+
+    private static void setIdleLoss(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setIdleLoss(_value_);
+    }
+
+    private static String idleLossToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).idleLossToString();
     }
 
     /**
@@ -160,6 +200,14 @@ public class ACDCConverter extends ConductingEquipment {
         return maxUdc != null ? maxUdc.toString() : null;
     }
 
+    private static void setMaxUdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setMaxUdc(_value_);
+    }
+
+    private static String maxUdcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).maxUdcToString();
+    }
+
     /**
      * Min allowed converter DC voltage. Converter configuration data used in power flow.
      */
@@ -179,6 +227,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String minUdcToString() {
         return minUdc != null ? minUdc.toString() : null;
+    }
+
+    private static void setMinUdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setMinUdc(_value_);
+    }
+
+    private static String minUdcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).minUdcToString();
     }
 
     /**
@@ -202,6 +258,14 @@ public class ACDCConverter extends ConductingEquipment {
         return numberOfValves != null ? numberOfValves.toString() : null;
     }
 
+    private static void setNumberOfValves(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setNumberOfValves(_value_);
+    }
+
+    private static String numberOfValvesToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).numberOfValvesToString();
+    }
+
     /**
      * Active power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution in the case a simplified power flow model is used.
      */
@@ -221,6 +285,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String pToString() {
         return p != null ? p.toString() : null;
+    }
+
+    private static void setP(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).pToString();
     }
 
     /**
@@ -244,6 +316,14 @@ public class ACDCConverter extends ConductingEquipment {
         return poleLossP != null ? poleLossP.toString() : null;
     }
 
+    private static void setPoleLossP(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setPoleLossP(_value_);
+    }
+
+    private static String poleLossPToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).poleLossPToString();
+    }
+
     /**
      * Reactive power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for a steady state solution in the case a simplified power flow model is used.
      */
@@ -263,6 +343,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String qToString() {
         return q != null ? q.toString() : null;
+    }
+
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).qToString();
     }
 
     /**
@@ -286,6 +374,14 @@ public class ACDCConverter extends ConductingEquipment {
         return ratedUdc != null ? ratedUdc.toString() : null;
     }
 
+    private static void setRatedUdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setRatedUdc(_value_);
+    }
+
+    private static String ratedUdcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).ratedUdcToString();
+    }
+
     /**
      * Converter configuration data used in power flow. Refer to poleLossP.
      */
@@ -305,6 +401,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String resistiveLossToString() {
         return resistiveLoss != null ? resistiveLoss.toString() : null;
+    }
+
+    private static void setResistiveLoss(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setResistiveLoss(_value_);
+    }
+
+    private static String resistiveLossToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).resistiveLossToString();
     }
 
     /**
@@ -328,6 +432,14 @@ public class ACDCConverter extends ConductingEquipment {
         return switchingLoss != null ? switchingLoss.toString() : null;
     }
 
+    private static void setSwitchingLoss(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setSwitchingLoss(_value_);
+    }
+
+    private static String switchingLossToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).switchingLossToString();
+    }
+
     /**
      * Real power injection target in AC grid, at point of common coupling.
      */
@@ -347,6 +459,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String targetPpccToString() {
         return targetPpcc != null ? targetPpcc.toString() : null;
+    }
+
+    private static void setTargetPpcc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setTargetPpcc(_value_);
+    }
+
+    private static String targetPpccToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).targetPpccToString();
     }
 
     /**
@@ -370,6 +490,14 @@ public class ACDCConverter extends ConductingEquipment {
         return targetUdc != null ? targetUdc.toString() : null;
     }
 
+    private static void setTargetUdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setTargetUdc(_value_);
+    }
+
+    private static String targetUdcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).targetUdcToString();
+    }
+
     /**
      * Converter voltage, the voltage at the AC side of the bridge. Converter state variable, result from power flow.
      */
@@ -389,6 +517,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String ucToString() {
         return uc != null ? uc.toString() : null;
+    }
+
+    private static void setUc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setUc(_value_);
+    }
+
+    private static String ucToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).ucToString();
     }
 
     /**
@@ -412,6 +548,14 @@ public class ACDCConverter extends ConductingEquipment {
         return udc != null ? udc.toString() : null;
     }
 
+    private static void setUdc(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setUdc(_value_);
+    }
+
+    private static String udcToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).udcToString();
+    }
+
     /**
      * Valve threshold voltage. Forward voltage drop when the valve is conducting. Used in loss calculations, i.e. the switchLoss depend on numberOfValves * valveU0.
      */
@@ -431,6 +575,14 @@ public class ACDCConverter extends ConductingEquipment {
 
     public String valveU0ToString() {
         return valveU0 != null ? valveU0.toString() : null;
+    }
+
+    private static void setValveU0(BaseClass _this_, String _value_) {
+        ((ACDCConverter) _this_).setValveU0(_value_);
+    }
+
+    private static String valveU0ToString(BaseClass _this_) {
+        return ((ACDCConverter) _this_).valveU0ToString();
     }
 
     /**
@@ -474,16 +626,12 @@ public class ACDCConverter extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ACDCConverter", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ACDCConverter", attrName));
+        return "";
     }
 
     /**
@@ -494,16 +642,12 @@ public class ACDCConverter extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ACDCConverter", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACDCConverter", attrName, objectValue));
         }
     }
 
@@ -515,16 +659,12 @@ public class ACDCConverter extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ACDCConverter", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACDCConverter", attrName, stringValue));
         }
     }
 
@@ -648,126 +788,101 @@ public class ACDCConverter extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("DCTerminals", new AttrDetails("ACDCConverter.DCTerminals", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DCTerminals", new AttrDetails("ACDCConverter.DCTerminals", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ACDCConverter::DCTerminalsToString, ACDCConverter::setDCTerminals, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PccTerminal", new AttrDetails("ACDCConverter.PccTerminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("PccTerminal", new AttrDetails("ACDCConverter.PccTerminal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ACDCConverter::PccTerminalToString, ACDCConverter::setPccTerminal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("baseS", new AttrDetails("ACDCConverter.baseS", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("baseS", new AttrDetails("ACDCConverter.baseS", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::baseSToString, null, ACDCConverter::setBaseS));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("idc", new AttrDetails("ACDCConverter.idc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("idc", new AttrDetails("ACDCConverter.idc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::idcToString, null, ACDCConverter::setIdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("idleLoss", new AttrDetails("ACDCConverter.idleLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("idleLoss", new AttrDetails("ACDCConverter.idleLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::idleLossToString, null, ACDCConverter::setIdleLoss));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxUdc", new AttrDetails("ACDCConverter.maxUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("maxUdc", new AttrDetails("ACDCConverter.maxUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::maxUdcToString, null, ACDCConverter::setMaxUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minUdc", new AttrDetails("ACDCConverter.minUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("minUdc", new AttrDetails("ACDCConverter.minUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::minUdcToString, null, ACDCConverter::setMinUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("numberOfValves", new AttrDetails("ACDCConverter.numberOfValves", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("numberOfValves", new AttrDetails("ACDCConverter.numberOfValves", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::numberOfValvesToString, null, ACDCConverter::setNumberOfValves));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("ACDCConverter.p", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("p", new AttrDetails("ACDCConverter.p", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::pToString, null, ACDCConverter::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("poleLossP", new AttrDetails("ACDCConverter.poleLossP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("poleLossP", new AttrDetails("ACDCConverter.poleLossP", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::poleLossPToString, null, ACDCConverter::setPoleLossP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("ACDCConverter.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("q", new AttrDetails("ACDCConverter.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::qToString, null, ACDCConverter::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ratedUdc", new AttrDetails("ACDCConverter.ratedUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ratedUdc", new AttrDetails("ACDCConverter.ratedUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::ratedUdcToString, null, ACDCConverter::setRatedUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("resistiveLoss", new AttrDetails("ACDCConverter.resistiveLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("resistiveLoss", new AttrDetails("ACDCConverter.resistiveLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::resistiveLossToString, null, ACDCConverter::setResistiveLoss));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("switchingLoss", new AttrDetails("ACDCConverter.switchingLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("switchingLoss", new AttrDetails("ACDCConverter.switchingLoss", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::switchingLossToString, null, ACDCConverter::setSwitchingLoss));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetPpcc", new AttrDetails("ACDCConverter.targetPpcc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("targetPpcc", new AttrDetails("ACDCConverter.targetPpcc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::targetPpccToString, null, ACDCConverter::setTargetPpcc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("targetUdc", new AttrDetails("ACDCConverter.targetUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("targetUdc", new AttrDetails("ACDCConverter.targetUdc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::targetUdcToString, null, ACDCConverter::setTargetUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("uc", new AttrDetails("ACDCConverter.uc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("uc", new AttrDetails("ACDCConverter.uc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::ucToString, null, ACDCConverter::setUc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("udc", new AttrDetails("ACDCConverter.udc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("udc", new AttrDetails("ACDCConverter.udc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::udcToString, null, ACDCConverter::setUdc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("valveU0", new AttrDetails("ACDCConverter.valveU0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("valveU0", new AttrDetails("ACDCConverter.valveU0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACDCConverter::valveU0ToString, null, ACDCConverter::setValveU0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCConverter().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DCTerminals", new GetterSetter(this::DCTerminalsToString, this::setDCTerminals, null));
-        map.put("PccTerminal", new GetterSetter(this::PccTerminalToString, this::setPccTerminal, null));
-        map.put("baseS", new GetterSetter(this::baseSToString, null, this::setBaseS));
-        map.put("idc", new GetterSetter(this::idcToString, null, this::setIdc));
-        map.put("idleLoss", new GetterSetter(this::idleLossToString, null, this::setIdleLoss));
-        map.put("maxUdc", new GetterSetter(this::maxUdcToString, null, this::setMaxUdc));
-        map.put("minUdc", new GetterSetter(this::minUdcToString, null, this::setMinUdc));
-        map.put("numberOfValves", new GetterSetter(this::numberOfValvesToString, null, this::setNumberOfValves));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("poleLossP", new GetterSetter(this::poleLossPToString, null, this::setPoleLossP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("ratedUdc", new GetterSetter(this::ratedUdcToString, null, this::setRatedUdc));
-        map.put("resistiveLoss", new GetterSetter(this::resistiveLossToString, null, this::setResistiveLoss));
-        map.put("switchingLoss", new GetterSetter(this::switchingLossToString, null, this::setSwitchingLoss));
-        map.put("targetPpcc", new GetterSetter(this::targetPpccToString, null, this::setTargetPpcc));
-        map.put("targetUdc", new GetterSetter(this::targetUdcToString, null, this::setTargetUdc));
-        map.put("uc", new GetterSetter(this::ucToString, null, this::setUc));
-        map.put("udc", new GetterSetter(this::udcToString, null, this::setUdc));
-        map.put("valveU0", new GetterSetter(this::valveU0ToString, null, this::setValveU0));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

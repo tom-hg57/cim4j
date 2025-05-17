@@ -50,6 +50,14 @@ public class MechLoad1 extends MechanicalLoadDynamics {
         return a != null ? a.toString() : null;
     }
 
+    private static void setA(BaseClass _this_, String _value_) {
+        ((MechLoad1) _this_).setA(_value_);
+    }
+
+    private static String aToString(BaseClass _this_) {
+        return ((MechLoad1) _this_).aToString();
+    }
+
     /**
      * Speed coefficient (&lt;i&gt;b&lt;/i&gt;).
      */
@@ -69,6 +77,14 @@ public class MechLoad1 extends MechanicalLoadDynamics {
 
     public String bToString() {
         return b != null ? b.toString() : null;
+    }
+
+    private static void setB(BaseClass _this_, String _value_) {
+        ((MechLoad1) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((MechLoad1) _this_).bToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class MechLoad1 extends MechanicalLoadDynamics {
         return d != null ? d.toString() : null;
     }
 
+    private static void setD(BaseClass _this_, String _value_) {
+        ((MechLoad1) _this_).setD(_value_);
+    }
+
+    private static String dToString(BaseClass _this_) {
+        return ((MechLoad1) _this_).dToString();
+    }
+
     /**
      * Exponent (&lt;i&gt;e&lt;/i&gt;).
      */
@@ -111,6 +135,14 @@ public class MechLoad1 extends MechanicalLoadDynamics {
 
     public String eToString() {
         return e != null ? e.toString() : null;
+    }
+
+    private static void setE(BaseClass _this_, String _value_) {
+        ((MechLoad1) _this_).setE(_value_);
+    }
+
+    private static String eToString(BaseClass _this_) {
+        return ((MechLoad1) _this_).eToString();
     }
 
     /**
@@ -154,16 +186,12 @@ public class MechLoad1 extends MechanicalLoadDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("MechLoad1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "MechLoad1", attrName));
+        return "";
     }
 
     /**
@@ -174,16 +202,12 @@ public class MechLoad1 extends MechanicalLoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("MechLoad1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MechLoad1", attrName, objectValue));
         }
     }
 
@@ -195,16 +219,12 @@ public class MechLoad1 extends MechanicalLoadDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("MechLoad1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "MechLoad1", attrName, stringValue));
         }
     }
 
@@ -328,36 +348,26 @@ public class MechLoad1 extends MechanicalLoadDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a", new AttrDetails("MechLoad1.a", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a", new AttrDetails("MechLoad1.a", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MechLoad1::aToString, null, MechLoad1::setA));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("b", new AttrDetails("MechLoad1.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("b", new AttrDetails("MechLoad1.b", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MechLoad1::bToString, null, MechLoad1::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("d", new AttrDetails("MechLoad1.d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("d", new AttrDetails("MechLoad1.d", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MechLoad1::dToString, null, MechLoad1::setD));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("e", new AttrDetails("MechLoad1.e", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("e", new AttrDetails("MechLoad1.e", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MechLoad1::eToString, null, MechLoad1::setE));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechLoad1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("a", new GetterSetter(this::aToString, null, this::setA));
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("d", new GetterSetter(this::dToString, null, this::setD));
-        map.put("e", new GetterSetter(this::eToString, null, this::setE));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

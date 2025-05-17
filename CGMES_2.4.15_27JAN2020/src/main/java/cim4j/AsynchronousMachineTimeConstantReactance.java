@@ -50,6 +50,14 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         return tpo != null ? tpo.toString() : null;
     }
 
+    private static void setTpo(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineTimeConstantReactance) _this_).setTpo(_value_);
+    }
+
+    private static String tpoToString(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).tpoToString();
+    }
+
     /**
      * Subtransient rotor time constant (T``o) (&gt; 0).  Typical Value = 0.03.
      */
@@ -69,6 +77,14 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
 
     public String tppoToString() {
         return tppo != null ? tppo.toString() : null;
+    }
+
+    private static void setTppo(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineTimeConstantReactance) _this_).setTppo(_value_);
+    }
+
+    private static String tppoToString(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).tppoToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         return xp != null ? xp.toString() : null;
     }
 
+    private static void setXp(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineTimeConstantReactance) _this_).setXp(_value_);
+    }
+
+    private static String xpToString(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).xpToString();
+    }
+
     /**
      * Subtransient reactance (unsaturated) (X``) (&gt; Xl).  Typical Value = 0.2.
      */
@@ -113,6 +137,14 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         return xpp != null ? xpp.toString() : null;
     }
 
+    private static void setXpp(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineTimeConstantReactance) _this_).setXpp(_value_);
+    }
+
+    private static String xppToString(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).xppToString();
+    }
+
     /**
      * Synchronous reactance (Xs) (&gt;= X`).  Typical Value = 1.8.
      */
@@ -132,6 +164,14 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
 
     public String xsToString() {
         return xs != null ? xs.toString() : null;
+    }
+
+    private static void setXs(BaseClass _this_, String _value_) {
+        ((AsynchronousMachineTimeConstantReactance) _this_).setXs(_value_);
+    }
+
+    private static String xsToString(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).xsToString();
     }
 
     /**
@@ -175,16 +215,12 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AsynchronousMachineTimeConstantReactance", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AsynchronousMachineTimeConstantReactance", attrName));
+        return "";
     }
 
     /**
@@ -195,16 +231,12 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AsynchronousMachineTimeConstantReactance", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachineTimeConstantReactance", attrName, objectValue));
         }
     }
 
@@ -216,16 +248,12 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AsynchronousMachineTimeConstantReactance", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachineTimeConstantReactance", attrName, stringValue));
         }
     }
 
@@ -349,42 +377,31 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::tpoToString, null, AsynchronousMachineTimeConstantReactance::setTpo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tppo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tppo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::tppoToString, null, AsynchronousMachineTimeConstantReactance::setTppo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::xpToString, null, AsynchronousMachineTimeConstantReactance::setXp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xpp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xpp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::xppToString, null, AsynchronousMachineTimeConstantReactance::setXpp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xs", new AttrDetails("AsynchronousMachineTimeConstantReactance.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xs", new AttrDetails("AsynchronousMachineTimeConstantReactance.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::xsToString, null, AsynchronousMachineTimeConstantReactance::setXs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineTimeConstantReactance().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("tpo", new GetterSetter(this::tpoToString, null, this::setTpo));
-        map.put("tppo", new GetterSetter(this::tppoToString, null, this::setTppo));
-        map.put("xp", new GetterSetter(this::xpToString, null, this::setXp));
-        map.put("xpp", new GetterSetter(this::xppToString, null, this::setXpp));
-        map.put("xs", new GetterSetter(this::xsToString, null, this::setXs));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

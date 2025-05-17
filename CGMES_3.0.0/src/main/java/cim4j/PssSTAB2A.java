@@ -50,6 +50,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
         return hlim != null ? hlim.toString() : null;
     }
 
+    private static void setHlim(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setHlim(_value_);
+    }
+
+    private static String hlimToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).hlimToString();
+    }
+
     /**
      * Gain (&lt;i&gt;K2&lt;/i&gt;).  Typical value = 1,0.
      */
@@ -69,6 +77,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
 
     public String k2ToString() {
         return k2 != null ? k2.toString() : null;
+    }
+
+    private static void setK2(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setK2(_value_);
+    }
+
+    private static String k2ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).k2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
         return k3 != null ? k3.toString() : null;
     }
 
+    private static void setK3(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setK3(_value_);
+    }
+
+    private static String k3ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).k3ToString();
+    }
+
     /**
      * Gain (&lt;i&gt;K4&lt;/i&gt;).  Typical value = 0,075.
      */
@@ -111,6 +135,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
 
     public String k4ToString() {
         return k4 != null ? k4.toString() : null;
+    }
+
+    private static void setK4(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setK4(_value_);
+    }
+
+    private static String k4ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).k4ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
         return k5 != null ? k5.toString() : null;
     }
 
+    private static void setK5(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setK5(_value_);
+    }
+
+    private static String k5ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).k5ToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;T2&lt;/i&gt;).  Typical value = 4,0.
      */
@@ -153,6 +193,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
 
     public String t2ToString() {
         return t2 != null ? t2.toString() : null;
+    }
+
+    private static void setT2(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setT2(_value_);
+    }
+
+    private static String t2ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).t2ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
         return t3 != null ? t3.toString() : null;
     }
 
+    private static void setT3(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setT3(_value_);
+    }
+
+    private static String t3ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).t3ToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;T5&lt;/i&gt;).  Typical value = 4,5.
      */
@@ -195,6 +251,14 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
 
     public String t5ToString() {
         return t5 != null ? t5.toString() : null;
+    }
+
+    private static void setT5(BaseClass _this_, String _value_) {
+        ((PssSTAB2A) _this_).setT5(_value_);
+    }
+
+    private static String t5ToString(BaseClass _this_) {
+        return ((PssSTAB2A) _this_).t5ToString();
     }
 
     /**
@@ -238,16 +302,12 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PssSTAB2A", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PssSTAB2A", attrName));
+        return "";
     }
 
     /**
@@ -258,16 +318,12 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PssSTAB2A", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssSTAB2A", attrName, objectValue));
         }
     }
 
@@ -279,16 +335,12 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PssSTAB2A", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssSTAB2A", attrName, stringValue));
         }
     }
 
@@ -412,60 +464,46 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("hlim", new AttrDetails("PssSTAB2A.hlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("hlim", new AttrDetails("PssSTAB2A.hlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::hlimToString, null, PssSTAB2A::setHlim));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k2", new AttrDetails("PssSTAB2A.k2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k2", new AttrDetails("PssSTAB2A.k2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::k2ToString, null, PssSTAB2A::setK2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k3", new AttrDetails("PssSTAB2A.k3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k3", new AttrDetails("PssSTAB2A.k3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::k3ToString, null, PssSTAB2A::setK3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k4", new AttrDetails("PssSTAB2A.k4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k4", new AttrDetails("PssSTAB2A.k4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::k4ToString, null, PssSTAB2A::setK4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k5", new AttrDetails("PssSTAB2A.k5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k5", new AttrDetails("PssSTAB2A.k5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::k5ToString, null, PssSTAB2A::setK5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("PssSTAB2A.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t2", new AttrDetails("PssSTAB2A.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::t2ToString, null, PssSTAB2A::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("PssSTAB2A.t3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t3", new AttrDetails("PssSTAB2A.t3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::t3ToString, null, PssSTAB2A::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t5", new AttrDetails("PssSTAB2A.t5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t5", new AttrDetails("PssSTAB2A.t5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::t5ToString, null, PssSTAB2A::setT5));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSTAB2A().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("hlim", new GetterSetter(this::hlimToString, null, this::setHlim));
-        map.put("k2", new GetterSetter(this::k2ToString, null, this::setK2));
-        map.put("k3", new GetterSetter(this::k3ToString, null, this::setK3));
-        map.put("k4", new GetterSetter(this::k4ToString, null, this::setK4));
-        map.put("k5", new GetterSetter(this::k5ToString, null, this::setK5));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t5", new GetterSetter(this::t5ToString, null, this::setT5));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

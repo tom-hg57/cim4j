@@ -54,6 +54,14 @@ public class Accumulator extends Measurement {
         return getStringFromSet(AccumulatorValues);
     }
 
+    private static void setAccumulatorValues(BaseClass _this_, BaseClass _object_) {
+        ((Accumulator) _this_).setAccumulatorValues(_object_);
+    }
+
+    private static String AccumulatorValuesToString(BaseClass _this_) {
+        return ((Accumulator) _this_).AccumulatorValuesToString();
+    }
+
     /**
      * A measurement may have zero or more limit ranges defined for it.
      *
@@ -77,6 +85,14 @@ public class Accumulator extends Measurement {
 
     public String LimitSetsToString() {
         return getStringFromSet(LimitSets);
+    }
+
+    private static void setLimitSets(BaseClass _this_, BaseClass _object_) {
+        ((Accumulator) _this_).setLimitSets(_object_);
+    }
+
+    private static String LimitSetsToString(BaseClass _this_) {
+        return ((Accumulator) _this_).LimitSetsToString();
     }
 
     /**
@@ -120,16 +136,12 @@ public class Accumulator extends Measurement {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Accumulator", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Accumulator", attrName));
+        return "";
     }
 
     /**
@@ -140,16 +152,12 @@ public class Accumulator extends Measurement {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Accumulator", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Accumulator", attrName, objectValue));
         }
     }
 
@@ -161,16 +169,12 @@ public class Accumulator extends Measurement {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Accumulator", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Accumulator", attrName, stringValue));
         }
     }
 
@@ -294,24 +298,16 @@ public class Accumulator extends Measurement {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("AccumulatorValues", new AttrDetails("Accumulator.AccumulatorValues", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("AccumulatorValues", new AttrDetails("Accumulator.AccumulatorValues", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Accumulator::AccumulatorValuesToString, Accumulator::setAccumulatorValues, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("LimitSets", new AttrDetails("Accumulator.LimitSets", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LimitSets", new AttrDetails("Accumulator.LimitSets", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Accumulator::LimitSetsToString, Accumulator::setLimitSets, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Accumulator().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AccumulatorValues", new GetterSetter(this::AccumulatorValuesToString, this::setAccumulatorValues, null));
-        map.put("LimitSets", new GetterSetter(this::LimitSetsToString, this::setLimitSets, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

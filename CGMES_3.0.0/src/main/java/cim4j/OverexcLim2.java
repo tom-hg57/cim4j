@@ -50,6 +50,14 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
         return ifdlim != null ? ifdlim.toString() : null;
     }
 
+    private static void setIfdlim(BaseClass _this_, String _value_) {
+        ((OverexcLim2) _this_).setIfdlim(_value_);
+    }
+
+    private static String ifdlimToString(BaseClass _this_) {
+        return ((OverexcLim2) _this_).ifdlimToString();
+    }
+
     /**
      * Gain Over excitation limiter (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;OI&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0,1.
      */
@@ -69,6 +77,14 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
 
     public String koiToString() {
         return koi != null ? koi.toString() : null;
+    }
+
+    private static void setKoi(BaseClass _this_, String _value_) {
+        ((OverexcLim2) _this_).setKoi(_value_);
+    }
+
+    private static String koiToString(BaseClass _this_) {
+        return ((OverexcLim2) _this_).koiToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
         return voimax != null ? voimax.toString() : null;
     }
 
+    private static void setVoimax(BaseClass _this_, String _value_) {
+        ((OverexcLim2) _this_).setVoimax(_value_);
+    }
+
+    private static String voimaxToString(BaseClass _this_) {
+        return ((OverexcLim2) _this_).voimaxToString();
+    }
+
     /**
      * Minimum error signal (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;OIMIN&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; OverexcLim2.voimax).  Typical value = -9999.
      */
@@ -111,6 +135,14 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
 
     public String voiminToString() {
         return voimin != null ? voimin.toString() : null;
+    }
+
+    private static void setVoimin(BaseClass _this_, String _value_) {
+        ((OverexcLim2) _this_).setVoimin(_value_);
+    }
+
+    private static String voiminToString(BaseClass _this_) {
+        return ((OverexcLim2) _this_).voiminToString();
     }
 
     /**
@@ -154,16 +186,12 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("OverexcLim2", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "OverexcLim2", attrName));
+        return "";
     }
 
     /**
@@ -174,16 +202,12 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("OverexcLim2", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OverexcLim2", attrName, objectValue));
         }
     }
 
@@ -195,16 +219,12 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("OverexcLim2", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OverexcLim2", attrName, stringValue));
         }
     }
 
@@ -328,36 +348,26 @@ public class OverexcLim2 extends OverexcitationLimiterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ifdlim", new AttrDetails("OverexcLim2.ifdlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ifdlim", new AttrDetails("OverexcLim2.ifdlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::ifdlimToString, null, OverexcLim2::setIfdlim));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("koi", new AttrDetails("OverexcLim2.koi", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("koi", new AttrDetails("OverexcLim2.koi", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::koiToString, null, OverexcLim2::setKoi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("voimax", new AttrDetails("OverexcLim2.voimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("voimax", new AttrDetails("OverexcLim2.voimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::voimaxToString, null, OverexcLim2::setVoimax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("voimin", new AttrDetails("OverexcLim2.voimin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("voimin", new AttrDetails("OverexcLim2.voimin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::voiminToString, null, OverexcLim2::setVoimin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLim2().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ifdlim", new GetterSetter(this::ifdlimToString, null, this::setIfdlim));
-        map.put("koi", new GetterSetter(this::koiToString, null, this::setKoi));
-        map.put("voimax", new GetterSetter(this::voimaxToString, null, this::setVoimax));
-        map.put("voimin", new GetterSetter(this::voiminToString, null, this::setVoimin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

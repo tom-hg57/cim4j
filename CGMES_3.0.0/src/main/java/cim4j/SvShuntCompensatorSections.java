@@ -52,6 +52,14 @@ public class SvShuntCompensatorSections extends BaseClass {
         return ShuntCompensator != null ? ShuntCompensator.getRdfid() : null;
     }
 
+    private static void setShuntCompensator(BaseClass _this_, BaseClass _object_) {
+        ((SvShuntCompensatorSections) _this_).setShuntCompensator(_object_);
+    }
+
+    private static String ShuntCompensatorToString(BaseClass _this_) {
+        return ((SvShuntCompensatorSections) _this_).ShuntCompensatorToString();
+    }
+
     /**
      * The number of sections in service as a continuous variable. The attribute shall be a positive value or zero. To get integer value scale with ShuntCompensator.bPerSection.
      */
@@ -71,6 +79,14 @@ public class SvShuntCompensatorSections extends BaseClass {
 
     public String sectionsToString() {
         return sections != null ? sections.toString() : null;
+    }
+
+    private static void setSections(BaseClass _this_, String _value_) {
+        ((SvShuntCompensatorSections) _this_).setSections(_value_);
+    }
+
+    private static String sectionsToString(BaseClass _this_) {
+        return ((SvShuntCompensatorSections) _this_).sectionsToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class SvShuntCompensatorSections extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvShuntCompensatorSections", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvShuntCompensatorSections", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class SvShuntCompensatorSections extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvShuntCompensatorSections", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvShuntCompensatorSections", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class SvShuntCompensatorSections extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvShuntCompensatorSections", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvShuntCompensatorSections", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class SvShuntCompensatorSections extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("ShuntCompensator", new AttrDetails("SvShuntCompensatorSections.ShuntCompensator", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ShuntCompensator", new AttrDetails("SvShuntCompensatorSections.ShuntCompensator", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, SvShuntCompensatorSections::ShuntCompensatorToString, SvShuntCompensatorSections::setShuntCompensator, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("sections", new AttrDetails("SvShuntCompensatorSections.sections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("sections", new AttrDetails("SvShuntCompensatorSections.sections", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvShuntCompensatorSections::sectionsToString, null, SvShuntCompensatorSections::setSections));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvShuntCompensatorSections().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ShuntCompensator", new GetterSetter(this::ShuntCompensatorToString, this::setShuntCompensator, null));
-        map.put("sections", new GetterSetter(this::sectionsToString, null, this::setSections));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

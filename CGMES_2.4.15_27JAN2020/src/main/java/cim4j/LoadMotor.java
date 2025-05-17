@@ -52,6 +52,14 @@ public class LoadMotor extends IdentifiedObject {
         return LoadAggregate != null ? LoadAggregate.getRdfid() : null;
     }
 
+    private static void setLoadAggregate(BaseClass _this_, BaseClass _object_) {
+        ((LoadMotor) _this_).setLoadAggregate(_object_);
+    }
+
+    private static String LoadAggregateToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).LoadAggregateToString();
+    }
+
     /**
      * Damping factor (D).  Unit = delta P/delta speed.  Typical Value = 2.
      */
@@ -71,6 +79,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String dToString() {
         return d != null ? d.toString() : null;
+    }
+
+    private static void setD(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setD(_value_);
+    }
+
+    private static String dToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).dToString();
     }
 
     /**
@@ -94,6 +110,14 @@ public class LoadMotor extends IdentifiedObject {
         return h != null ? h.toString() : null;
     }
 
+    private static void setH(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setH(_value_);
+    }
+
+    private static String hToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).hToString();
+    }
+
     /**
      * Loading factor - ratio of initial P to motor MVA base (Lfac).  Typical Value = 0.8.
      */
@@ -113,6 +137,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String lfacToString() {
         return lfac != null ? lfac.toString() : null;
+    }
+
+    private static void setLfac(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setLfac(_value_);
+    }
+
+    private static String lfacToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).lfacToString();
     }
 
     /**
@@ -136,6 +168,14 @@ public class LoadMotor extends IdentifiedObject {
         return lp != null ? lp.toString() : null;
     }
 
+    private static void setLp(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setLp(_value_);
+    }
+
+    private static String lpToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).lpToString();
+    }
+
     /**
      * Subtransient reactance (Lpp).  Typical Value = 0.15.
      */
@@ -155,6 +195,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String lppToString() {
         return lpp != null ? lpp.toString() : null;
+    }
+
+    private static void setLpp(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setLpp(_value_);
+    }
+
+    private static String lppToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).lppToString();
     }
 
     /**
@@ -178,6 +226,14 @@ public class LoadMotor extends IdentifiedObject {
         return ls != null ? ls.toString() : null;
     }
 
+    private static void setLs(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setLs(_value_);
+    }
+
+    private static String lsToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).lsToString();
+    }
+
     /**
      * Fraction of constant-power load to be represented by this motor model (Pfrac) (&gt;=0.0 and &lt;=1.0).  Typical Value = 0.3.
      */
@@ -197,6 +253,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String pfracToString() {
         return pfrac != null ? pfrac.toString() : null;
+    }
+
+    private static void setPfrac(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setPfrac(_value_);
+    }
+
+    private static String pfracToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).pfracToString();
     }
 
     /**
@@ -220,6 +284,14 @@ public class LoadMotor extends IdentifiedObject {
         return ra != null ? ra.toString() : null;
     }
 
+    private static void setRa(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setRa(_value_);
+    }
+
+    private static String raToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).raToString();
+    }
+
     /**
      * Circuit breaker operating time (Tbkr).  Typical Value = 0.08.
      */
@@ -239,6 +311,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String tbkrToString() {
         return tbkr != null ? tbkr.toString() : null;
+    }
+
+    private static void setTbkr(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setTbkr(_value_);
+    }
+
+    private static String tbkrToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).tbkrToString();
     }
 
     /**
@@ -262,6 +342,14 @@ public class LoadMotor extends IdentifiedObject {
         return tpo != null ? tpo.toString() : null;
     }
 
+    private static void setTpo(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setTpo(_value_);
+    }
+
+    private static String tpoToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).tpoToString();
+    }
+
     /**
      * Subtransient rotor time constant (Tppo).  Typical Value = 0.02.
      */
@@ -281,6 +369,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String tppoToString() {
         return tppo != null ? tppo.toString() : null;
+    }
+
+    private static void setTppo(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setTppo(_value_);
+    }
+
+    private static String tppoToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).tppoToString();
     }
 
     /**
@@ -304,6 +400,14 @@ public class LoadMotor extends IdentifiedObject {
         return tv != null ? tv.toString() : null;
     }
 
+    private static void setTv(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setTv(_value_);
+    }
+
+    private static String tvToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).tvToString();
+    }
+
     /**
      * Voltage threshold for tripping (Vt).  Typical Value = 0.7.
      */
@@ -323,6 +427,14 @@ public class LoadMotor extends IdentifiedObject {
 
     public String vtToString() {
         return vt != null ? vt.toString() : null;
+    }
+
+    private static void setVt(BaseClass _this_, String _value_) {
+        ((LoadMotor) _this_).setVt(_value_);
+    }
+
+    private static String vtToString(BaseClass _this_) {
+        return ((LoadMotor) _this_).vtToString();
     }
 
     /**
@@ -366,16 +478,12 @@ public class LoadMotor extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("LoadMotor", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "LoadMotor", attrName));
+        return "";
     }
 
     /**
@@ -386,16 +494,12 @@ public class LoadMotor extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("LoadMotor", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadMotor", attrName, objectValue));
         }
     }
 
@@ -407,16 +511,12 @@ public class LoadMotor extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("LoadMotor", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "LoadMotor", attrName, stringValue));
         }
     }
 
@@ -540,96 +640,76 @@ public class LoadMotor extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LoadAggregate", new AttrDetails("LoadMotor.LoadAggregate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("LoadAggregate", new AttrDetails("LoadMotor.LoadAggregate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, LoadMotor::LoadAggregateToString, LoadMotor::setLoadAggregate, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("d", new AttrDetails("LoadMotor.d", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("d", new AttrDetails("LoadMotor.d", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::dToString, null, LoadMotor::setD));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("h", new AttrDetails("LoadMotor.h", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("h", new AttrDetails("LoadMotor.h", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::hToString, null, LoadMotor::setH));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lfac", new AttrDetails("LoadMotor.lfac", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("lfac", new AttrDetails("LoadMotor.lfac", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::lfacToString, null, LoadMotor::setLfac));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lp", new AttrDetails("LoadMotor.lp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("lp", new AttrDetails("LoadMotor.lp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::lpToString, null, LoadMotor::setLp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lpp", new AttrDetails("LoadMotor.lpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("lpp", new AttrDetails("LoadMotor.lpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::lppToString, null, LoadMotor::setLpp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ls", new AttrDetails("LoadMotor.ls", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ls", new AttrDetails("LoadMotor.ls", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::lsToString, null, LoadMotor::setLs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pfrac", new AttrDetails("LoadMotor.pfrac", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("pfrac", new AttrDetails("LoadMotor.pfrac", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::pfracToString, null, LoadMotor::setPfrac));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ra", new AttrDetails("LoadMotor.ra", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ra", new AttrDetails("LoadMotor.ra", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::raToString, null, LoadMotor::setRa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tbkr", new AttrDetails("LoadMotor.tbkr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tbkr", new AttrDetails("LoadMotor.tbkr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::tbkrToString, null, LoadMotor::setTbkr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpo", new AttrDetails("LoadMotor.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpo", new AttrDetails("LoadMotor.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::tpoToString, null, LoadMotor::setTpo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tppo", new AttrDetails("LoadMotor.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tppo", new AttrDetails("LoadMotor.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::tppoToString, null, LoadMotor::setTppo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tv", new AttrDetails("LoadMotor.tv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tv", new AttrDetails("LoadMotor.tv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::tvToString, null, LoadMotor::setTv));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vt", new AttrDetails("LoadMotor.vt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vt", new AttrDetails("LoadMotor.vt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::vtToString, null, LoadMotor::setVt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadMotor().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("LoadAggregate", new GetterSetter(this::LoadAggregateToString, this::setLoadAggregate, null));
-        map.put("d", new GetterSetter(this::dToString, null, this::setD));
-        map.put("h", new GetterSetter(this::hToString, null, this::setH));
-        map.put("lfac", new GetterSetter(this::lfacToString, null, this::setLfac));
-        map.put("lp", new GetterSetter(this::lpToString, null, this::setLp));
-        map.put("lpp", new GetterSetter(this::lppToString, null, this::setLpp));
-        map.put("ls", new GetterSetter(this::lsToString, null, this::setLs));
-        map.put("pfrac", new GetterSetter(this::pfracToString, null, this::setPfrac));
-        map.put("ra", new GetterSetter(this::raToString, null, this::setRa));
-        map.put("tbkr", new GetterSetter(this::tbkrToString, null, this::setTbkr));
-        map.put("tpo", new GetterSetter(this::tpoToString, null, this::setTpo));
-        map.put("tppo", new GetterSetter(this::tppoToString, null, this::setTppo));
-        map.put("tv", new GetterSetter(this::tvToString, null, this::setTv));
-        map.put("vt", new GetterSetter(this::vtToString, null, this::setVt));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

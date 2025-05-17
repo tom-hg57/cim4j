@@ -50,6 +50,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return fcut != null ? fcut.toString() : null;
     }
 
+    private static void setFcut(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setFcut(_value_);
+    }
+
+    private static String fcutToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).fcutToString();
+    }
+
     /**
      * Gain (&lt;i&gt;K2&lt;/i&gt;).  Typical value = 0,75.
      */
@@ -69,6 +77,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String k2ToString() {
         return k2 != null ? k2.toString() : null;
+    }
+
+    private static void setK2(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setK2(_value_);
+    }
+
+    private static String k2ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).k2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return k3 != null ? k3.toString() : null;
     }
 
+    private static void setK3(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setK3(_value_);
+    }
+
+    private static String k3ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).k3ToString();
+    }
+
     /**
      * Gain (&lt;i&gt;Kd&lt;/i&gt;).  Typical value = 1,0.
      */
@@ -111,6 +135,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String kdToString() {
         return kd != null ? kd.toString() : null;
+    }
+
+    private static void setKd(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setKd(_value_);
+    }
+
+    private static String kdToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).kdToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return kg != null ? kg.toString() : null;
     }
 
+    private static void setKg(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setKg(_value_);
+    }
+
+    private static String kgToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).kgToString();
+    }
+
     /**
      * Gain (&lt;i&gt;Kls&lt;/i&gt;) (&amp;gt; 0).  Typical value = 0,1.
      */
@@ -153,6 +193,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String klsToString() {
         return kls != null ? kls.toString() : null;
+    }
+
+    private static void setKls(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setKls(_value_);
+    }
+
+    private static String klsToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).klsToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return kp != null ? kp.toString() : null;
     }
 
+    private static void setKp(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setKp(_value_);
+    }
+
+    private static String kpToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).kpToString();
+    }
+
     /**
      * Gain (&lt;i&gt;Ks&lt;/i&gt;).  Typical value = 21,0.
      */
@@ -195,6 +251,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String ksToString() {
         return ks != null ? ks.toString() : null;
+    }
+
+    private static void setKs(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setKs(_value_);
+    }
+
+    private static String ksToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).ksToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return peflag != null ? peflag.toString() : null;
     }
 
+    private static void setPeflag(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setPeflag(_value_);
+    }
+
+    private static String peflagToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).peflagToString();
+    }
+
     /**
      * High power limit (&lt;i&gt;Pmax&lt;/i&gt;) (&amp;gt; GovSteamBB.pmin).  Typical value = 1,0.
      */
@@ -237,6 +309,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String pmaxToString() {
         return pmax != null ? pmax.toString() : null;
+    }
+
+    private static void setPmax(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setPmax(_value_);
+    }
+
+    private static String pmaxToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).pmaxToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return pmin != null ? pmin.toString() : null;
     }
 
+    private static void setPmin(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setPmin(_value_);
+    }
+
+    private static String pminToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).pminToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;T1&lt;/i&gt;).  Typical value = 0,05.
      */
@@ -279,6 +367,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String t1ToString() {
         return t1 != null ? t1.toString() : null;
+    }
+
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).t1ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return t4 != null ? t4.toString() : null;
     }
 
+    private static void setT4(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setT4(_value_);
+    }
+
+    private static String t4ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).t4ToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;T5&lt;/i&gt;).  Typical value = 12,0.
      */
@@ -321,6 +425,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String t5ToString() {
         return t5 != null ? t5.toString() : null;
+    }
+
+    private static void setT5(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setT5(_value_);
+    }
+
+    private static String t5ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).t5ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return t6 != null ? t6.toString() : null;
     }
 
+    private static void setT6(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setT6(_value_);
+    }
+
+    private static String t6ToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).t6ToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;Td&lt;/i&gt;) (&amp;gt; 0).  Typical value = 1,0.
      */
@@ -365,6 +485,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         return td != null ? td.toString() : null;
     }
 
+    private static void setTd(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setTd(_value_);
+    }
+
+    private static String tdToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).tdToString();
+    }
+
     /**
      * Time constant (&lt;i&gt;Tn&lt;/i&gt;) (&amp;gt; 0).  Typical value = 1,0.
      */
@@ -384,6 +512,14 @@ public class GovSteamBB extends TurbineGovernorDynamics {
 
     public String tnToString() {
         return tn != null ? tn.toString() : null;
+    }
+
+    private static void setTn(BaseClass _this_, String _value_) {
+        ((GovSteamBB) _this_).setTn(_value_);
+    }
+
+    private static String tnToString(BaseClass _this_) {
+        return ((GovSteamBB) _this_).tnToString();
     }
 
     /**
@@ -427,16 +563,12 @@ public class GovSteamBB extends TurbineGovernorDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GovSteamBB", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GovSteamBB", attrName));
+        return "";
     }
 
     /**
@@ -447,16 +579,12 @@ public class GovSteamBB extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GovSteamBB", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovSteamBB", attrName, objectValue));
         }
     }
 
@@ -468,16 +596,12 @@ public class GovSteamBB extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GovSteamBB", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovSteamBB", attrName, stringValue));
         }
     }
 
@@ -601,114 +725,91 @@ public class GovSteamBB extends TurbineGovernorDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("fcut", new AttrDetails("GovSteamBB.fcut", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("fcut", new AttrDetails("GovSteamBB.fcut", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::fcutToString, null, GovSteamBB::setFcut));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k2", new AttrDetails("GovSteamBB.k2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k2", new AttrDetails("GovSteamBB.k2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::k2ToString, null, GovSteamBB::setK2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k3", new AttrDetails("GovSteamBB.k3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k3", new AttrDetails("GovSteamBB.k3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::k3ToString, null, GovSteamBB::setK3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kd", new AttrDetails("GovSteamBB.kd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kd", new AttrDetails("GovSteamBB.kd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::kdToString, null, GovSteamBB::setKd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kg", new AttrDetails("GovSteamBB.kg", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kg", new AttrDetails("GovSteamBB.kg", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::kgToString, null, GovSteamBB::setKg));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kls", new AttrDetails("GovSteamBB.kls", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kls", new AttrDetails("GovSteamBB.kls", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::klsToString, null, GovSteamBB::setKls));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("GovSteamBB.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp", new AttrDetails("GovSteamBB.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::kpToString, null, GovSteamBB::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ks", new AttrDetails("GovSteamBB.ks", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ks", new AttrDetails("GovSteamBB.ks", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::ksToString, null, GovSteamBB::setKs));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("peflag", new AttrDetails("GovSteamBB.peflag", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("peflag", new AttrDetails("GovSteamBB.peflag", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::peflagToString, null, GovSteamBB::setPeflag));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pmax", new AttrDetails("GovSteamBB.pmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pmax", new AttrDetails("GovSteamBB.pmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::pmaxToString, null, GovSteamBB::setPmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("pmin", new AttrDetails("GovSteamBB.pmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("pmin", new AttrDetails("GovSteamBB.pmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::pminToString, null, GovSteamBB::setPmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("GovSteamBB.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t1", new AttrDetails("GovSteamBB.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::t1ToString, null, GovSteamBB::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("GovSteamBB.t4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t4", new AttrDetails("GovSteamBB.t4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::t4ToString, null, GovSteamBB::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t5", new AttrDetails("GovSteamBB.t5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t5", new AttrDetails("GovSteamBB.t5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::t5ToString, null, GovSteamBB::setT5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t6", new AttrDetails("GovSteamBB.t6", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t6", new AttrDetails("GovSteamBB.t6", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::t6ToString, null, GovSteamBB::setT6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td", new AttrDetails("GovSteamBB.td", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("td", new AttrDetails("GovSteamBB.td", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::tdToString, null, GovSteamBB::setTd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tn", new AttrDetails("GovSteamBB.tn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tn", new AttrDetails("GovSteamBB.tn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovSteamBB::tnToString, null, GovSteamBB::setTn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovSteamBB().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("fcut", new GetterSetter(this::fcutToString, null, this::setFcut));
-        map.put("k2", new GetterSetter(this::k2ToString, null, this::setK2));
-        map.put("k3", new GetterSetter(this::k3ToString, null, this::setK3));
-        map.put("kd", new GetterSetter(this::kdToString, null, this::setKd));
-        map.put("kg", new GetterSetter(this::kgToString, null, this::setKg));
-        map.put("kls", new GetterSetter(this::klsToString, null, this::setKls));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("ks", new GetterSetter(this::ksToString, null, this::setKs));
-        map.put("peflag", new GetterSetter(this::peflagToString, null, this::setPeflag));
-        map.put("pmax", new GetterSetter(this::pmaxToString, null, this::setPmax));
-        map.put("pmin", new GetterSetter(this::pminToString, null, this::setPmin));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("t5", new GetterSetter(this::t5ToString, null, this::setT5));
-        map.put("t6", new GetterSetter(this::t6ToString, null, this::setT6));
-        map.put("td", new GetterSetter(this::tdToString, null, this::setTd));
-        map.put("tn", new GetterSetter(this::tnToString, null, this::setTn));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

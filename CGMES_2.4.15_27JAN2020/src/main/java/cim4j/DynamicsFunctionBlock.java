@@ -50,6 +50,14 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
         return enabled != null ? enabled.toString() : null;
     }
 
+    private static void setEnabled(BaseClass _this_, String _value_) {
+        ((DynamicsFunctionBlock) _this_).setEnabled(_value_);
+    }
+
+    private static String enabledToString(BaseClass _this_) {
+        return ((DynamicsFunctionBlock) _this_).enabledToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -91,16 +99,12 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DynamicsFunctionBlock", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DynamicsFunctionBlock", attrName));
+        return "";
     }
 
     /**
@@ -111,16 +115,12 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DynamicsFunctionBlock", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DynamicsFunctionBlock", attrName, objectValue));
         }
     }
 
@@ -132,16 +132,12 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DynamicsFunctionBlock", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DynamicsFunctionBlock", attrName, stringValue));
         }
     }
 
@@ -265,18 +261,11 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("enabled", new AttrDetails("DynamicsFunctionBlock.enabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("enabled", new AttrDetails("DynamicsFunctionBlock.enabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DynamicsFunctionBlock::enabledToString, null, DynamicsFunctionBlock::setEnabled));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DynamicsFunctionBlock().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("enabled", new GetterSetter(this::enabledToString, null, this::setEnabled));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

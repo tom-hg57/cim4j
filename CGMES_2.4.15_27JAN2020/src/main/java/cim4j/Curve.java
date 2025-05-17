@@ -54,6 +54,14 @@ public class Curve extends IdentifiedObject {
         return getStringFromSet(CurveDatas);
     }
 
+    private static void setCurveDatas(BaseClass _this_, BaseClass _object_) {
+        ((Curve) _this_).setCurveDatas(_object_);
+    }
+
+    private static String CurveDatasToString(BaseClass _this_) {
+        return ((Curve) _this_).CurveDatasToString();
+    }
+
     /**
      * The style or shape of the curve.
      */
@@ -69,6 +77,14 @@ public class Curve extends IdentifiedObject {
 
     public String curveStyleToString() {
         return curveStyle;
+    }
+
+    private static void setCurveStyle(BaseClass _this_, String _value_) {
+        ((Curve) _this_).setCurveStyle(_value_);
+    }
+
+    private static String curveStyleToString(BaseClass _this_) {
+        return ((Curve) _this_).curveStyleToString();
     }
 
     /**
@@ -88,6 +104,14 @@ public class Curve extends IdentifiedObject {
         return xUnit;
     }
 
+    private static void setXUnit(BaseClass _this_, String _value_) {
+        ((Curve) _this_).setXUnit(_value_);
+    }
+
+    private static String xUnitToString(BaseClass _this_) {
+        return ((Curve) _this_).xUnitToString();
+    }
+
     /**
      * The Y1-axis units of measure.
      */
@@ -105,6 +129,14 @@ public class Curve extends IdentifiedObject {
         return y1Unit;
     }
 
+    private static void setY1Unit(BaseClass _this_, String _value_) {
+        ((Curve) _this_).setY1Unit(_value_);
+    }
+
+    private static String y1UnitToString(BaseClass _this_) {
+        return ((Curve) _this_).y1UnitToString();
+    }
+
     /**
      * The Y2-axis units of measure.
      */
@@ -120,6 +152,14 @@ public class Curve extends IdentifiedObject {
 
     public String y2UnitToString() {
         return y2Unit;
+    }
+
+    private static void setY2Unit(BaseClass _this_, String _value_) {
+        ((Curve) _this_).setY2Unit(_value_);
+    }
+
+    private static String y2UnitToString(BaseClass _this_) {
+        return ((Curve) _this_).y2UnitToString();
     }
 
     /**
@@ -163,16 +203,12 @@ public class Curve extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Curve", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Curve", attrName));
+        return "";
     }
 
     /**
@@ -183,16 +219,12 @@ public class Curve extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Curve", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Curve", attrName, objectValue));
         }
     }
 
@@ -204,16 +236,12 @@ public class Curve extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Curve", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Curve", attrName, stringValue));
         }
     }
 
@@ -337,42 +365,31 @@ public class Curve extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("CurveDatas", new AttrDetails("Curve.CurveDatas", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("CurveDatas", new AttrDetails("Curve.CurveDatas", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Curve::CurveDatasToString, Curve::setCurveDatas, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("curveStyle", new AttrDetails("Curve.curveStyle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("curveStyle", new AttrDetails("Curve.curveStyle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Curve::curveStyleToString, null, Curve::setCurveStyle));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("xUnit", new AttrDetails("Curve.xUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("xUnit", new AttrDetails("Curve.xUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Curve::xUnitToString, null, Curve::setXUnit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("y1Unit", new AttrDetails("Curve.y1Unit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("y1Unit", new AttrDetails("Curve.y1Unit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Curve::y1UnitToString, null, Curve::setY1Unit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("y2Unit", new AttrDetails("Curve.y2Unit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("y2Unit", new AttrDetails("Curve.y2Unit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Curve::y2UnitToString, null, Curve::setY2Unit));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Curve().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("CurveDatas", new GetterSetter(this::CurveDatasToString, this::setCurveDatas, null));
-        map.put("curveStyle", new GetterSetter(this::curveStyleToString, null, this::setCurveStyle));
-        map.put("xUnit", new GetterSetter(this::xUnitToString, null, this::setXUnit));
-        map.put("y1Unit", new GetterSetter(this::y1UnitToString, null, this::setY1Unit));
-        map.put("y2Unit", new GetterSetter(this::y2UnitToString, null, this::setY2Unit));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

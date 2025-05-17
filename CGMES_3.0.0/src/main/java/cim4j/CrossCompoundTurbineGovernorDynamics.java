@@ -52,6 +52,14 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
         return HighPressureSynchronousMachineDynamics != null ? HighPressureSynchronousMachineDynamics.getRdfid() : null;
     }
 
+    private static void setHighPressureSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((CrossCompoundTurbineGovernorDynamics) _this_).setHighPressureSynchronousMachineDynamics(_object_);
+    }
+
+    private static String HighPressureSynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((CrossCompoundTurbineGovernorDynamics) _this_).HighPressureSynchronousMachineDynamicsToString();
+    }
+
     /**
      * Low-pressure synchronous machine with which this cross-compound turbine governor is associated.
      */
@@ -73,6 +81,14 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
 
     public String LowPressureSynchronousMachineDynamicsToString() {
         return LowPressureSynchronousMachineDynamics != null ? LowPressureSynchronousMachineDynamics.getRdfid() : null;
+    }
+
+    private static void setLowPressureSynchronousMachineDynamics(BaseClass _this_, BaseClass _object_) {
+        ((CrossCompoundTurbineGovernorDynamics) _this_).setLowPressureSynchronousMachineDynamics(_object_);
+    }
+
+    private static String LowPressureSynchronousMachineDynamicsToString(BaseClass _this_) {
+        return ((CrossCompoundTurbineGovernorDynamics) _this_).LowPressureSynchronousMachineDynamicsToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("CrossCompoundTurbineGovernorDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "CrossCompoundTurbineGovernorDynamics", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("CrossCompoundTurbineGovernorDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CrossCompoundTurbineGovernorDynamics", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("CrossCompoundTurbineGovernorDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CrossCompoundTurbineGovernorDynamics", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("HighPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.HighPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("HighPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.HighPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CrossCompoundTurbineGovernorDynamics::HighPressureSynchronousMachineDynamicsToString, CrossCompoundTurbineGovernorDynamics::setHighPressureSynchronousMachineDynamics, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LowPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.LowPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LowPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.LowPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CrossCompoundTurbineGovernorDynamics::LowPressureSynchronousMachineDynamicsToString, CrossCompoundTurbineGovernorDynamics::setLowPressureSynchronousMachineDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CrossCompoundTurbineGovernorDynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("HighPressureSynchronousMachineDynamics", new GetterSetter(this::HighPressureSynchronousMachineDynamicsToString, this::setHighPressureSynchronousMachineDynamics, null));
-        map.put("LowPressureSynchronousMachineDynamics", new GetterSetter(this::LowPressureSynchronousMachineDynamicsToString, this::setLowPressureSynchronousMachineDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

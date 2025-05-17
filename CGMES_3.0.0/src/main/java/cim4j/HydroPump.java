@@ -52,6 +52,14 @@ public class HydroPump extends Equipment {
         return HydroPowerPlant != null ? HydroPowerPlant.getRdfid() : null;
     }
 
+    private static void setHydroPowerPlant(BaseClass _this_, BaseClass _object_) {
+        ((HydroPump) _this_).setHydroPowerPlant(_object_);
+    }
+
+    private static String HydroPowerPlantToString(BaseClass _this_) {
+        return ((HydroPump) _this_).HydroPowerPlantToString();
+    }
+
     /**
      * The synchronous machine drives the turbine which moves the water from a low elevation to a higher elevation. The direction of machine rotation for pumping may or may not be the same as for generating.
      */
@@ -73,6 +81,14 @@ public class HydroPump extends Equipment {
 
     public String RotatingMachineToString() {
         return RotatingMachine != null ? RotatingMachine.getRdfid() : null;
+    }
+
+    private static void setRotatingMachine(BaseClass _this_, BaseClass _object_) {
+        ((HydroPump) _this_).setRotatingMachine(_object_);
+    }
+
+    private static String RotatingMachineToString(BaseClass _this_) {
+        return ((HydroPump) _this_).RotatingMachineToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class HydroPump extends Equipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("HydroPump", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "HydroPump", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class HydroPump extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("HydroPump", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "HydroPump", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class HydroPump extends Equipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("HydroPump", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "HydroPump", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class HydroPump extends Equipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HydroPowerPlant", new AttrDetails("HydroPump.HydroPowerPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("HydroPowerPlant", new AttrDetails("HydroPump.HydroPowerPlant", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, HydroPump::HydroPowerPlantToString, HydroPump::setHydroPowerPlant, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RotatingMachine", new AttrDetails("HydroPump.RotatingMachine", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("RotatingMachine", new AttrDetails("HydroPump.RotatingMachine", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, HydroPump::RotatingMachineToString, HydroPump::setRotatingMachine, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroPump().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("HydroPowerPlant", new GetterSetter(this::HydroPowerPlantToString, this::setHydroPowerPlant, null));
-        map.put("RotatingMachine", new GetterSetter(this::RotatingMachineToString, this::setRotatingMachine, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

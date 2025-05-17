@@ -46,6 +46,14 @@ public class PetersenCoil extends EarthFaultCompensator {
         return mode;
     }
 
+    private static void setMode(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setMode(_value_);
+    }
+
+    private static String modeToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).modeToString();
+    }
+
     /**
      * The nominal voltage for which the coil is designed.
      */
@@ -65,6 +73,14 @@ public class PetersenCoil extends EarthFaultCompensator {
 
     public String nominalUToString() {
         return nominalU != null ? nominalU.toString() : null;
+    }
+
+    private static void setNominalU(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setNominalU(_value_);
+    }
+
+    private static String nominalUToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).nominalUToString();
     }
 
     /**
@@ -88,6 +104,14 @@ public class PetersenCoil extends EarthFaultCompensator {
         return offsetCurrent != null ? offsetCurrent.toString() : null;
     }
 
+    private static void setOffsetCurrent(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setOffsetCurrent(_value_);
+    }
+
+    private static String offsetCurrentToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).offsetCurrentToString();
+    }
+
     /**
      * The control current used to control the Petersen coil also known as the position current.  Typically in the range of 20 mA to 200 mA.
      */
@@ -107,6 +131,14 @@ public class PetersenCoil extends EarthFaultCompensator {
 
     public String positionCurrentToString() {
         return positionCurrent != null ? positionCurrent.toString() : null;
+    }
+
+    private static void setPositionCurrent(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setPositionCurrent(_value_);
+    }
+
+    private static String positionCurrentToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).positionCurrentToString();
     }
 
     /**
@@ -130,6 +162,14 @@ public class PetersenCoil extends EarthFaultCompensator {
         return xGroundMax != null ? xGroundMax.toString() : null;
     }
 
+    private static void setXGroundMax(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setXGroundMax(_value_);
+    }
+
+    private static String xGroundMaxToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).xGroundMaxToString();
+    }
+
     /**
      * The minimum reactance.
      */
@@ -151,6 +191,14 @@ public class PetersenCoil extends EarthFaultCompensator {
         return xGroundMin != null ? xGroundMin.toString() : null;
     }
 
+    private static void setXGroundMin(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setXGroundMin(_value_);
+    }
+
+    private static String xGroundMinToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).xGroundMinToString();
+    }
+
     /**
      * The nominal reactance.  This is the operating point (normally over compensation) that is defined based on the resonance point in the healthy network condition.  The impedance is calculated based on nominal voltage divided by position current.
      */
@@ -170,6 +218,14 @@ public class PetersenCoil extends EarthFaultCompensator {
 
     public String xGroundNominalToString() {
         return xGroundNominal != null ? xGroundNominal.toString() : null;
+    }
+
+    private static void setXGroundNominal(BaseClass _this_, String _value_) {
+        ((PetersenCoil) _this_).setXGroundNominal(_value_);
+    }
+
+    private static String xGroundNominalToString(BaseClass _this_) {
+        return ((PetersenCoil) _this_).xGroundNominalToString();
     }
 
     /**
@@ -213,16 +269,12 @@ public class PetersenCoil extends EarthFaultCompensator {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PetersenCoil", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PetersenCoil", attrName));
+        return "";
     }
 
     /**
@@ -233,16 +285,12 @@ public class PetersenCoil extends EarthFaultCompensator {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PetersenCoil", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PetersenCoil", attrName, objectValue));
         }
     }
 
@@ -254,16 +302,12 @@ public class PetersenCoil extends EarthFaultCompensator {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PetersenCoil", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PetersenCoil", attrName, stringValue));
         }
     }
 
@@ -387,54 +431,41 @@ public class PetersenCoil extends EarthFaultCompensator {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("mode", new AttrDetails("PetersenCoil.mode", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("mode", new AttrDetails("PetersenCoil.mode", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, PetersenCoil::modeToString, null, PetersenCoil::setMode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("nominalU", new AttrDetails("PetersenCoil.nominalU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("nominalU", new AttrDetails("PetersenCoil.nominalU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::nominalUToString, null, PetersenCoil::setNominalU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("offsetCurrent", new AttrDetails("PetersenCoil.offsetCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("offsetCurrent", new AttrDetails("PetersenCoil.offsetCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::offsetCurrentToString, null, PetersenCoil::setOffsetCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("positionCurrent", new AttrDetails("PetersenCoil.positionCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("positionCurrent", new AttrDetails("PetersenCoil.positionCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::positionCurrentToString, null, PetersenCoil::setPositionCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("xGroundMax", new AttrDetails("PetersenCoil.xGroundMax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xGroundMax", new AttrDetails("PetersenCoil.xGroundMax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::xGroundMaxToString, null, PetersenCoil::setXGroundMax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("xGroundMin", new AttrDetails("PetersenCoil.xGroundMin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xGroundMin", new AttrDetails("PetersenCoil.xGroundMin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::xGroundMinToString, null, PetersenCoil::setXGroundMin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("xGroundNominal", new AttrDetails("PetersenCoil.xGroundNominal", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xGroundNominal", new AttrDetails("PetersenCoil.xGroundNominal", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PetersenCoil::xGroundNominalToString, null, PetersenCoil::setXGroundNominal));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PetersenCoil().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("mode", new GetterSetter(this::modeToString, null, this::setMode));
-        map.put("nominalU", new GetterSetter(this::nominalUToString, null, this::setNominalU));
-        map.put("offsetCurrent", new GetterSetter(this::offsetCurrentToString, null, this::setOffsetCurrent));
-        map.put("positionCurrent", new GetterSetter(this::positionCurrentToString, null, this::setPositionCurrent));
-        map.put("xGroundMax", new GetterSetter(this::xGroundMaxToString, null, this::setXGroundMax));
-        map.put("xGroundMin", new GetterSetter(this::xGroundMinToString, null, this::setXGroundMin));
-        map.put("xGroundNominal", new GetterSetter(this::xGroundNominalToString, null, this::setXGroundNominal));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

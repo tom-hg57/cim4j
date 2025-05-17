@@ -50,6 +50,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return a1 != null ? a1.toString() : null;
     }
 
+    private static void setA1(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA1(_value_);
+    }
+
+    private static String a1ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a1ToString();
+    }
+
     /**
      * Notch filter parameter (&lt;i&gt;A2&lt;/i&gt;).  Typical value = 0,586.
      */
@@ -69,6 +77,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String a2ToString() {
         return a2 != null ? a2.toString() : null;
+    }
+
+    private static void setA2(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA2(_value_);
+    }
+
+    private static String a2ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return a3 != null ? a3.toString() : null;
     }
 
+    private static void setA3(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA3(_value_);
+    }
+
+    private static String a3ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a3ToString();
+    }
+
     /**
      * Notch filter parameter (&lt;i&gt;A4&lt;/i&gt;).  Typical value = 0,564.
      */
@@ -111,6 +135,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String a4ToString() {
         return a4 != null ? a4.toString() : null;
+    }
+
+    private static void setA4(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA4(_value_);
+    }
+
+    private static String a4ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a4ToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return a5 != null ? a5.toString() : null;
     }
 
+    private static void setA5(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA5(_value_);
+    }
+
+    private static String a5ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a5ToString();
+    }
+
     /**
      * Notch filter parameter (&lt;i&gt;A6&lt;/i&gt;).  Typical value = 0.
      */
@@ -153,6 +193,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String a6ToString() {
         return a6 != null ? a6.toString() : null;
+    }
+
+    private static void setA6(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA6(_value_);
+    }
+
+    private static String a6ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a6ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return a7 != null ? a7.toString() : null;
     }
 
+    private static void setA7(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA7(_value_);
+    }
+
+    private static String a7ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a7ToString();
+    }
+
     /**
      * Notch filter parameter (&lt;i&gt;A8&lt;/i&gt;).  Typical value = 0.
      */
@@ -195,6 +251,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String a8ToString() {
         return a8 != null ? a8.toString() : null;
+    }
+
+    private static void setA8(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setA8(_value_);
+    }
+
+    private static String a8ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).a8ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return ks1 != null ? ks1.toString() : null;
     }
 
+    private static void setKs1(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setKs1(_value_);
+    }
+
+    private static String ks1ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).ks1ToString();
+    }
+
     /**
      * Gain on signal # 2 (&lt;i&gt;Ks2&lt;/i&gt;).  Typical value = 30,12.
      */
@@ -237,6 +309,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String ks2ToString() {
         return ks2 != null ? ks2.toString() : null;
+    }
+
+    private static void setKs2(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setKs2(_value_);
+    }
+
+    private static String ks2ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).ks2ToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return t1 != null ? t1.toString() : null;
     }
 
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).t1ToString();
+    }
+
     /**
      * Transducer time constant (&lt;i&gt;T2&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0,012.
      */
@@ -279,6 +367,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String t2ToString() {
         return t2 != null ? t2.toString() : null;
+    }
+
+    private static void setT2(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setT2(_value_);
+    }
+
+    private static String t2ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).t2ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return tw1 != null ? tw1.toString() : null;
     }
 
+    private static void setTw1(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setTw1(_value_);
+    }
+
+    private static String tw1ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).tw1ToString();
+    }
+
     /**
      * Washout time constant (&lt;i&gt;Tw2&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0,3.
      */
@@ -321,6 +425,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String tw2ToString() {
         return tw2 != null ? tw2.toString() : null;
+    }
+
+    private static void setTw2(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setTw2(_value_);
+    }
+
+    private static String tw2ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).tw2ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return tw3 != null ? tw3.toString() : null;
     }
 
+    private static void setTw3(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setTw3(_value_);
+    }
+
+    private static String tw3ToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).tw3ToString();
+    }
+
     /**
      * Stabilizer output maximum limit (&lt;i&gt;Vstmax&lt;/i&gt;) (&amp;gt; PssIEEE3B.vstmin).  Typical value = 0,1.
      */
@@ -365,6 +485,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         return vstmax != null ? vstmax.toString() : null;
     }
 
+    private static void setVstmax(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setVstmax(_value_);
+    }
+
+    private static String vstmaxToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).vstmaxToString();
+    }
+
     /**
      * Stabilizer output minimum limit (&lt;i&gt;Vstmin&lt;/i&gt;) (&amp;lt; PssIEEE3B.vstmax).  Typical value = -0,1.
      */
@@ -384,6 +512,14 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
 
     public String vstminToString() {
         return vstmin != null ? vstmin.toString() : null;
+    }
+
+    private static void setVstmin(BaseClass _this_, String _value_) {
+        ((PssIEEE3B) _this_).setVstmin(_value_);
+    }
+
+    private static String vstminToString(BaseClass _this_) {
+        return ((PssIEEE3B) _this_).vstminToString();
     }
 
     /**
@@ -427,16 +563,12 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PssIEEE3B", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PssIEEE3B", attrName));
+        return "";
     }
 
     /**
@@ -447,16 +579,12 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PssIEEE3B", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssIEEE3B", attrName, objectValue));
         }
     }
 
@@ -468,16 +596,12 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PssIEEE3B", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssIEEE3B", attrName, stringValue));
         }
     }
 
@@ -601,114 +725,91 @@ public class PssIEEE3B extends PowerSystemStabilizerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a1", new AttrDetails("PssIEEE3B.a1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a1", new AttrDetails("PssIEEE3B.a1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a1ToString, null, PssIEEE3B::setA1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a2", new AttrDetails("PssIEEE3B.a2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a2", new AttrDetails("PssIEEE3B.a2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a2ToString, null, PssIEEE3B::setA2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a3", new AttrDetails("PssIEEE3B.a3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a3", new AttrDetails("PssIEEE3B.a3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a3ToString, null, PssIEEE3B::setA3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a4", new AttrDetails("PssIEEE3B.a4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a4", new AttrDetails("PssIEEE3B.a4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a4ToString, null, PssIEEE3B::setA4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a5", new AttrDetails("PssIEEE3B.a5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a5", new AttrDetails("PssIEEE3B.a5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a5ToString, null, PssIEEE3B::setA5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a6", new AttrDetails("PssIEEE3B.a6", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a6", new AttrDetails("PssIEEE3B.a6", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a6ToString, null, PssIEEE3B::setA6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a7", new AttrDetails("PssIEEE3B.a7", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a7", new AttrDetails("PssIEEE3B.a7", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a7ToString, null, PssIEEE3B::setA7));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a8", new AttrDetails("PssIEEE3B.a8", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("a8", new AttrDetails("PssIEEE3B.a8", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::a8ToString, null, PssIEEE3B::setA8));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ks1", new AttrDetails("PssIEEE3B.ks1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ks1", new AttrDetails("PssIEEE3B.ks1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::ks1ToString, null, PssIEEE3B::setKs1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ks2", new AttrDetails("PssIEEE3B.ks2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ks2", new AttrDetails("PssIEEE3B.ks2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::ks2ToString, null, PssIEEE3B::setKs2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("PssIEEE3B.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t1", new AttrDetails("PssIEEE3B.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::t1ToString, null, PssIEEE3B::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("PssIEEE3B.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t2", new AttrDetails("PssIEEE3B.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::t2ToString, null, PssIEEE3B::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tw1", new AttrDetails("PssIEEE3B.tw1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tw1", new AttrDetails("PssIEEE3B.tw1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::tw1ToString, null, PssIEEE3B::setTw1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tw2", new AttrDetails("PssIEEE3B.tw2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tw2", new AttrDetails("PssIEEE3B.tw2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::tw2ToString, null, PssIEEE3B::setTw2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tw3", new AttrDetails("PssIEEE3B.tw3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tw3", new AttrDetails("PssIEEE3B.tw3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::tw3ToString, null, PssIEEE3B::setTw3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vstmax", new AttrDetails("PssIEEE3B.vstmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vstmax", new AttrDetails("PssIEEE3B.vstmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::vstmaxToString, null, PssIEEE3B::setVstmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vstmin", new AttrDetails("PssIEEE3B.vstmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vstmin", new AttrDetails("PssIEEE3B.vstmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE3B::vstminToString, null, PssIEEE3B::setVstmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE3B().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("a1", new GetterSetter(this::a1ToString, null, this::setA1));
-        map.put("a2", new GetterSetter(this::a2ToString, null, this::setA2));
-        map.put("a3", new GetterSetter(this::a3ToString, null, this::setA3));
-        map.put("a4", new GetterSetter(this::a4ToString, null, this::setA4));
-        map.put("a5", new GetterSetter(this::a5ToString, null, this::setA5));
-        map.put("a6", new GetterSetter(this::a6ToString, null, this::setA6));
-        map.put("a7", new GetterSetter(this::a7ToString, null, this::setA7));
-        map.put("a8", new GetterSetter(this::a8ToString, null, this::setA8));
-        map.put("ks1", new GetterSetter(this::ks1ToString, null, this::setKs1));
-        map.put("ks2", new GetterSetter(this::ks2ToString, null, this::setKs2));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("tw1", new GetterSetter(this::tw1ToString, null, this::setTw1));
-        map.put("tw2", new GetterSetter(this::tw2ToString, null, this::setTw2));
-        map.put("tw3", new GetterSetter(this::tw3ToString, null, this::setTw3));
-        map.put("vstmax", new GetterSetter(this::vstmaxToString, null, this::setVstmax));
-        map.put("vstmin", new GetterSetter(this::vstminToString, null, this::setVstmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

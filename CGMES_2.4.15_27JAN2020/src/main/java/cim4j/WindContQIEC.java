@@ -54,6 +54,14 @@ public class WindContQIEC extends IdentifiedObject {
         return WindTurbineType3or4IEC != null ? WindTurbineType3or4IEC.getRdfid() : null;
     }
 
+    private static void setWindTurbineType3or4IEC(BaseClass _this_, BaseClass _object_) {
+        ((WindContQIEC) _this_).setWindTurbineType3or4IEC(_object_);
+    }
+
+    private static String WindTurbineType3or4IECToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).WindTurbineType3or4IECToString();
+    }
+
     /**
      * Maximum reactive current injection during dip (i). It is type dependent parameter.
      */
@@ -73,6 +81,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String iqh1ToString() {
         return iqh1 != null ? iqh1.toString() : null;
+    }
+
+    private static void setIqh1(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setIqh1(_value_);
+    }
+
+    private static String iqh1ToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).iqh1ToString();
     }
 
     /**
@@ -96,6 +112,14 @@ public class WindContQIEC extends IdentifiedObject {
         return iqmax != null ? iqmax.toString() : null;
     }
 
+    private static void setIqmax(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setIqmax(_value_);
+    }
+
+    private static String iqmaxToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).iqmaxToString();
+    }
+
     /**
      * Minimum reactive current injection (i). It is type dependent parameter.
      */
@@ -115,6 +139,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String iqminToString() {
         return iqmin != null ? iqmin.toString() : null;
+    }
+
+    private static void setIqmin(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setIqmin(_value_);
+    }
+
+    private static String iqminToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).iqminToString();
     }
 
     /**
@@ -138,6 +170,14 @@ public class WindContQIEC extends IdentifiedObject {
         return iqpost != null ? iqpost.toString() : null;
     }
 
+    private static void setIqpost(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setIqpost(_value_);
+    }
+
+    private static String iqpostToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).iqpostToString();
+    }
+
     /**
      * Reactive power PI controller integration gain (). It is type dependent parameter.
      */
@@ -157,6 +197,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String kiqToString() {
         return kiq != null ? kiq.toString() : null;
+    }
+
+    private static void setKiq(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setKiq(_value_);
+    }
+
+    private static String kiqToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).kiqToString();
     }
 
     /**
@@ -180,6 +228,14 @@ public class WindContQIEC extends IdentifiedObject {
         return kiu != null ? kiu.toString() : null;
     }
 
+    private static void setKiu(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setKiu(_value_);
+    }
+
+    private static String kiuToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).kiuToString();
+    }
+
     /**
      * Reactive power PI controller proportional gain (). It is type dependent parameter.
      */
@@ -199,6 +255,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String kpqToString() {
         return kpq != null ? kpq.toString() : null;
+    }
+
+    private static void setKpq(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setKpq(_value_);
+    }
+
+    private static String kpqToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).kpqToString();
     }
 
     /**
@@ -222,6 +286,14 @@ public class WindContQIEC extends IdentifiedObject {
         return kpu != null ? kpu.toString() : null;
     }
 
+    private static void setKpu(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setKpu(_value_);
+    }
+
+    private static String kpuToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).kpuToString();
+    }
+
     /**
      * Voltage scaling factor for LVRT current (). It is project dependent parameter.
      */
@@ -241,6 +313,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String kqvToString() {
         return kqv != null ? kqv.toString() : null;
+    }
+
+    private static void setKqv(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setKqv(_value_);
+    }
+
+    private static String kqvToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).kqvToString();
     }
 
     /**
@@ -264,6 +344,14 @@ public class WindContQIEC extends IdentifiedObject {
         return qmax != null ? qmax.toString() : null;
     }
 
+    private static void setQmax(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setQmax(_value_);
+    }
+
+    private static String qmaxToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).qmaxToString();
+    }
+
     /**
      * Minimum reactive power (q). It is type dependent parameter.
      */
@@ -283,6 +371,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String qminToString() {
         return qmin != null ? qmin.toString() : null;
+    }
+
+    private static void setQmin(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setQmin(_value_);
+    }
+
+    private static String qminToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).qminToString();
     }
 
     /**
@@ -306,6 +402,14 @@ public class WindContQIEC extends IdentifiedObject {
         return rdroop != null ? rdroop.toString() : null;
     }
 
+    private static void setRdroop(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setRdroop(_value_);
+    }
+
+    private static String rdroopToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).rdroopToString();
+    }
+
     /**
      * Time constant in reactive current lag (T). It is type dependent parameter.
      */
@@ -325,6 +429,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String tiqToString() {
         return tiq != null ? tiq.toString() : null;
+    }
+
+    private static void setTiq(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setTiq(_value_);
+    }
+
+    private static String tiqToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).tiqToString();
     }
 
     /**
@@ -348,6 +460,14 @@ public class WindContQIEC extends IdentifiedObject {
         return tpfilt != null ? tpfilt.toString() : null;
     }
 
+    private static void setTpfilt(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setTpfilt(_value_);
+    }
+
+    private static String tpfiltToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).tpfiltToString();
+    }
+
     /**
      * Length of time period where post fault reactive power is injected (). It is project dependent parameter.
      */
@@ -367,6 +487,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String tpostToString() {
         return tpost != null ? tpost.toString() : null;
+    }
+
+    private static void setTpost(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setTpost(_value_);
+    }
+
+    private static String tpostToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).tpostToString();
     }
 
     /**
@@ -390,6 +518,14 @@ public class WindContQIEC extends IdentifiedObject {
         return tqord != null ? tqord.toString() : null;
     }
 
+    private static void setTqord(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setTqord(_value_);
+    }
+
+    private static String tqordToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).tqordToString();
+    }
+
     /**
      * Voltage measurement filter time constant (). It is type dependent parameter.
      */
@@ -409,6 +545,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String tufiltToString() {
         return tufilt != null ? tufilt.toString() : null;
+    }
+
+    private static void setTufilt(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setTufilt(_value_);
+    }
+
+    private static String tufiltToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).tufiltToString();
     }
 
     /**
@@ -432,6 +576,14 @@ public class WindContQIEC extends IdentifiedObject {
         return udb1 != null ? udb1.toString() : null;
     }
 
+    private static void setUdb1(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUdb1(_value_);
+    }
+
+    private static String udb1ToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).udb1ToString();
+    }
+
     /**
      * Voltage dead band upper limit (). It is type dependent parameter.
      */
@@ -451,6 +603,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String udb2ToString() {
         return udb2 != null ? udb2.toString() : null;
+    }
+
+    private static void setUdb2(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUdb2(_value_);
+    }
+
+    private static String udb2ToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).udb2ToString();
     }
 
     /**
@@ -474,6 +634,14 @@ public class WindContQIEC extends IdentifiedObject {
         return umax != null ? umax.toString() : null;
     }
 
+    private static void setUmax(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUmax(_value_);
+    }
+
+    private static String umaxToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).umaxToString();
+    }
+
     /**
      * Minimum voltage in voltage PI controller integral term (u). It is type dependent parameter.
      */
@@ -493,6 +661,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String uminToString() {
         return umin != null ? umin.toString() : null;
+    }
+
+    private static void setUmin(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUmin(_value_);
+    }
+
+    private static String uminToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).uminToString();
     }
 
     /**
@@ -516,6 +692,14 @@ public class WindContQIEC extends IdentifiedObject {
         return uqdip != null ? uqdip.toString() : null;
     }
 
+    private static void setUqdip(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUqdip(_value_);
+    }
+
+    private static String uqdipToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).uqdipToString();
+    }
+
     /**
      * User defined bias in voltage reference (), used when  =. It is case dependent parameter.
      */
@@ -537,6 +721,14 @@ public class WindContQIEC extends IdentifiedObject {
         return uref0 != null ? uref0.toString() : null;
     }
 
+    private static void setUref0(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setUref0(_value_);
+    }
+
+    private static String uref0ToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).uref0ToString();
+    }
+
     /**
      * Types of LVRT Q control modes (). It is project dependent parameter.
      */
@@ -554,6 +746,14 @@ public class WindContQIEC extends IdentifiedObject {
         return windLVRTQcontrolModesType;
     }
 
+    private static void setWindLVRTQcontrolModesType(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setWindLVRTQcontrolModesType(_value_);
+    }
+
+    private static String windLVRTQcontrolModesTypeToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).windLVRTQcontrolModesTypeToString();
+    }
+
     /**
      * Types of general wind turbine Q control modes ().  It is project dependent parameter.
      */
@@ -569,6 +769,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String windQcontrolModesTypeToString() {
         return windQcontrolModesType;
+    }
+
+    private static void setWindQcontrolModesType(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setWindQcontrolModesType(_value_);
+    }
+
+    private static String windQcontrolModesTypeToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).windQcontrolModesTypeToString();
     }
 
     /**
@@ -590,6 +798,14 @@ public class WindContQIEC extends IdentifiedObject {
 
     public String xdroopToString() {
         return xdroop != null ? xdroop.toString() : null;
+    }
+
+    private static void setXdroop(BaseClass _this_, String _value_) {
+        ((WindContQIEC) _this_).setXdroop(_value_);
+    }
+
+    private static String xdroopToString(BaseClass _this_) {
+        return ((WindContQIEC) _this_).xdroopToString();
     }
 
     /**
@@ -633,16 +849,12 @@ public class WindContQIEC extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindContQIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindContQIEC", attrName));
+        return "";
     }
 
     /**
@@ -653,16 +865,12 @@ public class WindContQIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindContQIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContQIEC", attrName, objectValue));
         }
     }
 
@@ -674,16 +882,12 @@ public class WindContQIEC extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindContQIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContQIEC", attrName, stringValue));
         }
     }
 
@@ -807,174 +1011,141 @@ public class WindContQIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContQIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContQIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindContQIEC::WindTurbineType3or4IECToString, WindContQIEC::setWindTurbineType3or4IEC, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iqh1", new AttrDetails("WindContQIEC.iqh1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iqh1", new AttrDetails("WindContQIEC.iqh1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::iqh1ToString, null, WindContQIEC::setIqh1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iqmax", new AttrDetails("WindContQIEC.iqmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iqmax", new AttrDetails("WindContQIEC.iqmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::iqmaxToString, null, WindContQIEC::setIqmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iqmin", new AttrDetails("WindContQIEC.iqmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iqmin", new AttrDetails("WindContQIEC.iqmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::iqminToString, null, WindContQIEC::setIqmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("iqpost", new AttrDetails("WindContQIEC.iqpost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("iqpost", new AttrDetails("WindContQIEC.iqpost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::iqpostToString, null, WindContQIEC::setIqpost));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kiq", new AttrDetails("WindContQIEC.kiq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kiq", new AttrDetails("WindContQIEC.kiq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::kiqToString, null, WindContQIEC::setKiq));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kiu", new AttrDetails("WindContQIEC.kiu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kiu", new AttrDetails("WindContQIEC.kiu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::kiuToString, null, WindContQIEC::setKiu));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpq", new AttrDetails("WindContQIEC.kpq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kpq", new AttrDetails("WindContQIEC.kpq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::kpqToString, null, WindContQIEC::setKpq));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kpu", new AttrDetails("WindContQIEC.kpu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kpu", new AttrDetails("WindContQIEC.kpu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::kpuToString, null, WindContQIEC::setKpu));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kqv", new AttrDetails("WindContQIEC.kqv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kqv", new AttrDetails("WindContQIEC.kqv", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::kqvToString, null, WindContQIEC::setKqv));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qmax", new AttrDetails("WindContQIEC.qmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qmax", new AttrDetails("WindContQIEC.qmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::qmaxToString, null, WindContQIEC::setQmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("qmin", new AttrDetails("WindContQIEC.qmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("qmin", new AttrDetails("WindContQIEC.qmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::qminToString, null, WindContQIEC::setQmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("rdroop", new AttrDetails("WindContQIEC.rdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("rdroop", new AttrDetails("WindContQIEC.rdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::rdroopToString, null, WindContQIEC::setRdroop));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tiq", new AttrDetails("WindContQIEC.tiq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tiq", new AttrDetails("WindContQIEC.tiq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::tiqToString, null, WindContQIEC::setTiq));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpfilt", new AttrDetails("WindContQIEC.tpfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpfilt", new AttrDetails("WindContQIEC.tpfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::tpfiltToString, null, WindContQIEC::setTpfilt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpost", new AttrDetails("WindContQIEC.tpost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpost", new AttrDetails("WindContQIEC.tpost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::tpostToString, null, WindContQIEC::setTpost));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tqord", new AttrDetails("WindContQIEC.tqord", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tqord", new AttrDetails("WindContQIEC.tqord", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::tqordToString, null, WindContQIEC::setTqord));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tufilt", new AttrDetails("WindContQIEC.tufilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tufilt", new AttrDetails("WindContQIEC.tufilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::tufiltToString, null, WindContQIEC::setTufilt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("udb1", new AttrDetails("WindContQIEC.udb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("udb1", new AttrDetails("WindContQIEC.udb1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::udb1ToString, null, WindContQIEC::setUdb1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("udb2", new AttrDetails("WindContQIEC.udb2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("udb2", new AttrDetails("WindContQIEC.udb2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::udb2ToString, null, WindContQIEC::setUdb2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("umax", new AttrDetails("WindContQIEC.umax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("umax", new AttrDetails("WindContQIEC.umax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::umaxToString, null, WindContQIEC::setUmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("umin", new AttrDetails("WindContQIEC.umin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("umin", new AttrDetails("WindContQIEC.umin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::uminToString, null, WindContQIEC::setUmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("uqdip", new AttrDetails("WindContQIEC.uqdip", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("uqdip", new AttrDetails("WindContQIEC.uqdip", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::uqdipToString, null, WindContQIEC::setUqdip));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("uref0", new AttrDetails("WindContQIEC.uref0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("uref0", new AttrDetails("WindContQIEC.uref0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::uref0ToString, null, WindContQIEC::setUref0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("windLVRTQcontrolModesType", new AttrDetails("WindContQIEC.windLVRTQcontrolModesType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("windLVRTQcontrolModesType", new AttrDetails("WindContQIEC.windLVRTQcontrolModesType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, WindContQIEC::windLVRTQcontrolModesTypeToString, null, WindContQIEC::setWindLVRTQcontrolModesType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("windQcontrolModesType", new AttrDetails("WindContQIEC.windQcontrolModesType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("windQcontrolModesType", new AttrDetails("WindContQIEC.windQcontrolModesType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, WindContQIEC::windQcontrolModesTypeToString, null, WindContQIEC::setWindQcontrolModesType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xdroop", new AttrDetails("WindContQIEC.xdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xdroop", new AttrDetails("WindContQIEC.xdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContQIEC::xdroopToString, null, WindContQIEC::setXdroop));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQIEC().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindTurbineType3or4IEC", new GetterSetter(this::WindTurbineType3or4IECToString, this::setWindTurbineType3or4IEC, null));
-        map.put("iqh1", new GetterSetter(this::iqh1ToString, null, this::setIqh1));
-        map.put("iqmax", new GetterSetter(this::iqmaxToString, null, this::setIqmax));
-        map.put("iqmin", new GetterSetter(this::iqminToString, null, this::setIqmin));
-        map.put("iqpost", new GetterSetter(this::iqpostToString, null, this::setIqpost));
-        map.put("kiq", new GetterSetter(this::kiqToString, null, this::setKiq));
-        map.put("kiu", new GetterSetter(this::kiuToString, null, this::setKiu));
-        map.put("kpq", new GetterSetter(this::kpqToString, null, this::setKpq));
-        map.put("kpu", new GetterSetter(this::kpuToString, null, this::setKpu));
-        map.put("kqv", new GetterSetter(this::kqvToString, null, this::setKqv));
-        map.put("qmax", new GetterSetter(this::qmaxToString, null, this::setQmax));
-        map.put("qmin", new GetterSetter(this::qminToString, null, this::setQmin));
-        map.put("rdroop", new GetterSetter(this::rdroopToString, null, this::setRdroop));
-        map.put("tiq", new GetterSetter(this::tiqToString, null, this::setTiq));
-        map.put("tpfilt", new GetterSetter(this::tpfiltToString, null, this::setTpfilt));
-        map.put("tpost", new GetterSetter(this::tpostToString, null, this::setTpost));
-        map.put("tqord", new GetterSetter(this::tqordToString, null, this::setTqord));
-        map.put("tufilt", new GetterSetter(this::tufiltToString, null, this::setTufilt));
-        map.put("udb1", new GetterSetter(this::udb1ToString, null, this::setUdb1));
-        map.put("udb2", new GetterSetter(this::udb2ToString, null, this::setUdb2));
-        map.put("umax", new GetterSetter(this::umaxToString, null, this::setUmax));
-        map.put("umin", new GetterSetter(this::uminToString, null, this::setUmin));
-        map.put("uqdip", new GetterSetter(this::uqdipToString, null, this::setUqdip));
-        map.put("uref0", new GetterSetter(this::uref0ToString, null, this::setUref0));
-        map.put("windLVRTQcontrolModesType", new GetterSetter(this::windLVRTQcontrolModesTypeToString, null, this::setWindLVRTQcontrolModesType));
-        map.put("windQcontrolModesType", new GetterSetter(this::windQcontrolModesTypeToString, null, this::setWindQcontrolModesType));
-        map.put("xdroop", new GetterSetter(this::xdroopToString, null, this::setXdroop));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

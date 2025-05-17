@@ -50,6 +50,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
         return hyst != null ? hyst.toString() : null;
     }
 
+    private static void setHyst(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setHyst(_value_);
+    }
+
+    private static String hystToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).hystToString();
+    }
+
     /**
      * OEL timed field current limit (&lt;i&gt;I&lt;/i&gt;&lt;i&gt;&lt;sub&gt;FDLIM&lt;/sub&gt;&lt;/i&gt;).  Typical value = 1,05.
      */
@@ -69,6 +77,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
 
     public String ifdlimToString() {
         return ifdlim != null ? ifdlim.toString() : null;
+    }
+
+    private static void setIfdlim(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setIfdlim(_value_);
+    }
+
+    private static String ifdlimToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).ifdlimToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
         return ifdmax != null ? ifdmax.toString() : null;
     }
 
+    private static void setIfdmax(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setIfdmax(_value_);
+    }
+
+    private static String ifdmaxToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).ifdmaxToString();
+    }
+
     /**
      * OEL timed field current limiter pickup level (&lt;i&gt;I&lt;/i&gt;&lt;i&gt;&lt;sub&gt;TFPU&lt;/sub&gt;&lt;/i&gt;).  Typical value = 1,05.
      */
@@ -111,6 +135,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
 
     public String itfpuToString() {
         return itfpu != null ? itfpu.toString() : null;
+    }
+
+    private static void setItfpu(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setItfpu(_value_);
+    }
+
+    private static String itfpuToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).itfpuToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
         return kcd != null ? kcd.toString() : null;
     }
 
+    private static void setKcd(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setKcd(_value_);
+    }
+
+    private static String kcdToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).kcdToString();
+    }
+
     /**
      * OEL ramped limit rate (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;RAMP&lt;/sub&gt;&lt;/i&gt;).  Unit = PU / s.  Typical value = 10.
      */
@@ -153,6 +193,14 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
 
     public String krampToString() {
         return kramp != null ? kramp.toString() : null;
+    }
+
+    private static void setKramp(BaseClass _this_, String _value_) {
+        ((OverexcLimIEEE) _this_).setKramp(_value_);
+    }
+
+    private static String krampToString(BaseClass _this_) {
+        return ((OverexcLimIEEE) _this_).krampToString();
     }
 
     /**
@@ -196,16 +244,12 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("OverexcLimIEEE", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "OverexcLimIEEE", attrName));
+        return "";
     }
 
     /**
@@ -216,16 +260,12 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("OverexcLimIEEE", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OverexcLimIEEE", attrName, objectValue));
         }
     }
 
@@ -237,16 +277,12 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("OverexcLimIEEE", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OverexcLimIEEE", attrName, stringValue));
         }
     }
 
@@ -370,48 +406,36 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("hyst", new AttrDetails("OverexcLimIEEE.hyst", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("hyst", new AttrDetails("OverexcLimIEEE.hyst", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::hystToString, null, OverexcLimIEEE::setHyst));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ifdlim", new AttrDetails("OverexcLimIEEE.ifdlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ifdlim", new AttrDetails("OverexcLimIEEE.ifdlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::ifdlimToString, null, OverexcLimIEEE::setIfdlim));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ifdmax", new AttrDetails("OverexcLimIEEE.ifdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ifdmax", new AttrDetails("OverexcLimIEEE.ifdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::ifdmaxToString, null, OverexcLimIEEE::setIfdmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("itfpu", new AttrDetails("OverexcLimIEEE.itfpu", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("itfpu", new AttrDetails("OverexcLimIEEE.itfpu", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::itfpuToString, null, OverexcLimIEEE::setItfpu));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kcd", new AttrDetails("OverexcLimIEEE.kcd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kcd", new AttrDetails("OverexcLimIEEE.kcd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::kcdToString, null, OverexcLimIEEE::setKcd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kramp", new AttrDetails("OverexcLimIEEE.kramp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kramp", new AttrDetails("OverexcLimIEEE.kramp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimIEEE::krampToString, null, OverexcLimIEEE::setKramp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLimIEEE().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("hyst", new GetterSetter(this::hystToString, null, this::setHyst));
-        map.put("ifdlim", new GetterSetter(this::ifdlimToString, null, this::setIfdlim));
-        map.put("ifdmax", new GetterSetter(this::ifdmaxToString, null, this::setIfdmax));
-        map.put("itfpu", new GetterSetter(this::itfpuToString, null, this::setItfpu));
-        map.put("kcd", new GetterSetter(this::kcdToString, null, this::setKcd));
-        map.put("kramp", new GetterSetter(this::krampToString, null, this::setKramp));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

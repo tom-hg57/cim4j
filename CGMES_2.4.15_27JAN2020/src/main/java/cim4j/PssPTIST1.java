@@ -50,6 +50,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return dtc != null ? dtc.toString() : null;
     }
 
+    private static void setDtc(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setDtc(_value_);
+    }
+
+    private static String dtcToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).dtcToString();
+    }
+
     /**
      * Time step frequency calculation (Dtf).  Typical Value = 0.025.
      */
@@ -69,6 +77,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
 
     public String dtfToString() {
         return dtf != null ? dtf.toString() : null;
+    }
+
+    private static void setDtf(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setDtf(_value_);
+    }
+
+    private static String dtfToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).dtfToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return dtp != null ? dtp.toString() : null;
     }
 
+    private static void setDtp(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setDtp(_value_);
+    }
+
+    private static String dtpToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).dtpToString();
+    }
+
     /**
      * Gain (K).  Typical Value = 9.
      */
@@ -111,6 +135,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
 
     public String kToString() {
         return k != null ? k.toString() : null;
+    }
+
+    private static void setK(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setK(_value_);
+    }
+
+    private static String kToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).kToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return m != null ? m.toString() : null;
     }
 
+    private static void setM(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setM(_value_);
+    }
+
+    private static String mToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).mToString();
+    }
+
     /**
      * Time constant (T1).  Typical Value = 0.3.
      */
@@ -153,6 +193,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
 
     public String t1ToString() {
         return t1 != null ? t1.toString() : null;
+    }
+
+    private static void setT1(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setT1(_value_);
+    }
+
+    private static String t1ToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).t1ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return t2 != null ? t2.toString() : null;
     }
 
+    private static void setT2(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setT2(_value_);
+    }
+
+    private static String t2ToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).t2ToString();
+    }
+
     /**
      * Time constant (T3).  Typical Value = 0.2.
      */
@@ -195,6 +251,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
 
     public String t3ToString() {
         return t3 != null ? t3.toString() : null;
+    }
+
+    private static void setT3(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setT3(_value_);
+    }
+
+    private static String t3ToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).t3ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return t4 != null ? t4.toString() : null;
     }
 
+    private static void setT4(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setT4(_value_);
+    }
+
+    private static String t4ToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).t4ToString();
+    }
+
     /**
      * Time constant (Tf).  Typical Value = 0.2.
      */
@@ -239,6 +311,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         return tf != null ? tf.toString() : null;
     }
 
+    private static void setTf(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setTf(_value_);
+    }
+
+    private static String tfToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).tfToString();
+    }
+
     /**
      * Time constant (Tp).  Typical Value = 0.2.
      */
@@ -258,6 +338,14 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
 
     public String tpToString() {
         return tp != null ? tp.toString() : null;
+    }
+
+    private static void setTp(BaseClass _this_, String _value_) {
+        ((PssPTIST1) _this_).setTp(_value_);
+    }
+
+    private static String tpToString(BaseClass _this_) {
+        return ((PssPTIST1) _this_).tpToString();
     }
 
     /**
@@ -301,16 +389,12 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("PssPTIST1", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PssPTIST1", attrName));
+        return "";
     }
 
     /**
@@ -321,16 +405,12 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PssPTIST1", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssPTIST1", attrName, objectValue));
         }
     }
 
@@ -342,16 +422,12 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PssPTIST1", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PssPTIST1", attrName, stringValue));
         }
     }
 
@@ -475,78 +551,61 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dtc", new AttrDetails("PssPTIST1.dtc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dtc", new AttrDetails("PssPTIST1.dtc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::dtcToString, null, PssPTIST1::setDtc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dtf", new AttrDetails("PssPTIST1.dtf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dtf", new AttrDetails("PssPTIST1.dtf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::dtfToString, null, PssPTIST1::setDtf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("dtp", new AttrDetails("PssPTIST1.dtp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("dtp", new AttrDetails("PssPTIST1.dtp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::dtpToString, null, PssPTIST1::setDtp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k", new AttrDetails("PssPTIST1.k", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k", new AttrDetails("PssPTIST1.k", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::kToString, null, PssPTIST1::setK));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("m", new AttrDetails("PssPTIST1.m", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("m", new AttrDetails("PssPTIST1.m", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::mToString, null, PssPTIST1::setM));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("PssPTIST1.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t1", new AttrDetails("PssPTIST1.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::t1ToString, null, PssPTIST1::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("PssPTIST1.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t2", new AttrDetails("PssPTIST1.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::t2ToString, null, PssPTIST1::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("PssPTIST1.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t3", new AttrDetails("PssPTIST1.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::t3ToString, null, PssPTIST1::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("PssPTIST1.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t4", new AttrDetails("PssPTIST1.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::t4ToString, null, PssPTIST1::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf", new AttrDetails("PssPTIST1.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tf", new AttrDetails("PssPTIST1.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::tfToString, null, PssPTIST1::setTf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tp", new AttrDetails("PssPTIST1.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tp", new AttrDetails("PssPTIST1.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::tpToString, null, PssPTIST1::setTp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssPTIST1().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("dtc", new GetterSetter(this::dtcToString, null, this::setDtc));
-        map.put("dtf", new GetterSetter(this::dtfToString, null, this::setDtf));
-        map.put("dtp", new GetterSetter(this::dtpToString, null, this::setDtp));
-        map.put("k", new GetterSetter(this::kToString, null, this::setK));
-        map.put("m", new GetterSetter(this::mToString, null, this::setM));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("tf", new GetterSetter(this::tfToString, null, this::setTf));
-        map.put("tp", new GetterSetter(this::tpToString, null, this::setTp));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

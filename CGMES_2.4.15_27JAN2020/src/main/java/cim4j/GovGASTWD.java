@@ -50,6 +50,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return a != null ? a.toString() : null;
     }
 
+    private static void setA(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setA(_value_);
+    }
+
+    private static String aToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).aToString();
+    }
+
     /**
      * Exhaust temperature Parameter (Af1).
      */
@@ -69,6 +77,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String af1ToString() {
         return af1 != null ? af1.toString() : null;
+    }
+
+    private static void setAf1(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setAf1(_value_);
+    }
+
+    private static String af1ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).af1ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return af2 != null ? af2.toString() : null;
     }
 
+    private static void setAf2(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setAf2(_value_);
+    }
+
+    private static String af2ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).af2ToString();
+    }
+
     /**
      * Valve positioner ().
      */
@@ -111,6 +135,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String bToString() {
         return b != null ? b.toString() : null;
+    }
+
+    private static void setB(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setB(_value_);
+    }
+
+    private static String bToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).bToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return bf1 != null ? bf1.toString() : null;
     }
 
+    private static void setBf1(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setBf1(_value_);
+    }
+
+    private static String bf1ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).bf1ToString();
+    }
+
     /**
      * Turbine Torque Coefficient K (depends on heating value of fuel stream in combustion chamber) (Bf2).
      */
@@ -153,6 +193,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String bf2ToString() {
         return bf2 != null ? bf2.toString() : null;
+    }
+
+    private static void setBf2(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setBf2(_value_);
+    }
+
+    private static String bf2ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).bf2ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return c != null ? c.toString() : null;
     }
 
+    private static void setC(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setC(_value_);
+    }
+
+    private static String cToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).cToString();
+    }
+
     /**
      * Coefficient defining fuel flow where power output is 0% (Cf2).  Synchronous but no output.  Typically 0.23 x K(23% fuel flow).
      */
@@ -195,6 +251,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String cf2ToString() {
         return cf2 != null ? cf2.toString() : null;
+    }
+
+    private static void setCf2(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setCf2(_value_);
+    }
+
+    private static String cf2ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).cf2ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return ecr != null ? ecr.toString() : null;
     }
 
+    private static void setEcr(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setEcr(_value_);
+    }
+
+    private static String ecrToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).ecrToString();
+    }
+
     /**
      * Turbine and exhaust delay (Etd).
      */
@@ -237,6 +309,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String etdToString() {
         return etd != null ? etd.toString() : null;
+    }
+
+    private static void setEtd(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setEtd(_value_);
+    }
+
+    private static String etdToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).etdToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return k3 != null ? k3.toString() : null;
     }
 
+    private static void setK3(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setK3(_value_);
+    }
+
+    private static String k3ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).k3ToString();
+    }
+
     /**
      * Gain of radiation shield (K4).
      */
@@ -279,6 +367,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String k4ToString() {
         return k4 != null ? k4.toString() : null;
+    }
+
+    private static void setK4(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setK4(_value_);
+    }
+
+    private static String k4ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).k4ToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return k5 != null ? k5.toString() : null;
     }
 
+    private static void setK5(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setK5(_value_);
+    }
+
+    private static String k5ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).k5ToString();
+    }
+
     /**
      * Minimum fuel flow (K6).
      */
@@ -321,6 +425,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String k6ToString() {
         return k6 != null ? k6.toString() : null;
+    }
+
+    private static void setK6(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setK6(_value_);
+    }
+
+    private static String k6ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).k6ToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return kd != null ? kd.toString() : null;
     }
 
+    private static void setKd(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setKd(_value_);
+    }
+
+    private static String kdToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).kdToString();
+    }
+
     /**
      * (Kdroop).
      */
@@ -363,6 +483,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String kdroopToString() {
         return kdroop != null ? kdroop.toString() : null;
+    }
+
+    private static void setKdroop(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setKdroop(_value_);
+    }
+
+    private static String kdroopToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).kdroopToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return kf != null ? kf.toString() : null;
     }
 
+    private static void setKf(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setKf(_value_);
+    }
+
+    private static String kfToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).kfToString();
+    }
+
     /**
      * Isochronous Governor Gain (Ki).
      */
@@ -405,6 +541,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String kiToString() {
         return ki != null ? ki.toString() : null;
+    }
+
+    private static void setKi(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setKi(_value_);
+    }
+
+    private static String kiToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).kiToString();
     }
 
     /**
@@ -428,6 +572,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return kp != null ? kp.toString() : null;
     }
 
+    private static void setKp(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setKp(_value_);
+    }
+
+    private static String kpToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).kpToString();
+    }
+
     /**
      * Base for power values (MWbase) (&gt; 0).  Unit = MW.
      */
@@ -447,6 +599,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String mwbaseToString() {
         return mwbase != null ? mwbase.toString() : null;
+    }
+
+    private static void setMwbase(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setMwbase(_value_);
+    }
+
+    private static String mwbaseToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).mwbaseToString();
     }
 
     /**
@@ -470,6 +630,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return t != null ? t.toString() : null;
     }
 
+    private static void setT(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setT(_value_);
+    }
+
+    private static String tToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tToString();
+    }
+
     /**
      * Radiation shield time constant (T3).
      */
@@ -489,6 +657,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String t3ToString() {
         return t3 != null ? t3.toString() : null;
+    }
+
+    private static void setT3(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setT3(_value_);
+    }
+
+    private static String t3ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).t3ToString();
     }
 
     /**
@@ -512,6 +688,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return t4 != null ? t4.toString() : null;
     }
 
+    private static void setT4(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setT4(_value_);
+    }
+
+    private static String t4ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).t4ToString();
+    }
+
     /**
      * Temperature control time constant (T5).
      */
@@ -531,6 +715,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String t5ToString() {
         return t5 != null ? t5.toString() : null;
+    }
+
+    private static void setT5(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setT5(_value_);
+    }
+
+    private static String t5ToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).t5ToString();
     }
 
     /**
@@ -554,6 +746,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return tc != null ? tc.toString() : null;
     }
 
+    private static void setTc(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTc(_value_);
+    }
+
+    private static String tcToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tcToString();
+    }
+
     /**
      * Compressor discharge time constant (Tcd).
      */
@@ -573,6 +773,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String tcdToString() {
         return tcd != null ? tcd.toString() : null;
+    }
+
+    private static void setTcd(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTcd(_value_);
+    }
+
+    private static String tcdToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tcdToString();
     }
 
     /**
@@ -596,6 +804,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return td != null ? td.toString() : null;
     }
 
+    private static void setTd(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTd(_value_);
+    }
+
+    private static String tdToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tdToString();
+    }
+
     /**
      * Fuel system time constant (Tf).
      */
@@ -615,6 +831,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String tfToString() {
         return tf != null ? tf.toString() : null;
+    }
+
+    private static void setTf(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTf(_value_);
+    }
+
+    private static String tfToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tfToString();
     }
 
     /**
@@ -638,6 +862,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return tmax != null ? tmax.toString() : null;
     }
 
+    private static void setTmax(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTmax(_value_);
+    }
+
+    private static String tmaxToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tmaxToString();
+    }
+
     /**
      * Minimum Turbine limit (Tmin).
      */
@@ -657,6 +889,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String tminToString() {
         return tmin != null ? tmin.toString() : null;
+    }
+
+    private static void setTmin(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTmin(_value_);
+    }
+
+    private static String tminToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).tminToString();
     }
 
     /**
@@ -680,6 +920,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return tr != null ? tr.toString() : null;
     }
 
+    private static void setTr(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTr(_value_);
+    }
+
+    private static String trToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).trToString();
+    }
+
     /**
      * Turbine rating (Trate).  Unit = MW.
      */
@@ -701,6 +949,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         return trate != null ? trate.toString() : null;
     }
 
+    private static void setTrate(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTrate(_value_);
+    }
+
+    private static String trateToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).trateToString();
+    }
+
     /**
      * Temperature controller integration rate (Tt).
      */
@@ -720,6 +976,14 @@ public class GovGASTWD extends TurbineGovernorDynamics {
 
     public String ttToString() {
         return tt != null ? tt.toString() : null;
+    }
+
+    private static void setTt(BaseClass _this_, String _value_) {
+        ((GovGASTWD) _this_).setTt(_value_);
+    }
+
+    private static String ttToString(BaseClass _this_) {
+        return ((GovGASTWD) _this_).ttToString();
     }
 
     /**
@@ -763,16 +1027,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("GovGASTWD", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "GovGASTWD", attrName));
+        return "";
     }
 
     /**
@@ -783,16 +1043,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("GovGASTWD", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovGASTWD", attrName, objectValue));
         }
     }
 
@@ -804,16 +1060,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("GovGASTWD", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "GovGASTWD", attrName, stringValue));
         }
     }
 
@@ -937,210 +1189,171 @@ public class GovGASTWD extends TurbineGovernorDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("a", new AttrDetails("GovGASTWD.a", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("a", new AttrDetails("GovGASTWD.a", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::aToString, null, GovGASTWD::setA));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("af1", new AttrDetails("GovGASTWD.af1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("af1", new AttrDetails("GovGASTWD.af1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::af1ToString, null, GovGASTWD::setAf1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("af2", new AttrDetails("GovGASTWD.af2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("af2", new AttrDetails("GovGASTWD.af2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::af2ToString, null, GovGASTWD::setAf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("b", new AttrDetails("GovGASTWD.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b", new AttrDetails("GovGASTWD.b", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::bToString, null, GovGASTWD::setB));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("bf1", new AttrDetails("GovGASTWD.bf1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bf1", new AttrDetails("GovGASTWD.bf1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::bf1ToString, null, GovGASTWD::setBf1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("bf2", new AttrDetails("GovGASTWD.bf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bf2", new AttrDetails("GovGASTWD.bf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::bf2ToString, null, GovGASTWD::setBf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("c", new AttrDetails("GovGASTWD.c", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("c", new AttrDetails("GovGASTWD.c", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::cToString, null, GovGASTWD::setC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("cf2", new AttrDetails("GovGASTWD.cf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("cf2", new AttrDetails("GovGASTWD.cf2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::cf2ToString, null, GovGASTWD::setCf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ecr", new AttrDetails("GovGASTWD.ecr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ecr", new AttrDetails("GovGASTWD.ecr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::ecrToString, null, GovGASTWD::setEcr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("etd", new AttrDetails("GovGASTWD.etd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("etd", new AttrDetails("GovGASTWD.etd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::etdToString, null, GovGASTWD::setEtd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k3", new AttrDetails("GovGASTWD.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k3", new AttrDetails("GovGASTWD.k3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::k3ToString, null, GovGASTWD::setK3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k4", new AttrDetails("GovGASTWD.k4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k4", new AttrDetails("GovGASTWD.k4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::k4ToString, null, GovGASTWD::setK4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k5", new AttrDetails("GovGASTWD.k5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k5", new AttrDetails("GovGASTWD.k5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::k5ToString, null, GovGASTWD::setK5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k6", new AttrDetails("GovGASTWD.k6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("k6", new AttrDetails("GovGASTWD.k6", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::k6ToString, null, GovGASTWD::setK6));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kd", new AttrDetails("GovGASTWD.kd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kd", new AttrDetails("GovGASTWD.kd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::kdToString, null, GovGASTWD::setKd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kdroop", new AttrDetails("GovGASTWD.kdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kdroop", new AttrDetails("GovGASTWD.kdroop", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::kdroopToString, null, GovGASTWD::setKdroop));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf", new AttrDetails("GovGASTWD.kf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kf", new AttrDetails("GovGASTWD.kf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::kfToString, null, GovGASTWD::setKf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("GovGASTWD.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ki", new AttrDetails("GovGASTWD.ki", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::kiToString, null, GovGASTWD::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("GovGASTWD.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kp", new AttrDetails("GovGASTWD.kp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::kpToString, null, GovGASTWD::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mwbase", new AttrDetails("GovGASTWD.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mwbase", new AttrDetails("GovGASTWD.mwbase", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::mwbaseToString, null, GovGASTWD::setMwbase));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t", new AttrDetails("GovGASTWD.t", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t", new AttrDetails("GovGASTWD.t", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tToString, null, GovGASTWD::setT));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("GovGASTWD.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t3", new AttrDetails("GovGASTWD.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::t3ToString, null, GovGASTWD::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("GovGASTWD.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t4", new AttrDetails("GovGASTWD.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::t4ToString, null, GovGASTWD::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t5", new AttrDetails("GovGASTWD.t5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("t5", new AttrDetails("GovGASTWD.t5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::t5ToString, null, GovGASTWD::setT5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tc", new AttrDetails("GovGASTWD.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tc", new AttrDetails("GovGASTWD.tc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tcToString, null, GovGASTWD::setTc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tcd", new AttrDetails("GovGASTWD.tcd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tcd", new AttrDetails("GovGASTWD.tcd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tcdToString, null, GovGASTWD::setTcd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td", new AttrDetails("GovGASTWD.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td", new AttrDetails("GovGASTWD.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tdToString, null, GovGASTWD::setTd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf", new AttrDetails("GovGASTWD.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tf", new AttrDetails("GovGASTWD.tf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tfToString, null, GovGASTWD::setTf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tmax", new AttrDetails("GovGASTWD.tmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tmax", new AttrDetails("GovGASTWD.tmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tmaxToString, null, GovGASTWD::setTmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tmin", new AttrDetails("GovGASTWD.tmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tmin", new AttrDetails("GovGASTWD.tmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::tminToString, null, GovGASTWD::setTmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tr", new AttrDetails("GovGASTWD.tr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tr", new AttrDetails("GovGASTWD.tr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::trToString, null, GovGASTWD::setTr));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("trate", new AttrDetails("GovGASTWD.trate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("trate", new AttrDetails("GovGASTWD.trate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::trateToString, null, GovGASTWD::setTrate));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tt", new AttrDetails("GovGASTWD.tt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tt", new AttrDetails("GovGASTWD.tt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGASTWD::ttToString, null, GovGASTWD::setTt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGASTWD().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("a", new GetterSetter(this::aToString, null, this::setA));
-        map.put("af1", new GetterSetter(this::af1ToString, null, this::setAf1));
-        map.put("af2", new GetterSetter(this::af2ToString, null, this::setAf2));
-        map.put("b", new GetterSetter(this::bToString, null, this::setB));
-        map.put("bf1", new GetterSetter(this::bf1ToString, null, this::setBf1));
-        map.put("bf2", new GetterSetter(this::bf2ToString, null, this::setBf2));
-        map.put("c", new GetterSetter(this::cToString, null, this::setC));
-        map.put("cf2", new GetterSetter(this::cf2ToString, null, this::setCf2));
-        map.put("ecr", new GetterSetter(this::ecrToString, null, this::setEcr));
-        map.put("etd", new GetterSetter(this::etdToString, null, this::setEtd));
-        map.put("k3", new GetterSetter(this::k3ToString, null, this::setK3));
-        map.put("k4", new GetterSetter(this::k4ToString, null, this::setK4));
-        map.put("k5", new GetterSetter(this::k5ToString, null, this::setK5));
-        map.put("k6", new GetterSetter(this::k6ToString, null, this::setK6));
-        map.put("kd", new GetterSetter(this::kdToString, null, this::setKd));
-        map.put("kdroop", new GetterSetter(this::kdroopToString, null, this::setKdroop));
-        map.put("kf", new GetterSetter(this::kfToString, null, this::setKf));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("mwbase", new GetterSetter(this::mwbaseToString, null, this::setMwbase));
-        map.put("t", new GetterSetter(this::tToString, null, this::setT));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("t5", new GetterSetter(this::t5ToString, null, this::setT5));
-        map.put("tc", new GetterSetter(this::tcToString, null, this::setTc));
-        map.put("tcd", new GetterSetter(this::tcdToString, null, this::setTcd));
-        map.put("td", new GetterSetter(this::tdToString, null, this::setTd));
-        map.put("tf", new GetterSetter(this::tfToString, null, this::setTf));
-        map.put("tmax", new GetterSetter(this::tmaxToString, null, this::setTmax));
-        map.put("tmin", new GetterSetter(this::tminToString, null, this::setTmin));
-        map.put("tr", new GetterSetter(this::trToString, null, this::setTr));
-        map.put("trate", new GetterSetter(this::trateToString, null, this::setTrate));
-        map.put("tt", new GetterSetter(this::ttToString, null, this::setTt));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -50,6 +50,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
         return capacitiveRating != null ? capacitiveRating.toString() : null;
     }
 
+    private static void setCapacitiveRating(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setCapacitiveRating(_value_);
+    }
+
+    private static String capacitiveRatingToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).capacitiveRatingToString();
+    }
+
     /**
      * Maximum available inductive reactance.
      */
@@ -69,6 +77,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
 
     public String inductiveRatingToString() {
         return inductiveRating != null ? inductiveRating.toString() : null;
+    }
+
+    private static void setInductiveRating(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setInductiveRating(_value_);
+    }
+
+    private static String inductiveRatingToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).inductiveRatingToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
         return q != null ? q.toString() : null;
     }
 
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).qToString();
+    }
+
     /**
      * SVC control mode.
      */
@@ -107,6 +131,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
 
     public String sVCControlModeToString() {
         return sVCControlMode;
+    }
+
+    private static void setSVCControlMode(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setSVCControlMode(_value_);
+    }
+
+    private static String sVCControlModeToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).sVCControlModeToString();
     }
 
     /**
@@ -130,6 +162,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
         return slope != null ? slope.toString() : null;
     }
 
+    private static void setSlope(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setSlope(_value_);
+    }
+
+    private static String slopeToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).slopeToString();
+    }
+
     /**
      * The reactive power output of the SVC is proportional to the difference between the voltage at the regulated bus and the voltage setpoint.  When the regulated bus voltage is equal to the voltage setpoint, the reactive power output is zero.
      */
@@ -149,6 +189,14 @@ public class StaticVarCompensator extends RegulatingCondEq {
 
     public String voltageSetPointToString() {
         return voltageSetPoint != null ? voltageSetPoint.toString() : null;
+    }
+
+    private static void setVoltageSetPoint(BaseClass _this_, String _value_) {
+        ((StaticVarCompensator) _this_).setVoltageSetPoint(_value_);
+    }
+
+    private static String voltageSetPointToString(BaseClass _this_) {
+        return ((StaticVarCompensator) _this_).voltageSetPointToString();
     }
 
     /**
@@ -192,16 +240,12 @@ public class StaticVarCompensator extends RegulatingCondEq {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("StaticVarCompensator", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "StaticVarCompensator", attrName));
+        return "";
     }
 
     /**
@@ -212,16 +256,12 @@ public class StaticVarCompensator extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("StaticVarCompensator", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StaticVarCompensator", attrName, objectValue));
         }
     }
 
@@ -233,16 +273,12 @@ public class StaticVarCompensator extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("StaticVarCompensator", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StaticVarCompensator", attrName, stringValue));
         }
     }
 
@@ -366,48 +402,36 @@ public class StaticVarCompensator extends RegulatingCondEq {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("capacitiveRating", new AttrDetails("StaticVarCompensator.capacitiveRating", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("capacitiveRating", new AttrDetails("StaticVarCompensator.capacitiveRating", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::capacitiveRatingToString, null, StaticVarCompensator::setCapacitiveRating));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("inductiveRating", new AttrDetails("StaticVarCompensator.inductiveRating", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("inductiveRating", new AttrDetails("StaticVarCompensator.inductiveRating", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::inductiveRatingToString, null, StaticVarCompensator::setInductiveRating));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("StaticVarCompensator.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("q", new AttrDetails("StaticVarCompensator.q", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::qToString, null, StaticVarCompensator::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("sVCControlMode", new AttrDetails("StaticVarCompensator.sVCControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("sVCControlMode", new AttrDetails("StaticVarCompensator.sVCControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, StaticVarCompensator::sVCControlModeToString, null, StaticVarCompensator::setSVCControlMode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("slope", new AttrDetails("StaticVarCompensator.slope", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("slope", new AttrDetails("StaticVarCompensator.slope", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::slopeToString, null, StaticVarCompensator::setSlope));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("voltageSetPoint", new AttrDetails("StaticVarCompensator.voltageSetPoint", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("voltageSetPoint", new AttrDetails("StaticVarCompensator.voltageSetPoint", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::voltageSetPointToString, null, StaticVarCompensator::setVoltageSetPoint));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StaticVarCompensator().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("capacitiveRating", new GetterSetter(this::capacitiveRatingToString, null, this::setCapacitiveRating));
-        map.put("inductiveRating", new GetterSetter(this::inductiveRatingToString, null, this::setInductiveRating));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("sVCControlMode", new GetterSetter(this::sVCControlModeToString, null, this::setSVCControlMode));
-        map.put("slope", new GetterSetter(this::slopeToString, null, this::setSlope));
-        map.put("voltageSetPoint", new GetterSetter(this::voltageSetPointToString, null, this::setVoltageSetPoint));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

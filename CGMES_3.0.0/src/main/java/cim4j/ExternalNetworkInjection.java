@@ -50,6 +50,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return governorSCD != null ? governorSCD.toString() : null;
     }
 
+    private static void setGovernorSCD(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setGovernorSCD(_value_);
+    }
+
+    private static String governorSCDToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).governorSCDToString();
+    }
+
     /**
      * Indicates whether initial symmetrical short-circuit current and power have been calculated according to IEC (Ik`).  Used only if short circuit calculations are done according to superposition method.
      */
@@ -69,6 +77,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String ikSecondToString() {
         return ikSecond != null ? ikSecond.toString() : null;
+    }
+
+    private static void setIkSecond(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setIkSecond(_value_);
+    }
+
+    private static String ikSecondToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).ikSecondToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return maxInitialSymShCCurrent != null ? maxInitialSymShCCurrent.toString() : null;
     }
 
+    private static void setMaxInitialSymShCCurrent(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxInitialSymShCCurrent(_value_);
+    }
+
+    private static String maxInitialSymShCCurrentToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxInitialSymShCCurrentToString();
+    }
+
     /**
      * Maximum active power of the injection.
      */
@@ -111,6 +135,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String maxPToString() {
         return maxP != null ? maxP.toString() : null;
+    }
+
+    private static void setMaxP(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxP(_value_);
+    }
+
+    private static String maxPToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxPToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return maxQ != null ? maxQ.toString() : null;
     }
 
+    private static void setMaxQ(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxQ(_value_);
+    }
+
+    private static String maxQToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxQToString();
+    }
+
     /**
      * Maximum ratio of zero sequence resistance of Network Feeder to its zero sequence reactance (R(0)/X(0) max). Used for short circuit data exchange according to IEC 60909.
      */
@@ -153,6 +193,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String maxR0ToX0RatioToString() {
         return maxR0ToX0Ratio != null ? maxR0ToX0Ratio.toString() : null;
+    }
+
+    private static void setMaxR0ToX0Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxR0ToX0Ratio(_value_);
+    }
+
+    private static String maxR0ToX0RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxR0ToX0RatioToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return maxR1ToX1Ratio != null ? maxR1ToX1Ratio.toString() : null;
     }
 
+    private static void setMaxR1ToX1Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxR1ToX1Ratio(_value_);
+    }
+
+    private static String maxR1ToX1RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxR1ToX1RatioToString();
+    }
+
     /**
      * Maximum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) max). Used for short circuit data exchange according to IEC 60909.
      */
@@ -195,6 +251,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String maxZ0ToZ1RatioToString() {
         return maxZ0ToZ1Ratio != null ? maxZ0ToZ1Ratio.toString() : null;
+    }
+
+    private static void setMaxZ0ToZ1Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMaxZ0ToZ1Ratio(_value_);
+    }
+
+    private static String maxZ0ToZ1RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).maxZ0ToZ1RatioToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return minInitialSymShCCurrent != null ? minInitialSymShCCurrent.toString() : null;
     }
 
+    private static void setMinInitialSymShCCurrent(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinInitialSymShCCurrent(_value_);
+    }
+
+    private static String minInitialSymShCCurrentToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minInitialSymShCCurrentToString();
+    }
+
     /**
      * Minimum active power of the injection.
      */
@@ -237,6 +309,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String minPToString() {
         return minP != null ? minP.toString() : null;
+    }
+
+    private static void setMinP(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinP(_value_);
+    }
+
+    private static String minPToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minPToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return minQ != null ? minQ.toString() : null;
     }
 
+    private static void setMinQ(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinQ(_value_);
+    }
+
+    private static String minQToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minQToString();
+    }
+
     /**
      * Indicates whether initial symmetrical short-circuit current and power have been calculated according to IEC (Ik`). Used for short circuit data exchange according to IEC 6090.
      */
@@ -279,6 +367,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String minR0ToX0RatioToString() {
         return minR0ToX0Ratio != null ? minR0ToX0Ratio.toString() : null;
+    }
+
+    private static void setMinR0ToX0Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinR0ToX0Ratio(_value_);
+    }
+
+    private static String minR0ToX0RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minR0ToX0RatioToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return minR1ToX1Ratio != null ? minR1ToX1Ratio.toString() : null;
     }
 
+    private static void setMinR1ToX1Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinR1ToX1Ratio(_value_);
+    }
+
+    private static String minR1ToX1RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minR1ToX1RatioToString();
+    }
+
     /**
      * Minimum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) min). Used for short circuit data exchange according to IEC 60909.
      */
@@ -321,6 +425,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String minZ0ToZ1RatioToString() {
         return minZ0ToZ1Ratio != null ? minZ0ToZ1Ratio.toString() : null;
+    }
+
+    private static void setMinZ0ToZ1Ratio(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setMinZ0ToZ1Ratio(_value_);
+    }
+
+    private static String minZ0ToZ1RatioToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).minZ0ToZ1RatioToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return p != null ? p.toString() : null;
     }
 
+    private static void setP(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setP(_value_);
+    }
+
+    private static String pToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).pToString();
+    }
+
     /**
      * Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node. Starting value for steady state solutions.
      */
@@ -363,6 +483,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String qToString() {
         return q != null ? q.toString() : null;
+    }
+
+    private static void setQ(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setQ(_value_);
+    }
+
+    private static String qToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).qToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         return referencePriority != null ? referencePriority.toString() : null;
     }
 
+    private static void setReferencePriority(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setReferencePriority(_value_);
+    }
+
+    private static String referencePriorityToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).referencePriorityToString();
+    }
+
     /**
      * Voltage factor in pu, which was used to calculate short-circuit current Ik` and power Sk`.  Used only if short circuit calculations are done according to superposition method.
      */
@@ -405,6 +541,14 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
 
     public String voltageFactorToString() {
         return voltageFactor != null ? voltageFactor.toString() : null;
+    }
+
+    private static void setVoltageFactor(BaseClass _this_, String _value_) {
+        ((ExternalNetworkInjection) _this_).setVoltageFactor(_value_);
+    }
+
+    private static String voltageFactorToString(BaseClass _this_) {
+        return ((ExternalNetworkInjection) _this_).voltageFactorToString();
     }
 
     /**
@@ -448,16 +592,12 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ExternalNetworkInjection", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExternalNetworkInjection", attrName));
+        return "";
     }
 
     /**
@@ -468,16 +608,12 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExternalNetworkInjection", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExternalNetworkInjection", attrName, objectValue));
         }
     }
 
@@ -489,16 +625,12 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExternalNetworkInjection", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExternalNetworkInjection", attrName, stringValue));
         }
     }
 
@@ -622,120 +754,96 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("governorSCD", new AttrDetails("ExternalNetworkInjection.governorSCD", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("governorSCD", new AttrDetails("ExternalNetworkInjection.governorSCD", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::governorSCDToString, null, ExternalNetworkInjection::setGovernorSCD));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("ikSecond", new AttrDetails("ExternalNetworkInjection.ikSecond", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ikSecond", new AttrDetails("ExternalNetworkInjection.ikSecond", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::ikSecondToString, null, ExternalNetworkInjection::setIkSecond));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("maxInitialSymShCCurrent", new AttrDetails("ExternalNetworkInjection.maxInitialSymShCCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxInitialSymShCCurrent", new AttrDetails("ExternalNetworkInjection.maxInitialSymShCCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxInitialSymShCCurrentToString, null, ExternalNetworkInjection::setMaxInitialSymShCCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxP", new AttrDetails("ExternalNetworkInjection.maxP", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxP", new AttrDetails("ExternalNetworkInjection.maxP", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxPToString, null, ExternalNetworkInjection::setMaxP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("maxQ", new AttrDetails("ExternalNetworkInjection.maxQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxQ", new AttrDetails("ExternalNetworkInjection.maxQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxQToString, null, ExternalNetworkInjection::setMaxQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("maxR0ToX0Ratio", new AttrDetails("ExternalNetworkInjection.maxR0ToX0Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxR0ToX0Ratio", new AttrDetails("ExternalNetworkInjection.maxR0ToX0Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxR0ToX0RatioToString, null, ExternalNetworkInjection::setMaxR0ToX0Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("maxR1ToX1Ratio", new AttrDetails("ExternalNetworkInjection.maxR1ToX1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxR1ToX1Ratio", new AttrDetails("ExternalNetworkInjection.maxR1ToX1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxR1ToX1RatioToString, null, ExternalNetworkInjection::setMaxR1ToX1Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("maxZ0ToZ1Ratio", new AttrDetails("ExternalNetworkInjection.maxZ0ToZ1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("maxZ0ToZ1Ratio", new AttrDetails("ExternalNetworkInjection.maxZ0ToZ1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::maxZ0ToZ1RatioToString, null, ExternalNetworkInjection::setMaxZ0ToZ1Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("minInitialSymShCCurrent", new AttrDetails("ExternalNetworkInjection.minInitialSymShCCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minInitialSymShCCurrent", new AttrDetails("ExternalNetworkInjection.minInitialSymShCCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minInitialSymShCCurrentToString, null, ExternalNetworkInjection::setMinInitialSymShCCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minP", new AttrDetails("ExternalNetworkInjection.minP", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minP", new AttrDetails("ExternalNetworkInjection.minP", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minPToString, null, ExternalNetworkInjection::setMinP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("minQ", new AttrDetails("ExternalNetworkInjection.minQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minQ", new AttrDetails("ExternalNetworkInjection.minQ", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minQToString, null, ExternalNetworkInjection::setMinQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("minR0ToX0Ratio", new AttrDetails("ExternalNetworkInjection.minR0ToX0Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minR0ToX0Ratio", new AttrDetails("ExternalNetworkInjection.minR0ToX0Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minR0ToX0RatioToString, null, ExternalNetworkInjection::setMinR0ToX0Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("minR1ToX1Ratio", new AttrDetails("ExternalNetworkInjection.minR1ToX1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minR1ToX1Ratio", new AttrDetails("ExternalNetworkInjection.minR1ToX1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minR1ToX1RatioToString, null, ExternalNetworkInjection::setMinR1ToX1Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("minZ0ToZ1Ratio", new AttrDetails("ExternalNetworkInjection.minZ0ToZ1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("minZ0ToZ1Ratio", new AttrDetails("ExternalNetworkInjection.minZ0ToZ1Ratio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::minZ0ToZ1RatioToString, null, ExternalNetworkInjection::setMinZ0ToZ1Ratio));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("p", new AttrDetails("ExternalNetworkInjection.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("p", new AttrDetails("ExternalNetworkInjection.p", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::pToString, null, ExternalNetworkInjection::setP));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("q", new AttrDetails("ExternalNetworkInjection.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("q", new AttrDetails("ExternalNetworkInjection.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::qToString, null, ExternalNetworkInjection::setQ));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SSH);
-            map.put("referencePriority", new AttrDetails("ExternalNetworkInjection.referencePriority", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("referencePriority", new AttrDetails("ExternalNetworkInjection.referencePriority", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::referencePriorityToString, null, ExternalNetworkInjection::setReferencePriority));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("voltageFactor", new AttrDetails("ExternalNetworkInjection.voltageFactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("voltageFactor", new AttrDetails("ExternalNetworkInjection.voltageFactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::voltageFactorToString, null, ExternalNetworkInjection::setVoltageFactor));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExternalNetworkInjection().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("governorSCD", new GetterSetter(this::governorSCDToString, null, this::setGovernorSCD));
-        map.put("ikSecond", new GetterSetter(this::ikSecondToString, null, this::setIkSecond));
-        map.put("maxInitialSymShCCurrent", new GetterSetter(this::maxInitialSymShCCurrentToString, null, this::setMaxInitialSymShCCurrent));
-        map.put("maxP", new GetterSetter(this::maxPToString, null, this::setMaxP));
-        map.put("maxQ", new GetterSetter(this::maxQToString, null, this::setMaxQ));
-        map.put("maxR0ToX0Ratio", new GetterSetter(this::maxR0ToX0RatioToString, null, this::setMaxR0ToX0Ratio));
-        map.put("maxR1ToX1Ratio", new GetterSetter(this::maxR1ToX1RatioToString, null, this::setMaxR1ToX1Ratio));
-        map.put("maxZ0ToZ1Ratio", new GetterSetter(this::maxZ0ToZ1RatioToString, null, this::setMaxZ0ToZ1Ratio));
-        map.put("minInitialSymShCCurrent", new GetterSetter(this::minInitialSymShCCurrentToString, null, this::setMinInitialSymShCCurrent));
-        map.put("minP", new GetterSetter(this::minPToString, null, this::setMinP));
-        map.put("minQ", new GetterSetter(this::minQToString, null, this::setMinQ));
-        map.put("minR0ToX0Ratio", new GetterSetter(this::minR0ToX0RatioToString, null, this::setMinR0ToX0Ratio));
-        map.put("minR1ToX1Ratio", new GetterSetter(this::minR1ToX1RatioToString, null, this::setMinR1ToX1Ratio));
-        map.put("minZ0ToZ1Ratio", new GetterSetter(this::minZ0ToZ1RatioToString, null, this::setMinZ0ToZ1Ratio));
-        map.put("p", new GetterSetter(this::pToString, null, this::setP));
-        map.put("q", new GetterSetter(this::qToString, null, this::setQ));
-        map.put("referencePriority", new GetterSetter(this::referencePriorityToString, null, this::setReferencePriority));
-        map.put("voltageFactor", new GetterSetter(this::voltageFactorToString, null, this::setVoltageFactor));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

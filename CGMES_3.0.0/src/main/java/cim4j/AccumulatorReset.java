@@ -52,6 +52,14 @@ public class AccumulatorReset extends Control {
         return AccumulatorValue != null ? AccumulatorValue.getRdfid() : null;
     }
 
+    private static void setAccumulatorValue(BaseClass _this_, BaseClass _object_) {
+        ((AccumulatorReset) _this_).setAccumulatorValue(_object_);
+    }
+
+    private static String AccumulatorValueToString(BaseClass _this_) {
+        return ((AccumulatorReset) _this_).AccumulatorValueToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -93,16 +101,12 @@ public class AccumulatorReset extends Control {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("AccumulatorReset", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AccumulatorReset", attrName));
+        return "";
     }
 
     /**
@@ -113,16 +117,12 @@ public class AccumulatorReset extends Control {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AccumulatorReset", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AccumulatorReset", attrName, objectValue));
         }
     }
 
@@ -134,16 +134,12 @@ public class AccumulatorReset extends Control {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AccumulatorReset", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AccumulatorReset", attrName, stringValue));
         }
     }
 
@@ -267,18 +263,11 @@ public class AccumulatorReset extends Control {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("AccumulatorValue", new AttrDetails("AccumulatorReset.AccumulatorValue", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("AccumulatorValue", new AttrDetails("AccumulatorReset.AccumulatorValue", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AccumulatorReset::AccumulatorValueToString, AccumulatorReset::setAccumulatorValue, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorReset().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AccumulatorValue", new GetterSetter(this::AccumulatorValueToString, this::setAccumulatorValue, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

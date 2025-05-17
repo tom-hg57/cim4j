@@ -46,6 +46,14 @@ public class TextDiagramObject extends DiagramObject {
         return text != null ? text.toString() : null;
     }
 
+    private static void setText(BaseClass _this_, String _value_) {
+        ((TextDiagramObject) _this_).setText(_value_);
+    }
+
+    private static String textToString(BaseClass _this_) {
+        return ((TextDiagramObject) _this_).textToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -87,16 +95,12 @@ public class TextDiagramObject extends DiagramObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TextDiagramObject", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TextDiagramObject", attrName));
+        return "";
     }
 
     /**
@@ -107,16 +111,12 @@ public class TextDiagramObject extends DiagramObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TextDiagramObject", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TextDiagramObject", attrName, objectValue));
         }
     }
 
@@ -128,16 +128,12 @@ public class TextDiagramObject extends DiagramObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TextDiagramObject", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TextDiagramObject", attrName, stringValue));
         }
     }
 
@@ -261,18 +257,11 @@ public class TextDiagramObject extends DiagramObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("text", new AttrDetails("TextDiagramObject.text", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("text", new AttrDetails("TextDiagramObject.text", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TextDiagramObject::textToString, null, TextDiagramObject::setText));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TextDiagramObject().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("text", new GetterSetter(this::textToString, null, this::setText));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

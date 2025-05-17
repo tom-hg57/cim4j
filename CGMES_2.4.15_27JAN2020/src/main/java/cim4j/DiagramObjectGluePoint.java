@@ -54,6 +54,14 @@ public class DiagramObjectGluePoint extends BaseClass {
         return getStringFromSet(DiagramObjectPoints);
     }
 
+    private static void setDiagramObjectPoints(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObjectGluePoint) _this_).setDiagramObjectPoints(_object_);
+    }
+
+    private static String DiagramObjectPointsToString(BaseClass _this_) {
+        return ((DiagramObjectGluePoint) _this_).DiagramObjectPointsToString();
+    }
+
     /**
      * Get a list of all attribute names of the CIM type.
      *
@@ -95,16 +103,12 @@ public class DiagramObjectGluePoint extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiagramObjectGluePoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiagramObjectGluePoint", attrName));
+        return "";
     }
 
     /**
@@ -115,16 +119,12 @@ public class DiagramObjectGluePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiagramObjectGluePoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObjectGluePoint", attrName, objectValue));
         }
     }
 
@@ -136,16 +136,12 @@ public class DiagramObjectGluePoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiagramObjectGluePoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObjectGluePoint", attrName, stringValue));
         }
     }
 
@@ -269,18 +265,11 @@ public class DiagramObjectGluePoint extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObjectPoints", new AttrDetails("DiagramObjectGluePoint.DiagramObjectPoints", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiagramObjectPoints", new AttrDetails("DiagramObjectGluePoint.DiagramObjectPoints", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiagramObjectGluePoint::DiagramObjectPointsToString, DiagramObjectGluePoint::setDiagramObjectPoints, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectGluePoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiagramObjectPoints", new GetterSetter(this::DiagramObjectPointsToString, this::setDiagramObjectPoints, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

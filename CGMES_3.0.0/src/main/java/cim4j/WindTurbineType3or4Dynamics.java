@@ -52,6 +52,14 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
         return PowerElectronicsConnection != null ? PowerElectronicsConnection.getRdfid() : null;
     }
 
+    private static void setPowerElectronicsConnection(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3or4Dynamics) _this_).setPowerElectronicsConnection(_object_);
+    }
+
+    private static String PowerElectronicsConnectionToString(BaseClass _this_) {
+        return ((WindTurbineType3or4Dynamics) _this_).PowerElectronicsConnectionToString();
+    }
+
     /**
      * Remote input signal used by these wind turbine type 3 or type 4 models.
      */
@@ -75,6 +83,14 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
         return RemoteInputSignal != null ? RemoteInputSignal.getRdfid() : null;
     }
 
+    private static void setRemoteInputSignal(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3or4Dynamics) _this_).setRemoteInputSignal(_object_);
+    }
+
+    private static String RemoteInputSignalToString(BaseClass _this_) {
+        return ((WindTurbineType3or4Dynamics) _this_).RemoteInputSignalToString();
+    }
+
     /**
      * The wind plant with which the wind turbines type 3 or type 4 are associated.
      */
@@ -96,6 +112,14 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
 
     public String WindPlantDynamicsToString() {
         return WindPlantDynamics != null ? WindPlantDynamics.getRdfid() : null;
+    }
+
+    private static void setWindPlantDynamics(BaseClass _this_, BaseClass _object_) {
+        ((WindTurbineType3or4Dynamics) _this_).setWindPlantDynamics(_object_);
+    }
+
+    private static String WindPlantDynamicsToString(BaseClass _this_) {
+        return ((WindTurbineType3or4Dynamics) _this_).WindPlantDynamicsToString();
     }
 
     /**
@@ -139,16 +163,12 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("WindTurbineType3or4Dynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindTurbineType3or4Dynamics", attrName));
+        return "";
     }
 
     /**
@@ -159,16 +179,12 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindTurbineType3or4Dynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3or4Dynamics", attrName, objectValue));
         }
     }
 
@@ -180,16 +196,12 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindTurbineType3or4Dynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3or4Dynamics", attrName, stringValue));
         }
     }
 
@@ -313,30 +325,21 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerElectronicsConnection", new AttrDetails("WindTurbineType3or4Dynamics.PowerElectronicsConnection", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerElectronicsConnection", new AttrDetails("WindTurbineType3or4Dynamics.PowerElectronicsConnection", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3or4Dynamics::PowerElectronicsConnectionToString, WindTurbineType3or4Dynamics::setPowerElectronicsConnection, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("RemoteInputSignal", new AttrDetails("WindTurbineType3or4Dynamics.RemoteInputSignal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("RemoteInputSignal", new AttrDetails("WindTurbineType3or4Dynamics.RemoteInputSignal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3or4Dynamics::RemoteInputSignalToString, WindTurbineType3or4Dynamics::setRemoteInputSignal, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantDynamics", new AttrDetails("WindTurbineType3or4Dynamics.WindPlantDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPlantDynamics", new AttrDetails("WindTurbineType3or4Dynamics.WindPlantDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3or4Dynamics::WindPlantDynamicsToString, WindTurbineType3or4Dynamics::setWindPlantDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4Dynamics().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerElectronicsConnection", new GetterSetter(this::PowerElectronicsConnectionToString, this::setPowerElectronicsConnection, null));
-        map.put("RemoteInputSignal", new GetterSetter(this::RemoteInputSignalToString, this::setRemoteInputSignal, null));
-        map.put("WindPlantDynamics", new GetterSetter(this::WindPlantDynamicsToString, this::setWindPlantDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

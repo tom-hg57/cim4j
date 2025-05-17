@@ -50,6 +50,14 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
         return td1 != null ? td1.toString() : null;
     }
 
+    private static void setTd1(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC2A) _this_).setTd1(_value_);
+    }
+
+    private static String td1ToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC2A) _this_).td1ToString();
+    }
+
     /**
      * Discontinuous controller washout time constant ().
      */
@@ -69,6 +77,14 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
 
     public String td2ToString() {
         return td2 != null ? td2.toString() : null;
+    }
+
+    private static void setTd2(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC2A) _this_).setTd2(_value_);
+    }
+
+    private static String td2ToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC2A) _this_).td2ToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
         return vdmax != null ? vdmax.toString() : null;
     }
 
+    private static void setVdmax(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC2A) _this_).setVdmax(_value_);
+    }
+
+    private static String vdmaxToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC2A) _this_).vdmaxToString();
+    }
+
     /**
      * Limiter ().
      */
@@ -113,6 +137,14 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
         return vdmin != null ? vdmin.toString() : null;
     }
 
+    private static void setVdmin(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC2A) _this_).setVdmin(_value_);
+    }
+
+    private static String vdminToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC2A) _this_).vdminToString();
+    }
+
     /**
      * Discontinuous controller input reference ().
      */
@@ -132,6 +164,14 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
 
     public String vkToString() {
         return vk != null ? vk.toString() : null;
+    }
+
+    private static void setVk(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC2A) _this_).setVk(_value_);
+    }
+
+    private static String vkToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC2A) _this_).vkToString();
     }
 
     /**
@@ -175,16 +215,12 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiscExcContIEEEDEC2A", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiscExcContIEEEDEC2A", attrName));
+        return "";
     }
 
     /**
@@ -195,16 +231,12 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiscExcContIEEEDEC2A", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscExcContIEEEDEC2A", attrName, objectValue));
         }
     }
 
@@ -216,16 +248,12 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiscExcContIEEEDEC2A", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscExcContIEEEDEC2A", attrName, stringValue));
         }
     }
 
@@ -349,42 +377,31 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td1", new AttrDetails("DiscExcContIEEEDEC2A.td1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td1", new AttrDetails("DiscExcContIEEEDEC2A.td1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::td1ToString, null, DiscExcContIEEEDEC2A::setTd1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td2", new AttrDetails("DiscExcContIEEEDEC2A.td2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td2", new AttrDetails("DiscExcContIEEEDEC2A.td2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::td2ToString, null, DiscExcContIEEEDEC2A::setTd2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vdmax", new AttrDetails("DiscExcContIEEEDEC2A.vdmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vdmax", new AttrDetails("DiscExcContIEEEDEC2A.vdmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::vdmaxToString, null, DiscExcContIEEEDEC2A::setVdmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vdmin", new AttrDetails("DiscExcContIEEEDEC2A.vdmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vdmin", new AttrDetails("DiscExcContIEEEDEC2A.vdmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::vdminToString, null, DiscExcContIEEEDEC2A::setVdmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vk", new AttrDetails("DiscExcContIEEEDEC2A.vk", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vk", new AttrDetails("DiscExcContIEEEDEC2A.vk", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::vkToString, null, DiscExcContIEEEDEC2A::setVk));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscExcContIEEEDEC2A().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("td1", new GetterSetter(this::td1ToString, null, this::setTd1));
-        map.put("td2", new GetterSetter(this::td2ToString, null, this::setTd2));
-        map.put("vdmax", new GetterSetter(this::vdmaxToString, null, this::setVdmax));
-        map.put("vdmin", new GetterSetter(this::vdminToString, null, this::setVdmin));
-        map.put("vk", new GetterSetter(this::vkToString, null, this::setVk));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

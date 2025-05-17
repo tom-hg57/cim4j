@@ -46,6 +46,14 @@ public class TownDetail extends BaseClass {
         return code != null ? code.toString() : null;
     }
 
+    private static void setCode(BaseClass _this_, String _value_) {
+        ((TownDetail) _this_).setCode(_value_);
+    }
+
+    private static String codeToString(BaseClass _this_) {
+        return ((TownDetail) _this_).codeToString();
+    }
+
     /**
      * Name of the country.
      */
@@ -61,6 +69,14 @@ public class TownDetail extends BaseClass {
 
     public String countryToString() {
         return country != null ? country.toString() : null;
+    }
+
+    private static void setCountry(BaseClass _this_, String _value_) {
+        ((TownDetail) _this_).setCountry(_value_);
+    }
+
+    private static String countryToString(BaseClass _this_) {
+        return ((TownDetail) _this_).countryToString();
     }
 
     /**
@@ -80,6 +96,14 @@ public class TownDetail extends BaseClass {
         return name != null ? name.toString() : null;
     }
 
+    private static void setName(BaseClass _this_, String _value_) {
+        ((TownDetail) _this_).setName(_value_);
+    }
+
+    private static String nameToString(BaseClass _this_) {
+        return ((TownDetail) _this_).nameToString();
+    }
+
     /**
      * Town section. For example, it is common for there to be 36 sections per township.
      */
@@ -97,6 +121,14 @@ public class TownDetail extends BaseClass {
         return section != null ? section.toString() : null;
     }
 
+    private static void setSection(BaseClass _this_, String _value_) {
+        ((TownDetail) _this_).setSection(_value_);
+    }
+
+    private static String sectionToString(BaseClass _this_) {
+        return ((TownDetail) _this_).sectionToString();
+    }
+
     /**
      * Name of the state or province.
      */
@@ -112,6 +144,14 @@ public class TownDetail extends BaseClass {
 
     public String stateOrProvinceToString() {
         return stateOrProvince != null ? stateOrProvince.toString() : null;
+    }
+
+    private static void setStateOrProvince(BaseClass _this_, String _value_) {
+        ((TownDetail) _this_).setStateOrProvince(_value_);
+    }
+
+    private static String stateOrProvinceToString(BaseClass _this_) {
+        return ((TownDetail) _this_).stateOrProvinceToString();
     }
 
     /**
@@ -155,16 +195,12 @@ public class TownDetail extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("TownDetail", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "TownDetail", attrName));
+        return "";
     }
 
     /**
@@ -175,16 +211,12 @@ public class TownDetail extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("TownDetail", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TownDetail", attrName, objectValue));
         }
     }
 
@@ -196,16 +228,12 @@ public class TownDetail extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("TownDetail", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "TownDetail", attrName, stringValue));
         }
     }
 
@@ -329,42 +357,31 @@ public class TownDetail extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("code", new AttrDetails("TownDetail.code", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("code", new AttrDetails("TownDetail.code", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::codeToString, null, TownDetail::setCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("country", new AttrDetails("TownDetail.country", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("country", new AttrDetails("TownDetail.country", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::countryToString, null, TownDetail::setCountry));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("name", new AttrDetails("TownDetail.name", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("name", new AttrDetails("TownDetail.name", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::nameToString, null, TownDetail::setName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("section", new AttrDetails("TownDetail.section", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("section", new AttrDetails("TownDetail.section", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::sectionToString, null, TownDetail::setSection));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("stateOrProvince", new AttrDetails("TownDetail.stateOrProvince", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("stateOrProvince", new AttrDetails("TownDetail.stateOrProvince", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::stateOrProvinceToString, null, TownDetail::setStateOrProvince));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TownDetail().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("code", new GetterSetter(this::codeToString, null, this::setCode));
-        map.put("country", new GetterSetter(this::countryToString, null, this::setCountry));
-        map.put("name", new GetterSetter(this::nameToString, null, this::setName));
-        map.put("section", new GetterSetter(this::sectionToString, null, this::setSection));
-        map.put("stateOrProvince", new GetterSetter(this::stateOrProvinceToString, null, this::setStateOrProvince));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

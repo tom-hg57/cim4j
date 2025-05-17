@@ -52,6 +52,14 @@ public class SvVoltage extends BaseClass {
         return TopologicalNode != null ? TopologicalNode.getRdfid() : null;
     }
 
+    private static void setTopologicalNode(BaseClass _this_, BaseClass _object_) {
+        ((SvVoltage) _this_).setTopologicalNode(_object_);
+    }
+
+    private static String TopologicalNodeToString(BaseClass _this_) {
+        return ((SvVoltage) _this_).TopologicalNodeToString();
+    }
+
     /**
      * The voltage angle of the topological node complex voltage with respect to system reference.
      */
@@ -73,6 +81,14 @@ public class SvVoltage extends BaseClass {
         return angle != null ? angle.toString() : null;
     }
 
+    private static void setAngle(BaseClass _this_, String _value_) {
+        ((SvVoltage) _this_).setAngle(_value_);
+    }
+
+    private static String angleToString(BaseClass _this_) {
+        return ((SvVoltage) _this_).angleToString();
+    }
+
     /**
      * The voltage magnitude of the topological node.
      */
@@ -92,6 +108,14 @@ public class SvVoltage extends BaseClass {
 
     public String vToString() {
         return v != null ? v.toString() : null;
+    }
+
+    private static void setV(BaseClass _this_, String _value_) {
+        ((SvVoltage) _this_).setV(_value_);
+    }
+
+    private static String vToString(BaseClass _this_) {
+        return ((SvVoltage) _this_).vToString();
     }
 
     /**
@@ -135,16 +159,12 @@ public class SvVoltage extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("SvVoltage", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvVoltage", attrName));
+        return "";
     }
 
     /**
@@ -155,16 +175,12 @@ public class SvVoltage extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvVoltage", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvVoltage", attrName, objectValue));
         }
     }
 
@@ -176,16 +192,12 @@ public class SvVoltage extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvVoltage", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvVoltage", attrName, stringValue));
         }
     }
 
@@ -309,30 +321,21 @@ public class SvVoltage extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("TopologicalNode", new AttrDetails("SvVoltage.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("SvVoltage.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SvVoltage::TopologicalNodeToString, SvVoltage::setTopologicalNode, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("angle", new AttrDetails("SvVoltage.angle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("angle", new AttrDetails("SvVoltage.angle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvVoltage::angleToString, null, SvVoltage::setAngle));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("v", new AttrDetails("SvVoltage.v", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("v", new AttrDetails("SvVoltage.v", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvVoltage::vToString, null, SvVoltage::setV));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvVoltage().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("angle", new GetterSetter(this::angleToString, null, this::setAngle));
-        map.put("v", new GetterSetter(this::vToString, null, this::setV));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

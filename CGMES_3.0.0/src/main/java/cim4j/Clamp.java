@@ -52,6 +52,14 @@ public class Clamp extends ConductingEquipment {
         return ACLineSegment != null ? ACLineSegment.getRdfid() : null;
     }
 
+    private static void setACLineSegment(BaseClass _this_, BaseClass _object_) {
+        ((Clamp) _this_).setACLineSegment(_object_);
+    }
+
+    private static String ACLineSegmentToString(BaseClass _this_) {
+        return ((Clamp) _this_).ACLineSegmentToString();
+    }
+
     /**
      * The length to the place where the clamp is located starting from side one of the line segment, i.e. the line segment terminal with sequence number equal to 1.
      */
@@ -71,6 +79,14 @@ public class Clamp extends ConductingEquipment {
 
     public String lengthFromTerminal1ToString() {
         return lengthFromTerminal1 != null ? lengthFromTerminal1.toString() : null;
+    }
+
+    private static void setLengthFromTerminal1(BaseClass _this_, String _value_) {
+        ((Clamp) _this_).setLengthFromTerminal1(_value_);
+    }
+
+    private static String lengthFromTerminal1ToString(BaseClass _this_) {
+        return ((Clamp) _this_).lengthFromTerminal1ToString();
     }
 
     /**
@@ -114,16 +130,12 @@ public class Clamp extends ConductingEquipment {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("Clamp", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Clamp", attrName));
+        return "";
     }
 
     /**
@@ -134,16 +146,12 @@ public class Clamp extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Clamp", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Clamp", attrName, objectValue));
         }
     }
 
@@ -155,16 +163,12 @@ public class Clamp extends ConductingEquipment {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Clamp", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Clamp", attrName, stringValue));
         }
     }
 
@@ -288,24 +292,16 @@ public class Clamp extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ACLineSegment", new AttrDetails("Clamp.ACLineSegment", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ACLineSegment", new AttrDetails("Clamp.ACLineSegment", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, Clamp::ACLineSegmentToString, Clamp::setACLineSegment, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("lengthFromTerminal1", new AttrDetails("Clamp.lengthFromTerminal1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("lengthFromTerminal1", new AttrDetails("Clamp.lengthFromTerminal1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Clamp::lengthFromTerminal1ToString, null, Clamp::setLengthFromTerminal1));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Clamp().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ACLineSegment", new GetterSetter(this::ACLineSegmentToString, this::setACLineSegment, null));
-        map.put("lengthFromTerminal1", new GetterSetter(this::lengthFromTerminal1ToString, null, this::setLengthFromTerminal1));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

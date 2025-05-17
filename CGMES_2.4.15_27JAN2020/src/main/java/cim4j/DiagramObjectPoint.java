@@ -52,6 +52,14 @@ public class DiagramObjectPoint extends BaseClass {
         return DiagramObject != null ? DiagramObject.getRdfid() : null;
     }
 
+    private static void setDiagramObject(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObjectPoint) _this_).setDiagramObject(_object_);
+    }
+
+    private static String DiagramObjectToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).DiagramObjectToString();
+    }
+
     /**
      * A diagram object glue point is associated with 2 or more object points that are considered to be `glued` together.
      */
@@ -75,6 +83,14 @@ public class DiagramObjectPoint extends BaseClass {
         return DiagramObjectGluePoint != null ? DiagramObjectGluePoint.getRdfid() : null;
     }
 
+    private static void setDiagramObjectGluePoint(BaseClass _this_, BaseClass _object_) {
+        ((DiagramObjectPoint) _this_).setDiagramObjectGluePoint(_object_);
+    }
+
+    private static String DiagramObjectGluePointToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).DiagramObjectGluePointToString();
+    }
+
     /**
      * The sequence position of the point, used for defining the order of points for diagram objects acting as a polyline or polygon with more than one point.
      */
@@ -94,6 +110,14 @@ public class DiagramObjectPoint extends BaseClass {
 
     public String sequenceNumberToString() {
         return sequenceNumber != null ? sequenceNumber.toString() : null;
+    }
+
+    private static void setSequenceNumber(BaseClass _this_, String _value_) {
+        ((DiagramObjectPoint) _this_).setSequenceNumber(_value_);
+    }
+
+    private static String sequenceNumberToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).sequenceNumberToString();
     }
 
     /**
@@ -117,6 +141,14 @@ public class DiagramObjectPoint extends BaseClass {
         return xPosition != null ? xPosition.toString() : null;
     }
 
+    private static void setXPosition(BaseClass _this_, String _value_) {
+        ((DiagramObjectPoint) _this_).setXPosition(_value_);
+    }
+
+    private static String xPositionToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).xPositionToString();
+    }
+
     /**
      * The Y coordinate of this point.
      */
@@ -138,6 +170,14 @@ public class DiagramObjectPoint extends BaseClass {
         return yPosition != null ? yPosition.toString() : null;
     }
 
+    private static void setYPosition(BaseClass _this_, String _value_) {
+        ((DiagramObjectPoint) _this_).setYPosition(_value_);
+    }
+
+    private static String yPositionToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).yPositionToString();
+    }
+
     /**
      * The Z coordinate of this point.
      */
@@ -157,6 +197,14 @@ public class DiagramObjectPoint extends BaseClass {
 
     public String zPositionToString() {
         return zPosition != null ? zPosition.toString() : null;
+    }
+
+    private static void setZPosition(BaseClass _this_, String _value_) {
+        ((DiagramObjectPoint) _this_).setZPosition(_value_);
+    }
+
+    private static String zPositionToString(BaseClass _this_) {
+        return ((DiagramObjectPoint) _this_).zPositionToString();
     }
 
     /**
@@ -200,16 +248,12 @@ public class DiagramObjectPoint extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiagramObjectPoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiagramObjectPoint", attrName));
+        return "";
     }
 
     /**
@@ -220,16 +264,12 @@ public class DiagramObjectPoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiagramObjectPoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObjectPoint", attrName, objectValue));
         }
     }
 
@@ -241,16 +281,12 @@ public class DiagramObjectPoint extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiagramObjectPoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiagramObjectPoint", attrName, stringValue));
         }
     }
 
@@ -374,48 +410,36 @@ public class DiagramObjectPoint extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObject", new AttrDetails("DiagramObjectPoint.DiagramObject", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiagramObject", new AttrDetails("DiagramObjectPoint.DiagramObject", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiagramObjectPoint::DiagramObjectToString, DiagramObjectPoint::setDiagramObject, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObjectGluePoint", new AttrDetails("DiagramObjectPoint.DiagramObjectGluePoint", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("DiagramObjectGluePoint", new AttrDetails("DiagramObjectPoint.DiagramObjectGluePoint", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiagramObjectPoint::DiagramObjectGluePointToString, DiagramObjectPoint::setDiagramObjectGluePoint, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("sequenceNumber", new AttrDetails("DiagramObjectPoint.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("sequenceNumber", new AttrDetails("DiagramObjectPoint.sequenceNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiagramObjectPoint::sequenceNumberToString, null, DiagramObjectPoint::setSequenceNumber));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("xPosition", new AttrDetails("DiagramObjectPoint.xPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xPosition", new AttrDetails("DiagramObjectPoint.xPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiagramObjectPoint::xPositionToString, null, DiagramObjectPoint::setXPosition));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("yPosition", new AttrDetails("DiagramObjectPoint.yPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("yPosition", new AttrDetails("DiagramObjectPoint.yPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiagramObjectPoint::yPositionToString, null, DiagramObjectPoint::setYPosition));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("zPosition", new AttrDetails("DiagramObjectPoint.zPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("zPosition", new AttrDetails("DiagramObjectPoint.zPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiagramObjectPoint::zPositionToString, null, DiagramObjectPoint::setZPosition));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectPoint().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiagramObject", new GetterSetter(this::DiagramObjectToString, this::setDiagramObject, null));
-        map.put("DiagramObjectGluePoint", new GetterSetter(this::DiagramObjectGluePointToString, this::setDiagramObjectGluePoint, null));
-        map.put("sequenceNumber", new GetterSetter(this::sequenceNumberToString, null, this::setSequenceNumber));
-        map.put("xPosition", new GetterSetter(this::xPositionToString, null, this::setXPosition));
-        map.put("yPosition", new GetterSetter(this::yPositionToString, null, this::setYPosition));
-        map.put("zPosition", new GetterSetter(this::zPositionToString, null, this::setZPosition));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -54,6 +54,14 @@ public class ReactiveCapabilityCurve extends Curve {
         return getStringFromSet(EquivalentInjection);
     }
 
+    private static void setEquivalentInjection(BaseClass _this_, BaseClass _object_) {
+        ((ReactiveCapabilityCurve) _this_).setEquivalentInjection(_object_);
+    }
+
+    private static String EquivalentInjectionToString(BaseClass _this_) {
+        return ((ReactiveCapabilityCurve) _this_).EquivalentInjectionToString();
+    }
+
     /**
      * The default reactive capability curve for use by a synchronous machine.
      *
@@ -77,6 +85,14 @@ public class ReactiveCapabilityCurve extends Curve {
 
     public String InitiallyUsedBySynchronousMachinesToString() {
         return getStringFromSet(InitiallyUsedBySynchronousMachines);
+    }
+
+    private static void setInitiallyUsedBySynchronousMachines(BaseClass _this_, BaseClass _object_) {
+        ((ReactiveCapabilityCurve) _this_).setInitiallyUsedBySynchronousMachines(_object_);
+    }
+
+    private static String InitiallyUsedBySynchronousMachinesToString(BaseClass _this_) {
+        return ((ReactiveCapabilityCurve) _this_).InitiallyUsedBySynchronousMachinesToString();
     }
 
     /**
@@ -120,16 +136,12 @@ public class ReactiveCapabilityCurve extends Curve {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ReactiveCapabilityCurve", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ReactiveCapabilityCurve", attrName));
+        return "";
     }
 
     /**
@@ -140,16 +152,12 @@ public class ReactiveCapabilityCurve extends Curve {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ReactiveCapabilityCurve", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ReactiveCapabilityCurve", attrName, objectValue));
         }
     }
 
@@ -161,16 +169,12 @@ public class ReactiveCapabilityCurve extends Curve {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ReactiveCapabilityCurve", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ReactiveCapabilityCurve", attrName, stringValue));
         }
     }
 
@@ -294,24 +298,16 @@ public class ReactiveCapabilityCurve extends Curve {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("EquivalentInjection", new AttrDetails("ReactiveCapabilityCurve.EquivalentInjection", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("EquivalentInjection", new AttrDetails("ReactiveCapabilityCurve.EquivalentInjection", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ReactiveCapabilityCurve::EquivalentInjectionToString, ReactiveCapabilityCurve::setEquivalentInjection, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("InitiallyUsedBySynchronousMachines", new AttrDetails("ReactiveCapabilityCurve.InitiallyUsedBySynchronousMachines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("InitiallyUsedBySynchronousMachines", new AttrDetails("ReactiveCapabilityCurve.InitiallyUsedBySynchronousMachines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ReactiveCapabilityCurve::InitiallyUsedBySynchronousMachinesToString, ReactiveCapabilityCurve::setInitiallyUsedBySynchronousMachines, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ReactiveCapabilityCurve().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("EquivalentInjection", new GetterSetter(this::EquivalentInjectionToString, this::setEquivalentInjection, null));
-        map.put("InitiallyUsedBySynchronousMachines", new GetterSetter(this::InitiallyUsedBySynchronousMachinesToString, this::setInitiallyUsedBySynchronousMachines, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

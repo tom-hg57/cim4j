@@ -54,6 +54,14 @@ public class IdentifiedObject extends BaseClass {
         return getStringFromSet(DiagramObjects);
     }
 
+    private static void setDiagramObjects(BaseClass _this_, BaseClass _object_) {
+        ((IdentifiedObject) _this_).setDiagramObjects(_object_);
+    }
+
+    private static String DiagramObjectsToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).DiagramObjectsToString();
+    }
+
     /**
      * The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.
      */
@@ -69,6 +77,14 @@ public class IdentifiedObject extends BaseClass {
 
     public String descriptionToString() {
         return description != null ? description.toString() : null;
+    }
+
+    private static void setDescription(BaseClass _this_, String _value_) {
+        ((IdentifiedObject) _this_).setDescription(_value_);
+    }
+
+    private static String descriptionToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).descriptionToString();
     }
 
     /**
@@ -88,6 +104,14 @@ public class IdentifiedObject extends BaseClass {
         return energyIdentCodeEic != null ? energyIdentCodeEic.toString() : null;
     }
 
+    private static void setEnergyIdentCodeEic(BaseClass _this_, String _value_) {
+        ((IdentifiedObject) _this_).setEnergyIdentCodeEic(_value_);
+    }
+
+    private static String energyIdentCodeEicToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).energyIdentCodeEicToString();
+    }
+
     /**
      * Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended. For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.
      */
@@ -103,6 +127,14 @@ public class IdentifiedObject extends BaseClass {
 
     public String mRIDToString() {
         return mRID != null ? mRID.toString() : null;
+    }
+
+    private static void setMRID(BaseClass _this_, String _value_) {
+        ((IdentifiedObject) _this_).setMRID(_value_);
+    }
+
+    private static String mRIDToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).mRIDToString();
     }
 
     /**
@@ -122,6 +154,14 @@ public class IdentifiedObject extends BaseClass {
         return name != null ? name.toString() : null;
     }
 
+    private static void setName(BaseClass _this_, String _value_) {
+        ((IdentifiedObject) _this_).setName(_value_);
+    }
+
+    private static String nameToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).nameToString();
+    }
+
     /**
      * The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum.
      */
@@ -137,6 +177,14 @@ public class IdentifiedObject extends BaseClass {
 
     public String shortNameToString() {
         return shortName != null ? shortName.toString() : null;
+    }
+
+    private static void setShortName(BaseClass _this_, String _value_) {
+        ((IdentifiedObject) _this_).setShortName(_value_);
+    }
+
+    private static String shortNameToString(BaseClass _this_) {
+        return ((IdentifiedObject) _this_).shortNameToString();
     }
 
     /**
@@ -180,16 +228,12 @@ public class IdentifiedObject extends BaseClass {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("IdentifiedObject", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "IdentifiedObject", attrName));
+        return "";
     }
 
     /**
@@ -200,16 +244,12 @@ public class IdentifiedObject extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("IdentifiedObject", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "IdentifiedObject", attrName, objectValue));
         }
     }
 
@@ -221,16 +261,12 @@ public class IdentifiedObject extends BaseClass {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("IdentifiedObject", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "IdentifiedObject", attrName, stringValue));
         }
     }
 
@@ -354,7 +390,7 @@ public class IdentifiedObject extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DL);
-            map.put("DiagramObjects", new AttrDetails("IdentifiedObject.DiagramObjects", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiagramObjects", new AttrDetails("IdentifiedObject.DiagramObjects", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, IdentifiedObject::DiagramObjectsToString, IdentifiedObject::setDiagramObjects, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
@@ -364,14 +400,14 @@ public class IdentifiedObject extends BaseClass {
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.OP);
             profiles.add(CGMESProfile.TP);
-            map.put("description", new AttrDetails("IdentifiedObject.description", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("description", new AttrDetails("IdentifiedObject.description", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, IdentifiedObject::descriptionToString, null, IdentifiedObject::setDescription));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.TP);
-            map.put("energyIdentCodeEic", new AttrDetails("IdentifiedObject.energyIdentCodeEic", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("energyIdentCodeEic", new AttrDetails("IdentifiedObject.energyIdentCodeEic", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, IdentifiedObject::energyIdentCodeEicToString, null, IdentifiedObject::setEnergyIdentCodeEic));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
@@ -385,7 +421,7 @@ public class IdentifiedObject extends BaseClass {
             profiles.add(CGMESProfile.SSH);
             profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.TP);
-            map.put("mRID", new AttrDetails("IdentifiedObject.mRID", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("mRID", new AttrDetails("IdentifiedObject.mRID", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, IdentifiedObject::mRIDToString, null, IdentifiedObject::setMRID));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
@@ -397,30 +433,18 @@ public class IdentifiedObject extends BaseClass {
             profiles.add(CGMESProfile.OP);
             profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.TP);
-            map.put("name", new AttrDetails("IdentifiedObject.name", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("name", new AttrDetails("IdentifiedObject.name", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, IdentifiedObject::nameToString, null, IdentifiedObject::setName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.TP);
-            map.put("shortName", new AttrDetails("IdentifiedObject.shortName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("shortName", new AttrDetails("IdentifiedObject.shortName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, IdentifiedObject::shortNameToString, null, IdentifiedObject::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new IdentifiedObject().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiagramObjects", new GetterSetter(this::DiagramObjectsToString, this::setDiagramObjects, null));
-        map.put("description", new GetterSetter(this::descriptionToString, null, this::setDescription));
-        map.put("energyIdentCodeEic", new GetterSetter(this::energyIdentCodeEicToString, null, this::setEnergyIdentCodeEic));
-        map.put("mRID", new GetterSetter(this::mRIDToString, null, this::setMRID));
-        map.put("name", new GetterSetter(this::nameToString, null, this::setName));
-        map.put("shortName", new GetterSetter(this::shortNameToString, null, this::setShortName));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

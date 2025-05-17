@@ -50,6 +50,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return esc != null ? esc.toString() : null;
     }
 
+    private static void setEsc(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setEsc(_value_);
+    }
+
+    private static String escToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).escToString();
+    }
+
     /**
      * Discontinuous controller gain ().  Typical Value = 400.
      */
@@ -69,6 +77,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String kanToString() {
         return kan != null ? kan.toString() : null;
+    }
+
+    private static void setKan(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setKan(_value_);
+    }
+
+    private static String kanToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).kanToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return ketl != null ? ketl.toString() : null;
     }
 
+    private static void setKetl(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setKetl(_value_);
+    }
+
+    private static String ketlToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).ketlToString();
+    }
+
     /**
      * Discontinuous controller time constant ().  Typical Value = 0.08.
      */
@@ -111,6 +135,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String tanToString() {
         return tan != null ? tan.toString() : null;
+    }
+
+    private static void setTan(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setTan(_value_);
+    }
+
+    private static String tanToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).tanToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return td != null ? td.toString() : null;
     }
 
+    private static void setTd(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setTd(_value_);
+    }
+
+    private static String tdToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).tdToString();
+    }
+
     /**
      * Time constant ().  Typical Value = 0.025.
      */
@@ -153,6 +193,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String tl1ToString() {
         return tl1 != null ? tl1.toString() : null;
+    }
+
+    private static void setTl1(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setTl1(_value_);
+    }
+
+    private static String tl1ToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).tl1ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return tl2 != null ? tl2.toString() : null;
     }
 
+    private static void setTl2(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setTl2(_value_);
+    }
+
+    private static String tl2ToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).tl2ToString();
+    }
+
     /**
      * DEC washout time constant ().  Typical Value = 5.
      */
@@ -195,6 +251,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String tw5ToString() {
         return tw5 != null ? tw5.toString() : null;
+    }
+
+    private static void setTw5(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setTw5(_value_);
+    }
+
+    private static String tw5ToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).tw5ToString();
     }
 
     /**
@@ -218,6 +282,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return val != null ? val.toString() : null;
     }
 
+    private static void setVal(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVal(_value_);
+    }
+
+    private static String valToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).valToString();
+    }
+
     /**
      * Limiter for Van ().
      */
@@ -237,6 +309,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String vanmaxToString() {
         return vanmax != null ? vanmax.toString() : null;
+    }
+
+    private static void setVanmax(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVanmax(_value_);
+    }
+
+    private static String vanmaxToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vanmaxToString();
     }
 
     /**
@@ -260,6 +340,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return vomax != null ? vomax.toString() : null;
     }
 
+    private static void setVomax(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVomax(_value_);
+    }
+
+    private static String vomaxToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vomaxToString();
+    }
+
     /**
      * Limiter ().  Typical Value = 0.1.
      */
@@ -279,6 +367,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String vominToString() {
         return vomin != null ? vomin.toString() : null;
+    }
+
+    private static void setVomin(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVomin(_value_);
+    }
+
+    private static String vominToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vominToString();
     }
 
     /**
@@ -302,6 +398,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return vsmax != null ? vsmax.toString() : null;
     }
 
+    private static void setVsmax(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVsmax(_value_);
+    }
+
+    private static String vsmaxToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vsmaxToString();
+    }
+
     /**
      * Limiter ().  Typical Value = -0.066.
      */
@@ -321,6 +425,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String vsminToString() {
         return vsmin != null ? vsmin.toString() : null;
+    }
+
+    private static void setVsmin(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVsmin(_value_);
+    }
+
+    private static String vsminToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vsminToString();
     }
 
     /**
@@ -344,6 +456,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return vtc != null ? vtc.toString() : null;
     }
 
+    private static void setVtc(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVtc(_value_);
+    }
+
+    private static String vtcToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vtcToString();
+    }
+
     /**
      * Voltage reference ().  Typical Value = 1.1.
      */
@@ -363,6 +483,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String vtlmtToString() {
         return vtlmt != null ? vtlmt.toString() : null;
+    }
+
+    private static void setVtlmt(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVtlmt(_value_);
+    }
+
+    private static String vtlmtToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vtlmtToString();
     }
 
     /**
@@ -386,6 +514,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         return vtm != null ? vtm.toString() : null;
     }
 
+    private static void setVtm(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVtm(_value_);
+    }
+
+    private static String vtmToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vtmToString();
+    }
+
     /**
      * Voltage limits ().  Typical Value = 1.12.
      */
@@ -405,6 +541,14 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
 
     public String vtnToString() {
         return vtn != null ? vtn.toString() : null;
+    }
+
+    private static void setVtn(BaseClass _this_, String _value_) {
+        ((DiscExcContIEEEDEC1A) _this_).setVtn(_value_);
+    }
+
+    private static String vtnToString(BaseClass _this_) {
+        return ((DiscExcContIEEEDEC1A) _this_).vtnToString();
     }
 
     /**
@@ -448,16 +592,12 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("DiscExcContIEEEDEC1A", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "DiscExcContIEEEDEC1A", attrName));
+        return "";
     }
 
     /**
@@ -468,16 +608,12 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("DiscExcContIEEEDEC1A", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscExcContIEEEDEC1A", attrName, objectValue));
         }
     }
 
@@ -489,16 +625,12 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("DiscExcContIEEEDEC1A", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "DiscExcContIEEEDEC1A", attrName, stringValue));
         }
     }
 
@@ -622,120 +754,96 @@ public class DiscExcContIEEEDEC1A extends DiscontinuousExcitationControlDynamics
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("esc", new AttrDetails("DiscExcContIEEEDEC1A.esc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("esc", new AttrDetails("DiscExcContIEEEDEC1A.esc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::escToString, null, DiscExcContIEEEDEC1A::setEsc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kan", new AttrDetails("DiscExcContIEEEDEC1A.kan", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("kan", new AttrDetails("DiscExcContIEEEDEC1A.kan", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::kanToString, null, DiscExcContIEEEDEC1A::setKan));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ketl", new AttrDetails("DiscExcContIEEEDEC1A.ketl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("ketl", new AttrDetails("DiscExcContIEEEDEC1A.ketl", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::ketlToString, null, DiscExcContIEEEDEC1A::setKetl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tan", new AttrDetails("DiscExcContIEEEDEC1A.tan", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tan", new AttrDetails("DiscExcContIEEEDEC1A.tan", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::tanToString, null, DiscExcContIEEEDEC1A::setTan));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("td", new AttrDetails("DiscExcContIEEEDEC1A.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("td", new AttrDetails("DiscExcContIEEEDEC1A.td", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::tdToString, null, DiscExcContIEEEDEC1A::setTd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tl1", new AttrDetails("DiscExcContIEEEDEC1A.tl1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tl1", new AttrDetails("DiscExcContIEEEDEC1A.tl1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::tl1ToString, null, DiscExcContIEEEDEC1A::setTl1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tl2", new AttrDetails("DiscExcContIEEEDEC1A.tl2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tl2", new AttrDetails("DiscExcContIEEEDEC1A.tl2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::tl2ToString, null, DiscExcContIEEEDEC1A::setTl2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tw5", new AttrDetails("DiscExcContIEEEDEC1A.tw5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tw5", new AttrDetails("DiscExcContIEEEDEC1A.tw5", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::tw5ToString, null, DiscExcContIEEEDEC1A::setTw5));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("val", new AttrDetails("DiscExcContIEEEDEC1A.val", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("val", new AttrDetails("DiscExcContIEEEDEC1A.val", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::valToString, null, DiscExcContIEEEDEC1A::setVal));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vanmax", new AttrDetails("DiscExcContIEEEDEC1A.vanmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vanmax", new AttrDetails("DiscExcContIEEEDEC1A.vanmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vanmaxToString, null, DiscExcContIEEEDEC1A::setVanmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vomax", new AttrDetails("DiscExcContIEEEDEC1A.vomax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vomax", new AttrDetails("DiscExcContIEEEDEC1A.vomax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vomaxToString, null, DiscExcContIEEEDEC1A::setVomax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vomin", new AttrDetails("DiscExcContIEEEDEC1A.vomin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vomin", new AttrDetails("DiscExcContIEEEDEC1A.vomin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vominToString, null, DiscExcContIEEEDEC1A::setVomin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vsmax", new AttrDetails("DiscExcContIEEEDEC1A.vsmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vsmax", new AttrDetails("DiscExcContIEEEDEC1A.vsmax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vsmaxToString, null, DiscExcContIEEEDEC1A::setVsmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vsmin", new AttrDetails("DiscExcContIEEEDEC1A.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vsmin", new AttrDetails("DiscExcContIEEEDEC1A.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vsminToString, null, DiscExcContIEEEDEC1A::setVsmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vtc", new AttrDetails("DiscExcContIEEEDEC1A.vtc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vtc", new AttrDetails("DiscExcContIEEEDEC1A.vtc", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vtcToString, null, DiscExcContIEEEDEC1A::setVtc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vtlmt", new AttrDetails("DiscExcContIEEEDEC1A.vtlmt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vtlmt", new AttrDetails("DiscExcContIEEEDEC1A.vtlmt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vtlmtToString, null, DiscExcContIEEEDEC1A::setVtlmt));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vtm", new AttrDetails("DiscExcContIEEEDEC1A.vtm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vtm", new AttrDetails("DiscExcContIEEEDEC1A.vtm", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vtmToString, null, DiscExcContIEEEDEC1A::setVtm));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vtn", new AttrDetails("DiscExcContIEEEDEC1A.vtn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("vtn", new AttrDetails("DiscExcContIEEEDEC1A.vtn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC1A::vtnToString, null, DiscExcContIEEEDEC1A::setVtn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscExcContIEEEDEC1A().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("esc", new GetterSetter(this::escToString, null, this::setEsc));
-        map.put("kan", new GetterSetter(this::kanToString, null, this::setKan));
-        map.put("ketl", new GetterSetter(this::ketlToString, null, this::setKetl));
-        map.put("tan", new GetterSetter(this::tanToString, null, this::setTan));
-        map.put("td", new GetterSetter(this::tdToString, null, this::setTd));
-        map.put("tl1", new GetterSetter(this::tl1ToString, null, this::setTl1));
-        map.put("tl2", new GetterSetter(this::tl2ToString, null, this::setTl2));
-        map.put("tw5", new GetterSetter(this::tw5ToString, null, this::setTw5));
-        map.put("val", new GetterSetter(this::valToString, null, this::setVal));
-        map.put("vanmax", new GetterSetter(this::vanmaxToString, null, this::setVanmax));
-        map.put("vomax", new GetterSetter(this::vomaxToString, null, this::setVomax));
-        map.put("vomin", new GetterSetter(this::vominToString, null, this::setVomin));
-        map.put("vsmax", new GetterSetter(this::vsmaxToString, null, this::setVsmax));
-        map.put("vsmin", new GetterSetter(this::vsminToString, null, this::setVsmin));
-        map.put("vtc", new GetterSetter(this::vtcToString, null, this::setVtc));
-        map.put("vtlmt", new GetterSetter(this::vtlmtToString, null, this::setVtlmt));
-        map.put("vtm", new GetterSetter(this::vtmToString, null, this::setVtm));
-        map.put("vtn", new GetterSetter(this::vtnToString, null, this::setVtn));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -50,6 +50,14 @@ public class ACLineSegment extends Conductor {
         return b0ch != null ? b0ch.toString() : null;
     }
 
+    private static void setB0ch(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setB0ch(_value_);
+    }
+
+    private static String b0chToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).b0chToString();
+    }
+
     /**
      * Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line.
      */
@@ -69,6 +77,14 @@ public class ACLineSegment extends Conductor {
 
     public String bchToString() {
         return bch != null ? bch.toString() : null;
+    }
+
+    private static void setBch(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setBch(_value_);
+    }
+
+    private static String bchToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).bchToString();
     }
 
     /**
@@ -92,6 +108,14 @@ public class ACLineSegment extends Conductor {
         return g0ch != null ? g0ch.toString() : null;
     }
 
+    private static void setG0ch(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setG0ch(_value_);
+    }
+
+    private static String g0chToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).g0chToString();
+    }
+
     /**
      * Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section.
      */
@@ -111,6 +135,14 @@ public class ACLineSegment extends Conductor {
 
     public String gchToString() {
         return gch != null ? gch.toString() : null;
+    }
+
+    private static void setGch(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setGch(_value_);
+    }
+
+    private static String gchToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).gchToString();
     }
 
     /**
@@ -134,6 +166,14 @@ public class ACLineSegment extends Conductor {
         return r != null ? r.toString() : null;
     }
 
+    private static void setR(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setR(_value_);
+    }
+
+    private static String rToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).rToString();
+    }
+
     /**
      * Zero sequence series resistance of the entire line section.
      */
@@ -153,6 +193,14 @@ public class ACLineSegment extends Conductor {
 
     public String r0ToString() {
         return r0 != null ? r0.toString() : null;
+    }
+
+    private static void setR0(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setR0(_value_);
+    }
+
+    private static String r0ToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).r0ToString();
     }
 
     /**
@@ -176,6 +224,14 @@ public class ACLineSegment extends Conductor {
         return shortCircuitEndTemperature != null ? shortCircuitEndTemperature.toString() : null;
     }
 
+    private static void setShortCircuitEndTemperature(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setShortCircuitEndTemperature(_value_);
+    }
+
+    private static String shortCircuitEndTemperatureToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).shortCircuitEndTemperatureToString();
+    }
+
     /**
      * Positive sequence series reactance of the entire line section.
      */
@@ -197,6 +253,14 @@ public class ACLineSegment extends Conductor {
         return x != null ? x.toString() : null;
     }
 
+    private static void setX(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setX(_value_);
+    }
+
+    private static String xToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).xToString();
+    }
+
     /**
      * Zero sequence series reactance of the entire line section.
      */
@@ -216,6 +280,14 @@ public class ACLineSegment extends Conductor {
 
     public String x0ToString() {
         return x0 != null ? x0.toString() : null;
+    }
+
+    private static void setX0(BaseClass _this_, String _value_) {
+        ((ACLineSegment) _this_).setX0(_value_);
+    }
+
+    private static String x0ToString(BaseClass _this_) {
+        return ((ACLineSegment) _this_).x0ToString();
     }
 
     /**
@@ -259,16 +331,12 @@ public class ACLineSegment extends Conductor {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ACLineSegment", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ACLineSegment", attrName));
+        return "";
     }
 
     /**
@@ -279,16 +347,12 @@ public class ACLineSegment extends Conductor {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ACLineSegment", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACLineSegment", attrName, objectValue));
         }
     }
 
@@ -300,16 +364,12 @@ public class ACLineSegment extends Conductor {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ACLineSegment", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ACLineSegment", attrName, stringValue));
         }
     }
 
@@ -433,66 +493,51 @@ public class ACLineSegment extends Conductor {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("b0ch", new AttrDetails("ACLineSegment.b0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("b0ch", new AttrDetails("ACLineSegment.b0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::b0chToString, null, ACLineSegment::setB0ch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("bch", new AttrDetails("ACLineSegment.bch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("bch", new AttrDetails("ACLineSegment.bch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::bchToString, null, ACLineSegment::setBch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("g0ch", new AttrDetails("ACLineSegment.g0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("g0ch", new AttrDetails("ACLineSegment.g0ch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::g0chToString, null, ACLineSegment::setG0ch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("gch", new AttrDetails("ACLineSegment.gch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("gch", new AttrDetails("ACLineSegment.gch", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::gchToString, null, ACLineSegment::setGch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r", new AttrDetails("ACLineSegment.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r", new AttrDetails("ACLineSegment.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::rToString, null, ACLineSegment::setR));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("r0", new AttrDetails("ACLineSegment.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("r0", new AttrDetails("ACLineSegment.r0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::r0ToString, null, ACLineSegment::setR0));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("shortCircuitEndTemperature", new AttrDetails("ACLineSegment.shortCircuitEndTemperature", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("shortCircuitEndTemperature", new AttrDetails("ACLineSegment.shortCircuitEndTemperature", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::shortCircuitEndTemperatureToString, null, ACLineSegment::setShortCircuitEndTemperature));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x", new AttrDetails("ACLineSegment.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x", new AttrDetails("ACLineSegment.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::xToString, null, ACLineSegment::setX));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("x0", new AttrDetails("ACLineSegment.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("x0", new AttrDetails("ACLineSegment.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::x0ToString, null, ACLineSegment::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACLineSegment().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("b0ch", new GetterSetter(this::b0chToString, null, this::setB0ch));
-        map.put("bch", new GetterSetter(this::bchToString, null, this::setBch));
-        map.put("g0ch", new GetterSetter(this::g0chToString, null, this::setG0ch));
-        map.put("gch", new GetterSetter(this::gchToString, null, this::setGch));
-        map.put("r", new GetterSetter(this::rToString, null, this::setR));
-        map.put("r0", new GetterSetter(this::r0ToString, null, this::setR0));
-        map.put("shortCircuitEndTemperature", new GetterSetter(this::shortCircuitEndTemperatureToString, null, this::setShortCircuitEndTemperature));
-        map.put("x", new GetterSetter(this::xToString, null, this::setX));
-        map.put("x0", new GetterSetter(this::x0ToString, null, this::setX0));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

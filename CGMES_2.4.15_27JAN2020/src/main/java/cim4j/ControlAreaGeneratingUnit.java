@@ -52,6 +52,14 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
         return ControlArea != null ? ControlArea.getRdfid() : null;
     }
 
+    private static void setControlArea(BaseClass _this_, BaseClass _object_) {
+        ((ControlAreaGeneratingUnit) _this_).setControlArea(_object_);
+    }
+
+    private static String ControlAreaToString(BaseClass _this_) {
+        return ((ControlAreaGeneratingUnit) _this_).ControlAreaToString();
+    }
+
     /**
      * The generating unit specified for this control area.  Note that a control area should include a GeneratingUnit only once.
      */
@@ -73,6 +81,14 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
 
     public String GeneratingUnitToString() {
         return GeneratingUnit != null ? GeneratingUnit.getRdfid() : null;
+    }
+
+    private static void setGeneratingUnit(BaseClass _this_, BaseClass _object_) {
+        ((ControlAreaGeneratingUnit) _this_).setGeneratingUnit(_object_);
+    }
+
+    private static String GeneratingUnitToString(BaseClass _this_) {
+        return ((ControlAreaGeneratingUnit) _this_).GeneratingUnitToString();
     }
 
     /**
@@ -116,16 +132,12 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
      */
     @Override
     public String getAttribute(String attrName) {
-        return getAttribute("ControlAreaGeneratingUnit", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ControlAreaGeneratingUnit", attrName));
+        return "";
     }
 
     /**
@@ -136,16 +148,12 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ControlAreaGeneratingUnit", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).objectSetter;
+            setterFunction.accept(this, objectValue);
         } else {
-            super.setAttribute(className, attrName, objectValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ControlAreaGeneratingUnit", attrName, objectValue));
         }
     }
 
@@ -157,16 +165,12 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
      */
     @Override
     public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ControlAreaGeneratingUnit", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).stringSetter;
+            setterFunction.accept(this, stringValue);
         } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ControlAreaGeneratingUnit", attrName, stringValue));
         }
     }
 
@@ -290,24 +294,16 @@ public class ControlAreaGeneratingUnit extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ControlArea", new AttrDetails("ControlAreaGeneratingUnit.ControlArea", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ControlArea", new AttrDetails("ControlAreaGeneratingUnit.ControlArea", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ControlAreaGeneratingUnit::ControlAreaToString, ControlAreaGeneratingUnit::setControlArea, null));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("GeneratingUnit", new AttrDetails("ControlAreaGeneratingUnit.GeneratingUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("GeneratingUnit", new AttrDetails("ControlAreaGeneratingUnit.GeneratingUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ControlAreaGeneratingUnit::GeneratingUnitToString, ControlAreaGeneratingUnit::setGeneratingUnit, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
         ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ControlAreaGeneratingUnit().allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ControlArea", new GetterSetter(this::ControlAreaToString, this::setControlArea, null));
-        map.put("GeneratingUnit", new GetterSetter(this::GeneratingUnitToString, this::setGeneratingUnit, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
