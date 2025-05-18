@@ -23,10 +23,17 @@ public class ExcDC2A extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcDC2A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcDC2A() {
-        setCimType("ExcDC2A");
+    public ExcDC2A(String rdfid) {
+        super("ExcDC2A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcDC2A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -842,7 +849,7 @@ public class ExcDC2A extends ExcitationSystemDynamics {
             map.put("vtlim", new AttrDetails("ExcDC2A.vtlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcDC2A::vtlimToString, null, ExcDC2A::setVtlim));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcDC2A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcDC2A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Quality61850 extends BaseClass {
     private static final Logging LOG = Logging.getLogger(Quality61850.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Quality61850() {
-        setCimType("Quality61850");
+    public Quality61850(String rdfid) {
+        super("Quality61850", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Quality61850(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -630,7 +637,7 @@ public class Quality61850 extends BaseClass {
             map.put("validity", new AttrDetails("Quality61850.validity", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Quality61850::validityToString, null, Quality61850::setValidity));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Quality61850().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Quality61850(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

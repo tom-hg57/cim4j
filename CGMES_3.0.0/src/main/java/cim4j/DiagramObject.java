@@ -23,10 +23,17 @@ public class DiagramObject extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(DiagramObject.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiagramObject() {
-        setCimType("DiagramObject");
+    public DiagramObject(String rdfid) {
+        super("DiagramObject", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiagramObject(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -584,7 +591,7 @@ public class DiagramObject extends IdentifiedObject {
             map.put("rotation", new AttrDetails("DiagramObject.rotation", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiagramObject::rotationToString, null, DiagramObject::setRotation));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObject().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObject(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

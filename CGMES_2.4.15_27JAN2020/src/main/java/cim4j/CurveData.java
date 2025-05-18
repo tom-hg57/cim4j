@@ -23,10 +23,17 @@ public class CurveData extends BaseClass {
     private static final Logging LOG = Logging.getLogger(CurveData.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CurveData() {
-        setCimType("CurveData");
+    public CurveData(String rdfid) {
+        super("CurveData", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CurveData(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -368,7 +375,7 @@ public class CurveData extends BaseClass {
             map.put("y2value", new AttrDetails("CurveData.y2value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, CurveData::y2valueToString, null, CurveData::setY2value));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurveData().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurveData(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

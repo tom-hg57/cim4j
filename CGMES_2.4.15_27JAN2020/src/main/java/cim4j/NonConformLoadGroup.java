@@ -23,10 +23,17 @@ public class NonConformLoadGroup extends LoadGroup {
     private static final Logging LOG = Logging.getLogger(NonConformLoadGroup.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NonConformLoadGroup() {
-        setCimType("NonConformLoadGroup");
+    public NonConformLoadGroup(String rdfid) {
+        super("NonConformLoadGroup", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NonConformLoadGroup(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class NonConformLoadGroup extends LoadGroup {
             map.put("NonConformLoadSchedules", new AttrDetails("NonConformLoadGroup.NonConformLoadSchedules", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, NonConformLoadGroup::NonConformLoadSchedulesToString, NonConformLoadGroup::setNonConformLoadSchedules, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoadGroup().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoadGroup(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

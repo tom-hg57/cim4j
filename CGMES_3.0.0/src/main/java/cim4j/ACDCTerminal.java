@@ -23,10 +23,17 @@ public class ACDCTerminal extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ACDCTerminal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ACDCTerminal() {
-        setCimType("ACDCTerminal");
+    public ACDCTerminal(String rdfid) {
+        super("ACDCTerminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ACDCTerminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -410,7 +417,7 @@ public class ACDCTerminal extends IdentifiedObject {
             map.put("sequenceNumber", new AttrDetails("ACDCTerminal.sequenceNumber", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ACDCTerminal::sequenceNumberToString, null, ACDCTerminal::setSequenceNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCTerminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCTerminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

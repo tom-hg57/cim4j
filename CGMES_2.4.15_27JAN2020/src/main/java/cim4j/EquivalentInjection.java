@@ -23,10 +23,17 @@ public class EquivalentInjection extends EquivalentEquipment {
     private static final Logging LOG = Logging.getLogger(EquivalentInjection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquivalentInjection() {
-        setCimType("EquivalentInjection");
+    public EquivalentInjection(String rdfid) {
+        super("EquivalentInjection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquivalentInjection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -776,7 +783,7 @@ public class EquivalentInjection extends EquivalentEquipment {
             map.put("x2", new AttrDetails("EquivalentInjection.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentInjection::x2ToString, null, EquivalentInjection::setX2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentInjection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentInjection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

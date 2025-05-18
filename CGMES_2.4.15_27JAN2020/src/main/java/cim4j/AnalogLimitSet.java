@@ -23,10 +23,17 @@ public class AnalogLimitSet extends LimitSet {
     private static final Logging LOG = Logging.getLogger(AnalogLimitSet.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AnalogLimitSet() {
-        setCimType("AnalogLimitSet");
+    public AnalogLimitSet(String rdfid) {
+        super("AnalogLimitSet", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AnalogLimitSet(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class AnalogLimitSet extends LimitSet {
             map.put("Measurements", new AttrDetails("AnalogLimitSet.Measurements", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AnalogLimitSet::MeasurementsToString, AnalogLimitSet::setMeasurements, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogLimitSet().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogLimitSet(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

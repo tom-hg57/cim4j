@@ -23,10 +23,17 @@ public class MeasurementValueSource extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(MeasurementValueSource.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MeasurementValueSource() {
-        setCimType("MeasurementValueSource");
+    public MeasurementValueSource(String rdfid) {
+        super("MeasurementValueSource", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MeasurementValueSource(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class MeasurementValueSource extends IdentifiedObject {
             map.put("MeasurementValues", new AttrDetails("MeasurementValueSource.MeasurementValues", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, MeasurementValueSource::MeasurementValuesToString, MeasurementValueSource::setMeasurementValues, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValueSource().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValueSource(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

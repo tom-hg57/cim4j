@@ -23,10 +23,17 @@ public class DiscontinuousExcitationControlUserDefined extends DiscontinuousExci
     private static final Logging LOG = Logging.getLogger(DiscontinuousExcitationControlUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiscontinuousExcitationControlUserDefined() {
-        setCimType("DiscontinuousExcitationControlUserDefined");
+    public DiscontinuousExcitationControlUserDefined(String rdfid) {
+        super("DiscontinuousExcitationControlUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiscontinuousExcitationControlUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class DiscontinuousExcitationControlUserDefined extends DiscontinuousExci
             map.put("proprietary", new AttrDetails("DiscontinuousExcitationControlUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DiscontinuousExcitationControlUserDefined::proprietaryToString, null, DiscontinuousExcitationControlUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscontinuousExcitationControlUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscontinuousExcitationControlUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

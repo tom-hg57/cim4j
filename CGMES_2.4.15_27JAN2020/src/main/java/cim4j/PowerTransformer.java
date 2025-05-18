@@ -23,10 +23,17 @@ public class PowerTransformer extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(PowerTransformer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerTransformer() {
-        setCimType("PowerTransformer");
+    public PowerTransformer(String rdfid) {
+        super("PowerTransformer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerTransformer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -472,7 +479,7 @@ public class PowerTransformer extends ConductingEquipment {
             map.put("operationalValuesConsidered", new AttrDetails("PowerTransformer.operationalValuesConsidered", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformer::operationalValuesConsideredToString, null, PowerTransformer::setOperationalValuesConsidered));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

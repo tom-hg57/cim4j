@@ -23,10 +23,17 @@ public class ControlArea extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(ControlArea.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ControlArea() {
-        setCimType("ControlArea");
+    public ControlArea(String rdfid) {
+        super("ControlArea", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ControlArea(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -440,7 +447,7 @@ public class ControlArea extends PowerSystemResource {
             map.put("type", new AttrDetails("ControlArea.type", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, ControlArea::typeToString, null, ControlArea::setType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ControlArea().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ControlArea(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

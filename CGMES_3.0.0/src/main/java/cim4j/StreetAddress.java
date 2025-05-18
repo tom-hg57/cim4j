@@ -23,10 +23,17 @@ public class StreetAddress extends BaseClass {
     private static final Logging LOG = Logging.getLogger(StreetAddress.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StreetAddress() {
-        setCimType("StreetAddress");
+    public StreetAddress(String rdfid) {
+        super("StreetAddress", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StreetAddress(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -425,7 +432,7 @@ public class StreetAddress extends BaseClass {
             map.put("townDetail", new AttrDetails("StreetAddress.townDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::townDetailToString, StreetAddress::setTownDetail, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetAddress().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetAddress(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

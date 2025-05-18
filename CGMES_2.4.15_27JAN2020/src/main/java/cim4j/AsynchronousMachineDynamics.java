@@ -23,10 +23,17 @@ public class AsynchronousMachineDynamics extends RotatingMachineDynamics {
     private static final Logging LOG = Logging.getLogger(AsynchronousMachineDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AsynchronousMachineDynamics() {
-        setCimType("AsynchronousMachineDynamics");
+    public AsynchronousMachineDynamics(String rdfid) {
+        super("AsynchronousMachineDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AsynchronousMachineDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -380,7 +387,7 @@ public class AsynchronousMachineDynamics extends RotatingMachineDynamics {
             map.put("WindTurbineType1or2Dynamics", new AttrDetails("AsynchronousMachineDynamics.WindTurbineType1or2Dynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AsynchronousMachineDynamics::WindTurbineType1or2DynamicsToString, AsynchronousMachineDynamics::setWindTurbineType1or2Dynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

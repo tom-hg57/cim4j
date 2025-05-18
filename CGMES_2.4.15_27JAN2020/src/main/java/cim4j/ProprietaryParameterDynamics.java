@@ -23,10 +23,17 @@ public class ProprietaryParameterDynamics extends BaseClass {
     private static final Logging LOG = Logging.getLogger(ProprietaryParameterDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ProprietaryParameterDynamics() {
-        setCimType("ProprietaryParameterDynamics");
+    public ProprietaryParameterDynamics(String rdfid) {
+        super("ProprietaryParameterDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ProprietaryParameterDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1014,7 +1021,7 @@ public class ProprietaryParameterDynamics extends BaseClass {
             map.put("parameterNumber", new AttrDetails("ProprietaryParameterDynamics.parameterNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ProprietaryParameterDynamics::parameterNumberToString, null, ProprietaryParameterDynamics::setParameterNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProprietaryParameterDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProprietaryParameterDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class ExcitationSystemUserDefined extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcitationSystemUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcitationSystemUserDefined() {
-        setCimType("ExcitationSystemUserDefined");
+    public ExcitationSystemUserDefined(String rdfid) {
+        super("ExcitationSystemUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcitationSystemUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class ExcitationSystemUserDefined extends ExcitationSystemDynamics {
             map.put("proprietary", new AttrDetails("ExcitationSystemUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcitationSystemUserDefined::proprietaryToString, null, ExcitationSystemUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcitationSystemUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcitationSystemUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

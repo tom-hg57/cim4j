@@ -23,10 +23,17 @@ public class LoadStatic extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LoadStatic.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadStatic() {
-        setCimType("LoadStatic");
+    public LoadStatic(String rdfid) {
+        super("LoadStatic", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadStatic(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -840,7 +847,7 @@ public class LoadStatic extends IdentifiedObject {
             map.put("staticLoadModelType", new AttrDetails("LoadStatic.staticLoadModelType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, LoadStatic::staticLoadModelTypeToString, null, LoadStatic::setStaticLoadModelType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadStatic().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadStatic(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

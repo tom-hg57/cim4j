@@ -23,10 +23,17 @@ public class LimitSet extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LimitSet.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LimitSet() {
-        setCimType("LimitSet");
+    public LimitSet(String rdfid) {
+        super("LimitSet", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LimitSet(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class LimitSet extends IdentifiedObject {
             map.put("isPercentageLimits", new AttrDetails("LimitSet.isPercentageLimits", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LimitSet::isPercentageLimitsToString, null, LimitSet::setIsPercentageLimits));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LimitSet().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LimitSet(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

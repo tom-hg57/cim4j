@@ -23,10 +23,17 @@ public class StreetDetail extends BaseClass {
     private static final Logging LOG = Logging.getLogger(StreetDetail.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StreetDetail() {
-        setCimType("StreetDetail");
+    public StreetDetail(String rdfid) {
+        super("StreetDetail", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StreetDetail(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -624,7 +631,7 @@ public class StreetDetail extends BaseClass {
             map.put("withinTownLimits", new AttrDetails("StreetDetail.withinTownLimits", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetDetail::withinTownLimitsToString, null, StreetDetail::setWithinTownLimits));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetDetail().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetDetail(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

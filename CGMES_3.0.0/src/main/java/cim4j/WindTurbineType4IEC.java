@@ -23,10 +23,17 @@ public class WindTurbineType4IEC extends WindTurbineType3or4IEC {
     private static final Logging LOG = Logging.getLogger(WindTurbineType4IEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindTurbineType4IEC() {
-        setCimType("WindTurbineType4IEC");
+    public WindTurbineType4IEC(String rdfid) {
+        super("WindTurbineType4IEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindTurbineType4IEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class WindTurbineType4IEC extends WindTurbineType3or4IEC {
             map.put("WindGenType3aIEC", new AttrDetails("WindTurbineType4IEC.WindGenType3aIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType4IEC::WindGenType3aIECToString, WindTurbineType4IEC::setWindGenType3aIEC, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType4IEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType4IEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

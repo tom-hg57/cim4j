@@ -23,10 +23,17 @@ public class WindContQPQULimIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContQPQULimIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContQPQULimIEC() {
-        setCimType("WindContQPQULimIEC");
+    public WindContQPQULimIEC(String rdfid) {
+        super("WindContQPQULimIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContQPQULimIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -374,7 +381,7 @@ public class WindContQPQULimIEC extends IdentifiedObject {
             map.put("tufiltql", new AttrDetails("WindContQPQULimIEC.tufiltql", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContQPQULimIEC::tufiltqlToString, null, WindContQPQULimIEC::setTufiltql));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQPQULimIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQPQULimIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

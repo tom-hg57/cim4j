@@ -23,10 +23,17 @@ public class PssSH extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssSH.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssSH() {
-        setCimType("PssSH");
+    public PssSH(String rdfid) {
+        super("PssSH", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssSH(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -672,7 +679,7 @@ public class PssSH extends PowerSystemStabilizerDynamics {
             map.put("vsmin", new AttrDetails("PssSH.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSH::vsminToString, null, PssSH::setVsmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSH().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSH(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

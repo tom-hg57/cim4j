@@ -23,10 +23,17 @@ public class NonlinearShuntCompensator extends ShuntCompensator {
     private static final Logging LOG = Logging.getLogger(NonlinearShuntCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NonlinearShuntCompensator() {
-        setCimType("NonlinearShuntCompensator");
+    public NonlinearShuntCompensator(String rdfid) {
+        super("NonlinearShuntCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NonlinearShuntCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class NonlinearShuntCompensator extends ShuntCompensator {
             map.put("NonlinearShuntCompensatorPoints", new AttrDetails("NonlinearShuntCompensator.NonlinearShuntCompensatorPoints", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, NonlinearShuntCompensator::NonlinearShuntCompensatorPointsToString, NonlinearShuntCompensator::setNonlinearShuntCompensatorPoints, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonlinearShuntCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonlinearShuntCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

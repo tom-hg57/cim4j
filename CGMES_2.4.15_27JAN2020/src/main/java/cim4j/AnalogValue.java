@@ -23,10 +23,17 @@ public class AnalogValue extends MeasurementValue {
     private static final Logging LOG = Logging.getLogger(AnalogValue.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AnalogValue() {
-        setCimType("AnalogValue");
+    public AnalogValue(String rdfid) {
+        super("AnalogValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AnalogValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -338,7 +345,7 @@ public class AnalogValue extends MeasurementValue {
             map.put("value", new AttrDetails("AnalogValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AnalogValue::valueToString, null, AnalogValue::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

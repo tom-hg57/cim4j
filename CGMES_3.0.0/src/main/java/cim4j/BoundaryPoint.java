@@ -23,10 +23,17 @@ public class BoundaryPoint extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(BoundaryPoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public BoundaryPoint() {
-        setCimType("BoundaryPoint");
+    public BoundaryPoint(String rdfid) {
+        super("BoundaryPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BoundaryPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -523,7 +530,7 @@ public class BoundaryPoint extends PowerSystemResource {
             map.put("toEndNameTso", new AttrDetails("BoundaryPoint.toEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::toEndNameTsoToString, null, BoundaryPoint::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BoundaryPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BoundaryPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

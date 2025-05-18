@@ -23,10 +23,17 @@ public class ConnectivityNode extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ConnectivityNode.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ConnectivityNode() {
-        setCimType("ConnectivityNode");
+    public ConnectivityNode(String rdfid) {
+        super("ConnectivityNode", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConnectivityNode(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -556,7 +563,7 @@ public class ConnectivityNode extends IdentifiedObject {
             map.put("toEndNameTso", new AttrDetails("ConnectivityNode.toEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::toEndNameTsoToString, null, ConnectivityNode::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

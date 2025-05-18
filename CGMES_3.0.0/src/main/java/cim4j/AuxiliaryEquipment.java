@@ -23,10 +23,17 @@ public class AuxiliaryEquipment extends Equipment {
     private static final Logging LOG = Logging.getLogger(AuxiliaryEquipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AuxiliaryEquipment() {
-        setCimType("AuxiliaryEquipment");
+    public AuxiliaryEquipment(String rdfid) {
+        super("AuxiliaryEquipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AuxiliaryEquipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class AuxiliaryEquipment extends Equipment {
             map.put("Terminal", new AttrDetails("AuxiliaryEquipment.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AuxiliaryEquipment::TerminalToString, AuxiliaryEquipment::setTerminal, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AuxiliaryEquipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AuxiliaryEquipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

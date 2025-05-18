@@ -23,10 +23,17 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
     private static final Logging LOG = Logging.getLogger(OverexcLimIEEE.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OverexcLimIEEE() {
-        setCimType("OverexcLimIEEE");
+    public OverexcLimIEEE(String rdfid) {
+        super("OverexcLimIEEE", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OverexcLimIEEE(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -434,7 +441,7 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
             map.put("kramp", new AttrDetails("OverexcLimIEEE.kramp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, OverexcLimIEEE::krampToString, null, OverexcLimIEEE::setKramp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLimIEEE().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLimIEEE(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
     private static final Logging LOG = Logging.getLogger(ThermalGeneratingUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ThermalGeneratingUnit() {
-        setCimType("ThermalGeneratingUnit");
+    public ThermalGeneratingUnit(String rdfid) {
+        super("ThermalGeneratingUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ThermalGeneratingUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -376,7 +383,7 @@ public class ThermalGeneratingUnit extends GeneratingUnit {
             map.put("FossilFuels", new AttrDetails("ThermalGeneratingUnit.FossilFuels", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ThermalGeneratingUnit::FossilFuelsToString, ThermalGeneratingUnit::setFossilFuels, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ThermalGeneratingUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ThermalGeneratingUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

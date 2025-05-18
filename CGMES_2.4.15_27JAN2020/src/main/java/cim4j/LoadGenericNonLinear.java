@@ -23,10 +23,17 @@ public class LoadGenericNonLinear extends LoadDynamics {
     private static final Logging LOG = Logging.getLogger(LoadGenericNonLinear.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadGenericNonLinear() {
-        setCimType("LoadGenericNonLinear");
+    public LoadGenericNonLinear(String rdfid) {
+        super("LoadGenericNonLinear", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadGenericNonLinear(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -532,7 +539,7 @@ public class LoadGenericNonLinear extends LoadDynamics {
             map.put("tq", new AttrDetails("LoadGenericNonLinear.tq", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadGenericNonLinear::tqToString, null, LoadGenericNonLinear::setTq));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadGenericNonLinear().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadGenericNonLinear(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class AnalogLimit extends Limit {
     private static final Logging LOG = Logging.getLogger(AnalogLimit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AnalogLimit() {
-        setCimType("AnalogLimit");
+    public AnalogLimit(String rdfid) {
+        super("AnalogLimit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AnalogLimit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class AnalogLimit extends Limit {
             map.put("value", new AttrDetails("AnalogLimit.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AnalogLimit::valueToString, null, AnalogLimit::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogLimit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogLimit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

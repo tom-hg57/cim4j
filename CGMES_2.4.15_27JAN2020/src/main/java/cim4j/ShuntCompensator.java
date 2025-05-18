@@ -23,10 +23,17 @@ public class ShuntCompensator extends RegulatingCondEq {
     private static final Logging LOG = Logging.getLogger(ShuntCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ShuntCompensator() {
-        setCimType("ShuntCompensator");
+    public ShuntCompensator(String rdfid) {
+        super("ShuntCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ShuntCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class ShuntCompensator extends RegulatingCondEq {
             map.put("voltageSensitivity", new AttrDetails("ShuntCompensator.voltageSensitivity", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ShuntCompensator::voltageSensitivityToString, null, ShuntCompensator::setVoltageSensitivity));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ShuntCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ShuntCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

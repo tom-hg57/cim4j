@@ -23,10 +23,17 @@ public class FaultIndicator extends AuxiliaryEquipment {
     private static final Logging LOG = Logging.getLogger(FaultIndicator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public FaultIndicator() {
-        setCimType("FaultIndicator");
+    public FaultIndicator(String rdfid) {
+        super("FaultIndicator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected FaultIndicator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class FaultIndicator extends AuxiliaryEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new FaultIndicator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new FaultIndicator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

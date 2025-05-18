@@ -23,10 +23,17 @@ public class Accumulator extends Measurement {
     private static final Logging LOG = Logging.getLogger(Accumulator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Accumulator() {
-        setCimType("Accumulator");
+    public Accumulator(String rdfid) {
+        super("Accumulator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Accumulator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class Accumulator extends Measurement {
             map.put("LimitSets", new AttrDetails("Accumulator.LimitSets", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Accumulator::LimitSetsToString, Accumulator::setLimitSets, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Accumulator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Accumulator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

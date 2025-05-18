@@ -23,10 +23,17 @@ public class HydroPowerPlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(HydroPowerPlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public HydroPowerPlant() {
-        setCimType("HydroPowerPlant");
+    public HydroPowerPlant(String rdfid) {
+        super("HydroPowerPlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected HydroPowerPlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -336,7 +343,7 @@ public class HydroPowerPlant extends PowerSystemResource {
             map.put("hydroPlantStorageType", new AttrDetails("HydroPowerPlant.hydroPlantStorageType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, HydroPowerPlant::hydroPlantStorageTypeToString, null, HydroPowerPlant::setHydroPlantStorageType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroPowerPlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroPowerPlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

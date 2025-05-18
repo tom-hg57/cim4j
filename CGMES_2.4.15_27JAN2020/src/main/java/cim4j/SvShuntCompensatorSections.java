@@ -23,10 +23,17 @@ public class SvShuntCompensatorSections extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvShuntCompensatorSections.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvShuntCompensatorSections() {
-        setCimType("SvShuntCompensatorSections");
+    public SvShuntCompensatorSections(String rdfid) {
+        super("SvShuntCompensatorSections", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvShuntCompensatorSections(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class SvShuntCompensatorSections extends BaseClass {
             map.put("sections", new AttrDetails("SvShuntCompensatorSections.sections", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvShuntCompensatorSections::sectionsToString, null, SvShuntCompensatorSections::setSections));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvShuntCompensatorSections().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvShuntCompensatorSections(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

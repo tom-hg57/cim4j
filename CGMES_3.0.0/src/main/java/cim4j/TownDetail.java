@@ -23,10 +23,17 @@ public class TownDetail extends BaseClass {
     private static final Logging LOG = Logging.getLogger(TownDetail.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TownDetail() {
-        setCimType("TownDetail");
+    public TownDetail(String rdfid) {
+        super("TownDetail", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TownDetail(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -380,7 +387,7 @@ public class TownDetail extends BaseClass {
             map.put("stateOrProvince", new AttrDetails("TownDetail.stateOrProvince", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TownDetail::stateOrProvinceToString, null, TownDetail::setStateOrProvince));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TownDetail().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TownDetail(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class DCEquipmentContainer extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(DCEquipmentContainer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCEquipmentContainer() {
-        setCimType("DCEquipmentContainer");
+    public DCEquipmentContainer(String rdfid) {
+        super("DCEquipmentContainer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCEquipmentContainer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class DCEquipmentContainer extends EquipmentContainer {
             map.put("DCTopologicalNode", new AttrDetails("DCEquipmentContainer.DCTopologicalNode", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DCEquipmentContainer::DCTopologicalNodeToString, DCEquipmentContainer::setDCTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCEquipmentContainer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCEquipmentContainer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

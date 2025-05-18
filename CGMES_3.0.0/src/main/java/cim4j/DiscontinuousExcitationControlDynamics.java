@@ -23,10 +23,17 @@ public class DiscontinuousExcitationControlDynamics extends DynamicsFunctionBloc
     private static final Logging LOG = Logging.getLogger(DiscontinuousExcitationControlDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiscontinuousExcitationControlDynamics() {
-        setCimType("DiscontinuousExcitationControlDynamics");
+    public DiscontinuousExcitationControlDynamics(String rdfid) {
+        super("DiscontinuousExcitationControlDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiscontinuousExcitationControlDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class DiscontinuousExcitationControlDynamics extends DynamicsFunctionBloc
             map.put("RemoteInputSignal", new AttrDetails("DiscontinuousExcitationControlDynamics.RemoteInputSignal", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiscontinuousExcitationControlDynamics::RemoteInputSignalToString, DiscontinuousExcitationControlDynamics::setRemoteInputSignal, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscontinuousExcitationControlDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscontinuousExcitationControlDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

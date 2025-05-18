@@ -23,10 +23,17 @@ public class WindGenTurbineType1aIEC extends WindTurbineType1or2IEC {
     private static final Logging LOG = Logging.getLogger(WindGenTurbineType1aIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindGenTurbineType1aIEC() {
-        setCimType("WindGenTurbineType1aIEC");
+    public WindGenTurbineType1aIEC(String rdfid) {
+        super("WindGenTurbineType1aIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindGenTurbineType1aIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class WindGenTurbineType1aIEC extends WindTurbineType1or2IEC {
             map.put("WindAeroConstIEC", new AttrDetails("WindGenTurbineType1aIEC.WindAeroConstIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindGenTurbineType1aIEC::WindAeroConstIECToString, WindGenTurbineType1aIEC::setWindAeroConstIEC, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenTurbineType1aIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenTurbineType1aIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -20,10 +20,17 @@ public class VCompIEEEType2 extends VoltageCompensatorDynamics {
     private static final Logging LOG = Logging.getLogger(VCompIEEEType2.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VCompIEEEType2() {
-        setCimType("VCompIEEEType2");
+    public VCompIEEEType2(String rdfid) {
+        super("VCompIEEEType2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VCompIEEEType2(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class VCompIEEEType2 extends VoltageCompensatorDynamics {
             map.put("tr", new AttrDetails("VCompIEEEType2.tr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VCompIEEEType2::trToString, null, VCompIEEEType2::setTr));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VCompIEEEType2().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VCompIEEEType2(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

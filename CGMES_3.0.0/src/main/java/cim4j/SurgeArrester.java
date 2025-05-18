@@ -23,10 +23,17 @@ public class SurgeArrester extends AuxiliaryEquipment {
     private static final Logging LOG = Logging.getLogger(SurgeArrester.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SurgeArrester() {
-        setCimType("SurgeArrester");
+    public SurgeArrester(String rdfid) {
+        super("SurgeArrester", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SurgeArrester(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class SurgeArrester extends AuxiliaryEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SurgeArrester().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SurgeArrester(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

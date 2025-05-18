@@ -23,10 +23,17 @@ public class Limit extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Limit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Limit() {
-        setCimType("Limit");
+    public Limit(String rdfid) {
+        super("Limit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Limit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Limit extends IdentifiedObject {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Limit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Limit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

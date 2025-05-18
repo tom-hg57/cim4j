@@ -23,10 +23,17 @@ public class PotentialTransformer extends Sensor {
     private static final Logging LOG = Logging.getLogger(PotentialTransformer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PotentialTransformer() {
-        setCimType("PotentialTransformer");
+    public PotentialTransformer(String rdfid) {
+        super("PotentialTransformer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PotentialTransformer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class PotentialTransformer extends Sensor {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PotentialTransformer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PotentialTransformer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

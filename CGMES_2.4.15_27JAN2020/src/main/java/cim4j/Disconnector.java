@@ -23,10 +23,17 @@ public class Disconnector extends Switch {
     private static final Logging LOG = Logging.getLogger(Disconnector.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Disconnector() {
-        setCimType("Disconnector");
+    public Disconnector(String rdfid) {
+        super("Disconnector", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Disconnector(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Disconnector extends Switch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Disconnector().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Disconnector(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

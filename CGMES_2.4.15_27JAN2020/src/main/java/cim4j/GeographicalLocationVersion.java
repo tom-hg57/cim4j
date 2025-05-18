@@ -23,10 +23,17 @@ public class GeographicalLocationVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(GeographicalLocationVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GeographicalLocationVersion() {
-        setCimType("GeographicalLocationVersion");
+    public GeographicalLocationVersion(String rdfid) {
+        super("GeographicalLocationVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GeographicalLocationVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class GeographicalLocationVersion extends BaseClass {
             map.put("shortName", new AttrDetails("GeographicalLocationVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, GeographicalLocationVersion::shortNameToString, null, GeographicalLocationVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GeographicalLocationVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GeographicalLocationVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

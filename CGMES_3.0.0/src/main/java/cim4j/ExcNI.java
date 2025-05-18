@@ -23,10 +23,17 @@ public class ExcNI extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcNI.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcNI() {
-        setCimType("ExcNI");
+    public ExcNI(String rdfid) {
+        super("ExcNI", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcNI(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class ExcNI extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcNI.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcNI::vrminToString, null, ExcNI::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcNI().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcNI(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

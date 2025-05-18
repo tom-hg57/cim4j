@@ -23,10 +23,17 @@ public class UnderexcitationLimiterDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(UnderexcitationLimiterDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public UnderexcitationLimiterDynamics() {
-        setCimType("UnderexcitationLimiterDynamics");
+    public UnderexcitationLimiterDynamics(String rdfid) {
+        super("UnderexcitationLimiterDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected UnderexcitationLimiterDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class UnderexcitationLimiterDynamics extends DynamicsFunctionBlock {
             map.put("RemoteInputSignal", new AttrDetails("UnderexcitationLimiterDynamics.RemoteInputSignal", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, UnderexcitationLimiterDynamics::RemoteInputSignalToString, UnderexcitationLimiterDynamics::setRemoteInputSignal, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcitationLimiterDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcitationLimiterDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

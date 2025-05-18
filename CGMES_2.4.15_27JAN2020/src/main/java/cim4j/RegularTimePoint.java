@@ -23,10 +23,17 @@ public class RegularTimePoint extends BaseClass {
     private static final Logging LOG = Logging.getLogger(RegularTimePoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RegularTimePoint() {
-        setCimType("RegularTimePoint");
+    public RegularTimePoint(String rdfid) {
+        super("RegularTimePoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RegularTimePoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -368,7 +375,7 @@ public class RegularTimePoint extends BaseClass {
             map.put("value2", new AttrDetails("RegularTimePoint.value2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegularTimePoint::value2ToString, null, RegularTimePoint::setValue2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularTimePoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularTimePoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

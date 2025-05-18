@@ -23,10 +23,17 @@ public class CSCUserDefined extends CSCDynamics {
     private static final Logging LOG = Logging.getLogger(CSCUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CSCUserDefined() {
-        setCimType("CSCUserDefined");
+    public CSCUserDefined(String rdfid) {
+        super("CSCUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CSCUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class CSCUserDefined extends CSCDynamics {
             map.put("proprietary", new AttrDetails("CSCUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CSCUserDefined::proprietaryToString, null, CSCUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CSCUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CSCUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

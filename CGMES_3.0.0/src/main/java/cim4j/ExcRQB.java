@@ -23,10 +23,17 @@ public class ExcRQB extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcRQB.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcRQB() {
-        setCimType("ExcRQB");
+    public ExcRQB(String rdfid) {
+        super("ExcRQB", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcRQB(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -672,7 +679,7 @@ public class ExcRQB extends ExcitationSystemDynamics {
             map.put("ucmin", new AttrDetails("ExcRQB.ucmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcRQB::ucminToString, null, ExcRQB::setUcmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcRQB().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcRQB(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

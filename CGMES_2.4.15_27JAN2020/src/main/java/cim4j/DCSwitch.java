@@ -23,10 +23,17 @@ public class DCSwitch extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCSwitch.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCSwitch() {
-        setCimType("DCSwitch");
+    public DCSwitch(String rdfid) {
+        super("DCSwitch", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCSwitch(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DCSwitch extends DCConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCSwitch().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCSwitch(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class RaiseLowerCommand extends AnalogControl {
     private static final Logging LOG = Logging.getLogger(RaiseLowerCommand.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RaiseLowerCommand() {
-        setCimType("RaiseLowerCommand");
+    public RaiseLowerCommand(String rdfid) {
+        super("RaiseLowerCommand", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RaiseLowerCommand(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class RaiseLowerCommand extends AnalogControl {
             map.put("ValueAliasSet", new AttrDetails("RaiseLowerCommand.ValueAliasSet", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RaiseLowerCommand::ValueAliasSetToString, RaiseLowerCommand::setValueAliasSet, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RaiseLowerCommand().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RaiseLowerCommand(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Pss2ST extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(Pss2ST.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Pss2ST() {
-        setCimType("Pss2ST");
+    public Pss2ST(String rdfid) {
+        super("Pss2ST", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Pss2ST(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -834,7 +841,7 @@ public class Pss2ST extends PowerSystemStabilizerDynamics {
             map.put("vcu", new AttrDetails("Pss2ST.vcu", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Pss2ST::vcuToString, null, Pss2ST::setVcu));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Pss2ST().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Pss2ST(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

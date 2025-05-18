@@ -23,10 +23,17 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
     private static final Logging LOG = Logging.getLogger(SynchronousMachineEquivalentCircuit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachineEquivalentCircuit() {
-        setCimType("SynchronousMachineEquivalentCircuit");
+    public SynchronousMachineEquivalentCircuit(String rdfid) {
+        super("SynchronousMachineEquivalentCircuit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachineEquivalentCircuit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class SynchronousMachineEquivalentCircuit extends SynchronousMachineDetai
             map.put("xfd", new AttrDetails("SynchronousMachineEquivalentCircuit.xfd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachineEquivalentCircuit::xfdToString, null, SynchronousMachineEquivalentCircuit::setXfd));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineEquivalentCircuit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineEquivalentCircuit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

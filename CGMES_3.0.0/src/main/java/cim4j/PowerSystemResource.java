@@ -23,10 +23,17 @@ public class PowerSystemResource extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(PowerSystemResource.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerSystemResource() {
-        setCimType("PowerSystemResource");
+    public PowerSystemResource(String rdfid) {
+        super("PowerSystemResource", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerSystemResource(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -344,7 +351,7 @@ public class PowerSystemResource extends IdentifiedObject {
             map.put("Measurements", new AttrDetails("PowerSystemResource.Measurements", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerSystemResource::MeasurementsToString, PowerSystemResource::setMeasurements, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemResource().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemResource(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

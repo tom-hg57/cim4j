@@ -23,10 +23,17 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
     private static final Logging LOG = Logging.getLogger(AsynchronousMachineEquivalentCircuit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AsynchronousMachineEquivalentCircuit() {
-        setCimType("AsynchronousMachineEquivalentCircuit");
+    public AsynchronousMachineEquivalentCircuit(String rdfid) {
+        super("AsynchronousMachineEquivalentCircuit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AsynchronousMachineEquivalentCircuit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -400,7 +407,7 @@ public class AsynchronousMachineEquivalentCircuit extends AsynchronousMachineDyn
             map.put("xm", new AttrDetails("AsynchronousMachineEquivalentCircuit.xm", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AsynchronousMachineEquivalentCircuit::xmToString, null, AsynchronousMachineEquivalentCircuit::setXm));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineEquivalentCircuit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineEquivalentCircuit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

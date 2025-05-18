@@ -23,10 +23,17 @@ public class StationSupply extends EnergyConsumer {
     private static final Logging LOG = Logging.getLogger(StationSupply.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StationSupply() {
-        setCimType("StationSupply");
+    public StationSupply(String rdfid) {
+        super("StationSupply", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StationSupply(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class StationSupply extends EnergyConsumer {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StationSupply().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StationSupply(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

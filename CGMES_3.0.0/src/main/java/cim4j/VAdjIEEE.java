@@ -23,10 +23,17 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
     private static final Logging LOG = Logging.getLogger(VAdjIEEE.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VAdjIEEE() {
-        setCimType("VAdjIEEE");
+    public VAdjIEEE(String rdfid) {
+        super("VAdjIEEE", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VAdjIEEE(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -434,7 +441,7 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
             map.put("vadjmin", new AttrDetails("VAdjIEEE.vadjmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VAdjIEEE::vadjminToString, null, VAdjIEEE::setVadjmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VAdjIEEE().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VAdjIEEE(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

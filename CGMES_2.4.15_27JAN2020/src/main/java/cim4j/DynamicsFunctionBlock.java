@@ -23,10 +23,17 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(DynamicsFunctionBlock.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DynamicsFunctionBlock() {
-        setCimType("DynamicsFunctionBlock");
+    public DynamicsFunctionBlock(String rdfid) {
+        super("DynamicsFunctionBlock", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DynamicsFunctionBlock(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class DynamicsFunctionBlock extends IdentifiedObject {
             map.put("enabled", new AttrDetails("DynamicsFunctionBlock.enabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DynamicsFunctionBlock::enabledToString, null, DynamicsFunctionBlock::setEnabled));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DynamicsFunctionBlock().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DynamicsFunctionBlock(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

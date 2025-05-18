@@ -23,10 +23,17 @@ public class DCTerminal extends DCBaseTerminal {
     private static final Logging LOG = Logging.getLogger(DCTerminal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCTerminal() {
-        setCimType("DCTerminal");
+    public DCTerminal(String rdfid) {
+        super("DCTerminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCTerminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class DCTerminal extends DCBaseTerminal {
             map.put("DCConductingEquipment", new AttrDetails("DCTerminal.DCConductingEquipment", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DCTerminal::DCConductingEquipmentToString, DCTerminal::setDCConductingEquipment, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCTerminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCTerminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

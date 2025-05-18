@@ -23,10 +23,17 @@ public class ExcAVR3 extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcAVR3.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcAVR3() {
-        setCimType("ExcAVR3");
+    public ExcAVR3(String rdfid) {
+        super("ExcAVR3", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcAVR3(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -638,7 +645,7 @@ public class ExcAVR3 extends ExcitationSystemDynamics {
             map.put("vrmx", new AttrDetails("ExcAVR3.vrmx", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::vrmxToString, null, ExcAVR3::setVrmx));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAVR3().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAVR3(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

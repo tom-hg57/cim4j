@@ -23,10 +23,17 @@ public class GrossToNetActivePowerCurve extends Curve {
     private static final Logging LOG = Logging.getLogger(GrossToNetActivePowerCurve.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GrossToNetActivePowerCurve() {
-        setCimType("GrossToNetActivePowerCurve");
+    public GrossToNetActivePowerCurve(String rdfid) {
+        super("GrossToNetActivePowerCurve", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GrossToNetActivePowerCurve(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class GrossToNetActivePowerCurve extends Curve {
             map.put("GeneratingUnit", new AttrDetails("GrossToNetActivePowerCurve.GeneratingUnit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GrossToNetActivePowerCurve::GeneratingUnitToString, GrossToNetActivePowerCurve::setGeneratingUnit, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GrossToNetActivePowerCurve().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GrossToNetActivePowerCurve(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

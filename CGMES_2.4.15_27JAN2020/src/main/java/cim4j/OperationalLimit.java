@@ -23,10 +23,17 @@ public class OperationalLimit extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(OperationalLimit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OperationalLimit() {
-        setCimType("OperationalLimit");
+    public OperationalLimit(String rdfid) {
+        super("OperationalLimit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OperationalLimit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class OperationalLimit extends IdentifiedObject {
             map.put("OperationalLimitType", new AttrDetails("OperationalLimit.OperationalLimitType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OperationalLimit::OperationalLimitTypeToString, OperationalLimit::setOperationalLimitType, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

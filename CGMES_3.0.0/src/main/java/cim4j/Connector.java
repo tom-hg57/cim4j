@@ -23,10 +23,17 @@ public class Connector extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(Connector.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Connector() {
-        setCimType("Connector");
+    public Connector(String rdfid) {
+        super("Connector", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Connector(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Connector extends ConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Connector().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Connector(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindDynamicsLookupTable.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindDynamicsLookupTable() {
-        setCimType("WindDynamicsLookupTable");
+    public WindDynamicsLookupTable(String rdfid) {
+        super("WindDynamicsLookupTable", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindDynamicsLookupTable(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -686,7 +693,7 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
             map.put("sequence", new AttrDetails("WindDynamicsLookupTable.sequence", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindDynamicsLookupTable::sequenceToString, null, WindDynamicsLookupTable::setSequence));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindDynamicsLookupTable().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindDynamicsLookupTable(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

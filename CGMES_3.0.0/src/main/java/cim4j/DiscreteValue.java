@@ -23,10 +23,17 @@ public class DiscreteValue extends MeasurementValue {
     private static final Logging LOG = Logging.getLogger(DiscreteValue.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiscreteValue() {
-        setCimType("DiscreteValue");
+    public DiscreteValue(String rdfid) {
+        super("DiscreteValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiscreteValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class DiscreteValue extends MeasurementValue {
             map.put("Discrete", new AttrDetails("DiscreteValue.Discrete", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DiscreteValue::DiscreteToString, DiscreteValue::setDiscrete, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscreteValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscreteValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

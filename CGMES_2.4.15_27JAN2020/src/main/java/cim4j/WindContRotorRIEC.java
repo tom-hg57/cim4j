@@ -23,10 +23,17 @@ public class WindContRotorRIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContRotorRIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContRotorRIEC() {
-        setCimType("WindContRotorRIEC");
+    public WindContRotorRIEC(String rdfid) {
+        super("WindContRotorRIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContRotorRIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -578,7 +585,7 @@ public class WindContRotorRIEC extends IdentifiedObject {
             map.put("tpfilt", new AttrDetails("WindContRotorRIEC.tpfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContRotorRIEC::tpfiltToString, null, WindContRotorRIEC::setTpfilt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContRotorRIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContRotorRIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

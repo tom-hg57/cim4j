@@ -23,10 +23,17 @@ public class CurrentTransformer extends Sensor {
     private static final Logging LOG = Logging.getLogger(CurrentTransformer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CurrentTransformer() {
-        setCimType("CurrentTransformer");
+    public CurrentTransformer(String rdfid) {
+        super("CurrentTransformer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CurrentTransformer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class CurrentTransformer extends Sensor {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurrentTransformer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurrentTransformer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class TopologyVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(TopologyVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TopologyVersion() {
-        setCimType("TopologyVersion");
+    public TopologyVersion(String rdfid) {
+        super("TopologyVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TopologyVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class TopologyVersion extends BaseClass {
             map.put("shortName", new AttrDetails("TopologyVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyVersion::shortNameToString, null, TopologyVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologyVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologyVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

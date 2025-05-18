@@ -23,10 +23,17 @@ public class PhotoVoltaicUnit extends PowerElectronicsUnit {
     private static final Logging LOG = Logging.getLogger(PhotoVoltaicUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhotoVoltaicUnit() {
-        setCimType("PhotoVoltaicUnit");
+    public PhotoVoltaicUnit(String rdfid) {
+        super("PhotoVoltaicUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhotoVoltaicUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class PhotoVoltaicUnit extends PowerElectronicsUnit {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhotoVoltaicUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhotoVoltaicUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

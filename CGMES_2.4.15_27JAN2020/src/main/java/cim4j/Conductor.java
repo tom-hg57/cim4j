@@ -23,10 +23,17 @@ public class Conductor extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(Conductor.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Conductor() {
-        setCimType("Conductor");
+    public Conductor(String rdfid) {
+        super("Conductor", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Conductor(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class Conductor extends ConductingEquipment {
             map.put("length", new AttrDetails("Conductor.length", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Conductor::lengthToString, null, Conductor::setLength));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Conductor().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Conductor(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

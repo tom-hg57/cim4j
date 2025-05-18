@@ -23,10 +23,17 @@ public class DCGround extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCGround.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCGround() {
-        setCimType("DCGround");
+    public DCGround(String rdfid) {
+        super("DCGround", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCGround(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class DCGround extends DCConductingEquipment {
             map.put("r", new AttrDetails("DCGround.r", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DCGround::rToString, null, DCGround::setR));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCGround().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCGround(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

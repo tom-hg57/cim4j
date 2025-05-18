@@ -23,10 +23,17 @@ public class StaticVarCompensator extends RegulatingCondEq {
     private static final Logging LOG = Logging.getLogger(StaticVarCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StaticVarCompensator() {
-        setCimType("StaticVarCompensator");
+    public StaticVarCompensator(String rdfid) {
+        super("StaticVarCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StaticVarCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -430,7 +437,7 @@ public class StaticVarCompensator extends RegulatingCondEq {
             map.put("voltageSetPoint", new AttrDetails("StaticVarCompensator.voltageSetPoint", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StaticVarCompensator::voltageSetPointToString, null, StaticVarCompensator::setVoltageSetPoint));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StaticVarCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StaticVarCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

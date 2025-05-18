@@ -23,10 +23,17 @@ public class OperationalLimitType extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(OperationalLimitType.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OperationalLimitType() {
-        setCimType("OperationalLimitType");
+    public OperationalLimitType(String rdfid) {
+        super("OperationalLimitType", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OperationalLimitType(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -362,7 +369,7 @@ public class OperationalLimitType extends IdentifiedObject {
             map.put("limitType", new AttrDetails("OperationalLimitType.limitType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, true, OperationalLimitType::limitTypeToString, null, OperationalLimitType::setLimitType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitType().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitType(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

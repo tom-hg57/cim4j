@@ -23,10 +23,17 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     private static final Logging LOG = Logging.getLogger(MechLoad1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MechLoad1() {
-        setCimType("MechLoad1");
+    public MechLoad1(String rdfid) {
+        super("MechLoad1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MechLoad1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -366,7 +373,7 @@ public class MechLoad1 extends MechanicalLoadDynamics {
             map.put("e", new AttrDetails("MechLoad1.e", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MechLoad1::eToString, null, MechLoad1::setE));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechLoad1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechLoad1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

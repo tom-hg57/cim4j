@@ -23,10 +23,17 @@ public class HydroGeneratingUnit extends GeneratingUnit {
     private static final Logging LOG = Logging.getLogger(HydroGeneratingUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public HydroGeneratingUnit() {
-        setCimType("HydroGeneratingUnit");
+    public HydroGeneratingUnit(String rdfid) {
+        super("HydroGeneratingUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected HydroGeneratingUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -360,7 +367,7 @@ public class HydroGeneratingUnit extends GeneratingUnit {
             map.put("turbineType", new AttrDetails("HydroGeneratingUnit.turbineType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, HydroGeneratingUnit::turbineTypeToString, null, HydroGeneratingUnit::setTurbineType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroGeneratingUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroGeneratingUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

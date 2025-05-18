@@ -23,10 +23,17 @@ public class SvVoltage extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvVoltage.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvVoltage() {
-        setCimType("SvVoltage");
+    public SvVoltage(String rdfid) {
+        super("SvVoltage", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvVoltage(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -334,7 +341,7 @@ public class SvVoltage extends BaseClass {
             map.put("v", new AttrDetails("SvVoltage.v", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvVoltage::vToString, null, SvVoltage::setV));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvVoltage().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvVoltage(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

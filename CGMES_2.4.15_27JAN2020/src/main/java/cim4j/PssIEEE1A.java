@@ -23,10 +23,17 @@ public class PssIEEE1A extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssIEEE1A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssIEEE1A() {
-        setCimType("PssIEEE1A");
+    public PssIEEE1A(String rdfid) {
+        super("PssIEEE1A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssIEEE1A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -634,7 +641,7 @@ public class PssIEEE1A extends PowerSystemStabilizerDynamics {
             map.put("vrmin", new AttrDetails("PssIEEE1A.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssIEEE1A::vrminToString, null, PssIEEE1A::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE1A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE1A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

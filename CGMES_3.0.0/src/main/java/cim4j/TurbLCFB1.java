@@ -23,10 +23,17 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
     private static final Logging LOG = Logging.getLogger(TurbLCFB1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TurbLCFB1() {
-        setCimType("TurbLCFB1");
+    public TurbLCFB1(String rdfid) {
+        super("TurbLCFB1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TurbLCFB1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -638,7 +645,7 @@ public class TurbLCFB1 extends TurbineLoadControllerDynamics {
             map.put("tpelec", new AttrDetails("TurbLCFB1.tpelec", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TurbLCFB1::tpelecToString, null, TurbLCFB1::setTpelec));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbLCFB1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbLCFB1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

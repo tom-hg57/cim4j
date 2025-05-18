@@ -23,10 +23,17 @@ public class GovSteam2 extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovSteam2.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovSteam2() {
-        setCimType("GovSteam2");
+    public GovSteam2(String rdfid) {
+        super("GovSteam2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovSteam2(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -502,7 +509,7 @@ public class GovSteam2 extends TurbineGovernorDynamics {
             map.put("t2", new AttrDetails("GovSteam2.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovSteam2::t2ToString, null, GovSteam2::setT2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovSteam2().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovSteam2(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

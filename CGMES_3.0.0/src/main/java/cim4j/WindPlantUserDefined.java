@@ -23,10 +23,17 @@ public class WindPlantUserDefined extends WindPlantDynamics {
     private static final Logging LOG = Logging.getLogger(WindPlantUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPlantUserDefined() {
-        setCimType("WindPlantUserDefined");
+    public WindPlantUserDefined(String rdfid) {
+        super("WindPlantUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPlantUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class WindPlantUserDefined extends WindPlantDynamics {
             map.put("proprietary", new AttrDetails("WindPlantUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantUserDefined::proprietaryToString, null, WindPlantUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

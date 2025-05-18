@@ -23,10 +23,17 @@ public class VSCUserDefined extends VSCDynamics {
     private static final Logging LOG = Logging.getLogger(VSCUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VSCUserDefined() {
-        setCimType("VSCUserDefined");
+    public VSCUserDefined(String rdfid) {
+        super("VSCUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VSCUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class VSCUserDefined extends VSCDynamics {
             map.put("proprietary", new AttrDetails("VSCUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VSCUserDefined::proprietaryToString, null, VSCUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VSCUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VSCUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

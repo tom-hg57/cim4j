@@ -23,10 +23,17 @@ public class AccumulatorValue extends MeasurementValue {
     private static final Logging LOG = Logging.getLogger(AccumulatorValue.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AccumulatorValue() {
-        setCimType("AccumulatorValue");
+    public AccumulatorValue(String rdfid) {
+        super("AccumulatorValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AccumulatorValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class AccumulatorValue extends MeasurementValue {
             map.put("AccumulatorReset", new AttrDetails("AccumulatorValue.AccumulatorReset", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, AccumulatorValue::AccumulatorResetToString, AccumulatorValue::setAccumulatorReset, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

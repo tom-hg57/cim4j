@@ -23,10 +23,17 @@ public class StateVariablesVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(StateVariablesVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StateVariablesVersion() {
-        setCimType("StateVariablesVersion");
+    public StateVariablesVersion(String rdfid) {
+        super("StateVariablesVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StateVariablesVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class StateVariablesVersion extends BaseClass {
             map.put("shortName", new AttrDetails("StateVariablesVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, StateVariablesVersion::shortNameToString, null, StateVariablesVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StateVariablesVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StateVariablesVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

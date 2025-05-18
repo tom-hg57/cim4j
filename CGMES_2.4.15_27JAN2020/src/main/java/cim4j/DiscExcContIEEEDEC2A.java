@@ -23,10 +23,17 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
     private static final Logging LOG = Logging.getLogger(DiscExcContIEEEDEC2A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiscExcContIEEEDEC2A() {
-        setCimType("DiscExcContIEEEDEC2A");
+    public DiscExcContIEEEDEC2A(String rdfid) {
+        super("DiscExcContIEEEDEC2A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiscExcContIEEEDEC2A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -400,7 +407,7 @@ public class DiscExcContIEEEDEC2A extends DiscontinuousExcitationControlDynamics
             map.put("vk", new AttrDetails("DiscExcContIEEEDEC2A.vk", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DiscExcContIEEEDEC2A::vkToString, null, DiscExcContIEEEDEC2A::setVk));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscExcContIEEEDEC2A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiscExcContIEEEDEC2A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

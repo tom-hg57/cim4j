@@ -23,10 +23,17 @@ public class ExcCZ extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcCZ.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcCZ() {
-        setCimType("ExcCZ");
+    public ExcCZ(String rdfid) {
+        super("ExcCZ", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcCZ(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class ExcCZ extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcCZ.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcCZ::vrminToString, null, ExcCZ::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcCZ().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcCZ(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

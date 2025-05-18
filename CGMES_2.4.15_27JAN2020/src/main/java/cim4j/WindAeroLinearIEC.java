@@ -23,10 +23,17 @@ public class WindAeroLinearIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindAeroLinearIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindAeroLinearIEC() {
-        setCimType("WindAeroLinearIEC");
+    public WindAeroLinearIEC(String rdfid) {
+        super("WindAeroLinearIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindAeroLinearIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -438,7 +445,7 @@ public class WindAeroLinearIEC extends IdentifiedObject {
             map.put("thetazero", new AttrDetails("WindAeroLinearIEC.thetazero", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindAeroLinearIEC::thetazeroToString, null, WindAeroLinearIEC::setThetazero));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroLinearIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroLinearIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Discrete extends Measurement {
     private static final Logging LOG = Logging.getLogger(Discrete.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Discrete() {
-        setCimType("Discrete");
+    public Discrete(String rdfid) {
+        super("Discrete", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Discrete(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class Discrete extends Measurement {
             map.put("ValueAliasSet", new AttrDetails("Discrete.ValueAliasSet", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Discrete::ValueAliasSetToString, Discrete::setValueAliasSet, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Discrete().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Discrete(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

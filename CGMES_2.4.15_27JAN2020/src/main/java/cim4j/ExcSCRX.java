@@ -23,10 +23,17 @@ public class ExcSCRX extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcSCRX.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcSCRX() {
-        setCimType("ExcSCRX");
+    public ExcSCRX(String rdfid) {
+        super("ExcSCRX", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcSCRX(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -502,7 +509,7 @@ public class ExcSCRX extends ExcitationSystemDynamics {
             map.put("te", new AttrDetails("ExcSCRX.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcSCRX::teToString, null, ExcSCRX::setTe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSCRX().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSCRX(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

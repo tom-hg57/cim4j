@@ -23,10 +23,17 @@ public class WindMechIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindMechIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindMechIEC() {
-        setCimType("WindMechIEC");
+    public WindMechIEC(String rdfid) {
+        super("WindMechIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindMechIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -480,7 +487,7 @@ public class WindMechIEC extends IdentifiedObject {
             map.put("kdrt", new AttrDetails("WindMechIEC.kdrt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindMechIEC::kdrtToString, null, WindMechIEC::setKdrt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindMechIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindMechIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

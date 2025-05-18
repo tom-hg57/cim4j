@@ -23,10 +23,17 @@ public class NuclearGeneratingUnit extends GeneratingUnit {
     private static final Logging LOG = Logging.getLogger(NuclearGeneratingUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NuclearGeneratingUnit() {
-        setCimType("NuclearGeneratingUnit");
+    public NuclearGeneratingUnit(String rdfid) {
+        super("NuclearGeneratingUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NuclearGeneratingUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class NuclearGeneratingUnit extends GeneratingUnit {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NuclearGeneratingUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NuclearGeneratingUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

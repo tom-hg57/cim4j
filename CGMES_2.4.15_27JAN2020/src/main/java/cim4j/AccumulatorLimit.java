@@ -23,10 +23,17 @@ public class AccumulatorLimit extends Limit {
     private static final Logging LOG = Logging.getLogger(AccumulatorLimit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AccumulatorLimit() {
-        setCimType("AccumulatorLimit");
+    public AccumulatorLimit(String rdfid) {
+        super("AccumulatorLimit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AccumulatorLimit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class AccumulatorLimit extends Limit {
             map.put("value", new AttrDetails("AccumulatorLimit.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AccumulatorLimit::valueToString, null, AccumulatorLimit::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorLimit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorLimit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

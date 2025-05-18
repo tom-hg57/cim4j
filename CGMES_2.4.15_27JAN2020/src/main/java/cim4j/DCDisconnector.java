@@ -23,10 +23,17 @@ public class DCDisconnector extends DCSwitch {
     private static final Logging LOG = Logging.getLogger(DCDisconnector.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCDisconnector() {
-        setCimType("DCDisconnector");
+    public DCDisconnector(String rdfid) {
+        super("DCDisconnector", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCDisconnector(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DCDisconnector extends DCSwitch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCDisconnector().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCDisconnector(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

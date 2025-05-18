@@ -23,10 +23,17 @@ public class PhaseTapChangerAsymmetrical extends PhaseTapChangerNonLinear {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerAsymmetrical.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhaseTapChangerAsymmetrical() {
-        setCimType("PhaseTapChangerAsymmetrical");
+    public PhaseTapChangerAsymmetrical(String rdfid) {
+        super("PhaseTapChangerAsymmetrical", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerAsymmetrical(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class PhaseTapChangerAsymmetrical extends PhaseTapChangerNonLinear {
             map.put("windingConnectionAngle", new AttrDetails("PhaseTapChangerAsymmetrical.windingConnectionAngle", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PhaseTapChangerAsymmetrical::windingConnectionAngleToString, null, PhaseTapChangerAsymmetrical::setWindingConnectionAngle));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerAsymmetrical().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerAsymmetrical(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

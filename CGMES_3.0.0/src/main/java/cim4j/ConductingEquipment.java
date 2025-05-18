@@ -23,10 +23,17 @@ public class ConductingEquipment extends Equipment {
     private static final Logging LOG = Logging.getLogger(ConductingEquipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ConductingEquipment() {
-        setCimType("ConductingEquipment");
+    public ConductingEquipment(String rdfid) {
+        super("ConductingEquipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConductingEquipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -344,7 +351,7 @@ public class ConductingEquipment extends Equipment {
             map.put("Terminals", new AttrDetails("ConductingEquipment.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConductingEquipment::TerminalsToString, ConductingEquipment::setTerminals, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConductingEquipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConductingEquipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

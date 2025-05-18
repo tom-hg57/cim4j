@@ -23,10 +23,17 @@ public class PowerElectronicsWindUnit extends PowerElectronicsUnit {
     private static final Logging LOG = Logging.getLogger(PowerElectronicsWindUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerElectronicsWindUnit() {
-        setCimType("PowerElectronicsWindUnit");
+    public PowerElectronicsWindUnit(String rdfid) {
+        super("PowerElectronicsWindUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerElectronicsWindUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class PowerElectronicsWindUnit extends PowerElectronicsUnit {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsWindUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsWindUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

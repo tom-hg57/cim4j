@@ -23,10 +23,17 @@ public class ExcBBC extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcBBC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcBBC() {
-        setCimType("ExcBBC");
+    public ExcBBC(String rdfid) {
+        super("ExcBBC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcBBC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class ExcBBC extends ExcitationSystemDynamics {
             map.put("xe", new AttrDetails("ExcBBC.xe", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::xeToString, null, ExcBBC::setXe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcBBC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcBBC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

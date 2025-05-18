@@ -23,10 +23,17 @@ public class TurbineGovernorUserDefined extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(TurbineGovernorUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TurbineGovernorUserDefined() {
-        setCimType("TurbineGovernorUserDefined");
+    public TurbineGovernorUserDefined(String rdfid) {
+        super("TurbineGovernorUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TurbineGovernorUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class TurbineGovernorUserDefined extends TurbineGovernorDynamics {
             map.put("proprietary", new AttrDetails("TurbineGovernorUserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TurbineGovernorUserDefined::proprietaryToString, null, TurbineGovernorUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineGovernorUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineGovernorUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

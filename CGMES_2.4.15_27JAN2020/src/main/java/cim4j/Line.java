@@ -23,10 +23,17 @@ public class Line extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(Line.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Line() {
-        setCimType("Line");
+    public Line(String rdfid) {
+        super("Line", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Line(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -267,7 +274,7 @@ public class Line extends EquipmentContainer {
             map.put("Region", new AttrDetails("Line.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Line::RegionToString, Line::setRegion, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Line().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Line(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

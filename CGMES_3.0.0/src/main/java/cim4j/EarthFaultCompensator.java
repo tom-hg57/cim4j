@@ -23,10 +23,17 @@ public class EarthFaultCompensator extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(EarthFaultCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EarthFaultCompensator() {
-        setCimType("EarthFaultCompensator");
+    public EarthFaultCompensator(String rdfid) {
+        super("EarthFaultCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EarthFaultCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class EarthFaultCompensator extends ConductingEquipment {
             map.put("r", new AttrDetails("EarthFaultCompensator.r", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EarthFaultCompensator::rToString, null, EarthFaultCompensator::setR));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EarthFaultCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EarthFaultCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

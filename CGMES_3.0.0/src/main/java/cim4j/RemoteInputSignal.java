@@ -23,10 +23,17 @@ public class RemoteInputSignal extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(RemoteInputSignal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RemoteInputSignal() {
-        setCimType("RemoteInputSignal");
+    public RemoteInputSignal(String rdfid) {
+        super("RemoteInputSignal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RemoteInputSignal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -590,7 +597,7 @@ public class RemoteInputSignal extends IdentifiedObject {
             map.put("remoteSignalType", new AttrDetails("RemoteInputSignal.remoteSignalType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, RemoteInputSignal::remoteSignalTypeToString, null, RemoteInputSignal::setRemoteSignalType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RemoteInputSignal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RemoteInputSignal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

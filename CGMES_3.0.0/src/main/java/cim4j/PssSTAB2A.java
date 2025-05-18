@@ -23,10 +23,17 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssSTAB2A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssSTAB2A() {
-        setCimType("PssSTAB2A");
+    public PssSTAB2A(String rdfid) {
+        super("PssSTAB2A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssSTAB2A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -502,7 +509,7 @@ public class PssSTAB2A extends PowerSystemStabilizerDynamics {
             map.put("t5", new AttrDetails("PssSTAB2A.t5", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssSTAB2A::t5ToString, null, PssSTAB2A::setT5));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSTAB2A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSTAB2A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

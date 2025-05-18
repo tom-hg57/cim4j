@@ -23,10 +23,17 @@ public class DCChopper extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCChopper.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCChopper() {
-        setCimType("DCChopper");
+    public DCChopper(String rdfid) {
+        super("DCChopper", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCChopper(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DCChopper extends DCConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCChopper().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCChopper(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

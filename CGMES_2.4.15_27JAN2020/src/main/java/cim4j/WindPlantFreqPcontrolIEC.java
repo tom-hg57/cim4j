@@ -23,10 +23,17 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindPlantFreqPcontrolIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPlantFreqPcontrolIEC() {
-        setCimType("WindPlantFreqPcontrolIEC");
+    public WindPlantFreqPcontrolIEC(String rdfid) {
+        super("WindPlantFreqPcontrolIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPlantFreqPcontrolIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -646,7 +653,7 @@ public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
             map.put("twppfilt", new AttrDetails("WindPlantFreqPcontrolIEC.twppfilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPlantFreqPcontrolIEC::twppfiltToString, null, WindPlantFreqPcontrolIEC::setTwppfilt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantFreqPcontrolIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantFreqPcontrolIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

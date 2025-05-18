@@ -23,10 +23,17 @@ public class PFVArType2IEEEPFController extends PFVArControllerType2Dynamics {
     private static final Logging LOG = Logging.getLogger(PFVArType2IEEEPFController.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArType2IEEEPFController() {
-        setCimType("PFVArType2IEEEPFController");
+    public PFVArType2IEEEPFController(String rdfid) {
+        super("PFVArType2IEEEPFController", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArType2IEEEPFController(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -468,7 +475,7 @@ public class PFVArType2IEEEPFController extends PFVArControllerType2Dynamics {
             map.put("vs", new AttrDetails("PFVArType2IEEEPFController.vs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArType2IEEEPFController::vsToString, null, PFVArType2IEEEPFController::setVs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType2IEEEPFController().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType2IEEEPFController(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

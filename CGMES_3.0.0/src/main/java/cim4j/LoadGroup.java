@@ -23,10 +23,17 @@ public class LoadGroup extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LoadGroup.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadGroup() {
-        setCimType("LoadGroup");
+    public LoadGroup(String rdfid) {
+        super("LoadGroup", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadGroup(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class LoadGroup extends IdentifiedObject {
             map.put("SubLoadArea", new AttrDetails("LoadGroup.SubLoadArea", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, LoadGroup::SubLoadAreaToString, LoadGroup::setSubLoadArea, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadGroup().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadGroup(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

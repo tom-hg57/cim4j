@@ -23,10 +23,17 @@ public class ACLineSegment extends Conductor {
     private static final Logging LOG = Logging.getLogger(ACLineSegment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ACLineSegment() {
-        setCimType("ACLineSegment");
+    public ACLineSegment(String rdfid) {
+        super("ACLineSegment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ACLineSegment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -536,7 +543,7 @@ public class ACLineSegment extends Conductor {
             map.put("x0", new AttrDetails("ACLineSegment.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ACLineSegment::x0ToString, null, ACLineSegment::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACLineSegment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACLineSegment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

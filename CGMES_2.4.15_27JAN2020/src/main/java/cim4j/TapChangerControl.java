@@ -23,10 +23,17 @@ public class TapChangerControl extends RegulatingControl {
     private static final Logging LOG = Logging.getLogger(TapChangerControl.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TapChangerControl() {
-        setCimType("TapChangerControl");
+    public TapChangerControl(String rdfid) {
+        super("TapChangerControl", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TapChangerControl(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class TapChangerControl extends RegulatingControl {
             map.put("TapChanger", new AttrDetails("TapChangerControl.TapChanger", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TapChangerControl::TapChangerToString, TapChangerControl::setTapChanger, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChangerControl().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChangerControl(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class TopologyBoundaryVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(TopologyBoundaryVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TopologyBoundaryVersion() {
-        setCimType("TopologyBoundaryVersion");
+    public TopologyBoundaryVersion(String rdfid) {
+        super("TopologyBoundaryVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TopologyBoundaryVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class TopologyBoundaryVersion extends BaseClass {
             map.put("shortName", new AttrDetails("TopologyBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, TopologyBoundaryVersion::shortNameToString, null, TopologyBoundaryVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologyBoundaryVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologyBoundaryVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

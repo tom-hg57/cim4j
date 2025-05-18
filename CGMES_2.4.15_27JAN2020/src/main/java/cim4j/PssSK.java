@@ -23,10 +23,17 @@ public class PssSK extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssSK.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssSK() {
-        setCimType("PssSK");
+    public PssSK(String rdfid) {
+        super("PssSK", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssSK(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class PssSK extends PowerSystemStabilizerDynamics {
             map.put("vsmin", new AttrDetails("PssSK.vsmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssSK::vsminToString, null, PssSK::setVsmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSK().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssSK(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

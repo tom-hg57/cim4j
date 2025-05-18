@@ -23,10 +23,17 @@ public class SvInjection extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvInjection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvInjection() {
-        setCimType("SvInjection");
+    public SvInjection(String rdfid) {
+        super("SvInjection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvInjection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -334,7 +341,7 @@ public class SvInjection extends BaseClass {
             map.put("qInjection", new AttrDetails("SvInjection.qInjection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvInjection::qInjectionToString, null, SvInjection::setQInjection));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvInjection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvInjection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

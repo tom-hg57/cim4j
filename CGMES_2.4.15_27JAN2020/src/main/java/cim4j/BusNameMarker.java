@@ -23,10 +23,17 @@ public class BusNameMarker extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(BusNameMarker.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public BusNameMarker() {
-        setCimType("BusNameMarker");
+    public BusNameMarker(String rdfid) {
+        super("BusNameMarker", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BusNameMarker(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -338,7 +345,7 @@ public class BusNameMarker extends IdentifiedObject {
             map.put("priority", new AttrDetails("BusNameMarker.priority", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, BusNameMarker::priorityToString, null, BusNameMarker::setPriority));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusNameMarker().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusNameMarker(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

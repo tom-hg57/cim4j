@@ -23,10 +23,17 @@ public class EquipmentVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(EquipmentVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquipmentVersion() {
-        setCimType("EquipmentVersion");
+    public EquipmentVersion(String rdfid) {
+        super("EquipmentVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquipmentVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -650,7 +657,7 @@ public class EquipmentVersion extends BaseClass {
             map.put("shortName", new AttrDetails("EquipmentVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentVersion::shortNameToString, null, EquipmentVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

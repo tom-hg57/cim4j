@@ -23,10 +23,17 @@ public class DCConductingEquipment extends Equipment {
     private static final Logging LOG = Logging.getLogger(DCConductingEquipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCConductingEquipment() {
-        setCimType("DCConductingEquipment");
+    public DCConductingEquipment(String rdfid) {
+        super("DCConductingEquipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCConductingEquipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class DCConductingEquipment extends Equipment {
             map.put("ratedUdc", new AttrDetails("DCConductingEquipment.ratedUdc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DCConductingEquipment::ratedUdcToString, null, DCConductingEquipment::setRatedUdc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCConductingEquipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCConductingEquipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

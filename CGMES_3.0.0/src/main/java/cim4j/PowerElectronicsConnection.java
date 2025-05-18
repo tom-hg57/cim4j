@@ -23,10 +23,17 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
     private static final Logging LOG = Logging.getLogger(PowerElectronicsConnection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerElectronicsConnection() {
-        setCimType("PowerElectronicsConnection");
+    public PowerElectronicsConnection(String rdfid) {
+        super("PowerElectronicsConnection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerElectronicsConnection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -508,7 +515,7 @@ public class PowerElectronicsConnection extends RegulatingCondEq {
             map.put("ratedU", new AttrDetails("PowerElectronicsConnection.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsConnection::ratedUToString, null, PowerElectronicsConnection::setRatedU));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsConnection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsConnection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

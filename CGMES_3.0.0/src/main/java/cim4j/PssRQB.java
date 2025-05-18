@@ -23,10 +23,17 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssRQB.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssRQB() {
-        setCimType("PssRQB");
+    public PssRQB(String rdfid) {
+        super("PssRQB", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssRQB(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
             map.put("tomsl", new AttrDetails("PssRQB.tomsl", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssRQB::tomslToString, null, PssRQB::setTomsl));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssRQB().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssRQB(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

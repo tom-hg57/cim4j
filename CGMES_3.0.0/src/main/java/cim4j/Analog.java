@@ -23,10 +23,17 @@ public class Analog extends Measurement {
     private static final Logging LOG = Logging.getLogger(Analog.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Analog() {
-        setCimType("Analog");
+    public Analog(String rdfid) {
+        super("Analog", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Analog(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -340,7 +347,7 @@ public class Analog extends Measurement {
             map.put("positiveFlowIn", new AttrDetails("Analog.positiveFlowIn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Analog::positiveFlowInToString, null, Analog::setPositiveFlowIn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Analog().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Analog(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

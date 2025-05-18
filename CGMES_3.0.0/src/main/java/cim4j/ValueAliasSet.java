@@ -23,10 +23,17 @@ public class ValueAliasSet extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ValueAliasSet.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ValueAliasSet() {
-        setCimType("ValueAliasSet");
+    public ValueAliasSet(String rdfid) {
+        super("ValueAliasSet", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ValueAliasSet(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -382,7 +389,7 @@ public class ValueAliasSet extends IdentifiedObject {
             map.put("Values", new AttrDetails("ValueAliasSet.Values", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ValueAliasSet::ValuesToString, ValueAliasSet::setValues, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ValueAliasSet().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ValueAliasSet(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

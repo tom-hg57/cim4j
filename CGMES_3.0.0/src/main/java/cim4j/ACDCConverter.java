@@ -23,10 +23,17 @@ public class ACDCConverter extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(ACDCConverter.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ACDCConverter() {
-        setCimType("ACDCConverter");
+    public ACDCConverter(String rdfid) {
+        super("ACDCConverter", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ACDCConverter(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -950,7 +957,7 @@ public class ACDCConverter extends ConductingEquipment {
             map.put("valveU0", new AttrDetails("ACDCConverter.valveU0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ACDCConverter::valveU0ToString, null, ACDCConverter::setValveU0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCConverter().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCConverter(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

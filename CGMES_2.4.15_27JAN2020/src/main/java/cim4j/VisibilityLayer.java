@@ -23,10 +23,17 @@ public class VisibilityLayer extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(VisibilityLayer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VisibilityLayer() {
-        setCimType("VisibilityLayer");
+    public VisibilityLayer(String rdfid) {
+        super("VisibilityLayer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VisibilityLayer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class VisibilityLayer extends IdentifiedObject {
             map.put("drawingOrder", new AttrDetails("VisibilityLayer.drawingOrder", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VisibilityLayer::drawingOrderToString, null, VisibilityLayer::setDrawingOrder));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VisibilityLayer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VisibilityLayer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

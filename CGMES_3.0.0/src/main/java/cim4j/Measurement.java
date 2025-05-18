@@ -23,10 +23,17 @@ public class Measurement extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Measurement.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Measurement() {
-        setCimType("Measurement");
+    public Measurement(String rdfid) {
+        super("Measurement", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Measurement(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -422,7 +429,7 @@ public class Measurement extends IdentifiedObject {
             map.put("unitSymbol", new AttrDetails("Measurement.unitSymbol", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, Measurement::unitSymbolToString, null, Measurement::setUnitSymbol));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Measurement().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Measurement(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

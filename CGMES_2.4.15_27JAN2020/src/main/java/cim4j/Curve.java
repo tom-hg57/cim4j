@@ -23,10 +23,17 @@ public class Curve extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Curve.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Curve() {
-        setCimType("Curve");
+    public Curve(String rdfid) {
+        super("Curve", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Curve(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -388,7 +395,7 @@ public class Curve extends IdentifiedObject {
             map.put("y2Unit", new AttrDetails("Curve.y2Unit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Curve::y2UnitToString, null, Curve::setY2Unit));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Curve().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Curve(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

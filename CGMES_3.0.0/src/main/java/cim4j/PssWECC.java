@@ -23,10 +23,17 @@ public class PssWECC extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssWECC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssWECC() {
-        setCimType("PssWECC");
+    public PssWECC(String rdfid) {
+        super("PssWECC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssWECC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -834,7 +841,7 @@ public class PssWECC extends PowerSystemStabilizerDynamics {
             map.put("vsmin", new AttrDetails("PssWECC.vsmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssWECC::vsminToString, null, PssWECC::setVsmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssWECC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssWECC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

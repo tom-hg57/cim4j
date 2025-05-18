@@ -23,10 +23,17 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
     private static final Logging LOG = Logging.getLogger(SynchronousMachineDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachineDynamics() {
-        setCimType("SynchronousMachineDynamics");
+    public SynchronousMachineDynamics(String rdfid) {
+        super("SynchronousMachineDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachineDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -418,7 +425,7 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
             map.put("TurbineGovernorDynamics", new AttrDetails("SynchronousMachineDynamics.TurbineGovernorDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SynchronousMachineDynamics::TurbineGovernorDynamicsToString, SynchronousMachineDynamics::setTurbineGovernorDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

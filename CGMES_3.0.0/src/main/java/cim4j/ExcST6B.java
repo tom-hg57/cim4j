@@ -23,10 +23,17 @@ public class ExcST6B extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcST6B.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcST6B() {
-        setCimType("ExcST6B");
+    public ExcST6B(String rdfid) {
+        super("ExcST6B", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcST6B(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1008,7 +1015,7 @@ public class ExcST6B extends ExcitationSystemDynamics {
             map.put("xc", new AttrDetails("ExcST6B.xc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcST6B::xcToString, null, ExcST6B::setXc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcST6B().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcST6B(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

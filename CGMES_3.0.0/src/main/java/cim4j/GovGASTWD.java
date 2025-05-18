@@ -23,10 +23,17 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovGASTWD.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovGASTWD() {
-        setCimType("GovGASTWD");
+    public GovGASTWD(String rdfid) {
+        super("GovGASTWD", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovGASTWD(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1352,7 +1359,7 @@ public class GovGASTWD extends TurbineGovernorDynamics {
             map.put("tt", new AttrDetails("GovGASTWD.tt", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovGASTWD::ttToString, null, GovGASTWD::setTt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGASTWD().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGASTWD(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

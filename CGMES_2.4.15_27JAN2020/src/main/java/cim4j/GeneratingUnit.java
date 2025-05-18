@@ -23,10 +23,17 @@ public class GeneratingUnit extends Equipment {
     private static final Logging LOG = Logging.getLogger(GeneratingUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GeneratingUnit() {
-        setCimType("GeneratingUnit");
+    public GeneratingUnit(String rdfid) {
+        super("GeneratingUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GeneratingUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -884,7 +891,7 @@ public class GeneratingUnit extends Equipment {
             map.put("variableCost", new AttrDetails("GeneratingUnit.variableCost", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GeneratingUnit::variableCostToString, null, GeneratingUnit::setVariableCost));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GeneratingUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GeneratingUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

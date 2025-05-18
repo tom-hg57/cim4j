@@ -23,10 +23,17 @@ public class EquipmentContainer extends ConnectivityNodeContainer {
     private static final Logging LOG = Logging.getLogger(EquipmentContainer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquipmentContainer() {
-        setCimType("EquipmentContainer");
+    public EquipmentContainer(String rdfid) {
+        super("EquipmentContainer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquipmentContainer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -269,7 +276,7 @@ public class EquipmentContainer extends ConnectivityNodeContainer {
             map.put("Equipments", new AttrDetails("EquipmentContainer.Equipments", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, EquipmentContainer::EquipmentsToString, EquipmentContainer::setEquipments, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentContainer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentContainer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

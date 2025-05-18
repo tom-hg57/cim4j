@@ -23,10 +23,17 @@ public class TapChanger extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(TapChanger.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TapChanger() {
-        setCimType("TapChanger");
+    public TapChanger(String rdfid) {
+        super("TapChanger", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TapChanger(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -614,7 +621,7 @@ public class TapChanger extends PowerSystemResource {
             map.put("step", new AttrDetails("TapChanger.step", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChanger::stepToString, null, TapChanger::setStep));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChanger().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChanger(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

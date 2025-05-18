@@ -23,10 +23,17 @@ public class DCLine extends DCEquipmentContainer {
     private static final Logging LOG = Logging.getLogger(DCLine.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCLine() {
-        setCimType("DCLine");
+    public DCLine(String rdfid) {
+        super("DCLine", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCLine(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -265,7 +272,7 @@ public class DCLine extends DCEquipmentContainer {
             map.put("Region", new AttrDetails("DCLine.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DCLine::RegionToString, DCLine::setRegion, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCLine().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCLine(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

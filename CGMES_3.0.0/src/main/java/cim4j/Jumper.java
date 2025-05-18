@@ -23,10 +23,17 @@ public class Jumper extends Switch {
     private static final Logging LOG = Logging.getLogger(Jumper.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Jumper() {
-        setCimType("Jumper");
+    public Jumper(String rdfid) {
+        super("Jumper", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Jumper(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Jumper extends Switch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Jumper().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Jumper(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

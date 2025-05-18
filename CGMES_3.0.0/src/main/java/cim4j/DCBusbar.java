@@ -23,10 +23,17 @@ public class DCBusbar extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCBusbar.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCBusbar() {
-        setCimType("DCBusbar");
+    public DCBusbar(String rdfid) {
+        super("DCBusbar", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCBusbar(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DCBusbar extends DCConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBusbar().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBusbar(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

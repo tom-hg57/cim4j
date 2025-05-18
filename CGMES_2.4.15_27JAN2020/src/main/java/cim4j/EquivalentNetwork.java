@@ -23,10 +23,17 @@ public class EquivalentNetwork extends ConnectivityNodeContainer {
     private static final Logging LOG = Logging.getLogger(EquivalentNetwork.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquivalentNetwork() {
-        setCimType("EquivalentNetwork");
+    public EquivalentNetwork(String rdfid) {
+        super("EquivalentNetwork", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquivalentNetwork(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class EquivalentNetwork extends ConnectivityNodeContainer {
             map.put("EquivalentEquipments", new AttrDetails("EquivalentNetwork.EquivalentEquipments", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, EquivalentNetwork::EquivalentEquipmentsToString, EquivalentNetwork::setEquivalentEquipments, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentNetwork().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentNetwork(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

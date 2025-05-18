@@ -23,10 +23,17 @@ public class WindType3or4UserDefined extends WindTurbineType3or4Dynamics {
     private static final Logging LOG = Logging.getLogger(WindType3or4UserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindType3or4UserDefined() {
-        setCimType("WindType3or4UserDefined");
+    public WindType3or4UserDefined(String rdfid) {
+        super("WindType3or4UserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindType3or4UserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class WindType3or4UserDefined extends WindTurbineType3or4Dynamics {
             map.put("proprietary", new AttrDetails("WindType3or4UserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindType3or4UserDefined::proprietaryToString, null, WindType3or4UserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindType3or4UserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindType3or4UserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

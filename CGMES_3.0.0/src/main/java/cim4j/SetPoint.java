@@ -23,10 +23,17 @@ public class SetPoint extends AnalogControl {
     private static final Logging LOG = Logging.getLogger(SetPoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SetPoint() {
-        setCimType("SetPoint");
+    public SetPoint(String rdfid) {
+        super("SetPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SetPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class SetPoint extends AnalogControl {
             map.put("value", new AttrDetails("SetPoint.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SetPoint::valueToString, null, SetPoint::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SetPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SetPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

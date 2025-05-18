@@ -23,10 +23,17 @@ public class NonConformLoad extends EnergyConsumer {
     private static final Logging LOG = Logging.getLogger(NonConformLoad.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NonConformLoad() {
-        setCimType("NonConformLoad");
+    public NonConformLoad(String rdfid) {
+        super("NonConformLoad", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NonConformLoad(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class NonConformLoad extends EnergyConsumer {
             map.put("LoadGroup", new AttrDetails("NonConformLoad.LoadGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, NonConformLoad::LoadGroupToString, NonConformLoad::setLoadGroup, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoad().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoad(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

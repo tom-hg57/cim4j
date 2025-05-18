@@ -23,10 +23,17 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
     private static final Logging LOG = Logging.getLogger(CrossCompoundTurbineGovernorDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CrossCompoundTurbineGovernorDynamics() {
-        setCimType("CrossCompoundTurbineGovernorDynamics");
+    public CrossCompoundTurbineGovernorDynamics(String rdfid) {
+        super("CrossCompoundTurbineGovernorDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CrossCompoundTurbineGovernorDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
             map.put("LowPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.LowPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CrossCompoundTurbineGovernorDynamics::LowPressureSynchronousMachineDynamicsToString, CrossCompoundTurbineGovernorDynamics::setLowPressureSynchronousMachineDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CrossCompoundTurbineGovernorDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CrossCompoundTurbineGovernorDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class SvPowerFlow extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvPowerFlow.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvPowerFlow() {
-        setCimType("SvPowerFlow");
+    public SvPowerFlow(String rdfid) {
+        super("SvPowerFlow", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvPowerFlow(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -334,7 +341,7 @@ public class SvPowerFlow extends BaseClass {
             map.put("q", new AttrDetails("SvPowerFlow.q", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvPowerFlow::qToString, null, SvPowerFlow::setQ));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvPowerFlow().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvPowerFlow(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

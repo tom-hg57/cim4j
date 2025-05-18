@@ -23,10 +23,17 @@ public class TurbineLoadControllerUserDefined extends TurbineLoadControllerDynam
     private static final Logging LOG = Logging.getLogger(TurbineLoadControllerUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TurbineLoadControllerUserDefined() {
-        setCimType("TurbineLoadControllerUserDefined");
+    public TurbineLoadControllerUserDefined(String rdfid) {
+        super("TurbineLoadControllerUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TurbineLoadControllerUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class TurbineLoadControllerUserDefined extends TurbineLoadControllerDynam
             map.put("proprietary", new AttrDetails("TurbineLoadControllerUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TurbineLoadControllerUserDefined::proprietaryToString, null, TurbineLoadControllerUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineLoadControllerUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineLoadControllerUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

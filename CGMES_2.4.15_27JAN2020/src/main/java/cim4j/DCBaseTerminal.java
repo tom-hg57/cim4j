@@ -23,10 +23,17 @@ public class DCBaseTerminal extends ACDCTerminal {
     private static final Logging LOG = Logging.getLogger(DCBaseTerminal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCBaseTerminal() {
-        setCimType("DCBaseTerminal");
+    public DCBaseTerminal(String rdfid) {
+        super("DCBaseTerminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCBaseTerminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -301,7 +308,7 @@ public class DCBaseTerminal extends ACDCTerminal {
             map.put("DCTopologicalNode", new AttrDetails("DCBaseTerminal.DCTopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DCBaseTerminal::DCTopologicalNodeToString, DCBaseTerminal::setDCTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBaseTerminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBaseTerminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

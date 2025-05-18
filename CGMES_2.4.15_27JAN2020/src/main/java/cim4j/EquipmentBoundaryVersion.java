@@ -23,10 +23,17 @@ public class EquipmentBoundaryVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(EquipmentBoundaryVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquipmentBoundaryVersion() {
-        setCimType("EquipmentBoundaryVersion");
+    public EquipmentBoundaryVersion(String rdfid) {
+        super("EquipmentBoundaryVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquipmentBoundaryVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -560,7 +567,7 @@ public class EquipmentBoundaryVersion extends BaseClass {
             map.put("shortName", new AttrDetails("EquipmentBoundaryVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, EquipmentBoundaryVersion::shortNameToString, null, EquipmentBoundaryVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentBoundaryVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquipmentBoundaryVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

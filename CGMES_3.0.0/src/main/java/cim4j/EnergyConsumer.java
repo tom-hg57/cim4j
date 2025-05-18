@@ -23,10 +23,17 @@ public class EnergyConsumer extends EnergyConnection {
     private static final Logging LOG = Logging.getLogger(EnergyConsumer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EnergyConsumer() {
-        setCimType("EnergyConsumer");
+    public EnergyConsumer(String rdfid) {
+        super("EnergyConsumer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EnergyConsumer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -506,7 +513,7 @@ public class EnergyConsumer extends EnergyConnection {
             map.put("qfixedPct", new AttrDetails("EnergyConsumer.qfixedPct", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergyConsumer::qfixedPctToString, null, EnergyConsumer::setQfixedPct));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyConsumer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyConsumer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

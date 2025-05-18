@@ -23,10 +23,17 @@ public class GovCT1 extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovCT1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovCT1() {
-        setCimType("GovCT1");
+    public GovCT1(String rdfid) {
+        super("GovCT1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovCT1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1416,7 +1423,7 @@ public class GovCT1 extends TurbineGovernorDynamics {
             map.put("wfspd", new AttrDetails("GovCT1.wfspd", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovCT1::wfspdToString, null, GovCT1::setWfspd));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovCT1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovCT1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

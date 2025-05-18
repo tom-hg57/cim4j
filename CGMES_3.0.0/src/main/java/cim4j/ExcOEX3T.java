@@ -23,10 +23,17 @@ public class ExcOEX3T extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcOEX3T.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcOEX3T() {
-        setCimType("ExcOEX3T");
+    public ExcOEX3T(String rdfid) {
+        super("ExcOEX3T", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcOEX3T(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -876,7 +883,7 @@ public class ExcOEX3T extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcOEX3T.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcOEX3T::vrminToString, null, ExcOEX3T::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcOEX3T().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcOEX3T(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

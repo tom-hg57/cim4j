@@ -23,10 +23,17 @@ public class AccumulatorReset extends Control {
     private static final Logging LOG = Logging.getLogger(AccumulatorReset.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AccumulatorReset() {
-        setCimType("AccumulatorReset");
+    public AccumulatorReset(String rdfid) {
+        super("AccumulatorReset", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AccumulatorReset(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class AccumulatorReset extends Control {
             map.put("AccumulatorValue", new AttrDetails("AccumulatorReset.AccumulatorValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, AccumulatorReset::AccumulatorValueToString, AccumulatorReset::setAccumulatorValue, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorReset().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AccumulatorReset(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

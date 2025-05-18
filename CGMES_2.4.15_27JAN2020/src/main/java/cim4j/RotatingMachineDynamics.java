@@ -23,10 +23,17 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(RotatingMachineDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RotatingMachineDynamics() {
-        setCimType("RotatingMachineDynamics");
+    public RotatingMachineDynamics(String rdfid) {
+        super("RotatingMachineDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RotatingMachineDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -434,7 +441,7 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
             map.put("statorResistance", new AttrDetails("RotatingMachineDynamics.statorResistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RotatingMachineDynamics::statorResistanceToString, null, RotatingMachineDynamics::setStatorResistance));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RotatingMachineDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RotatingMachineDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class WaveTrap extends AuxiliaryEquipment {
     private static final Logging LOG = Logging.getLogger(WaveTrap.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WaveTrap() {
-        setCimType("WaveTrap");
+    public WaveTrap(String rdfid) {
+        super("WaveTrap", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WaveTrap(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class WaveTrap extends AuxiliaryEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WaveTrap().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WaveTrap(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

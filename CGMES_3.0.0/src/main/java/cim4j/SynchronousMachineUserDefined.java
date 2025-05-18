@@ -23,10 +23,17 @@ public class SynchronousMachineUserDefined extends SynchronousMachineDynamics {
     private static final Logging LOG = Logging.getLogger(SynchronousMachineUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachineUserDefined() {
-        setCimType("SynchronousMachineUserDefined");
+    public SynchronousMachineUserDefined(String rdfid) {
+        super("SynchronousMachineUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachineUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class SynchronousMachineUserDefined extends SynchronousMachineDynamics {
             map.put("proprietary", new AttrDetails("SynchronousMachineUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineUserDefined::proprietaryToString, null, SynchronousMachineUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

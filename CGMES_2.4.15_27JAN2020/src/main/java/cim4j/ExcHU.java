@@ -23,10 +23,17 @@ public class ExcHU extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcHU.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcHU() {
-        setCimType("ExcHU");
+    public ExcHU(String rdfid) {
+        super("ExcHU", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcHU(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -638,7 +645,7 @@ public class ExcHU extends ExcitationSystemDynamics {
             map.put("tr", new AttrDetails("ExcHU.tr", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcHU::trToString, null, ExcHU::setTr));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcHU().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcHU(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

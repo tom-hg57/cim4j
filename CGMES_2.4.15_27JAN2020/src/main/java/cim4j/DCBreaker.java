@@ -23,10 +23,17 @@ public class DCBreaker extends DCSwitch {
     private static final Logging LOG = Logging.getLogger(DCBreaker.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCBreaker() {
-        setCimType("DCBreaker");
+    public DCBreaker(String rdfid) {
+        super("DCBreaker", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCBreaker(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DCBreaker extends DCSwitch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBreaker().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCBreaker(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

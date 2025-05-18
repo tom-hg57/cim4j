@@ -23,10 +23,17 @@ public class GovGAST extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovGAST.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovGAST() {
-        setCimType("GovGAST");
+    public GovGAST(String rdfid) {
+        super("GovGAST", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovGAST(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class GovGAST extends TurbineGovernorDynamics {
             map.put("vmin", new AttrDetails("GovGAST.vmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovGAST::vminToString, null, GovGAST::setVmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGAST().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovGAST(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

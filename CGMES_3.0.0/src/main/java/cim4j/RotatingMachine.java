@@ -23,10 +23,17 @@ public class RotatingMachine extends RegulatingCondEq {
     private static final Logging LOG = Logging.getLogger(RotatingMachine.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RotatingMachine() {
-        setCimType("RotatingMachine");
+    public RotatingMachine(String rdfid) {
+        super("RotatingMachine", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RotatingMachine(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -474,7 +481,7 @@ public class RotatingMachine extends RegulatingCondEq {
             map.put("ratedU", new AttrDetails("RotatingMachine.ratedU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RotatingMachine::ratedUToString, null, RotatingMachine::setRatedU));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RotatingMachine().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RotatingMachine(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

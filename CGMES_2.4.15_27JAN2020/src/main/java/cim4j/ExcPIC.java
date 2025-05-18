@@ -23,10 +23,17 @@ public class ExcPIC extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcPIC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcPIC() {
-        setCimType("ExcPIC");
+    public ExcPIC(String rdfid) {
+        super("ExcPIC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcPIC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1012,7 +1019,7 @@ public class ExcPIC extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcPIC.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcPIC::vrminToString, null, ExcPIC::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcPIC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcPIC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

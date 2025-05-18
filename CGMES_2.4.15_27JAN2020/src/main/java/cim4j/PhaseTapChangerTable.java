@@ -23,10 +23,17 @@ public class PhaseTapChangerTable extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerTable.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhaseTapChangerTable() {
-        setCimType("PhaseTapChangerTable");
+    public PhaseTapChangerTable(String rdfid) {
+        super("PhaseTapChangerTable", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerTable(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class PhaseTapChangerTable extends IdentifiedObject {
             map.put("PhaseTapChangerTabular", new AttrDetails("PhaseTapChangerTable.PhaseTapChangerTabular", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PhaseTapChangerTable::PhaseTapChangerTabularToString, PhaseTapChangerTable::setPhaseTapChangerTabular, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTable().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTable(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

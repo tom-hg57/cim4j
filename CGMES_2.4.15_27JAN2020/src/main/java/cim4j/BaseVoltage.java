@@ -23,10 +23,17 @@ public class BaseVoltage extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(BaseVoltage.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public BaseVoltage() {
-        setCimType("BaseVoltage");
+    public BaseVoltage(String rdfid) {
+        super("BaseVoltage", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BaseVoltage(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -418,7 +425,7 @@ public class BaseVoltage extends IdentifiedObject {
             map.put("nominalVoltage", new AttrDetails("BaseVoltage.nominalVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, BaseVoltage::nominalVoltageToString, null, BaseVoltage::setNominalVoltage));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BaseVoltage().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BaseVoltage(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

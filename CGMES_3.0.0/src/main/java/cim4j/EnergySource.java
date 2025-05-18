@@ -23,10 +23,17 @@ public class EnergySource extends EnergyConnection {
     private static final Logging LOG = Logging.getLogger(EnergySource.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EnergySource() {
-        setCimType("EnergySource");
+    public EnergySource(String rdfid) {
+        super("EnergySource", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EnergySource(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -708,7 +715,7 @@ public class EnergySource extends EnergyConnection {
             map.put("xn", new AttrDetails("EnergySource.xn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, EnergySource::xnToString, null, EnergySource::setXn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergySource().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergySource(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

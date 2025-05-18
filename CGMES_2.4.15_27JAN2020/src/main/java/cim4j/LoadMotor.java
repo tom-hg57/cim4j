@@ -23,10 +23,17 @@ public class LoadMotor extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LoadMotor.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadMotor() {
-        setCimType("LoadMotor");
+    public LoadMotor(String rdfid) {
+        super("LoadMotor", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadMotor(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -708,7 +715,7 @@ public class LoadMotor extends IdentifiedObject {
             map.put("vt", new AttrDetails("LoadMotor.vt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadMotor::vtToString, null, LoadMotor::setVt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadMotor().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadMotor(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

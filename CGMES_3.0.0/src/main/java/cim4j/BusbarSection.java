@@ -23,10 +23,17 @@ public class BusbarSection extends Connector {
     private static final Logging LOG = Logging.getLogger(BusbarSection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public BusbarSection() {
-        setCimType("BusbarSection");
+    public BusbarSection(String rdfid) {
+        super("BusbarSection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BusbarSection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class BusbarSection extends Connector {
             map.put("ipMax", new AttrDetails("BusbarSection.ipMax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BusbarSection::ipMaxToString, null, BusbarSection::setIpMax));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusbarSection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BusbarSection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

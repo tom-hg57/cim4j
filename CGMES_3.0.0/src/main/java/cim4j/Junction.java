@@ -23,10 +23,17 @@ public class Junction extends Connector {
     private static final Logging LOG = Logging.getLogger(Junction.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Junction() {
-        setCimType("Junction");
+    public Junction(String rdfid) {
+        super("Junction", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Junction(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Junction extends Connector {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Junction().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Junction(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

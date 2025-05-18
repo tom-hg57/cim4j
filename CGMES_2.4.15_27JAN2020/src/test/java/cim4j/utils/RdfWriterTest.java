@@ -66,16 +66,15 @@ class RdfWriterTest {
     void testAddCimData() {
         var rdfWriter = new RdfWriter();
 
-        var cimObj = CimClassMap.createCimObject("Location");
-        cimObj.setRdfid("ee.ORT:E_2785017863");
-        rdfWriter.addCimData(Map.of("ee.ORT:E_2785017863", cimObj));
+        var cimObj = CimClassMap.createCimObject("Location", "rdfid");
+        rdfWriter.addCimData(Map.of("rdfid", cimObj));
 
         var cimData = rdfWriter.getCimData();
         assertEquals(1, cimData.size());
 
-        var cimObj2 = cimData.get("ee.ORT:E_2785017863");
+        var cimObj2 = cimData.get("rdfid");
         assertNotNull(cimObj2);
-        assertEquals("ee.ORT:E_2785017863", cimObj2.getRdfid());
+        assertEquals("rdfid", cimObj2.getRdfid());
     }
 
     @Test
@@ -764,7 +763,7 @@ class RdfWriterTest {
     @Test
     @Order(360)
     void testIsClassMatchingProfile() {
-        BaseClass cimObj = new BaseVoltage();
+        BaseClass cimObj = new BaseVoltage("rdfid1");
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.EQ));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.TP));
 
@@ -776,7 +775,7 @@ class RdfWriterTest {
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SSH));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SV));
 
-        cimObj = new VoltageLevel();
+        cimObj = new VoltageLevel("rdfid2");
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.EQ));
 
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.DL));
@@ -786,7 +785,7 @@ class RdfWriterTest {
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SV));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.TP));
 
-        cimObj = new TopologicalNode();
+        cimObj = new TopologicalNode("rdfid3");
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SV));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.TP));
 
@@ -796,7 +795,7 @@ class RdfWriterTest {
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.GL));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SSH));
 
-        cimObj = new TopologicalIsland();
+        cimObj = new TopologicalIsland("rdfid4");
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SV));
 
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.EQ));
@@ -806,7 +805,7 @@ class RdfWriterTest {
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SSH));
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.TP));
 
-        cimObj = new SvVoltage();
+        cimObj = new SvVoltage("rdfid5");
         assertTrue(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.SV));
         assertFalse(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.EQ));
         assertFalse(RdfWriter.isClassMatchingProfile(cimObj, CGMESProfile.TP));
@@ -824,16 +823,17 @@ class RdfWriterTest {
     @Test
     @Order(370)
     void testGetClassProfile() {
-        assertEquals(CGMESProfile.EQ, RdfWriter.getClassProfile(new BaseVoltage()));
-        assertEquals(CGMESProfile.EQ, RdfWriter.getClassProfile(new VoltageLevel()));
-        assertEquals(CGMESProfile.TP, RdfWriter.getClassProfile(new TopologicalNode()));
-        assertEquals(CGMESProfile.SV, RdfWriter.getClassProfile(new TopologicalIsland()));
+        assertEquals(CGMESProfile.EQ, RdfWriter.getClassProfile(new BaseVoltage("rdfid1")));
+        assertEquals(CGMESProfile.EQ, RdfWriter.getClassProfile(new VoltageLevel("rdfid2")));
+        assertEquals(CGMESProfile.TP, RdfWriter.getClassProfile(new TopologicalNode("rdfid3")));
+        assertEquals(CGMESProfile.SV, RdfWriter.getClassProfile(new TopologicalIsland("rdfid4")));
     }
 
     @Test
     @Order(380)
     void testGetClassProfileMap() {
-        List<BaseClass> cimList = List.of(new BaseVoltage(), new TopologicalNode(), new BaseVoltage());
+        List<BaseClass> cimList = List.of(new BaseVoltage("rdfid1"), new TopologicalNode("rdfid2"),
+                new BaseVoltage("rdfid3"));
         var profileMap = RdfWriter.getClassProfileMap(cimList);
         assertEquals(2, profileMap.size());
 
@@ -847,7 +847,7 @@ class RdfWriterTest {
     @Test
     @Order(390)
     void testGetAttributeProfile() {
-        BaseClass cimObj = new BaseVoltage();
+        BaseClass cimObj = new BaseVoltage("rdfid1");
         var profile = CGMESProfile.EQ;
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "nominalVoltage", profile));
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "VoltageLevel", profile));
@@ -861,13 +861,13 @@ class RdfWriterTest {
         assertEquals(CGMESProfile.TP, RdfWriter.getAttributeProfile(cimObj, "name", profile));
         assertEquals(CGMESProfile.TP, RdfWriter.getAttributeProfile(cimObj, "description", profile));
 
-        cimObj = new VoltageLevel();
+        cimObj = new VoltageLevel("rdfid2");
         profile = CGMESProfile.EQ;
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "BaseVoltage", profile));
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "name", profile));
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "description", profile));
 
-        cimObj = new TopologicalNode();
+        cimObj = new TopologicalNode("rdfid3");
         profile = CGMESProfile.TP;
         assertEquals(CGMESProfile.TP, RdfWriter.getAttributeProfile(cimObj, "BaseVoltage", profile));
         assertEquals(CGMESProfile.SV, RdfWriter.getAttributeProfile(cimObj, "TopologicalIsland", profile));
@@ -879,7 +879,7 @@ class RdfWriterTest {
         assertEquals(CGMESProfile.SV, RdfWriter.getAttributeProfile(cimObj, "name", profile));
         assertEquals(CGMESProfile.EQ, RdfWriter.getAttributeProfile(cimObj, "description", profile));
 
-        cimObj = new TopologicalIsland();
+        cimObj = new TopologicalIsland("rdfid4");
         profile = CGMESProfile.SV;
         assertEquals(CGMESProfile.SV, RdfWriter.getAttributeProfile(cimObj, "TopologicalNodes", profile));
         assertEquals(CGMESProfile.SV, RdfWriter.getAttributeProfile(cimObj, "name", profile));

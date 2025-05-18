@@ -23,10 +23,17 @@ public class Diagram extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Diagram.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Diagram() {
-        setCimType("Diagram");
+    public Diagram(String rdfid) {
+        super("Diagram", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Diagram(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -470,7 +477,7 @@ public class Diagram extends IdentifiedObject {
             map.put("y2InitialView", new AttrDetails("Diagram.y2InitialView", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Diagram::y2InitialViewToString, null, Diagram::setY2InitialView));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Diagram().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Diagram(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

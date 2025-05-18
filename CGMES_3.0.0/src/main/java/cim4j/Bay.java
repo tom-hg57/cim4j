@@ -23,10 +23,17 @@ public class Bay extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(Bay.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Bay() {
-        setCimType("Bay");
+    public Bay(String rdfid) {
+        super("Bay", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Bay(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -267,7 +274,7 @@ public class Bay extends EquipmentContainer {
             map.put("VoltageLevel", new AttrDetails("Bay.VoltageLevel", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, Bay::VoltageLevelToString, Bay::setVoltageLevel, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Bay().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Bay(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

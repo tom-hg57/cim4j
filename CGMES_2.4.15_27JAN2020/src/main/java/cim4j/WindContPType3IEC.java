@@ -23,10 +23,17 @@ public class WindContPType3IEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContPType3IEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContPType3IEC() {
-        setCimType("WindContPType3IEC");
+    public WindContPType3IEC(String rdfid) {
+        super("WindContPType3IEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContPType3IEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1020,7 +1027,7 @@ public class WindContPType3IEC extends IdentifiedObject {
             map.put("zeta", new AttrDetails("WindContPType3IEC.zeta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContPType3IEC::zetaToString, null, WindContPType3IEC::setZeta));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContPType3IEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContPType3IEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

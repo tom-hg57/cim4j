@@ -23,10 +23,17 @@ public class MeasurementValue extends IOPoint {
     private static final Logging LOG = Logging.getLogger(MeasurementValue.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MeasurementValue() {
-        setCimType("MeasurementValue");
+    public MeasurementValue(String rdfid) {
+        super("MeasurementValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MeasurementValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -368,7 +375,7 @@ public class MeasurementValue extends IOPoint {
             map.put("timeStamp", new AttrDetails("MeasurementValue.timeStamp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MeasurementValue::timeStampToString, null, MeasurementValue::setTimeStamp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class SubLoadArea extends EnergyArea {
     private static final Logging LOG = Logging.getLogger(SubLoadArea.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SubLoadArea() {
-        setCimType("SubLoadArea");
+    public SubLoadArea(String rdfid) {
+        super("SubLoadArea", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SubLoadArea(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class SubLoadArea extends EnergyArea {
             map.put("LoadGroups", new AttrDetails("SubLoadArea.LoadGroups", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SubLoadArea::LoadGroupsToString, SubLoadArea::setLoadGroups, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubLoadArea().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubLoadArea(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

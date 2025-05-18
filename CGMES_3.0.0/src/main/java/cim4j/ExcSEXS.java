@@ -23,10 +23,17 @@ public class ExcSEXS extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcSEXS.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcSEXS() {
-        setCimType("ExcSEXS");
+    public ExcSEXS(String rdfid) {
+        super("ExcSEXS", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcSEXS(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -570,7 +577,7 @@ public class ExcSEXS extends ExcitationSystemDynamics {
             map.put("te", new AttrDetails("ExcSEXS.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcSEXS::teToString, null, ExcSEXS::setTe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSEXS().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSEXS(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Equipment extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(Equipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Equipment() {
-        setCimType("Equipment");
+    public Equipment(String rdfid) {
+        super("Equipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Equipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -407,7 +414,7 @@ public class Equipment extends PowerSystemResource {
             map.put("normallyInService", new AttrDetails("Equipment.normallyInService", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Equipment::normallyInServiceToString, null, Equipment::setNormallyInService));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Equipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Equipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class PetersenCoil extends EarthFaultCompensator {
     private static final Logging LOG = Logging.getLogger(PetersenCoil.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PetersenCoil() {
-        setCimType("PetersenCoil");
+    public PetersenCoil(String rdfid) {
+        super("PetersenCoil", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PetersenCoil(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -464,7 +471,7 @@ public class PetersenCoil extends EarthFaultCompensator {
             map.put("xGroundNominal", new AttrDetails("PetersenCoil.xGroundNominal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PetersenCoil::xGroundNominalToString, null, PetersenCoil::setXGroundNominal));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PetersenCoil().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PetersenCoil(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

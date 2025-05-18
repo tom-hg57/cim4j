@@ -23,10 +23,17 @@ public class PFVArType1IEEEPFController extends PFVArControllerType1Dynamics {
     private static final Logging LOG = Logging.getLogger(PFVArType1IEEEPFController.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArType1IEEEPFController() {
-        setCimType("PFVArType1IEEEPFController");
+    public PFVArType1IEEEPFController(String rdfid) {
+        super("PFVArType1IEEEPFController", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArType1IEEEPFController(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -502,7 +509,7 @@ public class PFVArType1IEEEPFController extends PFVArControllerType1Dynamics {
             map.put("vvtmin", new AttrDetails("PFVArType1IEEEPFController.vvtmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PFVArType1IEEEPFController::vvtminToString, null, PFVArType1IEEEPFController::setVvtmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType1IEEEPFController().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType1IEEEPFController(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

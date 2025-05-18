@@ -23,10 +23,17 @@ public class WorkLocation extends Location {
     private static final Logging LOG = Logging.getLogger(WorkLocation.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WorkLocation() {
-        setCimType("WorkLocation");
+    public WorkLocation(String rdfid) {
+        super("WorkLocation", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WorkLocation(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class WorkLocation extends Location {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WorkLocation().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WorkLocation(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

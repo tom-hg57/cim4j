@@ -23,10 +23,17 @@ public class PssELIN2 extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssELIN2.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssELIN2() {
-        setCimType("PssELIN2");
+    public PssELIN2(String rdfid) {
+        super("PssELIN2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssELIN2(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class PssELIN2 extends PowerSystemStabilizerDynamics {
             map.put("ts6", new AttrDetails("PssELIN2.ts6", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssELIN2::ts6ToString, null, PssELIN2::setTs6));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssELIN2().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssELIN2(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

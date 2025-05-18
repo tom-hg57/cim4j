@@ -23,10 +23,17 @@ public class MechanicalLoadDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(MechanicalLoadDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MechanicalLoadDynamics() {
-        setCimType("MechanicalLoadDynamics");
+    public MechanicalLoadDynamics(String rdfid) {
+        super("MechanicalLoadDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MechanicalLoadDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class MechanicalLoadDynamics extends DynamicsFunctionBlock {
             map.put("SynchronousMachineDynamics", new AttrDetails("MechanicalLoadDynamics.SynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, MechanicalLoadDynamics::SynchronousMachineDynamicsToString, MechanicalLoadDynamics::setSynchronousMachineDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechanicalLoadDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechanicalLoadDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Location extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Location.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Location() {
-        setCimType("Location");
+    public Location(String rdfid) {
+        super("Location", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Location(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -340,7 +347,7 @@ public class Location extends IdentifiedObject {
             map.put("PowerSystemResources", new AttrDetails("Location.PowerSystemResources", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Location::PowerSystemResourcesToString, Location::setPowerSystemResources, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Location().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Location(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

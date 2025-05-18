@@ -23,10 +23,17 @@ public class OperationalLimitType extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(OperationalLimitType.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OperationalLimitType() {
-        setCimType("OperationalLimitType");
+    public OperationalLimitType(String rdfid) {
+        super("OperationalLimitType", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OperationalLimitType(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -396,7 +403,7 @@ public class OperationalLimitType extends IdentifiedObject {
             map.put("kind", new AttrDetails("OperationalLimitType.kind", true, "http://iec.ch/TC57/CIM100-European#", profiles, false, true, OperationalLimitType::kindToString, null, OperationalLimitType::setKind));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitType().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OperationalLimitType(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

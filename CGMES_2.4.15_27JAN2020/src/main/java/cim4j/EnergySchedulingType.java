@@ -23,10 +23,17 @@ public class EnergySchedulingType extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(EnergySchedulingType.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EnergySchedulingType() {
-        setCimType("EnergySchedulingType");
+    public EnergySchedulingType(String rdfid) {
+        super("EnergySchedulingType", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EnergySchedulingType(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -269,7 +276,7 @@ public class EnergySchedulingType extends IdentifiedObject {
             map.put("EnergySource", new AttrDetails("EnergySchedulingType.EnergySource", false, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, false, EnergySchedulingType::EnergySourceToString, EnergySchedulingType::setEnergySource, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergySchedulingType().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergySchedulingType(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

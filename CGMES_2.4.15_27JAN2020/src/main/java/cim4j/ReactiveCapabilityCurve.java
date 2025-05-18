@@ -23,10 +23,17 @@ public class ReactiveCapabilityCurve extends Curve {
     private static final Logging LOG = Logging.getLogger(ReactiveCapabilityCurve.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ReactiveCapabilityCurve() {
-        setCimType("ReactiveCapabilityCurve");
+    public ReactiveCapabilityCurve(String rdfid) {
+        super("ReactiveCapabilityCurve", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ReactiveCapabilityCurve(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class ReactiveCapabilityCurve extends Curve {
             map.put("InitiallyUsedBySynchronousMachines", new AttrDetails("ReactiveCapabilityCurve.InitiallyUsedBySynchronousMachines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ReactiveCapabilityCurve::InitiallyUsedBySynchronousMachinesToString, ReactiveCapabilityCurve::setInitiallyUsedBySynchronousMachines, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ReactiveCapabilityCurve().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ReactiveCapabilityCurve(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

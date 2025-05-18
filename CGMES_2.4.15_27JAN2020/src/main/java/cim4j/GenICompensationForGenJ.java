@@ -23,10 +23,17 @@ public class GenICompensationForGenJ extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(GenICompensationForGenJ.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GenICompensationForGenJ() {
-        setCimType("GenICompensationForGenJ");
+    public GenICompensationForGenJ(String rdfid) {
+        super("GenICompensationForGenJ", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GenICompensationForGenJ(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -368,7 +375,7 @@ public class GenICompensationForGenJ extends IdentifiedObject {
             map.put("xcij", new AttrDetails("GenICompensationForGenJ.xcij", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GenICompensationForGenJ::xcijToString, null, GenICompensationForGenJ::setXcij));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GenICompensationForGenJ().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GenICompensationForGenJ(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

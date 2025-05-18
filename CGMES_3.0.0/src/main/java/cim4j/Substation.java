@@ -23,10 +23,17 @@ public class Substation extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(Substation.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Substation() {
-        setCimType("Substation");
+    public Substation(String rdfid) {
+        super("Substation", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Substation(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -344,7 +351,7 @@ public class Substation extends EquipmentContainer {
             map.put("VoltageLevels", new AttrDetails("Substation.VoltageLevels", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, Substation::VoltageLevelsToString, Substation::setVoltageLevels, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Substation().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Substation(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

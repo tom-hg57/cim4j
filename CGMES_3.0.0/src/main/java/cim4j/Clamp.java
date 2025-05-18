@@ -23,10 +23,17 @@ public class Clamp extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(Clamp.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Clamp() {
-        setCimType("Clamp");
+    public Clamp(String rdfid) {
+        super("Clamp", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Clamp(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class Clamp extends ConductingEquipment {
             map.put("lengthFromTerminal1", new AttrDetails("Clamp.lengthFromTerminal1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Clamp::lengthFromTerminal1ToString, null, Clamp::setLengthFromTerminal1));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Clamp().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Clamp(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

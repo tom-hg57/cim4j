@@ -23,10 +23,17 @@ public class EquivalentShunt extends EquivalentEquipment {
     private static final Logging LOG = Logging.getLogger(EquivalentShunt.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquivalentShunt() {
-        setCimType("EquivalentShunt");
+    public EquivalentShunt(String rdfid) {
+        super("EquivalentShunt", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquivalentShunt(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class EquivalentShunt extends EquivalentEquipment {
             map.put("g", new AttrDetails("EquivalentShunt.g", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentShunt::gToString, null, EquivalentShunt::setG));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentShunt().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentShunt(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

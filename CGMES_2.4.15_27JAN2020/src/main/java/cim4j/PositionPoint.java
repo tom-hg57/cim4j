@@ -23,10 +23,17 @@ public class PositionPoint extends BaseClass {
     private static final Logging LOG = Logging.getLogger(PositionPoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PositionPoint() {
-        setCimType("PositionPoint");
+    public PositionPoint(String rdfid) {
+        super("PositionPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PositionPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -390,7 +397,7 @@ public class PositionPoint extends BaseClass {
             map.put("zPosition", new AttrDetails("PositionPoint.zPosition", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PositionPoint::zPositionToString, null, PositionPoint::setZPosition));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PositionPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PositionPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

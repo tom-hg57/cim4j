@@ -23,10 +23,17 @@ public class MeasurementValueQuality extends Quality61850 {
     private static final Logging LOG = Logging.getLogger(MeasurementValueQuality.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MeasurementValueQuality() {
-        setCimType("MeasurementValueQuality");
+    public MeasurementValueQuality(String rdfid) {
+        super("MeasurementValueQuality", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MeasurementValueQuality(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class MeasurementValueQuality extends Quality61850 {
             map.put("MeasurementValue", new AttrDetails("MeasurementValueQuality.MeasurementValue", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, MeasurementValueQuality::MeasurementValueToString, MeasurementValueQuality::setMeasurementValue, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValueQuality().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MeasurementValueQuality(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

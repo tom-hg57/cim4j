@@ -23,10 +23,17 @@ public class LoadComposite extends LoadDynamics {
     private static final Logging LOG = Logging.getLogger(LoadComposite.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadComposite() {
-        setCimType("LoadComposite");
+    public LoadComposite(String rdfid) {
+        super("LoadComposite", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadComposite(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class LoadComposite extends LoadDynamics {
             map.put("pfrac", new AttrDetails("LoadComposite.pfrac", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadComposite::pfracToString, null, LoadComposite::setPfrac));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadComposite().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadComposite(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

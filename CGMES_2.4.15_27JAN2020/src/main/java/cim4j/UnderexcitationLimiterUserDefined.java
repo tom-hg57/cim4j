@@ -23,10 +23,17 @@ public class UnderexcitationLimiterUserDefined extends UnderexcitationLimiterDyn
     private static final Logging LOG = Logging.getLogger(UnderexcitationLimiterUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public UnderexcitationLimiterUserDefined() {
-        setCimType("UnderexcitationLimiterUserDefined");
+    public UnderexcitationLimiterUserDefined(String rdfid) {
+        super("UnderexcitationLimiterUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected UnderexcitationLimiterUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class UnderexcitationLimiterUserDefined extends UnderexcitationLimiterDyn
             map.put("proprietary", new AttrDetails("UnderexcitationLimiterUserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, UnderexcitationLimiterUserDefined::proprietaryToString, null, UnderexcitationLimiterUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcitationLimiterUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcitationLimiterUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

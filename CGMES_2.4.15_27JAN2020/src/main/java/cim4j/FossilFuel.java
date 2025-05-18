@@ -23,10 +23,17 @@ public class FossilFuel extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(FossilFuel.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public FossilFuel() {
-        setCimType("FossilFuel");
+    public FossilFuel(String rdfid) {
+        super("FossilFuel", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected FossilFuel(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -296,7 +303,7 @@ public class FossilFuel extends IdentifiedObject {
             map.put("fossilFuelType", new AttrDetails("FossilFuel.fossilFuelType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, FossilFuel::fossilFuelTypeToString, null, FossilFuel::setFossilFuelType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new FossilFuel().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new FossilFuel(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class OverexcLimX2 extends OverexcitationLimiterDynamics {
     private static final Logging LOG = Logging.getLogger(OverexcLimX2.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OverexcLimX2() {
-        setCimType("OverexcLimX2");
+    public OverexcLimX2(String rdfid) {
+        super("OverexcLimX2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OverexcLimX2(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class OverexcLimX2 extends OverexcitationLimiterDynamics {
             map.put("vlow", new AttrDetails("OverexcLimX2.vlow", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLimX2::vlowToString, null, OverexcLimX2::setVlow));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLimX2().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLimX2(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class ReportingGroup extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ReportingGroup.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ReportingGroup() {
-        setCimType("ReportingGroup");
+    public ReportingGroup(String rdfid) {
+        super("ReportingGroup", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ReportingGroup(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class ReportingGroup extends IdentifiedObject {
             map.put("TopologicalNode", new AttrDetails("ReportingGroup.TopologicalNode", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ReportingGroup::TopologicalNodeToString, ReportingGroup::setTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ReportingGroup().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ReportingGroup(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

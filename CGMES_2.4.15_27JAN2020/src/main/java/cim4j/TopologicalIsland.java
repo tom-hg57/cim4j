@@ -23,10 +23,17 @@ public class TopologicalIsland extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(TopologicalIsland.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TopologicalIsland() {
-        setCimType("TopologicalIsland");
+    public TopologicalIsland(String rdfid) {
+        super("TopologicalIsland", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TopologicalIsland(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class TopologicalIsland extends IdentifiedObject {
             map.put("TopologicalNodes", new AttrDetails("TopologicalIsland.TopologicalNodes", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalIsland::TopologicalNodesToString, TopologicalIsland::setTopologicalNodes, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologicalIsland().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TopologicalIsland(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

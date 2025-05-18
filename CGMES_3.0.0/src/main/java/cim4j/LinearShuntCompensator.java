@@ -23,10 +23,17 @@ public class LinearShuntCompensator extends ShuntCompensator {
     private static final Logging LOG = Logging.getLogger(LinearShuntCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LinearShuntCompensator() {
-        setCimType("LinearShuntCompensator");
+    public LinearShuntCompensator(String rdfid) {
+        super("LinearShuntCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LinearShuntCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -366,7 +373,7 @@ public class LinearShuntCompensator extends ShuntCompensator {
             map.put("gPerSection", new AttrDetails("LinearShuntCompensator.gPerSection", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, LinearShuntCompensator::gPerSectionToString, null, LinearShuntCompensator::setGPerSection));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LinearShuntCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LinearShuntCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

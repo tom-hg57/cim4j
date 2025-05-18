@@ -23,10 +23,17 @@ public class Season extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Season.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Season() {
-        setCimType("Season");
+    public Season(String rdfid) {
+        super("Season", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Season(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -328,7 +335,7 @@ public class Season extends IdentifiedObject {
             map.put("startDate", new AttrDetails("Season.startDate", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Season::startDateToString, null, Season::setStartDate));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Season().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Season(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

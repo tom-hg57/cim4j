@@ -23,10 +23,17 @@ public class Breaker extends ProtectedSwitch {
     private static final Logging LOG = Logging.getLogger(Breaker.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Breaker() {
-        setCimType("Breaker");
+    public Breaker(String rdfid) {
+        super("Breaker", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Breaker(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Breaker extends ProtectedSwitch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Breaker().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Breaker(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

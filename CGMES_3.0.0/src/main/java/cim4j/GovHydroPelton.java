@@ -23,10 +23,17 @@ public class GovHydroPelton extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovHydroPelton.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovHydroPelton() {
-        setCimType("GovHydroPelton");
+    public GovHydroPelton(String rdfid) {
+        super("GovHydroPelton", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovHydroPelton(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1182,7 +1189,7 @@ public class GovHydroPelton extends TurbineGovernorDynamics {
             map.put("zsfc", new AttrDetails("GovHydroPelton.zsfc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovHydroPelton::zsfcToString, null, GovHydroPelton::setZsfc));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroPelton().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroPelton(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

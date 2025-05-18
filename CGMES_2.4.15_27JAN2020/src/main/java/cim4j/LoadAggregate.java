@@ -23,10 +23,17 @@ public class LoadAggregate extends LoadDynamics {
     private static final Logging LOG = Logging.getLogger(LoadAggregate.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadAggregate() {
-        setCimType("LoadAggregate");
+    public LoadAggregate(String rdfid) {
+        super("LoadAggregate", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadAggregate(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -306,7 +313,7 @@ public class LoadAggregate extends LoadDynamics {
             map.put("LoadStatic", new AttrDetails("LoadAggregate.LoadStatic", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, LoadAggregate::LoadStaticToString, LoadAggregate::setLoadStatic, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadAggregate().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadAggregate(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

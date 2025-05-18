@@ -23,10 +23,17 @@ public class WindContQIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContQIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContQIEC() {
-        setCimType("WindContQIEC");
+    public WindContQIEC(String rdfid) {
+        super("WindContQIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContQIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1042,7 +1049,7 @@ public class WindContQIEC extends IdentifiedObject {
             map.put("xdroop", new AttrDetails("WindContQIEC.xdroop", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContQIEC::xdroopToString, null, WindContQIEC::setXdroop));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContQIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

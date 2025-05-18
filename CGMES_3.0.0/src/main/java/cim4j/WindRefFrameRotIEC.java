@@ -23,10 +23,17 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindRefFrameRotIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindRefFrameRotIEC() {
-        setCimType("WindRefFrameRotIEC");
+    public WindRefFrameRotIEC(String rdfid) {
+        super("WindRefFrameRotIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindRefFrameRotIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -370,7 +377,7 @@ public class WindRefFrameRotIEC extends IdentifiedObject {
             map.put("upll2", new AttrDetails("WindRefFrameRotIEC.upll2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindRefFrameRotIEC::upll2ToString, null, WindRefFrameRotIEC::setUpll2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindRefFrameRotIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindRefFrameRotIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

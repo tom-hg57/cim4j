@@ -23,10 +23,17 @@ public class RatioTapChanger extends TapChanger {
     private static final Logging LOG = Logging.getLogger(RatioTapChanger.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RatioTapChanger() {
-        setCimType("RatioTapChanger");
+    public RatioTapChanger(String rdfid) {
+        super("RatioTapChanger", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RatioTapChanger(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -336,7 +343,7 @@ public class RatioTapChanger extends TapChanger {
             map.put("stepVoltageIncrement", new AttrDetails("RatioTapChanger.stepVoltageIncrement", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, RatioTapChanger::stepVoltageIncrementToString, null, RatioTapChanger::setStepVoltageIncrement));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChanger().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChanger(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

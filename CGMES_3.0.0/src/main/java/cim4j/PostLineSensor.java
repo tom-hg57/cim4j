@@ -23,10 +23,17 @@ public class PostLineSensor extends Sensor {
     private static final Logging LOG = Logging.getLogger(PostLineSensor.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PostLineSensor() {
-        setCimType("PostLineSensor");
+    public PostLineSensor(String rdfid) {
+        super("PostLineSensor", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PostLineSensor(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class PostLineSensor extends Sensor {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PostLineSensor().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PostLineSensor(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

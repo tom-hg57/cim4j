@@ -23,10 +23,17 @@ public class SteadyStateHypothesisVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SteadyStateHypothesisVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SteadyStateHypothesisVersion() {
-        setCimType("SteadyStateHypothesisVersion");
+    public SteadyStateHypothesisVersion(String rdfid) {
+        super("SteadyStateHypothesisVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SteadyStateHypothesisVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class SteadyStateHypothesisVersion extends BaseClass {
             map.put("shortName", new AttrDetails("SteadyStateHypothesisVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, SteadyStateHypothesisVersion::shortNameToString, null, SteadyStateHypothesisVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SteadyStateHypothesisVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SteadyStateHypothesisVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

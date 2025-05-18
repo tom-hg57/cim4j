@@ -23,10 +23,17 @@ public class EnergyArea extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(EnergyArea.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EnergyArea() {
-        setCimType("EnergyArea");
+    public EnergyArea(String rdfid) {
+        super("EnergyArea", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EnergyArea(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class EnergyArea extends IdentifiedObject {
             map.put("ControlArea", new AttrDetails("EnergyArea.ControlArea", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, EnergyArea::ControlAreaToString, EnergyArea::setControlArea, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyArea().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyArea(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

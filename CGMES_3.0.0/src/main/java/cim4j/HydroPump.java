@@ -23,10 +23,17 @@ public class HydroPump extends Equipment {
     private static final Logging LOG = Logging.getLogger(HydroPump.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public HydroPump() {
-        setCimType("HydroPump");
+    public HydroPump(String rdfid) {
+        super("HydroPump", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected HydroPump(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class HydroPump extends Equipment {
             map.put("RotatingMachine", new AttrDetails("HydroPump.RotatingMachine", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, HydroPump::RotatingMachineToString, HydroPump::setRotatingMachine, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroPump().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HydroPump(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

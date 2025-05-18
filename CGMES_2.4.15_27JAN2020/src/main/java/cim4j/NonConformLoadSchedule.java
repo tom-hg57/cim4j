@@ -23,10 +23,17 @@ public class NonConformLoadSchedule extends SeasonDayTypeSchedule {
     private static final Logging LOG = Logging.getLogger(NonConformLoadSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NonConformLoadSchedule() {
-        setCimType("NonConformLoadSchedule");
+    public NonConformLoadSchedule(String rdfid) {
+        super("NonConformLoadSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NonConformLoadSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class NonConformLoadSchedule extends SeasonDayTypeSchedule {
             map.put("NonConformLoadGroup", new AttrDetails("NonConformLoadSchedule.NonConformLoadGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, NonConformLoadSchedule::NonConformLoadGroupToString, NonConformLoadSchedule::setNonConformLoadGroup, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoadSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonConformLoadSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

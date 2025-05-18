@@ -23,10 +23,17 @@ public class IOPoint extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(IOPoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public IOPoint() {
-        setCimType("IOPoint");
+    public IOPoint(String rdfid) {
+        super("IOPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected IOPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class IOPoint extends IdentifiedObject {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new IOPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new IOPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

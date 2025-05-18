@@ -23,10 +23,17 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssPTIST1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssPTIST1() {
-        setCimType("PssPTIST1");
+    public PssPTIST1(String rdfid) {
+        super("PssPTIST1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssPTIST1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class PssPTIST1 extends PowerSystemStabilizerDynamics {
             map.put("tp", new AttrDetails("PssPTIST1.tp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssPTIST1::tpToString, null, PssPTIST1::setTp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssPTIST1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssPTIST1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

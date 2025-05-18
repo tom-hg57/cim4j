@@ -23,10 +23,17 @@ public class Control extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Control.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Control() {
-        setCimType("Control");
+    public Control(String rdfid) {
+        super("Control", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Control(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -420,7 +427,7 @@ public class Control extends IdentifiedObject {
             map.put("unitSymbol", new AttrDetails("Control.unitSymbol", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Control::unitSymbolToString, null, Control::setUnitSymbol));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Control().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Control(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Terminal extends ACDCTerminal {
     private static final Logging LOG = Logging.getLogger(Terminal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Terminal() {
-        setCimType("Terminal");
+    public Terminal(String rdfid) {
+        super("Terminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Terminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -674,7 +681,7 @@ public class Terminal extends ACDCTerminal {
             map.put("phases", new AttrDetails("Terminal.phases", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Terminal::phasesToString, null, Terminal::setPhases));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Terminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Terminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

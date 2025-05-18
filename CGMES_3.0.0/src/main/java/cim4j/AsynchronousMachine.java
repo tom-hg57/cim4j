@@ -23,10 +23,17 @@ public class AsynchronousMachine extends RotatingMachine {
     private static final Logging LOG = Logging.getLogger(AsynchronousMachine.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AsynchronousMachine() {
-        setCimType("AsynchronousMachine");
+    public AsynchronousMachine(String rdfid) {
+        super("AsynchronousMachine", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AsynchronousMachine(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -604,7 +611,7 @@ public class AsynchronousMachine extends RotatingMachine {
             map.put("rxLockedRotorRatio", new AttrDetails("AsynchronousMachine.rxLockedRotorRatio", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AsynchronousMachine::rxLockedRotorRatioToString, null, AsynchronousMachine::setRxLockedRotorRatio));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachine().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachine(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

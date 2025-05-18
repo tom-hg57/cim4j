@@ -23,10 +23,17 @@ public class WindPitchContEmulIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindPitchContEmulIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPitchContEmulIEC() {
-        setCimType("WindPitchContEmulIEC");
+    public WindPitchContEmulIEC(String rdfid) {
+        super("WindPitchContEmulIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPitchContEmulIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -608,7 +615,7 @@ public class WindPitchContEmulIEC extends IdentifiedObject {
             map.put("tpe", new AttrDetails("WindPitchContEmulIEC.tpe", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindPitchContEmulIEC::tpeToString, null, WindPitchContEmulIEC::setTpe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPitchContEmulIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPitchContEmulIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

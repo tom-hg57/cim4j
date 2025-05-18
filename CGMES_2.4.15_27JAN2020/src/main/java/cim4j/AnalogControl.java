@@ -23,10 +23,17 @@ public class AnalogControl extends Control {
     private static final Logging LOG = Logging.getLogger(AnalogControl.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AnalogControl() {
-        setCimType("AnalogControl");
+    public AnalogControl(String rdfid) {
+        super("AnalogControl", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AnalogControl(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -334,7 +341,7 @@ public class AnalogControl extends Control {
             map.put("minValue", new AttrDetails("AnalogControl.minValue", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AnalogControl::minValueToString, null, AnalogControl::setMinValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogControl().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogControl(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

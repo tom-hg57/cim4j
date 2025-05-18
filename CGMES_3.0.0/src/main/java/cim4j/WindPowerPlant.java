@@ -23,10 +23,17 @@ public class WindPowerPlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(WindPowerPlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPowerPlant() {
-        setCimType("WindPowerPlant");
+    public WindPowerPlant(String rdfid) {
+        super("WindPowerPlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPowerPlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class WindPowerPlant extends PowerSystemResource {
             map.put("WindGeneratingUnits", new AttrDetails("WindPowerPlant.WindGeneratingUnits", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, WindPowerPlant::WindGeneratingUnitsToString, WindPowerPlant::setWindGeneratingUnits, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPowerPlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPowerPlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

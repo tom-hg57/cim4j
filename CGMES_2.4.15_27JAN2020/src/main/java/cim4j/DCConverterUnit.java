@@ -23,10 +23,17 @@ public class DCConverterUnit extends DCEquipmentContainer {
     private static final Logging LOG = Logging.getLogger(DCConverterUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCConverterUnit() {
-        setCimType("DCConverterUnit");
+    public DCConverterUnit(String rdfid) {
+        super("DCConverterUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCConverterUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -294,7 +301,7 @@ public class DCConverterUnit extends DCEquipmentContainer {
             map.put("operationMode", new AttrDetails("DCConverterUnit.operationMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, DCConverterUnit::operationModeToString, null, DCConverterUnit::setOperationMode));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCConverterUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCConverterUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

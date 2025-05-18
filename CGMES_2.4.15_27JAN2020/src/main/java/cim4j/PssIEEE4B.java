@@ -23,10 +23,17 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssIEEE4B.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssIEEE4B() {
-        setCimType("PssIEEE4B");
+    public PssIEEE4B(String rdfid) {
+        super("PssIEEE4B", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssIEEE4B(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -2508,7 +2515,7 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
             map.put("vstmin", new AttrDetails("PssIEEE4B.vstmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PssIEEE4B::vstminToString, null, PssIEEE4B::setVstmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE4B().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE4B(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

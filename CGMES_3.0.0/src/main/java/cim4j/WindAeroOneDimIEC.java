@@ -23,10 +23,17 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindAeroOneDimIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindAeroOneDimIEC() {
-        setCimType("WindAeroOneDimIEC");
+    public WindAeroOneDimIEC(String rdfid) {
+        super("WindAeroOneDimIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindAeroOneDimIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -336,7 +343,7 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
             map.put("thetaomega", new AttrDetails("WindAeroOneDimIEC.thetaomega", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindAeroOneDimIEC::thetaomegaToString, null, WindAeroOneDimIEC::setThetaomega));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroOneDimIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroOneDimIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

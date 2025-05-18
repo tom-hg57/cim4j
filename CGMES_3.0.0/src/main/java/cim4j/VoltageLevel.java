@@ -23,10 +23,17 @@ public class VoltageLevel extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(VoltageLevel.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VoltageLevel() {
-        setCimType("VoltageLevel");
+    public VoltageLevel(String rdfid) {
+        super("VoltageLevel", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageLevel(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -413,7 +420,7 @@ public class VoltageLevel extends EquipmentContainer {
             map.put("lowVoltageLimit", new AttrDetails("VoltageLevel.lowVoltageLimit", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VoltageLevel::lowVoltageLimitToString, null, VoltageLevel::setLowVoltageLimit));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageLevel().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageLevel(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

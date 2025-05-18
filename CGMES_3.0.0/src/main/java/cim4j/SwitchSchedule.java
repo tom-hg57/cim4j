@@ -23,10 +23,17 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
     private static final Logging LOG = Logging.getLogger(SwitchSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SwitchSchedule() {
-        setCimType("SwitchSchedule");
+    public SwitchSchedule(String rdfid) {
+        super("SwitchSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SwitchSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class SwitchSchedule extends SeasonDayTypeSchedule {
             map.put("Switch", new AttrDetails("SwitchSchedule.Switch", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, SwitchSchedule::SwitchToString, SwitchSchedule::setSwitch, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SwitchSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SwitchSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class ProtectedSwitch extends Switch {
     private static final Logging LOG = Logging.getLogger(ProtectedSwitch.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ProtectedSwitch() {
-        setCimType("ProtectedSwitch");
+    public ProtectedSwitch(String rdfid) {
+        super("ProtectedSwitch", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ProtectedSwitch(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class ProtectedSwitch extends Switch {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProtectedSwitch().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProtectedSwitch(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

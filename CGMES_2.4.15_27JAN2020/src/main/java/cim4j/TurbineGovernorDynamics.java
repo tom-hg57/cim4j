@@ -23,10 +23,17 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(TurbineGovernorDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TurbineGovernorDynamics() {
-        setCimType("TurbineGovernorDynamics");
+    public TurbineGovernorDynamics(String rdfid) {
+        super("TurbineGovernorDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TurbineGovernorDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -340,7 +347,7 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
             map.put("TurbineLoadControllerDynamics", new AttrDetails("TurbineGovernorDynamics.TurbineLoadControllerDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TurbineGovernorDynamics::TurbineLoadControllerDynamicsToString, TurbineGovernorDynamics::setTurbineLoadControllerDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineGovernorDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TurbineGovernorDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

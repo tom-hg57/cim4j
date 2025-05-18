@@ -20,10 +20,17 @@ public class TapChangerTablePoint extends BaseClass {
     private static final Logging LOG = Logging.getLogger(TapChangerTablePoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TapChangerTablePoint() {
-        setCimType("TapChangerTablePoint");
+    public TapChangerTablePoint(String rdfid) {
+        super("TapChangerTablePoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TapChangerTablePoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -431,7 +438,7 @@ public class TapChangerTablePoint extends BaseClass {
             map.put("x", new AttrDetails("TapChangerTablePoint.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, TapChangerTablePoint::xToString, null, TapChangerTablePoint::setX));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChangerTablePoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapChangerTablePoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

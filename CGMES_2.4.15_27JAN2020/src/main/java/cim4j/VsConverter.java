@@ -23,10 +23,17 @@ public class VsConverter extends ACDCConverter {
     private static final Logging LOG = Logging.getLogger(VsConverter.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VsConverter() {
-        setCimType("VsConverter");
+    public VsConverter(String rdfid) {
+        super("VsConverter", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VsConverter(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -631,7 +638,7 @@ public class VsConverter extends ACDCConverter {
             map.put("uf", new AttrDetails("VsConverter.uf", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VsConverter::ufToString, null, VsConverter::setUf));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VsConverter().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VsConverter(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class SynchronousMachine extends RotatingMachine {
     private static final Logging LOG = Logging.getLogger(SynchronousMachine.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachine() {
-        setCimType("SynchronousMachine");
+    public SynchronousMachine(String rdfid) {
+        super("SynchronousMachine", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachine(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1006,7 +1013,7 @@ public class SynchronousMachine extends RotatingMachine {
             map.put("x2", new AttrDetails("SynchronousMachine.x2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SynchronousMachine::x2ToString, null, SynchronousMachine::setX2));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachine().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachine(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

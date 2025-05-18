@@ -23,10 +23,17 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
     private static final Logging LOG = Logging.getLogger(SynchronousMachineTimeConstantReactance.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachineTimeConstantReactance() {
-        setCimType("SynchronousMachineTimeConstantReactance");
+    public SynchronousMachineTimeConstantReactance(String rdfid) {
+        super("SynchronousMachineTimeConstantReactance", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachineTimeConstantReactance(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -698,7 +705,7 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
             map.put("xQuadTrans", new AttrDetails("SynchronousMachineTimeConstantReactance.xQuadTrans", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SynchronousMachineTimeConstantReactance::xQuadTransToString, null, SynchronousMachineTimeConstantReactance::setXQuadTrans));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineTimeConstantReactance().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineTimeConstantReactance(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

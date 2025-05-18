@@ -23,10 +23,17 @@ public class Switch extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(Switch.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Switch() {
-        setCimType("Switch");
+    public Switch(String rdfid) {
+        super("Switch", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Switch(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -404,7 +411,7 @@ public class Switch extends ConductingEquipment {
             map.put("retained", new AttrDetails("Switch.retained", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Switch::retainedToString, null, Switch::setRetained));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Switch().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Switch(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

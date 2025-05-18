@@ -23,10 +23,17 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
     private static final Logging LOG = Logging.getLogger(UnderexcLimX2.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public UnderexcLimX2() {
-        setCimType("UnderexcLimX2");
+    public UnderexcLimX2(String rdfid) {
+        super("UnderexcLimX2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected UnderexcLimX2(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -468,7 +475,7 @@ public class UnderexcLimX2 extends UnderexcitationLimiterDynamics {
             map.put("tm", new AttrDetails("UnderexcLimX2.tm", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, UnderexcLimX2::tmToString, null, UnderexcLimX2::setTm));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcLimX2().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new UnderexcLimX2(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

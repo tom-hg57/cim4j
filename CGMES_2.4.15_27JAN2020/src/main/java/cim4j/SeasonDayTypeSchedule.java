@@ -23,10 +23,17 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
     private static final Logging LOG = Logging.getLogger(SeasonDayTypeSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SeasonDayTypeSchedule() {
-        setCimType("SeasonDayTypeSchedule");
+    public SeasonDayTypeSchedule(String rdfid) {
+        super("SeasonDayTypeSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SeasonDayTypeSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class SeasonDayTypeSchedule extends RegularIntervalSchedule {
             map.put("Season", new AttrDetails("SeasonDayTypeSchedule.Season", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SeasonDayTypeSchedule::SeasonToString, SeasonDayTypeSchedule::setSeason, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeasonDayTypeSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeasonDayTypeSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

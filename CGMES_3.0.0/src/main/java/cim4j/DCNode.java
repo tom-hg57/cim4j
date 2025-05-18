@@ -23,10 +23,17 @@ public class DCNode extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(DCNode.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCNode() {
-        setCimType("DCNode");
+    public DCNode(String rdfid) {
+        super("DCNode", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCNode(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -340,7 +347,7 @@ public class DCNode extends IdentifiedObject {
             map.put("DCTopologicalNode", new AttrDetails("DCNode.DCTopologicalNode", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, DCNode::DCTopologicalNodeToString, DCNode::setDCTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCNode().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCNode(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

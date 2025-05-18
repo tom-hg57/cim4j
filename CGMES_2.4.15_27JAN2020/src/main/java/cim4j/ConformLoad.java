@@ -23,10 +23,17 @@ public class ConformLoad extends EnergyConsumer {
     private static final Logging LOG = Logging.getLogger(ConformLoad.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ConformLoad() {
-        setCimType("ConformLoad");
+    public ConformLoad(String rdfid) {
+        super("ConformLoad", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConformLoad(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class ConformLoad extends EnergyConsumer {
             map.put("LoadGroup", new AttrDetails("ConformLoad.LoadGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConformLoad::LoadGroupToString, ConformLoad::setLoadGroup, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConformLoad().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConformLoad(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

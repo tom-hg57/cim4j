@@ -23,10 +23,17 @@ public class WindPlantIEC extends WindPlantDynamics {
     private static final Logging LOG = Logging.getLogger(WindPlantIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPlantIEC() {
-        setCimType("WindPlantIEC");
+    public WindPlantIEC(String rdfid) {
+        super("WindPlantIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPlantIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class WindPlantIEC extends WindPlantDynamics {
             map.put("WindPlantReactiveControlIEC", new AttrDetails("WindPlantIEC.WindPlantReactiveControlIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindPlantIEC::WindPlantReactiveControlIECToString, WindPlantIEC::setWindPlantReactiveControlIEC, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

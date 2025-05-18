@@ -23,10 +23,17 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(ConnectivityNodeContainer.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ConnectivityNodeContainer() {
-        setCimType("ConnectivityNodeContainer");
+    public ConnectivityNodeContainer(String rdfid) {
+        super("ConnectivityNodeContainer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConnectivityNodeContainer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -308,7 +315,7 @@ public class ConnectivityNodeContainer extends PowerSystemResource {
             map.put("TopologicalNode", new AttrDetails("ConnectivityNodeContainer.TopologicalNode", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNodeContainer::TopologicalNodeToString, ConnectivityNodeContainer::setTopologicalNode, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNodeContainer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNodeContainer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

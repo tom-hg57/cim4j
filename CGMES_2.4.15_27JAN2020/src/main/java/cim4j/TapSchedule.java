@@ -23,10 +23,17 @@ public class TapSchedule extends SeasonDayTypeSchedule {
     private static final Logging LOG = Logging.getLogger(TapSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TapSchedule() {
-        setCimType("TapSchedule");
+    public TapSchedule(String rdfid) {
+        super("TapSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TapSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class TapSchedule extends SeasonDayTypeSchedule {
             map.put("TapChanger", new AttrDetails("TapSchedule.TapChanger", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TapSchedule::TapChangerToString, TapSchedule::setTapChanger, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TapSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

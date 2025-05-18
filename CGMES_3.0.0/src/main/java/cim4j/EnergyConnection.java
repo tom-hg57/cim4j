@@ -23,10 +23,17 @@ public class EnergyConnection extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(EnergyConnection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EnergyConnection() {
-        setCimType("EnergyConnection");
+    public EnergyConnection(String rdfid) {
+        super("EnergyConnection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EnergyConnection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class EnergyConnection extends ConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyConnection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EnergyConnection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

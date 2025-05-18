@@ -23,10 +23,17 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
     private static final Logging LOG = Logging.getLogger(PFVArType2Common1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArType2Common1() {
-        setCimType("PFVArType2Common1");
+    public PFVArType2Common1(String rdfid) {
+        super("PFVArType2Common1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArType2Common1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -400,7 +407,7 @@ public class PFVArType2Common1 extends PFVArControllerType2Dynamics {
             map.put("ref", new AttrDetails("PFVArType2Common1.ref", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PFVArType2Common1::refToString, null, PFVArType2Common1::setRef));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType2Common1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArType2Common1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

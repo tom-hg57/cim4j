@@ -23,10 +23,17 @@ public class Command extends Control {
     private static final Logging LOG = Logging.getLogger(Command.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Command() {
-        setCimType("Command");
+    public Command(String rdfid) {
+        super("Command", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Command(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -370,7 +377,7 @@ public class Command extends Control {
             map.put("value", new AttrDetails("Command.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Command::valueToString, null, Command::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Command().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Command(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

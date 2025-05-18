@@ -23,10 +23,17 @@ public class StaticVarCompensatorDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(StaticVarCompensatorDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StaticVarCompensatorDynamics() {
-        setCimType("StaticVarCompensatorDynamics");
+    public StaticVarCompensatorDynamics(String rdfid) {
+        super("StaticVarCompensatorDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StaticVarCompensatorDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class StaticVarCompensatorDynamics extends DynamicsFunctionBlock {
             map.put("StaticVarCompensator", new AttrDetails("StaticVarCompensatorDynamics.StaticVarCompensator", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StaticVarCompensatorDynamics::StaticVarCompensatorToString, StaticVarCompensatorDynamics::setStaticVarCompensator, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StaticVarCompensatorDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StaticVarCompensatorDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

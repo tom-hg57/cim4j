@@ -23,10 +23,17 @@ public class ActivePowerLimit extends OperationalLimit {
     private static final Logging LOG = Logging.getLogger(ActivePowerLimit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ActivePowerLimit() {
-        setCimType("ActivePowerLimit");
+    public ActivePowerLimit(String rdfid) {
+        super("ActivePowerLimit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ActivePowerLimit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class ActivePowerLimit extends OperationalLimit {
             map.put("value", new AttrDetails("ActivePowerLimit.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ActivePowerLimit::valueToString, null, ActivePowerLimit::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ActivePowerLimit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ActivePowerLimit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class HVDCDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(HVDCDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public HVDCDynamics() {
-        setCimType("HVDCDynamics");
+    public HVDCDynamics(String rdfid) {
+        super("HVDCDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected HVDCDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class HVDCDynamics extends DynamicsFunctionBlock {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HVDCDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new HVDCDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

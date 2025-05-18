@@ -23,10 +23,17 @@ public class PowerTransformerEnd extends TransformerEnd {
     private static final Logging LOG = Logging.getLogger(PowerTransformerEnd.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerTransformerEnd() {
-        setCimType("PowerTransformerEnd");
+    public PowerTransformerEnd(String rdfid) {
+        super("PowerTransformerEnd", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerTransformerEnd(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -670,7 +677,7 @@ public class PowerTransformerEnd extends TransformerEnd {
             map.put("x0", new AttrDetails("PowerTransformerEnd.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PowerTransformerEnd::x0ToString, null, PowerTransformerEnd::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformerEnd().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformerEnd(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

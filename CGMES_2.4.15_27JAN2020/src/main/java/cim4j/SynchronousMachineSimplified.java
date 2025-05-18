@@ -23,10 +23,17 @@ public class SynchronousMachineSimplified extends SynchronousMachineDynamics {
     private static final Logging LOG = Logging.getLogger(SynchronousMachineSimplified.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SynchronousMachineSimplified() {
-        setCimType("SynchronousMachineSimplified");
+    public SynchronousMachineSimplified(String rdfid) {
+        super("SynchronousMachineSimplified", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SynchronousMachineSimplified(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class SynchronousMachineSimplified extends SynchronousMachineDynamics {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineSimplified().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SynchronousMachineSimplified(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

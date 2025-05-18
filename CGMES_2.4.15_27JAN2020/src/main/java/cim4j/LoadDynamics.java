@@ -23,10 +23,17 @@ public class LoadDynamics extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LoadDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadDynamics() {
-        setCimType("LoadDynamics");
+    public LoadDynamics(String rdfid) {
+        super("LoadDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class LoadDynamics extends IdentifiedObject {
             map.put("EnergyConsumer", new AttrDetails("LoadDynamics.EnergyConsumer", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, LoadDynamics::EnergyConsumerToString, LoadDynamics::setEnergyConsumer, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

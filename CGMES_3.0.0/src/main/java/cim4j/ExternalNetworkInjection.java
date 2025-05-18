@@ -23,10 +23,17 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     private static final Logging LOG = Logging.getLogger(ExternalNetworkInjection.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExternalNetworkInjection() {
-        setCimType("ExternalNetworkInjection");
+    public ExternalNetworkInjection(String rdfid) {
+        super("ExternalNetworkInjection", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExternalNetworkInjection(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -842,7 +849,7 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
             map.put("voltageFactor", new AttrDetails("ExternalNetworkInjection.voltageFactor", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExternalNetworkInjection::voltageFactorToString, null, ExternalNetworkInjection::setVoltageFactor));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExternalNetworkInjection().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExternalNetworkInjection(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class RegulatingCondEq extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(RegulatingCondEq.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RegulatingCondEq() {
-        setCimType("RegulatingCondEq");
+    public RegulatingCondEq(String rdfid) {
+        super("RegulatingCondEq", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RegulatingCondEq(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class RegulatingCondEq extends ConductingEquipment {
             map.put("controlEnabled", new AttrDetails("RegulatingCondEq.controlEnabled", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegulatingCondEq::controlEnabledToString, null, RegulatingCondEq::setControlEnabled));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingCondEq().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingCondEq(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

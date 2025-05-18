@@ -23,10 +23,17 @@ public class PFVArControllerType2Dynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(PFVArControllerType2Dynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArControllerType2Dynamics() {
-        setCimType("PFVArControllerType2Dynamics");
+    public PFVArControllerType2Dynamics(String rdfid) {
+        super("PFVArControllerType2Dynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArControllerType2Dynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class PFVArControllerType2Dynamics extends DynamicsFunctionBlock {
             map.put("ExcitationSystemDynamics", new AttrDetails("PFVArControllerType2Dynamics.ExcitationSystemDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, PFVArControllerType2Dynamics::ExcitationSystemDynamicsToString, PFVArControllerType2Dynamics::setExcitationSystemDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType2Dynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType2Dynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

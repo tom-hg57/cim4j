@@ -23,10 +23,17 @@ public class ExcAC8B extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcAC8B.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcAC8B() {
-        setCimType("ExcAC8B");
+    public ExcAC8B(String rdfid) {
+        super("ExcAC8B", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcAC8B(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1148,7 +1155,7 @@ public class ExcAC8B extends ExcitationSystemDynamics {
             map.put("vtmult", new AttrDetails("ExcAC8B.vtmult", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAC8B::vtmultToString, null, ExcAC8B::setVtmult));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAC8B().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAC8B(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

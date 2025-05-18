@@ -23,10 +23,17 @@ public class Sensor extends AuxiliaryEquipment {
     private static final Logging LOG = Logging.getLogger(Sensor.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Sensor() {
-        setCimType("Sensor");
+    public Sensor(String rdfid) {
+        super("Sensor", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Sensor(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Sensor extends AuxiliaryEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Sensor().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Sensor(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

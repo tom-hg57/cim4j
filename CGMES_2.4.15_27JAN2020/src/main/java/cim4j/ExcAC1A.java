@@ -23,10 +23,17 @@ public class ExcAC1A extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcAC1A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcAC1A() {
-        setCimType("ExcAC1A");
+    public ExcAC1A(String rdfid) {
+        super("ExcAC1A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcAC1A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -978,7 +985,7 @@ public class ExcAC1A extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcAC1A.vrmin", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAC1A::vrminToString, null, ExcAC1A::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAC1A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAC1A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

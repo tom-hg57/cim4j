@@ -23,10 +23,17 @@ public class PFVArControllerType1Dynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(PFVArControllerType1Dynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArControllerType1Dynamics() {
-        setCimType("PFVArControllerType1Dynamics");
+    public PFVArControllerType1Dynamics(String rdfid) {
+        super("PFVArControllerType1Dynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArControllerType1Dynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -342,7 +349,7 @@ public class PFVArControllerType1Dynamics extends DynamicsFunctionBlock {
             map.put("VoltageAdjusterDynamics", new AttrDetails("PFVArControllerType1Dynamics.VoltageAdjusterDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, PFVArControllerType1Dynamics::VoltageAdjusterDynamicsToString, PFVArControllerType1Dynamics::setVoltageAdjusterDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType1Dynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType1Dynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

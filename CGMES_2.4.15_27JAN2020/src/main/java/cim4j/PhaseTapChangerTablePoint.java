@@ -23,10 +23,17 @@ public class PhaseTapChangerTablePoint extends TapChangerTablePoint {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerTablePoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhaseTapChangerTablePoint() {
-        setCimType("PhaseTapChangerTablePoint");
+    public PhaseTapChangerTablePoint(String rdfid) {
+        super("PhaseTapChangerTablePoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerTablePoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class PhaseTapChangerTablePoint extends TapChangerTablePoint {
             map.put("angle", new AttrDetails("PhaseTapChangerTablePoint.angle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, PhaseTapChangerTablePoint::angleToString, null, PhaseTapChangerTablePoint::setAngle));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTablePoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTablePoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

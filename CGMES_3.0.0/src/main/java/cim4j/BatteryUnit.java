@@ -23,10 +23,17 @@ public class BatteryUnit extends PowerElectronicsUnit {
     private static final Logging LOG = Logging.getLogger(BatteryUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public BatteryUnit() {
-        setCimType("BatteryUnit");
+    public BatteryUnit(String rdfid) {
+        super("BatteryUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BatteryUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -328,7 +335,7 @@ public class BatteryUnit extends PowerElectronicsUnit {
             map.put("storedE", new AttrDetails("BatteryUnit.storedE", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, BatteryUnit::storedEToString, null, BatteryUnit::setStoredE));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BatteryUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BatteryUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

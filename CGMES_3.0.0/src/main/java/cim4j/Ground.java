@@ -23,10 +23,17 @@ public class Ground extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(Ground.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Ground() {
-        setCimType("Ground");
+    public Ground(String rdfid) {
+        super("Ground", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Ground(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class Ground extends ConductingEquipment {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Ground().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Ground(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

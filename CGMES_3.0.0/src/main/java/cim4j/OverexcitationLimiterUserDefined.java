@@ -23,10 +23,17 @@ public class OverexcitationLimiterUserDefined extends OverexcitationLimiterDynam
     private static final Logging LOG = Logging.getLogger(OverexcitationLimiterUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OverexcitationLimiterUserDefined() {
-        setCimType("OverexcitationLimiterUserDefined");
+    public OverexcitationLimiterUserDefined(String rdfid) {
+        super("OverexcitationLimiterUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OverexcitationLimiterUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class OverexcitationLimiterUserDefined extends OverexcitationLimiterDynam
             map.put("proprietary", new AttrDetails("OverexcitationLimiterUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcitationLimiterUserDefined::proprietaryToString, null, OverexcitationLimiterUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcitationLimiterUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcitationLimiterUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

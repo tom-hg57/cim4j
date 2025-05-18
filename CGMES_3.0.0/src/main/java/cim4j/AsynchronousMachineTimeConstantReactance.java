@@ -23,10 +23,17 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
     private static final Logging LOG = Logging.getLogger(AsynchronousMachineTimeConstantReactance.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public AsynchronousMachineTimeConstantReactance() {
-        setCimType("AsynchronousMachineTimeConstantReactance");
+    public AsynchronousMachineTimeConstantReactance(String rdfid) {
+        super("AsynchronousMachineTimeConstantReactance", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AsynchronousMachineTimeConstantReactance(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -400,7 +407,7 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
             map.put("xs", new AttrDetails("AsynchronousMachineTimeConstantReactance.xs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, AsynchronousMachineTimeConstantReactance::xsToString, null, AsynchronousMachineTimeConstantReactance::setXs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineTimeConstantReactance().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineTimeConstantReactance(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

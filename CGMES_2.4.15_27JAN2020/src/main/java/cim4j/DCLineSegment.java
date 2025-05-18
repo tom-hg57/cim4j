@@ -23,10 +23,17 @@ public class DCLineSegment extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCLineSegment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCLineSegment() {
-        setCimType("DCLineSegment");
+    public DCLineSegment(String rdfid) {
+        super("DCLineSegment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCLineSegment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -402,7 +409,7 @@ public class DCLineSegment extends DCConductingEquipment {
             map.put("resistance", new AttrDetails("DCLineSegment.resistance", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, DCLineSegment::resistanceToString, null, DCLineSegment::setResistance));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCLineSegment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCLineSegment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

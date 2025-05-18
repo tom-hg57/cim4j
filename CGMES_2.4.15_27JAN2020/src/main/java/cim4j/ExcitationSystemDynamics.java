@@ -23,10 +23,17 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(ExcitationSystemDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcitationSystemDynamics() {
-        setCimType("ExcitationSystemDynamics");
+    public ExcitationSystemDynamics(String rdfid) {
+        super("ExcitationSystemDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcitationSystemDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -532,7 +539,7 @@ public class ExcitationSystemDynamics extends DynamicsFunctionBlock {
             map.put("VoltageCompensatorDynamics", new AttrDetails("ExcitationSystemDynamics.VoltageCompensatorDynamics", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ExcitationSystemDynamics::VoltageCompensatorDynamicsToString, ExcitationSystemDynamics::setVoltageCompensatorDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcitationSystemDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcitationSystemDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

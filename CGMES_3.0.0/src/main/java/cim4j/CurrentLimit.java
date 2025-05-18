@@ -23,10 +23,17 @@ public class CurrentLimit extends OperationalLimit {
     private static final Logging LOG = Logging.getLogger(CurrentLimit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CurrentLimit() {
-        setCimType("CurrentLimit");
+    public CurrentLimit(String rdfid) {
+        super("CurrentLimit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CurrentLimit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class CurrentLimit extends OperationalLimit {
             map.put("value", new AttrDetails("CurrentLimit.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, CurrentLimit::valueToString, null, CurrentLimit::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurrentLimit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CurrentLimit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class ExcSK extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcSK.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcSK() {
-        setCimType("ExcSK");
+    public ExcSK(String rdfid) {
+        super("ExcSK", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcSK(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1318,7 +1325,7 @@ public class ExcSK extends ExcitationSystemDynamics {
             map.put("yp", new AttrDetails("ExcSK.yp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcSK::ypToString, null, ExcSK::setYp));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSK().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcSK(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

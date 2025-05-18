@@ -23,10 +23,17 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(WindTurbineType3or4Dynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindTurbineType3or4Dynamics() {
-        setCimType("WindTurbineType3or4Dynamics");
+    public WindTurbineType3or4Dynamics(String rdfid) {
+        super("WindTurbineType3or4Dynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindTurbineType3or4Dynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -338,7 +345,7 @@ public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
             map.put("WindPlantDynamics", new AttrDetails("WindTurbineType3or4Dynamics.WindPlantDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindTurbineType3or4Dynamics::WindPlantDynamicsToString, WindTurbineType3or4Dynamics::setWindPlantDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4Dynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4Dynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

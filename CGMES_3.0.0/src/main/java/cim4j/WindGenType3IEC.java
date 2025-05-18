@@ -23,10 +23,17 @@ public class WindGenType3IEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindGenType3IEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindGenType3IEC() {
-        setCimType("WindGenType3IEC");
+    public WindGenType3IEC(String rdfid) {
+        super("WindGenType3IEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindGenType3IEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -370,7 +377,7 @@ public class WindGenType3IEC extends IdentifiedObject {
             map.put("xs", new AttrDetails("WindGenType3IEC.xs", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindGenType3IEC::xsToString, null, WindGenType3IEC::setXs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenType3IEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGenType3IEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class SVCUserDefined extends StaticVarCompensatorDynamics {
     private static final Logging LOG = Logging.getLogger(SVCUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SVCUserDefined() {
-        setCimType("SVCUserDefined");
+    public SVCUserDefined(String rdfid) {
+        super("SVCUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SVCUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class SVCUserDefined extends StaticVarCompensatorDynamics {
             map.put("proprietary", new AttrDetails("SVCUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SVCUserDefined::proprietaryToString, null, SVCUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SVCUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SVCUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

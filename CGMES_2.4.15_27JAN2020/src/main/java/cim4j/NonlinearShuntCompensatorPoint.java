@@ -23,10 +23,17 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
     private static final Logging LOG = Logging.getLogger(NonlinearShuntCompensatorPoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public NonlinearShuntCompensatorPoint() {
-        setCimType("NonlinearShuntCompensatorPoint");
+    public NonlinearShuntCompensatorPoint(String rdfid) {
+        super("NonlinearShuntCompensatorPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected NonlinearShuntCompensatorPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -436,7 +443,7 @@ public class NonlinearShuntCompensatorPoint extends BaseClass {
             map.put("sectionNumber", new AttrDetails("NonlinearShuntCompensatorPoint.sectionNumber", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, NonlinearShuntCompensatorPoint::sectionNumberToString, null, NonlinearShuntCompensatorPoint::setSectionNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonlinearShuntCompensatorPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new NonlinearShuntCompensatorPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

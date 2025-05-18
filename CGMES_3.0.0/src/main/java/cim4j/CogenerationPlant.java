@@ -23,10 +23,17 @@ public class CogenerationPlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(CogenerationPlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CogenerationPlant() {
-        setCimType("CogenerationPlant");
+    public CogenerationPlant(String rdfid) {
+        super("CogenerationPlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CogenerationPlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class CogenerationPlant extends PowerSystemResource {
             map.put("ThermalGeneratingUnits", new AttrDetails("CogenerationPlant.ThermalGeneratingUnits", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, CogenerationPlant::ThermalGeneratingUnitsToString, CogenerationPlant::setThermalGeneratingUnits, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CogenerationPlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CogenerationPlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

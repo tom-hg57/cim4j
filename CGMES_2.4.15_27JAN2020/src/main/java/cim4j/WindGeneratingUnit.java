@@ -23,10 +23,17 @@ public class WindGeneratingUnit extends GeneratingUnit {
     private static final Logging LOG = Logging.getLogger(WindGeneratingUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindGeneratingUnit() {
-        setCimType("WindGeneratingUnit");
+    public WindGeneratingUnit(String rdfid) {
+        super("WindGeneratingUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindGeneratingUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -260,7 +267,7 @@ public class WindGeneratingUnit extends GeneratingUnit {
             map.put("windGenUnitType", new AttrDetails("WindGeneratingUnit.windGenUnitType", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, WindGeneratingUnit::windGenUnitTypeToString, null, WindGeneratingUnit::setWindGenUnitType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGeneratingUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindGeneratingUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

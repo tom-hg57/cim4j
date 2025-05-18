@@ -23,10 +23,17 @@ public class PhaseTapChangerNonLinear extends PhaseTapChanger {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerNonLinear.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhaseTapChangerNonLinear() {
-        setCimType("PhaseTapChangerNonLinear");
+    public PhaseTapChangerNonLinear(String rdfid) {
+        super("PhaseTapChangerNonLinear", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerNonLinear(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -332,7 +339,7 @@ public class PhaseTapChangerNonLinear extends PhaseTapChanger {
             map.put("xMin", new AttrDetails("PhaseTapChangerNonLinear.xMin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PhaseTapChangerNonLinear::xMinToString, null, PhaseTapChangerNonLinear::setXMin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerNonLinear().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerNonLinear(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

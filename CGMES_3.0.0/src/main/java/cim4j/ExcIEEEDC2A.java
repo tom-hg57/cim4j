@@ -23,10 +23,17 @@ public class ExcIEEEDC2A extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcIEEEDC2A.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcIEEEDC2A() {
-        setCimType("ExcIEEEDC2A");
+    public ExcIEEEDC2A(String rdfid) {
+        super("ExcIEEEDC2A", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcIEEEDC2A(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -774,7 +781,7 @@ public class ExcIEEEDC2A extends ExcitationSystemDynamics {
             map.put("vrmin", new AttrDetails("ExcIEEEDC2A.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcIEEEDC2A::vrminToString, null, ExcIEEEDC2A::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcIEEEDC2A().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcIEEEDC2A(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

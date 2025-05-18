@@ -23,10 +23,17 @@ public class CombinedCyclePlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(CombinedCyclePlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CombinedCyclePlant() {
-        setCimType("CombinedCyclePlant");
+    public CombinedCyclePlant(String rdfid) {
+        super("CombinedCyclePlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CombinedCyclePlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class CombinedCyclePlant extends PowerSystemResource {
             map.put("ThermalGeneratingUnits", new AttrDetails("CombinedCyclePlant.ThermalGeneratingUnits", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, CombinedCyclePlant::ThermalGeneratingUnitsToString, CombinedCyclePlant::setThermalGeneratingUnits, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CombinedCyclePlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CombinedCyclePlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class GovHydroR extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovHydroR.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovHydroR() {
-        setCimType("GovHydroR");
+    public GovHydroR(String rdfid) {
+        super("GovHydroR", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovHydroR(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1658,7 +1665,7 @@ public class GovHydroR extends TurbineGovernorDynamics {
             map.put("velop", new AttrDetails("GovHydroR.velop", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, GovHydroR::velopToString, null, GovHydroR::setVelop));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroR().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroR(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class DiagramLayoutVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(DiagramLayoutVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiagramLayoutVersion() {
-        setCimType("DiagramLayoutVersion");
+    public DiagramLayoutVersion(String rdfid) {
+        super("DiagramLayoutVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiagramLayoutVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class DiagramLayoutVersion extends BaseClass {
             map.put("shortName", new AttrDetails("DiagramLayoutVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, DiagramLayoutVersion::shortNameToString, null, DiagramLayoutVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramLayoutVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramLayoutVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

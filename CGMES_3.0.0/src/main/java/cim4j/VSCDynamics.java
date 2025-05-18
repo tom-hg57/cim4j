@@ -23,10 +23,17 @@ public class VSCDynamics extends HVDCDynamics {
     private static final Logging LOG = Logging.getLogger(VSCDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VSCDynamics() {
-        setCimType("VSCDynamics");
+    public VSCDynamics(String rdfid) {
+        super("VSCDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VSCDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class VSCDynamics extends HVDCDynamics {
             map.put("VsConverter", new AttrDetails("VSCDynamics.VsConverter", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, VSCDynamics::VsConverterToString, VSCDynamics::setVsConverter, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VSCDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VSCDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

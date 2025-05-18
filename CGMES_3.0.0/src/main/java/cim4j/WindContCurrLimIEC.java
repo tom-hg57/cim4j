@@ -23,10 +23,17 @@ public class WindContCurrLimIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContCurrLimIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContCurrLimIEC() {
-        setCimType("WindContCurrLimIEC");
+    public WindContCurrLimIEC(String rdfid) {
+        super("WindContCurrLimIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContCurrLimIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -544,7 +551,7 @@ public class WindContCurrLimIEC extends IdentifiedObject {
             map.put("upqumax", new AttrDetails("WindContCurrLimIEC.upqumax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindContCurrLimIEC::upqumaxToString, null, WindContCurrLimIEC::setUpqumax));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContCurrLimIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContCurrLimIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

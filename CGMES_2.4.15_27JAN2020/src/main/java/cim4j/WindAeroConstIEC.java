@@ -23,10 +23,17 @@ public class WindAeroConstIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindAeroConstIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindAeroConstIEC() {
-        setCimType("WindAeroConstIEC");
+    public WindAeroConstIEC(String rdfid) {
+        super("WindAeroConstIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindAeroConstIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class WindAeroConstIEC extends IdentifiedObject {
             map.put("WindGenTurbineType1IEC", new AttrDetails("WindAeroConstIEC.WindGenTurbineType1IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindAeroConstIEC::WindGenTurbineType1IECToString, WindAeroConstIEC::setWindGenTurbineType1IEC, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroConstIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindAeroConstIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

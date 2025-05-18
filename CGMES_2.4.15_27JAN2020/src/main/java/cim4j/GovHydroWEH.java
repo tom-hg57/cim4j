@@ -23,10 +23,17 @@ public class GovHydroWEH extends TurbineGovernorDynamics {
     private static final Logging LOG = Logging.getLogger(GovHydroWEH.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GovHydroWEH() {
-        setCimType("GovHydroWEH");
+    public GovHydroWEH(String rdfid) {
+        super("GovHydroWEH", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GovHydroWEH(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1964,7 +1971,7 @@ public class GovHydroWEH extends TurbineGovernorDynamics {
             map.put("tw", new AttrDetails("GovHydroWEH.tw", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GovHydroWEH::twToString, null, GovHydroWEH::setTw));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroWEH().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GovHydroWEH(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

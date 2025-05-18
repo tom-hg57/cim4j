@@ -23,10 +23,17 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerLinear.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PhaseTapChangerLinear() {
-        setCimType("PhaseTapChangerLinear");
+    public PhaseTapChangerLinear(String rdfid) {
+        super("PhaseTapChangerLinear", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerLinear(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -332,7 +339,7 @@ public class PhaseTapChangerLinear extends PhaseTapChanger {
             map.put("xMin", new AttrDetails("PhaseTapChangerLinear.xMin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PhaseTapChangerLinear::xMinToString, null, PhaseTapChangerLinear::setXMin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerLinear().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerLinear(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

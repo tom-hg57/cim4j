@@ -23,10 +23,17 @@ public class SolarPowerPlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(SolarPowerPlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SolarPowerPlant() {
-        setCimType("SolarPowerPlant");
+    public SolarPowerPlant(String rdfid) {
+        super("SolarPowerPlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SolarPowerPlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class SolarPowerPlant extends PowerSystemResource {
             map.put("SolarGeneratingUnits", new AttrDetails("SolarPowerPlant.SolarGeneratingUnits", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, SolarPowerPlant::SolarGeneratingUnitsToString, SolarPowerPlant::setSolarGeneratingUnits, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SolarPowerPlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SolarPowerPlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

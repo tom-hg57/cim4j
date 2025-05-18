@@ -23,10 +23,17 @@ public class DCShunt extends DCConductingEquipment {
     private static final Logging LOG = Logging.getLogger(DCShunt.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DCShunt() {
-        setCimType("DCShunt");
+    public DCShunt(String rdfid) {
+        super("DCShunt", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DCShunt(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -298,7 +305,7 @@ public class DCShunt extends DCConductingEquipment {
             map.put("resistance", new AttrDetails("DCShunt.resistance", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, DCShunt::resistanceToString, null, DCShunt::setResistance));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCShunt().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DCShunt(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

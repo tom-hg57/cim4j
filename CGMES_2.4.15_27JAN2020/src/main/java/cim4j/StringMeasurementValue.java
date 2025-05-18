@@ -23,10 +23,17 @@ public class StringMeasurementValue extends MeasurementValue {
     private static final Logging LOG = Logging.getLogger(StringMeasurementValue.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public StringMeasurementValue() {
-        setCimType("StringMeasurementValue");
+    public StringMeasurementValue(String rdfid) {
+        super("StringMeasurementValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StringMeasurementValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -296,7 +303,7 @@ public class StringMeasurementValue extends MeasurementValue {
             map.put("value", new AttrDetails("StringMeasurementValue.value", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, StringMeasurementValue::valueToString, null, StringMeasurementValue::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StringMeasurementValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StringMeasurementValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

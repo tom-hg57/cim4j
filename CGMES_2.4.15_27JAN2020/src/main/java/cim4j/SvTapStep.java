@@ -23,10 +23,17 @@ public class SvTapStep extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvTapStep.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvTapStep() {
-        setCimType("SvTapStep");
+    public SvTapStep(String rdfid) {
+        super("SvTapStep", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvTapStep(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class SvTapStep extends BaseClass {
             map.put("position", new AttrDetails("SvTapStep.position", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvTapStep::positionToString, null, SvTapStep::setPosition));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvTapStep().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvTapStep(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

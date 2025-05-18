@@ -23,10 +23,17 @@ public class GroundingImpedance extends EarthFaultCompensator {
     private static final Logging LOG = Logging.getLogger(GroundingImpedance.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public GroundingImpedance() {
-        setCimType("GroundingImpedance");
+    public GroundingImpedance(String rdfid) {
+        super("GroundingImpedance", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected GroundingImpedance(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -264,7 +271,7 @@ public class GroundingImpedance extends EarthFaultCompensator {
             map.put("x", new AttrDetails("GroundingImpedance.x", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, GroundingImpedance::xToString, null, GroundingImpedance::setX));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GroundingImpedance().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new GroundingImpedance(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

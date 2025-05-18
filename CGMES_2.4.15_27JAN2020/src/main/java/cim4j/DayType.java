@@ -23,10 +23,17 @@ public class DayType extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(DayType.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DayType() {
-        setCimType("DayType");
+    public DayType(String rdfid) {
+        super("DayType", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DayType(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class DayType extends IdentifiedObject {
             map.put("SeasonDayTypeSchedules", new AttrDetails("DayType.SeasonDayTypeSchedules", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DayType::SeasonDayTypeSchedulesToString, DayType::setSeasonDayTypeSchedules, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DayType().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DayType(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

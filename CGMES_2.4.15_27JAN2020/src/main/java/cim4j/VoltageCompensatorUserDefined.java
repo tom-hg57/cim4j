@@ -23,10 +23,17 @@ public class VoltageCompensatorUserDefined extends VoltageCompensatorDynamics {
     private static final Logging LOG = Logging.getLogger(VoltageCompensatorUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VoltageCompensatorUserDefined() {
-        setCimType("VoltageCompensatorUserDefined");
+    public VoltageCompensatorUserDefined(String rdfid) {
+        super("VoltageCompensatorUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageCompensatorUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class VoltageCompensatorUserDefined extends VoltageCompensatorDynamics {
             map.put("proprietary", new AttrDetails("VoltageCompensatorUserDefined.proprietary", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VoltageCompensatorUserDefined::proprietaryToString, null, VoltageCompensatorUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageCompensatorUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageCompensatorUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class Location extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(Location.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Location() {
-        setCimType("Location");
+    public Location(String rdfid) {
+        super("Location", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Location(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -375,7 +382,7 @@ public class Location extends IdentifiedObject {
             map.put("mainAddress", new AttrDetails("Location.mainAddress", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, Location::mainAddressToString, Location::setMainAddress, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Location().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Location(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

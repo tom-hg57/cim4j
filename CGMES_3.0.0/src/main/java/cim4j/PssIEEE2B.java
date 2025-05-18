@@ -23,10 +23,17 @@ public class PssIEEE2B extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(PssIEEE2B.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PssIEEE2B() {
-        setCimType("PssIEEE2B");
+    public PssIEEE2B(String rdfid) {
+        super("PssIEEE2B", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PssIEEE2B(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -1140,7 +1147,7 @@ public class PssIEEE2B extends PowerSystemStabilizerDynamics {
             map.put("vstmin", new AttrDetails("PssIEEE2B.vstmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PssIEEE2B::vstminToString, null, PssIEEE2B::setVstmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE2B().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PssIEEE2B(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

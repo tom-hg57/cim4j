@@ -23,10 +23,17 @@ public class ACDCConverterDCTerminal extends DCBaseTerminal {
     private static final Logging LOG = Logging.getLogger(ACDCConverterDCTerminal.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ACDCConverterDCTerminal() {
-        setCimType("ACDCConverterDCTerminal");
+    public ACDCConverterDCTerminal(String rdfid) {
+        super("ACDCConverterDCTerminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ACDCConverterDCTerminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -296,7 +303,7 @@ public class ACDCConverterDCTerminal extends DCBaseTerminal {
             map.put("polarity", new AttrDetails("ACDCConverterDCTerminal.polarity", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, ACDCConverterDCTerminal::polarityToString, null, ACDCConverterDCTerminal::setPolarity));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCConverterDCTerminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ACDCConverterDCTerminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

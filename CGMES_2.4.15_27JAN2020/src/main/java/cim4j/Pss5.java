@@ -23,10 +23,17 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
     private static final Logging LOG = Logging.getLogger(Pss5.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Pss5() {
-        setCimType("Pss5");
+    public Pss5(String rdfid) {
+        super("Pss5", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Pss5(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -807,7 +814,7 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
             map.put("vsmx", new AttrDetails("Pss5.vsmx", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Pss5::vsmxToString, null, Pss5::setVsmx));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Pss5().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Pss5(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

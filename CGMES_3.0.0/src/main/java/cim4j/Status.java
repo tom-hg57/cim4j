@@ -23,10 +23,17 @@ public class Status extends BaseClass {
     private static final Logging LOG = Logging.getLogger(Status.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Status() {
-        setCimType("Status");
+    public Status(String rdfid) {
+        super("Status", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Status(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -350,7 +357,7 @@ public class Status extends BaseClass {
             map.put("value", new AttrDetails("Status.value", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Status::valueToString, null, Status::setValue));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Status().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Status(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

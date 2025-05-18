@@ -23,10 +23,17 @@ public class SubGeographicalRegion extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(SubGeographicalRegion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SubGeographicalRegion() {
-        setCimType("SubGeographicalRegion");
+    public SubGeographicalRegion(String rdfid) {
+        super("SubGeographicalRegion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SubGeographicalRegion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -383,7 +390,7 @@ public class SubGeographicalRegion extends IdentifiedObject {
             map.put("Substations", new AttrDetails("SubGeographicalRegion.Substations", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, SubGeographicalRegion::SubstationsToString, SubGeographicalRegion::setSubstations, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubGeographicalRegion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SubGeographicalRegion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

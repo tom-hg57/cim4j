@@ -23,10 +23,17 @@ public class EquivalentBranch extends EquivalentEquipment {
     private static final Logging LOG = Logging.getLogger(EquivalentBranch.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquivalentBranch() {
-        setCimType("EquivalentBranch");
+    public EquivalentBranch(String rdfid) {
+        super("EquivalentBranch", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquivalentBranch(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -774,7 +781,7 @@ public class EquivalentBranch extends EquivalentEquipment {
             map.put("zeroX21", new AttrDetails("EquivalentBranch.zeroX21", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, EquivalentBranch::zeroX21ToString, null, EquivalentBranch::setZeroX21));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentBranch().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentBranch(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

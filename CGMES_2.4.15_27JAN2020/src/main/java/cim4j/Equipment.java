@@ -23,10 +23,17 @@ public class Equipment extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(Equipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Equipment() {
-        setCimType("Equipment");
+    public Equipment(String rdfid) {
+        super("Equipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Equipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -339,7 +346,7 @@ public class Equipment extends PowerSystemResource {
             map.put("aggregate", new AttrDetails("Equipment.aggregate", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, Equipment::aggregateToString, null, Equipment::setAggregate));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Equipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Equipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

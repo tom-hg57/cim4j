@@ -23,10 +23,17 @@ public class OverexcitationLimiterDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(OverexcitationLimiterDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public OverexcitationLimiterDynamics() {
-        setCimType("OverexcitationLimiterDynamics");
+    public OverexcitationLimiterDynamics(String rdfid) {
+        super("OverexcitationLimiterDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OverexcitationLimiterDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class OverexcitationLimiterDynamics extends DynamicsFunctionBlock {
             map.put("ExcitationSystemDynamics", new AttrDetails("OverexcitationLimiterDynamics.ExcitationSystemDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, OverexcitationLimiterDynamics::ExcitationSystemDynamicsToString, OverexcitationLimiterDynamics::setExcitationSystemDynamics, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcitationLimiterDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcitationLimiterDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

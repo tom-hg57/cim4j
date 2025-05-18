@@ -23,10 +23,17 @@ public class ExcELIN1 extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcELIN1.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ExcELIN1() {
-        setCimType("ExcELIN1");
+    public ExcELIN1(String rdfid) {
+        super("ExcELIN1", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcELIN1(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -740,7 +747,7 @@ public class ExcELIN1 extends ExcitationSystemDynamics {
             map.put("xe", new AttrDetails("ExcELIN1.xe", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcELIN1::xeToString, null, ExcELIN1::setXe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcELIN1().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcELIN1(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

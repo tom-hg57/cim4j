@@ -23,10 +23,17 @@ public class Cut extends Switch {
     private static final Logging LOG = Logging.getLogger(Cut.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public Cut() {
-        setCimType("Cut");
+    public Cut(String rdfid) {
+        super("Cut", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Cut(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class Cut extends Switch {
             map.put("lengthFromTerminal1", new AttrDetails("Cut.lengthFromTerminal1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, Cut::lengthFromTerminal1ToString, null, Cut::setLengthFromTerminal1));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Cut().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Cut(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

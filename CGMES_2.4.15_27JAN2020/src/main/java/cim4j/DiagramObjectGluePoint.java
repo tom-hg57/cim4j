@@ -23,10 +23,17 @@ public class DiagramObjectGluePoint extends BaseClass {
     private static final Logging LOG = Logging.getLogger(DiagramObjectGluePoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiagramObjectGluePoint() {
-        setCimType("DiagramObjectGluePoint");
+    public DiagramObjectGluePoint(String rdfid) {
+        super("DiagramObjectGluePoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiagramObjectGluePoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class DiagramObjectGluePoint extends BaseClass {
             map.put("DiagramObjectPoints", new AttrDetails("DiagramObjectGluePoint.DiagramObjectPoints", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiagramObjectGluePoint::DiagramObjectPointsToString, DiagramObjectGluePoint::setDiagramObjectPoints, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectGluePoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectGluePoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

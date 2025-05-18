@@ -23,10 +23,17 @@ public class PowerElectronicsUnit extends Equipment {
     private static final Logging LOG = Logging.getLogger(PowerElectronicsUnit.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerElectronicsUnit() {
-        setCimType("PowerElectronicsUnit");
+    public PowerElectronicsUnit(String rdfid) {
+        super("PowerElectronicsUnit", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerElectronicsUnit(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -336,7 +343,7 @@ public class PowerElectronicsUnit extends Equipment {
             map.put("minP", new AttrDetails("PowerElectronicsUnit.minP", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerElectronicsUnit::minPToString, null, PowerElectronicsUnit::setMinP));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsUnit().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerElectronicsUnit(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

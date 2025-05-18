@@ -23,10 +23,17 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContPitchAngleIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindContPitchAngleIEC() {
-        setCimType("WindContPitchAngleIEC");
+    public WindContPitchAngleIEC(String rdfid) {
+        super("WindContPitchAngleIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContPitchAngleIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -608,7 +615,7 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
             map.put("ttheta", new AttrDetails("WindContPitchAngleIEC.ttheta", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContPitchAngleIEC::tthetaToString, null, WindContPitchAngleIEC::setTtheta));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContPitchAngleIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContPitchAngleIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

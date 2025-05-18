@@ -23,10 +23,17 @@ public class TransformerEnd extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(TransformerEnd.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TransformerEnd() {
-        setCimType("TransformerEnd");
+    public TransformerEnd(String rdfid) {
+        super("TransformerEnd", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TransformerEnd(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -514,7 +521,7 @@ public class TransformerEnd extends IdentifiedObject {
             map.put("xground", new AttrDetails("TransformerEnd.xground", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TransformerEnd::xgroundToString, null, TransformerEnd::setXground));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TransformerEnd().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TransformerEnd(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

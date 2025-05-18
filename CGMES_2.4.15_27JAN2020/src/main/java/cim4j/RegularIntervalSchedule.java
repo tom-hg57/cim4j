@@ -23,10 +23,17 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
     private static final Logging LOG = Logging.getLogger(RegularIntervalSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RegularIntervalSchedule() {
-        setCimType("RegularIntervalSchedule");
+    public RegularIntervalSchedule(String rdfid) {
+        super("RegularIntervalSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RegularIntervalSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -332,7 +339,7 @@ public class RegularIntervalSchedule extends BasicIntervalSchedule {
             map.put("timeStep", new AttrDetails("RegularIntervalSchedule.timeStep", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RegularIntervalSchedule::timeStepToString, null, RegularIntervalSchedule::setTimeStep));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularIntervalSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegularIntervalSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
     private static final Logging LOG = Logging.getLogger(PFVArControllerType2UserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PFVArControllerType2UserDefined() {
-        setCimType("PFVArControllerType2UserDefined");
+    public PFVArControllerType2UserDefined(String rdfid) {
+        super("PFVArControllerType2UserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PFVArControllerType2UserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class PFVArControllerType2UserDefined extends PFVArControllerType2Dynamic
             map.put("proprietary", new AttrDetails("PFVArControllerType2UserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PFVArControllerType2UserDefined::proprietaryToString, null, PFVArControllerType2UserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType2UserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PFVArControllerType2UserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

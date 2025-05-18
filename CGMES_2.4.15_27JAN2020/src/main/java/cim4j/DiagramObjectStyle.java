@@ -23,10 +23,17 @@ public class DiagramObjectStyle extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(DiagramObjectStyle.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DiagramObjectStyle() {
-        setCimType("DiagramObjectStyle");
+    public DiagramObjectStyle(String rdfid) {
+        super("DiagramObjectStyle", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DiagramObjectStyle(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class DiagramObjectStyle extends IdentifiedObject {
             map.put("StyledObjects", new AttrDetails("DiagramObjectStyle.StyledObjects", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, DiagramObjectStyle::StyledObjectsToString, DiagramObjectStyle::setStyledObjects, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectStyle().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DiagramObjectStyle(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class SvStatus extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvStatus.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvStatus() {
-        setCimType("SvStatus");
+    public SvStatus(String rdfid) {
+        super("SvStatus", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvStatus(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class SvStatus extends BaseClass {
             map.put("inService", new AttrDetails("SvStatus.inService", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvStatus::inServiceToString, null, SvStatus::setInService));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvStatus().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvStatus(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

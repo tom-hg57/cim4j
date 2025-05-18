@@ -23,10 +23,17 @@ public class DisconnectingCircuitBreaker extends Breaker {
     private static final Logging LOG = Logging.getLogger(DisconnectingCircuitBreaker.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DisconnectingCircuitBreaker() {
-        setCimType("DisconnectingCircuitBreaker");
+    public DisconnectingCircuitBreaker(String rdfid) {
+        super("DisconnectingCircuitBreaker", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DisconnectingCircuitBreaker(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -230,7 +237,7 @@ public class DisconnectingCircuitBreaker extends Breaker {
     static {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DisconnectingCircuitBreaker().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DisconnectingCircuitBreaker(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

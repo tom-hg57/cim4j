@@ -23,10 +23,17 @@ public class ConformLoadSchedule extends SeasonDayTypeSchedule {
     private static final Logging LOG = Logging.getLogger(ConformLoadSchedule.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public ConformLoadSchedule() {
-        setCimType("ConformLoadSchedule");
+    public ConformLoadSchedule(String rdfid) {
+        super("ConformLoadSchedule", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConformLoadSchedule(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class ConformLoadSchedule extends SeasonDayTypeSchedule {
             map.put("ConformLoadGroup", new AttrDetails("ConformLoadSchedule.ConformLoadGroup", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConformLoadSchedule::ConformLoadGroupToString, ConformLoadSchedule::setConformLoadGroup, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConformLoadSchedule().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConformLoadSchedule(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

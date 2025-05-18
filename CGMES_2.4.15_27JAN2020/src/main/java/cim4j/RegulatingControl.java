@@ -23,10 +23,17 @@ public class RegulatingControl extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(RegulatingControl.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RegulatingControl() {
-        setCimType("RegulatingControl");
+    public RegulatingControl(String rdfid) {
+        super("RegulatingControl", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RegulatingControl(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -538,7 +545,7 @@ public class RegulatingControl extends PowerSystemResource {
             map.put("targetValueUnitMultiplier", new AttrDetails("RegulatingControl.targetValueUnitMultiplier", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, RegulatingControl::targetValueUnitMultiplierToString, null, RegulatingControl::setTargetValueUnitMultiplier));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingControl().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RegulatingControl(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

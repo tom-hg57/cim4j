@@ -23,10 +23,17 @@ public class SeriesCompensator extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(SeriesCompensator.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SeriesCompensator() {
-        setCimType("SeriesCompensator");
+    public SeriesCompensator(String rdfid) {
+        super("SeriesCompensator", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SeriesCompensator(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -468,7 +475,7 @@ public class SeriesCompensator extends ConductingEquipment {
             map.put("x0", new AttrDetails("SeriesCompensator.x0", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SeriesCompensator::x0ToString, null, SeriesCompensator::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeriesCompensator().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SeriesCompensator(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

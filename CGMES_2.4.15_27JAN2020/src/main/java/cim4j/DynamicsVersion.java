@@ -23,10 +23,17 @@ public class DynamicsVersion extends BaseClass {
     private static final Logging LOG = Logging.getLogger(DynamicsVersion.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public DynamicsVersion() {
-        setCimType("DynamicsVersion");
+    public DynamicsVersion(String rdfid) {
+        super("DynamicsVersion", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected DynamicsVersion(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -530,7 +537,7 @@ public class DynamicsVersion extends BaseClass {
             map.put("shortName", new AttrDetails("DynamicsVersion.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, DynamicsVersion::shortNameToString, null, DynamicsVersion::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DynamicsVersion().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new DynamicsVersion(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

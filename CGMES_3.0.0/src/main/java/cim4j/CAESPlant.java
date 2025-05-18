@@ -23,10 +23,17 @@ public class CAESPlant extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(CAESPlant.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public CAESPlant() {
-        setCimType("CAESPlant");
+    public CAESPlant(String rdfid) {
+        super("CAESPlant", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CAESPlant(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -268,7 +275,7 @@ public class CAESPlant extends PowerSystemResource {
             map.put("ThermalGeneratingUnit", new AttrDetails("CAESPlant.ThermalGeneratingUnit", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, CAESPlant::ThermalGeneratingUnitToString, CAESPlant::setThermalGeneratingUnit, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CAESPlant().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CAESPlant(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

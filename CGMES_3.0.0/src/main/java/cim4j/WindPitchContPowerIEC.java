@@ -23,10 +23,17 @@ public class WindPitchContPowerIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindPitchContPowerIEC.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public WindPitchContPowerIEC() {
-        setCimType("WindPitchContPowerIEC");
+    public WindPitchContPowerIEC(String rdfid) {
+        super("WindPitchContPowerIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPitchContPowerIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -582,7 +589,7 @@ public class WindPitchContPowerIEC extends IdentifiedObject {
             map.put("uuvrt", new AttrDetails("WindPitchContPowerIEC.uuvrt", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPitchContPowerIEC::uuvrtToString, null, WindPitchContPowerIEC::setUuvrt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPitchContPowerIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPitchContPowerIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

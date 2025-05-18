@@ -23,10 +23,17 @@ public class VoltageAdjusterUserDefined extends VoltageAdjusterDynamics {
     private static final Logging LOG = Logging.getLogger(VoltageAdjusterUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public VoltageAdjusterUserDefined() {
-        setCimType("VoltageAdjusterUserDefined");
+    public VoltageAdjusterUserDefined(String rdfid) {
+        super("VoltageAdjusterUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageAdjusterUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class VoltageAdjusterUserDefined extends VoltageAdjusterDynamics {
             map.put("proprietary", new AttrDetails("VoltageAdjusterUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, VoltageAdjusterUserDefined::proprietaryToString, null, VoltageAdjusterUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageAdjusterUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageAdjusterUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

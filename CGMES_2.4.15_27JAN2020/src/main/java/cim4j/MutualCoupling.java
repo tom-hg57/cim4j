@@ -23,10 +23,17 @@ public class MutualCoupling extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(MutualCoupling.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MutualCoupling() {
-        setCimType("MutualCoupling");
+    public MutualCoupling(String rdfid) {
+        super("MutualCoupling", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MutualCoupling(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -574,7 +581,7 @@ public class MutualCoupling extends IdentifiedObject {
             map.put("x0", new AttrDetails("MutualCoupling.x0", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, MutualCoupling::x0ToString, null, MutualCoupling::setX0));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MutualCoupling().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MutualCoupling(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

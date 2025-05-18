@@ -23,10 +23,17 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(LoadResponseCharacteristic.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public LoadResponseCharacteristic() {
-        setCimType("LoadResponseCharacteristic");
+    public LoadResponseCharacteristic(String rdfid) {
+        super("LoadResponseCharacteristic", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected LoadResponseCharacteristic(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -642,7 +649,7 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
             map.put("qVoltageExponent", new AttrDetails("LoadResponseCharacteristic.qVoltageExponent", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, LoadResponseCharacteristic::qVoltageExponentToString, null, LoadResponseCharacteristic::setQVoltageExponent));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadResponseCharacteristic().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new LoadResponseCharacteristic(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

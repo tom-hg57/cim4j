@@ -23,10 +23,17 @@ public class SvSwitch extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvSwitch.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public SvSwitch() {
-        setCimType("SvSwitch");
+    public SvSwitch(String rdfid) {
+        super("SvSwitch", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvSwitch(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -300,7 +307,7 @@ public class SvSwitch extends BaseClass {
             map.put("open", new AttrDetails("SvSwitch.open", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, SvSwitch::openToString, null, SvSwitch::setOpen));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvSwitch().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvSwitch(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class RatioTapChangerTablePoint extends TapChangerTablePoint {
     private static final Logging LOG = Logging.getLogger(RatioTapChangerTablePoint.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public RatioTapChangerTablePoint() {
-        setCimType("RatioTapChangerTablePoint");
+    public RatioTapChangerTablePoint(String rdfid) {
+        super("RatioTapChangerTablePoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RatioTapChangerTablePoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class RatioTapChangerTablePoint extends TapChangerTablePoint {
             map.put("RatioTapChangerTable", new AttrDetails("RatioTapChangerTablePoint.RatioTapChangerTable", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RatioTapChangerTablePoint::RatioTapChangerTableToString, RatioTapChangerTablePoint::setRatioTapChangerTable, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChangerTablePoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChangerTablePoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

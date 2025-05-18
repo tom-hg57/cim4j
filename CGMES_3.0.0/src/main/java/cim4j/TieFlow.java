@@ -23,10 +23,17 @@ public class TieFlow extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(TieFlow.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public TieFlow() {
-        setCimType("TieFlow");
+    public TieFlow(String rdfid) {
+        super("TieFlow", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected TieFlow(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -336,7 +343,7 @@ public class TieFlow extends IdentifiedObject {
             map.put("positiveFlowIn", new AttrDetails("TieFlow.positiveFlowIn", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, TieFlow::positiveFlowInToString, null, TieFlow::setPositiveFlowIn));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TieFlow().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new TieFlow(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

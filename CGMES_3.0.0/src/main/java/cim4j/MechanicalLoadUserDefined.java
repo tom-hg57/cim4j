@@ -23,10 +23,17 @@ public class MechanicalLoadUserDefined extends MechanicalLoadDynamics {
     private static final Logging LOG = Logging.getLogger(MechanicalLoadUserDefined.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public MechanicalLoadUserDefined() {
-        setCimType("MechanicalLoadUserDefined");
+    public MechanicalLoadUserDefined(String rdfid) {
+        super("MechanicalLoadUserDefined", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected MechanicalLoadUserDefined(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -302,7 +309,7 @@ public class MechanicalLoadUserDefined extends MechanicalLoadDynamics {
             map.put("proprietary", new AttrDetails("MechanicalLoadUserDefined.proprietary", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, MechanicalLoadUserDefined::proprietaryToString, null, MechanicalLoadUserDefined::setProprietary));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechanicalLoadUserDefined().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new MechanicalLoadUserDefined(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

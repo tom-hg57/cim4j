@@ -23,10 +23,17 @@ public class PowerSystemStabilizerDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(PowerSystemStabilizerDynamics.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public PowerSystemStabilizerDynamics() {
-        setCimType("PowerSystemStabilizerDynamics");
+    public PowerSystemStabilizerDynamics(String rdfid) {
+        super("PowerSystemStabilizerDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerSystemStabilizerDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -304,7 +311,7 @@ public class PowerSystemStabilizerDynamics extends DynamicsFunctionBlock {
             map.put("RemoteInputSignal", new AttrDetails("PowerSystemStabilizerDynamics.RemoteInputSignal", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerSystemStabilizerDynamics::RemoteInputSignalToString, PowerSystemStabilizerDynamics::setRemoteInputSignal, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemStabilizerDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemStabilizerDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 

@@ -23,10 +23,17 @@ public class EquivalentEquipment extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(EquivalentEquipment.class);
 
     /**
-     * Default constructor.
+     * Constructor.
      */
-    public EquivalentEquipment() {
-        setCimType("EquivalentEquipment");
+    public EquivalentEquipment(String rdfid) {
+        super("EquivalentEquipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected EquivalentEquipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -266,7 +273,7 @@ public class EquivalentEquipment extends ConductingEquipment {
             map.put("EquivalentNetwork", new AttrDetails("EquivalentEquipment.EquivalentNetwork", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, EquivalentEquipment::EquivalentNetworkToString, EquivalentEquipment::setEquivalentNetwork, null));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentEquipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new EquivalentEquipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
     }
 
