@@ -32,10 +32,24 @@ public class VoltageLevel extends EquipmentContainer {
     private static final Logging LOG = Logging.getLogger(VoltageLevel.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public VoltageLevel() {
-        setCimType("VoltageLevel");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public VoltageLevel(String rdfid) {
+        super("VoltageLevel", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageLevel(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class VoltageLevel extends EquipmentContainer {
         return BaseVoltage;
     }
 
-    public void setBaseVoltage(BaseClass _object_) {
-        if (!(_object_ instanceof BaseVoltage)) {
-            throw new IllegalArgumentException("Object is not BaseVoltage");
-        }
+    public void setBaseVoltage(BaseVoltage _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (BaseVoltage != _object_) {
-            BaseVoltage = (BaseVoltage) _object_;
+            BaseVoltage = _object_;
             BaseVoltage.setVoltageLevel(this);
             BaseVoltageId = BaseVoltage.getRdfid();
         }
     }
 
-    public String BaseVoltageToString() {
-        return BaseVoltageId;
+    private static Object getBaseVoltage(BaseClass _this_) {
+        var obj = ((VoltageLevel) _this_).getBaseVoltage();
+        var id = ((VoltageLevel) _this_).BaseVoltageId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setBaseVoltage(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof BaseVoltage) {
+            ((VoltageLevel) _this_).setBaseVoltage((BaseVoltage) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not BaseVoltage");
+        }
     }
 
     /**
@@ -81,21 +105,26 @@ public class VoltageLevel extends EquipmentContainer {
         return Bays;
     }
 
-    public void setBays(BaseClass _object_) {
-        if (!(_object_ instanceof Bay)) {
-            throw new IllegalArgumentException("Object is not Bay");
-        }
+    public void setBays(Bay _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!Bays.contains(_object_)) {
-            Bays.add((Bay) _object_);
-            ((Bay) _object_).setVoltageLevel(this);
+            Bays.add(_object_);
+            _object_.setVoltageLevel(this);
         }
     }
 
-    public String BaysToString() {
-        return getStringFromSet(Bays);
+    private static Object getBays(BaseClass _this_) {
+        return ((VoltageLevel) _this_).getBays();
+    }
+
+    private static void setBays(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Bay) {
+            ((VoltageLevel) _this_).setBays((Bay) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Bay");
+        }
     }
 
     /**
@@ -111,22 +140,32 @@ public class VoltageLevel extends EquipmentContainer {
         return Substation;
     }
 
-    public void setSubstation(BaseClass _object_) {
-        if (!(_object_ instanceof Substation)) {
-            throw new IllegalArgumentException("Object is not Substation");
-        }
+    public void setSubstation(Substation _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (Substation != _object_) {
-            Substation = (Substation) _object_;
+            Substation = _object_;
             Substation.setVoltageLevels(this);
             SubstationId = Substation.getRdfid();
         }
     }
 
-    public String SubstationToString() {
-        return SubstationId;
+    private static Object getSubstation(BaseClass _this_) {
+        var obj = ((VoltageLevel) _this_).getSubstation();
+        var id = ((VoltageLevel) _this_).SubstationId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setSubstation(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Substation) {
+            ((VoltageLevel) _this_).setSubstation((Substation) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Substation");
+        }
     }
 
     /**
@@ -143,12 +182,18 @@ public class VoltageLevel extends EquipmentContainer {
         highVoltageLimit = _value_;
     }
 
-    public void setHighVoltageLimit(String _value_) {
-        highVoltageLimit = getDoubleFromString(_value_);
+    private static Object getHighVoltageLimit(BaseClass _this_) {
+        return ((VoltageLevel) _this_).getHighVoltageLimit();
     }
 
-    public String highVoltageLimitToString() {
-        return highVoltageLimit != null ? highVoltageLimit.toString() : null;
+    private static void setHighVoltageLimit(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((VoltageLevel) _this_).setHighVoltageLimit((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((VoltageLevel) _this_).setHighVoltageLimit(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -165,12 +210,18 @@ public class VoltageLevel extends EquipmentContainer {
         lowVoltageLimit = _value_;
     }
 
-    public void setLowVoltageLimit(String _value_) {
-        lowVoltageLimit = getDoubleFromString(_value_);
+    private static Object getLowVoltageLimit(BaseClass _this_) {
+        return ((VoltageLevel) _this_).getLowVoltageLimit();
     }
 
-    public String lowVoltageLimitToString() {
-        return lowVoltageLimit != null ? lowVoltageLimit.toString() : null;
+    private static void setLowVoltageLimit(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((VoltageLevel) _this_).setLowVoltageLimit((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((VoltageLevel) _this_).setLowVoltageLimit(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -213,64 +264,35 @@ public class VoltageLevel extends EquipmentContainer {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("VoltageLevel", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VoltageLevel", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VoltageLevel", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VoltageLevel", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VoltageLevel", attrName, value));
         }
     }
 
@@ -394,43 +416,31 @@ public class VoltageLevel extends EquipmentContainer {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("BaseVoltage", new AttrDetails("VoltageLevel.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("BaseVoltage", new AttrDetails("VoltageLevel.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, VoltageLevel::getBaseVoltage, VoltageLevel::setBaseVoltage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Bays", new AttrDetails("VoltageLevel.Bays", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Bays", new AttrDetails("VoltageLevel.Bays", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, VoltageLevel::getBays, VoltageLevel::setBays));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Substation", new AttrDetails("VoltageLevel.Substation", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Substation", new AttrDetails("VoltageLevel.Substation", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, VoltageLevel::getSubstation, VoltageLevel::setSubstation));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("highVoltageLimit", new AttrDetails("VoltageLevel.highVoltageLimit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("highVoltageLimit", new AttrDetails("VoltageLevel.highVoltageLimit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VoltageLevel::getHighVoltageLimit, VoltageLevel::setHighVoltageLimit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("lowVoltageLimit", new AttrDetails("VoltageLevel.lowVoltageLimit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("lowVoltageLimit", new AttrDetails("VoltageLevel.lowVoltageLimit", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, VoltageLevel::getLowVoltageLimit, VoltageLevel::setLowVoltageLimit));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageLevel().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageLevel(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("BaseVoltage", new GetterSetter(this::BaseVoltageToString, this::setBaseVoltage, null));
-        map.put("Bays", new GetterSetter(this::BaysToString, this::setBays, null));
-        map.put("Substation", new GetterSetter(this::SubstationToString, this::setSubstation, null));
-        map.put("highVoltageLimit", new GetterSetter(this::highVoltageLimitToString, null, this::setHighVoltageLimit));
-        map.put("lowVoltageLimit", new GetterSetter(this::lowVoltageLimitToString, null, this::setLowVoltageLimit));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

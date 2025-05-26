@@ -32,10 +32,24 @@ public class RatioTapChanger extends TapChanger {
     private static final Logging LOG = Logging.getLogger(RatioTapChanger.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public RatioTapChanger() {
-        setCimType("RatioTapChanger");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public RatioTapChanger(String rdfid) {
+        super("RatioTapChanger", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RatioTapChanger(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class RatioTapChanger extends TapChanger {
         return RatioTapChangerTable;
     }
 
-    public void setRatioTapChangerTable(BaseClass _object_) {
-        if (!(_object_ instanceof RatioTapChangerTable)) {
-            throw new IllegalArgumentException("Object is not RatioTapChangerTable");
-        }
+    public void setRatioTapChangerTable(RatioTapChangerTable _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (RatioTapChangerTable != _object_) {
-            RatioTapChangerTable = (RatioTapChangerTable) _object_;
+            RatioTapChangerTable = _object_;
             RatioTapChangerTable.setRatioTapChanger(this);
             RatioTapChangerTableId = RatioTapChangerTable.getRdfid();
         }
     }
 
-    public String RatioTapChangerTableToString() {
-        return RatioTapChangerTableId;
+    private static Object getRatioTapChangerTable(BaseClass _this_) {
+        var obj = ((RatioTapChanger) _this_).getRatioTapChangerTable();
+        var id = ((RatioTapChanger) _this_).RatioTapChangerTableId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setRatioTapChangerTable(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof RatioTapChangerTable) {
+            ((RatioTapChanger) _this_).setRatioTapChangerTable((RatioTapChangerTable) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not RatioTapChangerTable");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class RatioTapChanger extends TapChanger {
         return TransformerEnd;
     }
 
-    public void setTransformerEnd(BaseClass _object_) {
-        if (!(_object_ instanceof TransformerEnd)) {
-            throw new IllegalArgumentException("Object is not TransformerEnd");
-        }
+    public void setTransformerEnd(TransformerEnd _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TransformerEnd != _object_) {
-            TransformerEnd = (TransformerEnd) _object_;
+            TransformerEnd = _object_;
             TransformerEnd.setRatioTapChanger(this);
             TransformerEndId = TransformerEnd.getRdfid();
         }
     }
 
-    public String TransformerEndToString() {
-        return TransformerEndId;
+    private static Object getTransformerEnd(BaseClass _this_) {
+        var obj = ((RatioTapChanger) _this_).getTransformerEnd();
+        var id = ((RatioTapChanger) _this_).TransformerEndId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTransformerEnd(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TransformerEnd) {
+            ((RatioTapChanger) _this_).setTransformerEnd((TransformerEnd) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TransformerEnd");
+        }
     }
 
     /**
@@ -114,12 +148,18 @@ public class RatioTapChanger extends TapChanger {
         stepVoltageIncrement = _value_;
     }
 
-    public void setStepVoltageIncrement(String _value_) {
-        stepVoltageIncrement = getDoubleFromString(_value_);
+    private static Object getStepVoltageIncrement(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).getStepVoltageIncrement();
     }
 
-    public String stepVoltageIncrementToString() {
-        return stepVoltageIncrement != null ? stepVoltageIncrement.toString() : null;
+    private static void setStepVoltageIncrement(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((RatioTapChanger) _this_).setStepVoltageIncrement((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((RatioTapChanger) _this_).setStepVoltageIncrement(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -136,8 +176,16 @@ public class RatioTapChanger extends TapChanger {
         tculControlMode = _value_;
     }
 
-    public String tculControlModeToString() {
-        return tculControlMode;
+    private static Object getTculControlMode(BaseClass _this_) {
+        return ((RatioTapChanger) _this_).getTculControlMode();
+    }
+
+    private static void setTculControlMode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((RatioTapChanger) _this_).setTculControlMode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -180,64 +228,35 @@ public class RatioTapChanger extends TapChanger {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("RatioTapChanger", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RatioTapChanger", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RatioTapChanger", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RatioTapChanger", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RatioTapChanger", attrName, value));
         }
     }
 
@@ -361,37 +380,26 @@ public class RatioTapChanger extends TapChanger {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RatioTapChangerTable", new AttrDetails("RatioTapChanger.RatioTapChangerTable", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RatioTapChangerTable", new AttrDetails("RatioTapChanger.RatioTapChangerTable", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RatioTapChanger::getRatioTapChangerTable, RatioTapChanger::setRatioTapChangerTable));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TransformerEnd", new AttrDetails("RatioTapChanger.TransformerEnd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TransformerEnd", new AttrDetails("RatioTapChanger.TransformerEnd", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, RatioTapChanger::getTransformerEnd, RatioTapChanger::setTransformerEnd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("stepVoltageIncrement", new AttrDetails("RatioTapChanger.stepVoltageIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("stepVoltageIncrement", new AttrDetails("RatioTapChanger.stepVoltageIncrement", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, RatioTapChanger::getStepVoltageIncrement, RatioTapChanger::setStepVoltageIncrement));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("tculControlMode", new AttrDetails("RatioTapChanger.tculControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("tculControlMode", new AttrDetails("RatioTapChanger.tculControlMode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, RatioTapChanger::getTculControlMode, RatioTapChanger::setTculControlMode));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChanger().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RatioTapChanger(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("RatioTapChangerTable", new GetterSetter(this::RatioTapChangerTableToString, this::setRatioTapChangerTable, null));
-        map.put("TransformerEnd", new GetterSetter(this::TransformerEndToString, this::setTransformerEnd, null));
-        map.put("stepVoltageIncrement", new GetterSetter(this::stepVoltageIncrementToString, null, this::setStepVoltageIncrement));
-        map.put("tculControlMode", new GetterSetter(this::tculControlModeToString, null, this::setTculControlMode));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

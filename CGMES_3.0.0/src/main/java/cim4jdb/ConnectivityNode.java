@@ -32,10 +32,24 @@ public class ConnectivityNode extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ConnectivityNode.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public ConnectivityNode() {
-        setCimType("ConnectivityNode");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public ConnectivityNode(String rdfid) {
+        super("ConnectivityNode", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConnectivityNode(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -50,21 +64,27 @@ public class ConnectivityNode extends IdentifiedObject {
         return BoundaryPoint;
     }
 
-    public void setBoundaryPoint(BaseClass _object_) {
-        if (!(_object_ instanceof BoundaryPoint)) {
-            throw new IllegalArgumentException("Object is not BoundaryPoint");
-        }
+    public void setBoundaryPoint(BoundaryPoint _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (BoundaryPoint != _object_) {
-            BoundaryPoint = (BoundaryPoint) _object_;
+            BoundaryPoint = _object_;
             BoundaryPoint.setConnectivityNode(this);
         }
     }
 
-    public String BoundaryPointToString() {
-        return BoundaryPoint != null ? BoundaryPoint.getRdfid() : null;
+    private static Object getBoundaryPoint(BaseClass _this_) {
+        var obj = ((ConnectivityNode) _this_).getBoundaryPoint();
+        return obj;
+    }
+
+    private static void setBoundaryPoint(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof BoundaryPoint) {
+            ((ConnectivityNode) _this_).setBoundaryPoint((BoundaryPoint) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not BoundaryPoint");
+        }
     }
 
     /**
@@ -80,22 +100,32 @@ public class ConnectivityNode extends IdentifiedObject {
         return ConnectivityNodeContainer;
     }
 
-    public void setConnectivityNodeContainer(BaseClass _object_) {
-        if (!(_object_ instanceof ConnectivityNodeContainer)) {
-            throw new IllegalArgumentException("Object is not ConnectivityNodeContainer");
-        }
+    public void setConnectivityNodeContainer(ConnectivityNodeContainer _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ConnectivityNodeContainer != _object_) {
-            ConnectivityNodeContainer = (ConnectivityNodeContainer) _object_;
+            ConnectivityNodeContainer = _object_;
             ConnectivityNodeContainer.setConnectivityNodes(this);
             ConnectivityNodeContainerId = ConnectivityNodeContainer.getRdfid();
         }
     }
 
-    public String ConnectivityNodeContainerToString() {
-        return ConnectivityNodeContainerId;
+    private static Object getConnectivityNodeContainer(BaseClass _this_) {
+        var obj = ((ConnectivityNode) _this_).getConnectivityNodeContainer();
+        var id = ((ConnectivityNode) _this_).ConnectivityNodeContainerId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setConnectivityNodeContainer(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ConnectivityNodeContainer) {
+            ((ConnectivityNode) _this_).setConnectivityNodeContainer((ConnectivityNodeContainer) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ConnectivityNodeContainer");
+        }
     }
 
     /**
@@ -110,21 +140,26 @@ public class ConnectivityNode extends IdentifiedObject {
         return Terminals;
     }
 
-    public void setTerminals(BaseClass _object_) {
-        if (!(_object_ instanceof Terminal)) {
-            throw new IllegalArgumentException("Object is not Terminal");
-        }
+    public void setTerminals(Terminal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!Terminals.contains(_object_)) {
-            Terminals.add((Terminal) _object_);
-            ((Terminal) _object_).setConnectivityNode(this);
+            Terminals.add(_object_);
+            _object_.setConnectivityNode(this);
         }
     }
 
-    public String TerminalsToString() {
-        return getStringFromSet(Terminals);
+    private static Object getTerminals(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getTerminals();
+    }
+
+    private static void setTerminals(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Terminal) {
+            ((ConnectivityNode) _this_).setTerminals((Terminal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Terminal");
+        }
     }
 
     /**
@@ -140,22 +175,32 @@ public class ConnectivityNode extends IdentifiedObject {
         return TopologicalNode;
     }
 
-    public void setTopologicalNode(BaseClass _object_) {
-        if (!(_object_ instanceof TopologicalNode)) {
-            throw new IllegalArgumentException("Object is not TopologicalNode");
-        }
+    public void setTopologicalNode(TopologicalNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TopologicalNode != _object_) {
-            TopologicalNode = (TopologicalNode) _object_;
+            TopologicalNode = _object_;
             TopologicalNode.setConnectivityNodes(this);
             TopologicalNodeId = TopologicalNode.getRdfid();
         }
     }
 
-    public String TopologicalNodeToString() {
-        return TopologicalNodeId;
+    private static Object getTopologicalNode(BaseClass _this_) {
+        var obj = ((ConnectivityNode) _this_).getTopologicalNode();
+        var id = ((ConnectivityNode) _this_).TopologicalNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TopologicalNode) {
+            ((ConnectivityNode) _this_).setTopologicalNode((TopologicalNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TopologicalNode");
+        }
     }
 
     /**
@@ -198,64 +243,35 @@ public class ConnectivityNode extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("ConnectivityNode", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ConnectivityNode", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ConnectivityNode", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ConnectivityNode", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConnectivityNode", attrName, value));
         }
     }
 
@@ -380,39 +396,28 @@ public class ConnectivityNode extends IdentifiedObject {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("BoundaryPoint", new AttrDetails("ConnectivityNode.BoundaryPoint", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false));
+            map.put("BoundaryPoint", new AttrDetails("ConnectivityNode.BoundaryPoint", false, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, ConnectivityNode::getBoundaryPoint, ConnectivityNode::setBoundaryPoint));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("ConnectivityNodeContainer", new AttrDetails("ConnectivityNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ConnectivityNodeContainer", new AttrDetails("ConnectivityNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConnectivityNode::getConnectivityNodeContainer, ConnectivityNode::setConnectivityNodeContainer));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("Terminals", new AttrDetails("ConnectivityNode.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminals", new AttrDetails("ConnectivityNode.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConnectivityNode::getTerminals, ConnectivityNode::setTerminals));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("ConnectivityNode.TopologicalNode", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("ConnectivityNode.TopologicalNode", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConnectivityNode::getTopologicalNode, ConnectivityNode::setTopologicalNode));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("BoundaryPoint", new GetterSetter(this::BoundaryPointToString, this::setBoundaryPoint, null));
-        map.put("ConnectivityNodeContainer", new GetterSetter(this::ConnectivityNodeContainerToString, this::setConnectivityNodeContainer, null));
-        map.put("Terminals", new GetterSetter(this::TerminalsToString, this::setTerminals, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

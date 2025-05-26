@@ -32,10 +32,24 @@ public class AnalogValue extends MeasurementValue {
     private static final Logging LOG = Logging.getLogger(AnalogValue.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public AnalogValue() {
-        setCimType("AnalogValue");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public AnalogValue(String rdfid) {
+        super("AnalogValue", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AnalogValue(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class AnalogValue extends MeasurementValue {
         return Analog;
     }
 
-    public void setAnalog(BaseClass _object_) {
-        if (!(_object_ instanceof Analog)) {
-            throw new IllegalArgumentException("Object is not Analog");
-        }
+    public void setAnalog(Analog _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (Analog != _object_) {
-            Analog = (Analog) _object_;
+            Analog = _object_;
             Analog.setAnalogValues(this);
             AnalogId = Analog.getRdfid();
         }
     }
 
-    public String AnalogToString() {
-        return AnalogId;
+    private static Object getAnalog(BaseClass _this_) {
+        var obj = ((AnalogValue) _this_).getAnalog();
+        var id = ((AnalogValue) _this_).AnalogId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setAnalog(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Analog) {
+            ((AnalogValue) _this_).setAnalog((Analog) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Analog");
+        }
     }
 
     /**
@@ -81,21 +105,27 @@ public class AnalogValue extends MeasurementValue {
         return AnalogControl;
     }
 
-    public void setAnalogControl(BaseClass _object_) {
-        if (!(_object_ instanceof AnalogControl)) {
-            throw new IllegalArgumentException("Object is not AnalogControl");
-        }
+    public void setAnalogControl(AnalogControl _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (AnalogControl != _object_) {
-            AnalogControl = (AnalogControl) _object_;
+            AnalogControl = _object_;
             AnalogControl.setAnalogValue(this);
         }
     }
 
-    public String AnalogControlToString() {
-        return AnalogControl != null ? AnalogControl.getRdfid() : null;
+    private static Object getAnalogControl(BaseClass _this_) {
+        var obj = ((AnalogValue) _this_).getAnalogControl();
+        return obj;
+    }
+
+    private static void setAnalogControl(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof AnalogControl) {
+            ((AnalogValue) _this_).setAnalogControl((AnalogControl) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not AnalogControl");
+        }
     }
 
     /**
@@ -138,64 +168,35 @@ public class AnalogValue extends MeasurementValue {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("AnalogValue", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AnalogValue", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AnalogValue", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AnalogValue", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AnalogValue", attrName, value));
         }
     }
 
@@ -319,25 +320,16 @@ public class AnalogValue extends MeasurementValue {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("Analog", new AttrDetails("AnalogValue.Analog", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Analog", new AttrDetails("AnalogValue.Analog", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AnalogValue::getAnalog, AnalogValue::setAnalog));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("AnalogControl", new AttrDetails("AnalogValue.AnalogControl", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("AnalogControl", new AttrDetails("AnalogValue.AnalogControl", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, AnalogValue::getAnalogControl, AnalogValue::setAnalogControl));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogValue().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AnalogValue(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Analog", new GetterSetter(this::AnalogToString, this::setAnalog, null));
-        map.put("AnalogControl", new GetterSetter(this::AnalogControlToString, this::setAnalogControl, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

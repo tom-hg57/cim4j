@@ -32,10 +32,24 @@ public class ConnectivityNode extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(ConnectivityNode.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public ConnectivityNode() {
-        setCimType("ConnectivityNode");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public ConnectivityNode(String rdfid) {
+        super("ConnectivityNode", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ConnectivityNode(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class ConnectivityNode extends IdentifiedObject {
         return ConnectivityNodeContainer;
     }
 
-    public void setConnectivityNodeContainer(BaseClass _object_) {
-        if (!(_object_ instanceof ConnectivityNodeContainer)) {
-            throw new IllegalArgumentException("Object is not ConnectivityNodeContainer");
-        }
+    public void setConnectivityNodeContainer(ConnectivityNodeContainer _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ConnectivityNodeContainer != _object_) {
-            ConnectivityNodeContainer = (ConnectivityNodeContainer) _object_;
+            ConnectivityNodeContainer = _object_;
             ConnectivityNodeContainer.setConnectivityNodes(this);
             ConnectivityNodeContainerId = ConnectivityNodeContainer.getRdfid();
         }
     }
 
-    public String ConnectivityNodeContainerToString() {
-        return ConnectivityNodeContainerId;
+    private static Object getConnectivityNodeContainer(BaseClass _this_) {
+        var obj = ((ConnectivityNode) _this_).getConnectivityNodeContainer();
+        var id = ((ConnectivityNode) _this_).ConnectivityNodeContainerId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setConnectivityNodeContainer(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ConnectivityNodeContainer) {
+            ((ConnectivityNode) _this_).setConnectivityNodeContainer((ConnectivityNodeContainer) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ConnectivityNodeContainer");
+        }
     }
 
     /**
@@ -81,21 +105,26 @@ public class ConnectivityNode extends IdentifiedObject {
         return Terminals;
     }
 
-    public void setTerminals(BaseClass _object_) {
-        if (!(_object_ instanceof Terminal)) {
-            throw new IllegalArgumentException("Object is not Terminal");
-        }
+    public void setTerminals(Terminal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!Terminals.contains(_object_)) {
-            Terminals.add((Terminal) _object_);
-            ((Terminal) _object_).setConnectivityNode(this);
+            Terminals.add(_object_);
+            _object_.setConnectivityNode(this);
         }
     }
 
-    public String TerminalsToString() {
-        return getStringFromSet(Terminals);
+    private static Object getTerminals(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getTerminals();
+    }
+
+    private static void setTerminals(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Terminal) {
+            ((ConnectivityNode) _this_).setTerminals((Terminal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Terminal");
+        }
     }
 
     /**
@@ -111,22 +140,32 @@ public class ConnectivityNode extends IdentifiedObject {
         return TopologicalNode;
     }
 
-    public void setTopologicalNode(BaseClass _object_) {
-        if (!(_object_ instanceof TopologicalNode)) {
-            throw new IllegalArgumentException("Object is not TopologicalNode");
-        }
+    public void setTopologicalNode(TopologicalNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TopologicalNode != _object_) {
-            TopologicalNode = (TopologicalNode) _object_;
+            TopologicalNode = _object_;
             TopologicalNode.setConnectivityNodes(this);
             TopologicalNodeId = TopologicalNode.getRdfid();
         }
     }
 
-    public String TopologicalNodeToString() {
-        return TopologicalNodeId;
+    private static Object getTopologicalNode(BaseClass _this_) {
+        var obj = ((ConnectivityNode) _this_).getTopologicalNode();
+        var id = ((ConnectivityNode) _this_).TopologicalNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TopologicalNode) {
+            ((ConnectivityNode) _this_).setTopologicalNode((TopologicalNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TopologicalNode");
+        }
     }
 
     /**
@@ -143,12 +182,18 @@ public class ConnectivityNode extends IdentifiedObject {
         boundaryPoint = _value_;
     }
 
-    public void setBoundaryPoint(String _value_) {
-        boundaryPoint = getBooleanFromString(_value_);
+    private static Object getBoundaryPoint(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getBoundaryPoint();
     }
 
-    public String boundaryPointToString() {
-        return boundaryPoint != null ? boundaryPoint.toString() : null;
+    private static void setBoundaryPoint(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((ConnectivityNode) _this_).setBoundaryPoint((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setBoundaryPoint(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -165,8 +210,16 @@ public class ConnectivityNode extends IdentifiedObject {
         fromEndIsoCode = _value_;
     }
 
-    public String fromEndIsoCodeToString() {
-        return fromEndIsoCode != null ? fromEndIsoCode.toString() : null;
+    private static Object getFromEndIsoCode(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getFromEndIsoCode();
+    }
+
+    private static void setFromEndIsoCode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setFromEndIsoCode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -183,8 +236,16 @@ public class ConnectivityNode extends IdentifiedObject {
         fromEndName = _value_;
     }
 
-    public String fromEndNameToString() {
-        return fromEndName != null ? fromEndName.toString() : null;
+    private static Object getFromEndName(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getFromEndName();
+    }
+
+    private static void setFromEndName(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setFromEndName((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -201,8 +262,16 @@ public class ConnectivityNode extends IdentifiedObject {
         fromEndNameTso = _value_;
     }
 
-    public String fromEndNameTsoToString() {
-        return fromEndNameTso != null ? fromEndNameTso.toString() : null;
+    private static Object getFromEndNameTso(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getFromEndNameTso();
+    }
+
+    private static void setFromEndNameTso(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setFromEndNameTso((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -219,8 +288,16 @@ public class ConnectivityNode extends IdentifiedObject {
         toEndIsoCode = _value_;
     }
 
-    public String toEndIsoCodeToString() {
-        return toEndIsoCode != null ? toEndIsoCode.toString() : null;
+    private static Object getToEndIsoCode(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getToEndIsoCode();
+    }
+
+    private static void setToEndIsoCode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setToEndIsoCode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -237,8 +314,16 @@ public class ConnectivityNode extends IdentifiedObject {
         toEndName = _value_;
     }
 
-    public String toEndNameToString() {
-        return toEndName != null ? toEndName.toString() : null;
+    private static Object getToEndName(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getToEndName();
+    }
+
+    private static void setToEndName(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setToEndName((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -255,8 +340,16 @@ public class ConnectivityNode extends IdentifiedObject {
         toEndNameTso = _value_;
     }
 
-    public String toEndNameTsoToString() {
-        return toEndNameTso != null ? toEndNameTso.toString() : null;
+    private static Object getToEndNameTso(BaseClass _this_) {
+        return ((ConnectivityNode) _this_).getToEndNameTso();
+    }
+
+    private static void setToEndNameTso(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((ConnectivityNode) _this_).setToEndNameTso((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -299,64 +392,35 @@ public class ConnectivityNode extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("ConnectivityNode", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ConnectivityNode", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ConnectivityNode", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ConnectivityNode", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ConnectivityNode", attrName, value));
         }
     }
 
@@ -481,74 +545,57 @@ public class ConnectivityNode extends IdentifiedObject {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("ConnectivityNodeContainer", new AttrDetails("ConnectivityNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConnectivityNodeContainer", new AttrDetails("ConnectivityNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNode::getConnectivityNodeContainer, ConnectivityNode::setConnectivityNodeContainer));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminals", new AttrDetails("ConnectivityNode.Terminals", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("Terminals", new AttrDetails("ConnectivityNode.Terminals", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNode::getTerminals, ConnectivityNode::setTerminals));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("ConnectivityNode.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("ConnectivityNode.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNode::getTopologicalNode, ConnectivityNode::setTopologicalNode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("boundaryPoint", new AttrDetails("ConnectivityNode.boundaryPoint", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("boundaryPoint", new AttrDetails("ConnectivityNode.boundaryPoint", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getBoundaryPoint, ConnectivityNode::setBoundaryPoint));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("fromEndIsoCode", new AttrDetails("ConnectivityNode.fromEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndIsoCode", new AttrDetails("ConnectivityNode.fromEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getFromEndIsoCode, ConnectivityNode::setFromEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("fromEndName", new AttrDetails("ConnectivityNode.fromEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndName", new AttrDetails("ConnectivityNode.fromEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getFromEndName, ConnectivityNode::setFromEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("fromEndNameTso", new AttrDetails("ConnectivityNode.fromEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("fromEndNameTso", new AttrDetails("ConnectivityNode.fromEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getFromEndNameTso, ConnectivityNode::setFromEndNameTso));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("toEndIsoCode", new AttrDetails("ConnectivityNode.toEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndIsoCode", new AttrDetails("ConnectivityNode.toEndIsoCode", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getToEndIsoCode, ConnectivityNode::setToEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("toEndName", new AttrDetails("ConnectivityNode.toEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndName", new AttrDetails("ConnectivityNode.toEndName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getToEndName, ConnectivityNode::setToEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ_BD);
-            map.put("toEndNameTso", new AttrDetails("ConnectivityNode.toEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false));
+            map.put("toEndNameTso", new AttrDetails("ConnectivityNode.toEndNameTso", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, ConnectivityNode::getToEndNameTso, ConnectivityNode::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ConnectivityNode(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConnectivityNodeContainer", new GetterSetter(this::ConnectivityNodeContainerToString, this::setConnectivityNodeContainer, null));
-        map.put("Terminals", new GetterSetter(this::TerminalsToString, this::setTerminals, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("boundaryPoint", new GetterSetter(this::boundaryPointToString, null, this::setBoundaryPoint));
-        map.put("fromEndIsoCode", new GetterSetter(this::fromEndIsoCodeToString, null, this::setFromEndIsoCode));
-        map.put("fromEndName", new GetterSetter(this::fromEndNameToString, null, this::setFromEndName));
-        map.put("fromEndNameTso", new GetterSetter(this::fromEndNameTsoToString, null, this::setFromEndNameTso));
-        map.put("toEndIsoCode", new GetterSetter(this::toEndIsoCodeToString, null, this::setToEndIsoCode));
-        map.put("toEndName", new GetterSetter(this::toEndNameToString, null, this::setToEndName));
-        map.put("toEndNameTso", new GetterSetter(this::toEndNameTsoToString, null, this::setToEndNameTso));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

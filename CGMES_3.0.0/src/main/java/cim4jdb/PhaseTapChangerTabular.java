@@ -32,10 +32,24 @@ public class PhaseTapChangerTabular extends PhaseTapChanger {
     private static final Logging LOG = Logging.getLogger(PhaseTapChangerTabular.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public PhaseTapChangerTabular() {
-        setCimType("PhaseTapChangerTabular");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public PhaseTapChangerTabular(String rdfid) {
+        super("PhaseTapChangerTabular", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PhaseTapChangerTabular(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class PhaseTapChangerTabular extends PhaseTapChanger {
         return PhaseTapChangerTable;
     }
 
-    public void setPhaseTapChangerTable(BaseClass _object_) {
-        if (!(_object_ instanceof PhaseTapChangerTable)) {
-            throw new IllegalArgumentException("Object is not PhaseTapChangerTable");
-        }
+    public void setPhaseTapChangerTable(PhaseTapChangerTable _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PhaseTapChangerTable != _object_) {
-            PhaseTapChangerTable = (PhaseTapChangerTable) _object_;
+            PhaseTapChangerTable = _object_;
             PhaseTapChangerTable.setPhaseTapChangerTabular(this);
             PhaseTapChangerTableId = PhaseTapChangerTable.getRdfid();
         }
     }
 
-    public String PhaseTapChangerTableToString() {
-        return PhaseTapChangerTableId;
+    private static Object getPhaseTapChangerTable(BaseClass _this_) {
+        var obj = ((PhaseTapChangerTabular) _this_).getPhaseTapChangerTable();
+        var id = ((PhaseTapChangerTabular) _this_).PhaseTapChangerTableId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPhaseTapChangerTable(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PhaseTapChangerTable) {
+            ((PhaseTapChangerTabular) _this_).setPhaseTapChangerTable((PhaseTapChangerTable) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PhaseTapChangerTable");
+        }
     }
 
     /**
@@ -109,64 +133,35 @@ public class PhaseTapChangerTabular extends PhaseTapChanger {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("PhaseTapChangerTabular", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PhaseTapChangerTabular", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PhaseTapChangerTabular", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PhaseTapChangerTabular", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PhaseTapChangerTabular", attrName, value));
         }
     }
 
@@ -290,19 +285,11 @@ public class PhaseTapChangerTabular extends PhaseTapChanger {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PhaseTapChangerTable", new AttrDetails("PhaseTapChangerTabular.PhaseTapChangerTable", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PhaseTapChangerTable", new AttrDetails("PhaseTapChangerTabular.PhaseTapChangerTable", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, PhaseTapChangerTabular::getPhaseTapChangerTable, PhaseTapChangerTabular::setPhaseTapChangerTable));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTabular().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PhaseTapChangerTabular(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PhaseTapChangerTable", new GetterSetter(this::PhaseTapChangerTableToString, this::setPhaseTapChangerTable, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -32,10 +32,24 @@ public class VoltageCompensatorDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(VoltageCompensatorDynamics.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public VoltageCompensatorDynamics() {
-        setCimType("VoltageCompensatorDynamics");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public VoltageCompensatorDynamics(String rdfid) {
+        super("VoltageCompensatorDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageCompensatorDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class VoltageCompensatorDynamics extends DynamicsFunctionBlock {
         return ExcitationSystemDynamics;
     }
 
-    public void setExcitationSystemDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof ExcitationSystemDynamics)) {
-            throw new IllegalArgumentException("Object is not ExcitationSystemDynamics");
-        }
+    public void setExcitationSystemDynamics(ExcitationSystemDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ExcitationSystemDynamics != _object_) {
-            ExcitationSystemDynamics = (ExcitationSystemDynamics) _object_;
+            ExcitationSystemDynamics = _object_;
             ExcitationSystemDynamics.setVoltageCompensatorDynamics(this);
             ExcitationSystemDynamicsId = ExcitationSystemDynamics.getRdfid();
         }
     }
 
-    public String ExcitationSystemDynamicsToString() {
-        return ExcitationSystemDynamicsId;
+    private static Object getExcitationSystemDynamics(BaseClass _this_) {
+        var obj = ((VoltageCompensatorDynamics) _this_).getExcitationSystemDynamics();
+        var id = ((VoltageCompensatorDynamics) _this_).ExcitationSystemDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setExcitationSystemDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ExcitationSystemDynamics) {
+            ((VoltageCompensatorDynamics) _this_).setExcitationSystemDynamics((ExcitationSystemDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ExcitationSystemDynamics");
+        }
     }
 
     /**
@@ -81,21 +105,27 @@ public class VoltageCompensatorDynamics extends DynamicsFunctionBlock {
         return RemoteInputSignal;
     }
 
-    public void setRemoteInputSignal(BaseClass _object_) {
-        if (!(_object_ instanceof RemoteInputSignal)) {
-            throw new IllegalArgumentException("Object is not RemoteInputSignal");
-        }
+    public void setRemoteInputSignal(RemoteInputSignal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (RemoteInputSignal != _object_) {
-            RemoteInputSignal = (RemoteInputSignal) _object_;
+            RemoteInputSignal = _object_;
             RemoteInputSignal.setVoltageCompensatorDynamics(this);
         }
     }
 
-    public String RemoteInputSignalToString() {
-        return RemoteInputSignal != null ? RemoteInputSignal.getRdfid() : null;
+    private static Object getRemoteInputSignal(BaseClass _this_) {
+        var obj = ((VoltageCompensatorDynamics) _this_).getRemoteInputSignal();
+        return obj;
+    }
+
+    private static void setRemoteInputSignal(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof RemoteInputSignal) {
+            ((VoltageCompensatorDynamics) _this_).setRemoteInputSignal((RemoteInputSignal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not RemoteInputSignal");
+        }
     }
 
     /**
@@ -138,64 +168,35 @@ public class VoltageCompensatorDynamics extends DynamicsFunctionBlock {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("VoltageCompensatorDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VoltageCompensatorDynamics", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VoltageCompensatorDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VoltageCompensatorDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VoltageCompensatorDynamics", attrName, value));
         }
     }
 
@@ -319,25 +320,16 @@ public class VoltageCompensatorDynamics extends DynamicsFunctionBlock {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ExcitationSystemDynamics", new AttrDetails("VoltageCompensatorDynamics.ExcitationSystemDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ExcitationSystemDynamics", new AttrDetails("VoltageCompensatorDynamics.ExcitationSystemDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, VoltageCompensatorDynamics::getExcitationSystemDynamics, VoltageCompensatorDynamics::setExcitationSystemDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("RemoteInputSignal", new AttrDetails("VoltageCompensatorDynamics.RemoteInputSignal", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("RemoteInputSignal", new AttrDetails("VoltageCompensatorDynamics.RemoteInputSignal", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, VoltageCompensatorDynamics::getRemoteInputSignal, VoltageCompensatorDynamics::setRemoteInputSignal));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageCompensatorDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageCompensatorDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ExcitationSystemDynamics", new GetterSetter(this::ExcitationSystemDynamicsToString, this::setExcitationSystemDynamics, null));
-        map.put("RemoteInputSignal", new GetterSetter(this::RemoteInputSignalToString, this::setRemoteInputSignal, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

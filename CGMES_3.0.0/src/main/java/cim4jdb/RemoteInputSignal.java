@@ -32,10 +32,24 @@ public class RemoteInputSignal extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(RemoteInputSignal.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public RemoteInputSignal() {
-        setCimType("RemoteInputSignal");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public RemoteInputSignal(String rdfid) {
+        super("RemoteInputSignal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected RemoteInputSignal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return DiscontinuousExcitationControlDynamics;
     }
 
-    public void setDiscontinuousExcitationControlDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof DiscontinuousExcitationControlDynamics)) {
-            throw new IllegalArgumentException("Object is not DiscontinuousExcitationControlDynamics");
-        }
+    public void setDiscontinuousExcitationControlDynamics(DiscontinuousExcitationControlDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (DiscontinuousExcitationControlDynamics != _object_) {
-            DiscontinuousExcitationControlDynamics = (DiscontinuousExcitationControlDynamics) _object_;
+            DiscontinuousExcitationControlDynamics = _object_;
             DiscontinuousExcitationControlDynamics.setRemoteInputSignal(this);
             DiscontinuousExcitationControlDynamicsId = DiscontinuousExcitationControlDynamics.getRdfid();
         }
     }
 
-    public String DiscontinuousExcitationControlDynamicsToString() {
-        return DiscontinuousExcitationControlDynamicsId;
+    private static Object getDiscontinuousExcitationControlDynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getDiscontinuousExcitationControlDynamics();
+        var id = ((RemoteInputSignal) _this_).DiscontinuousExcitationControlDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setDiscontinuousExcitationControlDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof DiscontinuousExcitationControlDynamics) {
+            ((RemoteInputSignal) _this_).setDiscontinuousExcitationControlDynamics((DiscontinuousExcitationControlDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not DiscontinuousExcitationControlDynamics");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return PFVArControllerType1Dynamics;
     }
 
-    public void setPFVArControllerType1Dynamics(BaseClass _object_) {
-        if (!(_object_ instanceof PFVArControllerType1Dynamics)) {
-            throw new IllegalArgumentException("Object is not PFVArControllerType1Dynamics");
-        }
+    public void setPFVArControllerType1Dynamics(PFVArControllerType1Dynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PFVArControllerType1Dynamics != _object_) {
-            PFVArControllerType1Dynamics = (PFVArControllerType1Dynamics) _object_;
+            PFVArControllerType1Dynamics = _object_;
             PFVArControllerType1Dynamics.setRemoteInputSignal(this);
             PFVArControllerType1DynamicsId = PFVArControllerType1Dynamics.getRdfid();
         }
     }
 
-    public String PFVArControllerType1DynamicsToString() {
-        return PFVArControllerType1DynamicsId;
+    private static Object getPFVArControllerType1Dynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getPFVArControllerType1Dynamics();
+        var id = ((RemoteInputSignal) _this_).PFVArControllerType1DynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPFVArControllerType1Dynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PFVArControllerType1Dynamics) {
+            ((RemoteInputSignal) _this_).setPFVArControllerType1Dynamics((PFVArControllerType1Dynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PFVArControllerType1Dynamics");
+        }
     }
 
     /**
@@ -113,22 +147,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return PowerSystemStabilizerDynamics;
     }
 
-    public void setPowerSystemStabilizerDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof PowerSystemStabilizerDynamics)) {
-            throw new IllegalArgumentException("Object is not PowerSystemStabilizerDynamics");
-        }
+    public void setPowerSystemStabilizerDynamics(PowerSystemStabilizerDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PowerSystemStabilizerDynamics != _object_) {
-            PowerSystemStabilizerDynamics = (PowerSystemStabilizerDynamics) _object_;
+            PowerSystemStabilizerDynamics = _object_;
             PowerSystemStabilizerDynamics.setRemoteInputSignal(this);
             PowerSystemStabilizerDynamicsId = PowerSystemStabilizerDynamics.getRdfid();
         }
     }
 
-    public String PowerSystemStabilizerDynamicsToString() {
-        return PowerSystemStabilizerDynamicsId;
+    private static Object getPowerSystemStabilizerDynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getPowerSystemStabilizerDynamics();
+        var id = ((RemoteInputSignal) _this_).PowerSystemStabilizerDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPowerSystemStabilizerDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PowerSystemStabilizerDynamics) {
+            ((RemoteInputSignal) _this_).setPowerSystemStabilizerDynamics((PowerSystemStabilizerDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PowerSystemStabilizerDynamics");
+        }
     }
 
     /**
@@ -144,22 +188,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return Terminal;
     }
 
-    public void setTerminal(BaseClass _object_) {
-        if (!(_object_ instanceof Terminal)) {
-            throw new IllegalArgumentException("Object is not Terminal");
-        }
+    public void setTerminal(Terminal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (Terminal != _object_) {
-            Terminal = (Terminal) _object_;
+            Terminal = _object_;
             Terminal.setRemoteInputSignal(this);
             TerminalId = Terminal.getRdfid();
         }
     }
 
-    public String TerminalToString() {
-        return TerminalId;
+    private static Object getTerminal(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getTerminal();
+        var id = ((RemoteInputSignal) _this_).TerminalId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTerminal(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Terminal) {
+            ((RemoteInputSignal) _this_).setTerminal((Terminal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Terminal");
+        }
     }
 
     /**
@@ -175,22 +229,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return UnderexcitationLimiterDynamics;
     }
 
-    public void setUnderexcitationLimiterDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof UnderexcitationLimiterDynamics)) {
-            throw new IllegalArgumentException("Object is not UnderexcitationLimiterDynamics");
-        }
+    public void setUnderexcitationLimiterDynamics(UnderexcitationLimiterDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (UnderexcitationLimiterDynamics != _object_) {
-            UnderexcitationLimiterDynamics = (UnderexcitationLimiterDynamics) _object_;
+            UnderexcitationLimiterDynamics = _object_;
             UnderexcitationLimiterDynamics.setRemoteInputSignal(this);
             UnderexcitationLimiterDynamicsId = UnderexcitationLimiterDynamics.getRdfid();
         }
     }
 
-    public String UnderexcitationLimiterDynamicsToString() {
-        return UnderexcitationLimiterDynamicsId;
+    private static Object getUnderexcitationLimiterDynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getUnderexcitationLimiterDynamics();
+        var id = ((RemoteInputSignal) _this_).UnderexcitationLimiterDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setUnderexcitationLimiterDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof UnderexcitationLimiterDynamics) {
+            ((RemoteInputSignal) _this_).setUnderexcitationLimiterDynamics((UnderexcitationLimiterDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not UnderexcitationLimiterDynamics");
+        }
     }
 
     /**
@@ -206,22 +270,32 @@ public class RemoteInputSignal extends IdentifiedObject {
         return VoltageCompensatorDynamics;
     }
 
-    public void setVoltageCompensatorDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof VoltageCompensatorDynamics)) {
-            throw new IllegalArgumentException("Object is not VoltageCompensatorDynamics");
-        }
+    public void setVoltageCompensatorDynamics(VoltageCompensatorDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (VoltageCompensatorDynamics != _object_) {
-            VoltageCompensatorDynamics = (VoltageCompensatorDynamics) _object_;
+            VoltageCompensatorDynamics = _object_;
             VoltageCompensatorDynamics.setRemoteInputSignal(this);
             VoltageCompensatorDynamicsId = VoltageCompensatorDynamics.getRdfid();
         }
     }
 
-    public String VoltageCompensatorDynamicsToString() {
-        return VoltageCompensatorDynamicsId;
+    private static Object getVoltageCompensatorDynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getVoltageCompensatorDynamics();
+        var id = ((RemoteInputSignal) _this_).VoltageCompensatorDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setVoltageCompensatorDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof VoltageCompensatorDynamics) {
+            ((RemoteInputSignal) _this_).setVoltageCompensatorDynamics((VoltageCompensatorDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not VoltageCompensatorDynamics");
+        }
     }
 
     /**
@@ -236,21 +310,27 @@ public class RemoteInputSignal extends IdentifiedObject {
         return WindPlantDynamics;
     }
 
-    public void setWindPlantDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof WindPlantDynamics)) {
-            throw new IllegalArgumentException("Object is not WindPlantDynamics");
-        }
+    public void setWindPlantDynamics(WindPlantDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindPlantDynamics != _object_) {
-            WindPlantDynamics = (WindPlantDynamics) _object_;
+            WindPlantDynamics = _object_;
             WindPlantDynamics.setRemoteInputSignal(this);
         }
     }
 
-    public String WindPlantDynamicsToString() {
-        return WindPlantDynamics != null ? WindPlantDynamics.getRdfid() : null;
+    private static Object getWindPlantDynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getWindPlantDynamics();
+        return obj;
+    }
+
+    private static void setWindPlantDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindPlantDynamics) {
+            ((RemoteInputSignal) _this_).setWindPlantDynamics((WindPlantDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantDynamics");
+        }
     }
 
     /**
@@ -265,21 +345,27 @@ public class RemoteInputSignal extends IdentifiedObject {
         return WindTurbineType1or2Dynamics;
     }
 
-    public void setWindTurbineType1or2Dynamics(BaseClass _object_) {
-        if (!(_object_ instanceof WindTurbineType1or2Dynamics)) {
-            throw new IllegalArgumentException("Object is not WindTurbineType1or2Dynamics");
-        }
+    public void setWindTurbineType1or2Dynamics(WindTurbineType1or2Dynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindTurbineType1or2Dynamics != _object_) {
-            WindTurbineType1or2Dynamics = (WindTurbineType1or2Dynamics) _object_;
+            WindTurbineType1or2Dynamics = _object_;
             WindTurbineType1or2Dynamics.setRemoteInputSignal(this);
         }
     }
 
-    public String WindTurbineType1or2DynamicsToString() {
-        return WindTurbineType1or2Dynamics != null ? WindTurbineType1or2Dynamics.getRdfid() : null;
+    private static Object getWindTurbineType1or2Dynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getWindTurbineType1or2Dynamics();
+        return obj;
+    }
+
+    private static void setWindTurbineType1or2Dynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindTurbineType1or2Dynamics) {
+            ((RemoteInputSignal) _this_).setWindTurbineType1or2Dynamics((WindTurbineType1or2Dynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindTurbineType1or2Dynamics");
+        }
     }
 
     /**
@@ -294,21 +380,27 @@ public class RemoteInputSignal extends IdentifiedObject {
         return WindTurbineType3or4Dynamics;
     }
 
-    public void setWindTurbineType3or4Dynamics(BaseClass _object_) {
-        if (!(_object_ instanceof WindTurbineType3or4Dynamics)) {
-            throw new IllegalArgumentException("Object is not WindTurbineType3or4Dynamics");
-        }
+    public void setWindTurbineType3or4Dynamics(WindTurbineType3or4Dynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindTurbineType3or4Dynamics != _object_) {
-            WindTurbineType3or4Dynamics = (WindTurbineType3or4Dynamics) _object_;
+            WindTurbineType3or4Dynamics = _object_;
             WindTurbineType3or4Dynamics.setRemoteInputSignal(this);
         }
     }
 
-    public String WindTurbineType3or4DynamicsToString() {
-        return WindTurbineType3or4Dynamics != null ? WindTurbineType3or4Dynamics.getRdfid() : null;
+    private static Object getWindTurbineType3or4Dynamics(BaseClass _this_) {
+        var obj = ((RemoteInputSignal) _this_).getWindTurbineType3or4Dynamics();
+        return obj;
+    }
+
+    private static void setWindTurbineType3or4Dynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindTurbineType3or4Dynamics) {
+            ((RemoteInputSignal) _this_).setWindTurbineType3or4Dynamics((WindTurbineType3or4Dynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindTurbineType3or4Dynamics");
+        }
     }
 
     /**
@@ -325,8 +417,16 @@ public class RemoteInputSignal extends IdentifiedObject {
         remoteSignalType = _value_;
     }
 
-    public String remoteSignalTypeToString() {
-        return remoteSignalType;
+    private static Object getRemoteSignalType(BaseClass _this_) {
+        return ((RemoteInputSignal) _this_).getRemoteSignalType();
+    }
+
+    private static void setRemoteSignalType(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((RemoteInputSignal) _this_).setRemoteSignalType((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -369,64 +469,35 @@ public class RemoteInputSignal extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("RemoteInputSignal", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "RemoteInputSignal", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("RemoteInputSignal", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("RemoteInputSignal", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "RemoteInputSignal", attrName, value));
         }
     }
 
@@ -550,73 +621,56 @@ public class RemoteInputSignal extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("RemoteInputSignal.DiscontinuousExcitationControlDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiscontinuousExcitationControlDynamics", new AttrDetails("RemoteInputSignal.DiscontinuousExcitationControlDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getDiscontinuousExcitationControlDynamics, RemoteInputSignal::setDiscontinuousExcitationControlDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1Dynamics", new AttrDetails("RemoteInputSignal.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType1Dynamics", new AttrDetails("RemoteInputSignal.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getPFVArControllerType1Dynamics, RemoteInputSignal::setPFVArControllerType1Dynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerSystemStabilizerDynamics", new AttrDetails("RemoteInputSignal.PowerSystemStabilizerDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerSystemStabilizerDynamics", new AttrDetails("RemoteInputSignal.PowerSystemStabilizerDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getPowerSystemStabilizerDynamics, RemoteInputSignal::setPowerSystemStabilizerDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("Terminal", new AttrDetails("RemoteInputSignal.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("RemoteInputSignal.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getTerminal, RemoteInputSignal::setTerminal));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("UnderexcitationLimiterDynamics", new AttrDetails("RemoteInputSignal.UnderexcitationLimiterDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("UnderexcitationLimiterDynamics", new AttrDetails("RemoteInputSignal.UnderexcitationLimiterDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getUnderexcitationLimiterDynamics, RemoteInputSignal::setUnderexcitationLimiterDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageCompensatorDynamics", new AttrDetails("RemoteInputSignal.VoltageCompensatorDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VoltageCompensatorDynamics", new AttrDetails("RemoteInputSignal.VoltageCompensatorDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getVoltageCompensatorDynamics, RemoteInputSignal::setVoltageCompensatorDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantDynamics", new AttrDetails("RemoteInputSignal.WindPlantDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPlantDynamics", new AttrDetails("RemoteInputSignal.WindPlantDynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getWindPlantDynamics, RemoteInputSignal::setWindPlantDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType1or2Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType1or2Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType1or2Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType1or2Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getWindTurbineType1or2Dynamics, RemoteInputSignal::setWindTurbineType1or2Dynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindTurbineType3or4Dynamics", new AttrDetails("RemoteInputSignal.WindTurbineType3or4Dynamics", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, RemoteInputSignal::getWindTurbineType3or4Dynamics, RemoteInputSignal::setWindTurbineType3or4Dynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("remoteSignalType", new AttrDetails("RemoteInputSignal.remoteSignalType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("remoteSignalType", new AttrDetails("RemoteInputSignal.remoteSignalType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, RemoteInputSignal::getRemoteSignalType, RemoteInputSignal::setRemoteSignalType));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RemoteInputSignal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new RemoteInputSignal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("DiscontinuousExcitationControlDynamics", new GetterSetter(this::DiscontinuousExcitationControlDynamicsToString, this::setDiscontinuousExcitationControlDynamics, null));
-        map.put("PFVArControllerType1Dynamics", new GetterSetter(this::PFVArControllerType1DynamicsToString, this::setPFVArControllerType1Dynamics, null));
-        map.put("PowerSystemStabilizerDynamics", new GetterSetter(this::PowerSystemStabilizerDynamicsToString, this::setPowerSystemStabilizerDynamics, null));
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        map.put("UnderexcitationLimiterDynamics", new GetterSetter(this::UnderexcitationLimiterDynamicsToString, this::setUnderexcitationLimiterDynamics, null));
-        map.put("VoltageCompensatorDynamics", new GetterSetter(this::VoltageCompensatorDynamicsToString, this::setVoltageCompensatorDynamics, null));
-        map.put("WindPlantDynamics", new GetterSetter(this::WindPlantDynamicsToString, this::setWindPlantDynamics, null));
-        map.put("WindTurbineType1or2Dynamics", new GetterSetter(this::WindTurbineType1or2DynamicsToString, this::setWindTurbineType1or2Dynamics, null));
-        map.put("WindTurbineType3or4Dynamics", new GetterSetter(this::WindTurbineType3or4DynamicsToString, this::setWindTurbineType3or4Dynamics, null));
-        map.put("remoteSignalType", new GetterSetter(this::remoteSignalTypeToString, null, this::setRemoteSignalType));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

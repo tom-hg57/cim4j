@@ -32,10 +32,24 @@ public class AuxiliaryEquipment extends Equipment {
     private static final Logging LOG = Logging.getLogger(AuxiliaryEquipment.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public AuxiliaryEquipment() {
-        setCimType("AuxiliaryEquipment");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public AuxiliaryEquipment(String rdfid) {
+        super("AuxiliaryEquipment", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AuxiliaryEquipment(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class AuxiliaryEquipment extends Equipment {
         return Terminal;
     }
 
-    public void setTerminal(BaseClass _object_) {
-        if (!(_object_ instanceof Terminal)) {
-            throw new IllegalArgumentException("Object is not Terminal");
-        }
+    public void setTerminal(Terminal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (Terminal != _object_) {
-            Terminal = (Terminal) _object_;
+            Terminal = _object_;
             Terminal.setAuxiliaryEquipment(this);
             TerminalId = Terminal.getRdfid();
         }
     }
 
-    public String TerminalToString() {
-        return TerminalId;
+    private static Object getTerminal(BaseClass _this_) {
+        var obj = ((AuxiliaryEquipment) _this_).getTerminal();
+        var id = ((AuxiliaryEquipment) _this_).TerminalId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTerminal(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Terminal) {
+            ((AuxiliaryEquipment) _this_).setTerminal((Terminal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Terminal");
+        }
     }
 
     /**
@@ -109,64 +133,35 @@ public class AuxiliaryEquipment extends Equipment {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("AuxiliaryEquipment", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AuxiliaryEquipment", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AuxiliaryEquipment", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AuxiliaryEquipment", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AuxiliaryEquipment", attrName, value));
         }
     }
 
@@ -290,19 +285,11 @@ public class AuxiliaryEquipment extends Equipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("Terminal", new AttrDetails("AuxiliaryEquipment.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Terminal", new AttrDetails("AuxiliaryEquipment.Terminal", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, AuxiliaryEquipment::getTerminal, AuxiliaryEquipment::setTerminal));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AuxiliaryEquipment().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AuxiliaryEquipment(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Terminal", new GetterSetter(this::TerminalToString, this::setTerminal, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

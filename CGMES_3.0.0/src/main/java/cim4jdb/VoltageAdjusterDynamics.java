@@ -32,10 +32,24 @@ public class VoltageAdjusterDynamics extends DynamicsFunctionBlock {
     private static final Logging LOG = Logging.getLogger(VoltageAdjusterDynamics.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public VoltageAdjusterDynamics() {
-        setCimType("VoltageAdjusterDynamics");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public VoltageAdjusterDynamics(String rdfid) {
+        super("VoltageAdjusterDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected VoltageAdjusterDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class VoltageAdjusterDynamics extends DynamicsFunctionBlock {
         return PFVArControllerType1Dynamics;
     }
 
-    public void setPFVArControllerType1Dynamics(BaseClass _object_) {
-        if (!(_object_ instanceof PFVArControllerType1Dynamics)) {
-            throw new IllegalArgumentException("Object is not PFVArControllerType1Dynamics");
-        }
+    public void setPFVArControllerType1Dynamics(PFVArControllerType1Dynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PFVArControllerType1Dynamics != _object_) {
-            PFVArControllerType1Dynamics = (PFVArControllerType1Dynamics) _object_;
+            PFVArControllerType1Dynamics = _object_;
             PFVArControllerType1Dynamics.setVoltageAdjusterDynamics(this);
             PFVArControllerType1DynamicsId = PFVArControllerType1Dynamics.getRdfid();
         }
     }
 
-    public String PFVArControllerType1DynamicsToString() {
-        return PFVArControllerType1DynamicsId;
+    private static Object getPFVArControllerType1Dynamics(BaseClass _this_) {
+        var obj = ((VoltageAdjusterDynamics) _this_).getPFVArControllerType1Dynamics();
+        var id = ((VoltageAdjusterDynamics) _this_).PFVArControllerType1DynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPFVArControllerType1Dynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PFVArControllerType1Dynamics) {
+            ((VoltageAdjusterDynamics) _this_).setPFVArControllerType1Dynamics((PFVArControllerType1Dynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PFVArControllerType1Dynamics");
+        }
     }
 
     /**
@@ -109,64 +133,35 @@ public class VoltageAdjusterDynamics extends DynamicsFunctionBlock {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("VoltageAdjusterDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "VoltageAdjusterDynamics", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("VoltageAdjusterDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("VoltageAdjusterDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "VoltageAdjusterDynamics", attrName, value));
         }
     }
 
@@ -290,19 +285,11 @@ public class VoltageAdjusterDynamics extends DynamicsFunctionBlock {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1Dynamics", new AttrDetails("VoltageAdjusterDynamics.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType1Dynamics", new AttrDetails("VoltageAdjusterDynamics.PFVArControllerType1Dynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, VoltageAdjusterDynamics::getPFVArControllerType1Dynamics, VoltageAdjusterDynamics::setPFVArControllerType1Dynamics));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageAdjusterDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new VoltageAdjusterDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PFVArControllerType1Dynamics", new GetterSetter(this::PFVArControllerType1DynamicsToString, this::setPFVArControllerType1Dynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

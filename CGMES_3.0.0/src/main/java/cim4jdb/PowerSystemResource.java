@@ -32,10 +32,24 @@ public class PowerSystemResource extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(PowerSystemResource.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public PowerSystemResource() {
-        setCimType("PowerSystemResource");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public PowerSystemResource(String rdfid) {
+        super("PowerSystemResource", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerSystemResource(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -50,21 +64,26 @@ public class PowerSystemResource extends IdentifiedObject {
         return Controls;
     }
 
-    public void setControls(BaseClass _object_) {
-        if (!(_object_ instanceof Control)) {
-            throw new IllegalArgumentException("Object is not Control");
-        }
+    public void setControls(Control _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!Controls.contains(_object_)) {
-            Controls.add((Control) _object_);
-            ((Control) _object_).setPowerSystemResource(this);
+            Controls.add(_object_);
+            _object_.setPowerSystemResource(this);
         }
     }
 
-    public String ControlsToString() {
-        return getStringFromSet(Controls);
+    private static Object getControls(BaseClass _this_) {
+        return ((PowerSystemResource) _this_).getControls();
+    }
+
+    private static void setControls(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Control) {
+            ((PowerSystemResource) _this_).setControls((Control) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Control");
+        }
     }
 
     /**
@@ -79,21 +98,27 @@ public class PowerSystemResource extends IdentifiedObject {
         return Location;
     }
 
-    public void setLocation(BaseClass _object_) {
-        if (!(_object_ instanceof Location)) {
-            throw new IllegalArgumentException("Object is not Location");
-        }
+    public void setLocation(Location _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (Location != _object_) {
-            Location = (Location) _object_;
+            Location = _object_;
             Location.setPowerSystemResources(this);
         }
     }
 
-    public String LocationToString() {
-        return Location != null ? Location.getRdfid() : null;
+    private static Object getLocation(BaseClass _this_) {
+        var obj = ((PowerSystemResource) _this_).getLocation();
+        return obj;
+    }
+
+    private static void setLocation(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Location) {
+            ((PowerSystemResource) _this_).setLocation((Location) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Location");
+        }
     }
 
     /**
@@ -108,21 +133,26 @@ public class PowerSystemResource extends IdentifiedObject {
         return Measurements;
     }
 
-    public void setMeasurements(BaseClass _object_) {
-        if (!(_object_ instanceof Measurement)) {
-            throw new IllegalArgumentException("Object is not Measurement");
-        }
+    public void setMeasurements(Measurement _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!Measurements.contains(_object_)) {
-            Measurements.add((Measurement) _object_);
-            ((Measurement) _object_).setPowerSystemResource(this);
+            Measurements.add(_object_);
+            _object_.setPowerSystemResource(this);
         }
     }
 
-    public String MeasurementsToString() {
-        return getStringFromSet(Measurements);
+    private static Object getMeasurements(BaseClass _this_) {
+        return ((PowerSystemResource) _this_).getMeasurements();
+    }
+
+    private static void setMeasurements(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Measurement) {
+            ((PowerSystemResource) _this_).setMeasurements((Measurement) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Measurement");
+        }
     }
 
     /**
@@ -165,64 +195,35 @@ public class PowerSystemResource extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("PowerSystemResource", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerSystemResource", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerSystemResource", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerSystemResource", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerSystemResource", attrName, value));
         }
     }
 
@@ -346,31 +347,21 @@ public class PowerSystemResource extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("Controls", new AttrDetails("PowerSystemResource.Controls", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Controls", new AttrDetails("PowerSystemResource.Controls", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerSystemResource::getControls, PowerSystemResource::setControls));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("Location", new AttrDetails("PowerSystemResource.Location", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Location", new AttrDetails("PowerSystemResource.Location", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerSystemResource::getLocation, PowerSystemResource::setLocation));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.OP);
-            map.put("Measurements", new AttrDetails("PowerSystemResource.Measurements", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("Measurements", new AttrDetails("PowerSystemResource.Measurements", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerSystemResource::getMeasurements, PowerSystemResource::setMeasurements));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemResource().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerSystemResource(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("Controls", new GetterSetter(this::ControlsToString, this::setControls, null));
-        map.put("Location", new GetterSetter(this::LocationToString, this::setLocation, null));
-        map.put("Measurements", new GetterSetter(this::MeasurementsToString, this::setMeasurements, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

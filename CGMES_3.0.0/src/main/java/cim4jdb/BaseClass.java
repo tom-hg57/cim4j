@@ -3,8 +3,8 @@ package cim4jdb;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,12 +31,24 @@ import org.springframework.data.repository.CrudRepository;
  * The cimType is the name of the real class of the CIM object - a subclass of
  * BaseClass. To read or write a CIM object the repository of this subclass
  * should be used.
+ * The rdfid and cimType are fixed after creation of a CIM object.
  */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class BaseClass {
 
     private static final Logging LOG = Logging.getLogger(BaseClass.class);
+
+    /**
+     * Constructor for subclasses.
+     *
+     * @param cimType The name of the CIM type.
+     * @param rdfid   The RDF ID of the CIM object read from rdf:ID or rdf:about.
+     */
+    protected BaseClass(final String cimType, final String rdfid) {
+        this.cimType = cimType;
+        this.rdfid = rdfid;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -65,27 +77,19 @@ public abstract class BaseClass {
     /**
      * The name of the CIM type.
      */
-    private String cimType;
+    private final String cimType;
 
     public String getCimType() {
         return cimType;
     }
 
-    public void setCimType(String cimType) {
-        this.cimType = cimType;
-    }
-
     /**
      * The RDF ID of the CIM object read from rdf:ID or rdf:about.
      */
-    private String rdfid;
+    private final String rdfid;
 
     public String getRdfid() {
         return rdfid;
-    }
-
-    public void setRdfid(String rdfid) {
-        this.rdfid = rdfid;
     }
 
     /**
@@ -123,6 +127,16 @@ public abstract class BaseClass {
         result = (result * PRIME) + (cimModel == null ? 0 : cimModel.hashCode());
         result = (result * PRIME) + (rdfid == null ? 0 : rdfid.hashCode());
         return result;
+    }
+
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return  a string representation of the object.
+     */
+    @Override
+    public final String toString() {
+       return cimType + " with rdfid " + rdfid;
     }
 
     /**
@@ -169,43 +183,20 @@ public abstract class BaseClass {
     public abstract String getAttributeFullName(String attrName);
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
-    public abstract String getAttribute(String attrName);
-
-    protected String getAttribute(String className, String attrName) {
-        LOG.error(String.format("No-one knows an attribute %s.%s", className, attrName));
-        return "";
-    }
+    public abstract Object getAttribute(String attrName);
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
-    public abstract void setAttribute(String attrName, BaseClass objectValue);
-
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s", className, attrName,
-                objectValue));
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    public abstract void setAttribute(String attrName, String stringValue);
-
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s", className, attrName,
-                stringValue));
-    }
+    public abstract void setAttribute(String attrName, Object value);
 
     /**
      * Check if the attribute is a primitive attribute.
@@ -290,11 +281,11 @@ public abstract class BaseClass {
      * Helper functions.
      */
 
-    protected Boolean getBooleanFromString(String stringValue) {
+    protected static Boolean getBooleanFromString(String stringValue) {
         return stringValue.toLowerCase().equals("true");
     }
 
-    protected Double getDoubleFromString(String stringValue) {
+    protected static Double getDoubleFromString(String stringValue) {
         try {
             return Double.valueOf(stringValue);
         } catch (NumberFormatException ex) {
@@ -303,7 +294,7 @@ public abstract class BaseClass {
         }
     }
 
-    protected Float getFloatFromString(String stringValue) {
+    protected static Float getFloatFromString(String stringValue) {
         try {
             return Float.valueOf(stringValue);
         } catch (NumberFormatException ex) {
@@ -312,7 +303,7 @@ public abstract class BaseClass {
         }
     }
 
-    protected Integer getIntegerFromString(String stringValue) {
+    protected static Integer getIntegerFromString(String stringValue) {
         try {
             return Integer.parseInt(stringValue.trim());
         } catch (NumberFormatException ex) {
@@ -321,29 +312,21 @@ public abstract class BaseClass {
         }
     }
 
-    protected String getStringFromSet(Set<? extends BaseClass> set) {
-        if (!set.isEmpty()) {
-            String references = "";
-            for (var obj : set) {
-                references += obj.getRdfid() + " ";
-            }
-            return references.trim();
-        }
-        return null;
-    }
-
     /**
      * Nested helper classes.
      */
 
     protected static class AttrDetails {
-        public AttrDetails(String f, boolean u, String n, Set<CGMESProfile> c, boolean p, boolean e) {
+        public AttrDetails(String f, boolean u, String n, Set<CGMESProfile> c, boolean p, boolean e,
+                Function<BaseClass, Object> g, BiConsumer<BaseClass, Object> s) {
             fullName = f;
             isUsed = u;
             nameSpace = n;
             profiles = c;
             isPrimitive = p;
             isEnum = e;
+            getter = g;
+            setter = s;
         }
 
         public String fullName;
@@ -352,17 +335,7 @@ public abstract class BaseClass {
         public Set<CGMESProfile> profiles;
         public Boolean isPrimitive;
         public Boolean isEnum;
-    }
-
-    protected static class GetterSetter {
-        public GetterSetter(Supplier<String> g, Consumer<BaseClass> o, Consumer<String> s) {
-            getter = g;
-            objectSetter = o;
-            stringSetter = s;
-        }
-
-        public Supplier<String> getter;
-        public Consumer<BaseClass> objectSetter;
-        public Consumer<String> stringSetter;
+        public Function<BaseClass, Object> getter;
+        public BiConsumer<BaseClass, Object> setter;
     }
 }

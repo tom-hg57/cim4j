@@ -32,14 +32,28 @@ public class ExcBBC extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcBBC.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public ExcBBC() {
-        setCimType("ExcBBC");
+        this(null);
     }
 
     /**
-     * Maximum open circuit exciter voltage (&lt;i&gt;Efdmax&lt;/i&gt;) (&amp;gt; ExcBBC.efdmin).  Typical value = 5.
+     * Constructor.
+     */
+    public ExcBBC(String rdfid) {
+        super("ExcBBC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcBBC(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Maximum open circuit exciter voltage (<i>Efdmax</i>) (&gt; ExcBBC.efdmin).  Typical value = 5.
      */
     @Column(name = "efdmax")
     private Double efdmax; // PU
@@ -52,16 +66,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         efdmax = _value_;
     }
 
-    public void setEfdmax(String _value_) {
-        efdmax = getDoubleFromString(_value_);
+    private static Object getEfdmax(BaseClass _this_) {
+        return ((ExcBBC) _this_).getEfdmax();
     }
 
-    public String efdmaxToString() {
-        return efdmax != null ? efdmax.toString() : null;
+    private static void setEfdmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setEfdmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setEfdmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Minimum open circuit exciter voltage (&lt;i&gt;Efdmin&lt;/i&gt;) (&amp;lt; ExcBBC.efdmax).  Typical value = -5.
+     * Minimum open circuit exciter voltage (<i>Efdmin</i>) (&lt; ExcBBC.efdmax).  Typical value = -5.
      */
     @Column(name = "efdmin")
     private Double efdmin; // PU
@@ -74,16 +94,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         efdmin = _value_;
     }
 
-    public void setEfdmin(String _value_) {
-        efdmin = getDoubleFromString(_value_);
+    private static Object getEfdmin(BaseClass _this_) {
+        return ((ExcBBC) _this_).getEfdmin();
     }
 
-    public String efdminToString() {
-        return efdmin != null ? efdmin.toString() : null;
+    private static void setEfdmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setEfdmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setEfdmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Steady state gain (&lt;i&gt;K&lt;/i&gt;) (not = 0).  Typical value = 300.
+     * Steady state gain (<i>K</i>) (not = 0).  Typical value = 300.
      */
     @Column(name = "k")
     private Double k; // PU
@@ -96,16 +122,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         k = _value_;
     }
 
-    public void setK(String _value_) {
-        k = getDoubleFromString(_value_);
+    private static Object getK(BaseClass _this_) {
+        return ((ExcBBC) _this_).getK();
     }
 
-    public String kToString() {
-        return k != null ? k.toString() : null;
+    private static void setK(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setK((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setK(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Supplementary signal routing selector (&lt;i&gt;switch&lt;/i&gt;). true = &lt;i&gt;Vs&lt;/i&gt; connected to 3rd summing point false =  &lt;i&gt;Vs&lt;/i&gt; connected to 1st summing point (see diagram). Typical value = false.
+     * Supplementary signal routing selector (<i>switch</i>). true = <i>Vs</i> connected to 3rd summing point false =  <i>Vs</i> connected to 1st summing point (see diagram). Typical value = false.
      */
     @Column(name = "switch")
     private Boolean switch_; // Boolean
@@ -118,16 +150,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         switch_ = _value_;
     }
 
-    public void setSwitch(String _value_) {
-        switch_ = getBooleanFromString(_value_);
+    private static Object getSwitch(BaseClass _this_) {
+        return ((ExcBBC) _this_).getSwitch();
     }
 
-    public String switchToString() {
-        return switch_ != null ? switch_.toString() : null;
+    private static void setSwitch(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((ExcBBC) _this_).setSwitch((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setSwitch(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
-     * Controller time constant (&lt;i&gt;T1&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 6.
+     * Controller time constant (<i>T1</i>) (&gt;= 0).  Typical value = 6.
      */
     @Column(name = "t1")
     private Double t1; // Seconds
@@ -140,16 +178,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         t1 = _value_;
     }
 
-    public void setT1(String _value_) {
-        t1 = getDoubleFromString(_value_);
+    private static Object getT1(BaseClass _this_) {
+        return ((ExcBBC) _this_).getT1();
     }
 
-    public String t1ToString() {
-        return t1 != null ? t1.toString() : null;
+    private static void setT1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setT1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setT1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Controller time constant (&lt;i&gt;T2&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 1.
+     * Controller time constant (<i>T2</i>) (&gt;= 0).  Typical value = 1.
      */
     @Column(name = "t2")
     private Double t2; // Seconds
@@ -162,16 +206,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         t2 = _value_;
     }
 
-    public void setT2(String _value_) {
-        t2 = getDoubleFromString(_value_);
+    private static Object getT2(BaseClass _this_) {
+        return ((ExcBBC) _this_).getT2();
     }
 
-    public String t2ToString() {
-        return t2 != null ? t2.toString() : null;
+    private static void setT2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setT2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setT2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Lead/lag time constant (&lt;i&gt;T3&lt;/i&gt;) (&amp;gt;= 0).  If = 0, block is bypassed.  Typical value = 0,05.
+     * Lead/lag time constant (<i>T3</i>) (&gt;= 0).  If = 0, block is bypassed.  Typical value = 0,05.
      */
     @Column(name = "t3")
     private Double t3; // Seconds
@@ -184,16 +234,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         t3 = _value_;
     }
 
-    public void setT3(String _value_) {
-        t3 = getDoubleFromString(_value_);
+    private static Object getT3(BaseClass _this_) {
+        return ((ExcBBC) _this_).getT3();
     }
 
-    public String t3ToString() {
-        return t3 != null ? t3.toString() : null;
+    private static void setT3(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setT3((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setT3(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Lead/lag time constant (&lt;i&gt;T4&lt;/i&gt;) (&amp;gt;= 0).  If = 0, block is bypassed.  Typical value = 0,01.
+     * Lead/lag time constant (<i>T4</i>) (&gt;= 0).  If = 0, block is bypassed.  Typical value = 0,01.
      */
     @Column(name = "t4")
     private Double t4; // Seconds
@@ -206,16 +262,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         t4 = _value_;
     }
 
-    public void setT4(String _value_) {
-        t4 = getDoubleFromString(_value_);
+    private static Object getT4(BaseClass _this_) {
+        return ((ExcBBC) _this_).getT4();
     }
 
-    public String t4ToString() {
-        return t4 != null ? t4.toString() : null;
+    private static void setT4(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setT4((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setT4(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Maximum control element output (&lt;i&gt;Vrmax&lt;/i&gt;) (&amp;gt; ExcBBC.vrmin).  Typical value = 5.
+     * Maximum control element output (<i>Vrmax</i>) (&gt; ExcBBC.vrmin).  Typical value = 5.
      */
     @Column(name = "vrmax")
     private Double vrmax; // PU
@@ -228,16 +290,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         vrmax = _value_;
     }
 
-    public void setVrmax(String _value_) {
-        vrmax = getDoubleFromString(_value_);
+    private static Object getVrmax(BaseClass _this_) {
+        return ((ExcBBC) _this_).getVrmax();
     }
 
-    public String vrmaxToString() {
-        return vrmax != null ? vrmax.toString() : null;
+    private static void setVrmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setVrmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setVrmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Minimum control element output (&lt;i&gt;Vrmin&lt;/i&gt;) (&amp;lt; ExcBBC.vrmax).  Typical value = -5.
+     * Minimum control element output (<i>Vrmin</i>) (&lt; ExcBBC.vrmax).  Typical value = -5.
      */
     @Column(name = "vrmin")
     private Double vrmin; // PU
@@ -250,16 +318,22 @@ public class ExcBBC extends ExcitationSystemDynamics {
         vrmin = _value_;
     }
 
-    public void setVrmin(String _value_) {
-        vrmin = getDoubleFromString(_value_);
+    private static Object getVrmin(BaseClass _this_) {
+        return ((ExcBBC) _this_).getVrmin();
     }
 
-    public String vrminToString() {
-        return vrmin != null ? vrmin.toString() : null;
+    private static void setVrmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setVrmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setVrmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Effective excitation transformer reactance (&lt;i&gt;Xe&lt;/i&gt;) (&amp;gt;= 0).  &lt;i&gt;Xe&lt;/i&gt; models the regulation of the transformer/rectifier unit.  Typical value = 0,05.
+     * Effective excitation transformer reactance (<i>Xe</i>) (&gt;= 0).  <i>Xe</i> models the regulation of the transformer/rectifier unit.  Typical value = 0,05.
      */
     @Column(name = "xe")
     private Double xe; // PU
@@ -272,12 +346,18 @@ public class ExcBBC extends ExcitationSystemDynamics {
         xe = _value_;
     }
 
-    public void setXe(String _value_) {
-        xe = getDoubleFromString(_value_);
+    private static Object getXe(BaseClass _this_) {
+        return ((ExcBBC) _this_).getXe();
     }
 
-    public String xeToString() {
-        return xe != null ? xe.toString() : null;
+    private static void setXe(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcBBC) _this_).setXe((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcBBC) _this_).setXe(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -320,64 +400,35 @@ public class ExcBBC extends ExcitationSystemDynamics {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("ExcBBC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcBBC", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcBBC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcBBC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcBBC", attrName, value));
         }
     }
 
@@ -501,79 +552,61 @@ public class ExcBBC extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmax", new AttrDetails("ExcBBC.efdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("efdmax", new AttrDetails("ExcBBC.efdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getEfdmax, ExcBBC::setEfdmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmin", new AttrDetails("ExcBBC.efdmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("efdmin", new AttrDetails("ExcBBC.efdmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getEfdmin, ExcBBC::setEfdmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("k", new AttrDetails("ExcBBC.k", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("k", new AttrDetails("ExcBBC.k", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getK, ExcBBC::setK));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("switch", new AttrDetails("ExcBBC.switch", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("switch", new AttrDetails("ExcBBC.switch", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getSwitch, ExcBBC::setSwitch));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t1", new AttrDetails("ExcBBC.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t1", new AttrDetails("ExcBBC.t1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getT1, ExcBBC::setT1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t2", new AttrDetails("ExcBBC.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t2", new AttrDetails("ExcBBC.t2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getT2, ExcBBC::setT2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t3", new AttrDetails("ExcBBC.t3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t3", new AttrDetails("ExcBBC.t3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getT3, ExcBBC::setT3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("t4", new AttrDetails("ExcBBC.t4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("t4", new AttrDetails("ExcBBC.t4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getT4, ExcBBC::setT4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcBBC.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcBBC.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getVrmax, ExcBBC::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcBBC.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcBBC.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getVrmin, ExcBBC::setVrmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xe", new AttrDetails("ExcBBC.xe", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("xe", new AttrDetails("ExcBBC.xe", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcBBC::getXe, ExcBBC::setXe));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcBBC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcBBC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("efdmax", new GetterSetter(this::efdmaxToString, null, this::setEfdmax));
-        map.put("efdmin", new GetterSetter(this::efdminToString, null, this::setEfdmin));
-        map.put("k", new GetterSetter(this::kToString, null, this::setK));
-        map.put("switch", new GetterSetter(this::switchToString, null, this::setSwitch));
-        map.put("t1", new GetterSetter(this::t1ToString, null, this::setT1));
-        map.put("t2", new GetterSetter(this::t2ToString, null, this::setT2));
-        map.put("t3", new GetterSetter(this::t3ToString, null, this::setT3));
-        map.put("t4", new GetterSetter(this::t4ToString, null, this::setT4));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        map.put("xe", new GetterSetter(this::xeToString, null, this::setXe));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -32,10 +32,24 @@ public class ProprietaryParameterDynamics extends BaseClass {
     private static final Logging LOG = Logging.getLogger(ProprietaryParameterDynamics.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public ProprietaryParameterDynamics() {
-        setCimType("ProprietaryParameterDynamics");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public ProprietaryParameterDynamics(String rdfid) {
+        super("ProprietaryParameterDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ProprietaryParameterDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return AsynchronousMachineUserDefined;
     }
 
-    public void setAsynchronousMachineUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof AsynchronousMachineUserDefined)) {
-            throw new IllegalArgumentException("Object is not AsynchronousMachineUserDefined");
-        }
+    public void setAsynchronousMachineUserDefined(AsynchronousMachineUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (AsynchronousMachineUserDefined != _object_) {
-            AsynchronousMachineUserDefined = (AsynchronousMachineUserDefined) _object_;
+            AsynchronousMachineUserDefined = _object_;
             AsynchronousMachineUserDefined.setProprietaryParameterDynamics(this);
             AsynchronousMachineUserDefinedId = AsynchronousMachineUserDefined.getRdfid();
         }
     }
 
-    public String AsynchronousMachineUserDefinedToString() {
-        return AsynchronousMachineUserDefinedId;
+    private static Object getAsynchronousMachineUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getAsynchronousMachineUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).AsynchronousMachineUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setAsynchronousMachineUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof AsynchronousMachineUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setAsynchronousMachineUserDefined((AsynchronousMachineUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not AsynchronousMachineUserDefined");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return CSCUserDefined;
     }
 
-    public void setCSCUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof CSCUserDefined)) {
-            throw new IllegalArgumentException("Object is not CSCUserDefined");
-        }
+    public void setCSCUserDefined(CSCUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (CSCUserDefined != _object_) {
-            CSCUserDefined = (CSCUserDefined) _object_;
+            CSCUserDefined = _object_;
             CSCUserDefined.setProprietaryParameterDynamics(this);
             CSCUserDefinedId = CSCUserDefined.getRdfid();
         }
     }
 
-    public String CSCUserDefinedToString() {
-        return CSCUserDefinedId;
+    private static Object getCSCUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getCSCUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).CSCUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setCSCUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof CSCUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setCSCUserDefined((CSCUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not CSCUserDefined");
+        }
     }
 
     /**
@@ -113,22 +147,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return DiscontinuousExcitationControlUserDefined;
     }
 
-    public void setDiscontinuousExcitationControlUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof DiscontinuousExcitationControlUserDefined)) {
-            throw new IllegalArgumentException("Object is not DiscontinuousExcitationControlUserDefined");
-        }
+    public void setDiscontinuousExcitationControlUserDefined(DiscontinuousExcitationControlUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (DiscontinuousExcitationControlUserDefined != _object_) {
-            DiscontinuousExcitationControlUserDefined = (DiscontinuousExcitationControlUserDefined) _object_;
+            DiscontinuousExcitationControlUserDefined = _object_;
             DiscontinuousExcitationControlUserDefined.setProprietaryParameterDynamics(this);
             DiscontinuousExcitationControlUserDefinedId = DiscontinuousExcitationControlUserDefined.getRdfid();
         }
     }
 
-    public String DiscontinuousExcitationControlUserDefinedToString() {
-        return DiscontinuousExcitationControlUserDefinedId;
+    private static Object getDiscontinuousExcitationControlUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getDiscontinuousExcitationControlUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).DiscontinuousExcitationControlUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setDiscontinuousExcitationControlUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof DiscontinuousExcitationControlUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setDiscontinuousExcitationControlUserDefined((DiscontinuousExcitationControlUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not DiscontinuousExcitationControlUserDefined");
+        }
     }
 
     /**
@@ -144,22 +188,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return ExcitationSystemUserDefined;
     }
 
-    public void setExcitationSystemUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof ExcitationSystemUserDefined)) {
-            throw new IllegalArgumentException("Object is not ExcitationSystemUserDefined");
-        }
+    public void setExcitationSystemUserDefined(ExcitationSystemUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ExcitationSystemUserDefined != _object_) {
-            ExcitationSystemUserDefined = (ExcitationSystemUserDefined) _object_;
+            ExcitationSystemUserDefined = _object_;
             ExcitationSystemUserDefined.setProprietaryParameterDynamics(this);
             ExcitationSystemUserDefinedId = ExcitationSystemUserDefined.getRdfid();
         }
     }
 
-    public String ExcitationSystemUserDefinedToString() {
-        return ExcitationSystemUserDefinedId;
+    private static Object getExcitationSystemUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getExcitationSystemUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).ExcitationSystemUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setExcitationSystemUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ExcitationSystemUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setExcitationSystemUserDefined((ExcitationSystemUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ExcitationSystemUserDefined");
+        }
     }
 
     /**
@@ -175,22 +229,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return LoadUserDefined;
     }
 
-    public void setLoadUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof LoadUserDefined)) {
-            throw new IllegalArgumentException("Object is not LoadUserDefined");
-        }
+    public void setLoadUserDefined(LoadUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (LoadUserDefined != _object_) {
-            LoadUserDefined = (LoadUserDefined) _object_;
+            LoadUserDefined = _object_;
             LoadUserDefined.setProprietaryParameterDynamics(this);
             LoadUserDefinedId = LoadUserDefined.getRdfid();
         }
     }
 
-    public String LoadUserDefinedToString() {
-        return LoadUserDefinedId;
+    private static Object getLoadUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getLoadUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).LoadUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setLoadUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof LoadUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setLoadUserDefined((LoadUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not LoadUserDefined");
+        }
     }
 
     /**
@@ -206,22 +270,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return MechanicalLoadUserDefined;
     }
 
-    public void setMechanicalLoadUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof MechanicalLoadUserDefined)) {
-            throw new IllegalArgumentException("Object is not MechanicalLoadUserDefined");
-        }
+    public void setMechanicalLoadUserDefined(MechanicalLoadUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (MechanicalLoadUserDefined != _object_) {
-            MechanicalLoadUserDefined = (MechanicalLoadUserDefined) _object_;
+            MechanicalLoadUserDefined = _object_;
             MechanicalLoadUserDefined.setProprietaryParameterDynamics(this);
             MechanicalLoadUserDefinedId = MechanicalLoadUserDefined.getRdfid();
         }
     }
 
-    public String MechanicalLoadUserDefinedToString() {
-        return MechanicalLoadUserDefinedId;
+    private static Object getMechanicalLoadUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getMechanicalLoadUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).MechanicalLoadUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setMechanicalLoadUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof MechanicalLoadUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setMechanicalLoadUserDefined((MechanicalLoadUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not MechanicalLoadUserDefined");
+        }
     }
 
     /**
@@ -237,22 +311,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return OverexcitationLimiterUserDefined;
     }
 
-    public void setOverexcitationLimiterUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof OverexcitationLimiterUserDefined)) {
-            throw new IllegalArgumentException("Object is not OverexcitationLimiterUserDefined");
-        }
+    public void setOverexcitationLimiterUserDefined(OverexcitationLimiterUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (OverexcitationLimiterUserDefined != _object_) {
-            OverexcitationLimiterUserDefined = (OverexcitationLimiterUserDefined) _object_;
+            OverexcitationLimiterUserDefined = _object_;
             OverexcitationLimiterUserDefined.setProprietaryParameterDynamics(this);
             OverexcitationLimiterUserDefinedId = OverexcitationLimiterUserDefined.getRdfid();
         }
     }
 
-    public String OverexcitationLimiterUserDefinedToString() {
-        return OverexcitationLimiterUserDefinedId;
+    private static Object getOverexcitationLimiterUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getOverexcitationLimiterUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).OverexcitationLimiterUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setOverexcitationLimiterUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof OverexcitationLimiterUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setOverexcitationLimiterUserDefined((OverexcitationLimiterUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not OverexcitationLimiterUserDefined");
+        }
     }
 
     /**
@@ -268,22 +352,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return PFVArControllerType1UserDefined;
     }
 
-    public void setPFVArControllerType1UserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof PFVArControllerType1UserDefined)) {
-            throw new IllegalArgumentException("Object is not PFVArControllerType1UserDefined");
-        }
+    public void setPFVArControllerType1UserDefined(PFVArControllerType1UserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PFVArControllerType1UserDefined != _object_) {
-            PFVArControllerType1UserDefined = (PFVArControllerType1UserDefined) _object_;
+            PFVArControllerType1UserDefined = _object_;
             PFVArControllerType1UserDefined.setProprietaryParameterDynamics(this);
             PFVArControllerType1UserDefinedId = PFVArControllerType1UserDefined.getRdfid();
         }
     }
 
-    public String PFVArControllerType1UserDefinedToString() {
-        return PFVArControllerType1UserDefinedId;
+    private static Object getPFVArControllerType1UserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getPFVArControllerType1UserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).PFVArControllerType1UserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPFVArControllerType1UserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PFVArControllerType1UserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setPFVArControllerType1UserDefined((PFVArControllerType1UserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PFVArControllerType1UserDefined");
+        }
     }
 
     /**
@@ -299,22 +393,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return PFVArControllerType2UserDefined;
     }
 
-    public void setPFVArControllerType2UserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof PFVArControllerType2UserDefined)) {
-            throw new IllegalArgumentException("Object is not PFVArControllerType2UserDefined");
-        }
+    public void setPFVArControllerType2UserDefined(PFVArControllerType2UserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PFVArControllerType2UserDefined != _object_) {
-            PFVArControllerType2UserDefined = (PFVArControllerType2UserDefined) _object_;
+            PFVArControllerType2UserDefined = _object_;
             PFVArControllerType2UserDefined.setProprietaryParameterDynamics(this);
             PFVArControllerType2UserDefinedId = PFVArControllerType2UserDefined.getRdfid();
         }
     }
 
-    public String PFVArControllerType2UserDefinedToString() {
-        return PFVArControllerType2UserDefinedId;
+    private static Object getPFVArControllerType2UserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getPFVArControllerType2UserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).PFVArControllerType2UserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPFVArControllerType2UserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PFVArControllerType2UserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setPFVArControllerType2UserDefined((PFVArControllerType2UserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PFVArControllerType2UserDefined");
+        }
     }
 
     /**
@@ -330,22 +434,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return PowerSystemStabilizerUserDefined;
     }
 
-    public void setPowerSystemStabilizerUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof PowerSystemStabilizerUserDefined)) {
-            throw new IllegalArgumentException("Object is not PowerSystemStabilizerUserDefined");
-        }
+    public void setPowerSystemStabilizerUserDefined(PowerSystemStabilizerUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (PowerSystemStabilizerUserDefined != _object_) {
-            PowerSystemStabilizerUserDefined = (PowerSystemStabilizerUserDefined) _object_;
+            PowerSystemStabilizerUserDefined = _object_;
             PowerSystemStabilizerUserDefined.setProprietaryParameterDynamics(this);
             PowerSystemStabilizerUserDefinedId = PowerSystemStabilizerUserDefined.getRdfid();
         }
     }
 
-    public String PowerSystemStabilizerUserDefinedToString() {
-        return PowerSystemStabilizerUserDefinedId;
+    private static Object getPowerSystemStabilizerUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getPowerSystemStabilizerUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).PowerSystemStabilizerUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setPowerSystemStabilizerUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PowerSystemStabilizerUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setPowerSystemStabilizerUserDefined((PowerSystemStabilizerUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PowerSystemStabilizerUserDefined");
+        }
     }
 
     /**
@@ -361,22 +475,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return SVCUserDefined;
     }
 
-    public void setSVCUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof SVCUserDefined)) {
-            throw new IllegalArgumentException("Object is not SVCUserDefined");
-        }
+    public void setSVCUserDefined(SVCUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (SVCUserDefined != _object_) {
-            SVCUserDefined = (SVCUserDefined) _object_;
+            SVCUserDefined = _object_;
             SVCUserDefined.setProprietaryParameterDynamics(this);
             SVCUserDefinedId = SVCUserDefined.getRdfid();
         }
     }
 
-    public String SVCUserDefinedToString() {
-        return SVCUserDefinedId;
+    private static Object getSVCUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getSVCUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).SVCUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setSVCUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof SVCUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setSVCUserDefined((SVCUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not SVCUserDefined");
+        }
     }
 
     /**
@@ -392,22 +516,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return SynchronousMachineUserDefined;
     }
 
-    public void setSynchronousMachineUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof SynchronousMachineUserDefined)) {
-            throw new IllegalArgumentException("Object is not SynchronousMachineUserDefined");
-        }
+    public void setSynchronousMachineUserDefined(SynchronousMachineUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (SynchronousMachineUserDefined != _object_) {
-            SynchronousMachineUserDefined = (SynchronousMachineUserDefined) _object_;
+            SynchronousMachineUserDefined = _object_;
             SynchronousMachineUserDefined.setProprietaryParameterDynamics(this);
             SynchronousMachineUserDefinedId = SynchronousMachineUserDefined.getRdfid();
         }
     }
 
-    public String SynchronousMachineUserDefinedToString() {
-        return SynchronousMachineUserDefinedId;
+    private static Object getSynchronousMachineUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getSynchronousMachineUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).SynchronousMachineUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setSynchronousMachineUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof SynchronousMachineUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setSynchronousMachineUserDefined((SynchronousMachineUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not SynchronousMachineUserDefined");
+        }
     }
 
     /**
@@ -423,22 +557,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return TurbineGovernorUserDefined;
     }
 
-    public void setTurbineGovernorUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof TurbineGovernorUserDefined)) {
-            throw new IllegalArgumentException("Object is not TurbineGovernorUserDefined");
-        }
+    public void setTurbineGovernorUserDefined(TurbineGovernorUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TurbineGovernorUserDefined != _object_) {
-            TurbineGovernorUserDefined = (TurbineGovernorUserDefined) _object_;
+            TurbineGovernorUserDefined = _object_;
             TurbineGovernorUserDefined.setProprietaryParameterDynamics(this);
             TurbineGovernorUserDefinedId = TurbineGovernorUserDefined.getRdfid();
         }
     }
 
-    public String TurbineGovernorUserDefinedToString() {
-        return TurbineGovernorUserDefinedId;
+    private static Object getTurbineGovernorUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getTurbineGovernorUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).TurbineGovernorUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTurbineGovernorUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TurbineGovernorUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setTurbineGovernorUserDefined((TurbineGovernorUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TurbineGovernorUserDefined");
+        }
     }
 
     /**
@@ -454,22 +598,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return TurbineLoadControllerUserDefined;
     }
 
-    public void setTurbineLoadControllerUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof TurbineLoadControllerUserDefined)) {
-            throw new IllegalArgumentException("Object is not TurbineLoadControllerUserDefined");
-        }
+    public void setTurbineLoadControllerUserDefined(TurbineLoadControllerUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TurbineLoadControllerUserDefined != _object_) {
-            TurbineLoadControllerUserDefined = (TurbineLoadControllerUserDefined) _object_;
+            TurbineLoadControllerUserDefined = _object_;
             TurbineLoadControllerUserDefined.setProprietaryParameterDynamics(this);
             TurbineLoadControllerUserDefinedId = TurbineLoadControllerUserDefined.getRdfid();
         }
     }
 
-    public String TurbineLoadControllerUserDefinedToString() {
-        return TurbineLoadControllerUserDefinedId;
+    private static Object getTurbineLoadControllerUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getTurbineLoadControllerUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).TurbineLoadControllerUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTurbineLoadControllerUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TurbineLoadControllerUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setTurbineLoadControllerUserDefined((TurbineLoadControllerUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TurbineLoadControllerUserDefined");
+        }
     }
 
     /**
@@ -485,22 +639,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return UnderexcitationLimiterUserDefined;
     }
 
-    public void setUnderexcitationLimiterUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof UnderexcitationLimiterUserDefined)) {
-            throw new IllegalArgumentException("Object is not UnderexcitationLimiterUserDefined");
-        }
+    public void setUnderexcitationLimiterUserDefined(UnderexcitationLimiterUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (UnderexcitationLimiterUserDefined != _object_) {
-            UnderexcitationLimiterUserDefined = (UnderexcitationLimiterUserDefined) _object_;
+            UnderexcitationLimiterUserDefined = _object_;
             UnderexcitationLimiterUserDefined.setProprietaryParameterDynamics(this);
             UnderexcitationLimiterUserDefinedId = UnderexcitationLimiterUserDefined.getRdfid();
         }
     }
 
-    public String UnderexcitationLimiterUserDefinedToString() {
-        return UnderexcitationLimiterUserDefinedId;
+    private static Object getUnderexcitationLimiterUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getUnderexcitationLimiterUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).UnderexcitationLimiterUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setUnderexcitationLimiterUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof UnderexcitationLimiterUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setUnderexcitationLimiterUserDefined((UnderexcitationLimiterUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not UnderexcitationLimiterUserDefined");
+        }
     }
 
     /**
@@ -516,22 +680,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return VSCUserDefined;
     }
 
-    public void setVSCUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof VSCUserDefined)) {
-            throw new IllegalArgumentException("Object is not VSCUserDefined");
-        }
+    public void setVSCUserDefined(VSCUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (VSCUserDefined != _object_) {
-            VSCUserDefined = (VSCUserDefined) _object_;
+            VSCUserDefined = _object_;
             VSCUserDefined.setProprietaryParameterDynamics(this);
             VSCUserDefinedId = VSCUserDefined.getRdfid();
         }
     }
 
-    public String VSCUserDefinedToString() {
-        return VSCUserDefinedId;
+    private static Object getVSCUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getVSCUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).VSCUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setVSCUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof VSCUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setVSCUserDefined((VSCUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not VSCUserDefined");
+        }
     }
 
     /**
@@ -547,22 +721,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return VoltageAdjusterUserDefined;
     }
 
-    public void setVoltageAdjusterUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof VoltageAdjusterUserDefined)) {
-            throw new IllegalArgumentException("Object is not VoltageAdjusterUserDefined");
-        }
+    public void setVoltageAdjusterUserDefined(VoltageAdjusterUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (VoltageAdjusterUserDefined != _object_) {
-            VoltageAdjusterUserDefined = (VoltageAdjusterUserDefined) _object_;
+            VoltageAdjusterUserDefined = _object_;
             VoltageAdjusterUserDefined.setProprietaryParameterDynamics(this);
             VoltageAdjusterUserDefinedId = VoltageAdjusterUserDefined.getRdfid();
         }
     }
 
-    public String VoltageAdjusterUserDefinedToString() {
-        return VoltageAdjusterUserDefinedId;
+    private static Object getVoltageAdjusterUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getVoltageAdjusterUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).VoltageAdjusterUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setVoltageAdjusterUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof VoltageAdjusterUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setVoltageAdjusterUserDefined((VoltageAdjusterUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not VoltageAdjusterUserDefined");
+        }
     }
 
     /**
@@ -578,22 +762,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return VoltageCompensatorUserDefined;
     }
 
-    public void setVoltageCompensatorUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof VoltageCompensatorUserDefined)) {
-            throw new IllegalArgumentException("Object is not VoltageCompensatorUserDefined");
-        }
+    public void setVoltageCompensatorUserDefined(VoltageCompensatorUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (VoltageCompensatorUserDefined != _object_) {
-            VoltageCompensatorUserDefined = (VoltageCompensatorUserDefined) _object_;
+            VoltageCompensatorUserDefined = _object_;
             VoltageCompensatorUserDefined.setProprietaryParameterDynamics(this);
             VoltageCompensatorUserDefinedId = VoltageCompensatorUserDefined.getRdfid();
         }
     }
 
-    public String VoltageCompensatorUserDefinedToString() {
-        return VoltageCompensatorUserDefinedId;
+    private static Object getVoltageCompensatorUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getVoltageCompensatorUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).VoltageCompensatorUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setVoltageCompensatorUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof VoltageCompensatorUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setVoltageCompensatorUserDefined((VoltageCompensatorUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not VoltageCompensatorUserDefined");
+        }
     }
 
     /**
@@ -609,22 +803,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return WindPlantUserDefined;
     }
 
-    public void setWindPlantUserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof WindPlantUserDefined)) {
-            throw new IllegalArgumentException("Object is not WindPlantUserDefined");
-        }
+    public void setWindPlantUserDefined(WindPlantUserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindPlantUserDefined != _object_) {
-            WindPlantUserDefined = (WindPlantUserDefined) _object_;
+            WindPlantUserDefined = _object_;
             WindPlantUserDefined.setProprietaryParameterDynamics(this);
             WindPlantUserDefinedId = WindPlantUserDefined.getRdfid();
         }
     }
 
-    public String WindPlantUserDefinedToString() {
-        return WindPlantUserDefinedId;
+    private static Object getWindPlantUserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getWindPlantUserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).WindPlantUserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPlantUserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindPlantUserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setWindPlantUserDefined((WindPlantUserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantUserDefined");
+        }
     }
 
     /**
@@ -640,22 +844,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return WindType1or2UserDefined;
     }
 
-    public void setWindType1or2UserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof WindType1or2UserDefined)) {
-            throw new IllegalArgumentException("Object is not WindType1or2UserDefined");
-        }
+    public void setWindType1or2UserDefined(WindType1or2UserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindType1or2UserDefined != _object_) {
-            WindType1or2UserDefined = (WindType1or2UserDefined) _object_;
+            WindType1or2UserDefined = _object_;
             WindType1or2UserDefined.setProprietaryParameterDynamics(this);
             WindType1or2UserDefinedId = WindType1or2UserDefined.getRdfid();
         }
     }
 
-    public String WindType1or2UserDefinedToString() {
-        return WindType1or2UserDefinedId;
+    private static Object getWindType1or2UserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getWindType1or2UserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).WindType1or2UserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindType1or2UserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindType1or2UserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setWindType1or2UserDefined((WindType1or2UserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindType1or2UserDefined");
+        }
     }
 
     /**
@@ -671,22 +885,32 @@ public class ProprietaryParameterDynamics extends BaseClass {
         return WindType3or4UserDefined;
     }
 
-    public void setWindType3or4UserDefined(BaseClass _object_) {
-        if (!(_object_ instanceof WindType3or4UserDefined)) {
-            throw new IllegalArgumentException("Object is not WindType3or4UserDefined");
-        }
+    public void setWindType3or4UserDefined(WindType3or4UserDefined _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindType3or4UserDefined != _object_) {
-            WindType3or4UserDefined = (WindType3or4UserDefined) _object_;
+            WindType3or4UserDefined = _object_;
             WindType3or4UserDefined.setProprietaryParameterDynamics(this);
             WindType3or4UserDefinedId = WindType3or4UserDefined.getRdfid();
         }
     }
 
-    public String WindType3or4UserDefinedToString() {
-        return WindType3or4UserDefinedId;
+    private static Object getWindType3or4UserDefined(BaseClass _this_) {
+        var obj = ((ProprietaryParameterDynamics) _this_).getWindType3or4UserDefined();
+        var id = ((ProprietaryParameterDynamics) _this_).WindType3or4UserDefinedId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindType3or4UserDefined(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindType3or4UserDefined) {
+            ((ProprietaryParameterDynamics) _this_).setWindType3or4UserDefined((WindType3or4UserDefined) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindType3or4UserDefined");
+        }
     }
 
     /**
@@ -703,12 +927,18 @@ public class ProprietaryParameterDynamics extends BaseClass {
         booleanParameterValue = _value_;
     }
 
-    public void setBooleanParameterValue(String _value_) {
-        booleanParameterValue = getBooleanFromString(_value_);
+    private static Object getBooleanParameterValue(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).getBooleanParameterValue();
     }
 
-    public String booleanParameterValueToString() {
-        return booleanParameterValue != null ? booleanParameterValue.toString() : null;
+    private static void setBooleanParameterValue(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((ProprietaryParameterDynamics) _this_).setBooleanParameterValue((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((ProprietaryParameterDynamics) _this_).setBooleanParameterValue(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -725,12 +955,18 @@ public class ProprietaryParameterDynamics extends BaseClass {
         floatParameterValue = _value_;
     }
 
-    public void setFloatParameterValue(String _value_) {
-        floatParameterValue = getFloatFromString(_value_);
+    private static Object getFloatParameterValue(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).getFloatParameterValue();
     }
 
-    public String floatParameterValueToString() {
-        return floatParameterValue != null ? floatParameterValue.toString() : null;
+    private static void setFloatParameterValue(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Float) {
+            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue((Float) _value_);
+        } else if (_value_ instanceof String) {
+            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue(getFloatFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Float nor String");
+        }
     }
 
     /**
@@ -747,12 +983,18 @@ public class ProprietaryParameterDynamics extends BaseClass {
         integerParameterValue = _value_;
     }
 
-    public void setIntegerParameterValue(String _value_) {
-        integerParameterValue = getIntegerFromString(_value_);
+    private static Object getIntegerParameterValue(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).getIntegerParameterValue();
     }
 
-    public String integerParameterValueToString() {
-        return integerParameterValue != null ? integerParameterValue.toString() : null;
+    private static void setIntegerParameterValue(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Integer) {
+            ((ProprietaryParameterDynamics) _this_).setIntegerParameterValue((Integer) _value_);
+        } else if (_value_ instanceof String) {
+            ((ProprietaryParameterDynamics) _this_).setIntegerParameterValue(getIntegerFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Integer nor String");
+        }
     }
 
     /**
@@ -769,12 +1011,18 @@ public class ProprietaryParameterDynamics extends BaseClass {
         parameterNumber = _value_;
     }
 
-    public void setParameterNumber(String _value_) {
-        parameterNumber = getIntegerFromString(_value_);
+    private static Object getParameterNumber(BaseClass _this_) {
+        return ((ProprietaryParameterDynamics) _this_).getParameterNumber();
     }
 
-    public String parameterNumberToString() {
-        return parameterNumber != null ? parameterNumber.toString() : null;
+    private static void setParameterNumber(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Integer) {
+            ((ProprietaryParameterDynamics) _this_).setParameterNumber((Integer) _value_);
+        } else if (_value_ instanceof String) {
+            ((ProprietaryParameterDynamics) _this_).setParameterNumber(getIntegerFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Integer nor String");
+        }
     }
 
     /**
@@ -817,64 +1065,35 @@ public class ProprietaryParameterDynamics extends BaseClass {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("ProprietaryParameterDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ProprietaryParameterDynamics", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ProprietaryParameterDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ProprietaryParameterDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ProprietaryParameterDynamics", attrName, value));
         }
     }
 
@@ -998,163 +1217,131 @@ public class ProprietaryParameterDynamics extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("AsynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.AsynchronousMachineUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("AsynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.AsynchronousMachineUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getAsynchronousMachineUserDefined, ProprietaryParameterDynamics::setAsynchronousMachineUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("CSCUserDefined", new AttrDetails("ProprietaryParameterDynamics.CSCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("CSCUserDefined", new AttrDetails("ProprietaryParameterDynamics.CSCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getCSCUserDefined, ProprietaryParameterDynamics::setCSCUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("DiscontinuousExcitationControlUserDefined", new AttrDetails("ProprietaryParameterDynamics.DiscontinuousExcitationControlUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("DiscontinuousExcitationControlUserDefined", new AttrDetails("ProprietaryParameterDynamics.DiscontinuousExcitationControlUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getDiscontinuousExcitationControlUserDefined, ProprietaryParameterDynamics::setDiscontinuousExcitationControlUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ExcitationSystemUserDefined", new AttrDetails("ProprietaryParameterDynamics.ExcitationSystemUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("ExcitationSystemUserDefined", new AttrDetails("ProprietaryParameterDynamics.ExcitationSystemUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getExcitationSystemUserDefined, ProprietaryParameterDynamics::setExcitationSystemUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.LoadUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.LoadUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getLoadUserDefined, ProprietaryParameterDynamics::setLoadUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("MechanicalLoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.MechanicalLoadUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("MechanicalLoadUserDefined", new AttrDetails("ProprietaryParameterDynamics.MechanicalLoadUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getMechanicalLoadUserDefined, ProprietaryParameterDynamics::setMechanicalLoadUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("OverexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.OverexcitationLimiterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("OverexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.OverexcitationLimiterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getOverexcitationLimiterUserDefined, ProprietaryParameterDynamics::setOverexcitationLimiterUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType1UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType1UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType1UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType1UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getPFVArControllerType1UserDefined, ProprietaryParameterDynamics::setPFVArControllerType1UserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PFVArControllerType2UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType2UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PFVArControllerType2UserDefined", new AttrDetails("ProprietaryParameterDynamics.PFVArControllerType2UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getPFVArControllerType2UserDefined, ProprietaryParameterDynamics::setPFVArControllerType2UserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("PowerSystemStabilizerUserDefined", new AttrDetails("ProprietaryParameterDynamics.PowerSystemStabilizerUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerSystemStabilizerUserDefined", new AttrDetails("ProprietaryParameterDynamics.PowerSystemStabilizerUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getPowerSystemStabilizerUserDefined, ProprietaryParameterDynamics::setPowerSystemStabilizerUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SVCUserDefined", new AttrDetails("ProprietaryParameterDynamics.SVCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SVCUserDefined", new AttrDetails("ProprietaryParameterDynamics.SVCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getSVCUserDefined, ProprietaryParameterDynamics::setSVCUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("SynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.SynchronousMachineUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("SynchronousMachineUserDefined", new AttrDetails("ProprietaryParameterDynamics.SynchronousMachineUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getSynchronousMachineUserDefined, ProprietaryParameterDynamics::setSynchronousMachineUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineGovernorUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineGovernorUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TurbineGovernorUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineGovernorUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getTurbineGovernorUserDefined, ProprietaryParameterDynamics::setTurbineGovernorUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("TurbineLoadControllerUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineLoadControllerUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("TurbineLoadControllerUserDefined", new AttrDetails("ProprietaryParameterDynamics.TurbineLoadControllerUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getTurbineLoadControllerUserDefined, ProprietaryParameterDynamics::setTurbineLoadControllerUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("UnderexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.UnderexcitationLimiterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("UnderexcitationLimiterUserDefined", new AttrDetails("ProprietaryParameterDynamics.UnderexcitationLimiterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getUnderexcitationLimiterUserDefined, ProprietaryParameterDynamics::setUnderexcitationLimiterUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VSCUserDefined", new AttrDetails("ProprietaryParameterDynamics.VSCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VSCUserDefined", new AttrDetails("ProprietaryParameterDynamics.VSCUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getVSCUserDefined, ProprietaryParameterDynamics::setVSCUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageAdjusterUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageAdjusterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VoltageAdjusterUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageAdjusterUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getVoltageAdjusterUserDefined, ProprietaryParameterDynamics::setVoltageAdjusterUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("VoltageCompensatorUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageCompensatorUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("VoltageCompensatorUserDefined", new AttrDetails("ProprietaryParameterDynamics.VoltageCompensatorUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getVoltageCompensatorUserDefined, ProprietaryParameterDynamics::setVoltageCompensatorUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantUserDefined", new AttrDetails("ProprietaryParameterDynamics.WindPlantUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPlantUserDefined", new AttrDetails("ProprietaryParameterDynamics.WindPlantUserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getWindPlantUserDefined, ProprietaryParameterDynamics::setWindPlantUserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindType1or2UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType1or2UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindType1or2UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType1or2UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getWindType1or2UserDefined, ProprietaryParameterDynamics::setWindType1or2UserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindType3or4UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType3or4UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindType3or4UserDefined", new AttrDetails("ProprietaryParameterDynamics.WindType3or4UserDefined", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, ProprietaryParameterDynamics::getWindType3or4UserDefined, ProprietaryParameterDynamics::setWindType3or4UserDefined));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("booleanParameterValue", new AttrDetails("ProprietaryParameterDynamics.booleanParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("booleanParameterValue", new AttrDetails("ProprietaryParameterDynamics.booleanParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ProprietaryParameterDynamics::getBooleanParameterValue, ProprietaryParameterDynamics::setBooleanParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("floatParameterValue", new AttrDetails("ProprietaryParameterDynamics.floatParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("floatParameterValue", new AttrDetails("ProprietaryParameterDynamics.floatParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ProprietaryParameterDynamics::getFloatParameterValue, ProprietaryParameterDynamics::setFloatParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("integerParameterValue", new AttrDetails("ProprietaryParameterDynamics.integerParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("integerParameterValue", new AttrDetails("ProprietaryParameterDynamics.integerParameterValue", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ProprietaryParameterDynamics::getIntegerParameterValue, ProprietaryParameterDynamics::setIntegerParameterValue));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("parameterNumber", new AttrDetails("ProprietaryParameterDynamics.parameterNumber", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("parameterNumber", new AttrDetails("ProprietaryParameterDynamics.parameterNumber", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ProprietaryParameterDynamics::getParameterNumber, ProprietaryParameterDynamics::setParameterNumber));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProprietaryParameterDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ProprietaryParameterDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("AsynchronousMachineUserDefined", new GetterSetter(this::AsynchronousMachineUserDefinedToString, this::setAsynchronousMachineUserDefined, null));
-        map.put("CSCUserDefined", new GetterSetter(this::CSCUserDefinedToString, this::setCSCUserDefined, null));
-        map.put("DiscontinuousExcitationControlUserDefined", new GetterSetter(this::DiscontinuousExcitationControlUserDefinedToString, this::setDiscontinuousExcitationControlUserDefined, null));
-        map.put("ExcitationSystemUserDefined", new GetterSetter(this::ExcitationSystemUserDefinedToString, this::setExcitationSystemUserDefined, null));
-        map.put("LoadUserDefined", new GetterSetter(this::LoadUserDefinedToString, this::setLoadUserDefined, null));
-        map.put("MechanicalLoadUserDefined", new GetterSetter(this::MechanicalLoadUserDefinedToString, this::setMechanicalLoadUserDefined, null));
-        map.put("OverexcitationLimiterUserDefined", new GetterSetter(this::OverexcitationLimiterUserDefinedToString, this::setOverexcitationLimiterUserDefined, null));
-        map.put("PFVArControllerType1UserDefined", new GetterSetter(this::PFVArControllerType1UserDefinedToString, this::setPFVArControllerType1UserDefined, null));
-        map.put("PFVArControllerType2UserDefined", new GetterSetter(this::PFVArControllerType2UserDefinedToString, this::setPFVArControllerType2UserDefined, null));
-        map.put("PowerSystemStabilizerUserDefined", new GetterSetter(this::PowerSystemStabilizerUserDefinedToString, this::setPowerSystemStabilizerUserDefined, null));
-        map.put("SVCUserDefined", new GetterSetter(this::SVCUserDefinedToString, this::setSVCUserDefined, null));
-        map.put("SynchronousMachineUserDefined", new GetterSetter(this::SynchronousMachineUserDefinedToString, this::setSynchronousMachineUserDefined, null));
-        map.put("TurbineGovernorUserDefined", new GetterSetter(this::TurbineGovernorUserDefinedToString, this::setTurbineGovernorUserDefined, null));
-        map.put("TurbineLoadControllerUserDefined", new GetterSetter(this::TurbineLoadControllerUserDefinedToString, this::setTurbineLoadControllerUserDefined, null));
-        map.put("UnderexcitationLimiterUserDefined", new GetterSetter(this::UnderexcitationLimiterUserDefinedToString, this::setUnderexcitationLimiterUserDefined, null));
-        map.put("VSCUserDefined", new GetterSetter(this::VSCUserDefinedToString, this::setVSCUserDefined, null));
-        map.put("VoltageAdjusterUserDefined", new GetterSetter(this::VoltageAdjusterUserDefinedToString, this::setVoltageAdjusterUserDefined, null));
-        map.put("VoltageCompensatorUserDefined", new GetterSetter(this::VoltageCompensatorUserDefinedToString, this::setVoltageCompensatorUserDefined, null));
-        map.put("WindPlantUserDefined", new GetterSetter(this::WindPlantUserDefinedToString, this::setWindPlantUserDefined, null));
-        map.put("WindType1or2UserDefined", new GetterSetter(this::WindType1or2UserDefinedToString, this::setWindType1or2UserDefined, null));
-        map.put("WindType3or4UserDefined", new GetterSetter(this::WindType3or4UserDefinedToString, this::setWindType3or4UserDefined, null));
-        map.put("booleanParameterValue", new GetterSetter(this::booleanParameterValueToString, null, this::setBooleanParameterValue));
-        map.put("floatParameterValue", new GetterSetter(this::floatParameterValueToString, null, this::setFloatParameterValue));
-        map.put("integerParameterValue", new GetterSetter(this::integerParameterValueToString, null, this::setIntegerParameterValue));
-        map.put("parameterNumber", new GetterSetter(this::parameterNumberToString, null, this::setParameterNumber));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

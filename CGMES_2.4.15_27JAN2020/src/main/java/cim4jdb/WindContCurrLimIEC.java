@@ -32,10 +32,24 @@ public class WindContCurrLimIEC extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindContCurrLimIEC.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public WindContCurrLimIEC() {
-        setCimType("WindContCurrLimIEC");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public WindContCurrLimIEC(String rdfid) {
+        super("WindContCurrLimIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindContCurrLimIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -50,21 +64,26 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return WindDynamicsLookupTable;
     }
 
-    public void setWindDynamicsLookupTable(BaseClass _object_) {
-        if (!(_object_ instanceof WindDynamicsLookupTable)) {
-            throw new IllegalArgumentException("Object is not WindDynamicsLookupTable");
-        }
+    public void setWindDynamicsLookupTable(WindDynamicsLookupTable _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!WindDynamicsLookupTable.contains(_object_)) {
-            WindDynamicsLookupTable.add((WindDynamicsLookupTable) _object_);
-            ((WindDynamicsLookupTable) _object_).setWindContCurrLimIEC(this);
+            WindDynamicsLookupTable.add(_object_);
+            _object_.setWindContCurrLimIEC(this);
         }
     }
 
-    public String WindDynamicsLookupTableToString() {
-        return getStringFromSet(WindDynamicsLookupTable);
+    private static Object getWindDynamicsLookupTable(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getWindDynamicsLookupTable();
+    }
+
+    private static void setWindDynamicsLookupTable(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindDynamicsLookupTable) {
+            ((WindContCurrLimIEC) _this_).setWindDynamicsLookupTable((WindDynamicsLookupTable) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindDynamicsLookupTable");
+        }
     }
 
     /**
@@ -79,21 +98,27 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         return WindTurbineType3or4IEC;
     }
 
-    public void setWindTurbineType3or4IEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindTurbineType3or4IEC)) {
-            throw new IllegalArgumentException("Object is not WindTurbineType3or4IEC");
-        }
+    public void setWindTurbineType3or4IEC(WindTurbineType3or4IEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindTurbineType3or4IEC != _object_) {
-            WindTurbineType3or4IEC = (WindTurbineType3or4IEC) _object_;
+            WindTurbineType3or4IEC = _object_;
             WindTurbineType3or4IEC.setWindContCurrLimIEC(this);
         }
     }
 
-    public String WindTurbineType3or4IECToString() {
-        return WindTurbineType3or4IEC != null ? WindTurbineType3or4IEC.getRdfid() : null;
+    private static Object getWindTurbineType3or4IEC(BaseClass _this_) {
+        var obj = ((WindContCurrLimIEC) _this_).getWindTurbineType3or4IEC();
+        return obj;
+    }
+
+    private static void setWindTurbineType3or4IEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindTurbineType3or4IEC) {
+            ((WindContCurrLimIEC) _this_).setWindTurbineType3or4IEC((WindTurbineType3or4IEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindTurbineType3or4IEC");
+        }
     }
 
     /**
@@ -110,12 +135,18 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         imax = _value_;
     }
 
-    public void setImax(String _value_) {
-        imax = getDoubleFromString(_value_);
+    private static Object getImax(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getImax();
     }
 
-    public String imaxToString() {
-        return imax != null ? imax.toString() : null;
+    private static void setImax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindContCurrLimIEC) _this_).setImax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindContCurrLimIEC) _this_).setImax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -132,12 +163,18 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         imaxdip = _value_;
     }
 
-    public void setImaxdip(String _value_) {
-        imaxdip = getDoubleFromString(_value_);
+    private static Object getImaxdip(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getImaxdip();
     }
 
-    public String imaxdipToString() {
-        return imaxdip != null ? imaxdip.toString() : null;
+    private static void setImaxdip(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindContCurrLimIEC) _this_).setImaxdip((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindContCurrLimIEC) _this_).setImaxdip(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -154,12 +191,18 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         mdfslim = _value_;
     }
 
-    public void setMdfslim(String _value_) {
-        mdfslim = getBooleanFromString(_value_);
+    private static Object getMdfslim(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getMdfslim();
     }
 
-    public String mdfslimToString() {
-        return mdfslim != null ? mdfslim.toString() : null;
+    private static void setMdfslim(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((WindContCurrLimIEC) _this_).setMdfslim((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindContCurrLimIEC) _this_).setMdfslim(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -176,12 +219,18 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         mqpri = _value_;
     }
 
-    public void setMqpri(String _value_) {
-        mqpri = getBooleanFromString(_value_);
+    private static Object getMqpri(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getMqpri();
     }
 
-    public String mqpriToString() {
-        return mqpri != null ? mqpri.toString() : null;
+    private static void setMqpri(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((WindContCurrLimIEC) _this_).setMqpri((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindContCurrLimIEC) _this_).setMqpri(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -198,12 +247,18 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         tufilt = _value_;
     }
 
-    public void setTufilt(String _value_) {
-        tufilt = getDoubleFromString(_value_);
+    private static Object getTufilt(BaseClass _this_) {
+        return ((WindContCurrLimIEC) _this_).getTufilt();
     }
 
-    public String tufiltToString() {
-        return tufilt != null ? tufilt.toString() : null;
+    private static void setTufilt(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindContCurrLimIEC) _this_).setTufilt((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindContCurrLimIEC) _this_).setTufilt(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -246,64 +301,35 @@ public class WindContCurrLimIEC extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("WindContCurrLimIEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindContCurrLimIEC", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindContCurrLimIEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindContCurrLimIEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindContCurrLimIEC", attrName, value));
         }
     }
 
@@ -427,55 +453,41 @@ public class WindContCurrLimIEC extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindDynamicsLookupTable", new AttrDetails("WindContCurrLimIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindDynamicsLookupTable", new AttrDetails("WindContCurrLimIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindContCurrLimIEC::getWindDynamicsLookupTable, WindContCurrLimIEC::setWindDynamicsLookupTable));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContCurrLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindTurbineType3or4IEC", new AttrDetails("WindContCurrLimIEC.WindTurbineType3or4IEC", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindContCurrLimIEC::getWindTurbineType3or4IEC, WindContCurrLimIEC::setWindTurbineType3or4IEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imax", new AttrDetails("WindContCurrLimIEC.imax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("imax", new AttrDetails("WindContCurrLimIEC.imax", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContCurrLimIEC::getImax, WindContCurrLimIEC::setImax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("imaxdip", new AttrDetails("WindContCurrLimIEC.imaxdip", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("imaxdip", new AttrDetails("WindContCurrLimIEC.imaxdip", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContCurrLimIEC::getImaxdip, WindContCurrLimIEC::setImaxdip));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mdfslim", new AttrDetails("WindContCurrLimIEC.mdfslim", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mdfslim", new AttrDetails("WindContCurrLimIEC.mdfslim", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContCurrLimIEC::getMdfslim, WindContCurrLimIEC::setMdfslim));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("mqpri", new AttrDetails("WindContCurrLimIEC.mqpri", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("mqpri", new AttrDetails("WindContCurrLimIEC.mqpri", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContCurrLimIEC::getMqpri, WindContCurrLimIEC::setMqpri));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tufilt", new AttrDetails("WindContCurrLimIEC.tufilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tufilt", new AttrDetails("WindContCurrLimIEC.tufilt", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, WindContCurrLimIEC::getTufilt, WindContCurrLimIEC::setTufilt));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContCurrLimIEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindContCurrLimIEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindDynamicsLookupTable", new GetterSetter(this::WindDynamicsLookupTableToString, this::setWindDynamicsLookupTable, null));
-        map.put("WindTurbineType3or4IEC", new GetterSetter(this::WindTurbineType3or4IECToString, this::setWindTurbineType3or4IEC, null));
-        map.put("imax", new GetterSetter(this::imaxToString, null, this::setImax));
-        map.put("imaxdip", new GetterSetter(this::imaxdipToString, null, this::setImaxdip));
-        map.put("mdfslim", new GetterSetter(this::mdfslimToString, null, this::setMdfslim));
-        map.put("mqpri", new GetterSetter(this::mqpriToString, null, this::setMqpri));
-        map.put("tufilt", new GetterSetter(this::tufiltToString, null, this::setTufilt));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

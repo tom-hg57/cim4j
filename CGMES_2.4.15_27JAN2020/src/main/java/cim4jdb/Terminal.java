@@ -32,10 +32,24 @@ public class Terminal extends ACDCTerminal {
     private static final Logging LOG = Logging.getLogger(Terminal.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public Terminal() {
-        setCimType("Terminal");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public Terminal(String rdfid) {
+        super("Terminal", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected Terminal(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class Terminal extends ACDCTerminal {
         return ConductingEquipment;
     }
 
-    public void setConductingEquipment(BaseClass _object_) {
-        if (!(_object_ instanceof ConductingEquipment)) {
-            throw new IllegalArgumentException("Object is not ConductingEquipment");
-        }
+    public void setConductingEquipment(ConductingEquipment _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ConductingEquipment != _object_) {
-            ConductingEquipment = (ConductingEquipment) _object_;
+            ConductingEquipment = _object_;
             ConductingEquipment.setTerminals(this);
             ConductingEquipmentId = ConductingEquipment.getRdfid();
         }
     }
 
-    public String ConductingEquipmentToString() {
-        return ConductingEquipmentId;
+    private static Object getConductingEquipment(BaseClass _this_) {
+        var obj = ((Terminal) _this_).getConductingEquipment();
+        var id = ((Terminal) _this_).ConductingEquipmentId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setConductingEquipment(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ConductingEquipment) {
+            ((Terminal) _this_).setConductingEquipment((ConductingEquipment) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ConductingEquipment");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class Terminal extends ACDCTerminal {
         return ConnectivityNode;
     }
 
-    public void setConnectivityNode(BaseClass _object_) {
-        if (!(_object_ instanceof ConnectivityNode)) {
-            throw new IllegalArgumentException("Object is not ConnectivityNode");
-        }
+    public void setConnectivityNode(ConnectivityNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ConnectivityNode != _object_) {
-            ConnectivityNode = (ConnectivityNode) _object_;
+            ConnectivityNode = _object_;
             ConnectivityNode.setTerminals(this);
             ConnectivityNodeId = ConnectivityNode.getRdfid();
         }
     }
 
-    public String ConnectivityNodeToString() {
-        return ConnectivityNodeId;
+    private static Object getConnectivityNode(BaseClass _this_) {
+        var obj = ((Terminal) _this_).getConnectivityNode();
+        var id = ((Terminal) _this_).ConnectivityNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setConnectivityNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ConnectivityNode) {
+            ((Terminal) _this_).setConnectivityNode((ConnectivityNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ConnectivityNode");
+        }
     }
 
     /**
@@ -112,21 +146,26 @@ public class Terminal extends ACDCTerminal {
         return ConverterDCSides;
     }
 
-    public void setConverterDCSides(BaseClass _object_) {
-        if (!(_object_ instanceof ACDCConverter)) {
-            throw new IllegalArgumentException("Object is not ACDCConverter");
-        }
+    public void setConverterDCSides(ACDCConverter _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!ConverterDCSides.contains(_object_)) {
-            ConverterDCSides.add((ACDCConverter) _object_);
-            ((ACDCConverter) _object_).setPccTerminal(this);
+            ConverterDCSides.add(_object_);
+            _object_.setPccTerminal(this);
         }
     }
 
-    public String ConverterDCSidesToString() {
-        return getStringFromSet(ConverterDCSides);
+    private static Object getConverterDCSides(BaseClass _this_) {
+        return ((Terminal) _this_).getConverterDCSides();
+    }
+
+    private static void setConverterDCSides(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ACDCConverter) {
+            ((Terminal) _this_).setConverterDCSides((ACDCConverter) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ACDCConverter");
+        }
     }
 
     /**
@@ -141,21 +180,26 @@ public class Terminal extends ACDCTerminal {
         return HasFirstMutualCoupling;
     }
 
-    public void setHasFirstMutualCoupling(BaseClass _object_) {
-        if (!(_object_ instanceof MutualCoupling)) {
-            throw new IllegalArgumentException("Object is not MutualCoupling");
-        }
+    public void setHasFirstMutualCoupling(MutualCoupling _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!HasFirstMutualCoupling.contains(_object_)) {
-            HasFirstMutualCoupling.add((MutualCoupling) _object_);
-            ((MutualCoupling) _object_).setFirst_Terminal(this);
+            HasFirstMutualCoupling.add(_object_);
+            _object_.setFirst_Terminal(this);
         }
     }
 
-    public String HasFirstMutualCouplingToString() {
-        return getStringFromSet(HasFirstMutualCoupling);
+    private static Object getHasFirstMutualCoupling(BaseClass _this_) {
+        return ((Terminal) _this_).getHasFirstMutualCoupling();
+    }
+
+    private static void setHasFirstMutualCoupling(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof MutualCoupling) {
+            ((Terminal) _this_).setHasFirstMutualCoupling((MutualCoupling) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not MutualCoupling");
+        }
     }
 
     /**
@@ -170,21 +214,26 @@ public class Terminal extends ACDCTerminal {
         return HasSecondMutualCoupling;
     }
 
-    public void setHasSecondMutualCoupling(BaseClass _object_) {
-        if (!(_object_ instanceof MutualCoupling)) {
-            throw new IllegalArgumentException("Object is not MutualCoupling");
-        }
+    public void setHasSecondMutualCoupling(MutualCoupling _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!HasSecondMutualCoupling.contains(_object_)) {
-            HasSecondMutualCoupling.add((MutualCoupling) _object_);
-            ((MutualCoupling) _object_).setSecond_Terminal(this);
+            HasSecondMutualCoupling.add(_object_);
+            _object_.setSecond_Terminal(this);
         }
     }
 
-    public String HasSecondMutualCouplingToString() {
-        return getStringFromSet(HasSecondMutualCoupling);
+    private static Object getHasSecondMutualCoupling(BaseClass _this_) {
+        return ((Terminal) _this_).getHasSecondMutualCoupling();
+    }
+
+    private static void setHasSecondMutualCoupling(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof MutualCoupling) {
+            ((Terminal) _this_).setHasSecondMutualCoupling((MutualCoupling) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not MutualCoupling");
+        }
     }
 
     /**
@@ -199,21 +248,27 @@ public class Terminal extends ACDCTerminal {
         return RegulatingControl;
     }
 
-    public void setRegulatingControl(BaseClass _object_) {
-        if (!(_object_ instanceof RegulatingControl)) {
-            throw new IllegalArgumentException("Object is not RegulatingControl");
-        }
+    public void setRegulatingControl(RegulatingControl _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (RegulatingControl != _object_) {
-            RegulatingControl = (RegulatingControl) _object_;
+            RegulatingControl = _object_;
             RegulatingControl.setTerminal(this);
         }
     }
 
-    public String RegulatingControlToString() {
-        return RegulatingControl != null ? RegulatingControl.getRdfid() : null;
+    private static Object getRegulatingControl(BaseClass _this_) {
+        var obj = ((Terminal) _this_).getRegulatingControl();
+        return obj;
+    }
+
+    private static void setRegulatingControl(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof RegulatingControl) {
+            ((Terminal) _this_).setRegulatingControl((RegulatingControl) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not RegulatingControl");
+        }
     }
 
     /**
@@ -228,21 +283,26 @@ public class Terminal extends ACDCTerminal {
         return RemoteInputSignal;
     }
 
-    public void setRemoteInputSignal(BaseClass _object_) {
-        if (!(_object_ instanceof RemoteInputSignal)) {
-            throw new IllegalArgumentException("Object is not RemoteInputSignal");
-        }
+    public void setRemoteInputSignal(RemoteInputSignal _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!RemoteInputSignal.contains(_object_)) {
-            RemoteInputSignal.add((RemoteInputSignal) _object_);
-            ((RemoteInputSignal) _object_).setTerminal(this);
+            RemoteInputSignal.add(_object_);
+            _object_.setTerminal(this);
         }
     }
 
-    public String RemoteInputSignalToString() {
-        return getStringFromSet(RemoteInputSignal);
+    private static Object getRemoteInputSignal(BaseClass _this_) {
+        return ((Terminal) _this_).getRemoteInputSignal();
+    }
+
+    private static void setRemoteInputSignal(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof RemoteInputSignal) {
+            ((Terminal) _this_).setRemoteInputSignal((RemoteInputSignal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not RemoteInputSignal");
+        }
     }
 
     /**
@@ -257,21 +317,27 @@ public class Terminal extends ACDCTerminal {
         return SvPowerFlow;
     }
 
-    public void setSvPowerFlow(BaseClass _object_) {
-        if (!(_object_ instanceof SvPowerFlow)) {
-            throw new IllegalArgumentException("Object is not SvPowerFlow");
-        }
+    public void setSvPowerFlow(SvPowerFlow _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (SvPowerFlow != _object_) {
-            SvPowerFlow = (SvPowerFlow) _object_;
+            SvPowerFlow = _object_;
             SvPowerFlow.setTerminal(this);
         }
     }
 
-    public String SvPowerFlowToString() {
-        return SvPowerFlow != null ? SvPowerFlow.getRdfid() : null;
+    private static Object getSvPowerFlow(BaseClass _this_) {
+        var obj = ((Terminal) _this_).getSvPowerFlow();
+        return obj;
+    }
+
+    private static void setSvPowerFlow(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof SvPowerFlow) {
+            ((Terminal) _this_).setSvPowerFlow((SvPowerFlow) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not SvPowerFlow");
+        }
     }
 
     /**
@@ -286,21 +352,26 @@ public class Terminal extends ACDCTerminal {
         return TieFlow;
     }
 
-    public void setTieFlow(BaseClass _object_) {
-        if (!(_object_ instanceof TieFlow)) {
-            throw new IllegalArgumentException("Object is not TieFlow");
-        }
+    public void setTieFlow(TieFlow _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!TieFlow.contains(_object_)) {
-            TieFlow.add((TieFlow) _object_);
-            ((TieFlow) _object_).setTerminal(this);
+            TieFlow.add(_object_);
+            _object_.setTerminal(this);
         }
     }
 
-    public String TieFlowToString() {
-        return getStringFromSet(TieFlow);
+    private static Object getTieFlow(BaseClass _this_) {
+        return ((Terminal) _this_).getTieFlow();
+    }
+
+    private static void setTieFlow(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TieFlow) {
+            ((Terminal) _this_).setTieFlow((TieFlow) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TieFlow");
+        }
     }
 
     /**
@@ -316,22 +387,32 @@ public class Terminal extends ACDCTerminal {
         return TopologicalNode;
     }
 
-    public void setTopologicalNode(BaseClass _object_) {
-        if (!(_object_ instanceof TopologicalNode)) {
-            throw new IllegalArgumentException("Object is not TopologicalNode");
-        }
+    public void setTopologicalNode(TopologicalNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TopologicalNode != _object_) {
-            TopologicalNode = (TopologicalNode) _object_;
+            TopologicalNode = _object_;
             TopologicalNode.setTerminal(this);
             TopologicalNodeId = TopologicalNode.getRdfid();
         }
     }
 
-    public String TopologicalNodeToString() {
-        return TopologicalNodeId;
+    private static Object getTopologicalNode(BaseClass _this_) {
+        var obj = ((Terminal) _this_).getTopologicalNode();
+        var id = ((Terminal) _this_).TopologicalNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TopologicalNode) {
+            ((Terminal) _this_).setTopologicalNode((TopologicalNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TopologicalNode");
+        }
     }
 
     /**
@@ -346,21 +427,26 @@ public class Terminal extends ACDCTerminal {
         return TransformerEnd;
     }
 
-    public void setTransformerEnd(BaseClass _object_) {
-        if (!(_object_ instanceof TransformerEnd)) {
-            throw new IllegalArgumentException("Object is not TransformerEnd");
-        }
+    public void setTransformerEnd(TransformerEnd _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!TransformerEnd.contains(_object_)) {
-            TransformerEnd.add((TransformerEnd) _object_);
-            ((TransformerEnd) _object_).setTerminal(this);
+            TransformerEnd.add(_object_);
+            _object_.setTerminal(this);
         }
     }
 
-    public String TransformerEndToString() {
-        return getStringFromSet(TransformerEnd);
+    private static Object getTransformerEnd(BaseClass _this_) {
+        return ((Terminal) _this_).getTransformerEnd();
+    }
+
+    private static void setTransformerEnd(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TransformerEnd) {
+            ((Terminal) _this_).setTransformerEnd((TransformerEnd) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TransformerEnd");
+        }
     }
 
     /**
@@ -377,8 +463,16 @@ public class Terminal extends ACDCTerminal {
         phases = _value_;
     }
 
-    public String phasesToString() {
-        return phases;
+    private static Object getPhases(BaseClass _this_) {
+        return ((Terminal) _this_).getPhases();
+    }
+
+    private static void setPhases(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((Terminal) _this_).setPhases((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -421,64 +515,35 @@ public class Terminal extends ACDCTerminal {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("Terminal", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "Terminal", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("Terminal", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("Terminal", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "Terminal", attrName, value));
         }
     }
 
@@ -604,85 +669,66 @@ public class Terminal extends ACDCTerminal {
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            map.put("ConductingEquipment", new AttrDetails("Terminal.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConductingEquipment", new AttrDetails("Terminal.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getConductingEquipment, Terminal::setConductingEquipment));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ConnectivityNode", new AttrDetails("Terminal.ConnectivityNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConnectivityNode", new AttrDetails("Terminal.ConnectivityNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getConnectivityNode, Terminal::setConnectivityNode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("ConverterDCSides", new AttrDetails("Terminal.ConverterDCSides", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("ConverterDCSides", new AttrDetails("Terminal.ConverterDCSides", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getConverterDCSides, Terminal::setConverterDCSides));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HasFirstMutualCoupling", new AttrDetails("Terminal.HasFirstMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("HasFirstMutualCoupling", new AttrDetails("Terminal.HasFirstMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getHasFirstMutualCoupling, Terminal::setHasFirstMutualCoupling));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("HasSecondMutualCoupling", new AttrDetails("Terminal.HasSecondMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("HasSecondMutualCoupling", new AttrDetails("Terminal.HasSecondMutualCoupling", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getHasSecondMutualCoupling, Terminal::setHasSecondMutualCoupling));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("RegulatingControl", new AttrDetails("Terminal.RegulatingControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RegulatingControl", new AttrDetails("Terminal.RegulatingControl", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getRegulatingControl, Terminal::setRegulatingControl));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("RemoteInputSignal", new AttrDetails("Terminal.RemoteInputSignal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("RemoteInputSignal", new AttrDetails("Terminal.RemoteInputSignal", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getRemoteInputSignal, Terminal::setRemoteInputSignal));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("SvPowerFlow", new AttrDetails("Terminal.SvPowerFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("SvPowerFlow", new AttrDetails("Terminal.SvPowerFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getSvPowerFlow, Terminal::setSvPowerFlow));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TieFlow", new AttrDetails("Terminal.TieFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TieFlow", new AttrDetails("Terminal.TieFlow", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getTieFlow, Terminal::setTieFlow));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.TP);
-            map.put("TopologicalNode", new AttrDetails("Terminal.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("Terminal.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getTopologicalNode, Terminal::setTopologicalNode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("TransformerEnd", new AttrDetails("Terminal.TransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TransformerEnd", new AttrDetails("Terminal.TransformerEnd", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getTransformerEnd, Terminal::setTransformerEnd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("phases", new AttrDetails("Terminal.phases", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true));
+            map.put("phases", new AttrDetails("Terminal.phases", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, true, Terminal::getPhases, Terminal::setPhases));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Terminal().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new Terminal(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConductingEquipment", new GetterSetter(this::ConductingEquipmentToString, this::setConductingEquipment, null));
-        map.put("ConnectivityNode", new GetterSetter(this::ConnectivityNodeToString, this::setConnectivityNode, null));
-        map.put("ConverterDCSides", new GetterSetter(this::ConverterDCSidesToString, this::setConverterDCSides, null));
-        map.put("HasFirstMutualCoupling", new GetterSetter(this::HasFirstMutualCouplingToString, this::setHasFirstMutualCoupling, null));
-        map.put("HasSecondMutualCoupling", new GetterSetter(this::HasSecondMutualCouplingToString, this::setHasSecondMutualCoupling, null));
-        map.put("RegulatingControl", new GetterSetter(this::RegulatingControlToString, this::setRegulatingControl, null));
-        map.put("RemoteInputSignal", new GetterSetter(this::RemoteInputSignalToString, this::setRemoteInputSignal, null));
-        map.put("SvPowerFlow", new GetterSetter(this::SvPowerFlowToString, this::setSvPowerFlow, null));
-        map.put("TieFlow", new GetterSetter(this::TieFlowToString, this::setTieFlow, null));
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("TransformerEnd", new GetterSetter(this::TransformerEndToString, this::setTransformerEnd, null));
-        map.put("phases", new GetterSetter(this::phasesToString, null, this::setPhases));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

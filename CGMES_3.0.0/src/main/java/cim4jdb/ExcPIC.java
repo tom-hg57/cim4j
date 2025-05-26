@@ -32,14 +32,28 @@ public class ExcPIC extends ExcitationSystemDynamics {
     private static final Logging LOG = Logging.getLogger(ExcPIC.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public ExcPIC() {
-        setCimType("ExcPIC");
+        this(null);
     }
 
     /**
-     * Field voltage value 1 (&lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Constructor.
+     */
+    public ExcPIC(String rdfid) {
+        super("ExcPIC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcPIC(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Field voltage value 1 (<i>E</i><i><sub>1</sub></i>).  Typical value = 0.
      */
     @Column(name = "e1")
     private Double e1; // PU
@@ -52,16 +66,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         e1 = _value_;
     }
 
-    public void setE1(String _value_) {
-        e1 = getDoubleFromString(_value_);
+    private static Object getE1(BaseClass _this_) {
+        return ((ExcPIC) _this_).getE1();
     }
 
-    public String e1ToString() {
-        return e1 != null ? e1.toString() : null;
+    private static void setE1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setE1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setE1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Field voltage value 2 (&lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Field voltage value 2 (<i>E</i><i><sub>2</sub></i>).  Typical value = 0.
      */
     @Column(name = "e2")
     private Double e2; // PU
@@ -74,16 +94,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         e2 = _value_;
     }
 
-    public void setE2(String _value_) {
-        e2 = getDoubleFromString(_value_);
+    private static Object getE2(BaseClass _this_) {
+        return ((ExcPIC) _this_).getE2();
     }
 
-    public String e2ToString() {
-        return e2 != null ? e2.toString() : null;
+    private static void setE2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setE2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setE2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Exciter maximum limit (&lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;fdmax&lt;/sub&gt;&lt;/i&gt;) (&amp;gt; ExcPIC.efdmin).  Typical value = 8.
+     * Exciter maximum limit (<i>E</i><i><sub>fdmax</sub></i>) (&gt; ExcPIC.efdmin).  Typical value = 8.
      */
     @Column(name = "efdmax")
     private Double efdmax; // PU
@@ -96,16 +122,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         efdmax = _value_;
     }
 
-    public void setEfdmax(String _value_) {
-        efdmax = getDoubleFromString(_value_);
+    private static Object getEfdmax(BaseClass _this_) {
+        return ((ExcPIC) _this_).getEfdmax();
     }
 
-    public String efdmaxToString() {
-        return efdmax != null ? efdmax.toString() : null;
+    private static void setEfdmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setEfdmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setEfdmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Exciter minimum limit (&lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;fdmin&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; ExcPIC.efdmax).  Typical value = -0,87.
+     * Exciter minimum limit (<i>E</i><i><sub>fdmin</sub></i>) (&lt; ExcPIC.efdmax).  Typical value = -0,87.
      */
     @Column(name = "efdmin")
     private Double efdmin; // PU
@@ -118,16 +150,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         efdmin = _value_;
     }
 
-    public void setEfdmin(String _value_) {
-        efdmin = getDoubleFromString(_value_);
+    private static Object getEfdmin(BaseClass _this_) {
+        return ((ExcPIC) _this_).getEfdmin();
     }
 
-    public String efdminToString() {
-        return efdmin != null ? efdmin.toString() : null;
+    private static void setEfdmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setEfdmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setEfdmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * PI controller gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a&lt;/sub&gt;&lt;/i&gt;).  Typical value = 3,15.
+     * PI controller gain (<i>K</i><i><sub>a</sub></i>).  Typical value = 3,15.
      */
     @Column(name = "ka")
     private Double ka; // PU
@@ -140,16 +178,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ka = _value_;
     }
 
-    public void setKa(String _value_) {
-        ka = getDoubleFromString(_value_);
+    private static Object getKa(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKa();
     }
 
-    public String kaToString() {
-        return ka != null ? ka.toString() : null;
+    private static void setKa(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKa((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKa(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Exciter regulation factor (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;c&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0,08.
+     * Exciter regulation factor (<i>K</i><i><sub>c</sub></i>).  Typical value = 0,08.
      */
     @Column(name = "kc")
     private Double kc; // PU
@@ -162,16 +206,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         kc = _value_;
     }
 
-    public void setKc(String _value_) {
-        kc = getDoubleFromString(_value_);
+    private static Object getKc(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKc();
     }
 
-    public String kcToString() {
-        return kc != null ? kc.toString() : null;
+    private static void setKc(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKc((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKc(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Exciter constant (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;e&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Exciter constant (<i>K</i><i><sub>e</sub></i>).  Typical value = 0.
      */
     @Column(name = "ke")
     private Double ke; // PU
@@ -184,16 +234,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ke = _value_;
     }
 
-    public void setKe(String _value_) {
-        ke = getDoubleFromString(_value_);
+    private static Object getKe(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKe();
     }
 
-    public String keToString() {
-        return ke != null ? ke.toString() : null;
+    private static void setKe(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKe((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKe(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Rate feedback gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;f&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Rate feedback gain (<i>K</i><i><sub>f</sub></i>).  Typical value = 0.
      */
     @Column(name = "kf")
     private Double kf; // PU
@@ -206,16 +262,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         kf = _value_;
     }
 
-    public void setKf(String _value_) {
-        kf = getDoubleFromString(_value_);
+    private static Object getKf(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKf();
     }
 
-    public String kfToString() {
-        return kf != null ? kf.toString() : null;
+    private static void setKf(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKf((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKf(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Current source gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;i&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Current source gain (<i>K</i><i><sub>i</sub></i>).  Typical value = 0.
      */
     @Column(name = "ki")
     private Double ki; // PU
@@ -228,16 +290,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ki = _value_;
     }
 
-    public void setKi(String _value_) {
-        ki = getDoubleFromString(_value_);
+    private static Object getKi(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKi();
     }
 
-    public String kiToString() {
-        return ki != null ? ki.toString() : null;
+    private static void setKi(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKi((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKi(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Potential source gain (&lt;i&gt;K&lt;/i&gt;&lt;i&gt;&lt;sub&gt;p&lt;/sub&gt;&lt;/i&gt;).  Typical value = 6,5.
+     * Potential source gain (<i>K</i><i><sub>p</sub></i>).  Typical value = 6,5.
      */
     @Column(name = "kp")
     private Double kp; // PU
@@ -250,16 +318,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         kp = _value_;
     }
 
-    public void setKp(String _value_) {
-        kp = getDoubleFromString(_value_);
+    private static Object getKp(BaseClass _this_) {
+        return ((ExcPIC) _this_).getKp();
     }
 
-    public String kpToString() {
-        return kp != null ? kp.toString() : null;
+    private static void setKp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setKp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setKp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Saturation factor at &lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt; (&lt;i&gt;Se&lt;/i&gt;&lt;i&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Saturation factor at <i>E</i><i><sub>1</sub></i> (<i>Se</i><i><sub>1</sub></i>).  Typical value = 0.
      */
     @Column(name = "se1")
     private Double se1; // PU
@@ -272,16 +346,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         se1 = _value_;
     }
 
-    public void setSe1(String _value_) {
-        se1 = getDoubleFromString(_value_);
+    private static Object getSe1(BaseClass _this_) {
+        return ((ExcPIC) _this_).getSe1();
     }
 
-    public String se1ToString() {
-        return se1 != null ? se1.toString() : null;
+    private static void setSe1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setSe1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setSe1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Saturation factor at &lt;i&gt;E&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt; (&lt;i&gt;Se&lt;/i&gt;&lt;i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/i&gt;).  Typical value = 0.
+     * Saturation factor at <i>E</i><i><sub>2</sub></i> (<i>Se</i><i><sub>2</sub></i>).  Typical value = 0.
      */
     @Column(name = "se2")
     private Double se2; // PU
@@ -294,16 +374,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         se2 = _value_;
     }
 
-    public void setSe2(String _value_) {
-        se2 = getDoubleFromString(_value_);
+    private static Object getSe2(BaseClass _this_) {
+        return ((ExcPIC) _this_).getSe2();
     }
 
-    public String se2ToString() {
-        return se2 != null ? se2.toString() : null;
+    private static void setSe2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setSe2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setSe2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * PI controller time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a1&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 1.
+     * PI controller time constant (<i>T</i><i><sub>a1</sub></i>) (&gt;= 0).  Typical value = 1.
      */
     @Column(name = "ta1")
     private Double ta1; // Seconds
@@ -316,16 +402,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ta1 = _value_;
     }
 
-    public void setTa1(String _value_) {
-        ta1 = getDoubleFromString(_value_);
+    private static Object getTa1(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTa1();
     }
 
-    public String ta1ToString() {
-        return ta1 != null ? ta1.toString() : null;
+    private static void setTa1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTa1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTa1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Voltage regulator time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a2&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0,01.
+     * Voltage regulator time constant (<i>T</i><i><sub>a2</sub></i>) (&gt;= 0).  Typical value = 0,01.
      */
     @Column(name = "ta2")
     private Double ta2; // Seconds
@@ -338,16 +430,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ta2 = _value_;
     }
 
-    public void setTa2(String _value_) {
-        ta2 = getDoubleFromString(_value_);
+    private static Object getTa2(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTa2();
     }
 
-    public String ta2ToString() {
-        return ta2 != null ? ta2.toString() : null;
+    private static void setTa2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTa2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTa2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Lead time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a3&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
+     * Lead time constant (<i>T</i><i><sub>a3</sub></i>) (&gt;= 0).  Typical value = 0.
      */
     @Column(name = "ta3")
     private Double ta3; // Seconds
@@ -360,16 +458,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ta3 = _value_;
     }
 
-    public void setTa3(String _value_) {
-        ta3 = getDoubleFromString(_value_);
+    private static Object getTa3(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTa3();
     }
 
-    public String ta3ToString() {
-        return ta3 != null ? ta3.toString() : null;
+    private static void setTa3(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTa3((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTa3(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Lag time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;a4&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
+     * Lag time constant (<i>T</i><i><sub>a4</sub></i>) (&gt;= 0).  Typical value = 0.
      */
     @Column(name = "ta4")
     private Double ta4; // Seconds
@@ -382,16 +486,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         ta4 = _value_;
     }
 
-    public void setTa4(String _value_) {
-        ta4 = getDoubleFromString(_value_);
+    private static Object getTa4(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTa4();
     }
 
-    public String ta4ToString() {
-        return ta4 != null ? ta4.toString() : null;
+    private static void setTa4(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTa4((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTa4(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Exciter time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;e&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
+     * Exciter time constant (<i>T</i><i><sub>e</sub></i>) (&gt;= 0).  Typical value = 0.
      */
     @Column(name = "te")
     private Double te; // Seconds
@@ -404,16 +514,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         te = _value_;
     }
 
-    public void setTe(String _value_) {
-        te = getDoubleFromString(_value_);
+    private static Object getTe(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTe();
     }
 
-    public String teToString() {
-        return te != null ? te.toString() : null;
+    private static void setTe(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTe((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTe(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Rate feedback time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;f1&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
+     * Rate feedback time constant (<i>T</i><i><sub>f1</sub></i>) (&gt;= 0).  Typical value = 0.
      */
     @Column(name = "tf1")
     private Double tf1; // Seconds
@@ -426,16 +542,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         tf1 = _value_;
     }
 
-    public void setTf1(String _value_) {
-        tf1 = getDoubleFromString(_value_);
+    private static Object getTf1(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTf1();
     }
 
-    public String tf1ToString() {
-        return tf1 != null ? tf1.toString() : null;
+    private static void setTf1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTf1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTf1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Rate feedback lag time constant (&lt;i&gt;T&lt;/i&gt;&lt;i&gt;&lt;sub&gt;f2&lt;/sub&gt;&lt;/i&gt;) (&amp;gt;= 0).  Typical value = 0.
+     * Rate feedback lag time constant (<i>T</i><i><sub>f2</sub></i>) (&gt;= 0).  Typical value = 0.
      */
     @Column(name = "tf2")
     private Double tf2; // Seconds
@@ -448,16 +570,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         tf2 = _value_;
     }
 
-    public void setTf2(String _value_) {
-        tf2 = getDoubleFromString(_value_);
+    private static Object getTf2(BaseClass _this_) {
+        return ((ExcPIC) _this_).getTf2();
     }
 
-    public String tf2ToString() {
-        return tf2 != null ? tf2.toString() : null;
+    private static void setTf2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setTf2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setTf2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * PI maximum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;r1&lt;/sub&gt;&lt;/i&gt;).  Typical value = 1.
+     * PI maximum limit (<i>V</i><i><sub>r1</sub></i>).  Typical value = 1.
      */
     @Column(name = "vr1")
     private Double vr1; // PU
@@ -470,16 +598,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         vr1 = _value_;
     }
 
-    public void setVr1(String _value_) {
-        vr1 = getDoubleFromString(_value_);
+    private static Object getVr1(BaseClass _this_) {
+        return ((ExcPIC) _this_).getVr1();
     }
 
-    public String vr1ToString() {
-        return vr1 != null ? vr1.toString() : null;
+    private static void setVr1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setVr1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setVr1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * PI minimum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;r2&lt;/sub&gt;&lt;/i&gt;).  Typical value = -0,87.
+     * PI minimum limit (<i>V</i><i><sub>r2</sub></i>).  Typical value = -0,87.
      */
     @Column(name = "vr2")
     private Double vr2; // PU
@@ -492,16 +626,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         vr2 = _value_;
     }
 
-    public void setVr2(String _value_) {
-        vr2 = getDoubleFromString(_value_);
+    private static Object getVr2(BaseClass _this_) {
+        return ((ExcPIC) _this_).getVr2();
     }
 
-    public String vr2ToString() {
-        return vr2 != null ? vr2.toString() : null;
+    private static void setVr2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setVr2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setVr2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Voltage regulator maximum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;rmax&lt;/sub&gt;&lt;/i&gt;) (&amp;gt; ExcPIC.vrmin).  Typical value = 1.
+     * Voltage regulator maximum limit (<i>V</i><i><sub>rmax</sub></i>) (&gt; ExcPIC.vrmin).  Typical value = 1.
      */
     @Column(name = "vrmax")
     private Double vrmax; // PU
@@ -514,16 +654,22 @@ public class ExcPIC extends ExcitationSystemDynamics {
         vrmax = _value_;
     }
 
-    public void setVrmax(String _value_) {
-        vrmax = getDoubleFromString(_value_);
+    private static Object getVrmax(BaseClass _this_) {
+        return ((ExcPIC) _this_).getVrmax();
     }
 
-    public String vrmaxToString() {
-        return vrmax != null ? vrmax.toString() : null;
+    private static void setVrmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setVrmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setVrmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Voltage regulator minimum limit (&lt;i&gt;V&lt;/i&gt;&lt;i&gt;&lt;sub&gt;rmin&lt;/sub&gt;&lt;/i&gt;) (&amp;lt; ExcPIC.vrmax).  Typical value = -0,87.
+     * Voltage regulator minimum limit (<i>V</i><i><sub>rmin</sub></i>) (&lt; ExcPIC.vrmax).  Typical value = -0,87.
      */
     @Column(name = "vrmin")
     private Double vrmin; // PU
@@ -536,12 +682,18 @@ public class ExcPIC extends ExcitationSystemDynamics {
         vrmin = _value_;
     }
 
-    public void setVrmin(String _value_) {
-        vrmin = getDoubleFromString(_value_);
+    private static Object getVrmin(BaseClass _this_) {
+        return ((ExcPIC) _this_).getVrmin();
     }
 
-    public String vrminToString() {
-        return vrmin != null ? vrmin.toString() : null;
+    private static void setVrmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcPIC) _this_).setVrmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcPIC) _this_).setVrmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -584,64 +736,35 @@ public class ExcPIC extends ExcitationSystemDynamics {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("ExcPIC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcPIC", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("ExcPIC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("ExcPIC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcPIC", attrName, value));
         }
     }
 
@@ -765,151 +888,121 @@ public class ExcPIC extends ExcitationSystemDynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("e1", new AttrDetails("ExcPIC.e1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("e1", new AttrDetails("ExcPIC.e1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getE1, ExcPIC::setE1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("e2", new AttrDetails("ExcPIC.e2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("e2", new AttrDetails("ExcPIC.e2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getE2, ExcPIC::setE2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmax", new AttrDetails("ExcPIC.efdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("efdmax", new AttrDetails("ExcPIC.efdmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getEfdmax, ExcPIC::setEfdmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("efdmin", new AttrDetails("ExcPIC.efdmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("efdmin", new AttrDetails("ExcPIC.efdmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getEfdmin, ExcPIC::setEfdmin));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ka", new AttrDetails("ExcPIC.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ka", new AttrDetails("ExcPIC.ka", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKa, ExcPIC::setKa));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kc", new AttrDetails("ExcPIC.kc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kc", new AttrDetails("ExcPIC.kc", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKc, ExcPIC::setKc));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ke", new AttrDetails("ExcPIC.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ke", new AttrDetails("ExcPIC.ke", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKe, ExcPIC::setKe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kf", new AttrDetails("ExcPIC.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kf", new AttrDetails("ExcPIC.kf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKf, ExcPIC::setKf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ki", new AttrDetails("ExcPIC.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ki", new AttrDetails("ExcPIC.ki", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKi, ExcPIC::setKi));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("kp", new AttrDetails("ExcPIC.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("kp", new AttrDetails("ExcPIC.kp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getKp, ExcPIC::setKp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("se1", new AttrDetails("ExcPIC.se1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("se1", new AttrDetails("ExcPIC.se1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getSe1, ExcPIC::setSe1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("se2", new AttrDetails("ExcPIC.se2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("se2", new AttrDetails("ExcPIC.se2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getSe2, ExcPIC::setSe2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta1", new AttrDetails("ExcPIC.ta1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta1", new AttrDetails("ExcPIC.ta1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTa1, ExcPIC::setTa1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta2", new AttrDetails("ExcPIC.ta2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta2", new AttrDetails("ExcPIC.ta2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTa2, ExcPIC::setTa2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta3", new AttrDetails("ExcPIC.ta3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta3", new AttrDetails("ExcPIC.ta3", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTa3, ExcPIC::setTa3));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("ta4", new AttrDetails("ExcPIC.ta4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("ta4", new AttrDetails("ExcPIC.ta4", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTa4, ExcPIC::setTa4));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("te", new AttrDetails("ExcPIC.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("te", new AttrDetails("ExcPIC.te", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTe, ExcPIC::setTe));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf1", new AttrDetails("ExcPIC.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf1", new AttrDetails("ExcPIC.tf1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTf1, ExcPIC::setTf1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tf2", new AttrDetails("ExcPIC.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("tf2", new AttrDetails("ExcPIC.tf2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getTf2, ExcPIC::setTf2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vr1", new AttrDetails("ExcPIC.vr1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vr1", new AttrDetails("ExcPIC.vr1", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getVr1, ExcPIC::setVr1));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vr2", new AttrDetails("ExcPIC.vr2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vr2", new AttrDetails("ExcPIC.vr2", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getVr2, ExcPIC::setVr2));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmax", new AttrDetails("ExcPIC.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmax", new AttrDetails("ExcPIC.vrmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getVrmax, ExcPIC::setVrmax));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("vrmin", new AttrDetails("ExcPIC.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("vrmin", new AttrDetails("ExcPIC.vrmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, ExcPIC::getVrmin, ExcPIC::setVrmin));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcPIC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcPIC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("e1", new GetterSetter(this::e1ToString, null, this::setE1));
-        map.put("e2", new GetterSetter(this::e2ToString, null, this::setE2));
-        map.put("efdmax", new GetterSetter(this::efdmaxToString, null, this::setEfdmax));
-        map.put("efdmin", new GetterSetter(this::efdminToString, null, this::setEfdmin));
-        map.put("ka", new GetterSetter(this::kaToString, null, this::setKa));
-        map.put("kc", new GetterSetter(this::kcToString, null, this::setKc));
-        map.put("ke", new GetterSetter(this::keToString, null, this::setKe));
-        map.put("kf", new GetterSetter(this::kfToString, null, this::setKf));
-        map.put("ki", new GetterSetter(this::kiToString, null, this::setKi));
-        map.put("kp", new GetterSetter(this::kpToString, null, this::setKp));
-        map.put("se1", new GetterSetter(this::se1ToString, null, this::setSe1));
-        map.put("se2", new GetterSetter(this::se2ToString, null, this::setSe2));
-        map.put("ta1", new GetterSetter(this::ta1ToString, null, this::setTa1));
-        map.put("ta2", new GetterSetter(this::ta2ToString, null, this::setTa2));
-        map.put("ta3", new GetterSetter(this::ta3ToString, null, this::setTa3));
-        map.put("ta4", new GetterSetter(this::ta4ToString, null, this::setTa4));
-        map.put("te", new GetterSetter(this::teToString, null, this::setTe));
-        map.put("tf1", new GetterSetter(this::tf1ToString, null, this::setTf1));
-        map.put("tf2", new GetterSetter(this::tf2ToString, null, this::setTf2));
-        map.put("vr1", new GetterSetter(this::vr1ToString, null, this::setVr1));
-        map.put("vr2", new GetterSetter(this::vr2ToString, null, this::setVr2));
-        map.put("vrmax", new GetterSetter(this::vrmaxToString, null, this::setVrmax));
-        map.put("vrmin", new GetterSetter(this::vrminToString, null, this::setVrmin));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -32,10 +32,24 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
     private static final Logging LOG = Logging.getLogger(WindTurbineType3or4IEC.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public WindTurbineType3or4IEC() {
-        setCimType("WindTurbineType3or4IEC");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public WindTurbineType3or4IEC(String rdfid) {
+        super("WindTurbineType3or4IEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindTurbineType3or4IEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
         return WIndContQIEC;
     }
 
-    public void setWIndContQIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContQIEC)) {
-            throw new IllegalArgumentException("Object is not WindContQIEC");
-        }
+    public void setWIndContQIEC(WindContQIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WIndContQIEC != _object_) {
-            WIndContQIEC = (WindContQIEC) _object_;
+            WIndContQIEC = _object_;
             WIndContQIEC.setWindTurbineType3or4IEC(this);
             WIndContQIECId = WIndContQIEC.getRdfid();
         }
     }
 
-    public String WIndContQIECToString() {
-        return WIndContQIECId;
+    private static Object getWIndContQIEC(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4IEC) _this_).getWIndContQIEC();
+        var id = ((WindTurbineType3or4IEC) _this_).WIndContQIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWIndContQIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContQIEC) {
+            ((WindTurbineType3or4IEC) _this_).setWIndContQIEC((WindContQIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContQIEC");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
         return WindContCurrLimIEC;
     }
 
-    public void setWindContCurrLimIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContCurrLimIEC)) {
-            throw new IllegalArgumentException("Object is not WindContCurrLimIEC");
-        }
+    public void setWindContCurrLimIEC(WindContCurrLimIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindContCurrLimIEC != _object_) {
-            WindContCurrLimIEC = (WindContCurrLimIEC) _object_;
+            WindContCurrLimIEC = _object_;
             WindContCurrLimIEC.setWindTurbineType3or4IEC(this);
             WindContCurrLimIECId = WindContCurrLimIEC.getRdfid();
         }
     }
 
-    public String WindContCurrLimIECToString() {
-        return WindContCurrLimIECId;
+    private static Object getWindContCurrLimIEC(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4IEC) _this_).getWindContCurrLimIEC();
+        var id = ((WindTurbineType3or4IEC) _this_).WindContCurrLimIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindContCurrLimIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContCurrLimIEC) {
+            ((WindTurbineType3or4IEC) _this_).setWindContCurrLimIEC((WindContCurrLimIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContCurrLimIEC");
+        }
     }
 
     /**
@@ -113,22 +147,32 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
         return WindProtectionIEC;
     }
 
-    public void setWindProtectionIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindProtectionIEC)) {
-            throw new IllegalArgumentException("Object is not WindProtectionIEC");
-        }
+    public void setWindProtectionIEC(WindProtectionIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindProtectionIEC != _object_) {
-            WindProtectionIEC = (WindProtectionIEC) _object_;
+            WindProtectionIEC = _object_;
             WindProtectionIEC.setWindTurbineType3or4IEC(this);
             WindProtectionIECId = WindProtectionIEC.getRdfid();
         }
     }
 
-    public String WindProtectionIECToString() {
-        return WindProtectionIECId;
+    private static Object getWindProtectionIEC(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4IEC) _this_).getWindProtectionIEC();
+        var id = ((WindTurbineType3or4IEC) _this_).WindProtectionIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindProtectionIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindProtectionIEC) {
+            ((WindTurbineType3or4IEC) _this_).setWindProtectionIEC((WindProtectionIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindProtectionIEC");
+        }
     }
 
     /**
@@ -171,64 +215,35 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("WindTurbineType3or4IEC", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindTurbineType3or4IEC", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindTurbineType3or4IEC", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindTurbineType3or4IEC", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3or4IEC", attrName, value));
         }
     }
 
@@ -352,31 +367,21 @@ public class WindTurbineType3or4IEC extends WindTurbineType3or4Dynamics {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WIndContQIEC", new AttrDetails("WindTurbineType3or4IEC.WIndContQIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WIndContQIEC", new AttrDetails("WindTurbineType3or4IEC.WIndContQIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4IEC::getWIndContQIEC, WindTurbineType3or4IEC::setWIndContQIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContCurrLimIEC", new AttrDetails("WindTurbineType3or4IEC.WindContCurrLimIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindContCurrLimIEC", new AttrDetails("WindTurbineType3or4IEC.WindContCurrLimIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4IEC::getWindContCurrLimIEC, WindTurbineType3or4IEC::setWindContCurrLimIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindProtectionIEC", new AttrDetails("WindTurbineType3or4IEC.WindProtectionIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("WindProtectionIEC", new AttrDetails("WindTurbineType3or4IEC.WindProtectionIEC", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4IEC::getWindProtectionIEC, WindTurbineType3or4IEC::setWindProtectionIEC));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4IEC().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4IEC(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WIndContQIEC", new GetterSetter(this::WIndContQIECToString, this::setWIndContQIEC, null));
-        map.put("WindContCurrLimIEC", new GetterSetter(this::WindContCurrLimIECToString, this::setWindContCurrLimIEC, null));
-        map.put("WindProtectionIEC", new GetterSetter(this::WindProtectionIECToString, this::setWindProtectionIEC, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

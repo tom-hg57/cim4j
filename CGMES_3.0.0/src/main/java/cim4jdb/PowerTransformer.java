@@ -32,10 +32,24 @@ public class PowerTransformer extends ConductingEquipment {
     private static final Logging LOG = Logging.getLogger(PowerTransformer.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public PowerTransformer() {
-        setCimType("PowerTransformer");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public PowerTransformer(String rdfid) {
+        super("PowerTransformer", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected PowerTransformer(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -50,21 +64,26 @@ public class PowerTransformer extends ConductingEquipment {
         return PowerTransformerEnd;
     }
 
-    public void setPowerTransformerEnd(BaseClass _object_) {
-        if (!(_object_ instanceof PowerTransformerEnd)) {
-            throw new IllegalArgumentException("Object is not PowerTransformerEnd");
-        }
+    public void setPowerTransformerEnd(PowerTransformerEnd _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (!PowerTransformerEnd.contains(_object_)) {
-            PowerTransformerEnd.add((PowerTransformerEnd) _object_);
-            ((PowerTransformerEnd) _object_).setPowerTransformer(this);
+            PowerTransformerEnd.add(_object_);
+            _object_.setPowerTransformer(this);
         }
     }
 
-    public String PowerTransformerEndToString() {
-        return getStringFromSet(PowerTransformerEnd);
+    private static Object getPowerTransformerEnd(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getPowerTransformerEnd();
+    }
+
+    private static void setPowerTransformerEnd(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof PowerTransformerEnd) {
+            ((PowerTransformer) _this_).setPowerTransformerEnd((PowerTransformerEnd) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not PowerTransformerEnd");
+        }
     }
 
     /**
@@ -81,12 +100,18 @@ public class PowerTransformer extends ConductingEquipment {
         beforeShCircuitHighestOperatingCurrent = _value_;
     }
 
-    public void setBeforeShCircuitHighestOperatingCurrent(String _value_) {
-        beforeShCircuitHighestOperatingCurrent = getDoubleFromString(_value_);
+    private static Object getBeforeShCircuitHighestOperatingCurrent(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getBeforeShCircuitHighestOperatingCurrent();
     }
 
-    public String beforeShCircuitHighestOperatingCurrentToString() {
-        return beforeShCircuitHighestOperatingCurrent != null ? beforeShCircuitHighestOperatingCurrent.toString() : null;
+    private static void setBeforeShCircuitHighestOperatingCurrent(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingCurrent((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingCurrent(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -103,12 +128,18 @@ public class PowerTransformer extends ConductingEquipment {
         beforeShCircuitHighestOperatingVoltage = _value_;
     }
 
-    public void setBeforeShCircuitHighestOperatingVoltage(String _value_) {
-        beforeShCircuitHighestOperatingVoltage = getDoubleFromString(_value_);
+    private static Object getBeforeShCircuitHighestOperatingVoltage(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getBeforeShCircuitHighestOperatingVoltage();
     }
 
-    public String beforeShCircuitHighestOperatingVoltageToString() {
-        return beforeShCircuitHighestOperatingVoltage != null ? beforeShCircuitHighestOperatingVoltage.toString() : null;
+    private static void setBeforeShCircuitHighestOperatingVoltage(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingVoltage((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setBeforeShCircuitHighestOperatingVoltage(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -125,12 +156,18 @@ public class PowerTransformer extends ConductingEquipment {
         beforeShortCircuitAnglePf = _value_;
     }
 
-    public void setBeforeShortCircuitAnglePf(String _value_) {
-        beforeShortCircuitAnglePf = getDoubleFromString(_value_);
+    private static Object getBeforeShortCircuitAnglePf(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getBeforeShortCircuitAnglePf();
     }
 
-    public String beforeShortCircuitAnglePfToString() {
-        return beforeShortCircuitAnglePf != null ? beforeShortCircuitAnglePf.toString() : null;
+    private static void setBeforeShortCircuitAnglePf(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((PowerTransformer) _this_).setBeforeShortCircuitAnglePf((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setBeforeShortCircuitAnglePf(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -147,12 +184,18 @@ public class PowerTransformer extends ConductingEquipment {
         highSideMinOperatingU = _value_;
     }
 
-    public void setHighSideMinOperatingU(String _value_) {
-        highSideMinOperatingU = getDoubleFromString(_value_);
+    private static Object getHighSideMinOperatingU(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getHighSideMinOperatingU();
     }
 
-    public String highSideMinOperatingUToString() {
-        return highSideMinOperatingU != null ? highSideMinOperatingU.toString() : null;
+    private static void setHighSideMinOperatingU(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((PowerTransformer) _this_).setHighSideMinOperatingU((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setHighSideMinOperatingU(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -169,12 +212,18 @@ public class PowerTransformer extends ConductingEquipment {
         isPartOfGeneratorUnit = _value_;
     }
 
-    public void setIsPartOfGeneratorUnit(String _value_) {
-        isPartOfGeneratorUnit = getBooleanFromString(_value_);
+    private static Object getIsPartOfGeneratorUnit(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getIsPartOfGeneratorUnit();
     }
 
-    public String isPartOfGeneratorUnitToString() {
-        return isPartOfGeneratorUnit != null ? isPartOfGeneratorUnit.toString() : null;
+    private static void setIsPartOfGeneratorUnit(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((PowerTransformer) _this_).setIsPartOfGeneratorUnit((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setIsPartOfGeneratorUnit(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -191,12 +240,18 @@ public class PowerTransformer extends ConductingEquipment {
         operationalValuesConsidered = _value_;
     }
 
-    public void setOperationalValuesConsidered(String _value_) {
-        operationalValuesConsidered = getBooleanFromString(_value_);
+    private static Object getOperationalValuesConsidered(BaseClass _this_) {
+        return ((PowerTransformer) _this_).getOperationalValuesConsidered();
     }
 
-    public String operationalValuesConsideredToString() {
-        return operationalValuesConsidered != null ? operationalValuesConsidered.toString() : null;
+    private static void setOperationalValuesConsidered(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((PowerTransformer) _this_).setOperationalValuesConsidered((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((PowerTransformer) _this_).setOperationalValuesConsidered(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -239,64 +294,35 @@ public class PowerTransformer extends ConductingEquipment {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("PowerTransformer", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "PowerTransformer", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("PowerTransformer", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("PowerTransformer", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "PowerTransformer", attrName, value));
         }
     }
 
@@ -420,55 +446,41 @@ public class PowerTransformer extends ConductingEquipment {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
-            map.put("PowerTransformerEnd", new AttrDetails("PowerTransformer.PowerTransformerEnd", false, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("PowerTransformerEnd", new AttrDetails("PowerTransformer.PowerTransformerEnd", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, PowerTransformer::getPowerTransformerEnd, PowerTransformer::setPowerTransformerEnd));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("beforeShCircuitHighestOperatingCurrent", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("beforeShCircuitHighestOperatingCurrent", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingCurrent", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getBeforeShCircuitHighestOperatingCurrent, PowerTransformer::setBeforeShCircuitHighestOperatingCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("beforeShCircuitHighestOperatingVoltage", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("beforeShCircuitHighestOperatingVoltage", new AttrDetails("PowerTransformer.beforeShCircuitHighestOperatingVoltage", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getBeforeShCircuitHighestOperatingVoltage, PowerTransformer::setBeforeShCircuitHighestOperatingVoltage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("beforeShortCircuitAnglePf", new AttrDetails("PowerTransformer.beforeShortCircuitAnglePf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("beforeShortCircuitAnglePf", new AttrDetails("PowerTransformer.beforeShortCircuitAnglePf", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getBeforeShortCircuitAnglePf, PowerTransformer::setBeforeShortCircuitAnglePf));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("highSideMinOperatingU", new AttrDetails("PowerTransformer.highSideMinOperatingU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("highSideMinOperatingU", new AttrDetails("PowerTransformer.highSideMinOperatingU", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getHighSideMinOperatingU, PowerTransformer::setHighSideMinOperatingU));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("isPartOfGeneratorUnit", new AttrDetails("PowerTransformer.isPartOfGeneratorUnit", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("isPartOfGeneratorUnit", new AttrDetails("PowerTransformer.isPartOfGeneratorUnit", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getIsPartOfGeneratorUnit, PowerTransformer::setIsPartOfGeneratorUnit));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SC);
-            map.put("operationalValuesConsidered", new AttrDetails("PowerTransformer.operationalValuesConsidered", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("operationalValuesConsidered", new AttrDetails("PowerTransformer.operationalValuesConsidered", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, PowerTransformer::getOperationalValuesConsidered, PowerTransformer::setOperationalValuesConsidered));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformer().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new PowerTransformer(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("PowerTransformerEnd", new GetterSetter(this::PowerTransformerEndToString, this::setPowerTransformerEnd, null));
-        map.put("beforeShCircuitHighestOperatingCurrent", new GetterSetter(this::beforeShCircuitHighestOperatingCurrentToString, null, this::setBeforeShCircuitHighestOperatingCurrent));
-        map.put("beforeShCircuitHighestOperatingVoltage", new GetterSetter(this::beforeShCircuitHighestOperatingVoltageToString, null, this::setBeforeShCircuitHighestOperatingVoltage));
-        map.put("beforeShortCircuitAnglePf", new GetterSetter(this::beforeShortCircuitAnglePfToString, null, this::setBeforeShortCircuitAnglePf));
-        map.put("highSideMinOperatingU", new GetterSetter(this::highSideMinOperatingUToString, null, this::setHighSideMinOperatingU));
-        map.put("isPartOfGeneratorUnit", new GetterSetter(this::isPartOfGeneratorUnitToString, null, this::setIsPartOfGeneratorUnit));
-        map.put("operationalValuesConsidered", new GetterSetter(this::operationalValuesConsideredToString, null, this::setOperationalValuesConsidered));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

@@ -32,10 +32,24 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
     private static final Logging LOG = Logging.getLogger(CrossCompoundTurbineGovernorDynamics.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public CrossCompoundTurbineGovernorDynamics() {
-        setCimType("CrossCompoundTurbineGovernorDynamics");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public CrossCompoundTurbineGovernorDynamics(String rdfid) {
+        super("CrossCompoundTurbineGovernorDynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected CrossCompoundTurbineGovernorDynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
         return HighPressureSynchronousMachineDynamics;
     }
 
-    public void setHighPressureSynchronousMachineDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof SynchronousMachineDynamics)) {
-            throw new IllegalArgumentException("Object is not SynchronousMachineDynamics");
-        }
+    public void setHighPressureSynchronousMachineDynamics(SynchronousMachineDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (HighPressureSynchronousMachineDynamics != _object_) {
-            HighPressureSynchronousMachineDynamics = (SynchronousMachineDynamics) _object_;
+            HighPressureSynchronousMachineDynamics = _object_;
             HighPressureSynchronousMachineDynamics.setCrossCompoundTurbineGovernorDyanmics(this);
             HighPressureSynchronousMachineDynamicsId = HighPressureSynchronousMachineDynamics.getRdfid();
         }
     }
 
-    public String HighPressureSynchronousMachineDynamicsToString() {
-        return HighPressureSynchronousMachineDynamicsId;
+    private static Object getHighPressureSynchronousMachineDynamics(BaseClass _this_) {
+        var obj = ((CrossCompoundTurbineGovernorDynamics) _this_).getHighPressureSynchronousMachineDynamics();
+        var id = ((CrossCompoundTurbineGovernorDynamics) _this_).HighPressureSynchronousMachineDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setHighPressureSynchronousMachineDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof SynchronousMachineDynamics) {
+            ((CrossCompoundTurbineGovernorDynamics) _this_).setHighPressureSynchronousMachineDynamics((SynchronousMachineDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not SynchronousMachineDynamics");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
         return LowPressureSynchronousMachineDynamics;
     }
 
-    public void setLowPressureSynchronousMachineDynamics(BaseClass _object_) {
-        if (!(_object_ instanceof SynchronousMachineDynamics)) {
-            throw new IllegalArgumentException("Object is not SynchronousMachineDynamics");
-        }
+    public void setLowPressureSynchronousMachineDynamics(SynchronousMachineDynamics _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (LowPressureSynchronousMachineDynamics != _object_) {
-            LowPressureSynchronousMachineDynamics = (SynchronousMachineDynamics) _object_;
+            LowPressureSynchronousMachineDynamics = _object_;
             LowPressureSynchronousMachineDynamics.setCrossCompoundTurbineGovernorDynamics(this);
             LowPressureSynchronousMachineDynamicsId = LowPressureSynchronousMachineDynamics.getRdfid();
         }
     }
 
-    public String LowPressureSynchronousMachineDynamicsToString() {
-        return LowPressureSynchronousMachineDynamicsId;
+    private static Object getLowPressureSynchronousMachineDynamics(BaseClass _this_) {
+        var obj = ((CrossCompoundTurbineGovernorDynamics) _this_).getLowPressureSynchronousMachineDynamics();
+        var id = ((CrossCompoundTurbineGovernorDynamics) _this_).LowPressureSynchronousMachineDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setLowPressureSynchronousMachineDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof SynchronousMachineDynamics) {
+            ((CrossCompoundTurbineGovernorDynamics) _this_).setLowPressureSynchronousMachineDynamics((SynchronousMachineDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not SynchronousMachineDynamics");
+        }
     }
 
     /**
@@ -140,64 +174,35 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("CrossCompoundTurbineGovernorDynamics", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "CrossCompoundTurbineGovernorDynamics", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("CrossCompoundTurbineGovernorDynamics", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("CrossCompoundTurbineGovernorDynamics", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "CrossCompoundTurbineGovernorDynamics", attrName, value));
         }
     }
 
@@ -321,25 +326,16 @@ public class CrossCompoundTurbineGovernorDynamics extends DynamicsFunctionBlock 
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("HighPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.HighPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("HighPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.HighPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CrossCompoundTurbineGovernorDynamics::getHighPressureSynchronousMachineDynamics, CrossCompoundTurbineGovernorDynamics::setHighPressureSynchronousMachineDynamics));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("LowPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.LowPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("LowPressureSynchronousMachineDynamics", new AttrDetails("CrossCompoundTurbineGovernorDynamics.LowPressureSynchronousMachineDynamics", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, CrossCompoundTurbineGovernorDynamics::getLowPressureSynchronousMachineDynamics, CrossCompoundTurbineGovernorDynamics::setLowPressureSynchronousMachineDynamics));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CrossCompoundTurbineGovernorDynamics().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new CrossCompoundTurbineGovernorDynamics(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("HighPressureSynchronousMachineDynamics", new GetterSetter(this::HighPressureSynchronousMachineDynamicsToString, this::setHighPressureSynchronousMachineDynamics, null));
-        map.put("LowPressureSynchronousMachineDynamics", new GetterSetter(this::LowPressureSynchronousMachineDynamicsToString, this::setLowPressureSynchronousMachineDynamics, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

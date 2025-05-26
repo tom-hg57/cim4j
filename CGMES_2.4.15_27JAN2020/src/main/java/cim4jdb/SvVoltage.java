@@ -32,10 +32,24 @@ public class SvVoltage extends BaseClass {
     private static final Logging LOG = Logging.getLogger(SvVoltage.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public SvVoltage() {
-        setCimType("SvVoltage");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public SvVoltage(String rdfid) {
+        super("SvVoltage", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected SvVoltage(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class SvVoltage extends BaseClass {
         return TopologicalNode;
     }
 
-    public void setTopologicalNode(BaseClass _object_) {
-        if (!(_object_ instanceof TopologicalNode)) {
-            throw new IllegalArgumentException("Object is not TopologicalNode");
-        }
+    public void setTopologicalNode(TopologicalNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (TopologicalNode != _object_) {
-            TopologicalNode = (TopologicalNode) _object_;
+            TopologicalNode = _object_;
             TopologicalNode.setSvVoltage(this);
             TopologicalNodeId = TopologicalNode.getRdfid();
         }
     }
 
-    public String TopologicalNodeToString() {
-        return TopologicalNodeId;
+    private static Object getTopologicalNode(BaseClass _this_) {
+        var obj = ((SvVoltage) _this_).getTopologicalNode();
+        var id = ((SvVoltage) _this_).TopologicalNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTopologicalNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TopologicalNode) {
+            ((SvVoltage) _this_).setTopologicalNode((TopologicalNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TopologicalNode");
+        }
     }
 
     /**
@@ -83,12 +107,18 @@ public class SvVoltage extends BaseClass {
         angle = _value_;
     }
 
-    public void setAngle(String _value_) {
-        angle = getDoubleFromString(_value_);
+    private static Object getAngle(BaseClass _this_) {
+        return ((SvVoltage) _this_).getAngle();
     }
 
-    public String angleToString() {
-        return angle != null ? angle.toString() : null;
+    private static void setAngle(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((SvVoltage) _this_).setAngle((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((SvVoltage) _this_).setAngle(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -105,12 +135,18 @@ public class SvVoltage extends BaseClass {
         v = _value_;
     }
 
-    public void setV(String _value_) {
-        v = getDoubleFromString(_value_);
+    private static Object getV(BaseClass _this_) {
+        return ((SvVoltage) _this_).getV();
     }
 
-    public String vToString() {
-        return v != null ? v.toString() : null;
+    private static void setV(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((SvVoltage) _this_).setV((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((SvVoltage) _this_).setV(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -153,64 +189,35 @@ public class SvVoltage extends BaseClass {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("SvVoltage", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "SvVoltage", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("SvVoltage", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("SvVoltage", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "SvVoltage", attrName, value));
         }
     }
 
@@ -334,31 +341,21 @@ public class SvVoltage extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("TopologicalNode", new AttrDetails("SvVoltage.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false));
+            map.put("TopologicalNode", new AttrDetails("SvVoltage.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SvVoltage::getTopologicalNode, SvVoltage::setTopologicalNode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("angle", new AttrDetails("SvVoltage.angle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("angle", new AttrDetails("SvVoltage.angle", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvVoltage::getAngle, SvVoltage::setAngle));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.SV);
-            map.put("v", new AttrDetails("SvVoltage.v", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("v", new AttrDetails("SvVoltage.v", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, SvVoltage::getV, SvVoltage::setV));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvVoltage().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new SvVoltage(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("TopologicalNode", new GetterSetter(this::TopologicalNodeToString, this::setTopologicalNode, null));
-        map.put("angle", new GetterSetter(this::angleToString, null, this::setAngle));
-        map.put("v", new GetterSetter(this::vToString, null, this::setV));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

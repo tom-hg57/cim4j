@@ -32,10 +32,24 @@ public class BoundaryPoint extends PowerSystemResource {
     private static final Logging LOG = Logging.getLogger(BoundaryPoint.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public BoundaryPoint() {
-        setCimType("BoundaryPoint");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public BoundaryPoint(String rdfid) {
+        super("BoundaryPoint", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected BoundaryPoint(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class BoundaryPoint extends PowerSystemResource {
         return ConnectivityNode;
     }
 
-    public void setConnectivityNode(BaseClass _object_) {
-        if (!(_object_ instanceof ConnectivityNode)) {
-            throw new IllegalArgumentException("Object is not ConnectivityNode");
-        }
+    public void setConnectivityNode(ConnectivityNode _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (ConnectivityNode != _object_) {
-            ConnectivityNode = (ConnectivityNode) _object_;
+            ConnectivityNode = _object_;
             ConnectivityNode.setBoundaryPoint(this);
             ConnectivityNodeId = ConnectivityNode.getRdfid();
         }
     }
 
-    public String ConnectivityNodeToString() {
-        return ConnectivityNodeId;
+    private static Object getConnectivityNode(BaseClass _this_) {
+        var obj = ((BoundaryPoint) _this_).getConnectivityNode();
+        var id = ((BoundaryPoint) _this_).ConnectivityNodeId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setConnectivityNode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof ConnectivityNode) {
+            ((BoundaryPoint) _this_).setConnectivityNode((ConnectivityNode) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not ConnectivityNode");
+        }
     }
 
     /**
@@ -83,8 +107,16 @@ public class BoundaryPoint extends PowerSystemResource {
         fromEndIsoCode = _value_;
     }
 
-    public String fromEndIsoCodeToString() {
-        return fromEndIsoCode != null ? fromEndIsoCode.toString() : null;
+    private static Object getFromEndIsoCode(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getFromEndIsoCode();
+    }
+
+    private static void setFromEndIsoCode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setFromEndIsoCode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -101,8 +133,16 @@ public class BoundaryPoint extends PowerSystemResource {
         fromEndName = _value_;
     }
 
-    public String fromEndNameToString() {
-        return fromEndName != null ? fromEndName.toString() : null;
+    private static Object getFromEndName(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getFromEndName();
+    }
+
+    private static void setFromEndName(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setFromEndName((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -119,8 +159,16 @@ public class BoundaryPoint extends PowerSystemResource {
         fromEndNameTso = _value_;
     }
 
-    public String fromEndNameTsoToString() {
-        return fromEndNameTso != null ? fromEndNameTso.toString() : null;
+    private static Object getFromEndNameTso(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getFromEndNameTso();
+    }
+
+    private static void setFromEndNameTso(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setFromEndNameTso((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -137,12 +185,18 @@ public class BoundaryPoint extends PowerSystemResource {
         isDirectCurrent = _value_;
     }
 
-    public void setIsDirectCurrent(String _value_) {
-        isDirectCurrent = getBooleanFromString(_value_);
+    private static Object getIsDirectCurrent(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getIsDirectCurrent();
     }
 
-    public String isDirectCurrentToString() {
-        return isDirectCurrent != null ? isDirectCurrent.toString() : null;
+    private static void setIsDirectCurrent(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((BoundaryPoint) _this_).setIsDirectCurrent((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setIsDirectCurrent(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -159,12 +213,18 @@ public class BoundaryPoint extends PowerSystemResource {
         isExcludedFromAreaInterchange = _value_;
     }
 
-    public void setIsExcludedFromAreaInterchange(String _value_) {
-        isExcludedFromAreaInterchange = getBooleanFromString(_value_);
+    private static Object getIsExcludedFromAreaInterchange(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getIsExcludedFromAreaInterchange();
     }
 
-    public String isExcludedFromAreaInterchangeToString() {
-        return isExcludedFromAreaInterchange != null ? isExcludedFromAreaInterchange.toString() : null;
+    private static void setIsExcludedFromAreaInterchange(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Boolean) {
+            ((BoundaryPoint) _this_).setIsExcludedFromAreaInterchange((Boolean) _value_);
+        } else if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setIsExcludedFromAreaInterchange(getBooleanFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Boolean nor String");
+        }
     }
 
     /**
@@ -181,8 +241,16 @@ public class BoundaryPoint extends PowerSystemResource {
         toEndIsoCode = _value_;
     }
 
-    public String toEndIsoCodeToString() {
-        return toEndIsoCode != null ? toEndIsoCode.toString() : null;
+    private static Object getToEndIsoCode(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getToEndIsoCode();
+    }
+
+    private static void setToEndIsoCode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setToEndIsoCode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -199,8 +267,16 @@ public class BoundaryPoint extends PowerSystemResource {
         toEndName = _value_;
     }
 
-    public String toEndNameToString() {
-        return toEndName != null ? toEndName.toString() : null;
+    private static Object getToEndName(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getToEndName();
+    }
+
+    private static void setToEndName(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setToEndName((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -217,8 +293,16 @@ public class BoundaryPoint extends PowerSystemResource {
         toEndNameTso = _value_;
     }
 
-    public String toEndNameTsoToString() {
-        return toEndNameTso != null ? toEndNameTso.toString() : null;
+    private static Object getToEndNameTso(BaseClass _this_) {
+        return ((BoundaryPoint) _this_).getToEndNameTso();
+    }
+
+    private static void setToEndNameTso(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((BoundaryPoint) _this_).setToEndNameTso((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -261,64 +345,35 @@ public class BoundaryPoint extends PowerSystemResource {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("BoundaryPoint", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "BoundaryPoint", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("BoundaryPoint", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("BoundaryPoint", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "BoundaryPoint", attrName, value));
         }
     }
 
@@ -443,75 +498,59 @@ public class BoundaryPoint extends PowerSystemResource {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("ConnectivityNode", new AttrDetails("BoundaryPoint.ConnectivityNode", true, "http://iec.ch/TC57/CIM100-European#", profiles, false, false));
+            map.put("ConnectivityNode", new AttrDetails("BoundaryPoint.ConnectivityNode", true, "http://iec.ch/TC57/CIM100-European#", profiles, false, false, BoundaryPoint::getConnectivityNode, BoundaryPoint::setConnectivityNode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndIsoCode", new AttrDetails("BoundaryPoint.fromEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndIsoCode", new AttrDetails("BoundaryPoint.fromEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getFromEndIsoCode, BoundaryPoint::setFromEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndName", new AttrDetails("BoundaryPoint.fromEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndName", new AttrDetails("BoundaryPoint.fromEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getFromEndName, BoundaryPoint::setFromEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("fromEndNameTso", new AttrDetails("BoundaryPoint.fromEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("fromEndNameTso", new AttrDetails("BoundaryPoint.fromEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getFromEndNameTso, BoundaryPoint::setFromEndNameTso));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("isDirectCurrent", new AttrDetails("BoundaryPoint.isDirectCurrent", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("isDirectCurrent", new AttrDetails("BoundaryPoint.isDirectCurrent", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getIsDirectCurrent, BoundaryPoint::setIsDirectCurrent));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("isExcludedFromAreaInterchange", new AttrDetails("BoundaryPoint.isExcludedFromAreaInterchange", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("isExcludedFromAreaInterchange", new AttrDetails("BoundaryPoint.isExcludedFromAreaInterchange", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getIsExcludedFromAreaInterchange, BoundaryPoint::setIsExcludedFromAreaInterchange));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndIsoCode", new AttrDetails("BoundaryPoint.toEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndIsoCode", new AttrDetails("BoundaryPoint.toEndIsoCode", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getToEndIsoCode, BoundaryPoint::setToEndIsoCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndName", new AttrDetails("BoundaryPoint.toEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndName", new AttrDetails("BoundaryPoint.toEndName", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getToEndName, BoundaryPoint::setToEndName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
-            map.put("toEndNameTso", new AttrDetails("BoundaryPoint.toEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false));
+            map.put("toEndNameTso", new AttrDetails("BoundaryPoint.toEndNameTso", true, "http://iec.ch/TC57/CIM100-European#", profiles, true, false, BoundaryPoint::getToEndNameTso, BoundaryPoint::setToEndNameTso));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BoundaryPoint().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new BoundaryPoint(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("ConnectivityNode", new GetterSetter(this::ConnectivityNodeToString, this::setConnectivityNode, null));
-        map.put("fromEndIsoCode", new GetterSetter(this::fromEndIsoCodeToString, null, this::setFromEndIsoCode));
-        map.put("fromEndName", new GetterSetter(this::fromEndNameToString, null, this::setFromEndName));
-        map.put("fromEndNameTso", new GetterSetter(this::fromEndNameTsoToString, null, this::setFromEndNameTso));
-        map.put("isDirectCurrent", new GetterSetter(this::isDirectCurrentToString, null, this::setIsDirectCurrent));
-        map.put("isExcludedFromAreaInterchange", new GetterSetter(this::isExcludedFromAreaInterchangeToString, null, this::setIsExcludedFromAreaInterchange));
-        map.put("toEndIsoCode", new GetterSetter(this::toEndIsoCodeToString, null, this::setToEndIsoCode));
-        map.put("toEndName", new GetterSetter(this::toEndNameToString, null, this::setToEndName));
-        map.put("toEndNameTso", new GetterSetter(this::toEndNameTsoToString, null, this::setToEndNameTso));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

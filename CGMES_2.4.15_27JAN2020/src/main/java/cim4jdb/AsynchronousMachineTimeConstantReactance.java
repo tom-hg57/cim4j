@@ -32,14 +32,28 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
     private static final Logging LOG = Logging.getLogger(AsynchronousMachineTimeConstantReactance.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public AsynchronousMachineTimeConstantReactance() {
-        setCimType("AsynchronousMachineTimeConstantReactance");
+        this(null);
     }
 
     /**
-     * Transient rotor time constant (T`o) (&gt; T``o).  Typical Value = 5.
+     * Constructor.
+     */
+    public AsynchronousMachineTimeConstantReactance(String rdfid) {
+        super("AsynchronousMachineTimeConstantReactance", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected AsynchronousMachineTimeConstantReactance(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Transient rotor time constant (T`o) (> T``o).  Typical Value = 5.
      */
     @Column(name = "tpo")
     private Double tpo; // Seconds
@@ -52,16 +66,22 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         tpo = _value_;
     }
 
-    public void setTpo(String _value_) {
-        tpo = getDoubleFromString(_value_);
+    private static Object getTpo(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).getTpo();
     }
 
-    public String tpoToString() {
-        return tpo != null ? tpo.toString() : null;
+    private static void setTpo(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setTpo((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setTpo(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Subtransient rotor time constant (T``o) (&gt; 0).  Typical Value = 0.03.
+     * Subtransient rotor time constant (T``o) (> 0).  Typical Value = 0.03.
      */
     @Column(name = "tppo")
     private Double tppo; // Seconds
@@ -74,16 +94,22 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         tppo = _value_;
     }
 
-    public void setTppo(String _value_) {
-        tppo = getDoubleFromString(_value_);
+    private static Object getTppo(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).getTppo();
     }
 
-    public String tppoToString() {
-        return tppo != null ? tppo.toString() : null;
+    private static void setTppo(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setTppo((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setTppo(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Transient reactance (unsaturated) (X`) (&gt;=X``).  Typical Value = 0.5.
+     * Transient reactance (unsaturated) (X`) (>=X``).  Typical Value = 0.5.
      */
     @Column(name = "xp")
     private Double xp; // PU
@@ -96,16 +122,22 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         xp = _value_;
     }
 
-    public void setXp(String _value_) {
-        xp = getDoubleFromString(_value_);
+    private static Object getXp(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).getXp();
     }
 
-    public String xpToString() {
-        return xp != null ? xp.toString() : null;
+    private static void setXp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Subtransient reactance (unsaturated) (X``) (&gt; Xl).  Typical Value = 0.2.
+     * Subtransient reactance (unsaturated) (X``) (> Xl).  Typical Value = 0.2.
      */
     @Column(name = "xpp")
     private Double xpp; // PU
@@ -118,16 +150,22 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         xpp = _value_;
     }
 
-    public void setXpp(String _value_) {
-        xpp = getDoubleFromString(_value_);
+    private static Object getXpp(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).getXpp();
     }
 
-    public String xppToString() {
-        return xpp != null ? xpp.toString() : null;
+    private static void setXpp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXpp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXpp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
-     * Synchronous reactance (Xs) (&gt;= X`).  Typical Value = 1.8.
+     * Synchronous reactance (Xs) (>= X`).  Typical Value = 1.8.
      */
     @Column(name = "xs")
     private Double xs; // PU
@@ -140,12 +178,18 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         xs = _value_;
     }
 
-    public void setXs(String _value_) {
-        xs = getDoubleFromString(_value_);
+    private static Object getXs(BaseClass _this_) {
+        return ((AsynchronousMachineTimeConstantReactance) _this_).getXs();
     }
 
-    public String xsToString() {
-        return xs != null ? xs.toString() : null;
+    private static void setXs(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXs((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((AsynchronousMachineTimeConstantReactance) _this_).setXs(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
     }
 
     /**
@@ -188,64 +232,35 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("AsynchronousMachineTimeConstantReactance", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "AsynchronousMachineTimeConstantReactance", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("AsynchronousMachineTimeConstantReactance", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("AsynchronousMachineTimeConstantReactance", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "AsynchronousMachineTimeConstantReactance", attrName, value));
         }
     }
 
@@ -369,43 +384,31 @@ public class AsynchronousMachineTimeConstantReactance extends AsynchronousMachin
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tpo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tpo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tpo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::getTpo, AsynchronousMachineTimeConstantReactance::setTpo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("tppo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("tppo", new AttrDetails("AsynchronousMachineTimeConstantReactance.tppo", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::getTppo, AsynchronousMachineTimeConstantReactance::setTppo));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::getXp, AsynchronousMachineTimeConstantReactance::setXp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xpp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xpp", new AttrDetails("AsynchronousMachineTimeConstantReactance.xpp", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::getXpp, AsynchronousMachineTimeConstantReactance::setXpp));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("xs", new AttrDetails("AsynchronousMachineTimeConstantReactance.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false));
+            map.put("xs", new AttrDetails("AsynchronousMachineTimeConstantReactance.xs", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, AsynchronousMachineTimeConstantReactance::getXs, AsynchronousMachineTimeConstantReactance::setXs));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineTimeConstantReactance().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new AsynchronousMachineTimeConstantReactance(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("tpo", new GetterSetter(this::tpoToString, null, this::setTpo));
-        map.put("tppo", new GetterSetter(this::tppoToString, null, this::setTppo));
-        map.put("xp", new GetterSetter(this::xpToString, null, this::setXp));
-        map.put("xpp", new GetterSetter(this::xppToString, null, this::setXpp));
-        map.put("xs", new GetterSetter(this::xsToString, null, this::setXs));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

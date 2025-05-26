@@ -32,10 +32,24 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     private static final Logging LOG = Logging.getLogger(WindDynamicsLookupTable.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public WindDynamicsLookupTable() {
-        setCimType("WindDynamicsLookupTable");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public WindDynamicsLookupTable(String rdfid) {
+        super("WindDynamicsLookupTable", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindDynamicsLookupTable(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -51,22 +65,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindContCurrLimIEC;
     }
 
-    public void setWindContCurrLimIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContCurrLimIEC)) {
-            throw new IllegalArgumentException("Object is not WindContCurrLimIEC");
-        }
+    public void setWindContCurrLimIEC(WindContCurrLimIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindContCurrLimIEC != _object_) {
-            WindContCurrLimIEC = (WindContCurrLimIEC) _object_;
+            WindContCurrLimIEC = _object_;
             WindContCurrLimIEC.setWindDynamicsLookupTable(this);
             WindContCurrLimIECId = WindContCurrLimIEC.getRdfid();
         }
     }
 
-    public String WindContCurrLimIECToString() {
-        return WindContCurrLimIECId;
+    private static Object getWindContCurrLimIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindContCurrLimIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindContCurrLimIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindContCurrLimIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContCurrLimIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindContCurrLimIEC((WindContCurrLimIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContCurrLimIEC");
+        }
     }
 
     /**
@@ -82,22 +106,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindContPType3IEC;
     }
 
-    public void setWindContPType3IEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContPType3IEC)) {
-            throw new IllegalArgumentException("Object is not WindContPType3IEC");
-        }
+    public void setWindContPType3IEC(WindContPType3IEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindContPType3IEC != _object_) {
-            WindContPType3IEC = (WindContPType3IEC) _object_;
+            WindContPType3IEC = _object_;
             WindContPType3IEC.setWindDynamicsLookupTable(this);
             WindContPType3IECId = WindContPType3IEC.getRdfid();
         }
     }
 
-    public String WindContPType3IECToString() {
-        return WindContPType3IECId;
+    private static Object getWindContPType3IEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindContPType3IEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindContPType3IECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindContPType3IEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContPType3IEC) {
+            ((WindDynamicsLookupTable) _this_).setWindContPType3IEC((WindContPType3IEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContPType3IEC");
+        }
     }
 
     /**
@@ -113,22 +147,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindContQPQULimIEC;
     }
 
-    public void setWindContQPQULimIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContQPQULimIEC)) {
-            throw new IllegalArgumentException("Object is not WindContQPQULimIEC");
-        }
+    public void setWindContQPQULimIEC(WindContQPQULimIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindContQPQULimIEC != _object_) {
-            WindContQPQULimIEC = (WindContQPQULimIEC) _object_;
+            WindContQPQULimIEC = _object_;
             WindContQPQULimIEC.setWindDynamicsLookupTable(this);
             WindContQPQULimIECId = WindContQPQULimIEC.getRdfid();
         }
     }
 
-    public String WindContQPQULimIECToString() {
-        return WindContQPQULimIECId;
+    private static Object getWindContQPQULimIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindContQPQULimIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindContQPQULimIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindContQPQULimIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContQPQULimIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindContQPQULimIEC((WindContQPQULimIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContQPQULimIEC");
+        }
     }
 
     /**
@@ -144,22 +188,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindContRotorRIEC;
     }
 
-    public void setWindContRotorRIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindContRotorRIEC)) {
-            throw new IllegalArgumentException("Object is not WindContRotorRIEC");
-        }
+    public void setWindContRotorRIEC(WindContRotorRIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindContRotorRIEC != _object_) {
-            WindContRotorRIEC = (WindContRotorRIEC) _object_;
+            WindContRotorRIEC = _object_;
             WindContRotorRIEC.setWindDynamicsLookupTable(this);
             WindContRotorRIECId = WindContRotorRIEC.getRdfid();
         }
     }
 
-    public String WindContRotorRIECToString() {
-        return WindContRotorRIECId;
+    private static Object getWindContRotorRIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindContRotorRIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindContRotorRIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindContRotorRIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindContRotorRIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindContRotorRIEC((WindContRotorRIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindContRotorRIEC");
+        }
     }
 
     /**
@@ -175,22 +229,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindGenType3bIEC;
     }
 
-    public void setWindGenType3bIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindGenType3bIEC)) {
-            throw new IllegalArgumentException("Object is not WindGenType3bIEC");
-        }
+    public void setWindGenType3bIEC(WindGenType3bIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindGenType3bIEC != _object_) {
-            WindGenType3bIEC = (WindGenType3bIEC) _object_;
+            WindGenType3bIEC = _object_;
             WindGenType3bIEC.setWindDynamicsLookupTable(this);
             WindGenType3bIECId = WindGenType3bIEC.getRdfid();
         }
     }
 
-    public String WindGenType3bIECToString() {
-        return WindGenType3bIECId;
+    private static Object getWindGenType3bIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindGenType3bIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindGenType3bIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindGenType3bIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindGenType3bIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindGenType3bIEC((WindGenType3bIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindGenType3bIEC");
+        }
     }
 
     /**
@@ -206,22 +270,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindPitchContPowerIEC;
     }
 
-    public void setWindPitchContPowerIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindPitchContPowerIEC)) {
-            throw new IllegalArgumentException("Object is not WindPitchContPowerIEC");
-        }
+    public void setWindPitchContPowerIEC(WindPitchContPowerIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindPitchContPowerIEC != _object_) {
-            WindPitchContPowerIEC = (WindPitchContPowerIEC) _object_;
+            WindPitchContPowerIEC = _object_;
             WindPitchContPowerIEC.setWindDynamicsLookupTable(this);
             WindPitchContPowerIECId = WindPitchContPowerIEC.getRdfid();
         }
     }
 
-    public String WindPitchContPowerIECToString() {
-        return WindPitchContPowerIECId;
+    private static Object getWindPitchContPowerIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindPitchContPowerIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindPitchContPowerIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPitchContPowerIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindPitchContPowerIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindPitchContPowerIEC((WindPitchContPowerIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPitchContPowerIEC");
+        }
     }
 
     /**
@@ -237,22 +311,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindPlantFreqPcontrolIEC;
     }
 
-    public void setWindPlantFreqPcontrolIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindPlantFreqPcontrolIEC)) {
-            throw new IllegalArgumentException("Object is not WindPlantFreqPcontrolIEC");
-        }
+    public void setWindPlantFreqPcontrolIEC(WindPlantFreqPcontrolIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindPlantFreqPcontrolIEC != _object_) {
-            WindPlantFreqPcontrolIEC = (WindPlantFreqPcontrolIEC) _object_;
+            WindPlantFreqPcontrolIEC = _object_;
             WindPlantFreqPcontrolIEC.setWindDynamicsLookupTable(this);
             WindPlantFreqPcontrolIECId = WindPlantFreqPcontrolIEC.getRdfid();
         }
     }
 
-    public String WindPlantFreqPcontrolIECToString() {
-        return WindPlantFreqPcontrolIECId;
+    private static Object getWindPlantFreqPcontrolIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindPlantFreqPcontrolIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindPlantFreqPcontrolIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPlantFreqPcontrolIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindPlantFreqPcontrolIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindPlantFreqPcontrolIEC((WindPlantFreqPcontrolIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantFreqPcontrolIEC");
+        }
     }
 
     /**
@@ -268,22 +352,32 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindPlantReactiveControlIEC;
     }
 
-    public void setWindPlantReactiveControlIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindPlantReactiveControlIEC)) {
-            throw new IllegalArgumentException("Object is not WindPlantReactiveControlIEC");
-        }
+    public void setWindPlantReactiveControlIEC(WindPlantReactiveControlIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindPlantReactiveControlIEC != _object_) {
-            WindPlantReactiveControlIEC = (WindPlantReactiveControlIEC) _object_;
+            WindPlantReactiveControlIEC = _object_;
             WindPlantReactiveControlIEC.setWindDynamicsLookupTable(this);
             WindPlantReactiveControlIECId = WindPlantReactiveControlIEC.getRdfid();
         }
     }
 
-    public String WindPlantReactiveControlIECToString() {
-        return WindPlantReactiveControlIECId;
+    private static Object getWindPlantReactiveControlIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindPlantReactiveControlIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindPlantReactiveControlIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPlantReactiveControlIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindPlantReactiveControlIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindPlantReactiveControlIEC((WindPlantReactiveControlIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantReactiveControlIEC");
+        }
     }
 
     /**
@@ -299,26 +393,36 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         return WindProtectionIEC;
     }
 
-    public void setWindProtectionIEC(BaseClass _object_) {
-        if (!(_object_ instanceof WindProtectionIEC)) {
-            throw new IllegalArgumentException("Object is not WindProtectionIEC");
-        }
+    public void setWindProtectionIEC(WindProtectionIEC _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (WindProtectionIEC != _object_) {
-            WindProtectionIEC = (WindProtectionIEC) _object_;
+            WindProtectionIEC = _object_;
             WindProtectionIEC.setWindDynamicsLookupTable(this);
             WindProtectionIECId = WindProtectionIEC.getRdfid();
         }
     }
 
-    public String WindProtectionIECToString() {
-        return WindProtectionIECId;
+    private static Object getWindProtectionIEC(BaseClass _this_) {
+        var obj = ((WindDynamicsLookupTable) _this_).getWindProtectionIEC();
+        var id = ((WindDynamicsLookupTable) _this_).WindProtectionIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindProtectionIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof WindProtectionIEC) {
+            ((WindDynamicsLookupTable) _this_).setWindProtectionIEC((WindProtectionIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindProtectionIEC");
+        }
     }
 
     /**
-     * Input value (&lt;i&gt;x&lt;/i&gt;) for the lookup table function.
+     * Input value (<i>x</i>) for the lookup table function.
      */
     @Column(name = "input")
     private Float input; // Float
@@ -331,12 +435,18 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         input = _value_;
     }
 
-    public void setInput(String _value_) {
-        input = getFloatFromString(_value_);
+    private static Object getInput(BaseClass _this_) {
+        return ((WindDynamicsLookupTable) _this_).getInput();
     }
 
-    public String inputToString() {
-        return input != null ? input.toString() : null;
+    private static void setInput(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Float) {
+            ((WindDynamicsLookupTable) _this_).setInput((Float) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindDynamicsLookupTable) _this_).setInput(getFloatFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Float nor String");
+        }
     }
 
     /**
@@ -353,12 +463,20 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         lookupTableFunctionType = _value_;
     }
 
-    public String lookupTableFunctionTypeToString() {
-        return lookupTableFunctionType;
+    private static Object getLookupTableFunctionType(BaseClass _this_) {
+        return ((WindDynamicsLookupTable) _this_).getLookupTableFunctionType();
+    }
+
+    private static void setLookupTableFunctionType(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindDynamicsLookupTable) _this_).setLookupTableFunctionType((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
-     * Output value (&lt;i&gt;y&lt;/i&gt;) for the lookup table function.
+     * Output value (<i>y</i>) for the lookup table function.
      */
     @Column(name = "output")
     private Float output; // Float
@@ -371,16 +489,22 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         output = _value_;
     }
 
-    public void setOutput(String _value_) {
-        output = getFloatFromString(_value_);
+    private static Object getOutput(BaseClass _this_) {
+        return ((WindDynamicsLookupTable) _this_).getOutput();
     }
 
-    public String outputToString() {
-        return output != null ? output.toString() : null;
+    private static void setOutput(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Float) {
+            ((WindDynamicsLookupTable) _this_).setOutput((Float) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindDynamicsLookupTable) _this_).setOutput(getFloatFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Float nor String");
+        }
     }
 
     /**
-     * Sequence numbers of the pairs of the input (&lt;i&gt;x&lt;/i&gt;) and the output (&lt;i&gt;y&lt;/i&gt;) of the lookup table function.
+     * Sequence numbers of the pairs of the input (<i>x</i>) and the output (<i>y</i>) of the lookup table function.
      */
     @Column(name = "sequence")
     private Integer sequence; // Integer
@@ -393,12 +517,18 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         sequence = _value_;
     }
 
-    public void setSequence(String _value_) {
-        sequence = getIntegerFromString(_value_);
+    private static Object getSequence(BaseClass _this_) {
+        return ((WindDynamicsLookupTable) _this_).getSequence();
     }
 
-    public String sequenceToString() {
-        return sequence != null ? sequence.toString() : null;
+    private static void setSequence(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Integer) {
+            ((WindDynamicsLookupTable) _this_).setSequence((Integer) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindDynamicsLookupTable) _this_).setSequence(getIntegerFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Integer nor String");
+        }
     }
 
     /**
@@ -441,64 +571,35 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("WindDynamicsLookupTable", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindDynamicsLookupTable", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("WindDynamicsLookupTable", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("WindDynamicsLookupTable", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindDynamicsLookupTable", attrName, value));
         }
     }
 
@@ -622,91 +723,71 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContCurrLimIEC", new AttrDetails("WindDynamicsLookupTable.WindContCurrLimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContCurrLimIEC", new AttrDetails("WindDynamicsLookupTable.WindContCurrLimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindContCurrLimIEC, WindDynamicsLookupTable::setWindContCurrLimIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContPType3IEC", new AttrDetails("WindDynamicsLookupTable.WindContPType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContPType3IEC", new AttrDetails("WindDynamicsLookupTable.WindContPType3IEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindContPType3IEC, WindDynamicsLookupTable::setWindContPType3IEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContQPQULimIEC", new AttrDetails("WindDynamicsLookupTable.WindContQPQULimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContQPQULimIEC", new AttrDetails("WindDynamicsLookupTable.WindContQPQULimIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindContQPQULimIEC, WindDynamicsLookupTable::setWindContQPQULimIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindContRotorRIEC", new AttrDetails("WindDynamicsLookupTable.WindContRotorRIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindContRotorRIEC", new AttrDetails("WindDynamicsLookupTable.WindContRotorRIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindContRotorRIEC, WindDynamicsLookupTable::setWindContRotorRIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindGenType3bIEC", new AttrDetails("WindDynamicsLookupTable.WindGenType3bIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindGenType3bIEC", new AttrDetails("WindDynamicsLookupTable.WindGenType3bIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindGenType3bIEC, WindDynamicsLookupTable::setWindGenType3bIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPitchContPowerIEC", new AttrDetails("WindDynamicsLookupTable.WindPitchContPowerIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPitchContPowerIEC", new AttrDetails("WindDynamicsLookupTable.WindPitchContPowerIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindPitchContPowerIEC, WindDynamicsLookupTable::setWindPitchContPowerIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantFreqPcontrolIEC", new AttrDetails("WindDynamicsLookupTable.WindPlantFreqPcontrolIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPlantFreqPcontrolIEC", new AttrDetails("WindDynamicsLookupTable.WindPlantFreqPcontrolIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindPlantFreqPcontrolIEC, WindDynamicsLookupTable::setWindPlantFreqPcontrolIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindPlantReactiveControlIEC", new AttrDetails("WindDynamicsLookupTable.WindPlantReactiveControlIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindPlantReactiveControlIEC", new AttrDetails("WindDynamicsLookupTable.WindPlantReactiveControlIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindPlantReactiveControlIEC, WindDynamicsLookupTable::setWindPlantReactiveControlIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("WindProtectionIEC", new AttrDetails("WindDynamicsLookupTable.WindProtectionIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("WindProtectionIEC", new AttrDetails("WindDynamicsLookupTable.WindProtectionIEC", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindDynamicsLookupTable::getWindProtectionIEC, WindDynamicsLookupTable::setWindProtectionIEC));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("input", new AttrDetails("WindDynamicsLookupTable.input", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("input", new AttrDetails("WindDynamicsLookupTable.input", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindDynamicsLookupTable::getInput, WindDynamicsLookupTable::setInput));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("lookupTableFunctionType", new AttrDetails("WindDynamicsLookupTable.lookupTableFunctionType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true));
+            map.put("lookupTableFunctionType", new AttrDetails("WindDynamicsLookupTable.lookupTableFunctionType", true, "http://iec.ch/TC57/CIM100#", profiles, false, true, WindDynamicsLookupTable::getLookupTableFunctionType, WindDynamicsLookupTable::setLookupTableFunctionType));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("output", new AttrDetails("WindDynamicsLookupTable.output", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("output", new AttrDetails("WindDynamicsLookupTable.output", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindDynamicsLookupTable::getOutput, WindDynamicsLookupTable::setOutput));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.DY);
-            map.put("sequence", new AttrDetails("WindDynamicsLookupTable.sequence", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("sequence", new AttrDetails("WindDynamicsLookupTable.sequence", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindDynamicsLookupTable::getSequence, WindDynamicsLookupTable::setSequence));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindDynamicsLookupTable().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindDynamicsLookupTable(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("WindContCurrLimIEC", new GetterSetter(this::WindContCurrLimIECToString, this::setWindContCurrLimIEC, null));
-        map.put("WindContPType3IEC", new GetterSetter(this::WindContPType3IECToString, this::setWindContPType3IEC, null));
-        map.put("WindContQPQULimIEC", new GetterSetter(this::WindContQPQULimIECToString, this::setWindContQPQULimIEC, null));
-        map.put("WindContRotorRIEC", new GetterSetter(this::WindContRotorRIECToString, this::setWindContRotorRIEC, null));
-        map.put("WindGenType3bIEC", new GetterSetter(this::WindGenType3bIECToString, this::setWindGenType3bIEC, null));
-        map.put("WindPitchContPowerIEC", new GetterSetter(this::WindPitchContPowerIECToString, this::setWindPitchContPowerIEC, null));
-        map.put("WindPlantFreqPcontrolIEC", new GetterSetter(this::WindPlantFreqPcontrolIECToString, this::setWindPlantFreqPcontrolIEC, null));
-        map.put("WindPlantReactiveControlIEC", new GetterSetter(this::WindPlantReactiveControlIECToString, this::setWindPlantReactiveControlIEC, null));
-        map.put("WindProtectionIEC", new GetterSetter(this::WindProtectionIECToString, this::setWindProtectionIEC, null));
-        map.put("input", new GetterSetter(this::inputToString, null, this::setInput));
-        map.put("lookupTableFunctionType", new GetterSetter(this::lookupTableFunctionTypeToString, null, this::setLookupTableFunctionType));
-        map.put("output", new GetterSetter(this::outputToString, null, this::setOutput));
-        map.put("sequence", new GetterSetter(this::sequenceToString, null, this::setSequence));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;

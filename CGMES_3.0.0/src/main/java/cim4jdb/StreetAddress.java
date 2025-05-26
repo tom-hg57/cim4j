@@ -32,10 +32,24 @@ public class StreetAddress extends BaseClass {
     private static final Logging LOG = Logging.getLogger(StreetAddress.class);
 
     /**
-     * Default constructor.
+     * Default constructor (needed for SpringBoot).
      */
     public StreetAddress() {
-        setCimType("StreetAddress");
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public StreetAddress(String rdfid) {
+        super("StreetAddress", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected StreetAddress(String cimType, String rdfid) {
+        super(cimType, rdfid);
     }
 
     /**
@@ -52,8 +66,16 @@ public class StreetAddress extends BaseClass {
         language = _value_;
     }
 
-    public String languageToString() {
-        return language != null ? language.toString() : null;
+    private static Object getLanguage(BaseClass _this_) {
+        return ((StreetAddress) _this_).getLanguage();
+    }
+
+    private static void setLanguage(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((StreetAddress) _this_).setLanguage((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -70,8 +92,16 @@ public class StreetAddress extends BaseClass {
         poBox = _value_;
     }
 
-    public String poBoxToString() {
-        return poBox != null ? poBox.toString() : null;
+    private static Object getPoBox(BaseClass _this_) {
+        return ((StreetAddress) _this_).getPoBox();
+    }
+
+    private static void setPoBox(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((StreetAddress) _this_).setPoBox((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -88,8 +118,16 @@ public class StreetAddress extends BaseClass {
         postalCode = _value_;
     }
 
-    public String postalCodeToString() {
-        return postalCode != null ? postalCode.toString() : null;
+    private static Object getPostalCode(BaseClass _this_) {
+        return ((StreetAddress) _this_).getPostalCode();
+    }
+
+    private static void setPostalCode(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((StreetAddress) _this_).setPostalCode((String) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not String");
+        }
     }
 
     /**
@@ -105,21 +143,31 @@ public class StreetAddress extends BaseClass {
         return status;
     }
 
-    public void setStatus(BaseClass _object_) {
-        if (!(_object_ instanceof Status)) {
-            throw new IllegalArgumentException("Object is not Status");
-        }
+    public void setStatus(Status _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (status != _object_) {
-            status = (Status) _object_;
+            status = _object_;
             statusId = status.getRdfid();
         }
     }
 
-    public String statusToString() {
-        return statusId;
+    private static Object getStatus(BaseClass _this_) {
+        var obj = ((StreetAddress) _this_).getStatus();
+        var id = ((StreetAddress) _this_).statusId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setStatus(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Status) {
+            ((StreetAddress) _this_).setStatus((Status) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not Status");
+        }
     }
 
     /**
@@ -135,21 +183,31 @@ public class StreetAddress extends BaseClass {
         return streetDetail;
     }
 
-    public void setStreetDetail(BaseClass _object_) {
-        if (!(_object_ instanceof StreetDetail)) {
-            throw new IllegalArgumentException("Object is not StreetDetail");
-        }
+    public void setStreetDetail(StreetDetail _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (streetDetail != _object_) {
-            streetDetail = (StreetDetail) _object_;
+            streetDetail = _object_;
             streetDetailId = streetDetail.getRdfid();
         }
     }
 
-    public String streetDetailToString() {
-        return streetDetailId;
+    private static Object getStreetDetail(BaseClass _this_) {
+        var obj = ((StreetAddress) _this_).getStreetDetail();
+        var id = ((StreetAddress) _this_).streetDetailId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setStreetDetail(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof StreetDetail) {
+            ((StreetAddress) _this_).setStreetDetail((StreetDetail) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not StreetDetail");
+        }
     }
 
     /**
@@ -165,21 +223,31 @@ public class StreetAddress extends BaseClass {
         return townDetail;
     }
 
-    public void setTownDetail(BaseClass _object_) {
-        if (!(_object_ instanceof TownDetail)) {
-            throw new IllegalArgumentException("Object is not TownDetail");
-        }
+    public void setTownDetail(TownDetail _object_) {
         if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
             throw new IllegalArgumentException("Object belongs to different model");
         }
         if (townDetail != _object_) {
-            townDetail = (TownDetail) _object_;
+            townDetail = _object_;
             townDetailId = townDetail.getRdfid();
         }
     }
 
-    public String townDetailToString() {
-        return townDetailId;
+    private static Object getTownDetail(BaseClass _this_) {
+        var obj = ((StreetAddress) _this_).getTownDetail();
+        var id = ((StreetAddress) _this_).townDetailId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setTownDetail(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof TownDetail) {
+            ((StreetAddress) _this_).setTownDetail((TownDetail) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not TownDetail");
+        }
     }
 
     /**
@@ -222,64 +290,35 @@ public class StreetAddress extends BaseClass {
     }
 
     /**
-     * Get an attribute value as string.
+     * Get an attribute value.
      *
      * @param attrName The attribute name
      * @return         The attribute value
      */
     @Override
-    public String getAttribute(String attrName) {
-        return getAttribute("StreetAddress", attrName);
-    }
-
-    @Override
-    protected String getAttribute(String className, String attrName) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var getterFunction = classGetterSetterMap.get(attrName).getter;
-            return getterFunction.get();
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
         }
-        return super.getAttribute(className, attrName);
+        LOG.error(String.format("No-one knows an attribute %s.%s", "StreetAddress", attrName));
+        return "";
     }
 
     /**
-     * Set an attribute value as object (for class and list attributes).
+     * Set an attribute value.
      *
-     * @param attrName    The attribute name
-     * @param objectValue The attribute value as object
+     * @param attrName The attribute name
+     * @param value    The attribute value
      */
     @Override
-    public void setAttribute(String attrName, BaseClass objectValue) {
-        setAttribute("StreetAddress", attrName, objectValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, BaseClass objectValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).objectSetter;
-            setterFunction.accept(objectValue);
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
         } else {
-            super.setAttribute(className, attrName, objectValue);
-        }
-    }
-
-    /**
-     * Set an attribute value as string (for primitive (including datatype) and enum attributes).
-     *
-     * @param attrName    The attribute name
-     * @param stringValue The attribute value as string
-     */
-    @Override
-    public void setAttribute(String attrName, String stringValue) {
-        setAttribute("StreetAddress", attrName, stringValue);
-    }
-
-    @Override
-    protected void setAttribute(String className, String attrName, String stringValue) {
-        if (classGetterSetterMap.containsKey(attrName)) {
-            var setterFunction = classGetterSetterMap.get(attrName).stringSetter;
-            setterFunction.accept(stringValue);
-        } else {
-            super.setAttribute(className, attrName, stringValue);
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "StreetAddress", attrName, value));
         }
     }
 
@@ -403,49 +442,36 @@ public class StreetAddress extends BaseClass {
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("language", new AttrDetails("StreetAddress.language", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("language", new AttrDetails("StreetAddress.language", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::getLanguage, StreetAddress::setLanguage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("poBox", new AttrDetails("StreetAddress.poBox", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("poBox", new AttrDetails("StreetAddress.poBox", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::getPoBox, StreetAddress::setPoBox));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("postalCode", new AttrDetails("StreetAddress.postalCode", true, "http://iec.ch/TC57/CIM100#", profiles, true, false));
+            map.put("postalCode", new AttrDetails("StreetAddress.postalCode", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, StreetAddress::getPostalCode, StreetAddress::setPostalCode));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("status", new AttrDetails("StreetAddress.status", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("status", new AttrDetails("StreetAddress.status", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::getStatus, StreetAddress::setStatus));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("streetDetail", new AttrDetails("StreetAddress.streetDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("streetDetail", new AttrDetails("StreetAddress.streetDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::getStreetDetail, StreetAddress::setStreetDetail));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
             profiles.add(CGMESProfile.GL);
-            map.put("townDetail", new AttrDetails("StreetAddress.townDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false));
+            map.put("townDetail", new AttrDetails("StreetAddress.townDetail", true, "http://iec.ch/TC57/CIM100#", profiles, false, false, StreetAddress::getTownDetail, StreetAddress::setTownDetail));
         }
         CLASS_ATTR_DETAILS_MAP = map;
-        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetAddress().allAttrDetailsMap());
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new StreetAddress(null).allAttrDetailsMap());
         ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
-    }
-
-    @Transient
-    private final Map<String, GetterSetter> classGetterSetterMap = fillGetterSetterMap();
-    private final Map<String, GetterSetter> fillGetterSetterMap() {
-        Map<String, GetterSetter> map = new LinkedHashMap<>();
-        map.put("language", new GetterSetter(this::languageToString, null, this::setLanguage));
-        map.put("poBox", new GetterSetter(this::poBoxToString, null, this::setPoBox));
-        map.put("postalCode", new GetterSetter(this::postalCodeToString, null, this::setPostalCode));
-        map.put("status", new GetterSetter(this::statusToString, this::setStatus, null));
-        map.put("streetDetail", new GetterSetter(this::streetDetailToString, this::setStreetDetail, null));
-        map.put("townDetail", new GetterSetter(this::townDetailToString, this::setTownDetail, null));
-        return map;
     }
 
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
