@@ -71,12 +71,12 @@ public class ModelTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class);
+        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class, "rdfid1");
         baseVoltage.setCimModel(model);
         baseVoltage = baseVoltageRepository.save(baseVoltage);
         savedBaseVoltageIds.add(baseVoltage.getId());
 
-        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class);
+        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class, "rdfid2");
         topologicalNode.setCimModel(model);
         topologicalNode = topologicalNodeRepository.save(topologicalNode);
         savedTopologicalNodeIds.add(topologicalNode.getId());
@@ -98,13 +98,14 @@ public class ModelTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        var baseVoltage = cimModelService.saveCimObject(CimClassMap.createCimObject("BaseVoltage"), model);
+        var baseVoltage = cimModelService.saveCimObject(CimClassMap.createCimObject("BaseVoltage", "rdfid1"), model);
         assertNotNull(baseVoltage.getId());
         savedBaseVoltageIds.add(baseVoltage.getId());
         assertNotNull(baseVoltage.getCimModel());
         assertEquals(model.getCimModelId(), baseVoltage.getCimModel().getCimModelId());
 
-        var topologicalNode = cimModelService.saveCimObject(CimClassMap.createCimObject("TopologicalNode"), model);
+        var topologicalNode = cimModelService.saveCimObject(CimClassMap.createCimObject("TopologicalNode", "rdfid2"),
+                model);
         assertNotNull(topologicalNode.getId());
         savedTopologicalNodeIds.add(topologicalNode.getId());
         assertNotNull(topologicalNode.getCimModel());
@@ -124,8 +125,8 @@ public class ModelTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        List<BaseClass> objList = List.of(CimClassMap.createCimObject("BaseVoltage"),
-                CimClassMap.createCimObject("TopologicalNode"));
+        List<BaseClass> objList = List.of(CimClassMap.createCimObject("BaseVoltage", "rdfid1"),
+                CimClassMap.createCimObject("TopologicalNode", "rdfid2"));
         var savedObjects = cimModelService.saveCimObjects(objList, model);
         for (var savedObject : savedObjects) {
             if (savedObject.getCimType().equals("BaseVoltage")) {
@@ -159,17 +160,15 @@ public class ModelTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class);
+        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class, "rdfid1");
         baseVoltage.setCimModel(model);
-        baseVoltage.setRdfid("rdfid1");
 
-        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class);
+        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class, "rdfid2");
         topologicalNode.setCimModel(model);
-        topologicalNode.setRdfid("rdfid2");
 
         topologicalNode.setAttribute("BaseVoltage", baseVoltage);
-        assertEquals(baseVoltage.getRdfid(), topologicalNode.BaseVoltageToString());
         assertEquals(baseVoltage, topologicalNode.getBaseVoltage());
+        assertEquals(baseVoltage, topologicalNode.getAttribute("BaseVoltage"));
 
         List<BaseClass> objList = List.of(baseVoltage, topologicalNode);
         var savedObjects = cimModelService.saveCimObjects(objList, model);
@@ -208,8 +207,8 @@ public class ModelTest {
         assertTrue(obj instanceof TopologicalNode);
         topologicalNode = (TopologicalNode) obj;
 
-        assertEquals(baseVoltage.getRdfid(), topologicalNode.BaseVoltageToString());
         assertNull(topologicalNode.getBaseVoltage()); // without linkCimObjects
+        assertEquals(baseVoltage.getRdfid(), topologicalNode.getAttribute("BaseVoltage"));
 
         var topologicalNodeSet = baseVoltage.getTopologicalNode();
         assertNotNull(topologicalNodeSet);
@@ -222,17 +221,15 @@ public class ModelTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class);
+        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class, "rdfid1");
         baseVoltage.setCimModel(model);
-        baseVoltage.setRdfid("rdfid1");
 
-        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class);
+        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class, "rdfid2");
         topologicalNode.setCimModel(model);
-        topologicalNode.setRdfid("rdfid2");
 
         topologicalNode.setAttribute("BaseVoltage", baseVoltage);
-        assertEquals(baseVoltage.getRdfid(), topologicalNode.BaseVoltageToString());
         assertEquals(baseVoltage, topologicalNode.getBaseVoltage());
+        assertEquals(baseVoltage, topologicalNode.getAttribute("BaseVoltage"));
 
         List<BaseClass> objList = List.of(baseVoltage, topologicalNode);
         var savedObjects = cimModelService.saveCimObjects(objList, model);
@@ -271,8 +268,8 @@ public class ModelTest {
         assertTrue(obj instanceof TopologicalNode);
         topologicalNode = (TopologicalNode) obj;
 
-        assertEquals(baseVoltage.getRdfid(), topologicalNode.BaseVoltageToString());
         assertEquals(baseVoltage, topologicalNode.getBaseVoltage());
+        assertEquals(baseVoltage, topologicalNode.getAttribute("BaseVoltage"));
 
         var topologicalNodeSet = baseVoltage.getTopologicalNode();
         assertNotNull(topologicalNodeSet);
@@ -285,14 +282,12 @@ public class ModelTest {
     public void deleteCimModel() {
         var model = cimModelRepository.save(new CimModel());
 
-        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class);
+        var baseVoltage = CimClassMap.createCimObject(BaseVoltage.class, "rdfid1");
         baseVoltage.setCimModel(model);
-        baseVoltage.setRdfid("rdfid1");
         baseVoltage = cimModelService.saveCimObject(baseVoltage, model);
 
-        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class);
+        var topologicalNode = CimClassMap.createCimObject(TopologicalNode.class, "rdfid2");
         topologicalNode.setCimModel(model);
-        topologicalNode.setRdfid("rdfid2");
         topologicalNode = cimModelService.saveCimObject(topologicalNode, model);
 
         cimModelService.deleteCimModel(model.getCimModelId());

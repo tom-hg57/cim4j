@@ -85,7 +85,7 @@ public class ObjectsTest {
     @Test
     @Order(100)
     public void createEntryInModel() {
-        var obj = new BaseVoltage();
+        var obj = new BaseVoltage("rdfid");
         obj.setCimModel(model);
         obj = baseVoltageRepository.save(obj);
 
@@ -108,7 +108,7 @@ public class ObjectsTest {
     @Test
     @Order(105)
     public void createSuperClassEntriesToo() {
-        var obj = new PowerTransformerEnd();
+        var obj = new PowerTransformerEnd("rdfid");
         obj.setCimModel(model);
         obj = powerTransformerEndRepository.save(obj);
         Long originalId = obj.getId();
@@ -123,16 +123,15 @@ public class ObjectsTest {
     @Test
     @Order(110)
     public void updateEntry() {
-        var obj = new BaseVoltage();
+        var obj = new BaseVoltage("rdfid");
         obj.setCimModel(model);
         obj = baseVoltageRepository.save(obj);
         Long originalId = obj.getId();
 
-        assertNull(obj.getRdfid());
+        assertEquals("rdfid", obj.getRdfid());
         assertNull(obj.getDescription());
         assertNull(obj.getNominalVoltage());
 
-        obj.setRdfid("rdfid");
         obj.setDescription("description");
         obj.setNominalVoltage(42.0);
 
@@ -148,17 +147,16 @@ public class ObjectsTest {
     @Order(120)
     @Transactional
     public void updateEntryWithoutSave() {
-        var obj = new BaseVoltage();
+        var obj = new BaseVoltage("rdfid");
         obj.setCimModel(model);
         obj = baseVoltageRepository.save(obj);
         Long originalId = obj.getId();
 
-        assertNull(obj.getRdfid());
+        assertEquals("rdfid", obj.getRdfid());
         assertNull(obj.getDescription());
         assertNull(obj.getNominalVoltage());
 
         // Update using setters but no save
-        obj.setRdfid("rdfid");
         obj.setDescription("description");
         obj.setNominalVoltage(42.0);
 
@@ -175,11 +173,10 @@ public class ObjectsTest {
     @Test
     @Order(140)
     public void writeOneToOne() {
-        var topologicalNode = new TopologicalNode();
+        var topologicalNode = new TopologicalNode("rdfid1");
         topologicalNode.setCimModel(model);
-        topologicalNode.setRdfid("rdfid");
         topologicalNode = topologicalNodeRepository.save(topologicalNode);
-        var svVoltage = new SvVoltage();
+        var svVoltage = new SvVoltage("rdfid2");
         svVoltage.setCimModel(model);
         svVoltage.setTopologicalNode(topologicalNode);
         svVoltage = svVoltageRepository.save(svVoltage);
@@ -191,18 +188,18 @@ public class ObjectsTest {
         Optional<SvVoltage> svVoltageOp = svVoltageRepository.findById(svVoltage.getId());
         assertTrue(svVoltageOp.isPresent());
         assertEquals(svVoltage.getId(), svVoltageOp.get().getId());
-        assertEquals("rdfid", svVoltageOp.get().TopologicalNodeToString());
+        assertNull(svVoltageOp.get().getTopologicalNode()); // only Id is set after reading from database
+        assertEquals("rdfid1", svVoltageOp.get().getAttribute("TopologicalNode"));
     }
 
     @Test
     @Order(150)
     public void writeManyToOne() {
-        var baseVoltage = new BaseVoltage();
+        var baseVoltage = new BaseVoltage("rdfid1");
         baseVoltage.setCimModel(model);
-        baseVoltage.setRdfid("rdfid");
         baseVoltage = baseVoltageRepository.save(baseVoltage);
-        var topologicalNode1 = new TopologicalNode();
-        var topologicalNode2 = new TopologicalNode();
+        var topologicalNode1 = new TopologicalNode("rdfid2");
+        var topologicalNode2 = new TopologicalNode("rdfid3");
         topologicalNode1.setCimModel(model);
         topologicalNode2.setCimModel(model);
         topologicalNode1.setBaseVoltage(baseVoltage);
@@ -217,18 +214,20 @@ public class ObjectsTest {
         Optional<TopologicalNode> topologicalNodeOp = topologicalNodeRepository.findById(topologicalNode1.getId());
         assertTrue(topologicalNodeOp.isPresent());
         assertEquals(topologicalNode1.getId(), topologicalNodeOp.get().getId());
-        assertEquals("rdfid", topologicalNodeOp.get().BaseVoltageToString());
+        assertNull(topologicalNodeOp.get().getBaseVoltage()); // only Id is set after reading from database
+        assertEquals("rdfid1", topologicalNodeOp.get().getAttribute("BaseVoltage"));
 
         topologicalNodeOp = topologicalNodeRepository.findById(topologicalNode2.getId());
         assertTrue(topologicalNodeOp.isPresent());
         assertEquals(topologicalNode2.getId(), topologicalNodeOp.get().getId());
-        assertEquals("rdfid", topologicalNodeOp.get().BaseVoltageToString());
+        assertNull(topologicalNodeOp.get().getBaseVoltage()); // only Id is set after reading from database
+        assertEquals("rdfid1", topologicalNodeOp.get().getAttribute("BaseVoltage"));
     }
 
     @Test
     @Order(170)
     public void writePrimitiveAttributes() {
-        TransformerEnd obj = new TransformerEnd();
+        TransformerEnd obj = new TransformerEnd("rdfid");
         obj.setCimModel(model);
         obj = transformerEndRepository.save(obj);
         Long originalId = obj.getId();
@@ -255,7 +254,7 @@ public class ObjectsTest {
     @Test
     @Order(180)
     public void writeEnumAttributes() {
-        PowerTransformerEnd obj = new PowerTransformerEnd();
+        PowerTransformerEnd obj = new PowerTransformerEnd("rdfid");
         obj.setCimModel(model);
         obj = powerTransformerEndRepository.save(obj);
         Long originalId = obj.getId();
@@ -274,7 +273,7 @@ public class ObjectsTest {
     @Test
     @Order(190)
     public void writeEnumAttributesWithDuplicates() {
-        Analog obj = new Analog();
+        Analog obj = new Analog("rdfid");
         obj.setCimModel(model);
         obj = analogRepository.save(obj);
         Long originalId = obj.getId();

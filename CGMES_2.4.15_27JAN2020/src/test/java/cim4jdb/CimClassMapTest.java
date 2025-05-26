@@ -54,8 +54,8 @@ public class CimClassMapTest {
     @Test
     @Order(110)
     public void createCimObject() {
-        BaseClass obj1 = CimClassMap.createCimObject("BaseVoltage");
-        BaseClass obj2 = CimClassMap.createCimObject("BaseVoltage");
+        BaseClass obj1 = CimClassMap.createCimObject("BaseVoltage", "rdfid1");
+        BaseClass obj2 = CimClassMap.createCimObject("BaseVoltage", "rdfid2");
         assertNotNull(obj1);
         assertNotNull(obj2);
         assertEquals(BaseVoltage.class, obj1.getClass());
@@ -66,8 +66,8 @@ public class CimClassMapTest {
     @Test
     @Order(120)
     public void createCimObjectWithType() {
-        BaseVoltage obj1 = CimClassMap.createCimObject(BaseVoltage.class);
-        BaseVoltage obj2 = CimClassMap.createCimObject(BaseVoltage.class);
+        BaseVoltage obj1 = CimClassMap.createCimObject(BaseVoltage.class, "rdfid1");
+        BaseVoltage obj2 = CimClassMap.createCimObject(BaseVoltage.class, "rdfid2");
         assertNotNull(obj1);
         assertNotNull(obj2);
         assertNotSame(obj1, obj2);
@@ -79,7 +79,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseClass obj = CimClassMap.createCimObject("BaseVoltage");
+        BaseClass obj = CimClassMap.createCimObject("BaseVoltage", "rdfid");
         assertNull(obj.getId());
         obj.setCimModel(model);
         BaseClass savedObj = cimClassMap.saveCimObject("BaseVoltage", obj);
@@ -96,7 +96,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class);
+        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class, "rdfid");
         assertNull(obj.getId());
         obj.setCimModel(model);
         BaseVoltage savedObj = cimClassMap.saveCimObject(BaseVoltage.class, obj);
@@ -112,7 +112,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseClass obj = CimClassMap.createCimObject("BaseVoltage");
+        BaseClass obj = CimClassMap.createCimObject("BaseVoltage", "rdfid");
         obj.setCimModel(model);
         BaseClass savedObj = cimClassMap.saveCimObject("BaseVoltage", obj);
         savedBaseVoltageIds.add(savedObj.getId());
@@ -129,7 +129,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class);
+        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class, "rdfid");
         obj.setCimModel(model);
         BaseVoltage savedObj = cimClassMap.saveCimObject(BaseVoltage.class, obj);
         savedBaseVoltageIds.add(savedObj.getId());
@@ -145,7 +145,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseClass obj = CimClassMap.createCimObject("BaseVoltage");
+        BaseClass obj = CimClassMap.createCimObject("BaseVoltage", "rdfid");
         obj.setCimModel(model);
         BaseClass savedObj = cimClassMap.saveCimObject("BaseVoltage", obj);
         cimClassMap.deleteCimObject("BaseVoltage", savedObj.getId());
@@ -159,7 +159,7 @@ public class CimClassMapTest {
         var model = cimModelRepository.save(new CimModel());
         savedModelIds.add(model.getCimModelId());
 
-        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class);
+        BaseVoltage obj = CimClassMap.createCimObject(BaseVoltage.class, "rdfid");
         obj.setCimModel(model);
         BaseVoltage savedObj = cimClassMap.saveCimObject(BaseVoltage.class, obj);
         cimClassMap.deleteCimObject(BaseVoltage.class, savedObj.getId());
