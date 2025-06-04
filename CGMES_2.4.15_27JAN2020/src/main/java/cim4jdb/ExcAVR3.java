@@ -1,0 +1,665 @@
+/*
+Generated from the CGMES files via cimgen: https://github.com/sogno-platform/cimgen
+*/
+
+package cim4jdb;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * Italian excitation system. It represents exciter dynamo and electric regulator.
+ */
+@Entity
+@SuppressWarnings("unused")
+@Table(name = "ExcAVR3")
+public class ExcAVR3 extends ExcitationSystemDynamics {
+
+    private static final Logging LOG = Logging.getLogger(ExcAVR3.class);
+
+    /**
+     * Default constructor (needed for SpringBoot).
+     */
+    public ExcAVR3() {
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public ExcAVR3(String rdfid) {
+        super("ExcAVR3", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected ExcAVR3(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Field voltage value 1 (E1).  Typical Value = 4.18.
+     */
+    @Column(name = "e1")
+    private Double e1; // PU
+
+    public Double getE1() {
+        return e1;
+    }
+
+    public void setE1(Double _value_) {
+        e1 = _value_;
+    }
+
+    private static Object getE1(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getE1();
+    }
+
+    private static void setE1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setE1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setE1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Field voltage value 2 (E2).  Typical Value = 3.14.
+     */
+    @Column(name = "e2")
+    private Double e2; // PU
+
+    public Double getE2() {
+        return e2;
+    }
+
+    public void setE2(Double _value_) {
+        e2 = _value_;
+    }
+
+    private static Object getE2(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getE2();
+    }
+
+    private static void setE2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setE2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setE2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * AVR gain (K).  Typical Value = 3000.
+     */
+    @Column(name = "ka")
+    private Double ka; // Simple_Float
+
+    public Double getKa() {
+        return ka;
+    }
+
+    public void setKa(Double _value_) {
+        ka = _value_;
+    }
+
+    private static Object getKa(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getKa();
+    }
+
+    private static void setKa(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setKa((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setKa(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Saturation factor at E1 (S(E1)).  Typical Value = 0.1.
+     */
+    @Column(name = "se1")
+    private Double se1; // Simple_Float
+
+    public Double getSe1() {
+        return se1;
+    }
+
+    public void setSe1(Double _value_) {
+        se1 = _value_;
+    }
+
+    private static Object getSe1(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getSe1();
+    }
+
+    private static void setSe1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setSe1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setSe1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Saturation factor at E2 (S(E2)).  Typical Value = 0.03.
+     */
+    @Column(name = "se2")
+    private Double se2; // Simple_Float
+
+    public Double getSe2() {
+        return se2;
+    }
+
+    public void setSe2(Double _value_) {
+        se2 = _value_;
+    }
+
+    private static Object getSe2(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getSe2();
+    }
+
+    private static void setSe2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setSe2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setSe2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * AVR time constant (T).  Typical Value = 220.
+     */
+    @Column(name = "t1")
+    private Double t1; // Seconds
+
+    public Double getT1() {
+        return t1;
+    }
+
+    public void setT1(Double _value_) {
+        t1 = _value_;
+    }
+
+    private static Object getT1(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getT1();
+    }
+
+    private static void setT1(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setT1((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setT1(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * AVR time constant (T).  Typical Value = 1.6.
+     */
+    @Column(name = "t2")
+    private Double t2; // Seconds
+
+    public Double getT2() {
+        return t2;
+    }
+
+    public void setT2(Double _value_) {
+        t2 = _value_;
+    }
+
+    private static Object getT2(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getT2();
+    }
+
+    private static void setT2(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setT2((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setT2(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * AVR time constant (T).  Typical Value = 0.66.
+     */
+    @Column(name = "t3")
+    private Double t3; // Seconds
+
+    public Double getT3() {
+        return t3;
+    }
+
+    public void setT3(Double _value_) {
+        t3 = _value_;
+    }
+
+    private static Object getT3(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getT3();
+    }
+
+    private static void setT3(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setT3((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setT3(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * AVR time constant (T).  Typical Value = 0.07.
+     */
+    @Column(name = "t4")
+    private Double t4; // Seconds
+
+    public Double getT4() {
+        return t4;
+    }
+
+    public void setT4(Double _value_) {
+        t4 = _value_;
+    }
+
+    private static Object getT4(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getT4();
+    }
+
+    private static void setT4(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setT4((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setT4(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Exciter time constant (T).  Typical Value = 1.
+     */
+    @Column(name = "te")
+    private Double te; // Seconds
+
+    public Double getTe() {
+        return te;
+    }
+
+    public void setTe(Double _value_) {
+        te = _value_;
+    }
+
+    private static Object getTe(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getTe();
+    }
+
+    private static void setTe(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setTe((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setTe(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum AVR output (V).  Typical Value = -7.5.
+     */
+    @Column(name = "vrmn")
+    private Double vrmn; // PU
+
+    public Double getVrmn() {
+        return vrmn;
+    }
+
+    public void setVrmn(Double _value_) {
+        vrmn = _value_;
+    }
+
+    private static Object getVrmn(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getVrmn();
+    }
+
+    private static void setVrmn(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setVrmn((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setVrmn(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Minimum AVR output (V).  Typical Value = 7.5.
+     */
+    @Column(name = "vrmx")
+    private Double vrmx; // PU
+
+    public Double getVrmx() {
+        return vrmx;
+    }
+
+    public void setVrmx(Double _value_) {
+        vrmx = _value_;
+    }
+
+    private static Object getVrmx(BaseClass _this_) {
+        return ((ExcAVR3) _this_).getVrmx();
+    }
+
+    private static void setVrmx(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((ExcAVR3) _this_).setVrmx((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((ExcAVR3) _this_).setVrmx(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Nested repository. The implementation is automatically created.
+     */
+    public interface Repository extends CrudRepository<ExcAVR3, Long> {
+    }
+
+    /**
+     * Get a list of all attribute names of the CIM type.
+     *
+     * The list includes all inherited attributes. The attribute name is only the
+     * last part of the full name (without the class name).
+     *
+     * @return All attributes of the CIM type
+     */
+    @Override
+    public List<String> getAttributeNames() {
+        return ATTR_NAMES_LIST;
+    }
+
+    @Override
+    protected Map<String, AttrDetails> allAttrDetailsMap() {
+        Map<String, AttrDetails> map = new LinkedHashMap<>(CLASS_ATTR_DETAILS_MAP);
+        map.putAll(super.allAttrDetailsMap());
+        return map;
+    }
+
+    /**
+     * Get the full name of an attribute.
+     *
+     * The full name is "<class_name>.<attribute_name>".
+     *
+     * @param attrName The attribute name
+     * @return         The full name
+     */
+    @Override
+    public String getAttributeFullName(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).fullName : null;
+    }
+
+    /**
+     * Get an attribute value.
+     *
+     * @param attrName The attribute name
+     * @return         The attribute value
+     */
+    @Override
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
+        }
+        LOG.error(String.format("No-one knows an attribute %s.%s", "ExcAVR3", attrName));
+        return "";
+    }
+
+    /**
+     * Set an attribute value.
+     *
+     * @param attrName The attribute name
+     * @param value    The attribute value
+     */
+    @Override
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
+        } else {
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "ExcAVR3", attrName, value));
+        }
+    }
+
+    /**
+     * Check if the attribute is a primitive attribute.
+     *
+     * This includes datatype_attributes.
+     *
+     * @param attrName The attribute name
+     * @return         Is it a primitive attribute?
+     */
+    @Override
+    public boolean isPrimitiveAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isPrimitive;
+    }
+
+    /**
+     * Check if the attribute is an enum attribute.
+     *
+     * @param attrName The attribute name
+     * @return         Is it an enum attribute?
+     */
+    @Override
+    public boolean isEnumAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isEnum;
+    }
+
+    /**
+     * Check if the attribute is used.
+     *
+     * Some attributes are declared as unused in the CGMES definition. In most cases
+     * these are list attributes, i.e. lists of links to other CIM objects. But
+     * there are some exceptions, e.g. the list of ToplogicalNodes in
+     * TopologicalIsland.
+     *
+     * @param attrName The attribute name
+     * @return         Is the attribute used?
+     */
+    @Override
+    public boolean isUsedAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isUsed;
+    }
+
+    /**
+     * Get the namespace URL of an object of this class.
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getClassNamespaceUrl() {
+        return CLASS_NAMESPACE;
+    }
+
+    /**
+     * Get the namespace URL of an attribute (also for inherited attributes).
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getAttributeNamespaceUrl(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).nameSpace : null;
+    }
+
+    /**
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element can be found.
+     *
+     * @return All possible profiles for an object of this class
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfiles() {
+        return POSSIBLE_PROFILES;
+    }
+
+    /**
+     * This is the profile with most of the attributes.
+     * It should be used to write the data to as few as possible files.
+     *
+     * @return The recommended profiles for an object of this class
+     */
+    @Override
+    public CGMESProfile getRecommendedProfile() {
+        return RECOMMENDED_PROFILE;
+    }
+
+    /**
+     * Get the possible profiles of an attribute (also for inherited attributes).
+     *
+     * @return All possible profiles for an attribute
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleAttributeProfiles(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).profiles : null;
+    }
+
+    /**
+     * Get the possible profiles for an object of this class including the possible
+     * profiles of all direct or inherited attributes.
+     *
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element or an attribute of this element can be found.
+     *
+     * @return All possible profiles for an object of this class and its attributes
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfilesIncludingAttributes() {
+        return POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    }
+
+    /**
+     * Private infos.
+     */
+
+    private static final String CLASS_NAMESPACE = "http://iec.ch/TC57/2013/CIM-schema-cim16#";
+
+    private static final List<String> ATTR_NAMES_LIST;
+    private static final Map<String, AttrDetails> ATTR_DETAILS_MAP;
+    private static final Map<String, AttrDetails> CLASS_ATTR_DETAILS_MAP;
+    static {
+        Map<String, AttrDetails> map = new LinkedHashMap<>();
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("e1", new AttrDetails("ExcAVR3.e1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getE1, ExcAVR3::setE1));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("e2", new AttrDetails("ExcAVR3.e2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getE2, ExcAVR3::setE2));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("ka", new AttrDetails("ExcAVR3.ka", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getKa, ExcAVR3::setKa));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("se1", new AttrDetails("ExcAVR3.se1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getSe1, ExcAVR3::setSe1));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("se2", new AttrDetails("ExcAVR3.se2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getSe2, ExcAVR3::setSe2));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t1", new AttrDetails("ExcAVR3.t1", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getT1, ExcAVR3::setT1));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t2", new AttrDetails("ExcAVR3.t2", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getT2, ExcAVR3::setT2));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t3", new AttrDetails("ExcAVR3.t3", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getT3, ExcAVR3::setT3));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("t4", new AttrDetails("ExcAVR3.t4", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getT4, ExcAVR3::setT4));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("te", new AttrDetails("ExcAVR3.te", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getTe, ExcAVR3::setTe));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vrmn", new AttrDetails("ExcAVR3.vrmn", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getVrmn, ExcAVR3::setVrmn));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("vrmx", new AttrDetails("ExcAVR3.vrmx", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, ExcAVR3::getVrmx, ExcAVR3::setVrmx));
+        }
+        CLASS_ATTR_DETAILS_MAP = map;
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new ExcAVR3(null).allAttrDetailsMap());
+        ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
+    }
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.DY);
+        POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
+    }
+
+    private static final CGMESProfile RECOMMENDED_PROFILE = CGMESProfile.DY;
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>(POSSIBLE_PROFILES);
+        for (var attrDetails : ATTR_DETAILS_MAP.values()) {
+            profiles.addAll(attrDetails.profiles);
+        }
+        POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES = Collections.unmodifiableSet(profiles);
+    }
+}

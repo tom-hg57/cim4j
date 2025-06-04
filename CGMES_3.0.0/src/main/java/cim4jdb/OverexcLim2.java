@@ -1,0 +1,401 @@
+/*
+Generated from the CGMES files via cimgen: https://github.com/sogno-platform/cimgen
+*/
+
+package cim4jdb;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * Different from LimIEEEOEL, LimOEL2 has a fixed pickup threshold and reduces the excitation set-point by means of a non-windup integral regulator. <i>Irated</i> is the rated machine excitation current (calculated from nameplate conditions: <i>V</i><i><sub>nom</sub></i>, <i>P</i><i><sub>nom</sub></i>, <i>CosPhi</i><i><sub>nom</sub></i>).
+ */
+@Entity
+@SuppressWarnings("unused")
+@Table(name = "OverexcLim2")
+public class OverexcLim2 extends OverexcitationLimiterDynamics {
+
+    private static final Logging LOG = Logging.getLogger(OverexcLim2.class);
+
+    /**
+     * Default constructor (needed for SpringBoot).
+     */
+    public OverexcLim2() {
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public OverexcLim2(String rdfid) {
+        super("OverexcLim2", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected OverexcLim2(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Limit value of rated field current (<i>I</i><i><sub>FDLIM</sub></i>).  Typical value = 1,05.
+     */
+    @Column(name = "ifdlim")
+    private Double ifdlim; // PU
+
+    public Double getIfdlim() {
+        return ifdlim;
+    }
+
+    public void setIfdlim(Double _value_) {
+        ifdlim = _value_;
+    }
+
+    private static Object getIfdlim(BaseClass _this_) {
+        return ((OverexcLim2) _this_).getIfdlim();
+    }
+
+    private static void setIfdlim(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((OverexcLim2) _this_).setIfdlim((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((OverexcLim2) _this_).setIfdlim(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Gain Over excitation limiter (<i>K</i><i><sub>OI</sub></i>).  Typical value = 0,1.
+     */
+    @Column(name = "koi")
+    private Double koi; // PU
+
+    public Double getKoi() {
+        return koi;
+    }
+
+    public void setKoi(Double _value_) {
+        koi = _value_;
+    }
+
+    private static Object getKoi(BaseClass _this_) {
+        return ((OverexcLim2) _this_).getKoi();
+    }
+
+    private static void setKoi(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((OverexcLim2) _this_).setKoi((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((OverexcLim2) _this_).setKoi(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum error signal (<i>V</i><i><sub>OIMAX</sub></i>) (&gt; OverexcLim2.voimin).  Typical value = 0.
+     */
+    @Column(name = "voimax")
+    private Double voimax; // PU
+
+    public Double getVoimax() {
+        return voimax;
+    }
+
+    public void setVoimax(Double _value_) {
+        voimax = _value_;
+    }
+
+    private static Object getVoimax(BaseClass _this_) {
+        return ((OverexcLim2) _this_).getVoimax();
+    }
+
+    private static void setVoimax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((OverexcLim2) _this_).setVoimax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((OverexcLim2) _this_).setVoimax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Minimum error signal (<i>V</i><i><sub>OIMIN</sub></i>) (&lt; OverexcLim2.voimax).  Typical value = -9999.
+     */
+    @Column(name = "voimin")
+    private Double voimin; // PU
+
+    public Double getVoimin() {
+        return voimin;
+    }
+
+    public void setVoimin(Double _value_) {
+        voimin = _value_;
+    }
+
+    private static Object getVoimin(BaseClass _this_) {
+        return ((OverexcLim2) _this_).getVoimin();
+    }
+
+    private static void setVoimin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((OverexcLim2) _this_).setVoimin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((OverexcLim2) _this_).setVoimin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Nested repository. The implementation is automatically created.
+     */
+    public interface Repository extends CrudRepository<OverexcLim2, Long> {
+    }
+
+    /**
+     * Get a list of all attribute names of the CIM type.
+     *
+     * The list includes all inherited attributes. The attribute name is only the
+     * last part of the full name (without the class name).
+     *
+     * @return All attributes of the CIM type
+     */
+    @Override
+    public List<String> getAttributeNames() {
+        return ATTR_NAMES_LIST;
+    }
+
+    @Override
+    protected Map<String, AttrDetails> allAttrDetailsMap() {
+        Map<String, AttrDetails> map = new LinkedHashMap<>(CLASS_ATTR_DETAILS_MAP);
+        map.putAll(super.allAttrDetailsMap());
+        return map;
+    }
+
+    /**
+     * Get the full name of an attribute.
+     *
+     * The full name is "<class_name>.<attribute_name>".
+     *
+     * @param attrName The attribute name
+     * @return         The full name
+     */
+    @Override
+    public String getAttributeFullName(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).fullName : null;
+    }
+
+    /**
+     * Get an attribute value.
+     *
+     * @param attrName The attribute name
+     * @return         The attribute value
+     */
+    @Override
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
+        }
+        LOG.error(String.format("No-one knows an attribute %s.%s", "OverexcLim2", attrName));
+        return "";
+    }
+
+    /**
+     * Set an attribute value.
+     *
+     * @param attrName The attribute name
+     * @param value    The attribute value
+     */
+    @Override
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
+        } else {
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "OverexcLim2", attrName, value));
+        }
+    }
+
+    /**
+     * Check if the attribute is a primitive attribute.
+     *
+     * This includes datatype_attributes.
+     *
+     * @param attrName The attribute name
+     * @return         Is it a primitive attribute?
+     */
+    @Override
+    public boolean isPrimitiveAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isPrimitive;
+    }
+
+    /**
+     * Check if the attribute is an enum attribute.
+     *
+     * @param attrName The attribute name
+     * @return         Is it an enum attribute?
+     */
+    @Override
+    public boolean isEnumAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isEnum;
+    }
+
+    /**
+     * Check if the attribute is used.
+     *
+     * Some attributes are declared as unused in the CGMES definition. In most cases
+     * these are list attributes, i.e. lists of links to other CIM objects. But
+     * there are some exceptions, e.g. the list of ToplogicalNodes in
+     * TopologicalIsland.
+     *
+     * @param attrName The attribute name
+     * @return         Is the attribute used?
+     */
+    @Override
+    public boolean isUsedAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isUsed;
+    }
+
+    /**
+     * Get the namespace URL of an object of this class.
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getClassNamespaceUrl() {
+        return CLASS_NAMESPACE;
+    }
+
+    /**
+     * Get the namespace URL of an attribute (also for inherited attributes).
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getAttributeNamespaceUrl(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).nameSpace : null;
+    }
+
+    /**
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element can be found.
+     *
+     * @return All possible profiles for an object of this class
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfiles() {
+        return POSSIBLE_PROFILES;
+    }
+
+    /**
+     * This is the profile with most of the attributes.
+     * It should be used to write the data to as few as possible files.
+     *
+     * @return The recommended profiles for an object of this class
+     */
+    @Override
+    public CGMESProfile getRecommendedProfile() {
+        return RECOMMENDED_PROFILE;
+    }
+
+    /**
+     * Get the possible profiles of an attribute (also for inherited attributes).
+     *
+     * @return All possible profiles for an attribute
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleAttributeProfiles(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).profiles : null;
+    }
+
+    /**
+     * Get the possible profiles for an object of this class including the possible
+     * profiles of all direct or inherited attributes.
+     *
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element or an attribute of this element can be found.
+     *
+     * @return All possible profiles for an object of this class and its attributes
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfilesIncludingAttributes() {
+        return POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    }
+
+    /**
+     * Private infos.
+     */
+
+    private static final String CLASS_NAMESPACE = "http://iec.ch/TC57/CIM100#";
+
+    private static final List<String> ATTR_NAMES_LIST;
+    private static final Map<String, AttrDetails> ATTR_DETAILS_MAP;
+    private static final Map<String, AttrDetails> CLASS_ATTR_DETAILS_MAP;
+    static {
+        Map<String, AttrDetails> map = new LinkedHashMap<>();
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("ifdlim", new AttrDetails("OverexcLim2.ifdlim", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::getIfdlim, OverexcLim2::setIfdlim));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("koi", new AttrDetails("OverexcLim2.koi", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::getKoi, OverexcLim2::setKoi));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("voimax", new AttrDetails("OverexcLim2.voimax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::getVoimax, OverexcLim2::setVoimax));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("voimin", new AttrDetails("OverexcLim2.voimin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, OverexcLim2::getVoimin, OverexcLim2::setVoimin));
+        }
+        CLASS_ATTR_DETAILS_MAP = map;
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new OverexcLim2(null).allAttrDetailsMap());
+        ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
+    }
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.DY);
+        POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
+    }
+
+    private static final CGMESProfile RECOMMENDED_PROFILE = CGMESProfile.DY;
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>(POSSIBLE_PROFILES);
+        for (var attrDetails : ATTR_DETAILS_MAP.values()) {
+            profiles.addAll(attrDetails.profiles);
+        }
+        POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES = Collections.unmodifiableSet(profiles);
+    }
+}

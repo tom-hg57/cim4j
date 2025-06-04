@@ -1,0 +1,413 @@
+/*
+Generated from the CGMES files via cimgen: https://github.com/sogno-platform/cimgen
+*/
+
+package cim4jdb;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * Parent class supporting relationships to wind turbines Type 3 and 4 and wind plant including their control models.
+ */
+@Entity
+@SuppressWarnings("unused")
+@Table(name = "WindTurbineType3or4Dynamics")
+public class WindTurbineType3or4Dynamics extends DynamicsFunctionBlock {
+
+    private static final Logging LOG = Logging.getLogger(WindTurbineType3or4Dynamics.class);
+
+    /**
+     * Default constructor (needed for SpringBoot).
+     */
+    public WindTurbineType3or4Dynamics() {
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public WindTurbineType3or4Dynamics(String rdfid) {
+        super("WindTurbineType3or4Dynamics", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindTurbineType3or4Dynamics(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * Energy Source (current source) with which this wind Type 3 or 4 dynamics model is asoociated.
+     */
+    @Transient
+    private EnergySource EnergySource; // OneToOne
+
+    @Column(name = "EnergySource")
+    private String EnergySourceId;
+
+    public EnergySource getEnergySource() {
+        return EnergySource;
+    }
+
+    public void setEnergySource(EnergySource _object_) {
+        if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
+            throw new IllegalArgumentException("Object belongs to different model");
+        }
+        if (EnergySource != _object_) {
+            EnergySource = _object_;
+            _object_.setWindTurbineType3or4Dynamics(this);
+            EnergySourceId = _object_.getRdfid();
+        }
+    }
+
+    private static Object getEnergySource(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4Dynamics) _this_).getEnergySource();
+        var id = ((WindTurbineType3or4Dynamics) _this_).EnergySourceId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setEnergySource(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindTurbineType3or4Dynamics) _this_).EnergySourceId = (String) _value_;
+        } else if (_value_ instanceof EnergySource) {
+            ((WindTurbineType3or4Dynamics) _this_).setEnergySource((EnergySource) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not EnergySource");
+        }
+    }
+
+    /**
+     * Wind turbine Type 3 or 4 models using this remote input signal.
+     */
+    @Transient
+    private RemoteInputSignal RemoteInputSignal; // OneToOne
+
+    @Column(name = "RemoteInputSignal")
+    private String RemoteInputSignalId;
+
+    public RemoteInputSignal getRemoteInputSignal() {
+        return RemoteInputSignal;
+    }
+
+    public void setRemoteInputSignal(RemoteInputSignal _object_) {
+        if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
+            throw new IllegalArgumentException("Object belongs to different model");
+        }
+        if (RemoteInputSignal != _object_) {
+            RemoteInputSignal = _object_;
+            _object_.setWindTurbineType3or4Dynamics(this);
+            RemoteInputSignalId = _object_.getRdfid();
+        }
+    }
+
+    private static Object getRemoteInputSignal(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4Dynamics) _this_).getRemoteInputSignal();
+        var id = ((WindTurbineType3or4Dynamics) _this_).RemoteInputSignalId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setRemoteInputSignal(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindTurbineType3or4Dynamics) _this_).RemoteInputSignalId = (String) _value_;
+        } else if (_value_ instanceof RemoteInputSignal) {
+            ((WindTurbineType3or4Dynamics) _this_).setRemoteInputSignal((RemoteInputSignal) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not RemoteInputSignal");
+        }
+    }
+
+    /**
+     * The wind plant with which the wind turbines type 3 or 4 are associated.
+     */
+    @Transient
+    private WindPlantDynamics WindPlantDynamics; // ManyToOne
+
+    @Column(name = "WindPlantDynamics")
+    private String WindPlantDynamicsId;
+
+    public WindPlantDynamics getWindPlantDynamics() {
+        return WindPlantDynamics;
+    }
+
+    public void setWindPlantDynamics(WindPlantDynamics _object_) {
+        if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
+            throw new IllegalArgumentException("Object belongs to different model");
+        }
+        if (WindPlantDynamics != _object_) {
+            WindPlantDynamics = _object_;
+            _object_.setWindTurbineType3or4Dynamics(this);
+            WindPlantDynamicsId = _object_.getRdfid();
+        }
+    }
+
+    private static Object getWindPlantDynamics(BaseClass _this_) {
+        var obj = ((WindTurbineType3or4Dynamics) _this_).getWindPlantDynamics();
+        var id = ((WindTurbineType3or4Dynamics) _this_).WindPlantDynamicsId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPlantDynamics(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindTurbineType3or4Dynamics) _this_).WindPlantDynamicsId = (String) _value_;
+        } else if (_value_ instanceof WindPlantDynamics) {
+            ((WindTurbineType3or4Dynamics) _this_).setWindPlantDynamics((WindPlantDynamics) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantDynamics");
+        }
+    }
+
+    /**
+     * Nested repository. The implementation is automatically created.
+     */
+    public interface Repository extends CrudRepository<WindTurbineType3or4Dynamics, Long> {
+    }
+
+    /**
+     * Get a list of all attribute names of the CIM type.
+     *
+     * The list includes all inherited attributes. The attribute name is only the
+     * last part of the full name (without the class name).
+     *
+     * @return All attributes of the CIM type
+     */
+    @Override
+    public List<String> getAttributeNames() {
+        return ATTR_NAMES_LIST;
+    }
+
+    @Override
+    protected Map<String, AttrDetails> allAttrDetailsMap() {
+        Map<String, AttrDetails> map = new LinkedHashMap<>(CLASS_ATTR_DETAILS_MAP);
+        map.putAll(super.allAttrDetailsMap());
+        return map;
+    }
+
+    /**
+     * Get the full name of an attribute.
+     *
+     * The full name is "<class_name>.<attribute_name>".
+     *
+     * @param attrName The attribute name
+     * @return         The full name
+     */
+    @Override
+    public String getAttributeFullName(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).fullName : null;
+    }
+
+    /**
+     * Get an attribute value.
+     *
+     * @param attrName The attribute name
+     * @return         The attribute value
+     */
+    @Override
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
+        }
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindTurbineType3or4Dynamics", attrName));
+        return "";
+    }
+
+    /**
+     * Set an attribute value.
+     *
+     * @param attrName The attribute name
+     * @param value    The attribute value
+     */
+    @Override
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
+        } else {
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindTurbineType3or4Dynamics", attrName, value));
+        }
+    }
+
+    /**
+     * Check if the attribute is a primitive attribute.
+     *
+     * This includes datatype_attributes.
+     *
+     * @param attrName The attribute name
+     * @return         Is it a primitive attribute?
+     */
+    @Override
+    public boolean isPrimitiveAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isPrimitive;
+    }
+
+    /**
+     * Check if the attribute is an enum attribute.
+     *
+     * @param attrName The attribute name
+     * @return         Is it an enum attribute?
+     */
+    @Override
+    public boolean isEnumAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isEnum;
+    }
+
+    /**
+     * Check if the attribute is used.
+     *
+     * Some attributes are declared as unused in the CGMES definition. In most cases
+     * these are list attributes, i.e. lists of links to other CIM objects. But
+     * there are some exceptions, e.g. the list of ToplogicalNodes in
+     * TopologicalIsland.
+     *
+     * @param attrName The attribute name
+     * @return         Is the attribute used?
+     */
+    @Override
+    public boolean isUsedAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isUsed;
+    }
+
+    /**
+     * Get the namespace URL of an object of this class.
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getClassNamespaceUrl() {
+        return CLASS_NAMESPACE;
+    }
+
+    /**
+     * Get the namespace URL of an attribute (also for inherited attributes).
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getAttributeNamespaceUrl(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).nameSpace : null;
+    }
+
+    /**
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element can be found.
+     *
+     * @return All possible profiles for an object of this class
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfiles() {
+        return POSSIBLE_PROFILES;
+    }
+
+    /**
+     * This is the profile with most of the attributes.
+     * It should be used to write the data to as few as possible files.
+     *
+     * @return The recommended profiles for an object of this class
+     */
+    @Override
+    public CGMESProfile getRecommendedProfile() {
+        return RECOMMENDED_PROFILE;
+    }
+
+    /**
+     * Get the possible profiles of an attribute (also for inherited attributes).
+     *
+     * @return All possible profiles for an attribute
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleAttributeProfiles(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).profiles : null;
+    }
+
+    /**
+     * Get the possible profiles for an object of this class including the possible
+     * profiles of all direct or inherited attributes.
+     *
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element or an attribute of this element can be found.
+     *
+     * @return All possible profiles for an object of this class and its attributes
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfilesIncludingAttributes() {
+        return POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    }
+
+    /**
+     * Private infos.
+     */
+
+    private static final String CLASS_NAMESPACE = "http://iec.ch/TC57/2013/CIM-schema-cim16#";
+
+    private static final List<String> ATTR_NAMES_LIST;
+    private static final Map<String, AttrDetails> ATTR_DETAILS_MAP;
+    private static final Map<String, AttrDetails> CLASS_ATTR_DETAILS_MAP;
+    static {
+        Map<String, AttrDetails> map = new LinkedHashMap<>();
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("EnergySource", new AttrDetails("WindTurbineType3or4Dynamics.EnergySource", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4Dynamics::getEnergySource, WindTurbineType3or4Dynamics::setEnergySource));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("RemoteInputSignal", new AttrDetails("WindTurbineType3or4Dynamics.RemoteInputSignal", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4Dynamics::getRemoteInputSignal, WindTurbineType3or4Dynamics::setRemoteInputSignal));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("WindPlantDynamics", new AttrDetails("WindTurbineType3or4Dynamics.WindPlantDynamics", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, WindTurbineType3or4Dynamics::getWindPlantDynamics, WindTurbineType3or4Dynamics::setWindPlantDynamics));
+        }
+        CLASS_ATTR_DETAILS_MAP = map;
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindTurbineType3or4Dynamics(null).allAttrDetailsMap());
+        ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
+    }
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.DY);
+        POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
+    }
+
+    private static final CGMESProfile RECOMMENDED_PROFILE = CGMESProfile.DY;
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>(POSSIBLE_PROFILES);
+        for (var attrDetails : ATTR_DETAILS_MAP.values()) {
+            profiles.addAll(attrDetails.profiles);
+        }
+        POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES = Collections.unmodifiableSet(profiles);
+    }
+}
