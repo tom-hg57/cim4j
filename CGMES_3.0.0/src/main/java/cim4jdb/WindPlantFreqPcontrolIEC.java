@@ -1,0 +1,864 @@
+/*
+Generated from the CGMES files via cimgen: https://github.com/sogno-platform/cimgen
+*/
+
+package cim4jdb;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+
+import org.springframework.data.repository.CrudRepository;
+
+/**
+ * Frequency and active power controller model. Reference: IEC 61400-27-1:2015, Annex D.
+ */
+@Entity
+@SuppressWarnings("unused")
+@Table(name = "WindPlantFreqPcontrolIEC")
+public class WindPlantFreqPcontrolIEC extends IdentifiedObject {
+
+    private static final Logging LOG = Logging.getLogger(WindPlantFreqPcontrolIEC.class);
+
+    /**
+     * Default constructor (needed for SpringBoot).
+     */
+    public WindPlantFreqPcontrolIEC() {
+        this(null);
+    }
+
+    /**
+     * Constructor.
+     */
+    public WindPlantFreqPcontrolIEC(String rdfid) {
+        super("WindPlantFreqPcontrolIEC", rdfid);
+    }
+
+    /**
+     * Constructor for subclasses.
+     */
+    protected WindPlantFreqPcontrolIEC(String cimType, String rdfid) {
+        super(cimType, rdfid);
+    }
+
+    /**
+     * The wind dynamics lookup table associated with this frequency and active power wind plant model.
+     *
+     * NOT USED
+     */
+    @Transient
+    private Set<WindDynamicsLookupTable> WindDynamicsLookupTable = new HashSet<>(); // OneToMany
+
+    @Transient
+    private Set<String> WindDynamicsLookupTableIdSet = new HashSet<>();
+
+    public Set<WindDynamicsLookupTable> getWindDynamicsLookupTable() {
+        return WindDynamicsLookupTable;
+    }
+
+    public void setWindDynamicsLookupTable(WindDynamicsLookupTable _object_) {
+        if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
+            throw new IllegalArgumentException("Object belongs to different model");
+        }
+        if (!WindDynamicsLookupTable.contains(_object_)) {
+            WindDynamicsLookupTable.add(_object_);
+            _object_.setWindPlantFreqPcontrolIEC(this);
+            WindDynamicsLookupTableIdSet.add(_object_.getRdfid());
+        }
+    }
+
+    private static Object getWindDynamicsLookupTable(BaseClass _this_) {
+        var objs = ((WindPlantFreqPcontrolIEC) _this_).getWindDynamicsLookupTable();
+        var ids = ((WindPlantFreqPcontrolIEC) _this_).WindDynamicsLookupTableIdSet;
+        if (objs.size() < ids.size()) {
+            return ids;
+        }
+        return objs;
+    }
+
+    private static void setWindDynamicsLookupTable(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).WindDynamicsLookupTableIdSet.add((String) _value_);
+        } else if (_value_ instanceof WindDynamicsLookupTable) {
+            ((WindPlantFreqPcontrolIEC) _this_).setWindDynamicsLookupTable((WindDynamicsLookupTable) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindDynamicsLookupTable");
+        }
+    }
+
+    /**
+     * Wind plant model with which this wind plant frequency and active power control is associated.
+     *
+     * NOT USED
+     */
+    @Transient
+    private WindPlantIEC WindPlantIEC; // OneToOne
+
+    @Transient
+    private String WindPlantIECId;
+
+    public WindPlantIEC getWindPlantIEC() {
+        return WindPlantIEC;
+    }
+
+    public void setWindPlantIEC(WindPlantIEC _object_) {
+        if (!Objects.equals(_object_.getCimModel(), getCimModel())) {
+            throw new IllegalArgumentException("Object belongs to different model");
+        }
+        if (WindPlantIEC != _object_) {
+            WindPlantIEC = _object_;
+            _object_.setWindPlantFreqPcontrolIEC(this);
+            WindPlantIECId = _object_.getRdfid();
+        }
+    }
+
+    private static Object getWindPlantIEC(BaseClass _this_) {
+        var obj = ((WindPlantFreqPcontrolIEC) _this_).getWindPlantIEC();
+        var id = ((WindPlantFreqPcontrolIEC) _this_).WindPlantIECId;
+        if (obj == null && id != null) {
+            return id;
+        }
+        return obj;
+    }
+
+    private static void setWindPlantIEC(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).WindPlantIECId = (String) _value_;
+        } else if (_value_ instanceof WindPlantIEC) {
+            ((WindPlantFreqPcontrolIEC) _this_).setWindPlantIEC((WindPlantIEC) _value_);
+        } else {
+            throw new IllegalArgumentException("Object is not WindPlantIEC");
+        }
+    }
+
+    /**
+     * Maximum ramp rate of <i>p</i><i><sub>WTref</sub></i> request from the plant controller to the wind turbines (<i>dp</i><i><sub>refmax</sub></i>) (&gt; WindPlantFreqPcontrolIEC.dprefmin). It is a case-dependent parameter.
+     */
+    @Column(name = "dprefmax")
+    private Double dprefmax; // PU
+
+    public Double getDprefmax() {
+        return dprefmax;
+    }
+
+    public void setDprefmax(Double _value_) {
+        dprefmax = _value_;
+    }
+
+    private static Object getDprefmax(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getDprefmax();
+    }
+
+    private static void setDprefmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDprefmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDprefmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Minimum (negative) ramp rate of <i>p</i><i><sub>WTref</sub></i> request from the plant controller to the wind turbines (<i>dp</i><i><sub>refmin</sub></i>) (&lt; WindPlantFreqPcontrolIEC.dprefmax). It is a project-dependent parameter.
+     */
+    @Column(name = "dprefmin")
+    private Double dprefmin; // PU
+
+    public Double getDprefmin() {
+        return dprefmin;
+    }
+
+    public void setDprefmin(Double _value_) {
+        dprefmin = _value_;
+    }
+
+    private static Object getDprefmin(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getDprefmin();
+    }
+
+    private static void setDprefmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDprefmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDprefmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum positive ramp rate for wind plant power reference (<i>dp</i><i><sub>WPrefmax</sub></i>) (&gt; WindPlantFreqPcontrolIEC.dpwprefmin). It is a project-dependent parameter.
+     */
+    @Column(name = "dpwprefmax")
+    private Double dpwprefmax; // PU
+
+    public Double getDpwprefmax() {
+        return dpwprefmax;
+    }
+
+    public void setDpwprefmax(Double _value_) {
+        dpwprefmax = _value_;
+    }
+
+    private static Object getDpwprefmax(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getDpwprefmax();
+    }
+
+    private static void setDpwprefmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDpwprefmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDpwprefmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum negative ramp rate for wind plant power reference (<i>dp</i><i><sub>WPrefmin</sub></i>) (&lt; WindPlantFreqPcontrolIEC.dpwprefmax). It is a project-dependent parameter.
+     */
+    @Column(name = "dpwprefmin")
+    private Double dpwprefmin; // PU
+
+    public Double getDpwprefmin() {
+        return dpwprefmin;
+    }
+
+    public void setDpwprefmin(Double _value_) {
+        dpwprefmin = _value_;
+    }
+
+    private static Object getDpwprefmin(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getDpwprefmin();
+    }
+
+    private static void setDpwprefmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDpwprefmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setDpwprefmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Plant P controller integral gain (<i>K</i><i><sub>IWPp</sub></i>). It is a project-dependent parameter.
+     */
+    @Column(name = "kiwpp")
+    private Double kiwpp; // Float
+
+    public Double getKiwpp() {
+        return kiwpp;
+    }
+
+    public void setKiwpp(Double _value_) {
+        kiwpp = _value_;
+    }
+
+    private static Object getKiwpp(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getKiwpp();
+    }
+
+    private static void setKiwpp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwpp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwpp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum PI integrator term (<i>K</i><i><sub>IWPpmax</sub></i>) (&gt; WindPlantFreqPcontrolIEC.kiwppmin). It is a project-dependent parameter.
+     */
+    @Column(name = "kiwppmax")
+    private Double kiwppmax; // PU
+
+    public Double getKiwppmax() {
+        return kiwppmax;
+    }
+
+    public void setKiwppmax(Double _value_) {
+        kiwppmax = _value_;
+    }
+
+    private static Object getKiwppmax(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getKiwppmax();
+    }
+
+    private static void setKiwppmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwppmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwppmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Minimum PI integrator term (<i>K</i><i><sub>IWPpmin</sub></i>) (&lt; WindPlantFreqPcontrolIEC.kiwppmax). It is a project-dependent parameter.
+     */
+    @Column(name = "kiwppmin")
+    private Double kiwppmin; // PU
+
+    public Double getKiwppmin() {
+        return kiwppmin;
+    }
+
+    public void setKiwppmin(Double _value_) {
+        kiwppmin = _value_;
+    }
+
+    private static Object getKiwppmin(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getKiwppmin();
+    }
+
+    private static void setKiwppmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwppmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKiwppmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Plant P controller proportional gain (<i>K</i><i><sub>PWPp</sub></i>). It is a project-dependent parameter.
+     */
+    @Column(name = "kpwpp")
+    private Double kpwpp; // Float
+
+    public Double getKpwpp() {
+        return kpwpp;
+    }
+
+    public void setKpwpp(Double _value_) {
+        kpwpp = _value_;
+    }
+
+    private static Object getKpwpp(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getKpwpp();
+    }
+
+    private static void setKpwpp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKpwpp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKpwpp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Power reference gain (<i>K</i><i><sub>WPpref</sub></i>). It is a project-dependent parameter.
+     */
+    @Column(name = "kwppref")
+    private Double kwppref; // PU
+
+    public Double getKwppref() {
+        return kwppref;
+    }
+
+    public void setKwppref(Double _value_) {
+        kwppref = _value_;
+    }
+
+    private static Object getKwppref(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getKwppref();
+    }
+
+    private static void setKwppref(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKwppref((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setKwppref(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Maximum <i>p</i><i><sub>WTref</sub></i> request from the plant controller to the wind turbines (<i>p</i><i><sub>refmax</sub></i>) (&gt; WindPlantFreqPcontrolIEC.prefmin). It is a project-dependent parameter.
+     */
+    @Column(name = "prefmax")
+    private Double prefmax; // PU
+
+    public Double getPrefmax() {
+        return prefmax;
+    }
+
+    public void setPrefmax(Double _value_) {
+        prefmax = _value_;
+    }
+
+    private static Object getPrefmax(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getPrefmax();
+    }
+
+    private static void setPrefmax(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setPrefmax((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setPrefmax(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Minimum <i>p</i><i><sub>WTref</sub></i> request from the plant controller to the wind turbines (<i>p</i><i><sub>refmin</sub></i>) (&lt; WindPlantFreqPcontrolIEC.prefmax). It is a project-dependent parameter.
+     */
+    @Column(name = "prefmin")
+    private Double prefmin; // PU
+
+    public Double getPrefmin() {
+        return prefmin;
+    }
+
+    public void setPrefmin(Double _value_) {
+        prefmin = _value_;
+    }
+
+    private static Object getPrefmin(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getPrefmin();
+    }
+
+    private static void setPrefmin(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setPrefmin((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setPrefmin(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Lead time constant in reference value transfer function (<i>T</i><i><sub>pft</sub></i>) (&gt;= 0). It is a project-dependent parameter.
+     */
+    @Column(name = "tpft")
+    private Double tpft; // Seconds
+
+    public Double getTpft() {
+        return tpft;
+    }
+
+    public void setTpft(Double _value_) {
+        tpft = _value_;
+    }
+
+    private static Object getTpft(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getTpft();
+    }
+
+    private static void setTpft(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTpft((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTpft(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Lag time constant in reference value transfer function (<i>T</i><i><sub>pfv</sub></i>) (&gt;= 0). It is a project-dependent parameter.
+     */
+    @Column(name = "tpfv")
+    private Double tpfv; // Seconds
+
+    public Double getTpfv() {
+        return tpfv;
+    }
+
+    public void setTpfv(Double _value_) {
+        tpfv = _value_;
+    }
+
+    private static Object getTpfv(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getTpfv();
+    }
+
+    private static void setTpfv(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTpfv((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTpfv(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Filter time constant for frequency measurement (<i>T</i><i><sub>WPffiltp</sub></i>) (&gt;= 0). It is a project-dependent parameter.
+     */
+    @Column(name = "twpffiltp")
+    private Double twpffiltp; // Seconds
+
+    public Double getTwpffiltp() {
+        return twpffiltp;
+    }
+
+    public void setTwpffiltp(Double _value_) {
+        twpffiltp = _value_;
+    }
+
+    private static Object getTwpffiltp(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getTwpffiltp();
+    }
+
+    private static void setTwpffiltp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTwpffiltp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTwpffiltp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Filter time constant for active power measurement (<i>T</i><i><sub>WPpfiltp</sub></i>) (&gt;= 0). It is a project-dependent parameter.
+     */
+    @Column(name = "twppfiltp")
+    private Double twppfiltp; // Seconds
+
+    public Double getTwppfiltp() {
+        return twppfiltp;
+    }
+
+    public void setTwppfiltp(Double _value_) {
+        twppfiltp = _value_;
+    }
+
+    private static Object getTwppfiltp(BaseClass _this_) {
+        return ((WindPlantFreqPcontrolIEC) _this_).getTwppfiltp();
+    }
+
+    private static void setTwppfiltp(BaseClass _this_, Object _value_) {
+        if (_value_ instanceof Double) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTwppfiltp((Double) _value_);
+        } else if (_value_ instanceof String) {
+            ((WindPlantFreqPcontrolIEC) _this_).setTwppfiltp(getDoubleFromString((String) _value_));
+        } else {
+            throw new IllegalArgumentException("Object is neither Double nor String");
+        }
+    }
+
+    /**
+     * Nested repository. The implementation is automatically created.
+     */
+    public interface Repository extends CrudRepository<WindPlantFreqPcontrolIEC, Long> {
+    }
+
+    /**
+     * Get a list of all attribute names of the CIM type.
+     *
+     * The list includes all inherited attributes. The attribute name is only the
+     * last part of the full name (without the class name).
+     *
+     * @return All attributes of the CIM type
+     */
+    @Override
+    public List<String> getAttributeNames() {
+        return ATTR_NAMES_LIST;
+    }
+
+    @Override
+    protected Map<String, AttrDetails> allAttrDetailsMap() {
+        Map<String, AttrDetails> map = new LinkedHashMap<>(CLASS_ATTR_DETAILS_MAP);
+        map.putAll(super.allAttrDetailsMap());
+        return map;
+    }
+
+    /**
+     * Get the full name of an attribute.
+     *
+     * The full name is "<class_name>.<attribute_name>".
+     *
+     * @param attrName The attribute name
+     * @return         The full name
+     */
+    @Override
+    public String getAttributeFullName(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).fullName : null;
+    }
+
+    /**
+     * Get an attribute value.
+     *
+     * @param attrName The attribute name
+     * @return         The attribute value
+     */
+    @Override
+    public Object getAttribute(String attrName) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var getterFunction = ATTR_DETAILS_MAP.get(attrName).getter;
+            return getterFunction.apply(this);
+        }
+        LOG.error(String.format("No-one knows an attribute %s.%s", "WindPlantFreqPcontrolIEC", attrName));
+        return "";
+    }
+
+    /**
+     * Set an attribute value.
+     *
+     * @param attrName The attribute name
+     * @param value    The attribute value
+     */
+    @Override
+    public void setAttribute(String attrName, Object value) {
+        if (ATTR_DETAILS_MAP.containsKey(attrName)) {
+            var setterFunction = ATTR_DETAILS_MAP.get(attrName).setter;
+            setterFunction.accept(this, value);
+        } else {
+            LOG.error(String.format("No-one knows what to do with attribute %s.%s and value %s",
+                "WindPlantFreqPcontrolIEC", attrName, value));
+        }
+    }
+
+    /**
+     * Check if the attribute is a primitive attribute.
+     *
+     * This includes datatype_attributes.
+     *
+     * @param attrName The attribute name
+     * @return         Is it a primitive attribute?
+     */
+    @Override
+    public boolean isPrimitiveAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isPrimitive;
+    }
+
+    /**
+     * Check if the attribute is an enum attribute.
+     *
+     * @param attrName The attribute name
+     * @return         Is it an enum attribute?
+     */
+    @Override
+    public boolean isEnumAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isEnum;
+    }
+
+    /**
+     * Check if the attribute is used.
+     *
+     * Some attributes are declared as unused in the CGMES definition. In most cases
+     * these are list attributes, i.e. lists of links to other CIM objects. But
+     * there are some exceptions, e.g. the list of ToplogicalNodes in
+     * TopologicalIsland.
+     *
+     * @param attrName The attribute name
+     * @return         Is the attribute used?
+     */
+    @Override
+    public boolean isUsedAttribute(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) && ATTR_DETAILS_MAP.get(attrName).isUsed;
+    }
+
+    /**
+     * Get the namespace URL of an object of this class.
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getClassNamespaceUrl() {
+        return CLASS_NAMESPACE;
+    }
+
+    /**
+     * Get the namespace URL of an attribute (also for inherited attributes).
+     *
+     * @return The namespace URL
+     */
+    @Override
+    public String getAttributeNamespaceUrl(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).nameSpace : null;
+    }
+
+    /**
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element can be found.
+     *
+     * @return All possible profiles for an object of this class
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfiles() {
+        return POSSIBLE_PROFILES;
+    }
+
+    /**
+     * This is the profile with most of the attributes.
+     * It should be used to write the data to as few as possible files.
+     *
+     * @return The recommended profiles for an object of this class
+     */
+    @Override
+    public CGMESProfile getRecommendedProfile() {
+        return RECOMMENDED_PROFILE;
+    }
+
+    /**
+     * Get the possible profiles of an attribute (also for inherited attributes).
+     *
+     * @return All possible profiles for an attribute
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleAttributeProfiles(String attrName) {
+        return ATTR_DETAILS_MAP.containsKey(attrName) ? ATTR_DETAILS_MAP.get(attrName).profiles : null;
+    }
+
+    /**
+     * Get the possible profiles for an object of this class including the possible
+     * profiles of all direct or inherited attributes.
+     *
+     * A resource can be used by multiple profiles. This is the set of profiles
+     * where this element or an attribute of this element can be found.
+     *
+     * @return All possible profiles for an object of this class and its attributes
+     */
+    @Override
+    public Set<CGMESProfile> getPossibleProfilesIncludingAttributes() {
+        return POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    }
+
+    /**
+     * Private infos.
+     */
+
+    private static final String CLASS_NAMESPACE = "http://iec.ch/TC57/CIM100#";
+
+    private static final List<String> ATTR_NAMES_LIST;
+    private static final Map<String, AttrDetails> ATTR_DETAILS_MAP;
+    private static final Map<String, AttrDetails> CLASS_ATTR_DETAILS_MAP;
+    static {
+        Map<String, AttrDetails> map = new LinkedHashMap<>();
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("WindDynamicsLookupTable", new AttrDetails("WindPlantFreqPcontrolIEC.WindDynamicsLookupTable", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindPlantFreqPcontrolIEC::getWindDynamicsLookupTable, WindPlantFreqPcontrolIEC::setWindDynamicsLookupTable));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("WindPlantIEC", new AttrDetails("WindPlantFreqPcontrolIEC.WindPlantIEC", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, WindPlantFreqPcontrolIEC::getWindPlantIEC, WindPlantFreqPcontrolIEC::setWindPlantIEC));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("dprefmax", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getDprefmax, WindPlantFreqPcontrolIEC::setDprefmax));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("dprefmin", new AttrDetails("WindPlantFreqPcontrolIEC.dprefmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getDprefmin, WindPlantFreqPcontrolIEC::setDprefmin));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("dpwprefmax", new AttrDetails("WindPlantFreqPcontrolIEC.dpwprefmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getDpwprefmax, WindPlantFreqPcontrolIEC::setDpwprefmax));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("dpwprefmin", new AttrDetails("WindPlantFreqPcontrolIEC.dpwprefmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getDpwprefmin, WindPlantFreqPcontrolIEC::setDpwprefmin));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kiwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kiwpp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getKiwpp, WindPlantFreqPcontrolIEC::setKiwpp));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kiwppmax", new AttrDetails("WindPlantFreqPcontrolIEC.kiwppmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getKiwppmax, WindPlantFreqPcontrolIEC::setKiwppmax));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kiwppmin", new AttrDetails("WindPlantFreqPcontrolIEC.kiwppmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getKiwppmin, WindPlantFreqPcontrolIEC::setKiwppmin));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kpwpp", new AttrDetails("WindPlantFreqPcontrolIEC.kpwpp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getKpwpp, WindPlantFreqPcontrolIEC::setKpwpp));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("kwppref", new AttrDetails("WindPlantFreqPcontrolIEC.kwppref", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getKwppref, WindPlantFreqPcontrolIEC::setKwppref));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("prefmax", new AttrDetails("WindPlantFreqPcontrolIEC.prefmax", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getPrefmax, WindPlantFreqPcontrolIEC::setPrefmax));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("prefmin", new AttrDetails("WindPlantFreqPcontrolIEC.prefmin", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getPrefmin, WindPlantFreqPcontrolIEC::setPrefmin));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("tpft", new AttrDetails("WindPlantFreqPcontrolIEC.tpft", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getTpft, WindPlantFreqPcontrolIEC::setTpft));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("tpfv", new AttrDetails("WindPlantFreqPcontrolIEC.tpfv", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getTpfv, WindPlantFreqPcontrolIEC::setTpfv));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("twpffiltp", new AttrDetails("WindPlantFreqPcontrolIEC.twpffiltp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getTwpffiltp, WindPlantFreqPcontrolIEC::setTwpffiltp));
+        }
+        {
+            Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.DY);
+            map.put("twppfiltp", new AttrDetails("WindPlantFreqPcontrolIEC.twppfiltp", true, "http://iec.ch/TC57/CIM100#", profiles, true, false, WindPlantFreqPcontrolIEC::getTwppfiltp, WindPlantFreqPcontrolIEC::setTwppfiltp));
+        }
+        CLASS_ATTR_DETAILS_MAP = map;
+        ATTR_DETAILS_MAP = Collections.unmodifiableMap(new WindPlantFreqPcontrolIEC(null).allAttrDetailsMap());
+        ATTR_NAMES_LIST = new ArrayList<>(ATTR_DETAILS_MAP.keySet());
+    }
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.DY);
+        POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
+    }
+
+    private static final CGMESProfile RECOMMENDED_PROFILE = CGMESProfile.DY;
+
+    private static final Set<CGMESProfile> POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES;
+    static {
+        Set<CGMESProfile> profiles = new LinkedHashSet<>(POSSIBLE_PROFILES);
+        for (var attrDetails : ATTR_DETAILS_MAP.values()) {
+            profiles.addAll(attrDetails.profiles);
+        }
+        POSSIBLE_PROFILES_INCLUDING_ATTRIBUTES = Collections.unmodifiableSet(profiles);
+    }
+}
