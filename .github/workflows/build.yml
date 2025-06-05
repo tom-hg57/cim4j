@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         distribution: ['temurin']
-        java: ['11', '17', '23']
+        java: ['17', '23']
     name: Java ${{matrix.java}} (${{matrix.distribution}}) build & test
     steps:
       - uses: actions/checkout@v4
