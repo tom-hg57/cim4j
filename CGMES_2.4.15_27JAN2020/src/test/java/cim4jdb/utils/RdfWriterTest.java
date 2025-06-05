@@ -1,4 +1,4 @@
-package cim4j.utils;
+package cim4jdb.utils;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,22 +14,25 @@ import java.util.Map;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import cim4j.BaseClass;
-import cim4j.BaseVoltage;
-import cim4j.CGMESProfile;
-import cim4j.CimClassMap;
-import cim4j.CimConstants;
-import cim4j.Logging;
-import cim4j.SvVoltage;
-import cim4j.TopologicalIsland;
-import cim4j.TopologicalNode;
-import cim4j.VoltageLevel;
+import cim4jdb.BaseClass;
+import cim4jdb.BaseVoltage;
+import cim4jdb.CGMESProfile;
+import cim4jdb.CimClassMap;
+import cim4jdb.CimConstants;
+import cim4jdb.Logging;
+import cim4jdb.SvVoltage;
+import cim4jdb.TopologicalIsland;
+import cim4jdb.TopologicalNode;
+import cim4jdb.VoltageLevel;
 
 /**
  * Test writing CIM data to RDF files.
  */
+@TestInstance(Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RdfWriterTest {
 
