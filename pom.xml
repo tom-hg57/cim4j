@@ -4,12 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lfenergy.sogno</groupId>
-    <artifactId>cim4j-parent</artifactId>
+    <artifactId>cim4jdb-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>Java classes for CIM / CGMES</name>
-    <url>https://github.com/sogno-platform/cim4j</url>
+    <name>Java classes for CIM / CGMES with database support</name>
 
     <licenses>
         <license>
@@ -23,33 +22,10 @@
         <module>CGMES_3.0.0</module>
     </modules>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub sogno-platform Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/sogno-platform/cim4j/</url>
-        </repository>
-    </distributionManagement>
-
     <properties>
-        <maven.compiler.release>11</maven.compiler.release>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <!-- Use cim4j as library downloaded from GitHub Maven Packages repository     -->
-    <!-- Personal access token with read:packages is needed to use GitHub Packages -->
-    <!-- (generated on the developer settings page and added to settings.xml)      -->
-    <!--
-    <repositories>
-        <repository>
-            <id>github</id>
-            <url>https://maven.pkg.github.com/sogno-platform/cim4j/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    -->
 </project>
