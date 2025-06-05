@@ -1,4 +1,4 @@
-package cim4j.utils;
+package cim4jdb.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -14,35 +14,38 @@ import java.util.Set;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import cim4j.Analog;
-import cim4j.AnalogValue;
-import cim4j.BaseVoltage;
-import cim4j.CimConstants;
-import cim4j.ConnectivityNode;
-import cim4j.DiagramObject;
-import cim4j.EnergyConsumer;
-import cim4j.EnergySchedulingType;
-import cim4j.EnergySource;
-import cim4j.Equipment;
-import cim4j.Location;
-import cim4j.Logging;
-import cim4j.OperationalLimitType;
-import cim4j.PowerTransformer;
-import cim4j.PowerTransformerEnd;
-import cim4j.Season;
-import cim4j.SvStatus;
-import cim4j.SvVoltage;
-import cim4j.Terminal;
-import cim4j.TopologicalIsland;
-import cim4j.TopologicalNode;
-import cim4j.VisibilityLayer;
-import cim4j.VoltageLevel;
+import cim4jdb.Analog;
+import cim4jdb.AnalogValue;
+import cim4jdb.BaseVoltage;
+import cim4jdb.CimConstants;
+import cim4jdb.ConnectivityNode;
+import cim4jdb.DiagramObject;
+import cim4jdb.EnergyConsumer;
+import cim4jdb.EnergySchedulingType;
+import cim4jdb.EnergySource;
+import cim4jdb.Equipment;
+import cim4jdb.Location;
+import cim4jdb.Logging;
+import cim4jdb.OperationalLimitType;
+import cim4jdb.PowerTransformer;
+import cim4jdb.PowerTransformerEnd;
+import cim4jdb.Season;
+import cim4jdb.SvStatus;
+import cim4jdb.SvVoltage;
+import cim4jdb.Terminal;
+import cim4jdb.TopologicalIsland;
+import cim4jdb.TopologicalNode;
+import cim4jdb.VisibilityLayer;
+import cim4jdb.VoltageLevel;
 
 /**
  * Test reading rdf files into a map of rdfid to cim object.
  */
+@TestInstance(Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RdfReaderTest {
     @Test
