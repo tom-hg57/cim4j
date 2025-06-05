@@ -48,6 +48,7 @@ class RdfReaderTest {
     @Test
     @Order(100)
     void testRead() {
+        // Check reading a not existing file causing an exception
         Logging.setEnabled(false);
         assertFalse(Logging.isEnabled());
         var rdfReader = new RdfReader();
@@ -65,6 +66,7 @@ class RdfReaderTest {
     @Test
     @Order(110)
     void testRead001() {
+        // Check CIM objects with primitive, datatype and class attribute (ManyToOne)
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test001.xml")));
         assertEquals(2, cimData.size());
@@ -114,6 +116,7 @@ class RdfReaderTest {
     @Test
     @Order(120)
     void testRead002() {
+        // Check enum attributes
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test002.xml")));
         assertEquals(2, cimData.size());
@@ -168,6 +171,7 @@ class RdfReaderTest {
     @Test
     @Order(130)
     void testRead003() {
+        // Check reading rdf:about instead of rdf:ID
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test003.xml")));
         assertEquals(2, cimData.size());
@@ -203,6 +207,7 @@ class RdfReaderTest {
     @Test
     @Order(140)
     void testRead004() {
+        // Check reading model header
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test004.xml")));
         assertEquals(1, cimData.size());
@@ -226,6 +231,7 @@ class RdfReaderTest {
     @Test
     @Order(150)
     void testRead005() {
+        // Check custom namespaces
         if (CimConstants.CIM_VERSION.equals("cgmes_v2_4_13") || CimConstants.CIM_VERSION.equals("cgmes_v2_4_15")) {
             var rdfReader = new RdfReader();
             var cimData = rdfReader.read(List.of(getPath("rdf/test005_CGMES2.xml")));
@@ -288,6 +294,7 @@ class RdfReaderTest {
     @Test
     @Order(160)
     void testRead006() {
+        // Check enum attribute with custom namespace
         if (CimConstants.CIM_VERSION.equals("cgmes_v2_4_13") || CimConstants.CIM_VERSION.equals("cgmes_v2_4_15")) {
             var rdfReader = new RdfReader();
             var cimData = rdfReader.read(List.of(getPath("rdf/test006_CGMES2.xml")));
@@ -344,6 +351,7 @@ class RdfReaderTest {
     @Test
     @Order(170)
     void testRead007() {
+        // Check class attributes if the linked object is defined later
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test007.xml")));
         assertEquals(4, cimData.size());
@@ -381,24 +389,28 @@ class RdfReaderTest {
     @Test
     @Order(180)
     void testRead008_EQ_TP() {
+        // Check reading models from more than one file
         testRead_008_009(List.of(getPath("rdf/test008_EQ.xml"), getPath("rdf/test008_TP.xml")));
     }
 
     @Test
     @Order(190)
     void testRead008_TP_EQ() {
+        // Check reading models from more than one file in reverse order
         testRead_008_009(List.of(getPath("rdf/test008_TP.xml"), getPath("rdf/test008_EQ.xml")));
     }
 
     @Test
     @Order(200)
     void testRead009_EQ_TP() {
+        // Check reading one object from more than one file
         testRead_008_009(List.of(getPath("rdf/test009_EQ.xml"), getPath("rdf/test009_TP.xml")));
     }
 
     @Test
     @Order(210)
     void testRead009_TP_EQ() {
+        // Check reading one object from more than one file in reverse order
         testRead_008_009(List.of(getPath("rdf/test009_TP.xml"), getPath("rdf/test009_EQ.xml")));
     }
 
@@ -440,6 +452,7 @@ class RdfReaderTest {
     @Test
     @Order(220)
     void testRead010() {
+        // Check text with non ASCII utf-8 characters
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test010.xml")));
         assertEquals(1, cimData.size());
@@ -457,6 +470,7 @@ class RdfReaderTest {
     @Test
     @Order(230)
     void testReadFromStrings() {
+        // Check reading non ASCII utf-8 characters from a string
         final String xml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n" +
                 "<rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n" +
                 "         xmlns:cim=\"http://iec.ch/TC57/2013/CIM-schema-cim16#\">\n" +
@@ -481,6 +495,8 @@ class RdfReaderTest {
     @Test
     @Order(240)
     void testRead011() {
+        // Check class attributes to Status, StreetAddress, StreetDetail, TownDetail
+        // (to make sure they are not primitive string attributes, only for CGMES3)
         if (CimConstants.CIM_VERSION.equals("cgmes_v3_0_0")) {
             var rdfReader = new RdfReader();
             var cimData = rdfReader.read(List.of(getPath("rdf/test011_CGMES3.xml")));
@@ -561,6 +577,7 @@ class RdfReaderTest {
     @Test
     @Order(250)
     void testRead012() {
+        // Check MonthDay as primitive string attribute
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test012.xml")));
         assertEquals(1, cimData.size());
@@ -593,24 +610,31 @@ class RdfReaderTest {
     @Test
     @Order(260)
     void testRead013() {
+        // Check list attributes (TopologicalIsland to TopologicalNode, OneToMany)
         testRead_013_014_015_016("rdf/test013.xml");
     }
 
     @Test
     @Order(270)
     void testRead014() {
+        // Check links from TopologicalNode to TopologicalIsland (not CGMES conform)
         testRead_013_014_015_016("rdf/test014.xml");
     }
 
     @Test
     @Order(280)
     void testRead015() {
+        // Check reading links between TopologicalNode and TopologicalIsland
+        // if they are set on both sides (not CGMES conform)
         testRead_013_014_015_016("rdf/test015.xml");
     }
 
     @Test
     @Order(290)
     void testRead016() {
+        // Check reading mixed links between TopologicalNode and TopologicalIsland:
+        // one from TopologicalIsland to TopologicalNode and the other
+        // from TopologicalNode to TopologicalIsland (not CGMES conform)
         testRead_013_014_015_016("rdf/test016.xml");
     }
 
@@ -663,18 +687,22 @@ class RdfReaderTest {
     @Test
     @Order(300)
     void testRead017() {
+        // Check class attributes (SvVoltage to TopologicalNode, OneToOne)
         testRead_017_018_019("rdf/test017.xml");
     }
 
     @Test
     @Order(310)
     void testRead018() {
+        // Check link from TopologicalNode to SvVoltage (not CGMES conform)
         testRead_017_018_019("rdf/test018.xml");
     }
 
     @Test
     @Order(320)
     void testRead019() {
+        // Check reading links between SvVoltage and TopologicalNode
+        // if they are set on both sides (not CGMES conform)
         testRead_017_018_019("rdf/test019.xml");
     }
 
@@ -709,6 +737,7 @@ class RdfReaderTest {
     @Test
     @Order(330)
     void testRead020() {
+        // Check inherited object links
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test020.xml")));
         assertEquals(2, cimData.size());
@@ -750,6 +779,7 @@ class RdfReaderTest {
     @Test
     @Order(340)
     void testRead021() {
+        // Check handling links to not existing objects (causing an error log entry)
         Logging.setEnabled(false);
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test021.xml")));
@@ -777,6 +807,7 @@ class RdfReaderTest {
     @Test
     @Order(350)
     void testRead022() {
+        // Check models with more than one profile
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test022.xml")));
         assertEquals(2, cimData.size());
@@ -828,6 +859,7 @@ class RdfReaderTest {
     @Test
     @Order(360)
     void testRead023() {
+        // Check text with entity references
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test023.xml")));
         assertEquals(1, cimData.size());
@@ -847,30 +879,41 @@ class RdfReaderTest {
     @Test
     @Order(370)
     void testRead024() {
+        // Check parsing one object with different types (maybe not CGMES conform)
+        // PowerTransformer gets more attributes from Equipment entry with rdf:about
         testRead_024_025_026_027_028("rdf/test024.xml");
     }
 
     @Test
     @Order(380)
     void testRead025() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object (rdf:about) has to be changed to PowerTransformer
         testRead_024_025_026_027_028("rdf/test025.xml");
     }
 
     @Test
     @Order(390)
     void testRead026() {
+        // Check parsing one object with different types (maybe not CGMES conform)
+        // PowerTransformer (rdf:about) gets more attributes from Equipment entry
         testRead_024_025_026_027_028("rdf/test026.xml");
     }
 
     @Test
     @Order(400)
     void testRead027() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object has to be changed to PowerTransformer (rdf:about)
         testRead_024_025_026_027_028("rdf/test027.xml");
     }
 
     @Test
     @Order(410)
     void testRead028() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object has to be changed to PowerTransformer (rdf:about)
+        // Equipment has class attribute, but the linked object is defined later
         testRead_024_025_026_027_028("rdf/test028.xml");
     }
 
@@ -926,24 +969,31 @@ class RdfReaderTest {
     @Test
     @Order(420)
     void testRead029() {
+        // Check parsing one object with overriding attribute (maybe not CGMES conform)
         testRead_029_030_031_032("rdf/test029.xml");
     }
 
     @Test
     @Order(430)
     void testRead030() {
+        // Check parsing one object with overriding attribute (maybe not CGMES conform)
+        // and the overriding class attribute links to object, that is defined later
         testRead_029_030_031_032("rdf/test030.xml");
     }
 
     @Test
     @Order(440)
     void testRead031() {
+        // Check parsing one object with overriding attribute (maybe not CGMES conform)
+        // and both (overridden and overriding) link to objects, that are defined later
         testRead_029_030_031_032("rdf/test031.xml");
     }
 
     @Test
     @Order(450)
     void testRead032() {
+        // Check parsing one object with overriding attribute (maybe not CGMES conform)
+        // and the overridden class attribute links to object, that is defined later
         testRead_029_030_031_032("rdf/test032.xml");
     }
 
@@ -978,6 +1028,10 @@ class RdfReaderTest {
     @Test
     @Order(460)
     void testRead033() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object has to be changed to PowerTransformer (rdf:about)
+        // Equipment has class attribute, but the linked object is defined later
+        // after changing to PowerTransformer
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test033.xml")));
         assertEquals(2, cimData.size());
@@ -1007,6 +1061,10 @@ class RdfReaderTest {
     @Test
     @Order(470)
     void testRead034() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // EquipmentContainer object has to be changed to VoltageLevel
+        // EquipmentContainer has list attributes (not CGMES conform), but the linked
+        // objects are defined later after changing to VoltageLevel
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test034.xml")));
         assertEquals(3, cimData.size());
@@ -1046,6 +1104,10 @@ class RdfReaderTest {
     @Test
     @Order(480)
     void testRead035() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // EquipmentContainer object has to be changed to VoltageLevel
+        // EquipmentContainer has list attributes (not CGMES conform), but the linked
+        // objects are defined later: one before and one after changing to VoltageLevel
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test035.xml")));
         assertEquals(3, cimData.size());
@@ -1085,6 +1147,9 @@ class RdfReaderTest {
     @Test
     @Order(490)
     void testRead036() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object has to be changed to PowerTransformer
+        // and is linked as ConductingEquipment (which is not allowed for Equipment)
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test036.xml")));
         assertEquals(2, cimData.size());
@@ -1112,6 +1177,11 @@ class RdfReaderTest {
     @Test
     @Order(500)
     void testRead037() {
+        // Check parsing one object with changing type (maybe not CGMES conform)
+        // Equipment object has to be changed to PowerTransformer
+        // and is linked as ConductingEquipment (which is not allowed for Equipment)
+        // before changing to PowerTransformer (typically the entries are defined
+        // in more than one file, so the order of reading is not clearly defined)
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test037.xml")));
         assertEquals(2, cimData.size());
@@ -1139,6 +1209,8 @@ class RdfReaderTest {
     @Test
     @Order(510)
     void testRead038() {
+        // Check not allowed linked type (causing an error log entry)
+        // Equipment object is tried to be linked as ConductingEquipment
         Logging.setEnabled(false);
         var rdfReader = new RdfReader();
         var cimData = rdfReader.read(List.of(getPath("rdf/test038.xml")));
