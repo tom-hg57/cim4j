@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 version = 1
-SPDX-PackageName = "cim4j"
+SPDX-PackageName = "cim4jdb"
 SPDX-PackageSupplier = "sogno-tsc@lists.lfenergy.org"
-SPDX-PackageDownloadLocation = "https://github.com/sogno-platform/cim4j"
+SPDX-PackageDownloadLocation = "https://github.com/tom-hg57/cim4j/tree/add-language-pack-javadb"
 
 [[annotations]]
 path = ["*/src/test/resources/rdf/*.xml"]

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-package cim4j;
+package cim4jdb;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -16,11 +16,14 @@ import java.util.HashSet;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.api.TestMethodOrder;
 
 /**
  * Test for enum containing all CGMES profiles.
  */
+@TestInstance(Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CGMESProfileTest {
     @Test
@@ -66,7 +69,7 @@ class CGMESProfileTest {
 
         var ex = assertThrows(IllegalArgumentException.class, () -> CGMESProfile.valueOf("dummy"));
         var msg = ex.getMessage();
-        assertTrue(msg.startsWith("No enum constant cim4j.CGMESProfile.dummy"));
+        assertTrue(msg.startsWith("No enum constant cim4jdb.CGMESProfile.dummy"));
     }
 
     @Test
