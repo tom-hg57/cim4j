@@ -171,13 +171,13 @@ public class RotatingMachine extends RegulatingCondEq {
     /**
      * Power factor (nameplate data). It is primarily used for short circuit data exchange according to IEC 60909. The attribute cannot be a negative value.
      */
-    private Float ratedPowerFactor; // Float
+    private Double ratedPowerFactor; // Float
 
-    public Float getRatedPowerFactor() {
+    public Double getRatedPowerFactor() {
         return ratedPowerFactor;
     }
 
-    public void setRatedPowerFactor(Float _value_) {
+    public void setRatedPowerFactor(Double _value_) {
         ratedPowerFactor = _value_;
     }
 
@@ -186,12 +186,12 @@ public class RotatingMachine extends RegulatingCondEq {
     }
 
     private static void setRatedPowerFactor(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RotatingMachine) _this_).setRatedPowerFactor((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RotatingMachine) _this_).setRatedPowerFactor((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RotatingMachine) _this_).setRatedPowerFactor(getFloatFromString((String) _value_));
+            ((RotatingMachine) _this_).setRatedPowerFactor(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

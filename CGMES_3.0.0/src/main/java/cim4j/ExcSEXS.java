@@ -201,13 +201,13 @@ public class ExcSEXS extends ExcitationSystemDynamics {
     /**
      * Gain reduction ratio of lag-lead element (<i>[Ta / Tb]</i>).  Typical value = 0,1.
      */
-    private Float tatb; // Float
+    private Double tatb; // Float
 
-    public Float getTatb() {
+    public Double getTatb() {
         return tatb;
     }
 
-    public void setTatb(Float _value_) {
+    public void setTatb(Double _value_) {
         tatb = _value_;
     }
 
@@ -216,12 +216,12 @@ public class ExcSEXS extends ExcitationSystemDynamics {
     }
 
     private static void setTatb(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcSEXS) _this_).setTatb((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcSEXS) _this_).setTatb((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcSEXS) _this_).setTatb(getFloatFromString((String) _value_));
+            ((ExcSEXS) _this_).setTatb(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

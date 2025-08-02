@@ -1200,13 +1200,13 @@ public class GovHydroWEH extends TurbineGovernorDynamics {
     /**
      * Permanent droop for governor output feedback (<i>R-Perm-Gate</i>).
      */
-    private Float rpg; // Float
+    private Double rpg; // Float
 
-    public Float getRpg() {
+    public Double getRpg() {
         return rpg;
     }
 
-    public void setRpg(Float _value_) {
+    public void setRpg(Double _value_) {
         rpg = _value_;
     }
 
@@ -1215,25 +1215,25 @@ public class GovHydroWEH extends TurbineGovernorDynamics {
     }
 
     private static void setRpg(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroWEH) _this_).setRpg((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroWEH) _this_).setRpg((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroWEH) _this_).setRpg(getFloatFromString((String) _value_));
+            ((GovHydroWEH) _this_).setRpg(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Permanent droop for electrical power feedback (<i>R-Perm-Pe</i>).
      */
-    private Float rpp; // Float
+    private Double rpp; // Float
 
-    public Float getRpp() {
+    public Double getRpp() {
         return rpp;
     }
 
-    public void setRpp(Float _value_) {
+    public void setRpp(Double _value_) {
         rpp = _value_;
     }
 
@@ -1242,12 +1242,12 @@ public class GovHydroWEH extends TurbineGovernorDynamics {
     }
 
     private static void setRpp(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroWEH) _this_).setRpp((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroWEH) _this_).setRpp((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroWEH) _this_).setRpp(getFloatFromString((String) _value_));
+            ((GovHydroWEH) _this_).setRpp(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

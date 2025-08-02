@@ -279,13 +279,13 @@ public class SynchronousMachine extends RotatingMachine {
     /**
      * Factor to calculate the breaking current (Section 4.5.2.1 in IEC 60909-0). Used only for single fed short circuit on a generator (Section 4.3.4.2. in IEC 60909-0).
      */
-    private Float mu; // Float
+    private Double mu; // Float
 
-    public Float getMu() {
+    public Double getMu() {
         return mu;
     }
 
-    public void setMu(Float _value_) {
+    public void setMu(Double _value_) {
         mu = _value_;
     }
 
@@ -294,12 +294,12 @@ public class SynchronousMachine extends RotatingMachine {
     }
 
     private static void setMu(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SynchronousMachine) _this_).setMu((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SynchronousMachine) _this_).setMu((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SynchronousMachine) _this_).setMu(getFloatFromString((String) _value_));
+            ((SynchronousMachine) _this_).setMu(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

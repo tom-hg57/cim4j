@@ -211,13 +211,13 @@ public class RegulatingControl extends PowerSystemResource {
     /**
      * Maximum allowed target value (RegulatingControl.targetValue).
      */
-    private Float maxAllowedTargetValue; // Float
+    private Double maxAllowedTargetValue; // Float
 
-    public Float getMaxAllowedTargetValue() {
+    public Double getMaxAllowedTargetValue() {
         return maxAllowedTargetValue;
     }
 
-    public void setMaxAllowedTargetValue(Float _value_) {
+    public void setMaxAllowedTargetValue(Double _value_) {
         maxAllowedTargetValue = _value_;
     }
 
@@ -226,25 +226,25 @@ public class RegulatingControl extends PowerSystemResource {
     }
 
     private static void setMaxAllowedTargetValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegulatingControl) _this_).setMaxAllowedTargetValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegulatingControl) _this_).setMaxAllowedTargetValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegulatingControl) _this_).setMaxAllowedTargetValue(getFloatFromString((String) _value_));
+            ((RegulatingControl) _this_).setMaxAllowedTargetValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Minimum allowed target value (RegulatingControl.targetValue).
      */
-    private Float minAllowedTargetValue; // Float
+    private Double minAllowedTargetValue; // Float
 
-    public Float getMinAllowedTargetValue() {
+    public Double getMinAllowedTargetValue() {
         return minAllowedTargetValue;
     }
 
-    public void setMinAllowedTargetValue(Float _value_) {
+    public void setMinAllowedTargetValue(Double _value_) {
         minAllowedTargetValue = _value_;
     }
 
@@ -253,12 +253,12 @@ public class RegulatingControl extends PowerSystemResource {
     }
 
     private static void setMinAllowedTargetValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegulatingControl) _this_).setMinAllowedTargetValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegulatingControl) _this_).setMinAllowedTargetValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegulatingControl) _this_).setMinAllowedTargetValue(getFloatFromString((String) _value_));
+            ((RegulatingControl) _this_).setMinAllowedTargetValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -290,13 +290,13 @@ public class RegulatingControl extends PowerSystemResource {
     /**
      * This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to `false`, the RegulatingControl.targetDeadband is to be ignored. Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV.
      */
-    private Float targetDeadband; // Float
+    private Double targetDeadband; // Float
 
-    public Float getTargetDeadband() {
+    public Double getTargetDeadband() {
         return targetDeadband;
     }
 
-    public void setTargetDeadband(Float _value_) {
+    public void setTargetDeadband(Double _value_) {
         targetDeadband = _value_;
     }
 
@@ -305,25 +305,25 @@ public class RegulatingControl extends PowerSystemResource {
     }
 
     private static void setTargetDeadband(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegulatingControl) _this_).setTargetDeadband((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegulatingControl) _this_).setTargetDeadband((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegulatingControl) _this_).setTargetDeadband(getFloatFromString((String) _value_));
+            ((RegulatingControl) _this_).setTargetDeadband(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute.
      */
-    private Float targetValue; // Float
+    private Double targetValue; // Float
 
-    public Float getTargetValue() {
+    public Double getTargetValue() {
         return targetValue;
     }
 
-    public void setTargetValue(Float _value_) {
+    public void setTargetValue(Double _value_) {
         targetValue = _value_;
     }
 
@@ -332,12 +332,12 @@ public class RegulatingControl extends PowerSystemResource {
     }
 
     private static void setTargetValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegulatingControl) _this_).setTargetValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegulatingControl) _this_).setTargetValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegulatingControl) _this_).setTargetValue(getFloatFromString((String) _value_));
+            ((RegulatingControl) _this_).setTargetValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

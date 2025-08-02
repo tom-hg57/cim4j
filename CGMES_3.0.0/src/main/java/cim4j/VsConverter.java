@@ -198,13 +198,13 @@ public class VsConverter extends ACDCConverter {
     /**
      * The maximum quotient between the AC converter voltage (Uc) and DC voltage (Ud). A factor typically less than 1. It is converter`s configuration data used in power flow.
      */
-    private Float maxModulationIndex; // Float
+    private Double maxModulationIndex; // Float
 
-    public Float getMaxModulationIndex() {
+    public Double getMaxModulationIndex() {
         return maxModulationIndex;
     }
 
-    public void setMaxModulationIndex(Float _value_) {
+    public void setMaxModulationIndex(Double _value_) {
         maxModulationIndex = _value_;
     }
 
@@ -213,12 +213,12 @@ public class VsConverter extends ACDCConverter {
     }
 
     private static void setMaxModulationIndex(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((VsConverter) _this_).setMaxModulationIndex((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((VsConverter) _this_).setMaxModulationIndex((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((VsConverter) _this_).setMaxModulationIndex(getFloatFromString((String) _value_));
+            ((VsConverter) _this_).setMaxModulationIndex(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -302,13 +302,13 @@ public class VsConverter extends ACDCConverter {
     /**
      * Magnitude of pulse-modulation factor. The attribute shall be a positive value.
      */
-    private Float targetPWMfactor; // Float
+    private Double targetPWMfactor; // Float
 
-    public Float getTargetPWMfactor() {
+    public Double getTargetPWMfactor() {
         return targetPWMfactor;
     }
 
-    public void setTargetPWMfactor(Float _value_) {
+    public void setTargetPWMfactor(Double _value_) {
         targetPWMfactor = _value_;
     }
 
@@ -317,12 +317,12 @@ public class VsConverter extends ACDCConverter {
     }
 
     private static void setTargetPWMfactor(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((VsConverter) _this_).setTargetPWMfactor((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((VsConverter) _this_).setTargetPWMfactor((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((VsConverter) _this_).setTargetPWMfactor(getFloatFromString((String) _value_));
+            ((VsConverter) _this_).setTargetPWMfactor(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -356,13 +356,13 @@ public class VsConverter extends ACDCConverter {
     /**
      * Power factor target at the AC side, at point of common coupling. The attribute shall be a positive value.
      */
-    private Float targetPowerFactorPcc; // Float
+    private Double targetPowerFactorPcc; // Float
 
-    public Float getTargetPowerFactorPcc() {
+    public Double getTargetPowerFactorPcc() {
         return targetPowerFactorPcc;
     }
 
-    public void setTargetPowerFactorPcc(Float _value_) {
+    public void setTargetPowerFactorPcc(Double _value_) {
         targetPowerFactorPcc = _value_;
     }
 
@@ -371,12 +371,12 @@ public class VsConverter extends ACDCConverter {
     }
 
     private static void setTargetPowerFactorPcc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((VsConverter) _this_).setTargetPowerFactorPcc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((VsConverter) _this_).setTargetPowerFactorPcc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((VsConverter) _this_).setTargetPowerFactorPcc(getFloatFromString((String) _value_));
+            ((VsConverter) _this_).setTargetPowerFactorPcc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

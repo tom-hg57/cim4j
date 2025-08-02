@@ -77,13 +77,13 @@ public class LoadMotor extends IdentifiedObject {
     /**
      * Damping factor (<i>D</i>).  Unit = delta <i>P</i>/delta speed.  Typical value = 2.
      */
-    private Float d; // Float
+    private Double d; // Float
 
-    public Float getD() {
+    public Double getD() {
         return d;
     }
 
-    public void setD(Float _value_) {
+    public void setD(Double _value_) {
         d = _value_;
     }
 
@@ -92,12 +92,12 @@ public class LoadMotor extends IdentifiedObject {
     }
 
     private static void setD(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadMotor) _this_).setD((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadMotor) _this_).setD((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadMotor) _this_).setD(getFloatFromString((String) _value_));
+            ((LoadMotor) _this_).setD(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -131,13 +131,13 @@ public class LoadMotor extends IdentifiedObject {
     /**
      * Loading factor (<i>Lfac</i>). The ratio of initial <i>P</i> to motor MVA base.  Typical value = 0,8.
      */
-    private Float lfac; // Float
+    private Double lfac; // Float
 
-    public Float getLfac() {
+    public Double getLfac() {
         return lfac;
     }
 
-    public void setLfac(Float _value_) {
+    public void setLfac(Double _value_) {
         lfac = _value_;
     }
 
@@ -146,12 +146,12 @@ public class LoadMotor extends IdentifiedObject {
     }
 
     private static void setLfac(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadMotor) _this_).setLfac((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadMotor) _this_).setLfac((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadMotor) _this_).setLfac(getFloatFromString((String) _value_));
+            ((LoadMotor) _this_).setLfac(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -239,13 +239,13 @@ public class LoadMotor extends IdentifiedObject {
     /**
      * Fraction of constant-power load to be represented by this motor model (<i>Pfrac</i>) (&gt;= 0,0 and &lt;= 1,0).  Typical value = 0,3.
      */
-    private Float pfrac; // Float
+    private Double pfrac; // Float
 
-    public Float getPfrac() {
+    public Double getPfrac() {
         return pfrac;
     }
 
-    public void setPfrac(Float _value_) {
+    public void setPfrac(Double _value_) {
         pfrac = _value_;
     }
 
@@ -254,12 +254,12 @@ public class LoadMotor extends IdentifiedObject {
     }
 
     private static void setPfrac(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadMotor) _this_).setPfrac((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadMotor) _this_).setPfrac((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadMotor) _this_).setPfrac(getFloatFromString((String) _value_));
+            ((LoadMotor) _this_).setPfrac(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

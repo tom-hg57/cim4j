@@ -39,13 +39,13 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
     /**
      * Ratio (exciter voltage/generator voltage) of <i>Efd</i> bases of exciter and generator models (&gt; 0). Typical value = 1.
      */
-    private Float efdBaseRatio; // Float
+    private Double efdBaseRatio; // Float
 
-    public Float getEfdBaseRatio() {
+    public Double getEfdBaseRatio() {
         return efdBaseRatio;
     }
 
-    public void setEfdBaseRatio(Float _value_) {
+    public void setEfdBaseRatio(Double _value_) {
         efdBaseRatio = _value_;
     }
 
@@ -54,12 +54,12 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
     }
 
     private static void setEfdBaseRatio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SynchronousMachineDetailed) _this_).setEfdBaseRatio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SynchronousMachineDetailed) _this_).setEfdBaseRatio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SynchronousMachineDetailed) _this_).setEfdBaseRatio(getFloatFromString((String) _value_));
+            ((SynchronousMachineDetailed) _this_).setEfdBaseRatio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -91,13 +91,13 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
     /**
      * Quadrature-axis saturation factor at 120% of rated terminal voltage (<i>S12q</i>) (&gt;= SynchonousMachineDetailed.saturationFactorQAxis).  Typical value = 0,12.
      */
-    private Float saturationFactor120QAxis; // Float
+    private Double saturationFactor120QAxis; // Float
 
-    public Float getSaturationFactor120QAxis() {
+    public Double getSaturationFactor120QAxis() {
         return saturationFactor120QAxis;
     }
 
-    public void setSaturationFactor120QAxis(Float _value_) {
+    public void setSaturationFactor120QAxis(Double _value_) {
         saturationFactor120QAxis = _value_;
     }
 
@@ -106,25 +106,25 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
     }
 
     private static void setSaturationFactor120QAxis(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SynchronousMachineDetailed) _this_).setSaturationFactor120QAxis((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SynchronousMachineDetailed) _this_).setSaturationFactor120QAxis((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SynchronousMachineDetailed) _this_).setSaturationFactor120QAxis(getFloatFromString((String) _value_));
+            ((SynchronousMachineDetailed) _this_).setSaturationFactor120QAxis(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Quadrature-axis saturation factor at rated terminal voltage (<i>S1q</i>) (&gt;= 0). Typical value = 0,02.
      */
-    private Float saturationFactorQAxis; // Float
+    private Double saturationFactorQAxis; // Float
 
-    public Float getSaturationFactorQAxis() {
+    public Double getSaturationFactorQAxis() {
         return saturationFactorQAxis;
     }
 
-    public void setSaturationFactorQAxis(Float _value_) {
+    public void setSaturationFactorQAxis(Double _value_) {
         saturationFactorQAxis = _value_;
     }
 
@@ -133,12 +133,12 @@ public class SynchronousMachineDetailed extends SynchronousMachineDynamics {
     }
 
     private static void setSaturationFactorQAxis(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SynchronousMachineDetailed) _this_).setSaturationFactorQAxis((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SynchronousMachineDetailed) _this_).setSaturationFactorQAxis((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SynchronousMachineDetailed) _this_).setSaturationFactorQAxis(getFloatFromString((String) _value_));
+            ((SynchronousMachineDetailed) _this_).setSaturationFactorQAxis(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

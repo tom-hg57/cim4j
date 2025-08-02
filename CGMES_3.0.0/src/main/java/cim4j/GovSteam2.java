@@ -66,13 +66,13 @@ public class GovSteam2 extends TurbineGovernorDynamics {
     /**
      * Governor gain (reciprocal of droop) (<i>K</i>).  Typical value = 20.
      */
-    private Float k; // Float
+    private Double k; // Float
 
-    public Float getK() {
+    public Double getK() {
         return k;
     }
 
-    public void setK(Float _value_) {
+    public void setK(Double _value_) {
         k = _value_;
     }
 
@@ -81,12 +81,12 @@ public class GovSteam2 extends TurbineGovernorDynamics {
     }
 
     private static void setK(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam2) _this_).setK((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam2) _this_).setK((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam2) _this_).setK(getFloatFromString((String) _value_));
+            ((GovSteam2) _this_).setK(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

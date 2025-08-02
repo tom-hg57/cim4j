@@ -39,13 +39,13 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     /**
      * Speed squared coefficient (<i>a</i>).
      */
-    private Float a; // Float
+    private Double a; // Float
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float _value_) {
+    public void setA(Double _value_) {
         a = _value_;
     }
 
@@ -54,25 +54,25 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     }
 
     private static void setA(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((MechLoad1) _this_).setA((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((MechLoad1) _this_).setA((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((MechLoad1) _this_).setA(getFloatFromString((String) _value_));
+            ((MechLoad1) _this_).setA(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Speed coefficient (<i>b</i>).
      */
-    private Float b; // Float
+    private Double b; // Float
 
-    public Float getB() {
+    public Double getB() {
         return b;
     }
 
-    public void setB(Float _value_) {
+    public void setB(Double _value_) {
         b = _value_;
     }
 
@@ -81,25 +81,25 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     }
 
     private static void setB(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((MechLoad1) _this_).setB((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((MechLoad1) _this_).setB((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((MechLoad1) _this_).setB(getFloatFromString((String) _value_));
+            ((MechLoad1) _this_).setB(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Speed to the exponent coefficient (<i>d</i>).
      */
-    private Float d; // Float
+    private Double d; // Float
 
-    public Float getD() {
+    public Double getD() {
         return d;
     }
 
-    public void setD(Float _value_) {
+    public void setD(Double _value_) {
         d = _value_;
     }
 
@@ -108,25 +108,25 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     }
 
     private static void setD(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((MechLoad1) _this_).setD((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((MechLoad1) _this_).setD((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((MechLoad1) _this_).setD(getFloatFromString((String) _value_));
+            ((MechLoad1) _this_).setD(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exponent (<i>e</i>).
      */
-    private Float e; // Float
+    private Double e; // Float
 
-    public Float getE() {
+    public Double getE() {
         return e;
     }
 
-    public void setE(Float _value_) {
+    public void setE(Double _value_) {
         e = _value_;
     }
 
@@ -135,12 +135,12 @@ public class MechLoad1 extends MechanicalLoadDynamics {
     }
 
     private static void setE(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((MechLoad1) _this_).setE((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((MechLoad1) _this_).setE((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((MechLoad1) _this_).setE(getFloatFromString((String) _value_));
+            ((MechLoad1) _this_).setE(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

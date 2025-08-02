@@ -77,13 +77,13 @@ public class SvTapStep extends BaseClass {
     /**
      * The floating point tap position.   This is not the tap ratio, but rather the tap step position as defined by the related tap changer model and normally is constrained to be within the range of minimum and maximum tap positions.
      */
-    private Float position; // Float
+    private Double position; // Float
 
-    public Float getPosition() {
+    public Double getPosition() {
         return position;
     }
 
-    public void setPosition(Float _value_) {
+    public void setPosition(Double _value_) {
         position = _value_;
     }
 
@@ -92,12 +92,12 @@ public class SvTapStep extends BaseClass {
     }
 
     private static void setPosition(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SvTapStep) _this_).setPosition((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SvTapStep) _this_).setPosition((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SvTapStep) _this_).setPosition(getFloatFromString((String) _value_));
+            ((SvTapStep) _this_).setPosition(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

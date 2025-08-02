@@ -39,13 +39,13 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     /**
      * Notch filter 1 (high-frequency band): three dB bandwidth (<i>B</i><i><sub>wi</sub></i>).
      */
-    private Float bwh1; // Float
+    private Double bwh1; // Float
 
-    public Float getBwh1() {
+    public Double getBwh1() {
         return bwh1;
     }
 
-    public void setBwh1(Float _value_) {
+    public void setBwh1(Double _value_) {
         bwh1 = _value_;
     }
 
@@ -54,25 +54,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setBwh1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setBwh1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setBwh1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setBwh1(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setBwh1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 2 (high-frequency band): three dB bandwidth (<i>B</i><i><sub>wi</sub></i>).
      */
-    private Float bwh2; // Float
+    private Double bwh2; // Float
 
-    public Float getBwh2() {
+    public Double getBwh2() {
         return bwh2;
     }
 
-    public void setBwh2(Float _value_) {
+    public void setBwh2(Double _value_) {
         bwh2 = _value_;
     }
 
@@ -81,25 +81,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setBwh2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setBwh2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setBwh2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setBwh2(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setBwh2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 1 (low-frequency band): three dB bandwidth (<i>B</i><i><sub>wi</sub></i>).
      */
-    private Float bwl1; // Float
+    private Double bwl1; // Float
 
-    public Float getBwl1() {
+    public Double getBwl1() {
         return bwl1;
     }
 
-    public void setBwl1(Float _value_) {
+    public void setBwl1(Double _value_) {
         bwl1 = _value_;
     }
 
@@ -108,25 +108,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setBwl1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setBwl1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setBwl1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setBwl1(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setBwl1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 2 (low-frequency band): three dB bandwidth (<i>B</i><i><sub>wi</sub></i>).
      */
-    private Float bwl2; // Float
+    private Double bwl2; // Float
 
-    public Float getBwl2() {
+    public Double getBwl2() {
         return bwl2;
     }
 
-    public void setBwl2(Float _value_) {
+    public void setBwl2(Double _value_) {
         bwl2 = _value_;
     }
 
@@ -135,12 +135,12 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setBwl2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setBwl2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setBwl2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setBwl2(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setBwl2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -552,13 +552,13 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     /**
      * Notch filter 1 (high-frequency band): filter frequency (<i>omega</i><i><sub>ni</sub></i>).
      */
-    private Float omeganh1; // Float
+    private Double omeganh1; // Float
 
-    public Float getOmeganh1() {
+    public Double getOmeganh1() {
         return omeganh1;
     }
 
-    public void setOmeganh1(Float _value_) {
+    public void setOmeganh1(Double _value_) {
         omeganh1 = _value_;
     }
 
@@ -567,25 +567,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setOmeganh1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setOmeganh1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setOmeganh1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setOmeganh1(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setOmeganh1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 2 (high-frequency band): filter frequency (<i>omega</i><i><sub>ni</sub></i>).
      */
-    private Float omeganh2; // Float
+    private Double omeganh2; // Float
 
-    public Float getOmeganh2() {
+    public Double getOmeganh2() {
         return omeganh2;
     }
 
-    public void setOmeganh2(Float _value_) {
+    public void setOmeganh2(Double _value_) {
         omeganh2 = _value_;
     }
 
@@ -594,25 +594,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setOmeganh2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setOmeganh2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setOmeganh2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setOmeganh2(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setOmeganh2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 1 (low-frequency band): filter frequency (<i>omega</i><i><sub>ni</sub></i>).
      */
-    private Float omeganl1; // Float
+    private Double omeganl1; // Float
 
-    public Float getOmeganl1() {
+    public Double getOmeganl1() {
         return omeganl1;
     }
 
-    public void setOmeganl1(Float _value_) {
+    public void setOmeganl1(Double _value_) {
         omeganl1 = _value_;
     }
 
@@ -621,25 +621,25 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setOmeganl1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setOmeganl1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setOmeganl1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setOmeganl1(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setOmeganl1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Notch filter 2 (low-frequency band): filter frequency (<i>omega</i><i><sub>ni</sub></i>).
      */
-    private Float omeganl2; // Float
+    private Double omeganl2; // Float
 
-    public Float getOmeganl2() {
+    public Double getOmeganl2() {
         return omeganl2;
     }
 
-    public void setOmeganl2(Float _value_) {
+    public void setOmeganl2(Double _value_) {
         omeganl2 = _value_;
     }
 
@@ -648,12 +648,12 @@ public class PssIEEE4B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setOmeganl2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssIEEE4B) _this_).setOmeganl2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssIEEE4B) _this_).setOmeganl2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssIEEE4B) _this_).setOmeganl2(getFloatFromString((String) _value_));
+            ((PssIEEE4B) _this_).setOmeganl2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -309,13 +309,13 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     /**
      * Fraction of HP shaft power after first boiler pass (<i>K1</i>).  Typical value = 0,2.
      */
-    private Float k1; // Float
+    private Double k1; // Float
 
-    public Float getK1() {
+    public Double getK1() {
         return k1;
     }
 
-    public void setK1(Float _value_) {
+    public void setK1(Double _value_) {
         k1 = _value_;
     }
 
@@ -324,25 +324,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK1(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of LP shaft power after first boiler pass (<i>K2</i>).  Typical value = 0.
      */
-    private Float k2; // Float
+    private Double k2; // Float
 
-    public Float getK2() {
+    public Double getK2() {
         return k2;
     }
 
-    public void setK2(Float _value_) {
+    public void setK2(Double _value_) {
         k2 = _value_;
     }
 
@@ -351,25 +351,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK2(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of HP shaft power after second boiler pass (<i>K3</i>).  Typical value = 0,3.
      */
-    private Float k3; // Float
+    private Double k3; // Float
 
-    public Float getK3() {
+    public Double getK3() {
         return k3;
     }
 
-    public void setK3(Float _value_) {
+    public void setK3(Double _value_) {
         k3 = _value_;
     }
 
@@ -378,25 +378,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK3(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of LP shaft power after second boiler pass (<i>K4</i>).  Typical value = 0.
      */
-    private Float k4; // Float
+    private Double k4; // Float
 
-    public Float getK4() {
+    public Double getK4() {
         return k4;
     }
 
-    public void setK4(Float _value_) {
+    public void setK4(Double _value_) {
         k4 = _value_;
     }
 
@@ -405,25 +405,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK4(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK4((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK4((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK4(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK4(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of HP shaft power after third boiler pass (<i>K5</i>).  Typical value = 0,5.
      */
-    private Float k5; // Float
+    private Double k5; // Float
 
-    public Float getK5() {
+    public Double getK5() {
         return k5;
     }
 
-    public void setK5(Float _value_) {
+    public void setK5(Double _value_) {
         k5 = _value_;
     }
 
@@ -432,25 +432,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK5(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK5((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK5((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK5(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK5(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of LP shaft power after third boiler pass (<i>K6</i>).  Typical value = 0.
      */
-    private Float k6; // Float
+    private Double k6; // Float
 
-    public Float getK6() {
+    public Double getK6() {
         return k6;
     }
 
-    public void setK6(Float _value_) {
+    public void setK6(Double _value_) {
         k6 = _value_;
     }
 
@@ -459,25 +459,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK6(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK6((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK6((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK6(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK6(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of HP shaft power after fourth boiler pass (<i>K7</i>).  Typical value = 0.
      */
-    private Float k7; // Float
+    private Double k7; // Float
 
-    public Float getK7() {
+    public Double getK7() {
         return k7;
     }
 
-    public void setK7(Float _value_) {
+    public void setK7(Double _value_) {
         k7 = _value_;
     }
 
@@ -486,25 +486,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK7(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK7((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK7((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK7(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK7(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of LP shaft power after fourth boiler pass (<i>K8</i>).  Typical value = 0.
      */
-    private Float k8; // Float
+    private Double k8; // Float
 
-    public Float getK8() {
+    public Double getK8() {
         return k8;
     }
 
-    public void setK8(Float _value_) {
+    public void setK8(Double _value_) {
         k8 = _value_;
     }
 
@@ -513,12 +513,12 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setK8(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setK8((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setK8((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setK8(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setK8(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -1011,13 +1011,13 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     /**
      * Maximum valve closing velocity (<i>Uc</i>) (&lt; 0).  Unit = PU / s.  Typical value = -10.
      */
-    private Float uc; // Float
+    private Double uc; // Float
 
-    public Float getUc() {
+    public Double getUc() {
         return uc;
     }
 
-    public void setUc(Float _value_) {
+    public void setUc(Double _value_) {
         uc = _value_;
     }
 
@@ -1026,25 +1026,25 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setUc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setUc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setUc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setUc(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setUc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum valve opening velocity (<i>Uo</i>) (&gt; 0).  Unit = PU / s.  Typical value = 1.
      */
-    private Float uo; // Float
+    private Double uo; // Float
 
-    public Float getUo() {
+    public Double getUo() {
         return uo;
     }
 
-    public void setUo(Float _value_) {
+    public void setUo(Double _value_) {
         uo = _value_;
     }
 
@@ -1053,12 +1053,12 @@ public class GovSteam1 extends TurbineGovernorDynamics {
     }
 
     private static void setUo(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteam1) _this_).setUo((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteam1) _this_).setUo((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteam1) _this_).setUo(getFloatFromString((String) _value_));
+            ((GovSteam1) _this_).setUo(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

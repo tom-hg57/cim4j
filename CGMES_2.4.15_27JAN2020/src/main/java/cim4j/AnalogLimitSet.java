@@ -79,7 +79,7 @@ public class AnalogLimitSet extends LimitSet {
     /**
      * A measurement may have zero or more limit ranges defined for it.
      */
-    private Set<Analog> Measurements = new HashSet<>(); // OneToMany
+    private Set<Analog> Measurements = new HashSet<>(); // ManyToMany
 
     private Set<String> MeasurementsIdSet = new HashSet<>();
 

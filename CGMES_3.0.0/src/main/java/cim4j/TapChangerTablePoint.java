@@ -120,13 +120,13 @@ public class TapChangerTablePoint extends BaseClass {
     /**
      * The voltage at the tap step divided by rated voltage of the transformer end having the tap changer. Hence this is a value close to one. For example, if the ratio at step 1 is 1.01, and the rated voltage of the transformer end is 110kV, then the voltage obtained by setting the tap changer to step 1 to is 111.1kV.
      */
-    private Float ratio; // Float
+    private Double ratio; // Float
 
-    public Float getRatio() {
+    public Double getRatio() {
         return ratio;
     }
 
-    public void setRatio(Float _value_) {
+    public void setRatio(Double _value_) {
         ratio = _value_;
     }
 
@@ -135,12 +135,12 @@ public class TapChangerTablePoint extends BaseClass {
     }
 
     private static void setRatio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((TapChangerTablePoint) _this_).setRatio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((TapChangerTablePoint) _this_).setRatio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((TapChangerTablePoint) _this_).setRatio(getFloatFromString((String) _value_));
+            ((TapChangerTablePoint) _this_).setRatio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

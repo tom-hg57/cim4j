@@ -142,13 +142,13 @@ public class Diagram extends IdentifiedObject {
     /**
      * X coordinate of the first corner of the initial view.
      */
-    private Float x1InitialView; // Float
+    private Double x1InitialView; // Float
 
-    public Float getX1InitialView() {
+    public Double getX1InitialView() {
         return x1InitialView;
     }
 
-    public void setX1InitialView(Float _value_) {
+    public void setX1InitialView(Double _value_) {
         x1InitialView = _value_;
     }
 
@@ -157,25 +157,25 @@ public class Diagram extends IdentifiedObject {
     }
 
     private static void setX1InitialView(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Diagram) _this_).setX1InitialView((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Diagram) _this_).setX1InitialView((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Diagram) _this_).setX1InitialView(getFloatFromString((String) _value_));
+            ((Diagram) _this_).setX1InitialView(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * X coordinate of the second corner of the initial view.
      */
-    private Float x2InitialView; // Float
+    private Double x2InitialView; // Float
 
-    public Float getX2InitialView() {
+    public Double getX2InitialView() {
         return x2InitialView;
     }
 
-    public void setX2InitialView(Float _value_) {
+    public void setX2InitialView(Double _value_) {
         x2InitialView = _value_;
     }
 
@@ -184,25 +184,25 @@ public class Diagram extends IdentifiedObject {
     }
 
     private static void setX2InitialView(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Diagram) _this_).setX2InitialView((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Diagram) _this_).setX2InitialView((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Diagram) _this_).setX2InitialView(getFloatFromString((String) _value_));
+            ((Diagram) _this_).setX2InitialView(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Y coordinate of the first corner of the initial view.
      */
-    private Float y1InitialView; // Float
+    private Double y1InitialView; // Float
 
-    public Float getY1InitialView() {
+    public Double getY1InitialView() {
         return y1InitialView;
     }
 
-    public void setY1InitialView(Float _value_) {
+    public void setY1InitialView(Double _value_) {
         y1InitialView = _value_;
     }
 
@@ -211,25 +211,25 @@ public class Diagram extends IdentifiedObject {
     }
 
     private static void setY1InitialView(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Diagram) _this_).setY1InitialView((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Diagram) _this_).setY1InitialView((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Diagram) _this_).setY1InitialView(getFloatFromString((String) _value_));
+            ((Diagram) _this_).setY1InitialView(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Y coordinate of the second corner of the initial view.
      */
-    private Float y2InitialView; // Float
+    private Double y2InitialView; // Float
 
-    public Float getY2InitialView() {
+    public Double getY2InitialView() {
         return y2InitialView;
     }
 
-    public void setY2InitialView(Float _value_) {
+    public void setY2InitialView(Double _value_) {
         y2InitialView = _value_;
     }
 
@@ -238,12 +238,12 @@ public class Diagram extends IdentifiedObject {
     }
 
     private static void setY2InitialView(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Diagram) _this_).setY2InitialView((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Diagram) _this_).setY2InitialView((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Diagram) _this_).setY2InitialView(getFloatFromString((String) _value_));
+            ((Diagram) _this_).setY2InitialView(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

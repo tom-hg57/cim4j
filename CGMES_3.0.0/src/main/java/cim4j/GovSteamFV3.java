@@ -822,13 +822,13 @@ public class GovSteamFV3 extends TurbineGovernorDynamics {
     /**
      * Maximum valve closing velocity (<i>Uc</i>).  Unit = PU / s.  Typical value = -1.
      */
-    private Float uc; // Float
+    private Double uc; // Float
 
-    public Float getUc() {
+    public Double getUc() {
         return uc;
     }
 
-    public void setUc(Float _value_) {
+    public void setUc(Double _value_) {
         uc = _value_;
     }
 
@@ -837,25 +837,25 @@ public class GovSteamFV3 extends TurbineGovernorDynamics {
     }
 
     private static void setUc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamFV3) _this_).setUc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamFV3) _this_).setUc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamFV3) _this_).setUc(getFloatFromString((String) _value_));
+            ((GovSteamFV3) _this_).setUc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum valve opening velocity (<i>Uo</i>).  Unit = PU / s.  Typical value = 0,1.
      */
-    private Float uo; // Float
+    private Double uo; // Float
 
-    public Float getUo() {
+    public Double getUo() {
         return uo;
     }
 
-    public void setUo(Float _value_) {
+    public void setUo(Double _value_) {
         uo = _value_;
     }
 
@@ -864,12 +864,12 @@ public class GovSteamFV3 extends TurbineGovernorDynamics {
     }
 
     private static void setUo(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamFV3) _this_).setUo((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamFV3) _this_).setUo((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamFV3) _this_).setUo(getFloatFromString((String) _value_));
+            ((GovSteamFV3) _this_).setUo(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

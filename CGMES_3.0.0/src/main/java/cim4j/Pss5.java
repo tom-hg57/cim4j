@@ -120,13 +120,13 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
     /**
      * Frequency/shaft speed input gain (<i>K</i><i><sub>F</sub></i>).  Typical value = 5.
      */
-    private Float kf; // Float
+    private Double kf; // Float
 
-    public Float getKf() {
+    public Double getKf() {
         return kf;
     }
 
-    public void setKf(Float _value_) {
+    public void setKf(Double _value_) {
         kf = _value_;
     }
 
@@ -135,25 +135,25 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKf(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Pss5) _this_).setKf((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Pss5) _this_).setKf((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Pss5) _this_).setKf(getFloatFromString((String) _value_));
+            ((Pss5) _this_).setKf(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Electric power input gain (<i>K</i><i><sub>PE</sub></i>).  Typical value = 0,3.
      */
-    private Float kpe; // Float
+    private Double kpe; // Float
 
-    public Float getKpe() {
+    public Double getKpe() {
         return kpe;
     }
 
-    public void setKpe(Float _value_) {
+    public void setKpe(Double _value_) {
         kpe = _value_;
     }
 
@@ -162,25 +162,25 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKpe(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Pss5) _this_).setKpe((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Pss5) _this_).setKpe((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Pss5) _this_).setKpe(getFloatFromString((String) _value_));
+            ((Pss5) _this_).setKpe(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * PSS gain (<i>K</i><i><sub>PSS</sub></i>).  Typical value = 1.
      */
-    private Float kpss; // Float
+    private Double kpss; // Float
 
-    public Float getKpss() {
+    public Double getKpss() {
         return kpss;
     }
 
-    public void setKpss(Float _value_) {
+    public void setKpss(Double _value_) {
         kpss = _value_;
     }
 
@@ -189,12 +189,12 @@ public class Pss5 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKpss(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Pss5) _this_).setKpss((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Pss5) _this_).setKpss((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Pss5) _this_).setKpss(getFloatFromString((String) _value_));
+            ((Pss5) _this_).setKpss(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

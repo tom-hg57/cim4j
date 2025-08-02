@@ -39,13 +39,13 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     /**
      * Turbine power time constant numerator scale factor (<i>a</i>).  Typical value = 0,8.
      */
-    private Float a; // Float
+    private Double a; // Float
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float _value_) {
+    public void setA(Double _value_) {
         a = _value_;
     }
 
@@ -54,25 +54,25 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     }
 
     private static void setA(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST1) _this_).setA((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST1) _this_).setA((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST1) _this_).setA(getFloatFromString((String) _value_));
+            ((GovGAST1) _this_).setA(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Turbine power time constant denominator scale factor (<i>b</i>) (&gt;0).  Typical value = 1.
      */
-    private Float b; // Float
+    private Double b; // Float
 
-    public Float getB() {
+    public Double getB() {
         return b;
     }
 
-    public void setB(Float _value_) {
+    public void setB(Double _value_) {
         b = _value_;
     }
 
@@ -81,12 +81,12 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     }
 
     private static void setB(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST1) _this_).setB((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST1) _this_).setB((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST1) _this_).setB(getFloatFromString((String) _value_));
+            ((GovGAST1) _this_).setB(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -471,13 +471,13 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     /**
      * Maximum long term fuel valve opening rate (<i>Ltrate</i>).  Typical value = 0,02.
      */
-    private Float ltrate; // Float
+    private Double ltrate; // Float
 
-    public Float getLtrate() {
+    public Double getLtrate() {
         return ltrate;
     }
 
-    public void setLtrate(Float _value_) {
+    public void setLtrate(Double _value_) {
         ltrate = _value_;
     }
 
@@ -486,12 +486,12 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     }
 
     private static void setLtrate(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST1) _this_).setLtrate((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST1) _this_).setLtrate((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST1) _this_).setLtrate(getFloatFromString((String) _value_));
+            ((GovGAST1) _this_).setLtrate(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -714,13 +714,13 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     /**
      * Maximum fuel valve opening rate (<i>Rmax</i>).  Unit = PU / s.  Typical value = 1.
      */
-    private Float rmax; // Float
+    private Double rmax; // Float
 
-    public Float getRmax() {
+    public Double getRmax() {
         return rmax;
     }
 
-    public void setRmax(Float _value_) {
+    public void setRmax(Double _value_) {
         rmax = _value_;
     }
 
@@ -729,12 +729,12 @@ public class GovGAST1 extends TurbineGovernorDynamics {
     }
 
     private static void setRmax(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST1) _this_).setRmax((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST1) _this_).setRmax((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST1) _this_).setRmax(getFloatFromString((String) _value_));
+            ((GovGAST1) _this_).setRmax(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

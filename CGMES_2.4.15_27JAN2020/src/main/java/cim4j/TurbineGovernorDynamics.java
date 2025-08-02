@@ -77,7 +77,7 @@ public class TurbineGovernorDynamics extends DynamicsFunctionBlock {
     /**
      * Turbine-governor model associated with this synchronous machine model.
      */
-    private Set<SynchronousMachineDynamics> SynchronousMachineDynamics = new HashSet<>(); // OneToMany
+    private Set<SynchronousMachineDynamics> SynchronousMachineDynamics = new HashSet<>(); // ManyToMany
 
     private Set<String> SynchronousMachineDynamicsIdSet = new HashSet<>();
 

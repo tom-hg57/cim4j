@@ -39,13 +39,13 @@ public class GovCT2 extends TurbineGovernorDynamics {
     /**
      * Acceleration limiter setpoint (<i>Aset</i>).  Unit = PU / s.  Typical value = 10.
      */
-    private Float aset; // Float
+    private Double aset; // Float
 
-    public Float getAset() {
+    public Double getAset() {
         return aset;
     }
 
-    public void setAset(Float _value_) {
+    public void setAset(Double _value_) {
         aset = _value_;
     }
 
@@ -54,12 +54,12 @@ public class GovCT2 extends TurbineGovernorDynamics {
     }
 
     private static void setAset(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovCT2) _this_).setAset((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovCT2) _this_).setAset((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovCT2) _this_).setAset(getFloatFromString((String) _value_));
+            ((GovCT2) _this_).setAset(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -1038,13 +1038,13 @@ public class GovCT2 extends TurbineGovernorDynamics {
     /**
      * Minimum valve closing rate (<i>Rclose</i>).  Unit = PU / s.  Typical value = -99.
      */
-    private Float rclose; // Float
+    private Double rclose; // Float
 
-    public Float getRclose() {
+    public Double getRclose() {
         return rclose;
     }
 
-    public void setRclose(Float _value_) {
+    public void setRclose(Double _value_) {
         rclose = _value_;
     }
 
@@ -1053,12 +1053,12 @@ public class GovCT2 extends TurbineGovernorDynamics {
     }
 
     private static void setRclose(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovCT2) _this_).setRclose((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovCT2) _this_).setRclose((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovCT2) _this_).setRclose(getFloatFromString((String) _value_));
+            ((GovCT2) _this_).setRclose(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -1092,13 +1092,13 @@ public class GovCT2 extends TurbineGovernorDynamics {
     /**
      * Maximum valve opening rate (<i>Ropen</i>).  Unit = PU / s.  Typical value = 99.
      */
-    private Float ropen; // Float
+    private Double ropen; // Float
 
-    public Float getRopen() {
+    public Double getRopen() {
         return ropen;
     }
 
-    public void setRopen(Float _value_) {
+    public void setRopen(Double _value_) {
         ropen = _value_;
     }
 
@@ -1107,12 +1107,12 @@ public class GovCT2 extends TurbineGovernorDynamics {
     }
 
     private static void setRopen(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovCT2) _this_).setRopen((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovCT2) _this_).setRopen((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovCT2) _this_).setRopen(getFloatFromString((String) _value_));
+            ((GovCT2) _this_).setRopen(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

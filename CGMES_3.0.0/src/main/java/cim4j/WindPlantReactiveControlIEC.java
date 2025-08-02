@@ -173,13 +173,13 @@ public class WindPlantReactiveControlIEC extends IdentifiedObject {
     /**
      * Plant Q controller integral gain (<i>K</i><i><sub>IWPx</sub></i>). It is a project-dependent parameter.
      */
-    private Float kiwpx; // Float
+    private Double kiwpx; // Float
 
-    public Float getKiwpx() {
+    public Double getKiwpx() {
         return kiwpx;
     }
 
-    public void setKiwpx(Float _value_) {
+    public void setKiwpx(Double _value_) {
         kiwpx = _value_;
     }
 
@@ -188,12 +188,12 @@ public class WindPlantReactiveControlIEC extends IdentifiedObject {
     }
 
     private static void setKiwpx(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindPlantReactiveControlIEC) _this_).setKiwpx((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindPlantReactiveControlIEC) _this_).setKiwpx((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindPlantReactiveControlIEC) _this_).setKiwpx(getFloatFromString((String) _value_));
+            ((WindPlantReactiveControlIEC) _this_).setKiwpx(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -254,13 +254,13 @@ public class WindPlantReactiveControlIEC extends IdentifiedObject {
     /**
      * Plant Q controller proportional gain (<i>K</i><i><sub>PWPx</sub></i>). It is a project-dependent parameter.
      */
-    private Float kpwpx; // Float
+    private Double kpwpx; // Float
 
-    public Float getKpwpx() {
+    public Double getKpwpx() {
         return kpwpx;
     }
 
-    public void setKpwpx(Float _value_) {
+    public void setKpwpx(Double _value_) {
         kpwpx = _value_;
     }
 
@@ -269,12 +269,12 @@ public class WindPlantReactiveControlIEC extends IdentifiedObject {
     }
 
     private static void setKpwpx(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindPlantReactiveControlIEC) _this_).setKpwpx((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindPlantReactiveControlIEC) _this_).setKpwpx((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindPlantReactiveControlIEC) _this_).setKpwpx(getFloatFromString((String) _value_));
+            ((WindPlantReactiveControlIEC) _this_).setKpwpx(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

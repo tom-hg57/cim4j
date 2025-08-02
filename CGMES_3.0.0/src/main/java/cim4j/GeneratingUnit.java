@@ -211,13 +211,13 @@ public class GeneratingUnit extends Equipment {
     /**
      * Generating unit long term economic participation factor.
      */
-    private Float longPF; // Float
+    private Double longPF; // Float
 
-    public Float getLongPF() {
+    public Double getLongPF() {
         return longPF;
     }
 
-    public void setLongPF(Float _value_) {
+    public void setLongPF(Double _value_) {
         longPF = _value_;
     }
 
@@ -226,12 +226,12 @@ public class GeneratingUnit extends Equipment {
     }
 
     private static void setLongPF(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GeneratingUnit) _this_).setLongPF((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GeneratingUnit) _this_).setLongPF((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GeneratingUnit) _this_).setLongPF(getFloatFromString((String) _value_));
+            ((GeneratingUnit) _this_).setLongPF(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -346,13 +346,13 @@ public class GeneratingUnit extends Equipment {
     /**
      * Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero.
      */
-    private Float normalPF; // Float
+    private Double normalPF; // Float
 
-    public Float getNormalPF() {
+    public Double getNormalPF() {
         return normalPF;
     }
 
-    public void setNormalPF(Float _value_) {
+    public void setNormalPF(Double _value_) {
         normalPF = _value_;
     }
 
@@ -361,12 +361,12 @@ public class GeneratingUnit extends Equipment {
     }
 
     private static void setNormalPF(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GeneratingUnit) _this_).setNormalPF((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GeneratingUnit) _this_).setNormalPF((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GeneratingUnit) _this_).setNormalPF(getFloatFromString((String) _value_));
+            ((GeneratingUnit) _this_).setNormalPF(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -454,13 +454,13 @@ public class GeneratingUnit extends Equipment {
     /**
      * Generating unit short term economic participation factor.
      */
-    private Float shortPF; // Float
+    private Double shortPF; // Float
 
-    public Float getShortPF() {
+    public Double getShortPF() {
         return shortPF;
     }
 
-    public void setShortPF(Float _value_) {
+    public void setShortPF(Double _value_) {
         shortPF = _value_;
     }
 
@@ -469,12 +469,12 @@ public class GeneratingUnit extends Equipment {
     }
 
     private static void setShortPF(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GeneratingUnit) _this_).setShortPF((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GeneratingUnit) _this_).setShortPF((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GeneratingUnit) _this_).setShortPF(getFloatFromString((String) _value_));
+            ((GeneratingUnit) _this_).setShortPF(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

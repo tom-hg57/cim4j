@@ -199,7 +199,7 @@ public class SynchronousMachineDynamics extends RotatingMachineDynamics {
      *
      * NOT USED
      */
-    private Set<TurbineGovernorDynamics> TurbineGovernorDynamics = new HashSet<>(); // OneToMany
+    private Set<TurbineGovernorDynamics> TurbineGovernorDynamics = new HashSet<>(); // ManyToMany
 
     private Set<String> TurbineGovernorDynamicsIdSet = new HashSet<>();
 

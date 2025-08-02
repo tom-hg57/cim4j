@@ -77,13 +77,13 @@ public class AnalogControl extends Control {
     /**
      * Normal value range maximum for any of the Control.value. Used for scaling, e.g. in bar graphs.
      */
-    private Float maxValue; // Float
+    private Double maxValue; // Float
 
-    public Float getMaxValue() {
+    public Double getMaxValue() {
         return maxValue;
     }
 
-    public void setMaxValue(Float _value_) {
+    public void setMaxValue(Double _value_) {
         maxValue = _value_;
     }
 
@@ -92,25 +92,25 @@ public class AnalogControl extends Control {
     }
 
     private static void setMaxValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((AnalogControl) _this_).setMaxValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((AnalogControl) _this_).setMaxValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((AnalogControl) _this_).setMaxValue(getFloatFromString((String) _value_));
+            ((AnalogControl) _this_).setMaxValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Normal value range minimum for any of the Control.value. Used for scaling, e.g. in bar graphs.
      */
-    private Float minValue; // Float
+    private Double minValue; // Float
 
-    public Float getMinValue() {
+    public Double getMinValue() {
         return minValue;
     }
 
-    public void setMinValue(Float _value_) {
+    public void setMinValue(Double _value_) {
         minValue = _value_;
     }
 
@@ -119,12 +119,12 @@ public class AnalogControl extends Control {
     }
 
     private static void setMinValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((AnalogControl) _this_).setMinValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((AnalogControl) _this_).setMinValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((AnalogControl) _this_).setMinValue(getFloatFromString((String) _value_));
+            ((AnalogControl) _this_).setMinValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

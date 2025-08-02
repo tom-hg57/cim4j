@@ -81,7 +81,7 @@ public class Analog extends Measurement {
      *
      * NOT USED
      */
-    private Set<AnalogLimitSet> LimitSets = new HashSet<>(); // OneToMany
+    private Set<AnalogLimitSet> LimitSets = new HashSet<>(); // ManyToMany
 
     private Set<String> LimitSetsIdSet = new HashSet<>();
 

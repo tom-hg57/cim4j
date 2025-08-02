@@ -195,7 +195,7 @@ public class DiagramObject extends IdentifiedObject {
      *
      * NOT USED
      */
-    private Set<VisibilityLayer> VisibilityLayers = new HashSet<>(); // OneToMany
+    private Set<VisibilityLayer> VisibilityLayers = new HashSet<>(); // ManyToMany
 
     private Set<String> VisibilityLayersIdSet = new HashSet<>();
 
@@ -287,13 +287,13 @@ public class DiagramObject extends IdentifiedObject {
     /**
      * The offset in the X direction. This is used for defining the offset from centre for rendering an icon (the default is that a single point specifies the centre of the icon).  The offset is in per-unit with 0 indicating there is no offset from the horizontal centre of the icon.  -0.5 indicates it is offset by 50% to the left and 0.5 indicates an offset of 50% to the right.
      */
-    private Float offsetX; // Float
+    private Double offsetX; // Float
 
-    public Float getOffsetX() {
+    public Double getOffsetX() {
         return offsetX;
     }
 
-    public void setOffsetX(Float _value_) {
+    public void setOffsetX(Double _value_) {
         offsetX = _value_;
     }
 
@@ -302,25 +302,25 @@ public class DiagramObject extends IdentifiedObject {
     }
 
     private static void setOffsetX(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((DiagramObject) _this_).setOffsetX((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((DiagramObject) _this_).setOffsetX((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((DiagramObject) _this_).setOffsetX(getFloatFromString((String) _value_));
+            ((DiagramObject) _this_).setOffsetX(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The offset in the Y direction. This is used for defining the offset from centre for rendering an icon (the default is that a single point specifies the centre of the icon).  The offset is in per-unit with 0 indicating there is no offset from the vertical centre of the icon.  The offset direction is dependent on the orientation of the diagram, with -0.5 and 0.5 indicating an offset of +/- 50% on the vertical axis.
      */
-    private Float offsetY; // Float
+    private Double offsetY; // Float
 
-    public Float getOffsetY() {
+    public Double getOffsetY() {
         return offsetY;
     }
 
-    public void setOffsetY(Float _value_) {
+    public void setOffsetY(Double _value_) {
         offsetY = _value_;
     }
 
@@ -329,12 +329,12 @@ public class DiagramObject extends IdentifiedObject {
     }
 
     private static void setOffsetY(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((DiagramObject) _this_).setOffsetY((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((DiagramObject) _this_).setOffsetY((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((DiagramObject) _this_).setOffsetY(getFloatFromString((String) _value_));
+            ((DiagramObject) _this_).setOffsetY(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

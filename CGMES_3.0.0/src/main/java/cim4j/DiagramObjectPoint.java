@@ -142,13 +142,13 @@ public class DiagramObjectPoint extends BaseClass {
     /**
      * The X coordinate of this point.
      */
-    private Float xPosition; // Float
+    private Double xPosition; // Float
 
-    public Float getXPosition() {
+    public Double getXPosition() {
         return xPosition;
     }
 
-    public void setXPosition(Float _value_) {
+    public void setXPosition(Double _value_) {
         xPosition = _value_;
     }
 
@@ -157,25 +157,25 @@ public class DiagramObjectPoint extends BaseClass {
     }
 
     private static void setXPosition(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((DiagramObjectPoint) _this_).setXPosition((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((DiagramObjectPoint) _this_).setXPosition((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((DiagramObjectPoint) _this_).setXPosition(getFloatFromString((String) _value_));
+            ((DiagramObjectPoint) _this_).setXPosition(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The Y coordinate of this point.
      */
-    private Float yPosition; // Float
+    private Double yPosition; // Float
 
-    public Float getYPosition() {
+    public Double getYPosition() {
         return yPosition;
     }
 
-    public void setYPosition(Float _value_) {
+    public void setYPosition(Double _value_) {
         yPosition = _value_;
     }
 
@@ -184,25 +184,25 @@ public class DiagramObjectPoint extends BaseClass {
     }
 
     private static void setYPosition(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((DiagramObjectPoint) _this_).setYPosition((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((DiagramObjectPoint) _this_).setYPosition((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((DiagramObjectPoint) _this_).setYPosition(getFloatFromString((String) _value_));
+            ((DiagramObjectPoint) _this_).setYPosition(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The Z coordinate of this point.
      */
-    private Float zPosition; // Float
+    private Double zPosition; // Float
 
-    public Float getZPosition() {
+    public Double getZPosition() {
         return zPosition;
     }
 
-    public void setZPosition(Float _value_) {
+    public void setZPosition(Double _value_) {
         zPosition = _value_;
     }
 
@@ -211,12 +211,12 @@ public class DiagramObjectPoint extends BaseClass {
     }
 
     private static void setZPosition(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((DiagramObjectPoint) _this_).setZPosition((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((DiagramObjectPoint) _this_).setZPosition((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((DiagramObjectPoint) _this_).setZPosition(getFloatFromString((String) _value_));
+            ((DiagramObjectPoint) _this_).setZPosition(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

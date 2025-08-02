@@ -39,13 +39,13 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     /**
      * Valve positioner (<i>A</i>).
      */
-    private Float a; // Float
+    private Double a; // Float
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float _value_) {
+    public void setA(Double _value_) {
         a = _value_;
     }
 
@@ -54,12 +54,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     }
 
     private static void setA(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGASTWD) _this_).setA((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGASTWD) _this_).setA((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGASTWD) _this_).setA(getFloatFromString((String) _value_));
+            ((GovGASTWD) _this_).setA(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -120,13 +120,13 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     /**
      * Valve positioner (<i>B</i>).
      */
-    private Float b; // Float
+    private Double b; // Float
 
-    public Float getB() {
+    public Double getB() {
         return b;
     }
 
-    public void setB(Float _value_) {
+    public void setB(Double _value_) {
         b = _value_;
     }
 
@@ -135,12 +135,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     }
 
     private static void setB(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGASTWD) _this_).setB((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGASTWD) _this_).setB((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGASTWD) _this_).setB(getFloatFromString((String) _value_));
+            ((GovGASTWD) _this_).setB(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -201,13 +201,13 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     /**
      * Valve positioner (<i>C</i>).
      */
-    private Float c; // Float
+    private Double c; // Float
 
-    public Float getC() {
+    public Double getC() {
         return c;
     }
 
-    public void setC(Float _value_) {
+    public void setC(Double _value_) {
         c = _value_;
     }
 
@@ -216,12 +216,12 @@ public class GovGASTWD extends TurbineGovernorDynamics {
     }
 
     private static void setC(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGASTWD) _this_).setC((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGASTWD) _this_).setC((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGASTWD) _this_).setC(getFloatFromString((String) _value_));
+            ((GovGASTWD) _this_).setC(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

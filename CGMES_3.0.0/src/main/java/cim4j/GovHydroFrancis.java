@@ -604,13 +604,13 @@ public class GovHydroFrancis extends TurbineGovernorDynamics {
     /**
      * Maximum gate opening velocity (<i>Va</i>).  Unit = PU / s.  Typical value = 0,06.
      */
-    private Float va; // Float
+    private Double va; // Float
 
-    public Float getVa() {
+    public Double getVa() {
         return va;
     }
 
-    public void setVa(Float _value_) {
+    public void setVa(Double _value_) {
         va = _value_;
     }
 
@@ -619,12 +619,12 @@ public class GovHydroFrancis extends TurbineGovernorDynamics {
     }
 
     private static void setVa(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroFrancis) _this_).setVa((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroFrancis) _this_).setVa((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroFrancis) _this_).setVa(getFloatFromString((String) _value_));
+            ((GovHydroFrancis) _this_).setVa(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -685,13 +685,13 @@ public class GovHydroFrancis extends TurbineGovernorDynamics {
     /**
      * Maximum gate closing velocity (<i>Vc</i>).  Unit = PU / s.  Typical value = -0,06.
      */
-    private Float vc; // Float
+    private Double vc; // Float
 
-    public Float getVc() {
+    public Double getVc() {
         return vc;
     }
 
-    public void setVc(Float _value_) {
+    public void setVc(Double _value_) {
         vc = _value_;
     }
 
@@ -700,12 +700,12 @@ public class GovHydroFrancis extends TurbineGovernorDynamics {
     }
 
     private static void setVc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroFrancis) _this_).setVc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroFrancis) _this_).setVc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroFrancis) _this_).setVc(getFloatFromString((String) _value_));
+            ((GovHydroFrancis) _this_).setVc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

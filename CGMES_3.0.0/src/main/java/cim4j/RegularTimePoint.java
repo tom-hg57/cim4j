@@ -104,13 +104,13 @@ public class RegularTimePoint extends BaseClass {
     /**
      * The first value at the time. The meaning of the value is defined by the derived type of the associated schedule.
      */
-    private Float value1; // Float
+    private Double value1; // Float
 
-    public Float getValue1() {
+    public Double getValue1() {
         return value1;
     }
 
-    public void setValue1(Float _value_) {
+    public void setValue1(Double _value_) {
         value1 = _value_;
     }
 
@@ -119,25 +119,25 @@ public class RegularTimePoint extends BaseClass {
     }
 
     private static void setValue1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegularTimePoint) _this_).setValue1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegularTimePoint) _this_).setValue1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegularTimePoint) _this_).setValue1(getFloatFromString((String) _value_));
+            ((RegularTimePoint) _this_).setValue1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The second value at the time. The meaning of the value is defined by the derived type of the associated schedule.
      */
-    private Float value2; // Float
+    private Double value2; // Float
 
-    public Float getValue2() {
+    public Double getValue2() {
         return value2;
     }
 
-    public void setValue2(Float _value_) {
+    public void setValue2(Double _value_) {
         value2 = _value_;
     }
 
@@ -146,12 +146,12 @@ public class RegularTimePoint extends BaseClass {
     }
 
     private static void setValue2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RegularTimePoint) _this_).setValue2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RegularTimePoint) _this_).setValue2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RegularTimePoint) _this_).setValue2(getFloatFromString((String) _value_));
+            ((RegularTimePoint) _this_).setValue2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

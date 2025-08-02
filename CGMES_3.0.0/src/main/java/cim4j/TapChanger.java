@@ -346,13 +346,13 @@ public class TapChanger extends PowerSystemResource {
     /**
      * Tap changer position. Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input. The attribute shall be equal to or greater than lowStep and equal to or less than highStep.
      */
-    private Float step; // Float
+    private Double step; // Float
 
-    public Float getStep() {
+    public Double getStep() {
         return step;
     }
 
-    public void setStep(Float _value_) {
+    public void setStep(Double _value_) {
         step = _value_;
     }
 
@@ -361,12 +361,12 @@ public class TapChanger extends PowerSystemResource {
     }
 
     private static void setStep(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((TapChanger) _this_).setStep((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((TapChanger) _this_).setStep((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((TapChanger) _this_).setStep(getFloatFromString((String) _value_));
+            ((TapChanger) _this_).setStep(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

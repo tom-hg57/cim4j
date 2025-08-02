@@ -633,13 +633,13 @@ public class PssPTIST3 extends PowerSystemStabilizerDynamics {
     /**
      * Number of control outputs to average (<i>NAV</i>) (1 &lt;=  <i>NAV</i> &lt;= 16).  Typical value = 4.
      */
-    private Float nav; // Float
+    private Double nav; // Float
 
-    public Float getNav() {
+    public Double getNav() {
         return nav;
     }
 
-    public void setNav(Float _value_) {
+    public void setNav(Double _value_) {
         nav = _value_;
     }
 
@@ -648,25 +648,25 @@ public class PssPTIST3 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setNav(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssPTIST3) _this_).setNav((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssPTIST3) _this_).setNav((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssPTIST3) _this_).setNav(getFloatFromString((String) _value_));
+            ((PssPTIST3) _this_).setNav(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Number of counts at limit to active limit function (<i>NCL</i>) (&gt; 0).
      */
-    private Float ncl; // Float
+    private Double ncl; // Float
 
-    public Float getNcl() {
+    public Double getNcl() {
         return ncl;
     }
 
-    public void setNcl(Float _value_) {
+    public void setNcl(Double _value_) {
         ncl = _value_;
     }
 
@@ -675,25 +675,25 @@ public class PssPTIST3 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setNcl(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssPTIST3) _this_).setNcl((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssPTIST3) _this_).setNcl((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssPTIST3) _this_).setNcl(getFloatFromString((String) _value_));
+            ((PssPTIST3) _this_).setNcl(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Number of counts until reset after limit function is triggered (<i>NCR</i>).
      */
-    private Float ncr; // Float
+    private Double ncr; // Float
 
-    public Float getNcr() {
+    public Double getNcr() {
         return ncr;
     }
 
-    public void setNcr(Float _value_) {
+    public void setNcr(Double _value_) {
         ncr = _value_;
     }
 
@@ -702,12 +702,12 @@ public class PssPTIST3 extends PowerSystemStabilizerDynamics {
     }
 
     private static void setNcr(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssPTIST3) _this_).setNcr((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssPTIST3) _this_).setNcr((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssPTIST3) _this_).setNcr(getFloatFromString((String) _value_));
+            ((PssPTIST3) _this_).setNcr(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

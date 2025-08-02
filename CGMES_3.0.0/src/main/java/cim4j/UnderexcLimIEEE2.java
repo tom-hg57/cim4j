@@ -39,13 +39,13 @@ public class UnderexcLimIEEE2 extends UnderexcitationLimiterDynamics {
     /**
      * UEL terminal voltage exponent applied to real power input to UEL limit look-up table (<i>k1</i>).  Typical value = 2.
      */
-    private Float k1; // Float
+    private Double k1; // Float
 
-    public Float getK1() {
+    public Double getK1() {
         return k1;
     }
 
-    public void setK1(Float _value_) {
+    public void setK1(Double _value_) {
         k1 = _value_;
     }
 
@@ -54,25 +54,25 @@ public class UnderexcLimIEEE2 extends UnderexcitationLimiterDynamics {
     }
 
     private static void setK1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((UnderexcLimIEEE2) _this_).setK1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((UnderexcLimIEEE2) _this_).setK1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((UnderexcLimIEEE2) _this_).setK1(getFloatFromString((String) _value_));
+            ((UnderexcLimIEEE2) _this_).setK1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * UEL terminal voltage exponent applied to reactive power output from UEL limit look-up table (<i>k2</i>).  Typical value = 2.
      */
-    private Float k2; // Float
+    private Double k2; // Float
 
-    public Float getK2() {
+    public Double getK2() {
         return k2;
     }
 
-    public void setK2(Float _value_) {
+    public void setK2(Double _value_) {
         k2 = _value_;
     }
 
@@ -81,12 +81,12 @@ public class UnderexcLimIEEE2 extends UnderexcitationLimiterDynamics {
     }
 
     private static void setK2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((UnderexcLimIEEE2) _this_).setK2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((UnderexcLimIEEE2) _this_).setK2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((UnderexcLimIEEE2) _this_).setK2(getFloatFromString((String) _value_));
+            ((UnderexcLimIEEE2) _this_).setK2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

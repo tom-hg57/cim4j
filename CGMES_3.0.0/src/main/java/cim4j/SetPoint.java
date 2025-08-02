@@ -39,13 +39,13 @@ public class SetPoint extends AnalogControl {
     /**
      * Normal value for Control.value e.g. used for percentage scaling.
      */
-    private Float normalValue; // Float
+    private Double normalValue; // Float
 
-    public Float getNormalValue() {
+    public Double getNormalValue() {
         return normalValue;
     }
 
-    public void setNormalValue(Float _value_) {
+    public void setNormalValue(Double _value_) {
         normalValue = _value_;
     }
 
@@ -54,25 +54,25 @@ public class SetPoint extends AnalogControl {
     }
 
     private static void setNormalValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SetPoint) _this_).setNormalValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SetPoint) _this_).setNormalValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SetPoint) _this_).setNormalValue(getFloatFromString((String) _value_));
+            ((SetPoint) _this_).setNormalValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The value representing the actuator output.
      */
-    private Float value; // Float
+    private Double value; // Float
 
-    public Float getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Float _value_) {
+    public void setValue(Double _value_) {
         value = _value_;
     }
 
@@ -81,12 +81,12 @@ public class SetPoint extends AnalogControl {
     }
 
     private static void setValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SetPoint) _this_).setValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SetPoint) _this_).setValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SetPoint) _this_).setValue(getFloatFromString((String) _value_));
+            ((SetPoint) _this_).setValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
