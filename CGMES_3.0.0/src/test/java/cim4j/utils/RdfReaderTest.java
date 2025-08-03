@@ -21,6 +21,7 @@ import cim4j.AnalogValue;
 import cim4j.BaseVoltage;
 import cim4j.CimConstants;
 import cim4j.ConnectivityNode;
+import cim4j.DiagramObject;
 import cim4j.EnergyConsumer;
 import cim4j.EnergySchedulingType;
 import cim4j.EnergySource;
@@ -36,6 +37,7 @@ import cim4j.SvVoltage;
 import cim4j.Terminal;
 import cim4j.TopologicalIsland;
 import cim4j.TopologicalNode;
+import cim4j.VisibilityLayer;
 import cim4j.VoltageLevel;
 
 /**
@@ -797,7 +799,6 @@ class RdfReaderTest {
         assertTrue(attributeNames.contains("BaseVoltage"));
         assertTrue(attributeNames.contains("name"));
         assertEquals("BaseVoltage.20", voltageLevel.getAttribute("BaseVoltage"));
-        /// assertEquals("BaseVoltage.20", voltageLevel.getBaseVoltageId());
         assertNull(voltageLevel.getBaseVoltage());
         assertEquals("98", voltageLevel.getAttribute("name"));
         assertEquals("98", voltageLevel.getName());
@@ -1394,6 +1395,173 @@ class RdfReaderTest {
 
         assertEquals(topologicalIsland, topologicalNode2.getAttribute("TopologicalIsland"));
         assertEquals(topologicalIsland, topologicalNode2.getTopologicalIsland());
+    }
+
+    @Test
+    @Order(560)
+    void testRead043() {
+        // Check handling links on not used side to not existing objects:
+        // the id is read instead of the object (even though not CGMES conform)
+        // but not written because on not used side
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath("rdf/test043.xml")));
+        assertEquals(1, cimData.size());
+
+        assertTrue(cimData.containsKey("BaseVoltage.20"));
+
+        var obj = cimData.get("BaseVoltage.20");
+        assertNotNull(obj);
+        assertTrue(obj instanceof BaseVoltage);
+        var baseVoltage = (BaseVoltage) obj;
+        assertEquals(BaseVoltage.class, baseVoltage.getClass());
+        assertEquals("BaseVoltage", baseVoltage.getCimType());
+        assertEquals("BaseVoltage.20", baseVoltage.getRdfid());
+
+        var voltageLevels = baseVoltage.getVoltageLevel();
+        assertNotNull(voltageLevels);
+        assertEquals(0, voltageLevels.size());
+
+        var voltageLevelIdSet = baseVoltage.getAttribute("VoltageLevel");
+        assertTrue(voltageLevelIdSet instanceof Set<?>);
+        assertEquals(1, ((Set<?>) voltageLevelIdSet).size());
+        assertTrue(((Set<?>) voltageLevelIdSet).contains("VoltageLevel.98"));
+    }
+
+    @Test
+    @Order(570)
+    void testRead044() {
+        // Check list attributes with inverse list (ManyToMany)
+        // from VisibilityLayer to DiagramObject
+        testRead_044_045_046_047("rdf/test044.xml");
+    }
+
+    @Test
+    @Order(580)
+    void testRead045() {
+        // Check list attributes with inverse list (ManyToMany)
+        // from DiagramObject to VisibilityLayer (not CGMES conform)
+        testRead_044_045_046_047("rdf/test045.xml");
+    }
+
+    @Test
+    @Order(590)
+    void testRead046() {
+        // Check reading list attributes with inverse list (ManyToMany)
+        // between DiagramObject and VisibilityLayer
+        // if they are set on both sides (not CGMES conform)
+        testRead_044_045_046_047("rdf/test046.xml");
+    }
+
+    @Test
+    @Order(600)
+    void testRead047() {
+        // Check reading list attributes with inverse list (ManyToMany)
+        // partly from DiagramObject to VisibilityLayer and partly vice versa
+        // (not CGMES conform)
+        testRead_044_045_046_047("rdf/test047.xml");
+    }
+
+    private void testRead_044_045_046_047(String test_044_045_046_047) {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath(test_044_045_046_047)));
+        assertEquals(6, cimData.size());
+
+        assertTrue(cimData.containsKey("_DO1"));
+        assertTrue(cimData.containsKey("_DO2"));
+        assertTrue(cimData.containsKey("_DO3"));
+        assertTrue(cimData.containsKey("_VL1"));
+        assertTrue(cimData.containsKey("_VL2"));
+        assertTrue(cimData.containsKey("_VL3"));
+
+        var obj = cimData.get("_DO1");
+        assertNotNull(obj);
+        assertTrue(obj instanceof DiagramObject);
+        var diagramObject1 = (DiagramObject) obj;
+        assertEquals(DiagramObject.class, diagramObject1.getClass());
+        assertEquals("DiagramObject", diagramObject1.getCimType());
+        assertEquals("_DO1", diagramObject1.getRdfid());
+
+        obj = cimData.get("_DO2");
+        assertNotNull(obj);
+        assertTrue(obj instanceof DiagramObject);
+        var diagramObject2 = (DiagramObject) obj;
+        assertEquals(DiagramObject.class, diagramObject2.getClass());
+        assertEquals("DiagramObject", diagramObject2.getCimType());
+        assertEquals("_DO2", diagramObject2.getRdfid());
+
+        obj = cimData.get("_DO3");
+        assertNotNull(obj);
+        assertTrue(obj instanceof DiagramObject);
+        var diagramObject3 = (DiagramObject) obj;
+        assertEquals(DiagramObject.class, diagramObject3.getClass());
+        assertEquals("DiagramObject", diagramObject3.getCimType());
+        assertEquals("_DO3", diagramObject3.getRdfid());
+
+        obj = cimData.get("_VL1");
+        assertNotNull(obj);
+        assertTrue(obj instanceof VisibilityLayer);
+        var visibilityLayer1 = (VisibilityLayer) obj;
+        assertEquals(VisibilityLayer.class, visibilityLayer1.getClass());
+        assertEquals("VisibilityLayer", visibilityLayer1.getCimType());
+        assertEquals("_VL1", visibilityLayer1.getRdfid());
+
+        obj = cimData.get("_VL2");
+        assertNotNull(obj);
+        assertTrue(obj instanceof VisibilityLayer);
+        var visibilityLayer2 = (VisibilityLayer) obj;
+        assertEquals(VisibilityLayer.class, visibilityLayer2.getClass());
+        assertEquals("VisibilityLayer", visibilityLayer2.getCimType());
+        assertEquals("_VL2", visibilityLayer2.getRdfid());
+
+        obj = cimData.get("_VL3");
+        assertNotNull(obj);
+        assertTrue(obj instanceof VisibilityLayer);
+        var visibilityLayer3 = (VisibilityLayer) obj;
+        assertEquals(VisibilityLayer.class, visibilityLayer3.getClass());
+        assertEquals("VisibilityLayer", visibilityLayer3.getCimType());
+        assertEquals("_VL3", visibilityLayer3.getRdfid());
+
+        var visibilityLayers = diagramObject1.getVisibilityLayers();
+        assertNotNull(visibilityLayers);
+        assertEquals(visibilityLayers, diagramObject1.getAttribute("VisibilityLayers"));
+        assertEquals(2, visibilityLayers.size());
+        assertTrue(visibilityLayers.contains(visibilityLayer1));
+        assertTrue(visibilityLayers.contains(visibilityLayer3));
+
+        visibilityLayers = diagramObject2.getVisibilityLayers();
+        assertNotNull(visibilityLayers);
+        assertEquals(visibilityLayers, diagramObject2.getAttribute("VisibilityLayers"));
+        assertEquals(2, visibilityLayers.size());
+        assertTrue(visibilityLayers.contains(visibilityLayer1));
+        assertTrue(visibilityLayers.contains(visibilityLayer2));
+
+        visibilityLayers = diagramObject3.getVisibilityLayers();
+        assertNotNull(visibilityLayers);
+        assertEquals(visibilityLayers, diagramObject3.getAttribute("VisibilityLayers"));
+        assertEquals(2, visibilityLayers.size());
+        assertTrue(visibilityLayers.contains(visibilityLayer2));
+        assertTrue(visibilityLayers.contains(visibilityLayer3));
+
+        var visibleObjects = visibilityLayer1.getVisibleObjects();
+        assertNotNull(visibleObjects);
+        assertEquals(visibleObjects, visibilityLayer1.getAttribute("VisibleObjects"));
+        assertEquals(2, visibleObjects.size());
+        assertTrue(visibleObjects.contains(diagramObject1));
+        assertTrue(visibleObjects.contains(diagramObject2));
+
+        visibleObjects = visibilityLayer2.getVisibleObjects();
+        assertNotNull(visibleObjects);
+        assertEquals(visibleObjects, visibilityLayer2.getAttribute("VisibleObjects"));
+        assertEquals(2, visibleObjects.size());
+        assertTrue(visibleObjects.contains(diagramObject2));
+        assertTrue(visibleObjects.contains(diagramObject3));
+
+        visibleObjects = visibilityLayer3.getVisibleObjects();
+        assertNotNull(visibleObjects);
+        assertEquals(visibleObjects, visibilityLayer3.getAttribute("VisibleObjects"));
+        assertEquals(2, visibleObjects.size());
+        assertTrue(visibleObjects.contains(diagramObject1));
+        assertTrue(visibleObjects.contains(diagramObject3));
     }
 
     private String getPath(String aResource) {
