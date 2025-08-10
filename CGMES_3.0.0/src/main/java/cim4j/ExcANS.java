@@ -120,13 +120,13 @@ public class ExcANS extends ExcitationSystemDynamics {
     /**
      * Exciter gain (<i>K</i><i><sub>2</sub></i>).  Typical value = 20.
      */
-    private Float k2; // Float
+    private Double k2; // Float
 
-    public Float getK2() {
+    public Double getK2() {
         return k2;
     }
 
-    public void setK2(Float _value_) {
+    public void setK2(Double _value_) {
         k2 = _value_;
     }
 
@@ -135,25 +135,25 @@ public class ExcANS extends ExcitationSystemDynamics {
     }
 
     private static void setK2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcANS) _this_).setK2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcANS) _this_).setK2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcANS) _this_).setK2(getFloatFromString((String) _value_));
+            ((ExcANS) _this_).setK2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * AVR gain (<i>K</i><i><sub>3</sub></i>).  Typical value = 1000.
      */
-    private Float k3; // Float
+    private Double k3; // Float
 
-    public Float getK3() {
+    public Double getK3() {
         return k3;
     }
 
-    public void setK3(Float _value_) {
+    public void setK3(Double _value_) {
         k3 = _value_;
     }
 
@@ -162,25 +162,25 @@ public class ExcANS extends ExcitationSystemDynamics {
     }
 
     private static void setK3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcANS) _this_).setK3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcANS) _this_).setK3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcANS) _this_).setK3(getFloatFromString((String) _value_));
+            ((ExcANS) _this_).setK3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Ceiling factor (<i>K</i><i><sub>CE</sub></i>).  Typical value = 1.
      */
-    private Float kce; // Float
+    private Double kce; // Float
 
-    public Float getKce() {
+    public Double getKce() {
         return kce;
     }
 
-    public void setKce(Float _value_) {
+    public void setKce(Double _value_) {
         kce = _value_;
     }
 
@@ -189,12 +189,12 @@ public class ExcANS extends ExcitationSystemDynamics {
     }
 
     private static void setKce(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcANS) _this_).setKce((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcANS) _this_).setKce((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcANS) _this_).setKce(getFloatFromString((String) _value_));
+            ((ExcANS) _this_).setKce(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

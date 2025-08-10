@@ -39,13 +39,13 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     /**
      * Damping torque coefficient (<i>D</i>) (&gt;= 0).  A proportionality constant that, when multiplied by the angular velocity of the rotor poles with respect to the magnetic field (frequency), results in the damping torque.  This value is often zero when the sources of damping torques (generator damper windings, load damping effects, etc.) are modelled in detail.  Typical value = 0.
      */
-    private Float damping; // Float
+    private Double damping; // Float
 
-    public Float getDamping() {
+    public Double getDamping() {
         return damping;
     }
 
-    public void setDamping(Float _value_) {
+    public void setDamping(Double _value_) {
         damping = _value_;
     }
 
@@ -54,12 +54,12 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     }
 
     private static void setDamping(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RotatingMachineDynamics) _this_).setDamping((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RotatingMachineDynamics) _this_).setDamping((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RotatingMachineDynamics) _this_).setDamping(getFloatFromString((String) _value_));
+            ((RotatingMachineDynamics) _this_).setDamping(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -93,13 +93,13 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     /**
      * Saturation factor at rated terminal voltage (<i>S1</i>) (&gt;= 0).  Not used by simplified model.  Defined by defined by <i>S</i>(<i>E1</i>) in the SynchronousMachineSaturationParameters diagram.  Typical value = 0,02.
      */
-    private Float saturationFactor; // Float
+    private Double saturationFactor; // Float
 
-    public Float getSaturationFactor() {
+    public Double getSaturationFactor() {
         return saturationFactor;
     }
 
-    public void setSaturationFactor(Float _value_) {
+    public void setSaturationFactor(Double _value_) {
         saturationFactor = _value_;
     }
 
@@ -108,25 +108,25 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     }
 
     private static void setSaturationFactor(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RotatingMachineDynamics) _this_).setSaturationFactor((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RotatingMachineDynamics) _this_).setSaturationFactor((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RotatingMachineDynamics) _this_).setSaturationFactor(getFloatFromString((String) _value_));
+            ((RotatingMachineDynamics) _this_).setSaturationFactor(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Saturation factor at 120% of rated terminal voltage (<i>S12</i>) (&gt;= RotatingMachineDynamics.saturationFactor). Not used by the simplified model, defined by <i>S</i>(<i>E2</i>) in the SynchronousMachineSaturationParameters diagram.  Typical value = 0,12.
      */
-    private Float saturationFactor120; // Float
+    private Double saturationFactor120; // Float
 
-    public Float getSaturationFactor120() {
+    public Double getSaturationFactor120() {
         return saturationFactor120;
     }
 
-    public void setSaturationFactor120(Float _value_) {
+    public void setSaturationFactor120(Double _value_) {
         saturationFactor120 = _value_;
     }
 
@@ -135,12 +135,12 @@ public class RotatingMachineDynamics extends DynamicsFunctionBlock {
     }
 
     private static void setSaturationFactor120(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((RotatingMachineDynamics) _this_).setSaturationFactor120((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((RotatingMachineDynamics) _this_).setSaturationFactor120((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((RotatingMachineDynamics) _this_).setSaturationFactor120(getFloatFromString((String) _value_));
+            ((RotatingMachineDynamics) _this_).setSaturationFactor120(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

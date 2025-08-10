@@ -390,13 +390,13 @@ public class GovHydro1 extends TurbineGovernorDynamics {
     /**
      * Maximum gate velocity (<i>Vlem</i>) (&gt; 0).  Typical value = 0,2.
      */
-    private Float velm; // Float
+    private Double velm; // Float
 
-    public Float getVelm() {
+    public Double getVelm() {
         return velm;
     }
 
-    public void setVelm(Float _value_) {
+    public void setVelm(Double _value_) {
         velm = _value_;
     }
 
@@ -405,12 +405,12 @@ public class GovHydro1 extends TurbineGovernorDynamics {
     }
 
     private static void setVelm(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydro1) _this_).setVelm((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydro1) _this_).setVelm((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydro1) _this_).setVelm(getFloatFromString((String) _value_));
+            ((GovHydro1) _this_).setVelm(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

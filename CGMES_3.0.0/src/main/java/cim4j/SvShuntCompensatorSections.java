@@ -77,13 +77,13 @@ public class SvShuntCompensatorSections extends BaseClass {
     /**
      * The number of sections in service as a continuous variable. The attribute shall be a positive value or zero. To get integer value scale with ShuntCompensator.bPerSection.
      */
-    private Float sections; // Float
+    private Double sections; // Float
 
-    public Float getSections() {
+    public Double getSections() {
         return sections;
     }
 
-    public void setSections(Float _value_) {
+    public void setSections(Double _value_) {
         sections = _value_;
     }
 
@@ -92,12 +92,12 @@ public class SvShuntCompensatorSections extends BaseClass {
     }
 
     private static void setSections(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SvShuntCompensatorSections) _this_).setSections((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SvShuntCompensatorSections) _this_).setSections((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SvShuntCompensatorSections) _this_).setSections(getFloatFromString((String) _value_));
+            ((SvShuntCompensatorSections) _this_).setSections(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

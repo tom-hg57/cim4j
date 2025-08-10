@@ -79,7 +79,7 @@ public class AccumulatorLimitSet extends LimitSet {
     /**
      * A measurement may have zero or more limit ranges defined for it.
      */
-    private Set<Accumulator> Measurements = new HashSet<>(); // OneToMany
+    private Set<Accumulator> Measurements = new HashSet<>(); // ManyToMany
 
     private Set<String> MeasurementsIdSet = new HashSet<>();
 

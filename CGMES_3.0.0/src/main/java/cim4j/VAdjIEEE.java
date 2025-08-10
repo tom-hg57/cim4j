@@ -39,13 +39,13 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
     /**
      * Rate at which output of adjuster changes (<i>ADJ_SLEW</i>).  Unit = s / PU.  Typical value = 300.
      */
-    private Float adjslew; // Float
+    private Double adjslew; // Float
 
-    public Float getAdjslew() {
+    public Double getAdjslew() {
         return adjslew;
     }
 
-    public void setAdjslew(Float _value_) {
+    public void setAdjslew(Double _value_) {
         adjslew = _value_;
     }
 
@@ -54,12 +54,12 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
     }
 
     private static void setAdjslew(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((VAdjIEEE) _this_).setAdjslew((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((VAdjIEEE) _this_).setAdjslew((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((VAdjIEEE) _this_).setAdjslew(getFloatFromString((String) _value_));
+            ((VAdjIEEE) _this_).setAdjslew(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -120,13 +120,13 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
     /**
      * Set high to provide a continuous raise or lower (<i>V</i><i><sub>ADJF</sub></i>).
      */
-    private Float vadjf; // Float
+    private Double vadjf; // Float
 
-    public Float getVadjf() {
+    public Double getVadjf() {
         return vadjf;
     }
 
-    public void setVadjf(Float _value_) {
+    public void setVadjf(Double _value_) {
         vadjf = _value_;
     }
 
@@ -135,12 +135,12 @@ public class VAdjIEEE extends VoltageAdjusterDynamics {
     }
 
     private static void setVadjf(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((VAdjIEEE) _this_).setVadjf((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((VAdjIEEE) _this_).setVadjf((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((VAdjIEEE) _this_).setVadjf(getFloatFromString((String) _value_));
+            ((VAdjIEEE) _this_).setVadjf(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

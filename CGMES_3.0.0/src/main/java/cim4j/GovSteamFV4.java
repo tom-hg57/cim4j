@@ -903,13 +903,13 @@ public class GovSteamFV4 extends TurbineGovernorDynamics {
     /**
      * Maximum regulator gate closing velocity (<i>Svmn</i>).  Typical value = -0,0333.
      */
-    private Float svmn; // Float
+    private Double svmn; // Float
 
-    public Float getSvmn() {
+    public Double getSvmn() {
         return svmn;
     }
 
-    public void setSvmn(Float _value_) {
+    public void setSvmn(Double _value_) {
         svmn = _value_;
     }
 
@@ -918,25 +918,25 @@ public class GovSteamFV4 extends TurbineGovernorDynamics {
     }
 
     private static void setSvmn(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamFV4) _this_).setSvmn((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamFV4) _this_).setSvmn((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamFV4) _this_).setSvmn(getFloatFromString((String) _value_));
+            ((GovSteamFV4) _this_).setSvmn(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum regulator gate opening velocity (<i>Svmx</i>).  Typical value = 0,0333.
      */
-    private Float svmx; // Float
+    private Double svmx; // Float
 
-    public Float getSvmx() {
+    public Double getSvmx() {
         return svmx;
     }
 
-    public void setSvmx(Float _value_) {
+    public void setSvmx(Double _value_) {
         svmx = _value_;
     }
 
@@ -945,12 +945,12 @@ public class GovSteamFV4 extends TurbineGovernorDynamics {
     }
 
     private static void setSvmx(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamFV4) _this_).setSvmx((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamFV4) _this_).setSvmx((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamFV4) _this_).setSvmx(getFloatFromString((String) _value_));
+            ((GovSteamFV4) _this_).setSvmx(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

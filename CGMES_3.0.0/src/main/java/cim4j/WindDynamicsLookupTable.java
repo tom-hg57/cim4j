@@ -381,13 +381,13 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     /**
      * Input value (<i>x</i>) for the lookup table function.
      */
-    private Float input; // Float
+    private Double input; // Float
 
-    public Float getInput() {
+    public Double getInput() {
         return input;
     }
 
-    public void setInput(Float _value_) {
+    public void setInput(Double _value_) {
         input = _value_;
     }
 
@@ -396,12 +396,12 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     }
 
     private static void setInput(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindDynamicsLookupTable) _this_).setInput((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindDynamicsLookupTable) _this_).setInput((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindDynamicsLookupTable) _this_).setInput(getFloatFromString((String) _value_));
+            ((WindDynamicsLookupTable) _this_).setInput(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -433,13 +433,13 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     /**
      * Output value (<i>y</i>) for the lookup table function.
      */
-    private Float output; // Float
+    private Double output; // Float
 
-    public Float getOutput() {
+    public Double getOutput() {
         return output;
     }
 
-    public void setOutput(Float _value_) {
+    public void setOutput(Double _value_) {
         output = _value_;
     }
 
@@ -448,12 +448,12 @@ public class WindDynamicsLookupTable extends IdentifiedObject {
     }
 
     private static void setOutput(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindDynamicsLookupTable) _this_).setOutput((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindDynamicsLookupTable) _this_).setOutput((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindDynamicsLookupTable) _this_).setOutput(getFloatFromString((String) _value_));
+            ((WindDynamicsLookupTable) _this_).setOutput(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

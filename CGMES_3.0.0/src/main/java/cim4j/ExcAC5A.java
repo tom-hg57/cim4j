@@ -39,13 +39,13 @@ public class ExcAC5A extends ExcitationSystemDynamics {
     /**
      * Coefficient to allow different usage of the model (<i>a</i>).  Typical value = 1.
      */
-    private Float a; // Float
+    private Double a; // Float
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float _value_) {
+    public void setA(Double _value_) {
         a = _value_;
     }
 
@@ -54,12 +54,12 @@ public class ExcAC5A extends ExcitationSystemDynamics {
     }
 
     private static void setA(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAC5A) _this_).setA((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAC5A) _this_).setA((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAC5A) _this_).setA(getFloatFromString((String) _value_));
+            ((ExcAC5A) _this_).setA(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -228,13 +228,13 @@ public class ExcAC5A extends ExcitationSystemDynamics {
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>Efd</i><i><sub>1</sub></i> (<i>Se[Efd</i><i><sub>1</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,86.
      */
-    private Float seefd1; // Float
+    private Double seefd1; // Float
 
-    public Float getSeefd1() {
+    public Double getSeefd1() {
         return seefd1;
     }
 
-    public void setSeefd1(Float _value_) {
+    public void setSeefd1(Double _value_) {
         seefd1 = _value_;
     }
 
@@ -243,25 +243,25 @@ public class ExcAC5A extends ExcitationSystemDynamics {
     }
 
     private static void setSeefd1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAC5A) _this_).setSeefd1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAC5A) _this_).setSeefd1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAC5A) _this_).setSeefd1(getFloatFromString((String) _value_));
+            ((ExcAC5A) _this_).setSeefd1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>Efd</i><i><sub>2</sub></i> (<i>Se[Efd</i><i><sub>2</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,5.
      */
-    private Float seefd2; // Float
+    private Double seefd2; // Float
 
-    public Float getSeefd2() {
+    public Double getSeefd2() {
         return seefd2;
     }
 
-    public void setSeefd2(Float _value_) {
+    public void setSeefd2(Double _value_) {
         seefd2 = _value_;
     }
 
@@ -270,12 +270,12 @@ public class ExcAC5A extends ExcitationSystemDynamics {
     }
 
     private static void setSeefd2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAC5A) _this_).setSeefd2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAC5A) _this_).setSeefd2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAC5A) _this_).setSeefd2(getFloatFromString((String) _value_));
+            ((ExcAC5A) _this_).setSeefd2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -147,13 +147,13 @@ public class PFVArType1IEEEPFController extends PFVArControllerType1Dynamics {
     /**
      * PF controller deadband (<i>V</i><i><sub>PFC_BW</sub></i>).  Typical value = 0,05.
      */
-    private Float vpfcbw; // Float
+    private Double vpfcbw; // Float
 
-    public Float getVpfcbw() {
+    public Double getVpfcbw() {
         return vpfcbw;
     }
 
-    public void setVpfcbw(Float _value_) {
+    public void setVpfcbw(Double _value_) {
         vpfcbw = _value_;
     }
 
@@ -162,12 +162,12 @@ public class PFVArType1IEEEPFController extends PFVArControllerType1Dynamics {
     }
 
     private static void setVpfcbw(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PFVArType1IEEEPFController) _this_).setVpfcbw((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PFVArType1IEEEPFController) _this_).setVpfcbw((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PFVArType1IEEEPFController) _this_).setVpfcbw(getFloatFromString((String) _value_));
+            ((PFVArType1IEEEPFController) _this_).setVpfcbw(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

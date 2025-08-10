@@ -282,13 +282,13 @@ public class ExcDC1A extends ExcitationSystemDynamics {
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>Efd</i><i><sub>1</sub></i> (<i>Se[Eefd</i><i><sub>1</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,33.
      */
-    private Float seefd1; // Float
+    private Double seefd1; // Float
 
-    public Float getSeefd1() {
+    public Double getSeefd1() {
         return seefd1;
     }
 
-    public void setSeefd1(Float _value_) {
+    public void setSeefd1(Double _value_) {
         seefd1 = _value_;
     }
 
@@ -297,25 +297,25 @@ public class ExcDC1A extends ExcitationSystemDynamics {
     }
 
     private static void setSeefd1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcDC1A) _this_).setSeefd1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcDC1A) _this_).setSeefd1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcDC1A) _this_).setSeefd1(getFloatFromString((String) _value_));
+            ((ExcDC1A) _this_).setSeefd1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>Efd</i><i><sub>2</sub></i> (<i>Se[Eefd</i><i><sub>2</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,1.
      */
-    private Float seefd2; // Float
+    private Double seefd2; // Float
 
-    public Float getSeefd2() {
+    public Double getSeefd2() {
         return seefd2;
     }
 
-    public void setSeefd2(Float _value_) {
+    public void setSeefd2(Double _value_) {
         seefd2 = _value_;
     }
 
@@ -324,12 +324,12 @@ public class ExcDC1A extends ExcitationSystemDynamics {
     }
 
     private static void setSeefd2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcDC1A) _this_).setSeefd2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcDC1A) _this_).setSeefd2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcDC1A) _this_).setSeefd2(getFloatFromString((String) _value_));
+            ((ExcDC1A) _this_).setSeefd2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

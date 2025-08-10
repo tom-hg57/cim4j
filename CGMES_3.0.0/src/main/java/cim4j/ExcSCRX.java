@@ -147,13 +147,13 @@ public class ExcSCRX extends ExcitationSystemDynamics {
     /**
      * Ratio of field discharge resistance to field winding resistance ([<i>rc / rfd]</i>).  Typical value = 0.
      */
-    private Float rcrfd; // Float
+    private Double rcrfd; // Float
 
-    public Float getRcrfd() {
+    public Double getRcrfd() {
         return rcrfd;
     }
 
-    public void setRcrfd(Float _value_) {
+    public void setRcrfd(Double _value_) {
         rcrfd = _value_;
     }
 
@@ -162,25 +162,25 @@ public class ExcSCRX extends ExcitationSystemDynamics {
     }
 
     private static void setRcrfd(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcSCRX) _this_).setRcrfd((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcSCRX) _this_).setRcrfd((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcSCRX) _this_).setRcrfd(getFloatFromString((String) _value_));
+            ((ExcSCRX) _this_).setRcrfd(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Gain reduction ratio of lag-lead element ([<i>Ta</i> / <i>Tb</i>]). The parameter <i>Ta</i> is not defined explicitly.  Typical value = 0.1.
      */
-    private Float tatb; // Float
+    private Double tatb; // Float
 
-    public Float getTatb() {
+    public Double getTatb() {
         return tatb;
     }
 
-    public void setTatb(Float _value_) {
+    public void setTatb(Double _value_) {
         tatb = _value_;
     }
 
@@ -189,12 +189,12 @@ public class ExcSCRX extends ExcitationSystemDynamics {
     }
 
     private static void setTatb(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcSCRX) _this_).setTatb((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcSCRX) _this_).setTatb((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcSCRX) _this_).setTatb(getFloatFromString((String) _value_));
+            ((ExcSCRX) _this_).setTatb(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

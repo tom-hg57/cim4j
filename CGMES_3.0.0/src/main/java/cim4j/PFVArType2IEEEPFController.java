@@ -201,13 +201,13 @@ public class PFVArType2IEEEPFController extends PFVArControllerType2Dynamics {
     /**
      * Generator sensing voltage (<i>V</i><i><sub>S</sub></i>).
      */
-    private Float vs; // Float
+    private Double vs; // Float
 
-    public Float getVs() {
+    public Double getVs() {
         return vs;
     }
 
-    public void setVs(Float _value_) {
+    public void setVs(Double _value_) {
         vs = _value_;
     }
 
@@ -216,12 +216,12 @@ public class PFVArType2IEEEPFController extends PFVArControllerType2Dynamics {
     }
 
     private static void setVs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PFVArType2IEEEPFController) _this_).setVs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PFVArType2IEEEPFController) _this_).setVs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PFVArType2IEEEPFController) _this_).setVs(getFloatFromString((String) _value_));
+            ((PFVArType2IEEEPFController) _this_).setVs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

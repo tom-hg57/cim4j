@@ -77,13 +77,13 @@ public class LoadStatic extends IdentifiedObject {
     /**
      * First term voltage exponent for active power (<i>Ep1</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float ep1; // Float
+    private Double ep1; // Float
 
-    public Float getEp1() {
+    public Double getEp1() {
         return ep1;
     }
 
-    public void setEp1(Float _value_) {
+    public void setEp1(Double _value_) {
         ep1 = _value_;
     }
 
@@ -92,25 +92,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEp1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEp1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEp1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEp1(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEp1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Second term voltage exponent for active power (<i>Ep2</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float ep2; // Float
+    private Double ep2; // Float
 
-    public Float getEp2() {
+    public Double getEp2() {
         return ep2;
     }
 
-    public void setEp2(Float _value_) {
+    public void setEp2(Double _value_) {
         ep2 = _value_;
     }
 
@@ -119,25 +119,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEp2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEp2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEp2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEp2(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEp2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Third term voltage exponent for active power (<i>Ep3</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float ep3; // Float
+    private Double ep3; // Float
 
-    public Float getEp3() {
+    public Double getEp3() {
         return ep3;
     }
 
-    public void setEp3(Float _value_) {
+    public void setEp3(Double _value_) {
         ep3 = _value_;
     }
 
@@ -146,25 +146,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEp3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEp3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEp3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEp3(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEp3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * First term voltage exponent for reactive power (<i>Eq1</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float eq1; // Float
+    private Double eq1; // Float
 
-    public Float getEq1() {
+    public Double getEq1() {
         return eq1;
     }
 
-    public void setEq1(Float _value_) {
+    public void setEq1(Double _value_) {
         eq1 = _value_;
     }
 
@@ -173,25 +173,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEq1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEq1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEq1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEq1(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEq1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Second term voltage exponent for reactive power (<i>Eq2</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float eq2; // Float
+    private Double eq2; // Float
 
-    public Float getEq2() {
+    public Double getEq2() {
         return eq2;
     }
 
-    public void setEq2(Float _value_) {
+    public void setEq2(Double _value_) {
         eq2 = _value_;
     }
 
@@ -200,25 +200,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEq2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEq2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEq2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEq2(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEq2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Third term voltage exponent for reactive power (<i>Eq3</i>).  Used only when .staticLoadModelType = exponential.
      */
-    private Float eq3; // Float
+    private Double eq3; // Float
 
-    public Float getEq3() {
+    public Double getEq3() {
         return eq3;
     }
 
-    public void setEq3(Float _value_) {
+    public void setEq3(Double _value_) {
         eq3 = _value_;
     }
 
@@ -227,25 +227,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setEq3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setEq3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setEq3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setEq3(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setEq3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * First term voltage coefficient for active power (<i>K</i><i><sub>p1</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kp1; // Float
+    private Double kp1; // Float
 
-    public Float getKp1() {
+    public Double getKp1() {
         return kp1;
     }
 
-    public void setKp1(Float _value_) {
+    public void setKp1(Double _value_) {
         kp1 = _value_;
     }
 
@@ -254,25 +254,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKp1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKp1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKp1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKp1(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKp1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Second term voltage coefficient for active power (<i>K</i><i><sub>p2</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kp2; // Float
+    private Double kp2; // Float
 
-    public Float getKp2() {
+    public Double getKp2() {
         return kp2;
     }
 
-    public void setKp2(Float _value_) {
+    public void setKp2(Double _value_) {
         kp2 = _value_;
     }
 
@@ -281,25 +281,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKp2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKp2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKp2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKp2(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKp2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Third term voltage coefficient for active power (<i>K</i><i><sub>p3</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kp3; // Float
+    private Double kp3; // Float
 
-    public Float getKp3() {
+    public Double getKp3() {
         return kp3;
     }
 
-    public void setKp3(Float _value_) {
+    public void setKp3(Double _value_) {
         kp3 = _value_;
     }
 
@@ -308,25 +308,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKp3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKp3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKp3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKp3(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKp3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Frequency coefficient for active power (<i>K</i><i><sub>p4</sub></i>)  (not = 0 if .staticLoadModelType = zIP2).  Used only when .staticLoadModelType = zIP2.
      */
-    private Float kp4; // Float
+    private Double kp4; // Float
 
-    public Float getKp4() {
+    public Double getKp4() {
         return kp4;
     }
 
-    public void setKp4(Float _value_) {
+    public void setKp4(Double _value_) {
         kp4 = _value_;
     }
 
@@ -335,25 +335,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKp4(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKp4((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKp4((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKp4(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKp4(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Frequency deviation coefficient for active power (<i>K</i><i><sub>pf</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kpf; // Float
+    private Double kpf; // Float
 
-    public Float getKpf() {
+    public Double getKpf() {
         return kpf;
     }
 
-    public void setKpf(Float _value_) {
+    public void setKpf(Double _value_) {
         kpf = _value_;
     }
 
@@ -362,25 +362,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKpf(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKpf((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKpf((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKpf(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKpf(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * First term voltage coefficient for reactive power (<i>K</i><i><sub>q1</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kq1; // Float
+    private Double kq1; // Float
 
-    public Float getKq1() {
+    public Double getKq1() {
         return kq1;
     }
 
-    public void setKq1(Float _value_) {
+    public void setKq1(Double _value_) {
         kq1 = _value_;
     }
 
@@ -389,25 +389,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKq1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKq1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKq1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKq1(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKq1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Second term voltage coefficient for reactive power (<i>K</i><i><sub>q2</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kq2; // Float
+    private Double kq2; // Float
 
-    public Float getKq2() {
+    public Double getKq2() {
         return kq2;
     }
 
-    public void setKq2(Float _value_) {
+    public void setKq2(Double _value_) {
         kq2 = _value_;
     }
 
@@ -416,25 +416,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKq2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKq2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKq2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKq2(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKq2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Third term voltage coefficient for reactive power (<i>K</i><i><sub>q3</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kq3; // Float
+    private Double kq3; // Float
 
-    public Float getKq3() {
+    public Double getKq3() {
         return kq3;
     }
 
-    public void setKq3(Float _value_) {
+    public void setKq3(Double _value_) {
         kq3 = _value_;
     }
 
@@ -443,25 +443,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKq3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKq3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKq3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKq3(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKq3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Frequency coefficient for reactive power (<i>K</i><i><sub>q4</sub></i>)  (not = 0 when .staticLoadModelType = zIP2).  Used only when .staticLoadModelType - zIP2.
      */
-    private Float kq4; // Float
+    private Double kq4; // Float
 
-    public Float getKq4() {
+    public Double getKq4() {
         return kq4;
     }
 
-    public void setKq4(Float _value_) {
+    public void setKq4(Double _value_) {
         kq4 = _value_;
     }
 
@@ -470,25 +470,25 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKq4(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKq4((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKq4((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKq4(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKq4(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Frequency deviation coefficient for reactive power (<i>K</i><i><sub>qf</sub></i>).  Not used when .staticLoadModelType = constantZ.
      */
-    private Float kqf; // Float
+    private Double kqf; // Float
 
-    public Float getKqf() {
+    public Double getKqf() {
         return kqf;
     }
 
-    public void setKqf(Float _value_) {
+    public void setKqf(Double _value_) {
         kqf = _value_;
     }
 
@@ -497,12 +497,12 @@ public class LoadStatic extends IdentifiedObject {
     }
 
     private static void setKqf(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadStatic) _this_).setKqf((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadStatic) _this_).setKqf((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadStatic) _this_).setKqf(getFloatFromString((String) _value_));
+            ((LoadStatic) _this_).setKqf(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -1657,6 +1657,121 @@ class RdfWriterTest {
     }
 
     @Test
+    @Order(660)
+    void testWrite043() {
+        // Check handling links on not used side to not existing objects:
+        // the id is read instead of the object (even though not CGMES conform)
+        // but not written because on not used side
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath("rdf/test043.xml")));
+        assertEquals(1, cimData.size());
+
+        assertTrue(cimData.containsKey("BaseVoltage.20"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(5, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:BaseVoltage rdf:ID=\"BaseVoltage.20\">", lines[2]);
+        // Link to VoltageLevel not written because on not used side
+        assertEquals("  </cim:BaseVoltage>", lines[3]);
+        assertEquals("</rdf:RDF>", lines[4]);
+    }
+
+    @Test
+    @Order(670)
+    void testWrite044() {
+        // Check list attributes with inverse list (ManyToMany)
+        // from VisibilityLayer to DiagramObject
+        testWrite_044_045_046_047("rdf/test044.xml");
+    }
+
+    @Test
+    @Order(680)
+    void testWrite045() {
+        // Check list attributes with inverse list (ManyToMany)
+        // from DiagramObject to VisibilityLayer (not CGMES conform)
+        testWrite_044_045_046_047("rdf/test045.xml");
+    }
+
+    @Test
+    @Order(690)
+    void testWrite046() {
+        // Check reading list attributes with inverse list (ManyToMany)
+        // between DiagramObject and VisibilityLayer
+        // if they are set on both sides (not CGMES conform)
+        testWrite_044_045_046_047("rdf/test046.xml");
+    }
+
+    @Test
+    @Order(700)
+    void testWrite047() {
+        // Check reading list attributes with inverse list (ManyToMany)
+        // partly from DiagramObject to VisibilityLayer and partly vice versa
+        // (not CGMES conform)
+        testWrite_044_045_046_047("rdf/test047.xml");
+    }
+
+    private void testWrite_044_045_046_047(String test_044_045_046_047) {
+        var rdfReader = new RdfReader();
+        var cimData = rdfReader.read(List.of(getPath(test_044_045_046_047)));
+        assertEquals(6, cimData.size());
+
+        assertTrue(cimData.containsKey("_DO1"));
+        assertTrue(cimData.containsKey("_DO2"));
+        assertTrue(cimData.containsKey("_DO3"));
+        assertTrue(cimData.containsKey("_VL1"));
+        assertTrue(cimData.containsKey("_VL2"));
+        assertTrue(cimData.containsKey("_VL3"));
+
+        var rdfWriter = new RdfWriter();
+        rdfWriter.addCimData(cimData);
+        rdfWriter.write("target/test.xml");
+
+        var stringWriter = new StringWriter();
+        rdfWriter.write(stringWriter);
+        String result = stringWriter.toString();
+
+        var lines = result.lines().toArray();
+        assertEquals(27, lines.length);
+        assertEquals(XML_HEADER, lines[0]);
+        assertEquals(RDF_HEADER, lines[1]);
+        assertEquals("  <cim:DiagramObject rdf:ID=\"_DO1\">", lines[2]);
+        assertEquals("    <cim:IdentifiedObject.name>DO1</cim:IdentifiedObject.name>", lines[3]);
+        assertEquals("  </cim:DiagramObject>", lines[4]);
+        assertEquals("  <cim:DiagramObject rdf:ID=\"_DO2\">", lines[5]);
+        assertEquals("    <cim:IdentifiedObject.name>DO2</cim:IdentifiedObject.name>", lines[6]);
+        assertEquals("  </cim:DiagramObject>", lines[7]);
+        assertEquals("  <cim:DiagramObject rdf:ID=\"_DO3\">", lines[8]);
+        assertEquals("    <cim:IdentifiedObject.name>DO3</cim:IdentifiedObject.name>", lines[9]);
+        assertEquals("  </cim:DiagramObject>", lines[10]);
+        assertEquals("  <cim:VisibilityLayer rdf:ID=\"_VL1\">", lines[11]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO1\"/>", lines[12]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO2\"/>", lines[13]);
+        assertEquals("    <cim:IdentifiedObject.name>VL1</cim:IdentifiedObject.name>", lines[14]);
+        assertEquals("  </cim:VisibilityLayer>", lines[15]);
+        assertEquals("  <cim:VisibilityLayer rdf:ID=\"_VL2\">", lines[16]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO2\"/>", lines[17]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO3\"/>", lines[18]);
+        assertEquals("    <cim:IdentifiedObject.name>VL2</cim:IdentifiedObject.name>", lines[19]);
+        assertEquals("  </cim:VisibilityLayer>", lines[20]);
+        assertEquals("  <cim:VisibilityLayer rdf:ID=\"_VL3\">", lines[21]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO1\"/>", lines[22]);
+        assertEquals("    <cim:VisibilityLayer.VisibleObjects rdf:resource=\"#_DO3\"/>", lines[23]);
+        assertEquals("    <cim:IdentifiedObject.name>VL3</cim:IdentifiedObject.name>", lines[24]);
+        assertEquals("  </cim:VisibilityLayer>", lines[25]);
+        assertEquals("</rdf:RDF>", lines[26]);
+    }
+
+    @Test
     @Order(900)
     void testWriteEmpty() {
         // Check writing an empty file (i.e. with no CIM objects)

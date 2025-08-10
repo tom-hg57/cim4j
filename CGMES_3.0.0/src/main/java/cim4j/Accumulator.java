@@ -81,7 +81,7 @@ public class Accumulator extends Measurement {
      *
      * NOT USED
      */
-    private Set<AccumulatorLimitSet> LimitSets = new HashSet<>(); // OneToMany
+    private Set<AccumulatorLimitSet> LimitSets = new HashSet<>(); // ManyToMany
 
     private Set<String> LimitSetsIdSet = new HashSet<>();
 

@@ -174,13 +174,13 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     /**
      * Maximum ratio of zero sequence resistance of Network Feeder to its zero sequence reactance (R(0)/X(0) max). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float maxR0ToX0Ratio; // Float
+    private Double maxR0ToX0Ratio; // Float
 
-    public Float getMaxR0ToX0Ratio() {
+    public Double getMaxR0ToX0Ratio() {
         return maxR0ToX0Ratio;
     }
 
-    public void setMaxR0ToX0Ratio(Float _value_) {
+    public void setMaxR0ToX0Ratio(Double _value_) {
         maxR0ToX0Ratio = _value_;
     }
 
@@ -189,25 +189,25 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMaxR0ToX0Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMaxR0ToX0Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMaxR0ToX0Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMaxR0ToX0Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMaxR0ToX0Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum ratio of positive sequence resistance of Network Feeder to its positive sequence reactance (R(1)/X(1) max). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float maxR1ToX1Ratio; // Float
+    private Double maxR1ToX1Ratio; // Float
 
-    public Float getMaxR1ToX1Ratio() {
+    public Double getMaxR1ToX1Ratio() {
         return maxR1ToX1Ratio;
     }
 
-    public void setMaxR1ToX1Ratio(Float _value_) {
+    public void setMaxR1ToX1Ratio(Double _value_) {
         maxR1ToX1Ratio = _value_;
     }
 
@@ -216,25 +216,25 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMaxR1ToX1Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMaxR1ToX1Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMaxR1ToX1Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMaxR1ToX1Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMaxR1ToX1Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) max). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float maxZ0ToZ1Ratio; // Float
+    private Double maxZ0ToZ1Ratio; // Float
 
-    public Float getMaxZ0ToZ1Ratio() {
+    public Double getMaxZ0ToZ1Ratio() {
         return maxZ0ToZ1Ratio;
     }
 
-    public void setMaxZ0ToZ1Ratio(Float _value_) {
+    public void setMaxZ0ToZ1Ratio(Double _value_) {
         maxZ0ToZ1Ratio = _value_;
     }
 
@@ -243,12 +243,12 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMaxZ0ToZ1Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMaxZ0ToZ1Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMaxZ0ToZ1Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMaxZ0ToZ1Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMaxZ0ToZ1Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -336,13 +336,13 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     /**
      * Indicates whether initial symmetrical short-circuit current and power have been calculated according to IEC (Ik`). Used for short circuit data exchange according to IEC 6090.
      */
-    private Float minR0ToX0Ratio; // Float
+    private Double minR0ToX0Ratio; // Float
 
-    public Float getMinR0ToX0Ratio() {
+    public Double getMinR0ToX0Ratio() {
         return minR0ToX0Ratio;
     }
 
-    public void setMinR0ToX0Ratio(Float _value_) {
+    public void setMinR0ToX0Ratio(Double _value_) {
         minR0ToX0Ratio = _value_;
     }
 
@@ -351,25 +351,25 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMinR0ToX0Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMinR0ToX0Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMinR0ToX0Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMinR0ToX0Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMinR0ToX0Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Minimum ratio of positive sequence resistance of Network Feeder to its positive sequence reactance (R(1)/X(1) min). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float minR1ToX1Ratio; // Float
+    private Double minR1ToX1Ratio; // Float
 
-    public Float getMinR1ToX1Ratio() {
+    public Double getMinR1ToX1Ratio() {
         return minR1ToX1Ratio;
     }
 
-    public void setMinR1ToX1Ratio(Float _value_) {
+    public void setMinR1ToX1Ratio(Double _value_) {
         minR1ToX1Ratio = _value_;
     }
 
@@ -378,25 +378,25 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMinR1ToX1Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMinR1ToX1Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMinR1ToX1Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMinR1ToX1Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMinR1ToX1Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Minimum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) min). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float minZ0ToZ1Ratio; // Float
+    private Double minZ0ToZ1Ratio; // Float
 
-    public Float getMinZ0ToZ1Ratio() {
+    public Double getMinZ0ToZ1Ratio() {
         return minZ0ToZ1Ratio;
     }
 
-    public void setMinZ0ToZ1Ratio(Float _value_) {
+    public void setMinZ0ToZ1Ratio(Double _value_) {
         minZ0ToZ1Ratio = _value_;
     }
 
@@ -405,12 +405,12 @@ public class ExternalNetworkInjection extends RegulatingCondEq {
     }
 
     private static void setMinZ0ToZ1Ratio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExternalNetworkInjection) _this_).setMinZ0ToZ1Ratio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExternalNetworkInjection) _this_).setMinZ0ToZ1Ratio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExternalNetworkInjection) _this_).setMinZ0ToZ1Ratio(getFloatFromString((String) _value_));
+            ((ExternalNetworkInjection) _this_).setMinZ0ToZ1Ratio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -79,13 +79,13 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
     /**
      * Maximum pitch positive ramp rate (<i>dtheta</i><i><sub>max</sub></i>) (&gt; WindContPitchAngleIEC.dthetamin). It is a type-dependent parameter. Unit = degrees / s.
      */
-    private Float dthetamax; // Float
+    private Double dthetamax; // Float
 
-    public Float getDthetamax() {
+    public Double getDthetamax() {
         return dthetamax;
     }
 
-    public void setDthetamax(Float _value_) {
+    public void setDthetamax(Double _value_) {
         dthetamax = _value_;
     }
 
@@ -94,25 +94,25 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
     }
 
     private static void setDthetamax(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindContPitchAngleIEC) _this_).setDthetamax((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindContPitchAngleIEC) _this_).setDthetamax((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindContPitchAngleIEC) _this_).setDthetamax(getFloatFromString((String) _value_));
+            ((WindContPitchAngleIEC) _this_).setDthetamax(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum pitch negative ramp rate (<i>dtheta</i><i><sub>min</sub></i><i>)</i> (&lt; WindContPitchAngleIEC.dthetamax). It is a type-dependent parameter. Unit = degrees / s.
      */
-    private Float dthetamin; // Float
+    private Double dthetamin; // Float
 
-    public Float getDthetamin() {
+    public Double getDthetamin() {
         return dthetamin;
     }
 
-    public void setDthetamin(Float _value_) {
+    public void setDthetamin(Double _value_) {
         dthetamin = _value_;
     }
 
@@ -121,12 +121,12 @@ public class WindContPitchAngleIEC extends IdentifiedObject {
     }
 
     private static void setDthetamin(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindContPitchAngleIEC) _this_).setDthetamin((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindContPitchAngleIEC) _this_).setDthetamin((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindContPitchAngleIEC) _this_).setDthetamin(getFloatFromString((String) _value_));
+            ((WindContPitchAngleIEC) _this_).setDthetamin(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

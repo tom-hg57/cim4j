@@ -713,13 +713,13 @@ public class WindContPType3IEC extends IdentifiedObject {
     /**
      * Coefficient for active drive train damping (<i>zeta</i>). It is a type-dependent parameter.
      */
-    private Float zeta; // Float
+    private Double zeta; // Float
 
-    public Float getZeta() {
+    public Double getZeta() {
         return zeta;
     }
 
-    public void setZeta(Float _value_) {
+    public void setZeta(Double _value_) {
         zeta = _value_;
     }
 
@@ -728,12 +728,12 @@ public class WindContPType3IEC extends IdentifiedObject {
     }
 
     private static void setZeta(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindContPType3IEC) _this_).setZeta((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindContPType3IEC) _this_).setZeta((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindContPType3IEC) _this_).setZeta(getFloatFromString((String) _value_));
+            ((WindContPType3IEC) _this_).setZeta(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

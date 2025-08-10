@@ -864,13 +864,13 @@ public class ProprietaryParameterDynamics extends BaseClass {
     /**
      * Floating point parameter value.  If this attribute is populated, booleanParameterValue and integerParameterValue will not be.
      */
-    private Float floatParameterValue; // Float
+    private Double floatParameterValue; // Float
 
-    public Float getFloatParameterValue() {
+    public Double getFloatParameterValue() {
         return floatParameterValue;
     }
 
-    public void setFloatParameterValue(Float _value_) {
+    public void setFloatParameterValue(Double _value_) {
         floatParameterValue = _value_;
     }
 
@@ -879,12 +879,12 @@ public class ProprietaryParameterDynamics extends BaseClass {
     }
 
     private static void setFloatParameterValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue(getFloatFromString((String) _value_));
+            ((ProprietaryParameterDynamics) _this_).setFloatParameterValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -77,13 +77,13 @@ public class AnalogLimit extends Limit {
     /**
      * The value to supervise against.
      */
-    private Float value; // Float
+    private Double value; // Float
 
-    public Float getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Float _value_) {
+    public void setValue(Double _value_) {
         value = _value_;
     }
 
@@ -92,12 +92,12 @@ public class AnalogLimit extends Limit {
     }
 
     private static void setValue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((AnalogLimit) _this_).setValue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((AnalogLimit) _this_).setValue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((AnalogLimit) _this_).setValue(getFloatFromString((String) _value_));
+            ((AnalogLimit) _this_).setValue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

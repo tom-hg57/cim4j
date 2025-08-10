@@ -1119,13 +1119,13 @@ public class GovHydroR extends TurbineGovernorDynamics {
     /**
      * Maximum gate closing velocity (<i>Velcl</i>).  Unit = PU / s.  Typical value = -0,2.
      */
-    private Float velcl; // Float
+    private Double velcl; // Float
 
-    public Float getVelcl() {
+    public Double getVelcl() {
         return velcl;
     }
 
-    public void setVelcl(Float _value_) {
+    public void setVelcl(Double _value_) {
         velcl = _value_;
     }
 
@@ -1134,25 +1134,25 @@ public class GovHydroR extends TurbineGovernorDynamics {
     }
 
     private static void setVelcl(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroR) _this_).setVelcl((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroR) _this_).setVelcl((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroR) _this_).setVelcl(getFloatFromString((String) _value_));
+            ((GovHydroR) _this_).setVelcl(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum gate opening velocity (<i>Velop</i>).  Unit = PU / s.  Typical value = 0,2.
      */
-    private Float velop; // Float
+    private Double velop; // Float
 
-    public Float getVelop() {
+    public Double getVelop() {
         return velop;
     }
 
-    public void setVelop(Float _value_) {
+    public void setVelop(Double _value_) {
         velop = _value_;
     }
 
@@ -1161,12 +1161,12 @@ public class GovHydroR extends TurbineGovernorDynamics {
     }
 
     private static void setVelop(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroR) _this_).setVelop((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroR) _this_).setVelop((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroR) _this_).setVelop(getFloatFromString((String) _value_));
+            ((GovHydroR) _this_).setVelop(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

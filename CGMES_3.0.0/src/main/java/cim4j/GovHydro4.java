@@ -228,13 +228,13 @@ public class GovHydro4 extends TurbineGovernorDynamics {
     /**
      * Maximum blade adjustment factor (<i>Bmax</i>)  (= 0 for simple, = 0 for Francis/Pelton).  Typical value for Kaplan = 1,1276.
      */
-    private Float bmax; // Float
+    private Double bmax; // Float
 
-    public Float getBmax() {
+    public Double getBmax() {
         return bmax;
     }
 
-    public void setBmax(Float _value_) {
+    public void setBmax(Double _value_) {
         bmax = _value_;
     }
 
@@ -243,12 +243,12 @@ public class GovHydro4 extends TurbineGovernorDynamics {
     }
 
     private static void setBmax(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydro4) _this_).setBmax((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydro4) _this_).setBmax((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydro4) _this_).setBmax(getFloatFromString((String) _value_));
+            ((GovHydro4) _this_).setBmax(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -1036,13 +1036,13 @@ public class GovHydro4 extends TurbineGovernorDynamics {
     /**
      * Max gate closing velocity (<i>Uc</i>).  Typical value = 0,2.
      */
-    private Float uc; // Float
+    private Double uc; // Float
 
-    public Float getUc() {
+    public Double getUc() {
         return uc;
     }
 
-    public void setUc(Float _value_) {
+    public void setUc(Double _value_) {
         uc = _value_;
     }
 
@@ -1051,25 +1051,25 @@ public class GovHydro4 extends TurbineGovernorDynamics {
     }
 
     private static void setUc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydro4) _this_).setUc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydro4) _this_).setUc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydro4) _this_).setUc(getFloatFromString((String) _value_));
+            ((GovHydro4) _this_).setUc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Max gate opening velocity (<i>Uo</i>).  Typical value = 0,2.
      */
-    private Float uo; // Float
+    private Double uo; // Float
 
-    public Float getUo() {
+    public Double getUo() {
         return uo;
     }
 
-    public void setUo(Float _value_) {
+    public void setUo(Double _value_) {
         uo = _value_;
     }
 
@@ -1078,12 +1078,12 @@ public class GovHydro4 extends TurbineGovernorDynamics {
     }
 
     private static void setUo(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydro4) _this_).setUo((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydro4) _this_).setUo((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydro4) _this_).setUo(getFloatFromString((String) _value_));
+            ((GovHydro4) _this_).setUo(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -195,7 +195,7 @@ public class DiagramObject extends IdentifiedObject {
      *
      * NOT USED
      */
-    private Set<VisibilityLayer> VisibilityLayers = new HashSet<>(); // OneToMany
+    private Set<VisibilityLayer> VisibilityLayers = new HashSet<>(); // ManyToMany
 
     private Set<String> VisibilityLayersIdSet = new HashSet<>();
 

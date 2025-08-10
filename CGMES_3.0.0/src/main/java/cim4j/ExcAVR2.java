@@ -93,13 +93,13 @@ public class ExcAVR2 extends ExcitationSystemDynamics {
     /**
      * AVR gain (<i>K</i><i><sub>A</sub></i>).  Typical value = 500.
      */
-    private Float ka; // Float
+    private Double ka; // Float
 
-    public Float getKa() {
+    public Double getKa() {
         return ka;
     }
 
-    public void setKa(Float _value_) {
+    public void setKa(Double _value_) {
         ka = _value_;
     }
 
@@ -108,25 +108,25 @@ public class ExcAVR2 extends ExcitationSystemDynamics {
     }
 
     private static void setKa(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR2) _this_).setKa((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR2) _this_).setKa((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR2) _this_).setKa(getFloatFromString((String) _value_));
+            ((ExcAVR2) _this_).setKa(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Rate feedback gain (<i>K</i><i><sub>F</sub></i>).  Typical value = 0,12.
      */
-    private Float kf; // Float
+    private Double kf; // Float
 
-    public Float getKf() {
+    public Double getKf() {
         return kf;
     }
 
-    public void setKf(Float _value_) {
+    public void setKf(Double _value_) {
         kf = _value_;
     }
 
@@ -135,25 +135,25 @@ public class ExcAVR2 extends ExcitationSystemDynamics {
     }
 
     private static void setKf(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR2) _this_).setKf((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR2) _this_).setKf((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR2) _this_).setKf(getFloatFromString((String) _value_));
+            ((ExcAVR2) _this_).setKf(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Saturation factor at <i>E</i><i><sub>1</sub></i> (<i>S[E</i><i><sub>1</sub></i><i>]</i>).  Typical value = 0.1.
      */
-    private Float se1; // Float
+    private Double se1; // Float
 
-    public Float getSe1() {
+    public Double getSe1() {
         return se1;
     }
 
-    public void setSe1(Float _value_) {
+    public void setSe1(Double _value_) {
         se1 = _value_;
     }
 
@@ -162,25 +162,25 @@ public class ExcAVR2 extends ExcitationSystemDynamics {
     }
 
     private static void setSe1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR2) _this_).setSe1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR2) _this_).setSe1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR2) _this_).setSe1(getFloatFromString((String) _value_));
+            ((ExcAVR2) _this_).setSe1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Saturation factor at <i>E</i><i><sub>2</sub></i> (<i>S[E</i><i><sub>2</sub></i><i>]</i>).  Typical value = 0,03.
      */
-    private Float se2; // Float
+    private Double se2; // Float
 
-    public Float getSe2() {
+    public Double getSe2() {
         return se2;
     }
 
-    public void setSe2(Float _value_) {
+    public void setSe2(Double _value_) {
         se2 = _value_;
     }
 
@@ -189,12 +189,12 @@ public class ExcAVR2 extends ExcitationSystemDynamics {
     }
 
     private static void setSe2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR2) _this_).setSe2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR2) _this_).setSe2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR2) _this_).setSe2(getFloatFromString((String) _value_));
+            ((ExcAVR2) _this_).setSe2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

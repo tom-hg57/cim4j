@@ -282,13 +282,13 @@ public class GovHydroPID2 extends TurbineGovernorDynamics {
     /**
      * Reset gain (<i>Ki</i>).  Unit = PU/s.  Typical value = 0.
      */
-    private Float ki; // Float
+    private Double ki; // Float
 
-    public Float getKi() {
+    public Double getKi() {
         return ki;
     }
 
-    public void setKi(Float _value_) {
+    public void setKi(Double _value_) {
         ki = _value_;
     }
 
@@ -297,12 +297,12 @@ public class GovHydroPID2 extends TurbineGovernorDynamics {
     }
 
     private static void setKi(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroPID2) _this_).setKi((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroPID2) _this_).setKi((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroPID2) _this_).setKi(getFloatFromString((String) _value_));
+            ((GovHydroPID2) _this_).setKi(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -579,13 +579,13 @@ public class GovHydroPID2 extends TurbineGovernorDynamics {
     /**
      * Maximum gate opening velocity (<i>Velmax</i>) (&lt; GovHydroPID2.velmin).  Unit = PU / s.  Typical value = 0.
      */
-    private Float velmax; // Float
+    private Double velmax; // Float
 
-    public Float getVelmax() {
+    public Double getVelmax() {
         return velmax;
     }
 
-    public void setVelmax(Float _value_) {
+    public void setVelmax(Double _value_) {
         velmax = _value_;
     }
 
@@ -594,25 +594,25 @@ public class GovHydroPID2 extends TurbineGovernorDynamics {
     }
 
     private static void setVelmax(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroPID2) _this_).setVelmax((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroPID2) _this_).setVelmax((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroPID2) _this_).setVelmax(getFloatFromString((String) _value_));
+            ((GovHydroPID2) _this_).setVelmax(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Maximum gate closing velocity (<i>Velmin</i>) (&gt; GovHydroPID2.velmax).  Unit = PU / s.  Typical value = 0.
      */
-    private Float velmin; // Float
+    private Double velmin; // Float
 
-    public Float getVelmin() {
+    public Double getVelmin() {
         return velmin;
     }
 
-    public void setVelmin(Float _value_) {
+    public void setVelmin(Double _value_) {
         velmin = _value_;
     }
 
@@ -621,12 +621,12 @@ public class GovHydroPID2 extends TurbineGovernorDynamics {
     }
 
     private static void setVelmin(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovHydroPID2) _this_).setVelmin((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovHydroPID2) _this_).setVelmin((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovHydroPID2) _this_).setVelmin(getFloatFromString((String) _value_));
+            ((GovHydroPID2) _this_).setVelmin(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -39,13 +39,13 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     /**
      * Lead lag gain (<i>KDPM</i>). Typical value = 0,185.
      */
-    private Float kdpm; // Float
+    private Double kdpm; // Float
 
-    public Float getKdpm() {
+    public Double getKdpm() {
         return kdpm;
     }
 
-    public void setKdpm(Float _value_) {
+    public void setKdpm(Double _value_) {
         kdpm = _value_;
     }
 
@@ -54,25 +54,25 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKdpm(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssRQB) _this_).setKdpm((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssRQB) _this_).setKdpm((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssRQB) _this_).setKdpm(getFloatFromString((String) _value_));
+            ((PssRQB) _this_).setKdpm(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Speed input gain (<i>Ki2</i>). Typical value = 3,43.
      */
-    private Float ki2; // Float
+    private Double ki2; // Float
 
-    public Float getKi2() {
+    public Double getKi2() {
         return ki2;
     }
 
-    public void setKi2(Float _value_) {
+    public void setKi2(Double _value_) {
         ki2 = _value_;
     }
 
@@ -81,25 +81,25 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKi2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssRQB) _this_).setKi2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssRQB) _this_).setKi2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssRQB) _this_).setKi2(getFloatFromString((String) _value_));
+            ((PssRQB) _this_).setKi2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Electrical power input gain (<i>Ki3</i>). Typical value = -11,45.
      */
-    private Float ki3; // Float
+    private Double ki3; // Float
 
-    public Float getKi3() {
+    public Double getKi3() {
         return ki3;
     }
 
-    public void setKi3(Float _value_) {
+    public void setKi3(Double _value_) {
         ki3 = _value_;
     }
 
@@ -108,25 +108,25 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKi3(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssRQB) _this_).setKi3((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssRQB) _this_).setKi3((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssRQB) _this_).setKi3(getFloatFromString((String) _value_));
+            ((PssRQB) _this_).setKi3(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Mechanical power input gain (<i>Ki4</i>). Typical value = 11,86.
      */
-    private Float ki4; // Float
+    private Double ki4; // Float
 
-    public Float getKi4() {
+    public Double getKi4() {
         return ki4;
     }
 
-    public void setKi4(Float _value_) {
+    public void setKi4(Double _value_) {
         ki4 = _value_;
     }
 
@@ -135,12 +135,12 @@ public class PssRQB extends PowerSystemStabilizerDynamics {
     }
 
     private static void setKi4(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PssRQB) _this_).setKi4((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PssRQB) _this_).setKi4((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PssRQB) _this_).setKi4(getFloatFromString((String) _value_));
+            ((PssRQB) _this_).setKi4(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

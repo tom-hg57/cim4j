@@ -79,13 +79,13 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
     /**
      * Aerodynamic gain (<i>k</i><i><sub>a</sub></i>). It is a type-dependent parameter.
      */
-    private Float ka; // Float
+    private Double ka; // Float
 
-    public Float getKa() {
+    public Double getKa() {
         return ka;
     }
 
-    public void setKa(Float _value_) {
+    public void setKa(Double _value_) {
         ka = _value_;
     }
 
@@ -94,12 +94,12 @@ public class WindAeroOneDimIEC extends IdentifiedObject {
     }
 
     private static void setKa(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindAeroOneDimIEC) _this_).setKa((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindAeroOneDimIEC) _this_).setKa((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindAeroOneDimIEC) _this_).setKa(getFloatFromString((String) _value_));
+            ((WindAeroOneDimIEC) _this_).setKa(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -93,13 +93,13 @@ public class PFVArType1IEEEVArController extends PFVArControllerType1Dynamics {
     /**
      * Var controller deadband (<i>V</i><i><sub>VARC_BW</sub></i>).  Typical value = 0,02.
      */
-    private Float vvarcbw; // Float
+    private Double vvarcbw; // Float
 
-    public Float getVvarcbw() {
+    public Double getVvarcbw() {
         return vvarcbw;
     }
 
-    public void setVvarcbw(Float _value_) {
+    public void setVvarcbw(Double _value_) {
         vvarcbw = _value_;
     }
 
@@ -108,12 +108,12 @@ public class PFVArType1IEEEVArController extends PFVArControllerType1Dynamics {
     }
 
     private static void setVvarcbw(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((PFVArType1IEEEVArController) _this_).setVvarcbw((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((PFVArType1IEEEVArController) _this_).setVvarcbw((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((PFVArType1IEEEVArController) _this_).setVvarcbw(getFloatFromString((String) _value_));
+            ((PFVArType1IEEEVArController) _this_).setVvarcbw(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

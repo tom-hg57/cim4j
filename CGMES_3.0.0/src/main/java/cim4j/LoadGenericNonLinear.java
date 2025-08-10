@@ -39,13 +39,13 @@ public class LoadGenericNonLinear extends LoadDynamics {
     /**
      * Steady state voltage index for reactive power (<i>BS</i>).
      */
-    private Float bs; // Float
+    private Double bs; // Float
 
-    public Float getBs() {
+    public Double getBs() {
         return bs;
     }
 
-    public void setBs(Float _value_) {
+    public void setBs(Double _value_) {
         bs = _value_;
     }
 
@@ -54,25 +54,25 @@ public class LoadGenericNonLinear extends LoadDynamics {
     }
 
     private static void setBs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadGenericNonLinear) _this_).setBs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadGenericNonLinear) _this_).setBs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadGenericNonLinear) _this_).setBs(getFloatFromString((String) _value_));
+            ((LoadGenericNonLinear) _this_).setBs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Transient voltage index for reactive power (<i>BT</i>).
      */
-    private Float bt; // Float
+    private Double bt; // Float
 
-    public Float getBt() {
+    public Double getBt() {
         return bt;
     }
 
-    public void setBt(Float _value_) {
+    public void setBt(Double _value_) {
         bt = _value_;
     }
 
@@ -81,12 +81,12 @@ public class LoadGenericNonLinear extends LoadDynamics {
     }
 
     private static void setBt(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadGenericNonLinear) _this_).setBt((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadGenericNonLinear) _this_).setBt((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadGenericNonLinear) _this_).setBt(getFloatFromString((String) _value_));
+            ((LoadGenericNonLinear) _this_).setBt(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -118,13 +118,13 @@ public class LoadGenericNonLinear extends LoadDynamics {
     /**
      * Steady state voltage index for active power (<i>LS</i>).
      */
-    private Float ls; // Float
+    private Double ls; // Float
 
-    public Float getLs() {
+    public Double getLs() {
         return ls;
     }
 
-    public void setLs(Float _value_) {
+    public void setLs(Double _value_) {
         ls = _value_;
     }
 
@@ -133,25 +133,25 @@ public class LoadGenericNonLinear extends LoadDynamics {
     }
 
     private static void setLs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadGenericNonLinear) _this_).setLs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadGenericNonLinear) _this_).setLs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadGenericNonLinear) _this_).setLs(getFloatFromString((String) _value_));
+            ((LoadGenericNonLinear) _this_).setLs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Transient voltage index for active power (<i>LT</i>).
      */
-    private Float lt; // Float
+    private Double lt; // Float
 
-    public Float getLt() {
+    public Double getLt() {
         return lt;
     }
 
-    public void setLt(Float _value_) {
+    public void setLt(Double _value_) {
         lt = _value_;
     }
 
@@ -160,12 +160,12 @@ public class LoadGenericNonLinear extends LoadDynamics {
     }
 
     private static void setLt(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadGenericNonLinear) _this_).setLt((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadGenericNonLinear) _this_).setLt((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadGenericNonLinear) _this_).setLt(getFloatFromString((String) _value_));
+            ((LoadGenericNonLinear) _this_).setLt(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

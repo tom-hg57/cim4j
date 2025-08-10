@@ -39,13 +39,13 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     /**
      * Acceleration limit set-point (<i>Bca</i>).  Unit = 1/s.  Typical value = 0,01.
      */
-    private Float bca; // Float
+    private Double bca; // Float
 
-    public Float getBca() {
+    public Double getBca() {
         return bca;
     }
 
-    public void setBca(Float _value_) {
+    public void setBca(Double _value_) {
         bca = _value_;
     }
 
@@ -54,12 +54,12 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     }
 
     private static void setBca(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST3) _this_).setBca((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST3) _this_).setBca((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST3) _this_).setBca(getFloatFromString((String) _value_));
+            ((GovGAST3) _this_).setBca(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -147,13 +147,13 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     /**
      * Fuel system feedback (<i>K</i><i><sub>AC</sub></i>).  Typical value = 0.
      */
-    private Float kac; // Float
+    private Double kac; // Float
 
-    public Float getKac() {
+    public Double getKac() {
         return kac;
     }
 
-    public void setKac(Float _value_) {
+    public void setKac(Double _value_) {
         kac = _value_;
     }
 
@@ -162,25 +162,25 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     }
 
     private static void setKac(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST3) _this_).setKac((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST3) _this_).setKac((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST3) _this_).setKac(getFloatFromString((String) _value_));
+            ((GovGAST3) _this_).setKac(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Acceleration control integral gain (<i>Kca</i>). Unit = 1/s.  Typical value = 100.
      */
-    private Float kca; // Float
+    private Double kca; // Float
 
-    public Float getKca() {
+    public Double getKca() {
         return kca;
     }
 
-    public void setKca(Float _value_) {
+    public void setKca(Double _value_) {
         kca = _value_;
     }
 
@@ -189,25 +189,25 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     }
 
     private static void setKca(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST3) _this_).setKca((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST3) _this_).setKca((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST3) _this_).setKca(getFloatFromString((String) _value_));
+            ((GovGAST3) _this_).setKca(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Gain of radiation shield (<i>Ksi</i>).  Typical value = 0,8.
      */
-    private Float ksi; // Float
+    private Double ksi; // Float
 
-    public Float getKsi() {
+    public Double getKsi() {
         return ksi;
     }
 
-    public void setKsi(Float _value_) {
+    public void setKsi(Double _value_) {
         ksi = _value_;
     }
 
@@ -216,25 +216,25 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     }
 
     private static void setKsi(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST3) _this_).setKsi((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST3) _this_).setKsi((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST3) _this_).setKsi(getFloatFromString((String) _value_));
+            ((GovGAST3) _this_).setKsi(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Coefficient of transfer function of fuel valve positioner (<i>Ky</i>).  Typical value = 1.
      */
-    private Float ky; // Float
+    private Double ky; // Float
 
-    public Float getKy() {
+    public Double getKy() {
         return ky;
     }
 
-    public void setKy(Float _value_) {
+    public void setKy(Double _value_) {
         ky = _value_;
     }
 
@@ -243,12 +243,12 @@ public class GovGAST3 extends TurbineGovernorDynamics {
     }
 
     private static void setKy(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovGAST3) _this_).setKy((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovGAST3) _this_).setKy((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovGAST3) _this_).setKy(getFloatFromString((String) _value_));
+            ((GovGAST3) _this_).setKy(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

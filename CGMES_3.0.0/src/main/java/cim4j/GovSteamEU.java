@@ -39,13 +39,13 @@ public class GovSteamEU extends TurbineGovernorDynamics {
     /**
      * Control valves rate closing limit (<i>Chc</i>).  Unit = PU / s.  Typical value = -3,3.
      */
-    private Float chc; // Float
+    private Double chc; // Float
 
-    public Float getChc() {
+    public Double getChc() {
         return chc;
     }
 
-    public void setChc(Float _value_) {
+    public void setChc(Double _value_) {
         chc = _value_;
     }
 
@@ -54,25 +54,25 @@ public class GovSteamEU extends TurbineGovernorDynamics {
     }
 
     private static void setChc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamEU) _this_).setChc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamEU) _this_).setChc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamEU) _this_).setChc(getFloatFromString((String) _value_));
+            ((GovSteamEU) _this_).setChc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Control valves rate opening limit (<i>Cho</i>).  Unit = PU / s.  Typical value = 0,17.
      */
-    private Float cho; // Float
+    private Double cho; // Float
 
-    public Float getCho() {
+    public Double getCho() {
         return cho;
     }
 
-    public void setCho(Float _value_) {
+    public void setCho(Double _value_) {
         cho = _value_;
     }
 
@@ -81,12 +81,12 @@ public class GovSteamEU extends TurbineGovernorDynamics {
     }
 
     private static void setCho(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((GovSteamEU) _this_).setCho((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((GovSteamEU) _this_).setCho((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((GovSteamEU) _this_).setCho(getFloatFromString((String) _value_));
+            ((GovSteamEU) _this_).setCho(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

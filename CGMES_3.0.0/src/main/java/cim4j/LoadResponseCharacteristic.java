@@ -106,13 +106,13 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     /**
      * Portion of active power load modelled as constant current.
      */
-    private Float pConstantCurrent; // Float
+    private Double pConstantCurrent; // Float
 
-    public Float getPConstantCurrent() {
+    public Double getPConstantCurrent() {
         return pConstantCurrent;
     }
 
-    public void setPConstantCurrent(Float _value_) {
+    public void setPConstantCurrent(Double _value_) {
         pConstantCurrent = _value_;
     }
 
@@ -121,25 +121,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setPConstantCurrent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setPConstantCurrent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setPConstantCurrent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setPConstantCurrent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setPConstantCurrent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Portion of active power load modelled as constant impedance.
      */
-    private Float pConstantImpedance; // Float
+    private Double pConstantImpedance; // Float
 
-    public Float getPConstantImpedance() {
+    public Double getPConstantImpedance() {
         return pConstantImpedance;
     }
 
-    public void setPConstantImpedance(Float _value_) {
+    public void setPConstantImpedance(Double _value_) {
         pConstantImpedance = _value_;
     }
 
@@ -148,25 +148,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setPConstantImpedance(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setPConstantImpedance((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setPConstantImpedance((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setPConstantImpedance(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setPConstantImpedance(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Portion of active power load modelled as constant power.
      */
-    private Float pConstantPower; // Float
+    private Double pConstantPower; // Float
 
-    public Float getPConstantPower() {
+    public Double getPConstantPower() {
         return pConstantPower;
     }
 
-    public void setPConstantPower(Float _value_) {
+    public void setPConstantPower(Double _value_) {
         pConstantPower = _value_;
     }
 
@@ -175,25 +175,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setPConstantPower(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setPConstantPower((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setPConstantPower((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setPConstantPower(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setPConstantPower(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exponent of per unit frequency effecting active power.
      */
-    private Float pFrequencyExponent; // Float
+    private Double pFrequencyExponent; // Float
 
-    public Float getPFrequencyExponent() {
+    public Double getPFrequencyExponent() {
         return pFrequencyExponent;
     }
 
-    public void setPFrequencyExponent(Float _value_) {
+    public void setPFrequencyExponent(Double _value_) {
         pFrequencyExponent = _value_;
     }
 
@@ -202,25 +202,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setPFrequencyExponent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setPFrequencyExponent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setPFrequencyExponent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setPFrequencyExponent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setPFrequencyExponent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exponent of per unit voltage effecting real power.
      */
-    private Float pVoltageExponent; // Float
+    private Double pVoltageExponent; // Float
 
-    public Float getPVoltageExponent() {
+    public Double getPVoltageExponent() {
         return pVoltageExponent;
     }
 
-    public void setPVoltageExponent(Float _value_) {
+    public void setPVoltageExponent(Double _value_) {
         pVoltageExponent = _value_;
     }
 
@@ -229,25 +229,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setPVoltageExponent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setPVoltageExponent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setPVoltageExponent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setPVoltageExponent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setPVoltageExponent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Portion of reactive power load modelled as constant current.
      */
-    private Float qConstantCurrent; // Float
+    private Double qConstantCurrent; // Float
 
-    public Float getQConstantCurrent() {
+    public Double getQConstantCurrent() {
         return qConstantCurrent;
     }
 
-    public void setQConstantCurrent(Float _value_) {
+    public void setQConstantCurrent(Double _value_) {
         qConstantCurrent = _value_;
     }
 
@@ -256,25 +256,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setQConstantCurrent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setQConstantCurrent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setQConstantCurrent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setQConstantCurrent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setQConstantCurrent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Portion of reactive power load modelled as constant impedance.
      */
-    private Float qConstantImpedance; // Float
+    private Double qConstantImpedance; // Float
 
-    public Float getQConstantImpedance() {
+    public Double getQConstantImpedance() {
         return qConstantImpedance;
     }
 
-    public void setQConstantImpedance(Float _value_) {
+    public void setQConstantImpedance(Double _value_) {
         qConstantImpedance = _value_;
     }
 
@@ -283,25 +283,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setQConstantImpedance(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setQConstantImpedance((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setQConstantImpedance((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setQConstantImpedance(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setQConstantImpedance(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Portion of reactive power load modelled as constant power.
      */
-    private Float qConstantPower; // Float
+    private Double qConstantPower; // Float
 
-    public Float getQConstantPower() {
+    public Double getQConstantPower() {
         return qConstantPower;
     }
 
-    public void setQConstantPower(Float _value_) {
+    public void setQConstantPower(Double _value_) {
         qConstantPower = _value_;
     }
 
@@ -310,25 +310,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setQConstantPower(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setQConstantPower((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setQConstantPower((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setQConstantPower(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setQConstantPower(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exponent of per unit frequency effecting reactive power.
      */
-    private Float qFrequencyExponent; // Float
+    private Double qFrequencyExponent; // Float
 
-    public Float getQFrequencyExponent() {
+    public Double getQFrequencyExponent() {
         return qFrequencyExponent;
     }
 
-    public void setQFrequencyExponent(Float _value_) {
+    public void setQFrequencyExponent(Double _value_) {
         qFrequencyExponent = _value_;
     }
 
@@ -337,25 +337,25 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setQFrequencyExponent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setQFrequencyExponent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setQFrequencyExponent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setQFrequencyExponent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setQFrequencyExponent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exponent of per unit voltage effecting reactive power.
      */
-    private Float qVoltageExponent; // Float
+    private Double qVoltageExponent; // Float
 
-    public Float getQVoltageExponent() {
+    public Double getQVoltageExponent() {
         return qVoltageExponent;
     }
 
-    public void setQVoltageExponent(Float _value_) {
+    public void setQVoltageExponent(Double _value_) {
         qVoltageExponent = _value_;
     }
 
@@ -364,12 +364,12 @@ public class LoadResponseCharacteristic extends IdentifiedObject {
     }
 
     private static void setQVoltageExponent(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadResponseCharacteristic) _this_).setQVoltageExponent((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadResponseCharacteristic) _this_).setQVoltageExponent((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadResponseCharacteristic) _this_).setQVoltageExponent(getFloatFromString((String) _value_));
+            ((LoadResponseCharacteristic) _this_).setQVoltageExponent(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

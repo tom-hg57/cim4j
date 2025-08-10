@@ -228,13 +228,13 @@ public class ExcHU extends ExcitationSystemDynamics {
     /**
      * Voltage base conversion constant (<i>Ke</i>).  Typical value = 4,666.
      */
-    private Float ke; // Float
+    private Double ke; // Float
 
-    public Float getKe() {
+    public Double getKe() {
         return ke;
     }
 
-    public void setKe(Float _value_) {
+    public void setKe(Double _value_) {
         ke = _value_;
     }
 
@@ -243,25 +243,25 @@ public class ExcHU extends ExcitationSystemDynamics {
     }
 
     private static void setKe(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcHU) _this_).setKe((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcHU) _this_).setKe((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcHU) _this_).setKe(getFloatFromString((String) _value_));
+            ((ExcHU) _this_).setKe(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Current base conversion constant (<i>Ki</i>).  Typical value = 0,21428.
      */
-    private Float ki; // Float
+    private Double ki; // Float
 
-    public Float getKi() {
+    public Double getKi() {
         return ki;
     }
 
-    public void setKi(Float _value_) {
+    public void setKi(Double _value_) {
         ki = _value_;
     }
 
@@ -270,12 +270,12 @@ public class ExcHU extends ExcitationSystemDynamics {
     }
 
     private static void setKi(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcHU) _this_).setKi((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcHU) _this_).setKi((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcHU) _this_).setKi(getFloatFromString((String) _value_));
+            ((ExcHU) _this_).setKi(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

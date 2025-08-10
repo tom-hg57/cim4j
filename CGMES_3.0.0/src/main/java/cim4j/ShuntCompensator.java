@@ -214,13 +214,13 @@ public class ShuntCompensator extends RegulatingCondEq {
     /**
      * Shunt compensator sections in use. Starting value for steady state solution. The attribute shall be a positive value or zero. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input.  For LinearShuntConpensator the value shall be between zero and ShuntCompensator.maximumSections. At value zero the shunt compensator conductance and admittance is zero. Linear interpolation of conductance and admittance between the previous and next integer section is applied in case of non-integer values. For NonlinearShuntCompensator-s shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber. There is no interpolation between NonlinearShuntCompenstorPoint-s.
      */
-    private Float sections; // Float
+    private Double sections; // Float
 
-    public Float getSections() {
+    public Double getSections() {
         return sections;
     }
 
-    public void setSections(Float _value_) {
+    public void setSections(Double _value_) {
         sections = _value_;
     }
 
@@ -229,12 +229,12 @@ public class ShuntCompensator extends RegulatingCondEq {
     }
 
     private static void setSections(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ShuntCompensator) _this_).setSections((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ShuntCompensator) _this_).setSections((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ShuntCompensator) _this_).setSections(getFloatFromString((String) _value_));
+            ((ShuntCompensator) _this_).setSections(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

@@ -39,13 +39,13 @@ public class LoadComposite extends LoadDynamics {
     /**
      * Active load-frequency dependence index (dynamic) (<i>Epfd</i>).  Typical value = 1,5.
      */
-    private Float epfd; // Float
+    private Double epfd; // Float
 
-    public Float getEpfd() {
+    public Double getEpfd() {
         return epfd;
     }
 
-    public void setEpfd(Float _value_) {
+    public void setEpfd(Double _value_) {
         epfd = _value_;
     }
 
@@ -54,25 +54,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEpfd(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEpfd((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEpfd((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEpfd(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEpfd(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Active load-frequency dependence index (static) (<i>Epfs</i>).  Typical value = 1,5.
      */
-    private Float epfs; // Float
+    private Double epfs; // Float
 
-    public Float getEpfs() {
+    public Double getEpfs() {
         return epfs;
     }
 
-    public void setEpfs(Float _value_) {
+    public void setEpfs(Double _value_) {
         epfs = _value_;
     }
 
@@ -81,25 +81,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEpfs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEpfs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEpfs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEpfs(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEpfs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Active load-voltage dependence index (dynamic) (<i>Epvd</i>).  Typical value = 0,7.
      */
-    private Float epvd; // Float
+    private Double epvd; // Float
 
-    public Float getEpvd() {
+    public Double getEpvd() {
         return epvd;
     }
 
-    public void setEpvd(Float _value_) {
+    public void setEpvd(Double _value_) {
         epvd = _value_;
     }
 
@@ -108,25 +108,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEpvd(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEpvd((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEpvd((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEpvd(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEpvd(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Active load-voltage dependence index (static) (<i>Epvs</i>).  Typical value = 0,7.
      */
-    private Float epvs; // Float
+    private Double epvs; // Float
 
-    public Float getEpvs() {
+    public Double getEpvs() {
         return epvs;
     }
 
-    public void setEpvs(Float _value_) {
+    public void setEpvs(Double _value_) {
         epvs = _value_;
     }
 
@@ -135,25 +135,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEpvs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEpvs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEpvs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEpvs(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEpvs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Reactive load-frequency dependence index (dynamic) (<i>Eqfd</i>).  Typical value = 0.
      */
-    private Float eqfd; // Float
+    private Double eqfd; // Float
 
-    public Float getEqfd() {
+    public Double getEqfd() {
         return eqfd;
     }
 
-    public void setEqfd(Float _value_) {
+    public void setEqfd(Double _value_) {
         eqfd = _value_;
     }
 
@@ -162,25 +162,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEqfd(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEqfd((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEqfd((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEqfd(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEqfd(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Reactive load-frequency dependence index (static) (<i>Eqfs</i>).  Typical value = 0.
      */
-    private Float eqfs; // Float
+    private Double eqfs; // Float
 
-    public Float getEqfs() {
+    public Double getEqfs() {
         return eqfs;
     }
 
-    public void setEqfs(Float _value_) {
+    public void setEqfs(Double _value_) {
         eqfs = _value_;
     }
 
@@ -189,25 +189,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEqfs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEqfs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEqfs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEqfs(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEqfs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Reactive load-voltage dependence index (dynamic) (<i>Eqvd</i>).  Typical value = 2.
      */
-    private Float eqvd; // Float
+    private Double eqvd; // Float
 
-    public Float getEqvd() {
+    public Double getEqvd() {
         return eqvd;
     }
 
-    public void setEqvd(Float _value_) {
+    public void setEqvd(Double _value_) {
         eqvd = _value_;
     }
 
@@ -216,25 +216,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEqvd(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEqvd((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEqvd((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEqvd(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEqvd(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Reactive load-voltage dependence index (static) (<i>Eqvs</i>).  Typical value = 2.
      */
-    private Float eqvs; // Float
+    private Double eqvs; // Float
 
-    public Float getEqvs() {
+    public Double getEqvs() {
         return eqvs;
     }
 
-    public void setEqvs(Float _value_) {
+    public void setEqvs(Double _value_) {
         eqvs = _value_;
     }
 
@@ -243,12 +243,12 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setEqvs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setEqvs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setEqvs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setEqvs(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setEqvs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -282,13 +282,13 @@ public class LoadComposite extends LoadDynamics {
     /**
      * Loading factor (<i>L</i><i><sub>fac</sub></i>). The ratio of initial <i>P</i> to motor MVA base.  Typical value = 0,8.
      */
-    private Float lfac; // Float
+    private Double lfac; // Float
 
-    public Float getLfac() {
+    public Double getLfac() {
         return lfac;
     }
 
-    public void setLfac(Float _value_) {
+    public void setLfac(Double _value_) {
         lfac = _value_;
     }
 
@@ -297,25 +297,25 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setLfac(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setLfac((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setLfac((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setLfac(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setLfac(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Fraction of constant-power load to be represented by this motor model (<i>P</i><i><sub>FRAC</sub></i>) (&gt;= 0,0 and &lt;= 1,0).  Typical value = 0,5.
      */
-    private Float pfrac; // Float
+    private Double pfrac; // Float
 
-    public Float getPfrac() {
+    public Double getPfrac() {
         return pfrac;
     }
 
-    public void setPfrac(Float _value_) {
+    public void setPfrac(Double _value_) {
         pfrac = _value_;
     }
 
@@ -324,12 +324,12 @@ public class LoadComposite extends LoadDynamics {
     }
 
     private static void setPfrac(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((LoadComposite) _this_).setPfrac((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((LoadComposite) _this_).setPfrac((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((LoadComposite) _this_).setPfrac(getFloatFromString((String) _value_));
+            ((LoadComposite) _this_).setPfrac(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

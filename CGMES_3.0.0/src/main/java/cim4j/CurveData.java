@@ -77,13 +77,13 @@ public class CurveData extends BaseClass {
     /**
      * The data value of the X-axis variable,  depending on the X-axis units.
      */
-    private Float xvalue; // Float
+    private Double xvalue; // Float
 
-    public Float getXvalue() {
+    public Double getXvalue() {
         return xvalue;
     }
 
-    public void setXvalue(Float _value_) {
+    public void setXvalue(Double _value_) {
         xvalue = _value_;
     }
 
@@ -92,25 +92,25 @@ public class CurveData extends BaseClass {
     }
 
     private static void setXvalue(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((CurveData) _this_).setXvalue((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((CurveData) _this_).setXvalue((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((CurveData) _this_).setXvalue(getFloatFromString((String) _value_));
+            ((CurveData) _this_).setXvalue(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The data value of the  first Y-axis variable, depending on the Y-axis units.
      */
-    private Float y1value; // Float
+    private Double y1value; // Float
 
-    public Float getY1value() {
+    public Double getY1value() {
         return y1value;
     }
 
-    public void setY1value(Float _value_) {
+    public void setY1value(Double _value_) {
         y1value = _value_;
     }
 
@@ -119,25 +119,25 @@ public class CurveData extends BaseClass {
     }
 
     private static void setY1value(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((CurveData) _this_).setY1value((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((CurveData) _this_).setY1value((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((CurveData) _this_).setY1value(getFloatFromString((String) _value_));
+            ((CurveData) _this_).setY1value(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * The data value of the second Y-axis variable (if present), depending on the Y-axis units.
      */
-    private Float y2value; // Float
+    private Double y2value; // Float
 
-    public Float getY2value() {
+    public Double getY2value() {
         return y2value;
     }
 
-    public void setY2value(Float _value_) {
+    public void setY2value(Double _value_) {
         y2value = _value_;
     }
 
@@ -146,12 +146,12 @@ public class CurveData extends BaseClass {
     }
 
     private static void setY2value(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((CurveData) _this_).setY2value((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((CurveData) _this_).setY2value((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((CurveData) _this_).setY2value(getFloatFromString((String) _value_));
+            ((CurveData) _this_).setY2value(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

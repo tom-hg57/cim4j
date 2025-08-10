@@ -39,13 +39,13 @@ public class ExcRQB extends ExcitationSystemDynamics {
     /**
      * Voltage reference input gain (<i>Ki0</i>).  Typical value = 12,7.
      */
-    private Float ki0; // Float
+    private Double ki0; // Float
 
-    public Float getKi0() {
+    public Double getKi0() {
         return ki0;
     }
 
-    public void setKi0(Float _value_) {
+    public void setKi0(Double _value_) {
         ki0 = _value_;
     }
 
@@ -54,25 +54,25 @@ public class ExcRQB extends ExcitationSystemDynamics {
     }
 
     private static void setKi0(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcRQB) _this_).setKi0((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcRQB) _this_).setKi0((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcRQB) _this_).setKi0(getFloatFromString((String) _value_));
+            ((ExcRQB) _this_).setKi0(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Voltage input gain (<i>Ki1</i>).  Typical value = -16,8.
      */
-    private Float ki1; // Float
+    private Double ki1; // Float
 
-    public Float getKi1() {
+    public Double getKi1() {
         return ki1;
     }
 
-    public void setKi1(Float _value_) {
+    public void setKi1(Double _value_) {
         ki1 = _value_;
     }
 
@@ -81,25 +81,25 @@ public class ExcRQB extends ExcitationSystemDynamics {
     }
 
     private static void setKi1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcRQB) _this_).setKi1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcRQB) _this_).setKi1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcRQB) _this_).setKi1(getFloatFromString((String) _value_));
+            ((ExcRQB) _this_).setKi1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * OEL input gain (<i>KLIR</i>).  Typical value = 12,13.
      */
-    private Float klir; // Float
+    private Double klir; // Float
 
-    public Float getKlir() {
+    public Double getKlir() {
         return klir;
     }
 
-    public void setKlir(Float _value_) {
+    public void setKlir(Double _value_) {
         klir = _value_;
     }
 
@@ -108,25 +108,25 @@ public class ExcRQB extends ExcitationSystemDynamics {
     }
 
     private static void setKlir(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcRQB) _this_).setKlir((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcRQB) _this_).setKlir((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcRQB) _this_).setKlir(getFloatFromString((String) _value_));
+            ((ExcRQB) _this_).setKlir(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Limiter gain (<i>KLUS</i>).  Typical value = 50.
      */
-    private Float klus; // Float
+    private Double klus; // Float
 
-    public Float getKlus() {
+    public Double getKlus() {
         return klus;
     }
 
-    public void setKlus(Float _value_) {
+    public void setKlus(Double _value_) {
         klus = _value_;
     }
 
@@ -135,12 +135,12 @@ public class ExcRQB extends ExcitationSystemDynamics {
     }
 
     private static void setKlus(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcRQB) _this_).setKlus((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcRQB) _this_).setKlus((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcRQB) _this_).setKlus(getFloatFromString((String) _value_));
+            ((ExcRQB) _this_).setKlus(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

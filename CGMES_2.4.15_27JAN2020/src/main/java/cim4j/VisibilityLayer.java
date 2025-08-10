@@ -39,7 +39,7 @@ public class VisibilityLayer extends IdentifiedObject {
     /**
      * A visibility layer can contain one or more diagram objects.
      */
-    private Set<DiagramObject> VisibleObjects = new HashSet<>(); // OneToMany
+    private Set<DiagramObject> VisibleObjects = new HashSet<>(); // ManyToMany
 
     private Set<String> VisibleObjectsIdSet = new HashSet<>();
 

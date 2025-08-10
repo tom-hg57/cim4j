@@ -39,13 +39,13 @@ public class Pss2B extends PowerSystemStabilizerDynamics {
     /**
      * Numerator constant (<i>a</i>).  Typical value = 1.
      */
-    private Float a; // Float
+    private Double a; // Float
 
-    public Float getA() {
+    public Double getA() {
         return a;
     }
 
-    public void setA(Float _value_) {
+    public void setA(Double _value_) {
         a = _value_;
     }
 
@@ -54,12 +54,12 @@ public class Pss2B extends PowerSystemStabilizerDynamics {
     }
 
     private static void setA(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((Pss2B) _this_).setA((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((Pss2B) _this_).setA((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((Pss2B) _this_).setA(getFloatFromString((String) _value_));
+            ((Pss2B) _this_).setA(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

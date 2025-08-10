@@ -390,13 +390,13 @@ public class ExcIEEEAC7B extends ExcitationSystemDynamics {
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>V</i><i><sub>E1</sub></i>, back of commutating reactance (<i>S</i><i><sub>E</sub></i><i>[V</i><i><sub>E1</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,44.
      */
-    private Float seve1; // Float
+    private Double seve1; // Float
 
-    public Float getSeve1() {
+    public Double getSeve1() {
         return seve1;
     }
 
-    public void setSeve1(Float _value_) {
+    public void setSeve1(Double _value_) {
         seve1 = _value_;
     }
 
@@ -405,25 +405,25 @@ public class ExcIEEEAC7B extends ExcitationSystemDynamics {
     }
 
     private static void setSeve1(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcIEEEAC7B) _this_).setSeve1((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcIEEEAC7B) _this_).setSeve1((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcIEEEAC7B) _this_).setSeve1(getFloatFromString((String) _value_));
+            ((ExcIEEEAC7B) _this_).setSeve1(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exciter saturation function value at the corresponding exciter voltage, <i>V</i><i><sub>E2</sub></i>, back of commutating reactance (<i>S</i><i><sub>E</sub></i><i>[V</i><i><sub>E2</sub></i><i>]</i>) (&gt;= 0).  Typical value = 0,075.
      */
-    private Float seve2; // Float
+    private Double seve2; // Float
 
-    public Float getSeve2() {
+    public Double getSeve2() {
         return seve2;
     }
 
-    public void setSeve2(Float _value_) {
+    public void setSeve2(Double _value_) {
         seve2 = _value_;
     }
 
@@ -432,12 +432,12 @@ public class ExcIEEEAC7B extends ExcitationSystemDynamics {
     }
 
     private static void setSeve2(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcIEEEAC7B) _this_).setSeve2((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcIEEEAC7B) _this_).setSeve2((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcIEEEAC7B) _this_).setSeve2(getFloatFromString((String) _value_));
+            ((ExcIEEEAC7B) _this_).setSeve2(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

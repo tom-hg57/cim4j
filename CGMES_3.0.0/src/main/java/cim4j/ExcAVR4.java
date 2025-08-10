@@ -66,13 +66,13 @@ public class ExcAVR4 extends ExcitationSystemDynamics {
     /**
      * AVR gain (<i>K</i><i><sub>A</sub></i>).  Typical value = 300.
      */
-    private Float ka; // Float
+    private Double ka; // Float
 
-    public Float getKa() {
+    public Double getKa() {
         return ka;
     }
 
-    public void setKa(Float _value_) {
+    public void setKa(Double _value_) {
         ka = _value_;
     }
 
@@ -81,25 +81,25 @@ public class ExcAVR4 extends ExcitationSystemDynamics {
     }
 
     private static void setKa(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR4) _this_).setKa((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR4) _this_).setKa((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR4) _this_).setKa(getFloatFromString((String) _value_));
+            ((ExcAVR4) _this_).setKa(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exciter gain (<i>K</i><i><sub>E</sub></i><i>)</i>.  Typical value = 1.
      */
-    private Float ke; // Float
+    private Double ke; // Float
 
-    public Float getKe() {
+    public Double getKe() {
         return ke;
     }
 
-    public void setKe(Float _value_) {
+    public void setKe(Double _value_) {
         ke = _value_;
     }
 
@@ -108,25 +108,25 @@ public class ExcAVR4 extends ExcitationSystemDynamics {
     }
 
     private static void setKe(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR4) _this_).setKe((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR4) _this_).setKe((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR4) _this_).setKe(getFloatFromString((String) _value_));
+            ((ExcAVR4) _this_).setKe(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Exciter internal reactance (<i>K</i><i><sub>IF</sub></i>).  Typical value = 0.
      */
-    private Float kif; // Float
+    private Double kif; // Float
 
-    public Float getKif() {
+    public Double getKif() {
         return kif;
     }
 
-    public void setKif(Float _value_) {
+    public void setKif(Double _value_) {
         kif = _value_;
     }
 
@@ -135,12 +135,12 @@ public class ExcAVR4 extends ExcitationSystemDynamics {
     }
 
     private static void setKif(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((ExcAVR4) _this_).setKif((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((ExcAVR4) _this_).setKif((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((ExcAVR4) _this_).setKif(getFloatFromString((String) _value_));
+            ((ExcAVR4) _this_).setKif(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

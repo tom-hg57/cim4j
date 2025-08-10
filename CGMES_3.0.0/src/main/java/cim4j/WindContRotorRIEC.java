@@ -146,13 +146,13 @@ public class WindContRotorRIEC extends IdentifiedObject {
     /**
      * Filter gain for generator speed measurement (<i>K</i><i><sub>omegafilt</sub></i>). It is a type-dependent parameter.
      */
-    private Float komegafilt; // Float
+    private Double komegafilt; // Float
 
-    public Float getKomegafilt() {
+    public Double getKomegafilt() {
         return komegafilt;
     }
 
-    public void setKomegafilt(Float _value_) {
+    public void setKomegafilt(Double _value_) {
         komegafilt = _value_;
     }
 
@@ -161,25 +161,25 @@ public class WindContRotorRIEC extends IdentifiedObject {
     }
 
     private static void setKomegafilt(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindContRotorRIEC) _this_).setKomegafilt((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindContRotorRIEC) _this_).setKomegafilt((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindContRotorRIEC) _this_).setKomegafilt(getFloatFromString((String) _value_));
+            ((WindContRotorRIEC) _this_).setKomegafilt(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
     /**
      * Filter gain for power measurement (<i>K</i><i><sub>pfilt</sub></i>). It is a type-dependent parameter.
      */
-    private Float kpfilt; // Float
+    private Double kpfilt; // Float
 
-    public Float getKpfilt() {
+    public Double getKpfilt() {
         return kpfilt;
     }
 
-    public void setKpfilt(Float _value_) {
+    public void setKpfilt(Double _value_) {
         kpfilt = _value_;
     }
 
@@ -188,12 +188,12 @@ public class WindContRotorRIEC extends IdentifiedObject {
     }
 
     private static void setKpfilt(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindContRotorRIEC) _this_).setKpfilt((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindContRotorRIEC) _this_).setKpfilt((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindContRotorRIEC) _this_).setKpfilt(getFloatFromString((String) _value_));
+            ((WindContRotorRIEC) _this_).setKpfilt(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

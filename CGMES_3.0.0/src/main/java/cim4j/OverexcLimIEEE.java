@@ -174,13 +174,13 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
     /**
      * OEL ramped limit rate (<i>K</i><i><sub>RAMP</sub></i>).  Unit = PU / s.  Typical value = 10.
      */
-    private Float kramp; // Float
+    private Double kramp; // Float
 
-    public Float getKramp() {
+    public Double getKramp() {
         return kramp;
     }
 
-    public void setKramp(Float _value_) {
+    public void setKramp(Double _value_) {
         kramp = _value_;
     }
 
@@ -189,12 +189,12 @@ public class OverexcLimIEEE extends OverexcitationLimiterDynamics {
     }
 
     private static void setKramp(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((OverexcLimIEEE) _this_).setKramp((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((OverexcLimIEEE) _this_).setKramp((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((OverexcLimIEEE) _this_).setKramp(getFloatFromString((String) _value_));
+            ((OverexcLimIEEE) _this_).setKramp(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

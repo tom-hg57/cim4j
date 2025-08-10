@@ -39,13 +39,13 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
     /**
      * Saturation loading correction factor (<i>Ks</i>) (&gt;= 0).  Used only by type J model.  Typical value = 0.
      */
-    private Float ks; // Float
+    private Double ks; // Float
 
-    public Float getKs() {
+    public Double getKs() {
         return ks;
     }
 
-    public void setKs(Float _value_) {
+    public void setKs(Double _value_) {
         ks = _value_;
     }
 
@@ -54,12 +54,12 @@ public class SynchronousMachineTimeConstantReactance extends SynchronousMachineD
     }
 
     private static void setKs(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((SynchronousMachineTimeConstantReactance) _this_).setKs((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((SynchronousMachineTimeConstantReactance) _this_).setKs((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((SynchronousMachineTimeConstantReactance) _this_).setKs(getFloatFromString((String) _value_));
+            ((SynchronousMachineTimeConstantReactance) _this_).setKs(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

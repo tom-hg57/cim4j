@@ -79,13 +79,13 @@ public class WindGenType3aIEC extends WindGenType3IEC {
     /**
      * Current PI controller proportional gain (<i>K</i><i><sub>Pc</sub></i>). It is a type-dependent parameter.
      */
-    private Float kpc; // Float
+    private Double kpc; // Float
 
-    public Float getKpc() {
+    public Double getKpc() {
         return kpc;
     }
 
-    public void setKpc(Float _value_) {
+    public void setKpc(Double _value_) {
         kpc = _value_;
     }
 
@@ -94,12 +94,12 @@ public class WindGenType3aIEC extends WindGenType3IEC {
     }
 
     private static void setKpc(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((WindGenType3aIEC) _this_).setKpc((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((WindGenType3aIEC) _this_).setKpc((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((WindGenType3aIEC) _this_).setKpc(getFloatFromString((String) _value_));
+            ((WindGenType3aIEC) _this_).setKpc(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 

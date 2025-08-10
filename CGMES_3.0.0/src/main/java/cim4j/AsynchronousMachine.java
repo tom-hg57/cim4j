@@ -158,13 +158,13 @@ public class AsynchronousMachine extends RotatingMachine {
     /**
      * Ratio of locked-rotor current to the rated current of the motor (Ia/Ir). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float iaIrRatio; // Float
+    private Double iaIrRatio; // Float
 
-    public Float getIaIrRatio() {
+    public Double getIaIrRatio() {
         return iaIrRatio;
     }
 
-    public void setIaIrRatio(Float _value_) {
+    public void setIaIrRatio(Double _value_) {
         iaIrRatio = _value_;
     }
 
@@ -173,12 +173,12 @@ public class AsynchronousMachine extends RotatingMachine {
     }
 
     private static void setIaIrRatio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((AsynchronousMachine) _this_).setIaIrRatio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachine) _this_).setIaIrRatio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((AsynchronousMachine) _this_).setIaIrRatio(getFloatFromString((String) _value_));
+            ((AsynchronousMachine) _this_).setIaIrRatio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
@@ -320,13 +320,13 @@ public class AsynchronousMachine extends RotatingMachine {
     /**
      * Locked rotor ratio (R/X). Used for short circuit data exchange according to IEC 60909.
      */
-    private Float rxLockedRotorRatio; // Float
+    private Double rxLockedRotorRatio; // Float
 
-    public Float getRxLockedRotorRatio() {
+    public Double getRxLockedRotorRatio() {
         return rxLockedRotorRatio;
     }
 
-    public void setRxLockedRotorRatio(Float _value_) {
+    public void setRxLockedRotorRatio(Double _value_) {
         rxLockedRotorRatio = _value_;
     }
 
@@ -335,12 +335,12 @@ public class AsynchronousMachine extends RotatingMachine {
     }
 
     private static void setRxLockedRotorRatio(BaseClass _this_, Object _value_) {
-        if (_value_ instanceof Float) {
-            ((AsynchronousMachine) _this_).setRxLockedRotorRatio((Float) _value_);
+        if (_value_ instanceof Double) {
+            ((AsynchronousMachine) _this_).setRxLockedRotorRatio((Double) _value_);
         } else if (_value_ instanceof String) {
-            ((AsynchronousMachine) _this_).setRxLockedRotorRatio(getFloatFromString((String) _value_));
+            ((AsynchronousMachine) _this_).setRxLockedRotorRatio(getDoubleFromString((String) _value_));
         } else {
-            throw new IllegalArgumentException("Object is neither Float nor String");
+            throw new IllegalArgumentException("Object is neither Double nor String");
         }
     }
 
