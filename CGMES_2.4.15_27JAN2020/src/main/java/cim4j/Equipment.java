@@ -326,8 +326,8 @@ public class Equipment extends PowerSystemResource {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("EquipmentContainer", new AttrDetails("Equipment.EquipmentContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Equipment::getEquipmentContainer, Equipment::setEquipmentContainer));
         }
         {
@@ -348,9 +348,9 @@ public class Equipment extends PowerSystemResource {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ_BD);
-        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.SSH);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }

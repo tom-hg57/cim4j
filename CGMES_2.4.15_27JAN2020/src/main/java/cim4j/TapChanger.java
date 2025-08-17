@@ -617,8 +617,8 @@ public class TapChanger extends PowerSystemResource {
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
         profiles.add(CGMESProfile.EQ);
-        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.SSH);
+        profiles.add(CGMESProfile.SV);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

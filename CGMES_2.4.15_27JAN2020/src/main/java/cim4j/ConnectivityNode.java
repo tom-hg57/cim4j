@@ -514,8 +514,8 @@ public class ConnectivityNode extends IdentifiedObject {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("ConnectivityNodeContainer", new AttrDetails("ConnectivityNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNode::getConnectivityNodeContainer, ConnectivityNode::setConnectivityNodeContainer));
         }
         {
@@ -525,8 +525,8 @@ public class ConnectivityNode extends IdentifiedObject {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("TopologicalNode", new AttrDetails("ConnectivityNode.TopologicalNode", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, ConnectivityNode::getTopologicalNode, ConnectivityNode::setTopologicalNode));
         }
         {
@@ -572,10 +572,10 @@ public class ConnectivityNode extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
-        profiles.add(CGMESProfile.TP_BD);
+        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.TP);
+        profiles.add(CGMESProfile.TP_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

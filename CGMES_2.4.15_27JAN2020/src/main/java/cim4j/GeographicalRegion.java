@@ -261,8 +261,8 @@ public class GeographicalRegion extends IdentifiedObject {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("Regions", new AttrDetails("GeographicalRegion.Regions", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, GeographicalRegion::getRegions, GeographicalRegion::setRegions));
         }
         CLASS_ATTR_DETAILS_MAP = map;
@@ -273,8 +273,8 @@ public class GeographicalRegion extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.EQ_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

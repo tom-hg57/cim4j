@@ -413,8 +413,8 @@ public class BaseVoltage extends IdentifiedObject {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("TopologicalNode", new AttrDetails("BaseVoltage.TopologicalNode", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, BaseVoltage::getTopologicalNode, BaseVoltage::setTopologicalNode));
         }
         {
@@ -429,8 +429,8 @@ public class BaseVoltage extends IdentifiedObject {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("nominalVoltage", new AttrDetails("BaseVoltage.nominalVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, BaseVoltage::getNominalVoltage, BaseVoltage::setNominalVoltage));
         }
         CLASS_ATTR_DETAILS_MAP = map;
@@ -441,10 +441,10 @@ public class BaseVoltage extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
-        profiles.add(CGMESProfile.TP_BD);
+        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.TP);
+        profiles.add(CGMESProfile.TP_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

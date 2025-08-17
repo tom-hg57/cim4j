@@ -462,8 +462,8 @@ public class StaticVarCompensator extends RegulatingCondEq {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.SSH);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }

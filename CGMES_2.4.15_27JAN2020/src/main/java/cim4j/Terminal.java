@@ -680,9 +680,9 @@ public class Terminal extends ACDCTerminal {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
-            profiles.add(CGMESProfile.EQ);
             map.put("ConductingEquipment", new AttrDetails("Terminal.ConductingEquipment", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Terminal::getConductingEquipment, Terminal::setConductingEquipment));
         }
         {
@@ -748,11 +748,11 @@ public class Terminal extends ACDCTerminal {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ_BD);
-        profiles.add(CGMESProfile.EQ);
-        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.SSH);
+        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.TP);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }

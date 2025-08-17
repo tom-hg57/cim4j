@@ -727,8 +727,8 @@ public class VsConverter extends ACDCConverter {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.SSH);
         profiles.add(CGMESProfile.SV);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
