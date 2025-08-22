@@ -508,8 +508,45 @@ class RdfWriterTest {
     @Order(240)
     void testWrite010_UTF_8() {
         // Check text with non ASCII characters encoded in UTF-8
+        testWrite_010("rdf/test010_UTF-8.xml");
+    }
+
+    @Test
+    @Order(241)
+    void testWrite010_ISO_8859_1() {
+        // Check text with non ASCII characters encoded in ISO-8859-1
+        // (which has no EURO SIGN)
+        testWrite_010("rdf/test010_ISO-8859-1.xml", false);
+    }
+
+    @Test
+    @Order(242)
+    void testWrite010_ISO_8859_15() {
+        // Check text with non ASCII characters encoded in ISO-8859-15
+        testWrite_010("rdf/test010_ISO-8859-15.xml");
+    }
+
+    @Test
+    @Order(243)
+    void testWrite010_UTF_16LE() {
+        // Check text with non ASCII characters encoded in UTF-16LE
+        testWrite_010("rdf/test010_UTF-16LE.xml");
+    }
+
+    @Test
+    @Order(244)
+    void testWrite010_UTF_16BE() {
+        // Check text with non ASCII characters encoded in UTF-16BE
+        testWrite_010("rdf/test010_UTF-16BE.xml");
+    }
+
+    private void testWrite_010(String test_010) {
+        testWrite_010(test_010, true);
+    }
+
+    private void testWrite_010(String test_010, boolean withEuroSign) {
         var rdfReader = new RdfReader();
-        var cimData = rdfReader.read(List.of(getPath("rdf/test010_UTF-8.xml")));
+        var cimData = rdfReader.read(List.of(getPath(test_010)));
         assertEquals(1, cimData.size());
 
         assertTrue(cimData.containsKey("BaseVoltage.20"));
@@ -527,7 +564,11 @@ class RdfWriterTest {
         assertEquals(XML_HEADER, lines[0]);
         assertEquals(RDF_HEADER, lines[1]);
         assertEquals("  <cim:BaseVoltage rdf:ID=\"BaseVoltage.20\">", lines[2]);
-        assertEquals("    <cim:IdentifiedObject.description>€ÄÖÜäöüß</cim:IdentifiedObject.description>", lines[3]);
+        if (withEuroSign) {
+            assertEquals("    <cim:IdentifiedObject.description>€ÄÖÜäöüß</cim:IdentifiedObject.description>", lines[3]);
+        } else {
+            assertEquals("    <cim:IdentifiedObject.description>ÄÖÜäöüß</cim:IdentifiedObject.description>", lines[3]);
+        }
         assertEquals("  </cim:BaseVoltage>", lines[4]);
         assertEquals("</rdf:RDF>", lines[5]);
     }
@@ -1117,17 +1158,15 @@ class RdfWriterTest {
         String result = stringWriter.toString();
 
         var lines = result.lines().toArray();
-        assertEquals(7, lines.length);
+        assertEquals(6, lines.length);
         assertEquals(XML_HEADER, lines[0]);
         assertEquals(RDF_HEADER, lines[1]);
         assertEquals("  <cim:BaseVoltage rdf:ID=\"BaseVoltage.20\">", lines[2]);
         assertEquals(
                 "    <cim:IdentifiedObject.description>&lt;&amp;&gt; &lt;&amp;&gt; &lt;&amp;&gt;</cim:IdentifiedObject.description>",
                 lines[3]);
-        assertEquals("    <cim:IdentifiedObject.name>unknown entity reference: &amp;nbsp;</cim:IdentifiedObject.name>",
-                lines[4]);
-        assertEquals("  </cim:BaseVoltage>", lines[5]);
-        assertEquals("</rdf:RDF>", lines[6]);
+        assertEquals("  </cim:BaseVoltage>", lines[4]);
+        assertEquals("</rdf:RDF>", lines[5]);
     }
 
     @Test

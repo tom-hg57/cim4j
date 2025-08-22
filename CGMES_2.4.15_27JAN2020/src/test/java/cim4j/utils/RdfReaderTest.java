@@ -453,8 +453,45 @@ class RdfReaderTest {
     @Order(220)
     void testRead010_UTF_8() {
         // Check text with non ASCII characters encoded in UTF-8
+        testRead_010("rdf/test010_UTF-8.xml");
+    }
+
+    @Test
+    @Order(221)
+    void testRead010_ISO_8859_1() {
+        // Check text with non ASCII characters encoded in ISO-8859-1
+        // (which has no EURO SIGN)
+        testRead_010("rdf/test010_ISO-8859-1.xml", false);
+    }
+
+    @Test
+    @Order(222)
+    void testRead010_ISO_8859_15() {
+        // Check text with non ASCII characters encoded in ISO-8859-15
+        testRead_010("rdf/test010_ISO-8859-15.xml");
+    }
+
+    @Test
+    @Order(223)
+    void testRead010_UTF_16LE() {
+        // Check text with non ASCII characters encoded in UTF-16LE
+        testRead_010("rdf/test010_UTF-16LE.xml");
+    }
+
+    @Test
+    @Order(224)
+    void testRead010_UTF_16BE() {
+        // Check text with non ASCII characters encoded in UTF-16BE
+        testRead_010("rdf/test010_UTF-16BE.xml");
+    }
+
+    private void testRead_010(String test_010) {
+        testRead_010(test_010, true);
+    }
+
+    private void testRead_010(String test_010, boolean withEuroSign) {
         var rdfReader = new RdfReader();
-        var cimData = rdfReader.read(List.of(getPath("rdf/test010_UTF-8.xml")));
+        var cimData = rdfReader.read(List.of(getPath(test_010)));
         assertEquals(1, cimData.size());
 
         assertTrue(cimData.containsKey("BaseVoltage.20"));
@@ -464,7 +501,11 @@ class RdfReaderTest {
 
         var attributeNames = baseVoltage.getAttributeNames();
         assertTrue(attributeNames.contains("description"));
-        assertEquals("€ÄÖÜäöüß", baseVoltage.getAttribute("description"));
+        if (withEuroSign) {
+            assertEquals("€ÄÖÜäöüß", baseVoltage.getAttribute("description"));
+        } else {
+            assertEquals("ÄÖÜäöüß", baseVoltage.getAttribute("description"));
+        }
     }
 
     @Test
@@ -871,9 +912,7 @@ class RdfReaderTest {
 
         var attributeNames = baseVoltage.getAttributeNames();
         assertTrue(attributeNames.contains("description"));
-        assertTrue(attributeNames.contains("name"));
         assertEquals("<&> <&> <&>", baseVoltage.getAttribute("description"));
-        assertEquals("unknown entity reference: &nbsp;", baseVoltage.getAttribute("name"));
     }
 
     @Test

@@ -14,7 +14,7 @@
     <cim:Status.value>verified</cim:Status.value>
   </cim:Status>
   <cim:StreetDetail rdf:ID="_Street">
-    <cim:StreetDetail.name>Ku'damm</cim:StreetDetail.name>
+    <cim:StreetDetail.name>Ku&apos;damm</cim:StreetDetail.name>
     <cim:StreetDetail.number>33</cim:StreetDetail.number>
     <cim:StreetDetail.withinTownLimits>true</cim:StreetDetail.withinTownLimits>
   </cim:StreetDetail>
