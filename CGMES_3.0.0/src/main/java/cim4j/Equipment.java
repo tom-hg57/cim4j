@@ -412,8 +412,8 @@ public class Equipment extends PowerSystemResource {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQBD);
         profiles.add(CGMESProfile.SC);
         profiles.add(CGMESProfile.SSH);

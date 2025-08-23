@@ -383,14 +383,14 @@ public class SubGeographicalRegion extends IdentifiedObject {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("Lines", new AttrDetails("SubGeographicalRegion.Lines", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::getLines, SubGeographicalRegion::setLines));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("Region", new AttrDetails("SubGeographicalRegion.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, SubGeographicalRegion::getRegion, SubGeographicalRegion::setRegion));
         }
         {
@@ -406,8 +406,8 @@ public class SubGeographicalRegion extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.EQ_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

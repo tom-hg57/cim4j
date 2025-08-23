@@ -981,8 +981,8 @@ public class SynchronousMachine extends RotatingMachine {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.SC);
         profiles.add(CGMESProfile.SSH);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);

@@ -259,8 +259,8 @@ public class Line extends EquipmentContainer {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("Region", new AttrDetails("Line.Region", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, Line::getRegion, Line::setRegion));
         }
         CLASS_ATTR_DETAILS_MAP = map;
@@ -271,8 +271,8 @@ public class Line extends EquipmentContainer {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.EQ_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

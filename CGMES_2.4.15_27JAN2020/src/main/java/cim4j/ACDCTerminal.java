@@ -423,10 +423,10 @@ public class ACDCTerminal extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
-        profiles.add(CGMESProfile.SV);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.SSH);
+        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.TP);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }

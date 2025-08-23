@@ -261,8 +261,8 @@ public class EnergySchedulingType extends IdentifiedObject {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("EnergySource", new AttrDetails("EnergySchedulingType.EnergySource", false, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, false, EnergySchedulingType::getEnergySource, EnergySchedulingType::setEnergySource));
         }
         CLASS_ATTR_DETAILS_MAP = map;
@@ -273,8 +273,8 @@ public class EnergySchedulingType extends IdentifiedObject {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.EQ_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

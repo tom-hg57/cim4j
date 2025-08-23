@@ -391,9 +391,9 @@ public class IdentifiedObject extends BaseClass {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DL);
             profiles.add(CGMESProfile.DY);
-            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.OP);
             profiles.add(CGMESProfile.TP);
@@ -408,9 +408,9 @@ public class IdentifiedObject extends BaseClass {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DL);
             profiles.add(CGMESProfile.DY);
-            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.GL);
             profiles.add(CGMESProfile.OP);
@@ -422,9 +422,9 @@ public class IdentifiedObject extends BaseClass {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DL);
             profiles.add(CGMESProfile.DY);
-            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.EQBD);
             profiles.add(CGMESProfile.GL);
             profiles.add(CGMESProfile.OP);
@@ -447,9 +447,9 @@ public class IdentifiedObject extends BaseClass {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.DL);
         profiles.add(CGMESProfile.DY);
-        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.EQBD);
         profiles.add(CGMESProfile.GL);
         profiles.add(CGMESProfile.OP);

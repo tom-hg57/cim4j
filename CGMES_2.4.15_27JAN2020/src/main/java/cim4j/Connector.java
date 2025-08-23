@@ -227,8 +227,8 @@ public class Connector extends ConductingEquipment {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.EQ_BD);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.EQ_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

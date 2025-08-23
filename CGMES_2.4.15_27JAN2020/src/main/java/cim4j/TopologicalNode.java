@@ -757,20 +757,20 @@ public class TopologicalNode extends IdentifiedObject {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("BaseVoltage", new AttrDetails("TopologicalNode.BaseVoltage", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::getBaseVoltage, TopologicalNode::setBaseVoltage));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("ConnectivityNodeContainer", new AttrDetails("TopologicalNode.ConnectivityNodeContainer", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::getConnectivityNodeContainer, TopologicalNode::setConnectivityNodeContainer));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("ConnectivityNodes", new AttrDetails("TopologicalNode.ConnectivityNodes", false, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, false, false, TopologicalNode::getConnectivityNodes, TopologicalNode::setConnectivityNodes));
         }
         {
@@ -842,8 +842,8 @@ public class TopologicalNode extends IdentifiedObject {
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
         profiles.add(CGMESProfile.SV);
-        profiles.add(CGMESProfile.TP_BD);
         profiles.add(CGMESProfile.TP);
+        profiles.add(CGMESProfile.TP_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

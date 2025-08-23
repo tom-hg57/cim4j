@@ -349,8 +349,8 @@ public class ConductingEquipment extends Equipment {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQBD);
             map.put("Terminals", new AttrDetails("ConductingEquipment.Terminals", false, "http://iec.ch/TC57/CIM100#", profiles, false, false, ConductingEquipment::getTerminals, ConductingEquipment::setTerminals));
         }
@@ -362,8 +362,8 @@ public class ConductingEquipment extends Equipment {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
-        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ);
+        profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQBD);
         profiles.add(CGMESProfile.SC);
         profiles.add(CGMESProfile.SSH);

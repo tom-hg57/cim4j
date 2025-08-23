@@ -391,53 +391,53 @@ public class IdentifiedObject extends BaseClass {
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
-            profiles.add(CGMESProfile.EQ);
-            profiles.add(CGMESProfile.TP_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("description", new AttrDetails("IdentifiedObject.description", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, IdentifiedObject::getDescription, IdentifiedObject::setDescription));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            profiles.add(CGMESProfile.TP_BD);
+            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("energyIdentCodeEic", new AttrDetails("IdentifiedObject.energyIdentCodeEic", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, IdentifiedObject::getEnergyIdentCodeEic, IdentifiedObject::setEnergyIdentCodeEic));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DL);
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
-            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.GL);
-            profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.SSH);
-            profiles.add(CGMESProfile.TP_BD);
+            profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("mRID", new AttrDetails("IdentifiedObject.mRID", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, IdentifiedObject::getMRID, IdentifiedObject::setMRID));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
+            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.DL);
             profiles.add(CGMESProfile.DY);
             profiles.add(CGMESProfile.EQ_BD);
-            profiles.add(CGMESProfile.EQ);
             profiles.add(CGMESProfile.GL);
-            profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.SSH);
-            profiles.add(CGMESProfile.TP_BD);
+            profiles.add(CGMESProfile.SV);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("name", new AttrDetails("IdentifiedObject.name", true, "http://iec.ch/TC57/2013/CIM-schema-cim16#", profiles, true, false, IdentifiedObject::getName, IdentifiedObject::setName));
         }
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
-            profiles.add(CGMESProfile.TP_BD);
+            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.TP);
+            profiles.add(CGMESProfile.TP_BD);
             map.put("shortName", new AttrDetails("IdentifiedObject.shortName", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, true, false, IdentifiedObject::getShortName, IdentifiedObject::setShortName));
         }
         CLASS_ATTR_DETAILS_MAP = map;
@@ -448,15 +448,15 @@ public class IdentifiedObject extends BaseClass {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.DL);
         profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ_BD);
-        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.GL);
-        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.SSH);
-        profiles.add(CGMESProfile.TP_BD);
+        profiles.add(CGMESProfile.SV);
         profiles.add(CGMESProfile.TP);
+        profiles.add(CGMESProfile.TP_BD);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
 

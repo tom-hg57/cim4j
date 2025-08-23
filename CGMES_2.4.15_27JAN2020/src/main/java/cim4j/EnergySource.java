@@ -596,8 +596,8 @@ public class EnergySource extends ConductingEquipment {
         Map<String, AttrDetails> map = new LinkedHashMap<>();
         {
             Set<CGMESProfile> profiles = new LinkedHashSet<>();
-            profiles.add(CGMESProfile.EQ_BD);
             profiles.add(CGMESProfile.EQ);
+            profiles.add(CGMESProfile.EQ_BD);
             map.put("EnergySchedulingType", new AttrDetails("EnergySource.EnergySchedulingType", true, "http://entsoe.eu/CIM/SchemaExtension/3/1#", profiles, false, false, EnergySource::getEnergySchedulingType, EnergySource::setEnergySchedulingType));
         }
         {
@@ -668,9 +668,9 @@ public class EnergySource extends ConductingEquipment {
     private static final Set<CGMESProfile> POSSIBLE_PROFILES;
     static {
         Set<CGMESProfile> profiles = new LinkedHashSet<>();
+        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.DY);
         profiles.add(CGMESProfile.EQ_BD);
-        profiles.add(CGMESProfile.EQ);
         profiles.add(CGMESProfile.SSH);
         POSSIBLE_PROFILES = Collections.unmodifiableSet(profiles);
     }
